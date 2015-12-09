@@ -1,0 +1,17 @@
+{
+    "INT_CONNECTION_TIMEOUT": [20000, 1.0],
+    "INT_DATA_RETRIEVAL_TIMEOUT": [20000, 1.0],
+    "LogFilePrefs" : {
+        "MAX_LOG_FILE_SIZE" : [1048576, 1.0],
+        "MAIN_LOG" : [true,1.0],
+        "DUMP_FILE_LOG" : [true,1.0],
+        "ENABLE_STAT_FILES" : [true,1.0],
+        "StatFilePrefs" : {
+            "SENSORS_STATS" : [true,1.0],
+            "POLICY_STATS" : [true,1.0],
+            "DEVICE_STATE_STATS" : [true,1.0],
+            "NETWORK_CONSUMPTION_STATS" : [true,1.0]
+        }
+    }
+
+}

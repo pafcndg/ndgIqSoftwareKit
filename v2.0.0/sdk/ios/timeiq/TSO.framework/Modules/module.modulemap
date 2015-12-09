@@ -1,0 +1,6 @@
+framework module TSO {
+  umbrella header "TSO.h"
+
+  export *
+  module * { export * }
+}
