@@ -13,7 +13,7 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "TSOEvent.h"
+#import "TSOEvent.h"
 
 /**
  @brief Created by eskoran on 07/05/2015.

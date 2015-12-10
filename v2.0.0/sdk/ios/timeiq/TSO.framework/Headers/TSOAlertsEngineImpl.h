@@ -13,7 +13,7 @@
 #import "JBArrayList.h"
 
 #import "JB.h"
-#include "ITSOAlertsEngine.h"
+#import "ITSOAlertsEngine.h"
 
 /**
  @brief Created by smoradof on 12/24/2014.

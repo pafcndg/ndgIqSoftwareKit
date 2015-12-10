@@ -12,8 +12,8 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "IMappable.h"
-#include "ARequest.h"
+#import "IMappable.h"
+#import "ARequest.h"
 
 @interface ETARequest : ARequest < IMappable > {
  @public

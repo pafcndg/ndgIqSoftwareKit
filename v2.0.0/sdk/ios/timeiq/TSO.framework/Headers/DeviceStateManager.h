@@ -24,8 +24,8 @@
 #import "JBArrayList.h"
 
 #import "JB.h"
-#include "IDeviceStateManager.h"
-#include "ISensorDataReceiver.h"
+#import "IDeviceStateManager.h"
+#import "ISensorDataReceiver.h"
 
 /**
  @brief Created by eleuchte on 26/07/2015.

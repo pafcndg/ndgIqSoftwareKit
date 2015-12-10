@@ -9,8 +9,8 @@
 @protocol IDoRemindersStorage;
 
 #import "JB.h"
-#include "ARemindersManager.h"
-#include "IDoRemindersManager.h"
+#import "ARemindersManager.h"
+#import "IDoRemindersManager.h"
 
 /**
  @brief Created by mleib on 04/05/2015.

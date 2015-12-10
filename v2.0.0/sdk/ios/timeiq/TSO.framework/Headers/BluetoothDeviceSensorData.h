@@ -11,7 +11,7 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "BaseSensorData.h"
+#import "BaseSensorData.h"
 
 /**
  @brief Created by orencoh2 on 18/12/14.

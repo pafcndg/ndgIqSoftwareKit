@@ -20,8 +20,8 @@
 #import "JBArrayList.h"
 
 #import "JB.h"
-#include "IDaoCreateUpdateConsumer.h"
-#include "IGenericDaoImpl.h"
+#import "IDaoCreateUpdateConsumer.h"
+#import "IGenericDaoImpl.h"
 
 #define GenericSQLDao_OBJ_AS_JSON_COL_NAME_IDX 1
 

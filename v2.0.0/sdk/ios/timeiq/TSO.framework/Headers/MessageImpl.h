@@ -9,7 +9,7 @@
 @class Enum;
 
 #import "JB.h"
-#include "IMessage.h"
+#import "IMessage.h"
 
 /**
  @brief Created by smoradof on 6/2/2015.

@@ -10,8 +10,8 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "ITSOBaseDBObject.h"
-#include "BaseSensorData.h"
+#import "ITSOBaseDBObject.h"
+#import "BaseSensorData.h"
 
 /**
  @brief Created by eleuchte on 11/23/2014.

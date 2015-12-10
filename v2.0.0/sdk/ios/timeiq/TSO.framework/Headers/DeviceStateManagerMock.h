@@ -13,7 +13,7 @@
 @protocol IDeviceStateListener;
 
 #import "JB.h"
-#include "IDeviceStateManager.h"
+#import "IDeviceStateManager.h"
 
 /**
  @brief Created by eleuchte on 18/10/2015.

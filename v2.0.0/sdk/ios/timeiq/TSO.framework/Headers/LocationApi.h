@@ -12,5 +12,6 @@
 @interface LocationApi : NSObject
 
 +(CLLocation*)currentLocation;
++(void)setCurrentLocation:(CLLocation*)loc;
 
 @end

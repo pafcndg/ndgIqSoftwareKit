@@ -15,36 +15,36 @@
 @class SnoozeTimeRange;
 @class VisitedPlaces;
 @protocol IDeviceStateManager;
-@protocol IPlaceRepoInternal;
+@protocol IPlaceRepoModule;
 @protocol IReminder;
 @protocol ITSOLogger;
 @protocol ITSOTimeUtil;
 @protocol ITrigger;
-@protocol IUserStateManagerInternal;
+@protocol IUserStateManagerModule;
 #import "JBArrayList.h"
 
 #import "JB.h"
-#include "ISnoozeOptionsProvider.h"
+#import "ISnoozeOptionsProvider.h"
 
 /**
  @brief Created by gilsharo on 6/23/15.
  */
 @interface SnoozeOptionsProvider : NSObject < ISnoozeOptionsProvider > {
  @public
-  id<IUserStateManagerInternal> m_userStateManager_;
+  id<IUserStateManagerModule> m_userStateManager_;
   id<ITSOLogger> m_logger_;
   id<ITSOTimeUtil> m_timeUtil_;
   id<IDeviceStateManager> m_deviceStateManager_;
-  id<IPlaceRepoInternal> m_placesRepo_;
+  id<IPlaceRepoModule> m_placesRepo_;
 }
 
 - (instancetype)init;
 
 - (instancetype)initWithITSOLogger:(id<ITSOLogger>)logger
                   withITSOTimeUtil:(id<ITSOTimeUtil>)timeUtil
-     withIUserStateManagerInternal:(id<IUserStateManagerInternal>)userStateManager
+       withIUserStateManagerModule:(id<IUserStateManagerModule>)userStateManager
            withIDeviceStateManager:(id<IDeviceStateManager>)deviceStateManager
-            withIPlaceRepoInternal:(id<IPlaceRepoInternal>)placesRepo;
+              withIPlaceRepoModule:(id<IPlaceRepoModule>)placesRepo;
 
 - (ArrayList*)getSnoozeOptionsWithIReminder:(id<IReminder>)reminder;
 
@@ -114,11 +114,11 @@
 FOUNDATION_EXPORT BOOL SnoozeOptionsProvider_initialized;
 J2OBJC_STATIC_INIT(SnoozeOptionsProvider)
 
-//J2OBJC_FIELD_SETTER(SnoozeOptionsProvider, m_userStateManager_, id<IUserStateManagerInternal>)
+//J2OBJC_FIELD_SETTER(SnoozeOptionsProvider, m_userStateManager_, id<IUserStateManagerModule>)
 //J2OBJC_FIELD_SETTER(SnoozeOptionsProvider, m_logger_, id<ITSOLogger>)
 //J2OBJC_FIELD_SETTER(SnoozeOptionsProvider, m_timeUtil_, id<ITSOTimeUtil>)
 //J2OBJC_FIELD_SETTER(SnoozeOptionsProvider, m_deviceStateManager_, id<IDeviceStateManager>)
-//J2OBJC_FIELD_SETTER(SnoozeOptionsProvider, m_placesRepo_, id<IPlaceRepoInternal>)
+//J2OBJC_FIELD_SETTER(SnoozeOptionsProvider, m_placesRepo_, id<IPlaceRepoModule>)
 
 FOUNDATION_EXPORT NSString *SnoozeOptionsProvider_TAG_;
 J2OBJC_STATIC_FIELD_GETTER(SnoozeOptionsProvider, TAG_, NSString *)

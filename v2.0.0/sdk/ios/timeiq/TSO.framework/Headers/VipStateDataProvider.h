@@ -10,7 +10,7 @@
 #import "NSNumber+JavaAPI.h"
 @class VisitedPlace;
 @class VisitedPlaceConfidence;
-@protocol IPlaceRepoInternal;
+@protocol IPlaceRepoModule;
 @protocol IPlacesEngine;
 @protocol ITSOAlarmManager;
 @protocol ITSOLogger;
@@ -19,10 +19,10 @@
 @protocol JavaUtilSortedSet;
 
 #import "JB.h"
-#include "ITSOAlarmListener.h"
-#include "IVisitInPlaceListener.h"
-#include "AStateDataProvider.h"
-#include "IVipStateDataProvider.h"
+#import "ITSOAlarmListener.h"
+#import "IVisitInPlaceListener.h"
+#import "AStateDataProvider.h"
+#import "IVipStateDataProvider.h"
 #import "JBComparator.h"
 
 #define VipStateDataProvider_LOW_CONFIDENCE_DELAY 300000LL
@@ -35,7 +35,7 @@
   id<ITSOLogger> tsoLogger_;
   id<ITSOTimeUtil> timeUtil_;
   id<IPlacesEngine> placesEngine_;
-  id<IPlaceRepoInternal> placesRepo_;
+  id<IPlaceRepoModule> placesRepo_;
   id<ITSOAlarmManager> alarmManager_;
   NSString *alarmId_;
   Long *alarmTimestamp_;
@@ -52,7 +52,7 @@
 - (instancetype)initWithITSOTimeUtil:(id<ITSOTimeUtil>)timeUtil
                       withITSOLogger:(id<ITSOLogger>)tsoLogger
                    withIPlacesEngine:(id<IPlacesEngine>)placesEngine
-              withIPlaceRepoInternal:(id<IPlaceRepoInternal>)placesRepo
+                withIPlaceRepoModule:(id<IPlaceRepoModule>)placesRepo
                 withITSOAlarmManager:(id<ITSOAlarmManager>)alarmManager;
 
 - (void)filterNonSemanticPlacesWithJavaUtilCollection:(Set*)visitsToFilter;
@@ -96,7 +96,7 @@ J2OBJC_STATIC_INIT(VipStateDataProvider)
 //J2OBJC_FIELD_SETTER(VipStateDataProvider, tsoLogger_, id<ITSOLogger>)
 //J2OBJC_FIELD_SETTER(VipStateDataProvider, timeUtil_, id<ITSOTimeUtil>)
 //J2OBJC_FIELD_SETTER(VipStateDataProvider, placesEngine_, id<IPlacesEngine>)
-//J2OBJC_FIELD_SETTER(VipStateDataProvider, placesRepo_, id<IPlaceRepoInternal>)
+//J2OBJC_FIELD_SETTER(VipStateDataProvider, placesRepo_, id<IPlaceRepoModule>)
 //J2OBJC_FIELD_SETTER(VipStateDataProvider, alarmManager_, id<ITSOAlarmManager>)
 //J2OBJC_FIELD_SETTER(VipStateDataProvider, alarmId_, NSString *)
 //J2OBJC_FIELD_SETTER(VipStateDataProvider, alarmTimestamp_, Long *)

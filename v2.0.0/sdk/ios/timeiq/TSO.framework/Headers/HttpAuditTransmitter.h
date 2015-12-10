@@ -10,8 +10,8 @@
 @protocol ITSOLogger;
 
 #import "JB.h"
-#include "AHttpTransmitter.h"
-#include "IHttpAuditTransmitter.h"
+#import "AHttpTransmitter.h"
+#import "IHttpAuditTransmitter.h"
 
 /**
  @brief Created by ibeider on 28/01/2015.

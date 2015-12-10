@@ -7,9 +7,9 @@
 #define _IRouteProviderInner_H_
 
 #import "JB.h"
-#include "IBasicRouteProvider.h"
-#include "IMotRecommender.h"
-#include "ISegmentedRouteProvider.h"
+#import "IBasicRouteProvider.h"
+#import "IMotRecommender.h"
+#import "ISegmentedRouteProvider.h"
 
 /**
  @brief Means to get TTL or ETA routes and to get route segments (via TtlRouteData )

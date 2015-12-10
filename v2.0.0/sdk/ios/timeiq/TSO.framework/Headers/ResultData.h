@@ -10,7 +10,7 @@
 @class ResultCode;
 
 #import "JB.h"
-#include "Result.h"
+#import "Result.h"
 
 /**
  @brief ResultData is a Result with an actual data object of the expected outcome.

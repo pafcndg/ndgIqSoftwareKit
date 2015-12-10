@@ -15,7 +15,7 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "IGenericDaoImpl.h"
+#import "IGenericDaoImpl.h"
 
 /**
  @brief Created by aeirew on 01/09/2015.

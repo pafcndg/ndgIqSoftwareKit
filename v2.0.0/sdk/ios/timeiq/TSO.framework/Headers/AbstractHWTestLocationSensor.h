@@ -9,8 +9,8 @@
 @class SensorType;
 
 #import "JB.h"
-#include "ILocationAwareSensor.h"
-#include "AbstractHWTestSensor.h"
+#import "ILocationAwareSensor.h"
+#import "AbstractHWTestSensor.h"
 
 /**
  @brief Created by eleuchte on 11/08/2015.

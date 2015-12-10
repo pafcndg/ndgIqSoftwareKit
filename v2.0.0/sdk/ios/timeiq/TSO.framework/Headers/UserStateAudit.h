@@ -12,7 +12,7 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "IMappable.h"
+#import "IMappable.h"
 
 /**
  @brief Created by mleib on 23/07/2015.

@@ -19,7 +19,7 @@
 #import "JBArrayList.h"
 
 #import "JB.h"
-#include "IDaoSendSyncStrategy.h"
+#import "IDaoSendSyncStrategy.h"
 
 #define DaoSendSyncImmediatelyStrategy_SYNC_LIMIT 50
 

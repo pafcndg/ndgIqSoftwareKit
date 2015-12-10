@@ -18,8 +18,8 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "ICalendarListener.h"
-#include "ITSOCalendarsManager.h"
+#import "ICalendarListener.h"
+#import "ITSOCalendarsManager.h"
 #import "JBRunnable.h"
 #import "JBComparator.h"
 

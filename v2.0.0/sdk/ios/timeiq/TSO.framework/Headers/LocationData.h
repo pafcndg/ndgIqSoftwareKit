@@ -9,8 +9,8 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "IMappable.h"
-#include "ILocationData.h"
+#import "IMappable.h"
+#import "ILocationData.h"
 
 /**
  @brief Created by aeirew on 17/11/2014.

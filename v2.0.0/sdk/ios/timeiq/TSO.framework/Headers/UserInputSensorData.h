@@ -10,7 +10,7 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "BaseSensorData.h"
+#import "BaseSensorData.h"
 
 /**
  @brief Created by eleuchte on 11/23/2014.

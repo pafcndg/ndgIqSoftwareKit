@@ -16,7 +16,7 @@
 #import "JBArrayList.h"
 
 #import "JB.h"
-#include "IVisitDetectorImpl.h"
+#import "IVisitDetectorImpl.h"
 
 #define VisitWifiDetectorImpl_EndVisitByWeakCounts 3
 #define VisitWifiDetectorImpl_MinVisitScans 5

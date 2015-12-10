@@ -10,7 +10,7 @@
 @class SemanticKey;
 
 #import "JB.h"
-#include "ITSOPlace.h"
+#import "ITSOPlace.h"
 
 @protocol ITSOSemanticPlace < ITSOPlace, NSObject >
 - (SemanticKey *)getSemanticKey;

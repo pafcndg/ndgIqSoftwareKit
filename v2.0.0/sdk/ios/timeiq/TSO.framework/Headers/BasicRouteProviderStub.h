@@ -16,7 +16,7 @@
 @protocol ITimeUtil_ISO8601;
 
 #import "JB.h"
-#include "IBasicRouteProvider.h"
+#import "IBasicRouteProvider.h"
 
 #define BasicRouteProviderStub_CAR_SPEED_KM_H 60.0
 #define BasicRouteProviderStub_WALK_SPEED_KM_H 5.0

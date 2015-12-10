@@ -13,7 +13,7 @@
 #import "JBHashSet.h"
 
 #import "JB.h"
-#include "IRemindersStorage.h"
+#import "IRemindersStorage.h"
 
 /**
  @brief Created by mleib on 30/04/2015.

@@ -7,7 +7,7 @@
 #define _WorkingHoursVisitCondition_H_
 
 #import "JB.h"
-#include "VisitTimeofDay.h"
+#import "VisitTimeofDay.h"
 
 @interface WorkingHoursVisitCondition : NSObject < VisitTimeofDay > {
 }

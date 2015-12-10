@@ -32,8 +32,8 @@
 #import "JBArrayList.h"
 
 #import "JB.h"
-#include "IPlaceListener.h"
-#include "IPlacesEngine.h"
+#import "IPlaceListener.h"
+#import "IPlacesEngine.h"
 #import "JBRunnable.h"
 
 /**

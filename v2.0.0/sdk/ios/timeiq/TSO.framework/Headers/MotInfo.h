@@ -10,8 +10,8 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "IMappable.h"
-#include "ATSOSyncDbObject.h"
+#import "IMappable.h"
+#import "ATSOSyncDbObject.h"
 #import "JBSerializable.h"
 
 #define MotInfo_serialVersionUID 5744659394217522394LL

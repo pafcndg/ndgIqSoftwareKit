@@ -11,7 +11,7 @@
 @class TSOCoordinate;
 
 #import "JB.h"
-#include "ILocationProvider.h"
+#import "ILocationProvider.h"
 
 /**
  @brief Created by glis on 14/10/2015.

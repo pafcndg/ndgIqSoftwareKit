@@ -9,7 +9,7 @@
 @class SDKPolicy;
 
 #import "JB.h"
-#include "ASensorsEnginePlatformAPI.h"
+#import "ASensorsEnginePlatformAPI.h"
 
 @interface NullSensorsEnginePlatformImpl : ASensorsEnginePlatformAPI {
 }

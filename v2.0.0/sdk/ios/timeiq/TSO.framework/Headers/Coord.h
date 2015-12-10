@@ -10,7 +10,7 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "IMappable.h"
+#import "IMappable.h"
 #import "JBComparable.h"
 
 @interface Coord : NSObject < IComparable, IMappable > {

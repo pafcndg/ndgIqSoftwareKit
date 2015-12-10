@@ -17,7 +17,7 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "IMotDetector.h"
+#import "IMotDetector.h"
 
 #define MotDetectorV2_ACTIVITY_RECOGNITION_RATE_CHANGE_DELTA 2000
 #define MotDetectorV2_ACTIVITY_RECOGNITION_RATE_FAST 2000

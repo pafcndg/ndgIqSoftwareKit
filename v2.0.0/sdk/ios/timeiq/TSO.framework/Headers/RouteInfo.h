@@ -12,7 +12,7 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "IMappable.h"
+#import "IMappable.h"
 #import "JBSerializable.h"
 
 #define RouteInfo_serialVersionUID -1043990666683164547LL

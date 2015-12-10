@@ -12,11 +12,11 @@
 @class UserStateChanges;
 @protocol IAlertsOnMotChangeListener;
 @protocol ITSOAlertsRepository;
-@protocol IUserStateManagerInternal;
+@protocol IUserStateManagerModule;
 
 #import "JB.h"
-#include "IUserStateChangeListener.h"
-#include "ITSOAlertsMotChangeListener.h"
+#import "IUserStateChangeListener.h"
+#import "ITSOAlertsMotChangeListener.h"
 
 /**
  @brief Created by mleib on 30/08/2015.
@@ -25,14 +25,14 @@
  @public
   id<IAlertsOnMotChangeListener> m_alertsMotChangeListener_;
   id<ITSOAlertsRepository> m_alertRepository_;
-  id<IUserStateManagerInternal> m_userStateManager_;
+  id<IUserStateManagerModule> m_userStateManager_;
   boolean m_isRegistered_;
 }
 
 - (instancetype)init;
 
 - (instancetype)initWithITSOAlertsRepository:(id<ITSOAlertsRepository>)alertRepository
-               withIUserStateManagerInternal:(id<IUserStateManagerInternal>)userStateManager;
+                 withIUserStateManagerModule:(id<IUserStateManagerModule>)userStateManager;
 
 - (void)registerUserStateIfNeededWithIAlertsOnMotChangeListener:(id<IAlertsOnMotChangeListener>)iAlertsOnMotChangeListener;
 
@@ -62,7 +62,7 @@ J2OBJC_STATIC_INIT(TSOAlertsMotChangeListener)
 
 //J2OBJC_FIELD_SETTER(TSOAlertsMotChangeListener, m_alertsMotChangeListener_, id<IAlertsOnMotChangeListener>)
 //J2OBJC_FIELD_SETTER(TSOAlertsMotChangeListener, m_alertRepository_, id<ITSOAlertsRepository>)
-//J2OBJC_FIELD_SETTER(TSOAlertsMotChangeListener, m_userStateManager_, id<IUserStateManagerInternal>)
+//J2OBJC_FIELD_SETTER(TSOAlertsMotChangeListener, m_userStateManager_, id<IUserStateManagerModule>)
 
 FOUNDATION_EXPORT id TSOAlertsMotChangeListener_m_lock_;
 J2OBJC_STATIC_FIELD_GETTER(TSOAlertsMotChangeListener, m_lock_, id)

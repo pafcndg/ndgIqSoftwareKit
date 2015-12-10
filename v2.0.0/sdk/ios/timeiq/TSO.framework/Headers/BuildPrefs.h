@@ -14,8 +14,8 @@
 @protocol IPrefsLoader;
 
 #import "JB.h"
-#include "APrefs.h"
-#include "IBuildPrefs.h"
+#import "APrefs.h"
+#import "IBuildPrefs.h"
 
 /**
  @brief Created by mleib on 02/08/2015.

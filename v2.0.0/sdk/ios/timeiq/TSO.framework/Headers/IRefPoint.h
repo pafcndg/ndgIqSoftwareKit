@@ -9,7 +9,7 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "IMappable.h"
+#import "IMappable.h"
 
 @protocol IRefPoint < IMappable, NSObject >
 - (long64)getModificationTimeStamp;

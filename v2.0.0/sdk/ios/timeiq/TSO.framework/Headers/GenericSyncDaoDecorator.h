@@ -17,10 +17,10 @@
 #import "JBArrayList.h"
 
 #import "JB.h"
-#include "IDaoDecorator.h"
-#include "IGenericDaoImpl.h"
-#include "ISyncEventListener.h"
-#include "ISyncMethods.h"
+#import "IDaoDecorator.h"
+#import "IGenericDaoImpl.h"
+#import "ISyncEventListener.h"
+#import "ISyncMethods.h"
 
 @interface GenericSyncDaoDecorator : NSObject < IGenericDaoImpl, ISyncMethods, IDaoDecorator, ISyncEventListener > {
  @public

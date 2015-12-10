@@ -13,7 +13,7 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "IMappable.h"
+#import "IMappable.h"
 
 /**
  @brief DO NOT DELETE THE EQUALS & HASH CODE METHODS!!!!!

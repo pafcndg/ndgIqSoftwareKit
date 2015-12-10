@@ -9,8 +9,8 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "ATSOSyncDbObject.h"
-#include "IRefPoint.h"
+#import "ATSOSyncDbObject.h"
+#import "IRefPoint.h"
 
 @interface DBRefPoint : ATSOSyncDbObject < IRefPoint > {
  @public

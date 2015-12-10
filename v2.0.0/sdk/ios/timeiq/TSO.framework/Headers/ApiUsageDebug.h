@@ -12,12 +12,14 @@
 @protocol ITSOTimeUtil;
 
 #import "JB.h"
-#include "ApiUsageUtil.h"
+#import "ApiUsageUtil.h"
 
 /**
  @brief Created by stzour on 11/11/2015.
  */
 @interface ApiUsageDebug : ApiUsageUtil {
+ @public
+  int usageCounter_;
 }
 
 - (instancetype)init;
@@ -28,6 +30,12 @@
 - (void)sendAuditWithResult:(Result *)result;
 
 - (void)sendAuditWithResultData:(ResultData *)resultData;
+
+- (int)getUsageCounter;
+
+- (void)initUsageCounter OBJC_METHOD_FAMILY_NONE;
+
+- (void)copyAllFieldsTo:(ApiUsageDebug *)other;
 
 @end
 

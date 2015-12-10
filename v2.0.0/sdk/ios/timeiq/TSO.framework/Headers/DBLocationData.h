@@ -9,7 +9,7 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "ILocationData.h"
+#import "ILocationData.h"
 #import "JBSerializable.h"
 
 #define DBLocationData_serialVersionUID 7315164131994118497LL

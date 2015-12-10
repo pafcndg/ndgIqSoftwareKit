@@ -11,7 +11,7 @@
 @class TriggerType;
 
 #import "JB.h"
-#include "ITrigger.h"
+#import "ITrigger.h"
 
 /**
  @brief This class is the basic class that represents triggers.

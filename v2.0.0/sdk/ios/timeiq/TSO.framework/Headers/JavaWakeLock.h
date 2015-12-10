@@ -7,7 +7,7 @@
 #define _JavaWakeLock_H_
 
 #import "JB.h"
-#include "IWakeLock.h"
+#import "IWakeLock.h"
 
 /**
  @brief Created by gilsharo on 11/4/15.

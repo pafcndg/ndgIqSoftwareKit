@@ -14,7 +14,7 @@
 #import "JBHashSet.h"
 
 #import "JB.h"
-#include "IBaseRemindersManager.h"
+#import "IBaseRemindersManager.h"
 
 /**
  @brief Created by mleib on 12/05/2015.

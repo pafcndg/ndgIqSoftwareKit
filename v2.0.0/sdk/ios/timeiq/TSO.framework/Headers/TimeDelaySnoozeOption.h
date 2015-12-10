@@ -7,7 +7,7 @@
 #define _TimeDelaySnoozeOption_H_
 
 #import "JB.h"
-#include "SnoozeOption.h"
+#import "SnoozeOption.h"
 
 /**
  @brief This class represents a snooze option that is a delay in time of the notification

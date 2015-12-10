@@ -13,9 +13,9 @@
 @protocol ITSOTimeUtil;
 
 #import "JB.h"
-#include "IApiUsageUtil.h"
+#import "IApiUsageUtil.h"
 
-#define ApiUsageUtil_CALLING_METHOD_SLOT 5
+#define ApiUsageUtil_API_CALLING_METHOD_SLOT 5
 
 /**
  @brief Created by stzour on 04/11/2015.
@@ -51,7 +51,7 @@ __attribute__((always_inline)) inline void ApiUsageUtil_init() {}
 //J2OBJC_FIELD_SETTER(ApiUsageUtil, timeUtil_, id<ITSOTimeUtil>)
 //J2OBJC_FIELD_SETTER(ApiUsageUtil, auditManager_, id<IAuditManager>)
 
-J2OBJC_STATIC_FIELD_GETTER(ApiUsageUtil, CALLING_METHOD_SLOT, int)
+J2OBJC_STATIC_FIELD_GETTER(ApiUsageUtil, API_CALLING_METHOD_SLOT, int)
 
 typedef ApiUsageUtil ComIntelWearablePlatformTimeiqCommonUtilsApiUsageAuditApiUsageUtil;
 

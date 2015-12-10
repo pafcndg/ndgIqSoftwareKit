@@ -10,7 +10,7 @@
 #import "NSArray+JavaAPI.h"
 
 #import "JB.h"
-#include "IMat.h"
+#import "IMat.h"
 
 #define Mat_EARTH_RADIUS 6378100.0
 #define Mat_REZOLUTION 50.0

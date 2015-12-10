@@ -14,9 +14,9 @@
 @protocol IVipStateDataProvider;
 
 #import "JB.h"
-#include "BaseUserStateChangeProvider.h"
-#include "IStateDataChangeListener.h"
-#include "IUserStateMonitor.h"
+#import "BaseUserStateChangeProvider.h"
+#import "IStateDataChangeListener.h"
+#import "IUserStateMonitor.h"
 
 /**
  @brief Created by gilsharo on 5/18/2015.

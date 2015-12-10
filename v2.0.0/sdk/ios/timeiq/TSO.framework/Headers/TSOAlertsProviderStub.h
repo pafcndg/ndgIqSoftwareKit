@@ -20,7 +20,7 @@
 #import "JBArrayList.h"
 
 #import "JB.h"
-#include "ITSOAlertProvider.h"
+#import "ITSOAlertProvider.h"
 
 /**
  @brief A stub for use in tests outside ttl-alerts-lib module.

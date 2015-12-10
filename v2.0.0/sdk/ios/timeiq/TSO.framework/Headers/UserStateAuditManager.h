@@ -9,24 +9,24 @@
 @class UserState;
 @class UserStateChanges;
 @protocol IAuditManager;
-@protocol IUserStateManagerInternal;
+@protocol IUserStateManagerModule;
 
 #import "JB.h"
-#include "IUserStateChangeListener.h"
-#include "IUserStateAuditManager.h"
+#import "IUserStateChangeListener.h"
+#import "IUserStateAuditManager.h"
 
 /**
  @brief Created by mleib on 23/07/2015.
  */
 @interface UserStateAuditManager : NSObject < IUserStateAuditManager, IUserStateChangeListener > {
  @public
-  id<IUserStateManagerInternal> m_userStateManager_;
+  id<IUserStateManagerModule> m_userStateManager_;
   id<IAuditManager> m_auditManager_;
 }
 
 - (instancetype)init;
 
-- (void)startAuditWithIUserStateManagerInternal:(id<IUserStateManagerInternal>)userStateManager;
+- (void)startAuditWithIUserStateManagerModule:(id<IUserStateManagerModule>)userStateManager;
 
 - (void)stopAudit;
 
@@ -40,7 +40,7 @@
 
 __attribute__((always_inline)) inline void UserStateAuditManager_init() {}
 
-//J2OBJC_FIELD_SETTER(UserStateAuditManager, m_userStateManager_, id<IUserStateManagerInternal>)
+//J2OBJC_FIELD_SETTER(UserStateAuditManager, m_userStateManager_, id<IUserStateManagerModule>)
 //J2OBJC_FIELD_SETTER(UserStateAuditManager, m_auditManager_, id<IAuditManager>)
 
 typedef UserStateAuditManager ComIntelWearablePlatformTimeiqUserstateAuditUserStateAuditManager;

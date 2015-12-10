@@ -11,7 +11,7 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "IMappable.h"
+#import "IMappable.h"
 
 @interface ETARequestResponseDataObj : NSObject < IMappable > {
  @public

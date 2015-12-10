@@ -20,7 +20,7 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "IPolicyListener.h"
+#import "IPolicyListener.h"
 #import "JBRunnable.h"
 
 /**

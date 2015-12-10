@@ -9,7 +9,7 @@
 @class ResultData;
 
 #import "JB.h"
-#include "TSOLocationProviderImplBase.h"
+#import "TSOLocationProviderImplBase.h"
 
 /**
  @brief Created by orencoh2 on 11/5/15.

@@ -13,7 +13,7 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "IMappable.h"
+#import "IMappable.h"
 
 @interface ResolvedPlaceV1 : NSObject < IMappable > {
  @public

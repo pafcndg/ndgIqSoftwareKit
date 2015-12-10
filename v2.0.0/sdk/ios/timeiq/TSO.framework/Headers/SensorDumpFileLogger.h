@@ -14,8 +14,8 @@
 @protocol IBuildPrefs;
 
 #import "JB.h"
-#include "ISensorDataReceiver.h"
-#include "ISensorDumpFileLogger.h"
+#import "ISensorDataReceiver.h"
+#import "ISensorDumpFileLogger.h"
 
 /**
  @brief Created by orencoh2 on 9/11/14.

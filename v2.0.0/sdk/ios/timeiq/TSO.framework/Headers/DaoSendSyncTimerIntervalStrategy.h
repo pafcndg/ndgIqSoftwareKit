@@ -13,8 +13,8 @@
 #import "JBArrayList.h"
 
 #import "JB.h"
-#include "ITSOAlarmListener.h"
-#include "DaoSendSyncImmediatelyStrategy.h"
+#import "ITSOAlarmListener.h"
+#import "DaoSendSyncImmediatelyStrategy.h"
 
 /**
  @brief Created by aeirew on 05/08/2015.

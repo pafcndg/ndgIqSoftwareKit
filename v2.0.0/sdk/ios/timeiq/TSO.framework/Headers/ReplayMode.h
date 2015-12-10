@@ -3,7 +3,7 @@
 
 #import "JB.h"
 #import "JBEnum.h"
-#include "NSArray+JavaAPI.h"
+#import "NSArray+JavaAPI.h"
 
 //@class ReplayMode;
 

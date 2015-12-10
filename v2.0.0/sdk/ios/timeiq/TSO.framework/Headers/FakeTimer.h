@@ -10,7 +10,7 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "ITSOAlarmManager.h"
+#import "ITSOAlarmManager.h"
 
 /**
  @brief Created by omendels on 7/23/2015.

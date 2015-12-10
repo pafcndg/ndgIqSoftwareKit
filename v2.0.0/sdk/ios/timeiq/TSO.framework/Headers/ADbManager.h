@@ -12,7 +12,7 @@
 @protocol ISqlHelper;
 
 #import "JB.h"
-#include "IDbManager.h"
+#import "IDbManager.h"
 
 /**
  @brief Created by yaronabr on 15-Jul-15.

@@ -12,7 +12,7 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "BaseReminderInner.h"
+#import "BaseReminderInner.h"
 
 /**
  @brief Created by mleib on 26/04/2015.

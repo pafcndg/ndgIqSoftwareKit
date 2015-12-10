@@ -14,7 +14,7 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "ATSOPlace.h"
+#import "ATSOPlace.h"
 
 @interface DetectedPlace : ATSOPlace {
  @public

@@ -12,7 +12,7 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "IBuildPrefs.h"
+#import "IBuildPrefs.h"
 
 /**
  @brief Created by mleib on 03/08/2015.

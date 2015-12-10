@@ -6,10 +6,10 @@
 #ifndef _UserStateAuditManagerStub_H_
 #define _UserStateAuditManagerStub_H_
 
-@protocol IUserStateManagerInternal;
+@protocol IUserStateManagerModule;
 
 #import "JB.h"
-#include "IUserStateAuditManager.h"
+#import "IUserStateAuditManager.h"
 
 /**
  @brief Created by mleib on 23/07/2015.
@@ -19,7 +19,7 @@
 
 - (instancetype)init;
 
-- (void)startAuditWithIUserStateManagerInternal:(id<IUserStateManagerInternal>)userStateManager;
+- (void)startAuditWithIUserStateManagerModule:(id<IUserStateManagerModule>)userStateManager;
 
 - (void)stopAudit;
 

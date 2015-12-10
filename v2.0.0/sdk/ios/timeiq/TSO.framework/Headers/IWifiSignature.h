@@ -9,7 +9,7 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "IMappable.h"
+#import "IMappable.h"
 
 @protocol IWifiSignature < IMappable, NSObject >
 - (HashMap*)getBssidToAverageLevel;

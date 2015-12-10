@@ -12,7 +12,7 @@
 @protocol JavaLangIterable;
 
 #import "JB.h"
-#include "ITSOLogger.h"
+#import "ITSOLogger.h"
 
 /**
  @brief Created by smoradof on 3/15/15.

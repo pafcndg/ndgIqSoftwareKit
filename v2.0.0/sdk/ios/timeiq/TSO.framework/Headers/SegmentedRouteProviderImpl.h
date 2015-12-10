@@ -17,10 +17,10 @@
 @protocol ITSOLogger;
 @protocol ITSOTimeUtil;
 @protocol ITimeUtil_ISO8601;
-@protocol IUserStateManagerInternal;
+@protocol IUserStateManagerModule;
 
 #import "JB.h"
-#include "ISegmentedRouteProvider.h"
+#import "ISegmentedRouteProvider.h"
 
 #define SegmentedRouteProviderImpl_AT_DESTINATION_DISTANCE 50.0
 #define SegmentedRouteProviderImpl_DESTINATION_INDOOR 0LL
@@ -34,7 +34,7 @@
  */
 @interface SegmentedRouteProviderImpl : NSObject < ISegmentedRouteProvider > {
  @public
-  id<IUserStateManagerInternal> m_userState_;
+  id<IUserStateManagerModule> m_userState_;
   id<IBasicRouteProvider> m_basicRouteProvider_;
   id<ITimeUtil_ISO8601> m_timeUtil_ISO8601_;
   id<ITSOLogger> m_logger_;
@@ -43,11 +43,11 @@
 
 - (instancetype)init;
 
-- (instancetype)initWithIUserStateManagerInternal:(id<IUserStateManagerInternal>)userState
-                          withIBasicRouteProvider:(id<IBasicRouteProvider>)basicRouteProvider
-                            withITimeUtil_ISO8601:(id<ITimeUtil_ISO8601>)timeUtil_ISO8601
-                                   withITSOLogger:(id<ITSOLogger>)logger
-                                 withITSOTimeUtil:(id<ITSOTimeUtil>)timeUtil;
+- (instancetype)initWithIUserStateManagerModule:(id<IUserStateManagerModule>)userState
+                        withIBasicRouteProvider:(id<IBasicRouteProvider>)basicRouteProvider
+                          withITimeUtil_ISO8601:(id<ITimeUtil_ISO8601>)timeUtil_ISO8601
+                                 withITSOLogger:(id<ITSOLogger>)logger
+                               withITSOTimeUtil:(id<ITSOTimeUtil>)timeUtil;
 
 - (ResultData *)getTTLWithTSOCoordinate:(TSOCoordinate *)origin
                       withTSOCoordinate:(TSOCoordinate *)destination
@@ -158,7 +158,7 @@
 FOUNDATION_EXPORT BOOL SegmentedRouteProviderImpl_initialized;
 J2OBJC_STATIC_INIT(SegmentedRouteProviderImpl)
 
-//J2OBJC_FIELD_SETTER(SegmentedRouteProviderImpl, m_userState_, id<IUserStateManagerInternal>)
+//J2OBJC_FIELD_SETTER(SegmentedRouteProviderImpl, m_userState_, id<IUserStateManagerModule>)
 //J2OBJC_FIELD_SETTER(SegmentedRouteProviderImpl, m_basicRouteProvider_, id<IBasicRouteProvider>)
 //J2OBJC_FIELD_SETTER(SegmentedRouteProviderImpl, m_timeUtil_ISO8601_, id<ITimeUtil_ISO8601>)
 //J2OBJC_FIELD_SETTER(SegmentedRouteProviderImpl, m_logger_, id<ITSOLogger>)

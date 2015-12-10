@@ -9,8 +9,8 @@
 @protocol ICallRemindersStorage;
 
 #import "JB.h"
-#include "ARemindersManager.h"
-#include "ICallRemindersManager.h"
+#import "ARemindersManager.h"
+#import "ICallRemindersManager.h"
 
 /**
  @brief Created by mleib on 04/05/2015.

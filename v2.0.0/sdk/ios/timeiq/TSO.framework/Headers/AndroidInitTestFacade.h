@@ -22,6 +22,8 @@
 
 + (void)initAllSingleTonesWithBoolean:(boolean)bInitClassPool OBJC_METHOD_FAMILY_NONE;
 
++ (void)initAPIs OBJC_METHOD_FAMILY_NONE;
+
 + (void)disposeAllSingleTones;
 
 + (void)disposeClassPool;

@@ -10,7 +10,7 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "ATSOBaseDBObject.h"
+#import "ATSOBaseDBObject.h"
 
 /**
  @brief Created by eskoran on 27/07/2015.

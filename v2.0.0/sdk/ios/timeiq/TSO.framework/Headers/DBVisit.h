@@ -14,8 +14,8 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "ATSOSyncDbObject.h"
-#include "IVisitEntry.h"
+#import "ATSOSyncDbObject.h"
+#import "IVisitEntry.h"
 
 /**
  @author aeirew

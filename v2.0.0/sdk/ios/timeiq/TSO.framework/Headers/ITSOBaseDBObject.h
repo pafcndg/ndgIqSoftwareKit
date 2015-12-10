@@ -7,7 +7,7 @@
 #define _ITSOBaseDBObject_H_
 
 #import "JB.h"
-#include "IMappable.h"
+#import "IMappable.h"
 
 /**
  @brief Created by aeirew on 09/02/2015.

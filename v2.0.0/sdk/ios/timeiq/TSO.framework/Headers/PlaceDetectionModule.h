@@ -17,8 +17,8 @@
 #import "JBArrayList.h"
 
 #import "JB.h"
-#include "IModuleApi.h"
-#include "IPeriodicDetectionModule.h"
+#import "IModuleApi.h"
+#import "IPeriodicDetectionModule.h"
 
 #define PlaceDetectionModule_GAP_5_MINUTES_IN_SECONDS 300LL
 

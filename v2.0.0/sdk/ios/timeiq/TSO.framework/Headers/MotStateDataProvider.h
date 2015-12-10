@@ -13,9 +13,9 @@
 @protocol ITSOTimeUtil;
 
 #import "JB.h"
-#include "IMotChangeListener.h"
-#include "AStateDataProvider.h"
-#include "IMotStateDataProvider.h"
+#import "IMotChangeListener.h"
+#import "AStateDataProvider.h"
+#import "IMotStateDataProvider.h"
 
 /**
  @brief Created by gilsharo on 6/7/2015.

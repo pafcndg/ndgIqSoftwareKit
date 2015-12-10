@@ -12,8 +12,8 @@
 @protocol ITSOAlarmManager;
 
 #import "JB.h"
-#include "IAuditForwardStrategy.h"
-#include "ITSOAlarmListener.h"
+#import "IAuditForwardStrategy.h"
+#import "ITSOAlarmListener.h"
 #import "JBRunnable.h"
 
 /**

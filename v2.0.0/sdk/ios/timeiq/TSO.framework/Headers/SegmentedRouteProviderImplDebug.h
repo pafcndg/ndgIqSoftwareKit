@@ -11,7 +11,7 @@
 @class TSOCoordinate;
 
 #import "JB.h"
-#include "ISegmentedRouteProvider.h"
+#import "ISegmentedRouteProvider.h"
 
 #define SegmentedRouteProviderImplDebug_CAR_TO_DOOR 7LL
 #define SegmentedRouteProviderImplDebug_PARK_TIME 12LL

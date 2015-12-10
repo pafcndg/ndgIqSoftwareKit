@@ -99,23 +99,6 @@
 - (ResultData *)resolveBusinessPhoneWithNSString:(NSString *)phoneNumber
                                     withTSOPlace:(TSOPlace *)location;
 
-/**
- @brief Resolves location as you type considering anchor location
- @param searchTerm name of a place or an address to search
- @param location anchor location for resolving
- @return a wrapper that contains a ResolvedLocationsResponse which holds all relevant results <BR> usage example: resolveLocation("cof", new TSOPlace(32.075699, 34.772134));
- */
-- (ResultData *)resolveAsYouTypeLocationWithNSString:(NSString *)searchTerm
-                                        withTSOPlace:(TSOPlace *)location
-                                             withInt:(int)maxResults;
-
-/**
- @brief Get additional details for a google location
- @param googleLocationId location id given by google
- @return a wrapper that contains a ResolvedLocationsResponse which holds all relevant results <BR> usage example: resolveLocation("cof", new TSOPlace(32.075699, 34.772134));
- */
-- (ResultData *)getAdditionalDetailsWithNSString:(NSString *)googleLocationId;
-
 @end
 
 __attribute__((always_inline)) inline void IResolver_init() {}

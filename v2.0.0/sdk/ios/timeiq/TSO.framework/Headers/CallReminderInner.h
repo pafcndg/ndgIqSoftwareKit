@@ -11,7 +11,7 @@
 @protocol ITSOTimeUtil;
 
 #import "JB.h"
-#include "BasePhoneReminderInner.h"
+#import "BasePhoneReminderInner.h"
 
 /**
  @brief Created by mleib on 26/04/2015.

@@ -14,7 +14,7 @@
 #import "JBFuture.h"
 
 #import "JB.h"
-#include "IHttpProviderWrapper.h"
+#import "IHttpProviderWrapper.h"
 #import "JBCallable.h"
 
 /**

@@ -19,8 +19,8 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "IModuleApi.h"
-#include "IPeriodicDetectionModule.h"
+#import "IModuleApi.h"
+#import "IPeriodicDetectionModule.h"
 #import "JBComparator.h"
 
 #define SemanticDetectionModule_MAX_DISTANCE_BETWEEN_DETECTED_AND_MANUAL_PLACE 150.0

@@ -12,7 +12,7 @@
 @protocol JavaLangReflectType;
 
 #import "JB.h"
-#include "IHttpProvider.h"
+#import "IHttpProvider.h"
 
 /**
  @brief Created by ibeider on 28/01/2015.

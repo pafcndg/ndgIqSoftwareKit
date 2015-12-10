@@ -18,7 +18,7 @@
 #import "JBArrayList.h"
 
 #import "JB.h"
-#include "IVisitDetectorImpl.h"
+#import "IVisitDetectorImpl.h"
 
 #define VisitFuseDetectorImpl_DISTANCE_LIMIT_FOR_COMBINING_VISITS 40
 #define VisitFuseDetectorImpl_DISTANCE_LIMIT_FOR_COMBINING_VISITS_FIRST_TIME 100

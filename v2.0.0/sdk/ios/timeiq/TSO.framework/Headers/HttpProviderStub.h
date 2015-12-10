@@ -12,7 +12,7 @@
 @protocol JavaLangReflectType;
 
 #import "JB.h"
-#include "IHttpProvider.h"
+#import "IHttpProvider.h"
 
 @interface HttpProviderStub : NSObject < IHttpProvider > {
  @public

@@ -11,7 +11,7 @@
 @protocol IWifiSignature;
 
 #import "JB.h"
-#include "ITSOSyncDbObject.h"
+#import "ITSOSyncDbObject.h"
 
 @protocol IVisitEntry < ITSOSyncDbObject, NSObject >
 - (id<IWifiSignature>)getSignature;

@@ -9,28 +9,25 @@
 @class Result;
 @class ResultData;
 @protocol IApiUsageUtil;
-@protocol ITSOCalendarsManager;
-@protocol IUserPrefs;
+@protocol ICalendarDetailsProviderModule;
 #import "JBArrayList.h"
 
 #import "JB.h"
-#include "ICalendarDetailsProvider.h"
+#import "ICalendarDetailsProvider.h"
 
 /**
  @brief Created by eskoran on 29/10/2015.
  */
 @interface CalendarDetailsProvider : NSObject < ICalendarDetailsProvider > {
  @public
-  id<IUserPrefs> userPrefs_;
-  id<ITSOCalendarsManager> calendarsManager_;
+  id<ICalendarDetailsProviderModule> calendarDetailsProviderModule_;
   id<IApiUsageUtil> apiUsageUtil_;
 }
 
 - (instancetype)init;
 
-- (instancetype)initWithIUserPrefs:(id<IUserPrefs>)userPrefs
-          withITSOCalendarsManager:(id<ITSOCalendarsManager>)calendarsManager
-                 withIApiUsageUtil:(id<IApiUsageUtil>)apiUsageUtil;
+- (instancetype)initWithICalendarDetailsProviderModule:(id<ICalendarDetailsProviderModule>)calendarDetailsProviderModule
+                                     withIApiUsageUtil:(id<IApiUsageUtil>)apiUsageUtil;
 
 - (ResultData *)getAvailableCalendars;
 
@@ -48,8 +45,7 @@
 
 __attribute__((always_inline)) inline void CalendarDetailsProvider_init() {}
 
-//J2OBJC_FIELD_SETTER(CalendarDetailsProvider, userPrefs_, id<IUserPrefs>)
-//J2OBJC_FIELD_SETTER(CalendarDetailsProvider, calendarsManager_, id<ITSOCalendarsManager>)
+//J2OBJC_FIELD_SETTER(CalendarDetailsProvider, calendarDetailsProviderModule_, id<ICalendarDetailsProviderModule>)
 //J2OBJC_FIELD_SETTER(CalendarDetailsProvider, apiUsageUtil_, id<IApiUsageUtil>)
 
 typedef CalendarDetailsProvider ComIntelWearablePlatformTimeiqCommonCalendarCalendarDetailsProvider;

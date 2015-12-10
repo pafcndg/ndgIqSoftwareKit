@@ -12,8 +12,8 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "IMappable.h"
-#include "ATSOSyncDbObject.h"
+#import "IMappable.h"
+#import "ATSOSyncDbObject.h"
 
 @interface SyncObject : ATSOSyncDbObject < IMappable > {
  @public

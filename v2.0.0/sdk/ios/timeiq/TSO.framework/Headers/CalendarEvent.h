@@ -10,7 +10,7 @@
 @class TSOEventType;
 
 #import "JB.h"
-#include "BaseEvent.h"
+#import "BaseEvent.h"
 
 /**
  @brief Describes an event extracted from the device calendar.

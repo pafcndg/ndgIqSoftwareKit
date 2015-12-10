@@ -10,7 +10,7 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "BaseSensorData.h"
+#import "BaseSensorData.h"
 
 #define ActivitySensorData_kInVehicle 0
 #define ActivitySensorData_kOnBicycle 1

@@ -17,7 +17,7 @@
 #import "JBHashSet.h"
 
 #import "JB.h"
-#include "IHWSensorListener.h"
+#import "IHWSensorListener.h"
 #import "JBRunnable.h"
 
 /**

@@ -12,7 +12,7 @@
 @protocol IState;
 
 #import "JB.h"
-#include "AbstractState.h"
+#import "AbstractState.h"
 
 @interface InProgressState : AbstractState {
 }

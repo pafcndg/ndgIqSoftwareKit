@@ -9,7 +9,7 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "TSORetCodeResponse.h"
+#import "TSORetCodeResponse.h"
 
 @interface TSOSlaveDBSyncResponse : TSORetCodeResponse {
  @public

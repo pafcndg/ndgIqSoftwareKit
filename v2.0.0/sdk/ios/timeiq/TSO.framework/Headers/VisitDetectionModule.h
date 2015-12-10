@@ -21,9 +21,9 @@
 @protocol IVisitListener;
 
 #import "JB.h"
-#include "IDetectionModule.h"
-#include "IModuleApi.h"
-#include "ISensorDataReceiver.h"
+#import "IDetectionModule.h"
+#import "IModuleApi.h"
+#import "ISensorDataReceiver.h"
 
 /**
  @brief Created by orencoh2 on 23/11/14.

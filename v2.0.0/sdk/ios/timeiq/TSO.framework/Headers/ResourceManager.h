@@ -14,15 +14,15 @@
 @class SemanticKey;
 @class SensorModeRequest;
 @class SensorType;
-@protocol IPlaceRepoInternal;
+@protocol IPlaceRepoModule;
 @protocol IPolicyListener;
 #import "JBHashSet.h"
 #import "JBArrayList.h"
 
 #import "JB.h"
-#include "IDeviceStateListener.h"
-#include "IVisitInPlaceListener.h"
-#include "ISensorDataReceiver.h"
+#import "IDeviceStateListener.h"
+#import "IVisitInPlaceListener.h"
+#import "ISensorDataReceiver.h"
 
 /**
  @brief Created by eleuchte on 02/02/2015.
@@ -41,7 +41,7 @@
   long64 m_stopLocationHighAccuracySampling_;
   long64 RETRY_LOCATION_HIGH_ACCURACY_SAMPLE_;
   boolean m_isNetworkWifiAvailable_;
-  id<IPlaceRepoInternal> m_placesRepo_;
+  id<IPlaceRepoModule> m_placesRepo_;
 }
 
 - (instancetype)init;
@@ -116,7 +116,7 @@ J2OBJC_STATIC_INIT(ResourceManager)
 //J2OBJC_FIELD_SETTER(ResourceManager, m_currentPolicy_, SDKPolicy *)
 //J2OBJC_FIELD_SETTER(ResourceManager, m_policyListeners_, ArrayList*)
 //J2OBJC_FIELD_SETTER(ResourceManager, m_chargeMethod_, ChargeMethod *)
-//J2OBJC_FIELD_SETTER(ResourceManager, m_placesRepo_, id<IPlaceRepoInternal>)
+//J2OBJC_FIELD_SETTER(ResourceManager, m_placesRepo_, id<IPlaceRepoModule>)
 
 FOUNDATION_EXPORT NSString *ResourceManager_TAG_;
 J2OBJC_STATIC_FIELD_GETTER(ResourceManager, TAG_, NSString *)

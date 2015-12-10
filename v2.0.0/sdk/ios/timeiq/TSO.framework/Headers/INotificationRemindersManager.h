@@ -7,7 +7,7 @@
 #define _INotificationRemindersManager_H_
 
 #import "JB.h"
-#include "IBaseRemindersManager.h"
+#import "IBaseRemindersManager.h"
 
 /**
  @brief Created by mleib on 04/05/2015.

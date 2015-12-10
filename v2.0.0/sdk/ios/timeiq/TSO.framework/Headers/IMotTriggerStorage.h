@@ -10,7 +10,7 @@
 #import "JBHashSet.h"
 
 #import "JB.h"
-#include "IBaseTriggersStorage.h"
+#import "IBaseTriggersStorage.h"
 
 /**
  @brief Created by smoradof on 5/5/2015.

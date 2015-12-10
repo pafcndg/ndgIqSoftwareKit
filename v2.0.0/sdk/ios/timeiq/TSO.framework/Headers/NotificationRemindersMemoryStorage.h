@@ -7,8 +7,8 @@
 #define _NotificationRemindersMemoryStorage_H_
 
 #import "JB.h"
-#include "ARemindersMemoryStorage.h"
-#include "INotificationRemindersStorage.h"
+#import "ARemindersMemoryStorage.h"
+#import "INotificationRemindersStorage.h"
 
 /**
  @brief Created by mleib on 30/04/2015.

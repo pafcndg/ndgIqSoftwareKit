@@ -10,7 +10,7 @@
 @protocol IVisitEntry;
 
 #import "JB.h"
-#include "IVisitListener.h"
+#import "IVisitListener.h"
 
 /**
  @brief Created by ylempert on 14-May-15.

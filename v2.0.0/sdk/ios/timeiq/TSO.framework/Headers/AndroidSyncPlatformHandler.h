@@ -13,7 +13,7 @@
 #import "JBArrayList.h"
 
 #import "JB.h"
-#include "ISyncPlatformHandler.h"
+#import "ISyncPlatformHandler.h"
 
 /**
  @brief AndroidSyncPlatformHandler - handles the client sync methodology, this class will be called when an operation is done on the local db and the sync should be involved.

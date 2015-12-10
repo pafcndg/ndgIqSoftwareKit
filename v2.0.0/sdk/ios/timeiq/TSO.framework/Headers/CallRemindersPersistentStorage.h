@@ -9,8 +9,8 @@
 #import "JBClass.h"
 
 #import "JB.h"
-#include "ABaseRemindersPersistentStorage.h"
-#include "ICallRemindersStorage.h"
+#import "ABaseRemindersPersistentStorage.h"
+#import "ICallRemindersStorage.h"
 
 /**
  @brief Created by Yaron Abramovich on 25.5.15.

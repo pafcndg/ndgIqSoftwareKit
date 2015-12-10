@@ -24,10 +24,10 @@
 #import "JBHashSet.h"
 
 #import "JB.h"
-#include "ObserverHelper.h"
-#include "IManagersListener.h"
-#include "ITriggerLifeCycleListener.h"
-#include "ITriggersManagerInner.h"
+#import "ObserverHelper.h"
+#import "IManagersListener.h"
+#import "ITriggerLifeCycleListener.h"
+#import "ITriggersManagerInner.h"
 
 /**
  @brief Created by mleib on 26/04/2015.

@@ -7,7 +7,7 @@
 #define _IOSWakeLock_H_
 
 #import "JB.h"
-#include "IWakeLock.h"
+#import "IWakeLock.h"
 
 @interface IOSWakeLock : NSObject < IWakeLock > {
 }

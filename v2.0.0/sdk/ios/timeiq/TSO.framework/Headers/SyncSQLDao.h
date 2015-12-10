@@ -14,8 +14,8 @@
 #import "JBFuture.h"
 
 #import "JB.h"
-#include "ISyncDao.h"
-#include "GenericSQLDao.h"
+#import "ISyncDao.h"
+#import "GenericSQLDao.h"
 
 /**
  @brief Created by aeirew on 12/08/2015.

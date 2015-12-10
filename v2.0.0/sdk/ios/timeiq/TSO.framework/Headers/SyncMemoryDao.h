@@ -12,8 +12,8 @@
 #import "JBHashSet.h"
 
 #import "JB.h"
-#include "GenericMemoryDao.h"
-#include "ISyncDao.h"
+#import "GenericMemoryDao.h"
+#import "ISyncDao.h"
 
 /**
  @brief Created by aeirew on 01/09/2015.

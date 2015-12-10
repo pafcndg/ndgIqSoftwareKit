@@ -7,7 +7,7 @@
 #define _ISdkDefaultPrefs_H_
 
 #import "JB.h"
-#include "IPrefs.h"
+#import "IPrefs.h"
 
 /**
  @brief Created by mleib on 03/08/2015.

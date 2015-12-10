@@ -10,7 +10,7 @@
 @protocol ICursor;
 
 #import "JB.h"
-#include "IDbPlatformImpl.h"
+#import "IDbPlatformImpl.h"
 
 /**
  @brief Created by yaronabr on 02-Jul-15.

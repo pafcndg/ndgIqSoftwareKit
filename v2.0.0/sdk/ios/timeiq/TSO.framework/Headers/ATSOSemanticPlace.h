@@ -13,8 +13,8 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "ATSOPlace.h"
-#include "ITSOSemanticPlace.h"
+#import "ATSOPlace.h"
+#import "ITSOSemanticPlace.h"
 
 @interface ATSOSemanticPlace : ATSOPlace < ITSOSemanticPlace > {
  @public

@@ -14,26 +14,26 @@
 @protocol IManagersListener;
 @protocol IPlacesTriggersStorage;
 @protocol ITriggerLifeCycleListener;
-@protocol IUserStateManagerInternal;
+@protocol IUserStateManagerModule;
 
 #import "JB.h"
-#include "IUserStateChangeListener.h"
-#include "ABaseTriggersManager.h"
-#include "IPlacesTriggersManager.h"
+#import "IUserStateChangeListener.h"
+#import "ABaseTriggersManager.h"
+#import "IPlacesTriggersManager.h"
 
 /**
  @brief Created by mleib on 26/04/2015.
  */
 @interface PlacesTriggersManager : ABaseTriggersManager < IPlacesTriggersManager, IUserStateChangeListener > {
  @public
-  id<IUserStateManagerInternal> m_userStateManager_;
+  id<IUserStateManagerModule> m_userStateManager_;
   boolean m_isRegistered_;
 }
 
 - (instancetype)init;
 
 - (instancetype)initWithIPlacesTriggersStorage:(id<IPlacesTriggersStorage>)placesTriggersStorage
-                 withIUserStateManagerInternal:(id<IUserStateManagerInternal>)userStateManager;
+                   withIUserStateManagerModule:(id<IUserStateManagerModule>)userStateManager;
 
 - (void)startWithIManagersListener:(id<IManagersListener>)triggerListener
      withITriggerLifeCycleListener:(id<ITriggerLifeCycleListener>)triggerLifeCycleListener;
@@ -83,7 +83,7 @@
 FOUNDATION_EXPORT BOOL PlacesTriggersManager_initialized;
 J2OBJC_STATIC_INIT(PlacesTriggersManager)
 
-//J2OBJC_FIELD_SETTER(PlacesTriggersManager, m_userStateManager_, id<IUserStateManagerInternal>)
+//J2OBJC_FIELD_SETTER(PlacesTriggersManager, m_userStateManager_, id<IUserStateManagerModule>)
 
 FOUNDATION_EXPORT id PlacesTriggersManager_m_lock_;
 J2OBJC_STATIC_FIELD_GETTER(PlacesTriggersManager, m_lock_, id)

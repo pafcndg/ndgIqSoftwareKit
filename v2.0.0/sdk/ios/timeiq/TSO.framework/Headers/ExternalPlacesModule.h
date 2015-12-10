@@ -17,8 +17,8 @@
 #import "JBHashSet.h"
 
 #import "JB.h"
-#include "IModule.h"
-#include "IModuleApi.h"
+#import "IModule.h"
+#import "IModuleApi.h"
 
 /**
  @brief Created by aeirew on 17/02/2015.

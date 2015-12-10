@@ -10,8 +10,8 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "IMappable.h"
-#include "AResponseObject.h"
+#import "IMappable.h"
+#import "AResponseObject.h"
 
 @interface ETAResponse : AResponseObject < IMappable > {
  @public

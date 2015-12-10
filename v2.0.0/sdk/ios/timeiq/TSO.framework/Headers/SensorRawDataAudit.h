@@ -15,8 +15,8 @@
 @protocol IDaoCommonMethods;
 
 #import "JB.h"
-#include "ISensorRawDataAudit.h"
-#include "ISensorDataReceiver.h"
+#import "ISensorRawDataAudit.h"
+#import "ISensorDataReceiver.h"
 
 /**
  @brief Created by aeirew on 11/03/2015.

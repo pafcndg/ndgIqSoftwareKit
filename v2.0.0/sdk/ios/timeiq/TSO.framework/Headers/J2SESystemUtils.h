@@ -9,7 +9,7 @@
 #import "JBFile.h"
 
 #import "JB.h"
-#include "ISystemUtils.h"
+#import "ISystemUtils.h"
 
 @interface J2SESystemUtils : NSObject < ISystemUtils > {
 }

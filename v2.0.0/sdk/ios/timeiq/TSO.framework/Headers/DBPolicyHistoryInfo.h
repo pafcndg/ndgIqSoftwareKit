@@ -10,8 +10,8 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "ATSOSyncDbObject.h"
-#include "IPolicyHistoryInfo.h"
+#import "ATSOSyncDbObject.h"
+#import "IPolicyHistoryInfo.h"
 
 @interface DBPolicyHistoryInfo : ATSOSyncDbObject < IPolicyHistoryInfo > {
  @public

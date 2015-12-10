@@ -18,8 +18,8 @@
 #import "JBQueue.h"
 
 #import "JB.h"
-#include "IMessageHandler.h"
-#include "ObserverHelper.h"
+#import "IMessageHandler.h"
+#import "ObserverHelper.h"
 #import "JBThread.h"
 
 /**
@@ -33,7 +33,6 @@
   JBQueue* m_sendMessageQueue_;
   boolean m_isInitialized_;
   boolean running_;
-  id<IApiUsageUtil> m_apiUsageUtil_;
 }
 
 - (instancetype)init;
@@ -73,7 +72,6 @@ J2OBJC_STATIC_INIT(AMessageEngine)
 //J2OBJC_FIELD_SETTER(AMessageEngine, m_logger_, id<ITSOLogger>)
 //J2OBJC_FIELD_SETTER(AMessageEngine, m_workerThread_, AMessageEngine_WorkerThread *)
 //J2OBJC_FIELD_SETTER(AMessageEngine, m_sendMessageQueue_, JBQueue*)
-//J2OBJC_FIELD_SETTER(AMessageEngine, m_apiUsageUtil_, id<IApiUsageUtil>)
 
 FOUNDATION_EXPORT NSString *AMessageEngine_TAG_;
 J2OBJC_STATIC_FIELD_GETTER(AMessageEngine, TAG_, NSString *)

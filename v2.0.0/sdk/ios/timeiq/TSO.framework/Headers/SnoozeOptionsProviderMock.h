@@ -12,7 +12,7 @@
 #import "JBArrayList.h"
 
 #import "JB.h"
-#include "ISnoozeOptionsProvider.h"
+#import "ISnoozeOptionsProvider.h"
 
 /**
  @brief Created by gilsharo on 7/20/15.

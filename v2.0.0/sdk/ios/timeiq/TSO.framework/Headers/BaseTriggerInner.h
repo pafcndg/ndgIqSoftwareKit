@@ -16,8 +16,8 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "ATSOBaseDBObject.h"
-#include "ITriggerInner.h"
+#import "ATSOBaseDBObject.h"
+#import "ITriggerInner.h"
 
 /**
  @brief Created by mleib on 26/04/2015.

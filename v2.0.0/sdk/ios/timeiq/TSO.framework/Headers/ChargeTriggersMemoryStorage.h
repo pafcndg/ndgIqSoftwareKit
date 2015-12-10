@@ -10,8 +10,8 @@
 #import "JBHashSet.h"
 
 #import "JB.h"
-#include "ABaseTriggersMemoryStorage.h"
-#include "IChargeTriggerStorage.h"
+#import "ABaseTriggersMemoryStorage.h"
+#import "IChargeTriggerStorage.h"
 
 /**
  @brief Created by Yaron Abramovich on 25.5.15.

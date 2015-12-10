@@ -10,7 +10,7 @@
 @protocol ISensorDataReceiver;
 
 #import "JB.h"
-#include "IModule.h"
+#import "IModule.h"
 
 /**
  @brief Created by orencoh2 on 23/11/14.

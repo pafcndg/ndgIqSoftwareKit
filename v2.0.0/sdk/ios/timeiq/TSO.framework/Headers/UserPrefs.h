@@ -9,8 +9,8 @@
 @class PrefsStorage;
 
 #import "JB.h"
-#include "APrefs.h"
-#include "IUserPrefs.h"
+#import "APrefs.h"
+#import "IUserPrefs.h"
 
 /**
  @brief Created by mleib on 02/08/2015.

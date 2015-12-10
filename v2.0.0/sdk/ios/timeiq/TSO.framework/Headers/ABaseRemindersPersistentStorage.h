@@ -12,7 +12,7 @@
 #import "JBHashSet.h"
 
 #import "JB.h"
-#include "ARemindersMemoryStorage.h"
+#import "ARemindersMemoryStorage.h"
 
 /**
  @brief Created by Yaron Abramovich on 25.5.15.

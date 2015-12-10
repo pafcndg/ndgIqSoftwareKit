@@ -14,7 +14,7 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "BaseTriggerInner.h"
+#import "BaseTriggerInner.h"
 
 /**
  @brief Created by mleib on 26/04/2015.

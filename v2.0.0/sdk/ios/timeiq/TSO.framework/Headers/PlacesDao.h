@@ -10,7 +10,7 @@
 @protocol ITSOSemanticPlace;
 
 #import "JB.h"
-#include "IPlaceDao.h"
+#import "IPlaceDao.h"
 
 /**
  @brief Created by aeirew on 25/06/2015.

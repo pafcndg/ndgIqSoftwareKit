@@ -7,7 +7,7 @@
 #define _ITSOSyncDbObject_H_
 
 #import "JB.h"
-#include "ITSOBaseDBObject.h"
+#import "ITSOBaseDBObject.h"
 
 @protocol ITSOSyncDbObject < ITSOBaseDBObject, NSObject >
 - (NSString *)getUserId;

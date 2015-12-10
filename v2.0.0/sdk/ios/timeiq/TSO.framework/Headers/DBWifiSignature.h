@@ -9,7 +9,7 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "IWifiSignature.h"
+#import "IWifiSignature.h"
 
 @interface DBWifiSignature : NSObject < IWifiSignature > {
  @public

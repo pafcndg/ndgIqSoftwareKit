@@ -11,8 +11,8 @@
 @protocol ITSOSemanticPlace;
 
 #import "JB.h"
-#include "IPlaceDao.h"
-#include "GenericMemoryDao.h"
+#import "IPlaceDao.h"
+#import "GenericMemoryDao.h"
 
 /**
  @brief Created by aeirew on 01/09/2015.

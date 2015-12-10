@@ -7,7 +7,7 @@
 #define _IUserStateFilter_H_
 
 #import "JB.h"
-#include "IUserStateChangeProvider.h"
+#import "IUserStateChangeProvider.h"
 
 /**
  @brief Created by gilsharo on 5/17/2015.

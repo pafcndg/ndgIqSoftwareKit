@@ -14,7 +14,7 @@
 @protocol ITSOTimeUtil;
 
 #import "JB.h"
-#include "INextWakeUpCalculator.h"
+#import "INextWakeUpCalculator.h"
 
 /**
  @brief Created by smoradof on 1/19/15.

@@ -10,7 +10,7 @@
 #import "JBArrayList.h"
 
 #import "JB.h"
-#include "IMappable.h"
+#import "IMappable.h"
 
 @protocol IApStat < IMappable, NSObject >
 - (ArrayList*)getRssStringArray;

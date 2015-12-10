@@ -13,7 +13,7 @@
 @class LOG_LEVEL;
 
 #import "JB.h"
-#include "ITSOLoggerPlaces.h"
+#import "ITSOLoggerPlaces.h"
 
 /**
  @brief Created by gilsharo on 9/2/15.

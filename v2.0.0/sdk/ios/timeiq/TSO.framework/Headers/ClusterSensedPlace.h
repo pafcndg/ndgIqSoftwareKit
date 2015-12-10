@@ -14,7 +14,7 @@
 @class WifiScan;
 
 #import "JB.h"
-#include "SensedPlace.h"
+#import "SensedPlace.h"
 
 @interface ClusterSensedPlace : SensedPlace {
  @public

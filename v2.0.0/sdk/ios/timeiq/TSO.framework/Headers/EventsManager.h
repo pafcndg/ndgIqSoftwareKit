@@ -29,15 +29,15 @@
 @protocol ITSOEvent;
 @protocol ITSOLogger;
 @protocol ITSOTimeUtil;
-@protocol IUserStateManagerInternal;
+@protocol IUserStateManagerModule;
 #import "JBArrayList.h"
 #import "JBHashtable.h"
 #import "JBHashSet.h"
 
 #import "JB.h"
-#include "ITSOAlarmListener.h"
-#include "ATSOBaseDBObject.h"
-#include "ITSOAlertListener.h"
+#import "ITSOAlarmListener.h"
+#import "ATSOBaseDBObject.h"
+#import "ITSOAlertListener.h"
 #import "JBCallable.h"
 
 #define EventsManager_MIN_DELAY 5000LL
@@ -51,7 +51,7 @@
   EventsPriorityQueue *events_;
   EventsAudit *auditManager_;
   id<IRouteProviderInner> routeProvider_;
-  id<IUserStateManagerInternal> userStateManager_;
+  id<IUserStateManagerModule> userStateManager_;
   id<ITSOAlarmManager> alarmManager_;
   id<ITSOTimeUtil> timerUtil_;
   id<ILocationProvider> locationProvider_;
@@ -64,7 +64,7 @@
                               withEventsAudit:(EventsAudit *)eventsAuditManager
                          withITSOAlertsEngine:(id<ITSOAlertsEngine>)ttlProvider
                              withITSOTimeUtil:(id<ITSOTimeUtil>)timeUtil
-                withIUserStateManagerInternal:(id<IUserStateManagerInternal>)userStateManager
+                  withIUserStateManagerModule:(id<IUserStateManagerModule>)userStateManager
                          withITSOAlarmManager:(id<ITSOAlarmManager>)alarmManager
                         withILocationProvider:(id<ILocationProvider>)locationProvider
                                withITSOLogger:(id<ITSOLogger>)tsoLogger;
@@ -154,7 +154,7 @@ __attribute__((always_inline)) inline void EventsManager_init() {}
 //J2OBJC_FIELD_SETTER(EventsManager, events_, EventsPriorityQueue *)
 //J2OBJC_FIELD_SETTER(EventsManager, auditManager_, EventsAudit *)
 //J2OBJC_FIELD_SETTER(EventsManager, routeProvider_, id<IRouteProviderInner>)
-//J2OBJC_FIELD_SETTER(EventsManager, userStateManager_, id<IUserStateManagerInternal>)
+//J2OBJC_FIELD_SETTER(EventsManager, userStateManager_, id<IUserStateManagerModule>)
 //J2OBJC_FIELD_SETTER(EventsManager, alarmManager_, id<ITSOAlarmManager>)
 //J2OBJC_FIELD_SETTER(EventsManager, timerUtil_, id<ITSOTimeUtil>)
 //J2OBJC_FIELD_SETTER(EventsManager, locationProvider_, id<ILocationProvider>)

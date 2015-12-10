@@ -11,8 +11,8 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "IMappable.h"
-#include "AResponseDataObj.h"
+#import "IMappable.h"
+#import "AResponseDataObj.h"
 
 @interface ETAResponseDataObj : AResponseDataObj < IMappable > {
  @public

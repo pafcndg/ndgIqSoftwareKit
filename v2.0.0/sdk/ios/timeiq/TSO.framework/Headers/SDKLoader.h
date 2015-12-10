@@ -46,6 +46,8 @@
 
 - (void)initFactories OBJC_METHOD_FAMILY_NONE;
 
+- (void)initAPIs OBJC_METHOD_FAMILY_NONE;
+
 - (void)handleVersionChange;
 
 - (NSString *)getCurrentDataVersion;

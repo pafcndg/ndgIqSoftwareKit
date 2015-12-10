@@ -10,7 +10,7 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "IStorageManager.h"
+#import "IStorageManager.h"
 
 /**
  @brief Created by ibeider on 03/02/2015.

@@ -7,7 +7,7 @@
 #define _NightVisitCondition_H_
 
 #import "JB.h"
-#include "VisitTimeofDay.h"
+#import "VisitTimeofDay.h"
 
 @interface NightVisitCondition : NSObject < VisitTimeofDay > {
 }

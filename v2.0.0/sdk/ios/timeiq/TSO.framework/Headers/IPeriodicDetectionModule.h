@@ -7,7 +7,7 @@
 #define _IPeriodicDetectionModule_H_
 
 #import "JB.h"
-#include "IModule.h"
+#import "IModule.h"
 
 /**
  @brief Created by aeirew on 14/01/2015.

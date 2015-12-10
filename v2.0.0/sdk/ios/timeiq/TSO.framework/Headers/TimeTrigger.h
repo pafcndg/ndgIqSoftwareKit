@@ -10,7 +10,7 @@
 @class TriggerStatus;
 
 #import "JB.h"
-#include "BaseTrigger.h"
+#import "BaseTrigger.h"
 
 /**
  @brief This class represents a trigger for a specific pre-defined time

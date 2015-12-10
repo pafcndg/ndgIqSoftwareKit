@@ -7,7 +7,7 @@
 #define _TruncatedExponentialBackoffAlgorithmHelper_H_
 
 #import "JB.h"
-#include "BackoffAlgorithmHelperBase.h"
+#import "BackoffAlgorithmHelperBase.h"
 
 /**
  @brief Created by mleib on 08/04/2015.

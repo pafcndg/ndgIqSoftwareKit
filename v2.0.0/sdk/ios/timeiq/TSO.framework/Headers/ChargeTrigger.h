@@ -11,7 +11,7 @@
 @class TriggerStatus;
 
 #import "JB.h"
-#include "BaseTrigger.h"
+#import "BaseTrigger.h"
 
 #define ChargeTrigger_DEFAULT_PERCENT 15
 

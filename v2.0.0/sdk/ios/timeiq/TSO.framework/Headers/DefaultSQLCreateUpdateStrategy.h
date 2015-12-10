@@ -9,7 +9,7 @@
 @protocol IGenericDaoQuery;
 
 #import "JB.h"
-#include "ICreateUpdateStrategy.h"
+#import "ICreateUpdateStrategy.h"
 
 /**
  @brief Handle the logic of creating or updating the local Table in the DB, in case of default db. schema (2 columns: Id, Blog).

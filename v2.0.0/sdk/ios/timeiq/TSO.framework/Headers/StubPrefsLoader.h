@@ -9,7 +9,7 @@
 @class PrefsFileType;
 
 #import "JB.h"
-#include "IPrefsLoader.h"
+#import "IPrefsLoader.h"
 
 /**
  @brief Created by mleib on 04/08/2015.

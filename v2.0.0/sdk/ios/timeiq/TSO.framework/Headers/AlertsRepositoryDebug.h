@@ -10,7 +10,7 @@
 @class TSOAlertInner;
 
 #import "JB.h"
-#include "AlertsRepository.h"
+#import "AlertsRepository.h"
 
 #define AlertsRepositoryDebug_RETRY_INTERVAL_MAXIMUM 10000
 #define AlertsRepositoryDebug_RETRY_INTERVAL_MINIMUM 2000

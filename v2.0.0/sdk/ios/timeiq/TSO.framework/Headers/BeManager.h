@@ -24,8 +24,8 @@
 #import "JBHashSet.h"
 
 #import "JB.h"
-#include "ITSOAlarmListener.h"
-#include "IEventSyncListener.h"
+#import "ITSOAlarmListener.h"
+#import "IEventSyncListener.h"
 
 #define BeManager_DAY 86400000LL
 #define BeManager_ONE_MINUTE 60000LL

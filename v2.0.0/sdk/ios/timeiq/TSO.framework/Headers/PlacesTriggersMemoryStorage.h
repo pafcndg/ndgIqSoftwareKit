@@ -11,8 +11,8 @@
 #import "JBHashSet.h"
 
 #import "JB.h"
-#include "ABaseTriggersMemoryStorage.h"
-#include "IPlacesTriggersStorage.h"
+#import "ABaseTriggersMemoryStorage.h"
+#import "IPlacesTriggersStorage.h"
 
 /**
  @brief Created by smoradof on 4/30/15.

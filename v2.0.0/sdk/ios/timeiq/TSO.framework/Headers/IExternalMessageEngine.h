@@ -10,7 +10,7 @@
 @protocol ISentValidationListener;
 
 #import "JB.h"
-#include "IMessageHandler.h"
+#import "IMessageHandler.h"
 
 /**
  @brief Created by stzour on 15/10/2015.

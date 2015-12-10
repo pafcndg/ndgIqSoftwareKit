@@ -10,7 +10,7 @@
 @protocol IStateDataChangeListener;
 
 #import "JB.h"
-#include "IStateDataProvider.h"
+#import "IStateDataProvider.h"
 
 /**
  @brief Created by gilsharo on 6/7/2015.

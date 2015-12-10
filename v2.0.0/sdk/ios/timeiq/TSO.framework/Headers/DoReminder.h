@@ -12,7 +12,7 @@
 @protocol ITrigger;
 
 #import "JB.h"
-#include "BaseReminder.h"
+#import "BaseReminder.h"
 
 /**
  @brief This class represents a reminder to do a certain action described as a user defined string

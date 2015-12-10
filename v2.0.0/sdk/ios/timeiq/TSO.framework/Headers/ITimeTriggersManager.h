@@ -7,7 +7,7 @@
 #define _ITimeTriggersManager_H_
 
 #import "JB.h"
-#include "IBaseTriggersManager.h"
+#import "IBaseTriggersManager.h"
 
 /**
  @brief Created by smoradof on 4/29/15.

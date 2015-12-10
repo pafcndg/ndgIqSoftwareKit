@@ -7,7 +7,7 @@
 #define _ILocationData_H_
 
 #import "JB.h"
-#include "IMappable.h"
+#import "IMappable.h"
 
 @protocol ILocationData < IMappable, NSObject >
 - (float)getDistance;

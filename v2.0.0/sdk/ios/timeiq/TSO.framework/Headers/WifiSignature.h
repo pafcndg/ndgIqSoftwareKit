@@ -10,8 +10,8 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "IMappable.h"
-#include "IWifiSignature.h"
+#import "IMappable.h"
+#import "IWifiSignature.h"
 
 @interface WifiSignature : NSObject < IMappable, IWifiSignature > {
  @public

@@ -14,7 +14,7 @@
 @class PlacesActivityType;
 
 #import "JB.h"
-#include "IMotDetector.h"
+#import "IMotDetector.h"
 
 #define MotDetectoriPhoneNaive_AR_HIGH_CONFIDENCE 3
 #define MotDetectoriPhoneNaive_AR_NO_CONFIDENCE 0

@@ -20,7 +20,7 @@
 @protocol ITimeUtil_ISO8601;
 
 #import "JB.h"
-#include "IRouteProviderCache.h"
+#import "IRouteProviderCache.h"
 
 #define RouteProviderCacheImpl_NUMBER_OF_ITEMS_TO_REMOVE_WHEN_MAXED 1
 

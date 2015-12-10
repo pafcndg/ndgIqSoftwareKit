@@ -18,7 +18,7 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "ATSOSemanticPlace.h"
+#import "ATSOSemanticPlace.h"
 
 @interface SemanticDetectedPlace : ATSOSemanticPlace {
  @public

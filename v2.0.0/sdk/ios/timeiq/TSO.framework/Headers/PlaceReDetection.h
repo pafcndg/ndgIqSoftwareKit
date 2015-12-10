@@ -10,7 +10,7 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "ATSOSyncDbObject.h"
+#import "ATSOSyncDbObject.h"
 
 @interface PlaceReDetection : ATSOSyncDbObject {
  @public

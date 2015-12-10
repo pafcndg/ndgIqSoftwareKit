@@ -12,7 +12,7 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "ATSOSyncDbObject.h"
+#import "ATSOSyncDbObject.h"
 
 /**
  @brief Created by eleuchte on 3/25/2015.

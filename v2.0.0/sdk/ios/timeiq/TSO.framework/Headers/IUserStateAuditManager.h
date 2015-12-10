@@ -6,7 +6,7 @@
 #ifndef _IUserStateAuditManager_H_
 #define _IUserStateAuditManager_H_
 
-@protocol IUserStateManagerInternal;
+@protocol IUserStateManagerModule;
 
 #import "JB.h"
 
@@ -15,7 +15,7 @@
  */
 @protocol IUserStateAuditManager < NSObject >
 
-- (void)startAuditWithIUserStateManagerInternal:(id<IUserStateManagerInternal>)userStateManager;
+- (void)startAuditWithIUserStateManagerModule:(id<IUserStateManagerModule>)userStateManager;
 
 - (void)stopAudit;
 

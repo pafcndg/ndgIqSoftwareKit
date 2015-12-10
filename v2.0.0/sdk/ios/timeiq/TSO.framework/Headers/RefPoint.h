@@ -12,9 +12,9 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "IMappable.h"
-#include "ITSOSyncDbObject.h"
-#include "Coord.h"
+#import "IMappable.h"
+#import "ITSOSyncDbObject.h"
+#import "Coord.h"
 
 @interface RefPoint : Coord < ITSOSyncDbObject, IMappable > {
  @public

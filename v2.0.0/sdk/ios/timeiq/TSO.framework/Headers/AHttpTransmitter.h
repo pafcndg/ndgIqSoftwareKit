@@ -12,7 +12,7 @@
 @protocol ITSOLogger;
 
 #import "JB.h"
-#include "ITransmitter.h"
+#import "ITransmitter.h"
 
 /**
  @brief Created by ibeider on 28/01/2015.
@@ -50,9 +50,6 @@ J2OBJC_STATIC_INIT(AHttpTransmitter)
 
 FOUNDATION_EXPORT NSString *AHttpTransmitter_TAG_;
 J2OBJC_STATIC_FIELD_GETTER(AHttpTransmitter, TAG_, NSString *)
-
-FOUNDATION_EXPORT NSString *AHttpTransmitter_TOKEN_CHECK_REQUEST_;
-J2OBJC_STATIC_FIELD_GETTER(AHttpTransmitter, TOKEN_CHECK_REQUEST_, NSString *)
 
 typedef AHttpTransmitter ComIntelWearablePlatformTimeiqCommonAuditAHttpTransmitter;
 

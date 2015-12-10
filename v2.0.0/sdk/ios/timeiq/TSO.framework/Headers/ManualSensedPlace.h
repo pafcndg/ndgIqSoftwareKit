@@ -10,7 +10,7 @@
 @class TSOCoordinate;
 
 #import "JB.h"
-#include "SensedPlace.h"
+#import "SensedPlace.h"
 
 @interface ManualSensedPlace : SensedPlace {
  @public

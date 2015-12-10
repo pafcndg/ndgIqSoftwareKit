@@ -10,7 +10,7 @@
 @protocol IMappable;
 
 #import "JB.h"
-#include "IAuditManager.h"
+#import "IAuditManager.h"
 
 /**
  @brief Created by asamouch on 19/07/2015.

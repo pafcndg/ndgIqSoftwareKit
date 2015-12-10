@@ -9,7 +9,7 @@
 @class BackoffAlgorithmType;
 
 #import "JB.h"
-#include "IBackoffAlgorithm.h"
+#import "IBackoffAlgorithm.h"
 
 /**
  @brief Created by mleib on 08/04/2015.

@@ -10,8 +10,8 @@
 @protocol ISentValidationListener;
 
 #import "JB.h"
-#include "AMessageEngine.h"
-#include "IInternalMessageEngine.h"
+#import "AMessageEngine.h"
+#import "IInternalMessageEngine.h"
 
 /**
  @brief Created by stzour on 18/10/2015.

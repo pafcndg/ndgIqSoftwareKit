@@ -11,7 +11,7 @@
 @class TtlRouteData;
 
 #import "JB.h"
-#include "TSOAlertResult.h"
+#import "TSOAlertResult.h"
 
 /**
  @brief The result object that the ITSOAlertListener gets when an alert was triggered

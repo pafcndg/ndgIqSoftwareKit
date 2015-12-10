@@ -11,7 +11,7 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "IMappable.h"
+#import "IMappable.h"
 #import "JBArrayList.h"
 
 /**

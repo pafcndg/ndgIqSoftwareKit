@@ -9,7 +9,7 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "AReminderTemplate.h"
+#import "AReminderTemplate.h"
 
 /**
  @brief Created by smoradof on 7/28/2015.

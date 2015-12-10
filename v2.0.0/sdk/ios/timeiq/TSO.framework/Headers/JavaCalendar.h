@@ -14,7 +14,7 @@
 #import "JBHashSet.h"
 
 #import "JB.h"
-#include "ICalendar.h"
+#import "ICalendar.h"
 #import "JBComparator.h"
 
 /**

@@ -9,7 +9,7 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "ITSOBaseDBObject.h"
+#import "ITSOBaseDBObject.h"
 
 @interface ATSOBaseDBObject : NSObject < ITSOBaseDBObject > {
  @public

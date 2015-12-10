@@ -9,7 +9,7 @@
 #import "JBVector.h"
 
 #import "JB.h"
-#include "IOSAlarmManager.h"
+#import "IOSAlarmManager.h"
 
 /**
  @brief Created by smoradof on 1/21/15.

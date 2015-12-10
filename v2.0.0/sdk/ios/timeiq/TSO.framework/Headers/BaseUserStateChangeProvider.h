@@ -12,8 +12,8 @@
 @protocol IUserStateChangeListener;
 
 #import "JB.h"
-#include "ObserverHelper.h"
-#include "IUserStateChangeProvider.h"
+#import "ObserverHelper.h"
+#import "IUserStateChangeProvider.h"
 
 /**
  @brief Created by gilsharo on 5/17/2015.

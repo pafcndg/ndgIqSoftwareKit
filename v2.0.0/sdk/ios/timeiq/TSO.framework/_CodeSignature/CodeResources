@@ -6,31 +6,31 @@
 	<dict>
 		<key>Headers/ABaseRemindersPersistentStorage.h</key>
 		<data>
-		PdqybOPGliK8haPAnX0cF14knOo=
+		4aFw/A0r+P26euCHQ+dijJP5nHA=
 		</data>
 		<key>Headers/ABaseTriggersManager.h</key>
 		<data>
-		A/LYcWEx+gUd/KqtUIoKuP/9Aiw=
+		kQoxCPmL8q3hh1OnvRwugMPtpvg=
 		</data>
 		<key>Headers/ABaseTriggersMemoryStorage.h</key>
 		<data>
-		v6pJ6aCUGVRbtpVaRw+lcEztDsY=
+		lxH8AFF+8FZPpHGcOBiMgztUb/Y=
 		</data>
 		<key>Headers/ABaseTriggersPersistentStorage.h</key>
 		<data>
-		RT2O0dKff/GqU9XzuO6HJyisVRk=
+		nhVqd5XisjZ7/oudJWQaX7CUqSY=
 		</data>
 		<key>Headers/ADbManager.h</key>
 		<data>
-		6RQBUazteOqDjXsJUQuVzlQvacE=
+		7WaKFofIJRUU10PFLTFweJNXiOU=
 		</data>
 		<key>Headers/AHttpTransmitter.h</key>
 		<data>
-		RoGuTC991aXIq0m9igrskXqMDJ0=
+		FPk0wqEgVzCzkkCDlsNAYQT7qnY=
 		</data>
 		<key>Headers/AMessageEngine.h</key>
 		<data>
-		g1liYNYAlUil0f43i+Jqbsmpq98=
+		th2nE2aF8RJk7lIt4317zWPyuNU=
 		</data>
 		<key>Headers/AObjectFactory.h</key>
 		<data>
@@ -46,15 +46,15 @@
 		</data>
 		<key>Headers/AReminderTemplate.h</key>
 		<data>
-		qYr1H+r9DFrt2YR96skQpwnHMJ8=
+		82bcOB7lkO1/GpIW6+HEvpBx+qE=
 		</data>
 		<key>Headers/ARemindersManager.h</key>
 		<data>
-		4bSXOcETTzes8/O8cfvXXyL4Eqs=
+		F4GiyINLjqDSl/lxHOmUsNA4CPM=
 		</data>
 		<key>Headers/ARemindersMemoryStorage.h</key>
 		<data>
-		aNiU63nBEL3+GW6x3ikTKH7HjY4=
+		5DvOWoBOvkHfsURaCD7LmFa0Jn4=
 		</data>
 		<key>Headers/ARequest.h</key>
 		<data>
@@ -78,7 +78,7 @@
 		</data>
 		<key>Headers/ARouteData.h</key>
 		<data>
-		8ZcT5qNapZIUgOntOs0exoyWE+c=
+		pxpAR4yBYmGDsWhyI/z+ZwyNtWA=
 		</data>
 		<key>Headers/ASensorsEnginePlatformAPI.h</key>
 		<data>
@@ -86,27 +86,27 @@
 		</data>
 		<key>Headers/AStateDataProvider.h</key>
 		<data>
-		zZu6bpKbZ8lC8WtgfH1Hze6/h3g=
+		W9vFIZQnRKV1oi0CRe1JMTIoEAc=
 		</data>
 		<key>Headers/ATSOBaseDBObject.h</key>
 		<data>
-		7elehZRxhT5uR/6klBD3/6Ctp9k=
+		fZ9vSwZHZ3XkM8A1R1uez95n0hc=
 		</data>
 		<key>Headers/ATSOLogger.h</key>
 		<data>
-		EGzgcqZXM3Zv4EklTdCOyelL9XM=
+		cS26B4gLFhs1PIrlwwdWyJgPw74=
 		</data>
 		<key>Headers/ATSOPlace.h</key>
 		<data>
-		6Y+1fqRQYFzqJhomeaXP91U1BD8=
+		NNjcD5cFrKCyY7tPuAzflOYMEW4=
 		</data>
 		<key>Headers/ATSOSemanticPlace.h</key>
 		<data>
-		MDw00RtBnEC0e1Oqiq+Vdznh6oI=
+		DWi1HEesEMTHa3vjF1BT5ELIKvM=
 		</data>
 		<key>Headers/ATSOSyncDbObject.h</key>
 		<data>
-		4MLn2cAII+/7xRKvaSDvpF2sdwU=
+		PoiuNfX5H4xv+8Mw6YVIyzUiTpY=
 		</data>
 		<key>Headers/AbstractHWSensor.h</key>
 		<data>
@@ -114,19 +114,19 @@
 		</data>
 		<key>Headers/AbstractHWTestLocationSensor.h</key>
 		<data>
-		g9XVPJTvJSbqnvrz1EHsTNz0tro=
+		JSCdKfv99h/XFpuMRz29EjBctX4=
 		</data>
 		<key>Headers/AbstractHWTestSensor.h</key>
 		<data>
-		AttNWygINms7ghZW0UmCAZhtJsg=
+		dCMzuKmQIo53en38rcgBW9H2t2o=
 		</data>
 		<key>Headers/AbstractState.h</key>
 		<data>
-		TZj4P+JI6dGUGILq758Xi3ccxEM=
+		8N4ro8E1cvvZjGC2FVSWNZsJlCk=
 		</data>
 		<key>Headers/ActivitySensorData.h</key>
 		<data>
-		BFTZsqLuG39c2YHsO8wBBR2DiDg=
+		kDfBgEFQ+wd8qlyISe686UkEPjs=
 		</data>
 		<key>Headers/AddPlaceMsg.h</key>
 		<data>
@@ -142,19 +142,19 @@
 		</data>
 		<key>Headers/AlertBuildExceptionType.h</key>
 		<data>
-		sry8BrLQCubjdFYNX+TLkGxPJRc=
+		uSCS0oFdxpTRq09gkPYqZ/gbWOI=
 		</data>
 		<key>Headers/AlertState.h</key>
 		<data>
-		rHMh9MXfsss8+NSGYszQHT6/BmA=
+		4jeLyVat4YcEj4Mv6PKTMDSPejQ=
 		</data>
 		<key>Headers/AlertsRepository.h</key>
 		<data>
-		e8DZVO4M3PPaS8NDY23azoizDsg=
+		HdQ0fAbTislWY42GO3jt7wyYwK0=
 		</data>
 		<key>Headers/AlertsRepositoryDebug.h</key>
 		<data>
-		UBMhrTZg+fPgxUgWvoYgkN10jqg=
+		kAh1KX+zFj18jVmJG43dNB6u/j0=
 		</data>
 		<key>Headers/AndroidInitFacade.h</key>
 		<data>
@@ -162,11 +162,11 @@
 		</data>
 		<key>Headers/AndroidInitTestFacade.h</key>
 		<data>
-		V8kRn89trYTEEw0xtE/u2WDcMi0=
+		Iu5MwaMQytk28jY31FCLLxb5c5E=
 		</data>
 		<key>Headers/AndroidSyncPlatformHandler.h</key>
 		<data>
-		wfbQEYnFhi+0Z3DBYGKcC90TapU=
+		c6sGWECti/c+0lhU2qmYgxhzVGA=
 		</data>
 		<key>Headers/ApGrid.h</key>
 		<data>
@@ -174,7 +174,7 @@
 		</data>
 		<key>Headers/ApPosition.h</key>
 		<data>
-		KDCfaujqoGnlW19WtZe2XKydLwU=
+		Pq/al7yqAVEEDbWn5uUIRIfB7wM=
 		</data>
 		<key>Headers/ApPositioningAlg.h</key>
 		<data>
@@ -182,23 +182,23 @@
 		</data>
 		<key>Headers/ApStat.h</key>
 		<data>
-		rk5hBoI8NDWWoAEI08oVaVUoqA0=
+		xIiUPbshEso8eGJNau0manguXmI=
 		</data>
 		<key>Headers/ApiUsageAuditObj.h</key>
 		<data>
-		TIblNi3OM7dGLvhS5kH8r0IlYlg=
+		EAitc/1rQCRUiOzR1XbMkXmstTE=
 		</data>
 		<key>Headers/ApiUsageDebug.h</key>
 		<data>
-		+SWyrkJfUebgqMQUfYF5lXAk7bU=
+		YCyvmQj+nSS5WhRxeEYpKRbvTqE=
 		</data>
 		<key>Headers/ApiUsageUtil.h</key>
 		<data>
-		kJE8vB2qiv4sJrpXOvZtNXYLKXY=
+		R7lWACZw8XVk3VExciBLcTFDdo4=
 		</data>
 		<key>Headers/AssociatedWifiSpot.h</key>
 		<data>
-		OrweUXIjDJLtayIlM5R4ibPXEB8=
+		t/0dvP1S3KJ2ktLCI4b5/x07YZU=
 		</data>
 		<key>Headers/AssociatedWifiSpotsBuilder.h</key>
 		<data>
@@ -206,23 +206,23 @@
 		</data>
 		<key>Headers/AttendeeMeetingData.h</key>
 		<data>
-		yw5vamixPsWELVPkRMguZGeidmI=
+		xIW1+I0gauBqurY782sZeTYJXyc=
 		</data>
 		<key>Headers/AttendeeStatus.h</key>
 		<data>
-		ukosOlxjcyM/hB5MJJh8JKl8pD0=
+		ugC1jToJHMLGT/Imv1vx+1ff0OM=
 		</data>
 		<key>Headers/AttendeeType.h</key>
 		<data>
-		pRe+iY5UE6o2jWXIb9xWDO/uEVM=
+		pqME+nksiadU93HaKy07vm1RZ2A=
 		</data>
 		<key>Headers/AuditManager.h</key>
 		<data>
-		b7BJRNfo/zUP3Ixuu0Wegq+bkts=
+		NkF1a0StGIoOThj/yJ9OfmQ4wI8=
 		</data>
 		<key>Headers/AuditManagerForTests.h</key>
 		<data>
-		sHkrkc3xZmgbNbQMERt2VVga2X0=
+		mq/oH69ob6H3ixNqHqZwGuxKAzs=
 		</data>
 		<key>Headers/AuditMeetingResolver.h</key>
 		<data>
@@ -230,15 +230,15 @@
 		</data>
 		<key>Headers/AuditSchedulerStrategy.h</key>
 		<data>
-		c0XT8JdP8dkm8+lm4QqmWWHyZBs=
+		Xr3WaYzuv1W11tBXSTgmK+FChVg=
 		</data>
 		<key>Headers/AuditSendTime.h</key>
 		<data>
-		zP5WGYd+GfnZzpe6s0asOYkT+4g=
+		s9jSOUK9r0GSGKbnl1sN2XeZgH0=
 		</data>
 		<key>Headers/AuditSendTimeLevel.h</key>
 		<data>
-		AzwA+uupVEfXQoNQSIkkZhWpouo=
+		8tuqlYpPk7WQofSRxF7EWUqlgwE=
 		</data>
 		<key>Headers/AuditSettings.h</key>
 		<data>
@@ -246,71 +246,71 @@
 		</data>
 		<key>Headers/AuditWifiBatteryStrategy.h</key>
 		<data>
-		1t3pOwbgUvA8RMMPM5D4RHUe9zo=
+		Elt1I9v8v+HwMzc7AhLOIU0ITN0=
 		</data>
 		<key>Headers/AuditWifiStrategy.h</key>
 		<data>
-		jmf8aNxP3GWKY4Ba8gvSIODuBjQ=
+		HORV2fe6L9k2Ae7vrFtW2cmpKw8=
 		</data>
 		<key>Headers/AuthorizationManagerImpl.h</key>
 		<data>
-		rEjq3eJkcIrHjxZVGFd68L1sSWg=
+		TnACmQSxzl8ycaKDJ3SvuqZ03bE=
 		</data>
 		<key>Headers/BackoffAlgorithmHelperBase.h</key>
 		<data>
-		RmDDKrskx0G8W2ZXLfZGH0BJXhQ=
+		NpwHTjddEvjYXSi7RJJKPht3d/M=
 		</data>
 		<key>Headers/BackoffAlgorithmType.h</key>
 		<data>
-		oULqINWZDhM3VAFqJlnae6jSQqA=
+		x2rsI7ugcJCTAz0oPCOVr77SDgI=
 		</data>
 		<key>Headers/BaseEvent.h</key>
 		<data>
-		+52GDF512ABK3sN21SboCd2w9dc=
+		V3gzfG16zS6OQlN3cvzCwf8yvjY=
 		</data>
 		<key>Headers/BasePhoneReminder.h</key>
 		<data>
-		M7eWHG9HXk4jy/BcA5/ihLIl8Po=
+		fr6ciR4oz2IAM5gK1xvpW1aDyEw=
 		</data>
 		<key>Headers/BasePhoneReminderInner.h</key>
 		<data>
-		86OS0jVeX0/c9qrSgt7MSdS3caM=
+		/Vbm+jrsnCxDr+SzBR5MnPBUmJ0=
 		</data>
 		<key>Headers/BaseReminder.h</key>
 		<data>
-		1uKCIf1CdM7QGlnuRSG7rLDCQXM=
+		8k0s7Iul88pcG4fbxaQ6dnRsuN8=
 		</data>
 		<key>Headers/BaseReminderInner.h</key>
 		<data>
-		YFPLojZN+C+cHM4pl+a0Ec+qAEo=
+		IWCcgJ5LBRItw/DJC0m6Md4i8rs=
 		</data>
 		<key>Headers/BaseSensorData.h</key>
 		<data>
-		6uwNMx3FDWWK5+GdzNVA0CQuMVk=
+		o1HcquR3iK1Wv9PEJbZmVjWM2C0=
 		</data>
 		<key>Headers/BaseTrigger.h</key>
 		<data>
-		CZ5gdnBT7fOlmZIjwf/L4cSv6gE=
+		wmCOWMTEPZOsRAKw2V6sA/Zawpo=
 		</data>
 		<key>Headers/BaseTriggerInner.h</key>
 		<data>
-		TSk6ACJwUxQ/W7VjZ2e4qD8vh4E=
+		HUDadL6VnIOFcWJ3CpV3TzXOs4I=
 		</data>
 		<key>Headers/BaseUserStateChangeProvider.h</key>
 		<data>
-		1lU8w1V7p9N0TxN4LifDYMQJydA=
+		JGYEDJajjFoAHVzzPAMgr6UFMik=
 		</data>
 		<key>Headers/BasicRouteProviderImpl.h</key>
 		<data>
-		XEiVANeHWLE1bs+XCZo4hHCBnS0=
+		6u0ZZAt+wrTdrRkO5zfWIwa+iuI=
 		</data>
 		<key>Headers/BasicRouteProviderStub.h</key>
 		<data>
-		C2Zyac/ucjDjiPrR0dUd0eRyg4w=
+		YZ4NqvNdsI9n9Rb6rrHiPd4dzBM=
 		</data>
 		<key>Headers/BatteryLeverInfoData.h</key>
 		<data>
-		f2BGYBZie6/+jdVOr4TcDNJSTeU=
+		cViahh+2xMqtyu754owAmwMXue8=
 		</data>
 		<key>Headers/BatteryStateInfo.h</key>
 		<data>
@@ -318,15 +318,15 @@
 		</data>
 		<key>Headers/BeEvent.h</key>
 		<data>
-		W64sGzelz5/APDhHeqIA0e6sZOE=
+		IFbanYi0GTZ+XkYcf4Mbj+/jMXM=
 		</data>
 		<key>Headers/BeEventTemplate.h</key>
 		<data>
-		ggtEnFWAB9CgFt6fqJqy85N/QtQ=
+		uCNwjjlDxUJmatk0j2/aH6mTJnE=
 		</data>
 		<key>Headers/BeManager.h</key>
 		<data>
-		Lk26i9iuAPrlVLwnobdyDI8pqJo=
+		dq7NyIRZtadTfec7WUmtFlv77tU=
 		</data>
 		<key>Headers/BlockingDaoFactory.h</key>
 		<data>
@@ -334,11 +334,11 @@
 		</data>
 		<key>Headers/BluetoothDeviceInfo.h</key>
 		<data>
-		xaTdkhqJWpbyw0Jn/tsQTzjyRBk=
+		W0cfHeacEMh4a+6PhKrkaVDPBlY=
 		</data>
 		<key>Headers/BluetoothDeviceSensorData.h</key>
 		<data>
-		LxuGqqdtlfHvoJAfCQrGra7xO0A=
+		L0YI8R1r1amyvu5GxGf4SW50gtM=
 		</data>
 		<key>Headers/BoundingBox.h</key>
 		<data>
@@ -354,15 +354,15 @@
 		</data>
 		<key>Headers/BuildPrefs.h</key>
 		<data>
-		hv+TXhBUobjmIr3MyrscyuDa8oc=
+		uWM2UjM6jWmq1laBVIX3R1UXx3g=
 		</data>
 		<key>Headers/BuildPrefsStub.h</key>
 		<data>
-		XlyrEWcUuNOuEJQwMM0r/6XiLY4=
+		OJs9hFOqsbmePCuQ+tYKD3ZEN0Q=
 		</data>
 		<key>Headers/CLUSTER_STATE.h</key>
 		<data>
-		Vi5osb2R7tdGx2XjFHrSElEmpa0=
+		KrQrzjTvXNNCo2wKWyhSzS0aB5s=
 		</data>
 		<key>Headers/CalendarDetails.h</key>
 		<data>
@@ -370,15 +370,19 @@
 		</data>
 		<key>Headers/CalendarDetailsProvider.h</key>
 		<data>
-		oVgQRq1Egu0uxwQCvCADleJojfs=
+		pAcfAJ36NOY8JywoaDoVpLAWVeo=
+		</data>
+		<key>Headers/CalendarDetailsProviderModule.h</key>
+		<data>
+		loYDB37p8x7+SGokxFny+GZSX6I=
 		</data>
 		<key>Headers/CalendarEvent.h</key>
 		<data>
-		7QSbAN2tB+6yadB21U8U7wLWuyM=
+		OWJpWqQzoGH0IXW5GC8usB2rJR8=
 		</data>
 		<key>Headers/CalendarEventsManager.h</key>
 		<data>
-		o+z5r1oKQJEJAFYPTYefxjnNDRE=
+		FOuGb2T4LjrgPGR9685hOcA4yPo=
 		</data>
 		<key>Headers/CalendarOperationException.h</key>
 		<data>
@@ -390,27 +394,27 @@
 		</data>
 		<key>Headers/CallReminder.h</key>
 		<data>
-		EDIP8XxtYjbuhbRVPYQ2zQMSdsQ=
+		FXJv7z0y2BmWFds9DI2hA8HsjuY=
 		</data>
 		<key>Headers/CallReminderInner.h</key>
 		<data>
-		sUJsoZiOsrShwENo7gb+cfoPcxA=
+		ld1yiZ9I+Yi59AqL071sCCADTbo=
 		</data>
 		<key>Headers/CallRemindersManager.h</key>
 		<data>
-		v4i2eadO32G0mUHZrcjjT37C1C4=
+		jwFCz3cR6PdE0576Z4CL3tw6yeI=
 		</data>
 		<key>Headers/CallRemindersMemoryStorage.h</key>
 		<data>
-		68VUJVGAuVaYYAkv8nu1W0TpR5I=
+		KxbFeYe7jUPwT8a58MIJp5wGl64=
 		</data>
 		<key>Headers/CallRemindersPersistentStorage.h</key>
 		<data>
-		cT3UFeMtzMiGVQhaUeXU655iMiY=
+		Lolm5yC67g3lhI7NnqkhRelsOpQ=
 		</data>
 		<key>Headers/CallType.h</key>
 		<data>
-		bEx6o7OxwuKztSlWb3ZcwtC/IsA=
+		+MuNMjnaXALgSjT9ATdxCPX1q8g=
 		</data>
 		<key>Headers/ChargeDataHelper.h</key>
 		<data>
@@ -418,31 +422,31 @@
 		</data>
 		<key>Headers/ChargeMethod.h</key>
 		<data>
-		clohUqdFuyQOXUFpHUn+dDMMuzU=
+		iOfjZxTDY4OfQ50CO5xG1FaPFBo=
 		</data>
 		<key>Headers/ChargeTrigger.h</key>
 		<data>
-		MkV6kj2n36agJKAiLVei7fMUkK0=
+		XKKFnUIU+nJM6Ln8Uk2Z73zqOPI=
 		</data>
 		<key>Headers/ChargeTriggerInner.h</key>
 		<data>
-		90/ZTVZSG7JTuSrtciV/X13ocfA=
+		o863Kv5ZTAjor8Y9cdu05+g/If8=
 		</data>
 		<key>Headers/ChargeTriggerType.h</key>
 		<data>
-		uHjRvHxWm5bqfOeJcozIAZrOE48=
+		GhR0wWzB6JeyW2dGJLDUK1wtw64=
 		</data>
 		<key>Headers/ChargeTriggersManager.h</key>
 		<data>
-		scwKOB9tN/hU93mriJLro2NW0mQ=
+		f4yTYX2c9n2gNlw4v3JjvnG4L9w=
 		</data>
 		<key>Headers/ChargeTriggersMemoryStorage.h</key>
 		<data>
-		JTQt3DK8+xwR3ITWO5557+sIpJY=
+		5WGxMVakqJ9xAsT6TPW81FhHfnI=
 		</data>
 		<key>Headers/ChargeTriggersPersistentStorage.h</key>
 		<data>
-		mVUrVnDaCAPRS81sAck12LEp/QI=
+		dirTamFFOM+J8H7qHQspTUyxa80=
 		</data>
 		<key>Headers/ClassFactory.h</key>
 		<data>
@@ -458,7 +462,7 @@
 		</data>
 		<key>Headers/Cluster.h</key>
 		<data>
-		OCzbxOPyBAXY5GtRZo7AzIE3vQQ=
+		iwRJzQr3nXNt2SW+wPwXKzngt2s=
 		</data>
 		<key>Headers/ClusterLocation.h</key>
 		<data>
@@ -470,11 +474,11 @@
 		</data>
 		<key>Headers/ClusterSensedPlace.h</key>
 		<data>
-		AEKYzekzLaI0IA6LlH2rUSYAQhk=
+		/yVij3n43lZCuK6e4bA2ZLnEFKA=
 		</data>
 		<key>Headers/ClusterStatistics.h</key>
 		<data>
-		32+SiXWfxn1ey6TpWw5fivUhdQs=
+		aWfioysy6OlMNvqr8q5a6Nhw9d0=
 		</data>
 		<key>Headers/ClusteringParameters.h</key>
 		<data>
@@ -510,7 +514,7 @@
 		</data>
 		<key>Headers/ContactInfo.h</key>
 		<data>
-		uCAh8Q/bWx7IAWqi5GynZrzt24M=
+		ah/78/RaGigT47FqLXRtz3Ft/VU=
 		</data>
 		<key>Headers/ConvexHull.h</key>
 		<data>
@@ -518,11 +522,11 @@
 		</data>
 		<key>Headers/Coord.h</key>
 		<data>
-		IviYrSd6toRP0h0RFv6I74Wgk+Q=
+		8M+h8HlK3ZF1NtbIsAB09Aspvcg=
 		</data>
 		<key>Headers/DBApStat.h</key>
 		<data>
-		Y7MMSMAkcpBRKYJLZkgBN0gqxpM=
+		zvpZCR8eSqx0+tfcZqSxxQOoAb8=
 		</data>
 		<key>Headers/DBConfig.h</key>
 		<data>
@@ -530,7 +534,7 @@
 		</data>
 		<key>Headers/DBLocationData.h</key>
 		<data>
-		TOZpXTVw/QMt6HCu+txrRpegNdU=
+		ubtApI4OZ1sha9JSXmWio2NGAMU=
 		</data>
 		<key>Headers/DBObjectWithOperation.h</key>
 		<data>
@@ -538,47 +542,47 @@
 		</data>
 		<key>Headers/DBOperation.h</key>
 		<data>
-		Pd43NEMcyh+S33wHh3Priq7KT2Q=
+		omwS/bNenktFCImo7ycADNjC8Fc=
 		</data>
 		<key>Headers/DBPolicyHistoryInfo.h</key>
 		<data>
-		/6LcYKV0Os7VUtdQo6/Tf4CvK4Y=
+		v+fyaak1gJLUsxuYZvl+x5TAPI0=
 		</data>
 		<key>Headers/DBPolygon.h</key>
 		<data>
-		K/ouLuFOyiip1cMjQn8fP5oUPHY=
+		LpO5gdFB6lRMumIs394vl/QFkG8=
 		</data>
 		<key>Headers/DBRefPoint.h</key>
 		<data>
-		z2PdE0DVB+7njOx0RtugCVvL9nU=
+		dhzCC2Tg3ZxfSFjcNzc3PCw1qlg=
 		</data>
 		<key>Headers/DBRepositoryFileImpl.h</key>
 		<data>
-		+U/5rM9kRxQm2jXzQPIgSPE/UqM=
+		xLQRTTZDrPvewts/SLVz9o12tnI=
 		</data>
 		<key>Headers/DBResponse.h</key>
 		<data>
-		ImtVpwTqd/cHpdvP2gXbSFV0lvg=
+		WAznRjY3ckPcVzg8+zECJ8+3TPg=
 		</data>
 		<key>Headers/DBSensorDataFile.h</key>
 		<data>
-		0UfOQKUTbgm9cbZ3Sgf2VRNr4sE=
+		VZODGHRfGV0cq0aaKZsy3NOWVB0=
 		</data>
 		<key>Headers/DBSourceDefinition.h</key>
 		<data>
-		wivZekJv5BcwJGS17MjGJEMMHYA=
+		zrqT3KI7/VoI3AxkUM7+EvAnrCU=
 		</data>
 		<key>Headers/DBVisit.h</key>
 		<data>
-		n/vRYjreKPJIxwXKRMBzXbP6VOk=
+		hSI9bMSclVoeLapd9UQ/MhU1VqA=
 		</data>
 		<key>Headers/DBWifiSignature.h</key>
 		<data>
-		OkPT42N3tfDH+CAewLlmGQtncGk=
+		XCrK3dZMfY/QdCDHlxM4xys6GeQ=
 		</data>
 		<key>Headers/DaoCommonMethods.h</key>
 		<data>
-		bOBcZPRlfMc+z/qWJPIGqyuwhK8=
+		hzHBNJ34YEGgDV0obhKlGz6sOjM=
 		</data>
 		<key>Headers/DaoFactory.h</key>
 		<data>
@@ -586,15 +590,15 @@
 		</data>
 		<key>Headers/DaoSendSyncImmediatelyStrategy.h</key>
 		<data>
-		C28bgYgcR9x68SWMC6ouCD+canM=
+		yC63YkH4ycfNrdc85ng9RHOYwjE=
 		</data>
 		<key>Headers/DaoSendSyncTimerIntervalStrategy.h</key>
 		<data>
-		7tcEhHGAVhuA451ye+r1eQSD2u0=
+		IuxvMUli58OU8J8StgWnts0cabI=
 		</data>
 		<key>Headers/DaoType.h</key>
 		<data>
-		XgxxnKAQYhIbbhOsAn7GWHRSBSs=
+		uxygsFjj1rMDm2XhdLmgizw+2BA=
 		</data>
 		<key>Headers/DaoTypeToClassConvertor.h</key>
 		<data>
@@ -602,7 +606,7 @@
 		</data>
 		<key>Headers/DataBaseControl.h</key>
 		<data>
-		KprSsvW86GWzcDH4SMIqmIlMIi0=
+		h6ORCEMBMf2shaPI3Gqkq642lRQ=
 		</data>
 		<key>Headers/DataObjectFactory.h</key>
 		<data>
@@ -610,23 +614,23 @@
 		</data>
 		<key>Headers/DateFormatType.h</key>
 		<data>
-		hA++WgaUcp4LWLZ48/HAtnkNrts=
+		z8yGGBvAuTvzucmCYTNfhv0+uHs=
 		</data>
 		<key>Headers/DefaultSQLCreateUpdateStrategy.h</key>
 		<data>
-		oEe0SD3RRJgrKc4AadXk5g9R8ug=
+		JRtj8ZD8eviQlGqu8mrxlGYlvPU=
 		</data>
 		<key>Headers/DetectedPlace.h</key>
 		<data>
-		U1wEXyceHz9caUz9ZtiYwzIWACc=
+		J7ENmuyfgiUNARetTLiCyN1Mjn8=
 		</data>
 		<key>Headers/DeviceConnectionState.h</key>
 		<data>
-		p+Zc0Ir/yH3LXrWjIEJvBwjiTsk=
+		8/lq/NqWKxtPDWkSjIcvv8xqYzw=
 		</data>
 		<key>Headers/DeviceDataAuditObj.h</key>
 		<data>
-		FoKrDD170K5F7sZhszUyiao24Lw=
+		uRVPAmQIlxjnoMsKqktISdoO+pQ=
 		</data>
 		<key>Headers/DeviceStateData.h</key>
 		<data>
@@ -634,19 +638,19 @@
 		</data>
 		<key>Headers/DeviceStateManager.h</key>
 		<data>
-		/8DztlHs0/LJfWTkI1lazesXRiM=
+		vA9yCOGyuJkqmVpd4A9n0bXD6PQ=
 		</data>
 		<key>Headers/DeviceStateManagerMock.h</key>
 		<data>
-		UsbTDhznRH3Vd3EOORvTQqaFLlM=
+		jy7ooCLBfqC0dUZe1Omqzl62t84=
 		</data>
 		<key>Headers/DeviceStateSensorData.h</key>
 		<data>
-		+oyDkbiPkMti6LKPkUXhHk3+R5w=
+		Qs2RQ5V4P7mfwzPxF1SunRu6qvw=
 		</data>
 		<key>Headers/DeviceStateType.h</key>
 		<data>
-		h8a8S2BSw08rmb1xo7fnzucu4LU=
+		STKQ97aZXPedxJhNGf5I9BRX9qo=
 		</data>
 		<key>Headers/DjClusterAlg.h</key>
 		<data>
@@ -654,51 +658,51 @@
 		</data>
 		<key>Headers/DoAtTimeBeforeTemplate.h</key>
 		<data>
-		BY3sxZhV8dy2Ly6so3Coa1ys+q4=
+		OlksQsNHzKEZrp0/hq44jCrbG5U=
 		</data>
 		<key>Headers/DoAtTimeOfDayTemplate.h</key>
 		<data>
-		b3/rsGUoxVfYJlsdbI2xEk8WglM=
+		CeoopXlR7mWpaVjZiMjOrIyi2TA=
 		</data>
 		<key>Headers/DoReminder.h</key>
 		<data>
-		z2rodtieDstBfAWBZ7aTjgdbnGg=
+		UrBoIzHQGJr7nJu/Z/HEr8dgJfI=
 		</data>
 		<key>Headers/DoReminderInner.h</key>
 		<data>
-		KllfeJoyER6LmduzRVQzLFtwNMo=
+		z6NDsIQLPHdPDTlr4Ud01TosNis=
 		</data>
 		<key>Headers/DoRemindersManager.h</key>
 		<data>
-		S8QWG8Xr8jhF6tY7d+ZV9vRWTuA=
+		No3jW13D4MebyZ79JT61njgPr1A=
 		</data>
 		<key>Headers/DoRemindersMemoryStorage.h</key>
 		<data>
-		TEMBuYoi5WpkB3xyup/uZdkx3SU=
+		eq/uJT3+DQpTygFFT9Re9LmYdpA=
 		</data>
 		<key>Headers/DoRemindersPersistentStorage.h</key>
 		<data>
-		EM8ovgyq/tv9Vw3126SNBOeGdQw=
+		p8J29695qidG6NEj28y9KL1/ITI=
 		</data>
 		<key>Headers/ETARequest.h</key>
 		<data>
-		tP3hE7U8gYbuJaih4F3PC2rYmSk=
+		hvRpvxPVbnIUBcxNsabWSczCF34=
 		</data>
 		<key>Headers/ETARequestDataObj.h</key>
 		<data>
-		220j4I2Ri+eTqOtTRM6jSo+6cVQ=
+		Qx7WCoDqFu5SEKG0dLMBPibVEnk=
 		</data>
 		<key>Headers/ETARequestResponseDataObj.h</key>
 		<data>
-		QJR88LjZbP0uhKbGmf29/5yBu80=
+		9MPc8m2pPjvK60OCqEw0FxsiwtA=
 		</data>
 		<key>Headers/ETAResponse.h</key>
 		<data>
-		tveCbqC8JfZ28QtiIH0qrVPost0=
+		qDI2V7O7jWASnH0giwW8FMeUQd4=
 		</data>
 		<key>Headers/ETAResponseDataObj.h</key>
 		<data>
-		gsGfKKJEdTGKpGdT0U84iyuoxKw=
+		XHu9vGdUHt85vWLsdMKGyCgtMFA=
 		</data>
 		<key>Headers/Edge.h</key>
 		<data>
@@ -706,15 +710,15 @@
 		</data>
 		<key>Headers/EndSuspendState.h</key>
 		<data>
-		W0SYYAF64kYXLKngWFvOMvRNpmg=
+		M9BiPRO+o2FUlqEoXNLCri+2syg=
 		</data>
 		<key>Headers/EndVipState.h</key>
 		<data>
-		0p9vfHi6N1a5FGCbaPm4m8fvs+Q=
+		LkOMfN7EW4PoIh1M16MmpMXTj0U=
 		</data>
 		<key>Headers/EtaRouteData.h</key>
 		<data>
-		GX8CqDbLGtiXLytC3Tsoci99Ykk=
+		wRGpe/pm8TSVh+PmRNOJDy3Ptvg=
 		</data>
 		<key>Headers/EventContext.h</key>
 		<data>
@@ -722,7 +726,7 @@
 		</data>
 		<key>Headers/EventIdInfo.h</key>
 		<data>
-		9C5FaJ9ZS2giF8C+7rN7V+KAwcw=
+		E6fNKi/u+JkqE6roZdoiE7wNebw=
 		</data>
 		<key>Headers/EventIdManager.h</key>
 		<data>
@@ -730,23 +734,27 @@
 		</data>
 		<key>Headers/EventTriggerType.h</key>
 		<data>
-		Lgq+Wd1F+ONK4kdZWY1e601/bng=
+		P/O6+hlzvM8WORQUQIWBlSrXXnY=
 		</data>
 		<key>Headers/EventsAudit.h</key>
 		<data>
-		yVBA9wfhvJ06r2+A7hGm4kpmx58=
+		LMGKs1rtBKqQJQgvd+w84eF32wQ=
 		</data>
 		<key>Headers/EventsClassPool.h</key>
 		<data>
-		eFrUSrUmtqNKIHKcLd89u7UaPRw=
+		xWZxYzCVl43RY8PkqsXNs6pTKhI=
 		</data>
 		<key>Headers/EventsEngine.h</key>
 		<data>
-		NYS/EBiPFRx6ApNaT9G6Yz9Wro0=
+		Vm4czj3rNMVf/LcNDPZa1FN9DpM=
 		</data>
-		<key>Headers/EventsEngineDebug.h</key>
+		<key>Headers/EventsEngineModule.h</key>
 		<data>
-		5/T3RLboTmksVtARg+/cv/rg6Vk=
+		2aCjqnXllnUDKkUBnQ01/hH5KXU=
+		</data>
+		<key>Headers/EventsEngineModuleDebug.h</key>
+		<data>
+		kh70+LKIxRvfe/KVB8En40I2R+Q=
 		</data>
 		<key>Headers/EventsFactoryInitializer.h</key>
 		<data>
@@ -754,11 +762,11 @@
 		</data>
 		<key>Headers/EventsManager.h</key>
 		<data>
-		/jy2uhpKxO0L3VteIiDioc43VfE=
+		UGzsJ5LWA/duJKzZV+k0/W9dQwM=
 		</data>
 		<key>Headers/EventsManagerDebug.h</key>
 		<data>
-		hPD8bhWtwxGTo3+vU2C2oHZz0kA=
+		7+zUFrWjnUQ+41zZKxyomwR1cl4=
 		</data>
 		<key>Headers/EventsPersistenceUtil.h</key>
 		<data>
@@ -778,27 +786,27 @@
 		</data>
 		<key>Headers/ExtendedEventTemplate.h</key>
 		<data>
-		2nL2WSvrcmquxWPmtFIGxrjXAHo=
+		EjPqGdfiZNZdDFDibLGcshOz/mk=
 		</data>
 		<key>Headers/ExtendedEventsManager.h</key>
 		<data>
-		t8dD2aXczY68CClZUQp+HNAViZE=
+		S2Io6nVcf6zmojg0zIh7fpd+RXI=
 		</data>
 		<key>Headers/ExternalEngine.h</key>
 		<data>
-		RBO5LwbeM/QcQzcdxppwRW0rapw=
+		WY8Gs3JSqTug/SNAkVK1gGQX3vI=
 		</data>
 		<key>Headers/ExternalPlacesModule.h</key>
 		<data>
-		vzyZIfLKA0h+Wkps3+SlE5Nz1pE=
+		RDeXHbt0yOdmpTNGtgOjjQ2FXZg=
 		</data>
 		<key>Headers/FakeTimer.h</key>
 		<data>
-		2vjor2YmrzTA/hSs/I0r1bKcX4o=
+		vXuiRR1efn6nEjKRw0jldHuQNBg=
 		</data>
 		<key>Headers/FilePlacesDao.h</key>
 		<data>
-		v4CilIB7LuOnZG3LT2GYd05vkQY=
+		oLGoose5XfI1a0Sb8OoCboPn7U8=
 		</data>
 		<key>Headers/FileStreamManager.h</key>
 		<data>
@@ -806,7 +814,7 @@
 		</data>
 		<key>Headers/FlowType.h</key>
 		<data>
-		TnXaf0yAJ8ghLFo05LDytGOu8fc=
+		s1ayg1shrUMw6ag6HQOGsVQ9KP4=
 		</data>
 		<key>Headers/FuseFilter.h</key>
 		<data>
@@ -814,11 +822,11 @@
 		</data>
 		<key>Headers/FusePoint.h</key>
 		<data>
-		y4MMwReWn45nnvtxqki0yjNkRaY=
+		+dfSTVRerNSK4uzEpWJOpdeJpSo=
 		</data>
 		<key>Headers/FuseSensorData.h</key>
 		<data>
-		dqkKe1eI1iFuuIc/WFwuexUT7UU=
+		q6BhtKpMDPef0xyS5LbplYVzxiI=
 		</data>
 		<key>Headers/FusedLocVisitDetector.h</key>
 		<data>
@@ -826,7 +834,7 @@
 		</data>
 		<key>Headers/GPSSensorData.h</key>
 		<data>
-		zlKjFymd+YBjsGjn12whxkjorX4=
+		LIokSLFEgNaKf8Gii8MazxNXHE4=
 		</data>
 		<key>Headers/GaussianMixtureModel.h</key>
 		<data>
@@ -834,23 +842,23 @@
 		</data>
 		<key>Headers/GenericClientUserIDDaoDecorator.h</key>
 		<data>
-		ZaBB6FS29EF5+BLjLTK+EMPgTro=
+		dTop3vgyGgPaJ4n0BFrWhm0oel8=
 		</data>
 		<key>Headers/GenericFileDao.h</key>
 		<data>
-		Sl0Ip4CnRHsnE6GagyFBD+9S6ec=
+		ngzmOSoWYmUql8hKJg+/GVwFsqU=
 		</data>
 		<key>Headers/GenericMemoryDao.h</key>
 		<data>
-		/g2YwNLISQmJRv86Qis1mWIP3GQ=
+		jEx5h6BphT5kBwT1myPNG6sAheA=
 		</data>
 		<key>Headers/GenericSQLDao.h</key>
 		<data>
-		/OYTa2J1f91qIC00ESPbAmd2TqQ=
+		R4vLir6IPSeXrhdruTXKZTxCoXQ=
 		</data>
 		<key>Headers/GenericSyncDaoDecorator.h</key>
 		<data>
-		eo/b5jexU/CSj8XwJND9cTy9ujs=
+		+skMj6Xf97zip93wlpFqc3brl/E=
 		</data>
 		<key>Headers/GeoUtil.h</key>
 		<data>
@@ -858,7 +866,7 @@
 		</data>
 		<key>Headers/GeographicData.h</key>
 		<data>
-		Dor3Z1vZNxWtrg69HBm0GdFZ7zM=
+		q3zmeITNhN/kU3EaKt8+MGN9jmQ=
 		</data>
 		<key>Headers/GmmAlgo.h</key>
 		<data>
@@ -866,7 +874,7 @@
 		</data>
 		<key>Headers/GpsState.h</key>
 		<data>
-		fBuJDckMCYVfSZIuFwn6PKuMLtc=
+		BRqwsAc25Q43Pyypxq4erBuaeew=
 		</data>
 		<key>Headers/Grid.h</key>
 		<data>
@@ -882,11 +890,11 @@
 		</data>
 		<key>Headers/HttpAuditTransmitter.h</key>
 		<data>
-		FVseuQZOlizDO6XbxpfsKxbBmA0=
+		y7pzc0DLw2a3y8DhE3B8lt/jnmE=
 		</data>
 		<key>Headers/HttpProviderNull.h</key>
 		<data>
-		FDsy66t4YSAeeqIo6ZL01ctof/E=
+		dZggCTizOh5qMuKgAMK00UCtwvY=
 		</data>
 		<key>Headers/HttpProviderSettings.h</key>
 		<data>
@@ -894,15 +902,15 @@
 		</data>
 		<key>Headers/HttpProviderStub.h</key>
 		<data>
-		IT9C29d24gCvxTIKLzYiMZdEoZM=
+		ukOAO/P8MF5Q9U4j0JEPATP00gI=
 		</data>
 		<key>Headers/HttpProviderWrapper.h</key>
 		<data>
-		wBHWbJBjf+BjfgRZJERKvhBYaZg=
+		hJ9l7J4pLsZFXO8jOsGpJ1OVbNw=
 		</data>
 		<key>Headers/HttpProviderWrapperStub.h</key>
 		<data>
-		2DB/LbJOjqI7eiRmhXsUt3rnXw4=
+		VyKMF1VnXwAqWyT48Ib+qVNjn3g=
 		</data>
 		<key>Headers/HttpSentDataInfo.h</key>
 		<data>
@@ -914,7 +922,7 @@
 		</data>
 		<key>Headers/IApStat.h</key>
 		<data>
-		rjmb8ny5v4uh55fRr1yrL/bWe1w=
+		TKhKmcvGN+p5O9RUW/EFdIjnpog=
 		</data>
 		<key>Headers/IApiUsageUtil.h</key>
 		<data>
@@ -970,7 +978,7 @@
 		</data>
 		<key>Headers/IBuildPrefs.h</key>
 		<data>
-		Hw0dwN1urQnjRW+qbT+nl12hwUA=
+		s4f2s1VVVnlZRhEi6OdRMdGWrLA=
 		</data>
 		<key>Headers/ICalendar.h</key>
 		<data>
@@ -979,6 +987,10 @@
 		<key>Headers/ICalendarDetailsProvider.h</key>
 		<data>
 		V8hwGTGfJ9e7tWXKjgIoMWNzOvo=
+		</data>
+		<key>Headers/ICalendarDetailsProviderModule.h</key>
+		<data>
+		wKR7feYvPGstq2po3Zg7TgJPWAg=
 		</data>
 		<key>Headers/ICalendarEventsManager.h</key>
 		<data>
@@ -990,19 +1002,19 @@
 		</data>
 		<key>Headers/ICallRemindersManager.h</key>
 		<data>
-		x097aZ6jJ4z6VrkG23gtB+epplM=
+		8mR2mBGGwcbjJF8VQ6hKPzcVtU0=
 		</data>
 		<key>Headers/ICallRemindersStorage.h</key>
 		<data>
-		zFCbOxlR5y6SNeOU1JAMRoG04LQ=
+		6gQBTzDQeNw9LSdpueKg6avqa0U=
 		</data>
 		<key>Headers/IChargeTriggerStorage.h</key>
 		<data>
-		WEyuI44W2gjn24qmV86lYPdzSUQ=
+		DrlIlhzn3miYPyPdye9eqinJHaQ=
 		</data>
 		<key>Headers/IChargeTriggersManager.h</key>
 		<data>
-		e/RLnRZfEQvLqa/UvlurogK9TXw=
+		PcM6kH0R9C/YvdoJohIcm43oeSg=
 		</data>
 		<key>Headers/IContentValues.h</key>
 		<data>
@@ -1038,7 +1050,7 @@
 		</data>
 		<key>Headers/IDaoSendSyncStrategy.h</key>
 		<data>
-		xvlD589x+hWFvh260mTnhWE/YvQ=
+		y4DxiDL2XiCdE0ZsfN9Q5J09+FA=
 		</data>
 		<key>Headers/IDbManager.h</key>
 		<data>
@@ -1054,7 +1066,7 @@
 		</data>
 		<key>Headers/IDetectionModule.h</key>
 		<data>
-		zGkO1jMZYq0m0/bqiecuFaw9rkE=
+		Bzlf57XbrRAdarjTT4sjxK6wocs=
 		</data>
 		<key>Headers/IDeviceInfo.h</key>
 		<data>
@@ -1070,11 +1082,11 @@
 		</data>
 		<key>Headers/IDoRemindersManager.h</key>
 		<data>
-		HtBRAZhrStosd3DKcw7NA0FDcsY=
+		6c1Q88qpXcFcPIypF1Fn0kDLbHA=
 		</data>
 		<key>Headers/IDoRemindersStorage.h</key>
 		<data>
-		FTZlPYhEeb0Iy/niz+eKB4GJJjc=
+		I7PK2XHqMGnsDIlHCl/6Q43cmQM=
 		</data>
 		<key>Headers/IEvent.h</key>
 		<data>
@@ -1096,6 +1108,10 @@
 		<data>
 		wT5lSHDwA9TNzOL6DfGp5GiGBM0=
 		</data>
+		<key>Headers/IEventsEngineModule.h</key>
+		<data>
+		hCdr3WC0RcwoFuo2GPqbjY+LOW4=
+		</data>
 		<key>Headers/IEventsManager.h</key>
 		<data>
 		zYsuh5BYgEs2wZAY8H4wFyeb6vg=
@@ -1110,7 +1126,7 @@
 		</data>
 		<key>Headers/IExternalMessageEngine.h</key>
 		<data>
-		/VSxarA2Jr0CuBY4dBeBb2qbNBk=
+		3vuJS4AMSjc0hTTdAQk4QfVODfc=
 		</data>
 		<key>Headers/IExternalPlaceListener.h</key>
 		<data>
@@ -1138,7 +1154,7 @@
 		</data>
 		<key>Headers/IHttpAuditTransmitter.h</key>
 		<data>
-		cJY+MmPU2fZNWTKtEKdWUkBfepk=
+		82UZeeIe9nDTRUPONr5fJQCEhg0=
 		</data>
 		<key>Headers/IHttpProvider.h</key>
 		<data>
@@ -1154,7 +1170,7 @@
 		</data>
 		<key>Headers/IInternalMessageEngine.h</key>
 		<data>
-		+pAeUxQNvIFxxfGjJ2GECSHGjDo=
+		WNpY+I3YyI2c3raIpQG0chYReAk=
 		</data>
 		<key>Headers/IJSONUtils.h</key>
 		<data>
@@ -1166,7 +1182,7 @@
 		</data>
 		<key>Headers/ILocationData.h</key>
 		<data>
-		4MOvK/Erfew5anwkKaHfYlCk64E=
+		aXkQG4JkxDlEvT2dlXX9cgWogeo=
 		</data>
 		<key>Headers/ILocationProvider.h</key>
 		<data>
@@ -1226,15 +1242,15 @@
 		</data>
 		<key>Headers/IMotStateDataProvider.h</key>
 		<data>
-		ZEA0CksJc+w80RpK0RX5DkdsQQ0=
+		drPP7BM8UGoGUE53Bc3IJY+wCxk=
 		</data>
 		<key>Headers/IMotTriggerStorage.h</key>
 		<data>
-		NGKbq5OckybeGMY0YE6v/FjbWk8=
+		vKLVE5LyU1caoEpiUJVNpyldSjo=
 		</data>
 		<key>Headers/IMotTriggersManager.h</key>
 		<data>
-		NbqGvuPu00WBupe0gv8Oc8huFFY=
+		N+rCGE0s2SOuRNMrywP4b23+oOs=
 		</data>
 		<key>Headers/IMotUpdateListener.h</key>
 		<data>
@@ -1250,11 +1266,11 @@
 		</data>
 		<key>Headers/INotificationRemindersManager.h</key>
 		<data>
-		C/DLHozOAq2sqDLBfwS6s85WdtQ=
+		IJNvnW+e/2M1KT2S00fxGKm+kh0=
 		</data>
 		<key>Headers/INotificationRemindersStorage.h</key>
 		<data>
-		avoTTG+SlCFSNTAqBwFhgEM/IMc=
+		4nBiSZSKl3y8eMKQ3AZykqqVf/M=
 		</data>
 		<key>Headers/IOSAuthCredentialsProvider.h</key>
 		<data>
@@ -1270,15 +1286,15 @@
 		</data>
 		<key>Headers/IOSWakeLock.h</key>
 		<data>
-		2ftN8wQo/G+A5a+9ZyC8f1N0/d4=
+		SKKUX6Sp42Ak9eyGPPV/8LfFZ/k=
 		</data>
 		<key>Headers/IPC.h</key>
 		<data>
-		DKmMGJFtXZdRs3OHw5aBAKulfmc=
+		93G8F1GXk/A7KZwY25nQeisJngw=
 		</data>
 		<key>Headers/IPeriodicDetectionModule.h</key>
 		<data>
-		Wb3wacQGMJkFc/R/9ovpK00lO1Q=
+		B/4pvtSg7izQr2Pj4687QaHjxpE=
 		</data>
 		<key>Headers/IPlaceDao.h</key>
 		<data>
@@ -1292,9 +1308,9 @@
 		<data>
 		1xFi4KHrJEGOMYYC0WxYccS48VQ=
 		</data>
-		<key>Headers/IPlaceRepoInternal.h</key>
+		<key>Headers/IPlaceRepoModule.h</key>
 		<data>
-		NXydxosqvnM3iNMBgUGNmPFcjpY=
+		l33CQ4B2zTOG240sf63M0DFkOhY=
 		</data>
 		<key>Headers/IPlacesEngine.h</key>
 		<data>
@@ -1302,11 +1318,11 @@
 		</data>
 		<key>Headers/IPlacesTriggersManager.h</key>
 		<data>
-		dE8kZi43D4Dv0GwUONzP1CXPuw0=
+		5+WwU0dkRg3C0zy8hhhWB6SIBzM=
 		</data>
 		<key>Headers/IPlacesTriggersStorage.h</key>
 		<data>
-		2CneYZO5kZ0GD5Z6zgg/SXsMrfY=
+		cZ0JqlyYmTuVRzqNuF/pi4YVcsU=
 		</data>
 		<key>Headers/IPlatformServices.h</key>
 		<data>
@@ -1314,7 +1330,7 @@
 		</data>
 		<key>Headers/IPolicyHistoryInfo.h</key>
 		<data>
-		DjIn8hBv+IHazaDizFGGlKnvOwg=
+		aHNO6vb2ncHM/5VWdafOghpZn3Q=
 		</data>
 		<key>Headers/IPolicyListener.h</key>
 		<data>
@@ -1334,7 +1350,7 @@
 		</data>
 		<key>Headers/IRefPoint.h</key>
 		<data>
-		vGiOtmkxbzw1Px3lgYpLN6/quSM=
+		dnHURGPEHdPmlNxSAbldZvjiGPY=
 		</data>
 		<key>Headers/IReminder.h</key>
 		<data>
@@ -1348,13 +1364,21 @@
 		<data>
 		eoMlfqltoypYjpM2OSpM/2NRmsE=
 		</data>
+		<key>Headers/IRemindersManagerModule.h</key>
+		<data>
+		N/36PfBOobn258GLHGv7u8UvHlM=
+		</data>
 		<key>Headers/IRemindersStorage.h</key>
 		<data>
 		x+tVgnBRxUXcHVSRf9Tn12LZR0M=
 		</data>
 		<key>Headers/IResolver.h</key>
 		<data>
-		YABh3AXAz2kj+FhY5kKi+pyRvvk=
+		BgNzjEwRLwSyTVSjeyG1dS+PZXU=
+		</data>
+		<key>Headers/IResolverModule.h</key>
+		<data>
+		Lvewtv7PbFH90nZ7N8cyeiFHyto=
 		</data>
 		<key>Headers/IRouteData.h</key>
 		<data>
@@ -1370,11 +1394,11 @@
 		</data>
 		<key>Headers/IRouteProviderInner.h</key>
 		<data>
-		p7JYxyVackvQ/mhrBD7TOudHo9Y=
+		dhz/Ycyb5UuHNfixx/TNNV7+/3g=
 		</data>
 		<key>Headers/ISdkDefaultPrefs.h</key>
 		<data>
-		9Q5VjajlNhWpKQdAUzAkDG+XdMQ=
+		f2YRSChTg0bPnlFy42Bj+uLx0Ak=
 		</data>
 		<key>Headers/ISegmentedRouteProvider.h</key>
 		<data>
@@ -1410,7 +1434,7 @@
 		</data>
 		<key>Headers/ISqlDb.h</key>
 		<data>
-		QE9DkdWoL01/pXoclNJ28ve8Ad8=
+		H5F6jawrV12K7qeBMk7QfMgiPyM=
 		</data>
 		<key>Headers/ISqlHelper.h</key>
 		<data>
@@ -1490,7 +1514,7 @@
 		</data>
 		<key>Headers/ITSOBaseDBObject.h</key>
 		<data>
-		1zjR7XrS+xA5DjiXmOeE84OkUBE=
+		GnAU+IGll9WMA1FA82pFFVkRZV0=
 		</data>
 		<key>Headers/ITSOCalendarsManager.h</key>
 		<data>
@@ -1518,15 +1542,15 @@
 		</data>
 		<key>Headers/ITSOPlace.h</key>
 		<data>
-		/kTJiLy718nD7ytObWEZj88HENY=
+		HqfPypHaxkN4pImNcnYuNkvJh0Q=
 		</data>
 		<key>Headers/ITSOSemanticPlace.h</key>
 		<data>
-		Y/TFJqlci4BGUegtEiKErDIn8KU=
+		vN5ccJ8A5OBGTjDB6GLZIJvILtA=
 		</data>
 		<key>Headers/ITSOSyncDbObject.h</key>
 		<data>
-		fqhcIuCIi/GtcXDHhzlkicBakiw=
+		Iur8uqBfcmbAGnZxTOs+74ygDxY=
 		</data>
 		<key>Headers/ITSOTimeUtil.h</key>
 		<data>
@@ -1534,11 +1558,11 @@
 		</data>
 		<key>Headers/ITimeTriggerStorage.h</key>
 		<data>
-		b6nz9lxpidUVLJkxisxNWEfSed4=
+		PcFUCDaBQmNtESMHiBC6pHw0iFc=
 		</data>
 		<key>Headers/ITimeTriggersManager.h</key>
 		<data>
-		QmKrK67W6VY0X31tfTDCYmJpcEo=
+		glvXOa1OMcJTTLVfP6vS5l0mR8M=
 		</data>
 		<key>Headers/ITimeUtil_ISO8601.h</key>
 		<data>
@@ -1578,15 +1602,15 @@
 		</data>
 		<key>Headers/ITriggersManagerInner.h</key>
 		<data>
-		aDbQd048FfOvme2LblnqFKUV7AI=
+		ksIbI3gIXl6f4WXc/FivC7bBTY4=
 		</data>
 		<key>Headers/IUserPrefs.h</key>
 		<data>
-		fYz/QYIxdOOQH/QTU7mPa7mjKQI=
+		RdVdPNqTx2kVqWSVKG9xuL7etgA=
 		</data>
 		<key>Headers/IUserStateAuditManager.h</key>
 		<data>
-		WSUvYD914p2740BYWSFO0j2FOxM=
+		Nw8krpcBMd9fQPKYYsyaukrcg0k=
 		</data>
 		<key>Headers/IUserStateChangeListener.h</key>
 		<data>
@@ -1598,23 +1622,23 @@
 		</data>
 		<key>Headers/IUserStateFilter.h</key>
 		<data>
-		SkHXLjUx7JGFSbJa01RNFrUTMwY=
+		RE2MaGnNo/gVjsVX1YFXOWRWF5o=
 		</data>
 		<key>Headers/IUserStateManager.h</key>
 		<data>
 		U98you9k1m2wq4KlmIqXbrmjIDo=
 		</data>
-		<key>Headers/IUserStateManagerInternal.h</key>
+		<key>Headers/IUserStateManagerModule.h</key>
 		<data>
-		XOU9KSV91cME/Yz2LqiyJoB8kZE=
+		lmXjQiTPv6LhKCgIagN8gW5D3VY=
 		</data>
 		<key>Headers/IUserStateMonitor.h</key>
 		<data>
-		5OolcKgaxdDK98Rd1wW6VEbAhfs=
+		e8FU831WkoNWoZz5uNx6B45f9hI=
 		</data>
 		<key>Headers/IVipStateDataProvider.h</key>
 		<data>
-		qmdqmzE9OzMU1uDyIo38Aq9vbLI=
+		JHfBBUlmLuidnQc11lGlh8gdsRA=
 		</data>
 		<key>Headers/IVisitDetectorImpl.h</key>
 		<data>
@@ -1622,7 +1646,7 @@
 		</data>
 		<key>Headers/IVisitEntry.h</key>
 		<data>
-		bTC+EJyXX5hD/eex/TmAP/Dxq8s=
+		rZEijNF0e++Ek+CaEseqAXzzvB0=
 		</data>
 		<key>Headers/IVisitInPlaceListener.h</key>
 		<data>
@@ -1638,7 +1662,7 @@
 		</data>
 		<key>Headers/IWifiSignature.h</key>
 		<data>
-		s3qftABV2RaK+9wPoKOA8G+rJFQ=
+		RyrNuQaLJPDbyZxZ/50h8DYCF5I=
 		</data>
 		<key>Headers/IllegalNumberException.h</key>
 		<data>
@@ -1646,31 +1670,35 @@
 		</data>
 		<key>Headers/ImportanceType.h</key>
 		<data>
-		hVsOgoMjKKH1P70u0Tf3+IWchho=
+		cwOcwHrWcN+VwuEHrs778GoITF4=
 		</data>
 		<key>Headers/InPlaceConfidence.h</key>
 		<data>
-		Sk3s9xdPcW1QvBeJO3NMtYI261A=
+		bwBCrGA3JJjLiDwjQZNpmEZF4dk=
 		</data>
 		<key>Headers/InProgressState.h</key>
 		<data>
-		g2W3dCNHuZ2RAYBR0z3FgPNrXTg=
+		XdmVTRPLOAV+2nqUUEUn6WITpCk=
 		</data>
 		<key>Headers/InnerMessageType.h</key>
 		<data>
-		BdZqsR/rX3xIxfIzZpJGXrRlQO4=
+		SqL+g4HFywH5PQVOPA/1MnIm1Qc=
+		</data>
+		<key>Headers/InstanceFactory.h</key>
+		<data>
+		hotR0FZPQUrQJw+1JAnIJW61q28=
 		</data>
 		<key>Headers/InternalEngine.h</key>
 		<data>
-		LppN1VsBjWAZ/SJnXYW0RtOAqo4=
+		Zt/uKo/g6/roKPKwDV7+po1I57I=
 		</data>
 		<key>Headers/J2SESensorsEnginePlatformImpl.h</key>
 		<data>
-		fpLwdMplFHbMOmc9u/hIzFqvlkk=
+		X8C7aXDW5sF9YKn4J45RhAWZj4o=
 		</data>
 		<key>Headers/J2SESystemUtils.h</key>
 		<data>
-		UL/BLgW/w9FG8WhiyBiX3j/ApMk=
+		eQluj5tnUObPyeUCVDs1QYkSudI=
 		</data>
 		<key>Headers/JB.h</key>
 		<data>
@@ -2034,11 +2062,11 @@
 		</data>
 		<key>Headers/JavaAlarmManagerDebug.h</key>
 		<data>
-		KHvnfGsJTb8NWFssoE5AmYX556Q=
+		yO1vrAdCo7kXuayZqs3iQsU3j48=
 		</data>
 		<key>Headers/JavaCalendar.h</key>
 		<data>
-		Rl9L7UKZcN/4zWc2Y4j9w2BjH24=
+		oQvCGRFyCgR48MvW3HAa/upX6yc=
 		</data>
 		<key>Headers/JavaCommonFactoryInitializer.h</key>
 		<data>
@@ -2046,7 +2074,7 @@
 		</data>
 		<key>Headers/JavaTSOLogger.h</key>
 		<data>
-		/rqFgZXQ0yvTCe/Q3tZncipeAMw=
+		UtCWn0gpG9RWSbETHsclOslNggY=
 		</data>
 		<key>Headers/JavaTSOPlacesFactoryInitializer.h</key>
 		<data>
@@ -2054,15 +2082,15 @@
 		</data>
 		<key>Headers/JavaWakeLock.h</key>
 		<data>
-		WcPW+nUN+npU3SFR+kdcV2waypU=
+		s+7O3kvCVhT2kO8xH5uptkjXrp8=
 		</data>
 		<key>Headers/LOG_LEVEL.h</key>
 		<data>
-		woIME2cpD06JKi90NPW0DhWmk+4=
+		cvhFdJHBQmqpjPZt//pLN2CXhrY=
 		</data>
 		<key>Headers/LocVisitState.h</key>
 		<data>
-		la0gfXb2HPgKRSjOmV25GxzZKAI=
+		hdhWEetTAofrJZdjNZD2TCBQFsI=
 		</data>
 		<key>Headers/Location.h</key>
 		<data>
@@ -2070,11 +2098,11 @@
 		</data>
 		<key>Headers/LocationApi.h</key>
 		<data>
-		JiKwM0hK7TnRx/sS9dL/veYYm6A=
+		AXY+OXieoNdhHnJUE9FL0zjM8Ts=
 		</data>
 		<key>Headers/LocationBaseSensorData.h</key>
 		<data>
-		dImf5bXJgyWStzNCHJ0mwM7fQRk=
+		mRA5SOhXHlzMrI8i5kgex6qkIQI=
 		</data>
 		<key>Headers/LocationBuilder.h</key>
 		<data>
@@ -2082,7 +2110,7 @@
 		</data>
 		<key>Headers/LocationCluster.h</key>
 		<data>
-		7ik1KPHHLB5mJ/x5PzO8PP/zPlM=
+		fE06er2FQgk+Ig7C7keXDjWtLok=
 		</data>
 		<key>Headers/LocationClusterAgent.h</key>
 		<data>
@@ -2090,7 +2118,7 @@
 		</data>
 		<key>Headers/LocationData.h</key>
 		<data>
-		l4ANibJ7Fb3PvX6sHZdcWr8/TL0=
+		IGS+Evn0pkrx0kcFEcWxRijdu/E=
 		</data>
 		<key>Headers/LocationProvider.h</key>
 		<data>
@@ -2098,7 +2126,7 @@
 		</data>
 		<key>Headers/LocationProviderDebug.h</key>
 		<data>
-		H6/WGtJWXOK8sG6B0NgUBTtQKgs=
+		bodLOWYT1X2ktiaKdrBWXPacABM=
 		</data>
 		<key>Headers/LocationServicesStateInfo.h</key>
 		<data>
@@ -2106,7 +2134,7 @@
 		</data>
 		<key>Headers/LocationType.h</key>
 		<data>
-		/xoDg2LZ1xzhdlMSuJkelCtWn5o=
+		6/xfmC0L0I/dPh5yrz4FX66eyGk=
 		</data>
 		<key>Headers/LogFilePrefs.h</key>
 		<data>
@@ -2118,19 +2146,19 @@
 		</data>
 		<key>Headers/ManualDetectedSensedPlace.h</key>
 		<data>
-		C7ytwO26qvC2kdhhI0eVHN0+1uM=
+		d379+OK/h07opLQ7m0uuVOHLCBI=
 		</data>
 		<key>Headers/ManualPlace.h</key>
 		<data>
-		zgY/Tmy72x5cx6jmDdGVIVutryM=
+		fBjBFWDqU608oMQLzwlYv2MPoS0=
 		</data>
 		<key>Headers/ManualPlaceSource.h</key>
 		<data>
-		3k1bCoTKRQo6+tL0VTcEa42IJfs=
+		0jHkBKImVc3m9aGbdrmVFil8LwA=
 		</data>
 		<key>Headers/ManualSensedPlace.h</key>
 		<data>
-		JeHlHP7v11y1N41sCk/0s95qiFs=
+		iOHg0YAGw2aSwdhG0Mnzy3cgUes=
 		</data>
 		<key>Headers/MapConversionUtils.h</key>
 		<data>
@@ -2142,7 +2170,7 @@
 		</data>
 		<key>Headers/Mat.h</key>
 		<data>
-		1mEUcvPk/O7HYXNv3kuIl+Jc/2k=
+		tmZQ0Uo4EPBIAmCa+0Zu+p03E+g=
 		</data>
 		<key>Headers/MeetingAttendee.h</key>
 		<data>
@@ -2154,15 +2182,15 @@
 		</data>
 		<key>Headers/MeetingReminderType.h</key>
 		<data>
-		3ZK1alklQbCVt+DFMV4VvKAHU3o=
+		VDFqsW0UBDUzs00LD4SNmGkyaZ4=
 		</data>
 		<key>Headers/MeetingResolverType.h</key>
 		<data>
-		Za9T1hoURcjAkHH5LjXXJdXFF6g=
+		ZoD7OxUjP66/GWA1zW6EhfUbPX8=
 		</data>
 		<key>Headers/MemoryPlacesDao.h</key>
 		<data>
-		b8s2slDxKc9+eQCtu96pyMJtIOk=
+		NHDyYlCzoCZvQ4eaLu2W0CyECl4=
 		</data>
 		<key>Headers/MemoryRepository.h</key>
 		<data>
@@ -2170,15 +2198,15 @@
 		</data>
 		<key>Headers/MemoryRepositoryFileImpl.h</key>
 		<data>
-		LL0O5snSwhURliZgi4FMb1TmeFg=
+		ewEpmRjmBPkG2fIwLSDToSnCqVM=
 		</data>
 		<key>Headers/MessageImpl.h</key>
 		<data>
-		uj4edhaZ4x44/HufauloJxSKa/4=
+		otJA/XMp64CUn0YBJ0eJdzB6ZXw=
 		</data>
 		<key>Headers/MessageType.h</key>
 		<data>
-		xEohu4krUdVVJ3IGneAZ6Wq+h5Y=
+		EKMKwz9+B1lR4GyE1vTa7BkjN4o=
 		</data>
 		<key>Headers/MessageWithValidation.h</key>
 		<data>
@@ -2190,19 +2218,19 @@
 		</data>
 		<key>Headers/ModuleProduct.h</key>
 		<data>
-		UzSDh3fgZE/02OJWt/RccwjCIFI=
+		UA4MJv0hf2MBP7YJJvOLcsjf07Q=
 		</data>
 		<key>Headers/ModuleProductType.h</key>
 		<data>
-		4/wXS3r7lTFbDIvwSPnCy6GED9M=
+		lpZYc3AHN2euBUDrJrvKtglfxJk=
 		</data>
 		<key>Headers/ModuleState.h</key>
 		<data>
-		uqI4NtBRpn0FG20rT9L4hhyBEag=
+		eA7w2o6ISVaiFA+UaZOUypJe1fk=
 		</data>
 		<key>Headers/ModuleType.h</key>
 		<data>
-		3+L/oqt/gwEanQ2PLrQwEm1nYyI=
+		rXFz6RaOeNiGAFGTeHo5u2vbOjQ=
 		</data>
 		<key>Headers/ModulesInitFacade.h</key>
 		<data>
@@ -2210,7 +2238,7 @@
 		</data>
 		<key>Headers/Mot.h</key>
 		<data>
-		5NylJ0gCdQVPiDpgPv6AXXNp4Fw=
+		KyyFNSVa2SF4ho/ckRTwJNsdgLM=
 		</data>
 		<key>Headers/MotBtHelper.h</key>
 		<data>
@@ -2222,23 +2250,23 @@
 		</data>
 		<key>Headers/MotDetectionModule.h</key>
 		<data>
-		XxaxcnwoLv8maaCpCSvvsJKK41I=
+		EcB1NDm4zrX83MpClPY9G5DpvZY=
 		</data>
 		<key>Headers/MotDetectorV2.h</key>
 		<data>
-		9V36e2/sRPAgVjWxyV572KVSylM=
+		LiKpYnVdHtAJjT83pQ/1wloe0is=
 		</data>
 		<key>Headers/MotDetectoriPhone.h</key>
 		<data>
-		0lS7bIE2iTqcMmZdg17hQe0ZopQ=
+		kEMybnPyZbWX8y44J22IceKyvV4=
 		</data>
 		<key>Headers/MotDetectoriPhoneNaive.h</key>
 		<data>
-		Lffvclxilc+Bod3lI+TVt/zhX0c=
+		8HGwAXUdsIFqCmwsIBa/d+SdwtE=
 		</data>
 		<key>Headers/MotInfo.h</key>
 		<data>
-		u08F3x39fCTumlAWiuDLjFqSCWc=
+		gL5a/cmK7Sa+QmMHcayPrnDoaI0=
 		</data>
 		<key>Headers/MotLocationHelperIphone.h</key>
 		<data>
@@ -2246,39 +2274,39 @@
 		</data>
 		<key>Headers/MotRecommenderImpl.h</key>
 		<data>
-		aj/JjEVA5Njka6Jhhp12gbntAdE=
+		xTw8UJ+n506UGASfRY3FVBCze/Q=
 		</data>
 		<key>Headers/MotStateDataProvider.h</key>
 		<data>
-		4xsrXUV85SplcsfcdNEdEcKNkzg=
+		0DjWWI9YCUtvmkXnqsiG3Dg7xxw=
 		</data>
 		<key>Headers/MotTransition.h</key>
 		<data>
-		dX3CryNJjnbLGzvtm5sg5jHhtYA=
+		5xD8+LyQvtQFEn05/nElXS/aGXw=
 		</data>
 		<key>Headers/MotTrigger.h</key>
 		<data>
-		cSh2088FWbqypF4/aET3BmZ/VW4=
+		7UKsGFq1CaldhQM4MBjgf+l7dqE=
 		</data>
 		<key>Headers/MotTriggerInner.h</key>
 		<data>
-		nhtyfAfkL4ZJsilCnRGNmuM/daE=
+		zemJHxLYCXAhsuqjfqpKkANAxrk=
 		</data>
 		<key>Headers/MotTriggersManager.h</key>
 		<data>
-		k8EKoQGJQMkt2ZU5tF4ogDN0wHg=
+		usKB3k5lJPjaEatmAU21Qql5Yew=
 		</data>
 		<key>Headers/MotTriggersMemoryStorage.h</key>
 		<data>
-		dPF/piEOPepNjVOwu5SYlIsKY4s=
+		OEmmL9LpqbF4ZV2hWAVNI+stPf8=
 		</data>
 		<key>Headers/MotTriggersPersistentStorage.h</key>
 		<data>
-		St2uJffCl+1A8/+eTCS8D5xHqSg=
+		wCgr0ZEIXjVEL+B//yWRbWqMkLY=
 		</data>
 		<key>Headers/MotType.h</key>
 		<data>
-		xRuWWNLG5p8wI2ZdVHneB4mmHy4=
+		DjAnlTw7VKSydXoS7AS6ewytrgg=
 		</data>
 		<key>Headers/MultiInstanceFactory.h</key>
 		<data>
@@ -2350,11 +2378,11 @@
 		</data>
 		<key>Headers/NetworkConsumptionData.h</key>
 		<data>
-		LApBx5Z+JNDV5vcu3T0apqGm3Mc=
+		q5RAstDf6uR/fwc6uOch7WfsfTs=
 		</data>
 		<key>Headers/NetworkState.h</key>
 		<data>
-		9IhssLJVz3gS8qAbfy4xFQIIMUQ=
+		IDB1iknlF9tRPuKIOEWI8VKUCPM=
 		</data>
 		<key>Headers/NetworkStateInfo.h</key>
 		<data>
@@ -2362,19 +2390,19 @@
 		</data>
 		<key>Headers/NextNotificationCalculator.h</key>
 		<data>
-		phXacr3UYyRnwIHzqQOh3Ji+1Z8=
+		ShPF8F5SYhGymyY7FfinkuUJ6v4=
 		</data>
 		<key>Headers/NextNotificationCalculatorDebug.h</key>
 		<data>
-		SbtN90xOP/frDJREsHid5Nk+FvY=
+		rW7whNp2BRcVTWt42waA4RF77e0=
 		</data>
 		<key>Headers/NextWakeUpCalculatorNaiveImpl.h</key>
 		<data>
-		KrRw4vjGpxLDiXcWzlQ4cz6NKRI=
+		B2SuTKnG/YHCeEu4KIee0xBEiAM=
 		</data>
 		<key>Headers/NextWakeUpCalculatorStub.h</key>
 		<data>
-		hOFRojlygt8AF1cx+yZ2Xidm9K8=
+		JADvZ8DLM/es9aavmPKDTokbgV4=
 		</data>
 		<key>Headers/NextWakeUpPrefs.h</key>
 		<data>
@@ -2382,7 +2410,7 @@
 		</data>
 		<key>Headers/NightVisitCondition.h</key>
 		<data>
-		ASsAEFPdrn7HMIu4EChEdftFtac=
+		TYfzkXOPwYViItajULC5JcWGgjE=
 		</data>
 		<key>Headers/NonBlockFuture.h</key>
 		<data>
@@ -2390,39 +2418,39 @@
 		</data>
 		<key>Headers/NotificationReminder.h</key>
 		<data>
-		iUzE0IHFHhK+HVtKmhxIpYAnvnY=
+		g5GmIyov0zu23L599wU4L3mnKTU=
 		</data>
 		<key>Headers/NotificationReminderInner.h</key>
 		<data>
-		EGplA3cNZZusW/zhEmxtGnwAfaY=
+		NV1QF590rdBLm9aukoMYhZvtWo8=
 		</data>
 		<key>Headers/NotificationRemindersManager.h</key>
 		<data>
-		QvJuwYuNqXdFO3PaPmAIE0VwzEg=
+		e1jxC+AR1gC2jpVZVmTfppVnPX0=
 		</data>
 		<key>Headers/NotificationRemindersMemoryStorage.h</key>
 		<data>
-		/Rg6+0mVNmGjgeCqQj8X4IqZiXY=
+		QHnC9HbHkVKSEfVNH0A6SOEjbww=
 		</data>
 		<key>Headers/NotificationRemindersPersistentStorage.h</key>
 		<data>
-		XOnX6fp/ASmD93Rc1Ef3qi47OFk=
+		bOfnODCpEqMEChaWITMAXejq9DY=
 		</data>
 		<key>Headers/NotifyAtTimeOfDayTemplate.h</key>
 		<data>
-		QQ05McTf43V2B6yz5V4jbEi+B4s=
+		YGctDWFbTzJVIkDsdNEkiIBlCrg=
 		</data>
 		<key>Headers/NotifyType.h</key>
 		<data>
-		NP/4dWDtVFTWME8KiCl29EEOJIQ=
+		RdAdjPpv6jgGFcnto+4pazu3qJI=
 		</data>
 		<key>Headers/NullReplaySensor.h</key>
 		<data>
-		N9Efae7ukOaB9A+Np50yrWlY66A=
+		G7e6DX5LTHgqVn8idBEZwiP/CA8=
 		</data>
 		<key>Headers/NullSensorsEnginePlatformImpl.h</key>
 		<data>
-		zNAVjLc2bfpQ8MBD63jQZltvoEk=
+		yER0KAMcXTBsgDJDJd/wZf9y27Q=
 		</data>
 		<key>Headers/ObserverHelper.h</key>
 		<data>
@@ -2430,7 +2458,7 @@
 		</data>
 		<key>Headers/PhoneNumber.h</key>
 		<data>
-		QMl3WAt4sC9gvkQDkAWm54FObIY=
+		8Z3F7pThLUCi7aM0C8QNEPWHnNY=
 		</data>
 		<key>Headers/PhoneStateInfo.h</key>
 		<data>
@@ -2438,7 +2466,7 @@
 		</data>
 		<key>Headers/PlaceAp.h</key>
 		<data>
-		viMpaekpIh4syhZsS1gEBjkhbns=
+		cwiQyvqW2u8sTUv8xnpja1gTmJE=
 		</data>
 		<key>Headers/PlaceDataHelper.h</key>
 		<data>
@@ -2446,7 +2474,7 @@
 		</data>
 		<key>Headers/PlaceDetectionModule.h</key>
 		<data>
-		qcG3Q8phNX0sqpb9KvuKq6H1QWY=
+		Yi5fntyvGzOsMPf3EV0OBThb43g=
 		</data>
 		<key>Headers/PlaceDetector.h</key>
 		<data>
@@ -2454,23 +2482,27 @@
 		</data>
 		<key>Headers/PlaceID.h</key>
 		<data>
-		z5N9SBDkr0J/6wex+Oj4VUUtIZU=
+		Fe38S/S938Y3+C/nZ2sSsVjwsYw=
 		</data>
 		<key>Headers/PlaceReDetection.h</key>
 		<data>
-		7PqrfIHWIv/0AiX3eBxQIpMlxUk=
+		yUttlrUCDEVVHqpfIY1ZR82L6KI=
 		</data>
 		<key>Headers/PlaceRefPoint.h</key>
 		<data>
-		34JBGTtiORUeGz+3ZtBupvAb2ww=
+		ypKcMrZE720MsCXthQSmYyeJ6HM=
 		</data>
-		<key>Headers/PlaceRepoImpl.h</key>
+		<key>Headers/PlaceRepo.h</key>
 		<data>
-		zUUmLO0pvW6K9d7aiHkkD/lNKnA=
+		WbHYlmtm0PSNvPMXr2HARns+ajA=
 		</data>
-		<key>Headers/PlaceRepoInternalMock.h</key>
+		<key>Headers/PlaceRepoModule.h</key>
 		<data>
-		dSVBa1dl6TX6/u73xTXDtLD6Ce8=
+		aLg6ighHfhA6+cfOI8ixxQkGfFM=
+		</data>
+		<key>Headers/PlaceRepoModuleMock.h</key>
+		<data>
+		2Om+TsPChhJsrqHk/or9zVkMbIA=
 		</data>
 		<key>Headers/PlaceSignatureAlg.h</key>
 		<data>
@@ -2478,35 +2510,35 @@
 		</data>
 		<key>Headers/PlaceSnoozeOption.h</key>
 		<data>
-		1DhoGu6h5057lYm/aE1++6GgpSE=
+		cHzzx0VZGeEll0VlcC8bfl1nUyc=
 		</data>
 		<key>Headers/PlaceStatus.h</key>
 		<data>
-		eo3OQoD3BIWpcVKdzlBh+KI38QA=
+		ncUb8otg9Jg3vXn+qMlkjxqtXYo=
 		</data>
 		<key>Headers/PlaceSyncDaoDecorator.h</key>
 		<data>
-		DanHvFK9P8LzdwXMpeocte20FMc=
+		/8wnpXTEbvvjcODa7T5RdwZFPLg=
 		</data>
 		<key>Headers/PlaceTrigger.h</key>
 		<data>
-		sIxSa9MVmpgkWNUSADmRlbH5ROw=
+		GBwEgc/eNbMiJDRw9NxjZciA940=
 		</data>
 		<key>Headers/PlaceTriggerInner.h</key>
 		<data>
-		ZpgKJDCmVInoKRhFXMxPzy6U1uU=
+		4x+5igKt7ZXBE7PLYd425po1kJ0=
 		</data>
 		<key>Headers/PlaceTriggerType.h</key>
 		<data>
-		VbONxNdbOcHIgnGATLhYM7ewxQg=
+		2cTdMc2o90yzSzP6kejeUUPQrtg=
 		</data>
 		<key>Headers/PlacesActivityType.h</key>
 		<data>
-		7T0U0yMMe45yZrYqT8jZM0IXKqg=
+		5vuvubjqYse+pkLXa0tJAk9kNFA=
 		</data>
 		<key>Headers/PlacesClientUserIdDaoDecorator.h</key>
 		<data>
-		kssPD/h2gX5V0spGwihEJNbj4U4=
+		/i1UdH2vDSpnxPw4cw+CER1UorY=
 		</data>
 		<key>Headers/PlacesConfig.h</key>
 		<data>
@@ -2514,11 +2546,11 @@
 		</data>
 		<key>Headers/PlacesDao.h</key>
 		<data>
-		IygoN37CwW/3hBJeKCVw57E1Ksc=
+		wadOYZn8LuflL4IvoEXqAB/sA3M=
 		</data>
 		<key>Headers/PlacesEngineImpl.h</key>
 		<data>
-		v53kX//d081QEbjPKVuFnfSqHnA=
+		wd421AH7cV1l78sxQs8QBDMWNuA=
 		</data>
 		<key>Headers/PlacesTimeFormatUtil.h</key>
 		<data>
@@ -2526,15 +2558,15 @@
 		</data>
 		<key>Headers/PlacesTriggersManager.h</key>
 		<data>
-		OtHqVKWYn0KC0TNRc08/xI7yJQM=
+		Qc+ZsZEGsyo//DYeLUzyU/R74IE=
 		</data>
 		<key>Headers/PlacesTriggersMemoryStorage.h</key>
 		<data>
-		kjADt0eGtPAa5gJ8xtoi0v8z8z4=
+		atVWcCz+/X5nSi7jItFlniiN5qA=
 		</data>
 		<key>Headers/PlacesTriggersPersistentStorage.h</key>
 		<data>
-		/BU8/YoQVy6ikK3B1EyAjtfRIhg=
+		NfpRNJiFZftet7WlgtJb58aHUaw=
 		</data>
 		<key>Headers/PlacesUtil.h</key>
 		<data>
@@ -2562,11 +2594,11 @@
 		</data>
 		<key>Headers/PolicyHistoryInfo.h</key>
 		<data>
-		SvIBZ0BdOvMM8Ck/P1rHLA1B18o=
+		fq5Mn84ZAqFabySx2Wl3L7r0fQE=
 		</data>
 		<key>Headers/PolicyMode.h</key>
 		<data>
-		p6vqjbRRTX52PhtjRj2pqklTyB4=
+		x/MVlGgTYMXJSWn8Lsm1V+UhUmM=
 		</data>
 		<key>Headers/PolicyStats.h</key>
 		<data>
@@ -2574,11 +2606,11 @@
 		</data>
 		<key>Headers/Polygon.h</key>
 		<data>
-		maLT8Ww4yZmCavdkzMuU3FhNGL8=
+		e/XrqlJnks5r/JTsgvzcDjMfpuw=
 		</data>
 		<key>Headers/PrefsFileType.h</key>
 		<data>
-		w5MOSIJ+OYZ7tgYDGjWfWybiEHA=
+		TTYgYrAItcBeMLnUHkMZ1UrHVDc=
 		</data>
 		<key>Headers/PrefsStorage.h</key>
 		<data>
@@ -2586,7 +2618,7 @@
 		</data>
 		<key>Headers/PrivacyType.h</key>
 		<data>
-		urz2YPbo0rhaeY+EHyR/kUk7L7Y=
+		DaBhkytBQQdrcxWb6JnS3IWED0I=
 		</data>
 		<key>Headers/ProcessedClusterData.h</key>
 		<data>
@@ -2598,7 +2630,7 @@
 		</data>
 		<key>Headers/ProxyTSOLogger.h</key>
 		<data>
-		wm2A2rmM5wWFIduMnV/oEoKTywA=
+		+8H9fJWysoTxxbbEZGoruEc70yU=
 		</data>
 		<key>Headers/Quad.h</key>
 		<data>
@@ -2618,7 +2650,7 @@
 		</data>
 		<key>Headers/ReceiverSensorsDefaultRequest.h</key>
 		<data>
-		FQheYbVXG9SYDsTnPOPbg62+h0U=
+		qvlOyH0F7nLLJanqDeqiw34Dvac=
 		</data>
 		<key>Headers/ReceiverSensorsRequest.h</key>
 		<data>
@@ -2626,19 +2658,19 @@
 		</data>
 		<key>Headers/RecurrenceDetails.h</key>
 		<data>
-		EOWOpU3cD3PpQ17eYOtBHVgXHSU=
+		Ii5cOF32kT7ZwYPV+LP1PGOeqEU=
 		</data>
 		<key>Headers/RecurrencePersistenceData.h</key>
 		<data>
-		E5G0HlQnmMgXx8m8DR71eaN+G14=
+		BRhaJGw7yjm45bE4DcamaOhe6rs=
 		</data>
 		<key>Headers/RecurrenceType.h</key>
 		<data>
-		G9OLslrvCdvN/AHWBC/AlljubWA=
+		+XF3vu8j+UPfQZlU1iTTrkkj9FA=
 		</data>
 		<key>Headers/RefPoint.h</key>
 		<data>
-		5XWyv4kKzjkHOah2HIXqUBEA15w=
+		obINZoar1k/xjUgdKA9K14WVW9Y=
 		</data>
 		<key>Headers/ReminderBuildException.h</key>
 		<data>
@@ -2646,23 +2678,23 @@
 		</data>
 		<key>Headers/ReminderBuildExceptionType.h</key>
 		<data>
-		EE5A1zya7TzMPB7yra/XC8gepto=
+		pJk0iVPml05GfhrefFlHbqkG/fc=
 		</data>
 		<key>Headers/ReminderEndReason.h</key>
 		<data>
-		X9+MNR/Fw2L9I8zvOR11nBZ78lM=
+		u8y8eJNrZL0kmC7lZl/clY9jTDI=
 		</data>
 		<key>Headers/ReminderStatus.h</key>
 		<data>
-		SlNB0FauTSsFgbT4PlQ7+rW/Vuk=
+		rCaak9rftGBO7iSLyEtqVBoXsKA=
 		</data>
 		<key>Headers/ReminderStatusInner.h</key>
 		<data>
-		zZ0Gg9wnZgE1C4wS96ChKrPKas8=
+		NhIRtiR7UyHGaA556xTFoKLDnDo=
 		</data>
 		<key>Headers/ReminderType.h</key>
 		<data>
-		uqzlf+G/1PtXF8zjvVBhxtcvzZs=
+		o1wD5KM8RpgGm4tqvstIKYWQuFM=
 		</data>
 		<key>Headers/RemindersFactoryInitializer.h</key>
 		<data>
@@ -2670,11 +2702,15 @@
 		</data>
 		<key>Headers/RemindersManager.h</key>
 		<data>
-		wBrmXmQQqJApYidNYDhnHJ9ZOe4=
+		XKoGXI7tOy1Tpxm9iHy5CSRH8dQ=
 		</data>
-		<key>Headers/RemindersManagerImpl.h</key>
+		<key>Headers/RemindersManagerFactory.h</key>
 		<data>
-		d7X9As0zlOb3eUDeWaU6hytXxVY=
+		KSMtRJvtdnG0MsNBtmEmgWwaCMo=
+		</data>
+		<key>Headers/RemindersManagerModule.h</key>
+		<data>
+		PO07Id+iqbcNVTGGTV0q+CDoqmE=
 		</data>
 		<key>Headers/RemindersResult.h</key>
 		<data>
@@ -2682,7 +2718,7 @@
 		</data>
 		<key>Headers/ReplayMode.h</key>
 		<data>
-		T/aFwvXRakgW1n+E9wbEy5p8hjE=
+		SSegu5AAM3wucILgT3ZREYh1yfA=
 		</data>
 		<key>Headers/ResmapledFuse.h</key>
 		<data>
@@ -2690,67 +2726,71 @@
 		</data>
 		<key>Headers/ResolveBusinessPhoneResponse.h</key>
 		<data>
-		rozstNm6MHMorWC+jNtIDzZWajE=
+		yYFk1B95Qv3TRlUzBnzflykRyKA=
 		</data>
 		<key>Headers/ResolveRequestV1.h</key>
 		<data>
-		yv2L0ZIGxUv/QrMtWwbET90qSkc=
+		XOWupQAU6IWr9c7g7XotJj1iQEU=
 		</data>
 		<key>Headers/ResolveResponseV1.h</key>
 		<data>
-		Zy0hIwcwCCx/DXTfUfKmw2UlEYA=
+		MJi3w9r5jGM0OifEIN+iLX3J948=
 		</data>
 		<key>Headers/ResolvedLocation.h</key>
 		<data>
-		c4OBOBSULzzat9WVw4fNhnYNkgY=
+		ypO+78u/aBqS6zp9D/lq1kh1tmM=
 		</data>
 		<key>Headers/ResolvedLocationAttribute.h</key>
 		<data>
-		WzAEFLu3M/1AGdcfjsp+V7XwqJQ=
+		1ULU9nUUdIqrlCkUj6/wmChISAw=
 		</data>
 		<key>Headers/ResolvedLocationsResponse.h</key>
 		<data>
-		L1xDEJjhZP457SEi8rIUdQGIH4o=
+		NszEA/CpTtOy7fBRHy6fBackUlg=
 		</data>
 		<key>Headers/ResolvedPlaceV1.h</key>
 		<data>
-		nwZtPeNkhS7uKMGELouRB2Befew=
+		5V1/sCNX/VQPw9DEojDT8cRfmIY=
 		</data>
 		<key>Headers/ResolvedResultType.h</key>
 		<data>
-		K7DVY0YkRHSC1IcxW2qkdaEdyw4=
+		jDbk/ECUPBsv1O85UK54f0/ocAI=
+		</data>
+		<key>Headers/Resolver.h</key>
+		<data>
+		Pzl7Vu5lr1V9+3QC494TXCUCSl8=
 		</data>
 		<key>Headers/ResolverApiType.h</key>
 		<data>
-		dhlxf68WLv2gSRKoARvnU5NHqQU=
+		iwIf5JvoE/3LBKwxhU7MlAYnIv4=
 		</data>
 		<key>Headers/ResolverClassPool.h</key>
 		<data>
-		ITntzNZ6MTII5AWcC2vNDzGpgSo=
+		T7Yq517PbPyfKjifgkDcugPAMUg=
 		</data>
 		<key>Headers/ResolverEngine.h</key>
 		<data>
-		2G21Vks9vavpr+BkjJfx8PHqoJQ=
+		dmAUGGALcF7JoM0BoVw0HzjhsYM=
 		</data>
 		<key>Headers/ResolverFactoryInitializer.h</key>
 		<data>
 		QwJaCkUCglgy9yXNeCIaSx7deak=
 		</data>
-		<key>Headers/ResolverImpl.h</key>
-		<data>
-		dp86EtM+Zpy2MBmO4FrEzYXRkGo=
-		</data>
-		<key>Headers/ResolverImplStub.h</key>
-		<data>
-		vcn+7CHKmkwqdSMY8ZOvI8X1W8E=
-		</data>
 		<key>Headers/ResolverImplTsoSdkConverter.h</key>
 		<data>
 		hSDb1q54jFAVRZ6Al98OUe1Cyxc=
 		</data>
+		<key>Headers/ResolverModule.h</key>
+		<data>
+		xFUHyOImUe8L/ATbxh6Kp9Hm1rI=
+		</data>
+		<key>Headers/ResolverModuleStub.h</key>
+		<data>
+		IfY2TUWnIxHP6SCaQzq1TgQdcxc=
+		</data>
 		<key>Headers/ResolverSdkAuditObj.h</key>
 		<data>
-		f/+eGs65VXuSEhHFgMUUzBsNLQw=
+		WJ9IlmLStcBATHtB7cada2vjA5M=
 		</data>
 		<key>Headers/ResolverSdkRequestParams.h</key>
 		<data>
@@ -2758,7 +2798,7 @@
 		</data>
 		<key>Headers/ResourceManager.h</key>
 		<data>
-		sd4T0+zZXL4f5hh3Kma/2H4C8NQ=
+		GKb5AMFe4bTd8P0r968XyE7IDUk=
 		</data>
 		<key>Headers/Result.h</key>
 		<data>
@@ -2766,11 +2806,11 @@
 		</data>
 		<key>Headers/ResultCode.h</key>
 		<data>
-		YcY9/E0VfUabwqQkcKOklWEICR4=
+		h9g3eczs3q8ivwstozhR3/nyDHQ=
 		</data>
 		<key>Headers/ResultData.h</key>
 		<data>
-		/eMyb0sXunI1AuBHwUkw//3hvhM=
+		P8xn1Mj9mmguuhzilITZfGQUHO8=
 		</data>
 		<key>Headers/ResultEnumConverter.h</key>
 		<data>
@@ -2778,11 +2818,11 @@
 		</data>
 		<key>Headers/ResultStatus.h</key>
 		<data>
-		CF+uHGyT2iqONL7XO1QnCH1KVuc=
+		2SfdST5TGCcE4HoDE6rOlkKLkfw=
 		</data>
 		<key>Headers/RetCode.h</key>
 		<data>
-		nFV2VVVq63GcyxG+0MGOqWN/I2k=
+		7DLbxOq0NKQC6KTtWinSfqpGZXY=
 		</data>
 		<key>Headers/RouteCacheData.h</key>
 		<data>
@@ -2790,51 +2830,51 @@
 		</data>
 		<key>Headers/RouteDataObjectFactory.h</key>
 		<data>
-		qLK32JuHl8NO6N3IQSvXaZZmzoA=
+		lVnr2hQAiUzX1GGghdSHEIVEcgg=
 		</data>
 		<key>Headers/RouteDataType.h</key>
 		<data>
-		yZwNFvyPDPyPRa3vB0E/RCtWpYQ=
+		FGJ/u1iwA7n8yW9ob9XLWLBv8ME=
 		</data>
 		<key>Headers/RouteError.h</key>
 		<data>
-		tDpfdCm9Rod1Jnuk8Fy//UEhMZo=
+		NkdkjZrciAQpngbtNUZnkXT23tc=
 		</data>
 		<key>Headers/RouteErrorDataObj.h</key>
 		<data>
-		bJ9v0vaheQUyO7QL4km34Nn4c5k=
+		hIQ3dwMO4qWoK9COc8KcMR4lAiw=
 		</data>
 		<key>Headers/RouteErrorType.h</key>
 		<data>
-		VHhofhcIJqw+Ee818Idq+djtoyY=
+		JkxBPrA5w5iZcWyaaJUnLH/5Fbo=
 		</data>
 		<key>Headers/RouteInfo.h</key>
 		<data>
-		5YS7LvsmVEQdn1rEaEW9fAUPweI=
+		qVZyUFJk/U8o6EyKVVHtPzE9KDU=
 		</data>
 		<key>Headers/RouteInfoDataObj.h</key>
 		<data>
-		zfcK16PjKS+izb7Hfzr5zqPbBQc=
+		ymFvd3KUfD49hojGjx6MiIVIFr0=
+		</data>
+		<key>Headers/RouteProvider.h</key>
+		<data>
+		h90MBCL6kbTQof4PSxWS/SGaL2k=
 		</data>
 		<key>Headers/RouteProviderCacheImpl.h</key>
 		<data>
-		lx462tR/OzgQ99h1FhUaawI26cU=
+		mq6ZkjslcKzeIBKGvZc+QA69sXE=
 		</data>
 		<key>Headers/RouteProviderCacheStub.h</key>
 		<data>
-		oA5F39Ij/jq7gj7KHb4YaE1WmuQ=
+		u3Kkfcy/+qAbvc1SGiDA5OrdWYA=
 		</data>
 		<key>Headers/RouteProviderFactoryInitializer.h</key>
 		<data>
 		CTeB5rbO4b3WGIAmk29rvs6UgzI=
 		</data>
-		<key>Headers/RouteProviderImpl.h</key>
-		<data>
-		f/tIs6k4BMsHPLbGUxZH0Rym2dk=
-		</data>
 		<key>Headers/RouteProviderInnerImpl.h</key>
 		<data>
-		9UPfDHsO+hvjpEaVRWCDa+x1Lng=
+		WT58FFeU1HL4a88GmPfX6M5GjYI=
 		</data>
 		<key>Headers/RouteSegment.h</key>
 		<data>
@@ -2842,7 +2882,7 @@
 		</data>
 		<key>Headers/SDKLoader.h</key>
 		<data>
-		W+GWxhGUejhfEVs0Dq9etqTNilw=
+		eLq4TDjA+HJplVAsOinqiffuhnc=
 		</data>
 		<key>Headers/SDKPolicy.h</key>
 		<data>
@@ -2854,43 +2894,43 @@
 		</data>
 		<key>Headers/ScheduledTaskPersistence.h</key>
 		<data>
-		1e4lFxMCkqHvdEFERb6CRolFXpU=
+		cQA4AOTBcVx37lOCLveTKjxPUQo=
 		</data>
 		<key>Headers/ScheduledTasksManager.h</key>
 		<data>
-		OnyUh//kmTHTBQegUSZZ4Z3HDkE=
+		0dKxb49vZlGw2uWuVCa/bj7KvKM=
 		</data>
 		<key>Headers/SdkDefaultPrefs.h</key>
 		<data>
-		nKfgSrW9a0Ke/Qm3LHFeZAzhnVw=
+		s329A+TC0348vAOj4pHGaGiHgjQ=
 		</data>
 		<key>Headers/SegmentType.h</key>
 		<data>
-		8kOLBZkVlzPOUNF5GvtaxPP0njs=
+		akulYy8VbIMPpcJ2x/uMJjVwa50=
 		</data>
 		<key>Headers/SegmentedRouteProviderImpl.h</key>
 		<data>
-		LjWSQZXB0aqb3vHRe+2XCLf5grI=
+		Es9k1A1RfGDU2W0rew+BXIuuIVY=
 		</data>
 		<key>Headers/SegmentedRouteProviderImplDebug.h</key>
 		<data>
-		f8gitqHW7lz2sAC1kaBCXELXhIo=
+		/nrKX1YfatyHvHXBuXH+Ys1XgY0=
 		</data>
 		<key>Headers/SemanticData.h</key>
 		<data>
-		EhOfuBl9m37RtfPJ/A14FwErfPg=
+		j3ezbG1iLY37qsdf8zzGOAATh+U=
 		</data>
 		<key>Headers/SemanticDetectedPlace.h</key>
 		<data>
-		sHhBozVbmngnziKu/5q7fpVj1wc=
+		xeAndJrQslXQCCqsBEgNtM7W4bc=
 		</data>
 		<key>Headers/SemanticDetectionModule.h</key>
 		<data>
-		0TYxhoIXukTzporVd1VyJACb030=
+		iYeKZHjuc7boHVhyNVaoQzdxd2U=
 		</data>
 		<key>Headers/SemanticKey.h</key>
 		<data>
-		TWYZDqPnrYY4MNJ7mqdh37Nvpww=
+		LeL03UK9ezwWBnHo8tz0k42L9NE=
 		</data>
 		<key>Headers/SemanticPlaceProbabilty.h</key>
 		<data>
@@ -2898,11 +2938,11 @@
 		</data>
 		<key>Headers/SemanticSensedPlace.h</key>
 		<data>
-		vFN/Co0Ew5FUIvB+d8Sv7yK53Ho=
+		SCHy4a7Czb2c0O5lGqd6I7HAEO0=
 		</data>
 		<key>Headers/SemanticTag.h</key>
 		<data>
-		spnrk9aUCHiK/JWCwphrNJeQ1UM=
+		tmkwjaEMHDeFYbgQqYrkMP3g2eU=
 		</data>
 		<key>Headers/SensedPlace.h</key>
 		<data>
@@ -2910,7 +2950,7 @@
 		</data>
 		<key>Headers/SensorDumpFileLogger.h</key>
 		<data>
-		RVO7SMgkfwd7ySumlp8OW9UkySQ=
+		1CJxqZ+c5srTkbv5aGre/EAxT1s=
 		</data>
 		<key>Headers/SensorModeRequest.h</key>
 		<data>
@@ -2922,7 +2962,7 @@
 		</data>
 		<key>Headers/SensorRawDataAudit.h</key>
 		<data>
-		OpgoyIAoTnmP9/AzgnQUY2NG/Ag=
+		qR3w2vPwVMJ4Pf14+xzBOusm5eM=
 		</data>
 		<key>Headers/SensorState.h</key>
 		<data>
@@ -2930,7 +2970,7 @@
 		</data>
 		<key>Headers/SensorStateManager.h</key>
 		<data>
-		NwBJVMVdSHIRWKQJbeZDMRSRzQg=
+		bNuJc4JNNnutTEcezUfDTHdVrOU=
 		</data>
 		<key>Headers/SensorStateManagerReceiver.h</key>
 		<data>
@@ -2938,27 +2978,27 @@
 		</data>
 		<key>Headers/SensorStateType.h</key>
 		<data>
-		wdeOufMv0eWuetEqwLf5a7X8rmo=
+		0RMZPPi7XFcO1taeikscqRibtm8=
 		</data>
 		<key>Headers/SensorType.h</key>
 		<data>
-		Fb2yNmQUDYKd+U8osbbnaqpOovY=
+		T1B+yzUSI3Hb/auodn7LOGloqqY=
 		</data>
 		<key>Headers/SensorsEngine.h</key>
 		<data>
-		Yy068q3lkqh/A+jTAan29nPxDto=
+		kEWwWlKNWIQaIf9CWjsfbJseWgE=
 		</data>
 		<key>Headers/SensorsEnginePlatformImplTest.h</key>
 		<data>
-		xsB5WmGObzBovKeWdbVFXbdsOpo=
+		K/WymX78S2FXilvgSyaQCM/n6IY=
 		</data>
 		<key>Headers/ShowAsType.h</key>
 		<data>
-		rZiZTe53CriovZCHWu8M9cRgIPk=
+		G/ycOGhUCDQV2qkHsr9rufEvLpg=
 		</data>
 		<key>Headers/Similarity.h</key>
 		<data>
-		m8Ew7UKAtwjwbv8Nj33dNQT7/GU=
+		IMWaNoo7MJfEqWeaocix3FXv8f8=
 		</data>
 		<key>Headers/SimpleTimer.h</key>
 		<data>
@@ -2970,11 +3010,11 @@
 		</data>
 		<key>Headers/SimulatedSensor.h</key>
 		<data>
-		uOZ1a94mvwMzF8vJQ/ewzFd26SY=
+		ouNIwguYKYGb9KyNReAKB18fsGw=
 		</data>
 		<key>Headers/SimulatedTimeMode.h</key>
 		<data>
-		VMXaMDza5QYC8H59xeEFUZE51gc=
+		OiwKfh23np9viPU9nyWmCUh6fJc=
 		</data>
 		<key>Headers/SingleSensorPolicy.h</key>
 		<data>
@@ -2994,59 +3034,59 @@
 		</data>
 		<key>Headers/SnoozeOptionsProvider.h</key>
 		<data>
-		vCkIvK0LiSSYs/rnAU+lpuZvjbI=
+		nThl9H2r2EYDgpwZ6QdZGIrZfH8=
 		</data>
 		<key>Headers/SnoozeOptionsProviderMock.h</key>
 		<data>
-		8FzOrudJw3xj1LVncGpsgfA61M4=
+		df1IWZjlyvB1lYOnZ+YFgCL8fw8=
 		</data>
 		<key>Headers/SnoozeTimeRange.h</key>
 		<data>
-		rHxbYdfieltDII11PiOt24whbLo=
+		wxOswt528RVXjh5AUTvKqVh9CMc=
 		</data>
 		<key>Headers/SnoozeType.h</key>
 		<data>
-		DVJDmuMgW6jlN6Y3xxrMdLiTqN0=
+		1U6GDyFZ1k36D8/5h4L3v/JlaOI=
 		</data>
 		<key>Headers/SourceDataType.h</key>
 		<data>
-		fGY4Q6wu6CfaT1yruuuI1c4ht8A=
+		U18mtXusmye6VGLEQJ50TvuRC+I=
 		</data>
 		<key>Headers/SqlPlacesDao.h</key>
 		<data>
-		GiUEk0hy2XswfjfFwaI/mpR4orQ=
+		ZAqmGBeaLbYhII+gzOPtKUM8L9g=
 		</data>
 		<key>Headers/StartSuspendState.h</key>
 		<data>
-		IR71q1ufejpkNS+so3PS71TVPOk=
+		iW+6bQ4JPlItGqkmXacZaXQ5IzQ=
 		</data>
 		<key>Headers/StartVipState.h</key>
 		<data>
-		9bJPDeB5z3WCukyXr1Dla6fVdf4=
+		UilFpbl5+H15qgVzzoOPoHaisVc=
 		</data>
 		<key>Headers/State.h</key>
 		<data>
-		gQMA9n4rD547ImqtDPzbLHw8hzY=
+		6F8Lp3wdapl7gWBNa+UEBcGU32U=
 		</data>
 		<key>Headers/StatsFileLogger.h</key>
 		<data>
-		pFDkWBmxnm3aXQP+mwvqT9dI3Hs=
+		2l+7y1R9SRYqGUzK8OengZ45cPM=
 		</data>
 		<key>Headers/StatsFileType.h</key>
 		<data>
-		S01QVM+OW5wPTyyrI5wcQ0G0JAA=
+		cPL/rK7ztPXYIK6HZ5EDg43ZqoM=
 		</data>
 		<key>Headers/StorageFSImpl.h</key>
 		<data>
-		9+KFaTdTDnmm5ViwVJ1aDQO7tTM=
+		duiQs5QvOIUC0zqyzh7+gAw1h0g=
 		</data>
 		<key>Headers/StorageManager.h</key>
 		<data>
-		jDPH9F+/R9QKjGsAgxxGOK41plw=
+		L9RCvM3KRFN8jNRKJaYBka+HJkE=
 		</data>
 		<key>Headers/StorageType.h</key>
 		<data>
-		DMhUBvF6r+fa7ErKS3dQ4UXD4I4=
+		L7bFcSvWz91defpl5SDACWHHnSE=
 		</data>
 		<key>Headers/StorageTypeData.h</key>
 		<data>
@@ -3054,11 +3094,11 @@
 		</data>
 		<key>Headers/StringDaoQuery.h</key>
 		<data>
-		jbvRoj+8sGJQY5TvIt1C0gfl5Pg=
+		lw6wST4p/o1Xqi5MLskEGxw8WP8=
 		</data>
 		<key>Headers/StubPrefsLoader.h</key>
 		<data>
-		yoxfa3C7EuQmKZhTc7/BPnFGB/k=
+		oEVnVW3GSInOwG+36m0grV/dOpk=
 		</data>
 		<key>Headers/SyncComparator.h</key>
 		<data>
@@ -3066,27 +3106,27 @@
 		</data>
 		<key>Headers/SyncDao.h</key>
 		<data>
-		353YcEftntnEljPzJKmL5dvwv6o=
+		odJKuWqw6YwaM9OJ+kSxYX/Bk7c=
 		</data>
 		<key>Headers/SyncFileDao.h</key>
 		<data>
-		IsUkJ7leuJ5zQbMCyNRI73rSLU8=
+		CznTNsmAnU3BSeyI4YvEJmKTfgo=
 		</data>
 		<key>Headers/SyncMemoryDao.h</key>
 		<data>
-		/0GHuL3+NnyznCCd2RW0kMGZ/Qo=
+		aZBaolTPxLZEtdgM1mh88xdIqdc=
 		</data>
 		<key>Headers/SyncObject.h</key>
 		<data>
-		p44r2IV+uygBgI0wuhVkUJ7FCOk=
+		P5of/U+MN63Dop/0d8IpoJdYI0o=
 		</data>
 		<key>Headers/SyncSQLCreateUpdateStrategy.h</key>
 		<data>
-		DADLUvBx61zUpLq2I0ZoYb6xJm0=
+		yxtkZU/FnK5ofpJSsYFpoGt4BfU=
 		</data>
 		<key>Headers/SyncSQLDao.h</key>
 		<data>
-		gIznMUFWn9p8RSO29/mzIu+jgLk=
+		ycYliczSK9mTUCRh6sVZHkncGkc=
 		</data>
 		<key>Headers/SyncSlaveDbs.h</key>
 		<data>
@@ -3102,7 +3142,7 @@
 		</data>
 		<key>Headers/TSO.h</key>
 		<data>
-		0vimOMX/Rr+7nF8TlXpU/p6l3jM=
+		DowGXxo3YyCRqF4bMlAs2EYKAwg=
 		</data>
 		<key>Headers/TSOAlert.h</key>
 		<data>
@@ -3118,11 +3158,11 @@
 		</data>
 		<key>Headers/TSOAlertTriggeredResult.h</key>
 		<data>
-		RQ3qJFgzkM0UdErQOfD8gl/vt/I=
+		TYaBGtGq5hRDy+pBLxXYDTkcjOE=
 		</data>
 		<key>Headers/TSOAlertUpdatedResult.h</key>
 		<data>
-		3S8vPjBCLgXTFb2q+cyZUA1WBwk=
+		VWfrr2PuMZ/mPq79J4bPw0xu+rA=
 		</data>
 		<key>Headers/TSOAlertsEngine.h</key>
 		<data>
@@ -3130,35 +3170,35 @@
 		</data>
 		<key>Headers/TSOAlertsEngineImpl.h</key>
 		<data>
-		Q1PmJCOU7/4fmc3gFmWV56FUFGg=
+		LeMHz/8+YFmvER3pQTwgOsxstQ4=
 		</data>
 		<key>Headers/TSOAlertsMotChangeListener.h</key>
 		<data>
-		dXMz/+UoVOJ426366FMK5kGpWTI=
+		pDj4lpYO1oIZOGmo6Esy3hSjypg=
 		</data>
 		<key>Headers/TSOAlertsProviderImpl.h</key>
 		<data>
-		3QQVqiaTyH23Gl1GZQ1vXXB88Vg=
+		WX8y4AW/ki/3cAS8qvzSCagPTK4=
 		</data>
 		<key>Headers/TSOAlertsProviderStub.h</key>
 		<data>
-		Yv2D1ggLsBtYxlICEUZ+ssI28Ug=
+		6Pmqb0cr9VJO7+PC9pY3JNbO7uc=
 		</data>
 		<key>Headers/TSOAuditObject.h</key>
 		<data>
-		jtF4IQmm1Us8Tv7pGIPuxeCNfrQ=
+		w16TRadMgswGFXQosT7meQ6Jr7Q=
 		</data>
 		<key>Headers/TSOBeEvent.h</key>
 		<data>
-		SNv4XNIQWB5j8gsrDbooFzAuCCg=
+		f5KLCF2FlPhr+O3ySP+jnN6bD50=
 		</data>
 		<key>Headers/TSOCalendarEvent.h</key>
 		<data>
-		sUkP9auEBbWoY9AlGsCPClybz58=
+		+vlnNozkW8IGltAoJ0HNdGwH1mY=
 		</data>
 		<key>Headers/TSOCalendarEventCache.h</key>
 		<data>
-		WzROKMuaAkpygfcIP9CDrdt5kXA=
+		zuh8CXMS8L4jGR/6jmGe7ldc9zk=
 		</data>
 		<key>Headers/TSOCalendarMeeting.h</key>
 		<data>
@@ -3166,27 +3206,27 @@
 		</data>
 		<key>Headers/TSOCalendarsManager.h</key>
 		<data>
-		R1ewoggVV+asEdbnvzs03sWvKf4=
+		VW2S1VNFx9km+0g/KgTswNlqVDE=
 		</data>
 		<key>Headers/TSOCloudResponse.h</key>
 		<data>
-		/TQnF6YpoPzZzOhJpX0+0vQnyh0=
+		I+wQSIlQ0n8H0tAOfHOJZzICGYQ=
 		</data>
 		<key>Headers/TSOCompositeEvent.h</key>
 		<data>
-		w0mKMStBL4sO0x+e0Ze/zKrwv6U=
+		5fmhGTulPh2pBlP3AhavORSQ3Ak=
 		</data>
 		<key>Headers/TSOCompositeLoggerPlaces.h</key>
 		<data>
-		twFBsKdEMM8QRmSFgSqce4gdX9E=
+		f45BGWAmnr2bYtYg8VhnCT4dgbc=
 		</data>
 		<key>Headers/TSOCoordinate.h</key>
 		<data>
-		RtdGzS5gC1jqz4xCh17RZiWe+j4=
+		xmgjfY/1noFrRjbb0OB2ERPpfzk=
 		</data>
 		<key>Headers/TSOCoordinateDataObj.h</key>
 		<data>
-		ATB3pz3IC1/OwwGmCJ66D6hMRsg=
+		xti0Gm8YD+0KXd9yIJA1BBdWRpE=
 		</data>
 		<key>Headers/TSOCoordinateUtils.h</key>
 		<data>
@@ -3202,11 +3242,11 @@
 		</data>
 		<key>Headers/TSOEvent.h</key>
 		<data>
-		BX93UuLQATAhyuKZOsEXjXebFsU=
+		PyKRH1+xqsZB1YQuqXcHUnawKRA=
 		</data>
 		<key>Headers/TSOEventAuditObj.h</key>
 		<data>
-		LoHDhsUpTBfdKYXG1A+0vh8WklA=
+		jNQ4TN5BrcShXE0QO5vbm/u4zVI=
 		</data>
 		<key>Headers/TSOEventAuditObjectFactory.h</key>
 		<data>
@@ -3214,7 +3254,7 @@
 		</data>
 		<key>Headers/TSOEventChangeType.h</key>
 		<data>
-		s3kFSNDbKOlYdpSp1zmBtae+Atw=
+		kn3osi3gZ4leWbq6m+5pCQayLcc=
 		</data>
 		<key>Headers/TSOEventTriggeredMsg.h</key>
 		<data>
@@ -3222,7 +3262,7 @@
 		</data>
 		<key>Headers/TSOEventType.h</key>
 		<data>
-		nbqeZYf8c2ORi0Amj64kigYJiPs=
+		YO3n8xRKE6bvvk4IQQRupHRSoSA=
 		</data>
 		<key>Headers/TSOEventsResponse.h</key>
 		<data>
@@ -3234,11 +3274,11 @@
 		</data>
 		<key>Headers/TSOLocationProviderImplBase.h</key>
 		<data>
-		DK154MNu/eruoAneF9je7pE6VAg=
+		2R0xgoY4bC9VzaEmY9DyU/lY+jA=
 		</data>
 		<key>Headers/TSOLocationProviderImplNull.h</key>
 		<data>
-		KWGgWPd82yg8MRoRi37JwekzrAo=
+		fg8H6c1xW8qglwf2o6RQizTZxoM=
 		</data>
 		<key>Headers/TSOLoggerConst.h</key>
 		<data>
@@ -3250,19 +3290,19 @@
 		</data>
 		<key>Headers/TSOLoggerPlacesFileImpl.h</key>
 		<data>
-		xjOhN/9rF6OGe9QsaBPPAM951/4=
+		rgQPPeXGx1SGwf9YdntNA0qCaRk=
 		</data>
 		<key>Headers/TSOLoggerPlacesStdoutImpl.h</key>
 		<data>
-		EHyf5iAeQffubQG9cnWXKSRLLPs=
+		DdV4BLs9kQRYf9xZ2Eqwvn8S1Cw=
 		</data>
 		<key>Headers/TSONullLoggerPlaces.h</key>
 		<data>
-		7IVBisjE66lvkaV8CTtGu7nvCAk=
+		eju09TNL2OWLYAJX0v2T39zUrqA=
 		</data>
 		<key>Headers/TSOPlace.h</key>
 		<data>
-		INOdet8kAqMii6XyPyctfsrNm1Q=
+		ZwxDqnBTcxPYV6opfHeG5g7SCvc=
 		</data>
 		<key>Headers/TSOPlaceAdapter.h</key>
 		<data>
@@ -3274,7 +3314,7 @@
 		</data>
 		<key>Headers/TSOPlaceGetSyncRequest.h</key>
 		<data>
-		/uukvYJRUmyheDdQH8TAAAlHC5s=
+		ZzTludD9L581mHA96iRSM2T4DRM=
 		</data>
 		<key>Headers/TSOPlacesEngine.h</key>
 		<data>
@@ -3286,15 +3326,15 @@
 		</data>
 		<key>Headers/TSOPlacesGetSyncResponse.h</key>
 		<data>
-		Hzdt+ApUb8k65IU/oKfYVUSns98=
+		TF8rkHYUk9zO0D5bvkC/E9Ytzyg=
 		</data>
 		<key>Headers/TSOPlacesWriteRequest.h</key>
 		<data>
-		HuwSODciDMJb3QMeWriMkm91fjs=
+		h0tYM9KdcFhNrAhzBKEmyitJQlU=
 		</data>
 		<key>Headers/TSOPlacesWriteResponse.h</key>
 		<data>
-		yb/7lC7WgdZ4fllzivzVOaigNPg=
+		/Debi7BmjtkKTTXusRLYjF0frAc=
 		</data>
 		<key>Headers/TSOPosition.h</key>
 		<data>
@@ -3302,11 +3342,11 @@
 		</data>
 		<key>Headers/TSORetCodeResponse.h</key>
 		<data>
-		6m7sZ4DQoklT6BATX8sxQJGbjaM=
+		TCZ4ZO9FSUykMlmot2r2A7WJgYA=
 		</data>
 		<key>Headers/TSOSlaveDBSyncResponse.h</key>
 		<data>
-		wRR4TrwV6GQJYZJ519YWDzmg9TA=
+		poVBfI8Krh+9L29unlF6l+83YiM=
 		</data>
 		<key>Headers/TSOSqlDbException.h</key>
 		<data>
@@ -3314,39 +3354,39 @@
 		</data>
 		<key>Headers/TSOTimeUtil.h</key>
 		<data>
-		kJVvXVAk1/hTaxKV/i7qWWLkI0o=
+		QXwz23Cc+jJtt0KOa7rb0fjEMzQ=
 		</data>
 		<key>Headers/TSOTimeUtilDebug.h</key>
 		<data>
-		xyV7Z/bZEirh4V3IBYds439nY8I=
+		6cSnn/3PS/b4tbNZNlKRHo4j9oA=
 		</data>
 		<key>Headers/TSOUserIdRequest.h</key>
 		<data>
-		+MFAhwsvp8KhXygCSdGHkGxBlxI=
+		OaTmFq+9zxHTuXrb1hmxLVySt5c=
 		</data>
 		<key>Headers/TSOUserInfo.h</key>
 		<data>
-		ZzOeAEptw1bJo7oGXaLW7WxrrGo=
+		YAkHZ7F3zsXClU6LTtXtMgKWfAA=
 		</data>
 		<key>Headers/TTLRequest.h</key>
 		<data>
-		4xVNRJw13zppHEcwHS7orR06G9o=
+		CznigGw9FjoF3w34PJoCyw+DcuQ=
 		</data>
 		<key>Headers/TTLRequestDataObj.h</key>
 		<data>
-		er06ht4ijX5jQL5T3vZjlAibaFU=
+		lvpSZj3X0BJ9a8Q7qr11CWjQIj4=
 		</data>
 		<key>Headers/TTLRequestResponseDataObj.h</key>
 		<data>
-		FUK3iDrVS9bfo8kzqAfjRXKSsvM=
+		MxKiJ9tbxdBo7ppH/h9r9PUs46E=
 		</data>
 		<key>Headers/TTLResponse.h</key>
 		<data>
-		D1L9zBW8lXy017h34vdwvDXuLm4=
+		yL0uSIWWoloYPQYacAh0OwMlrXE=
 		</data>
 		<key>Headers/TTLResponseDataObj.h</key>
 		<data>
-		1rc2VcP5KuBcWVc1HC2/nrxesAA=
+		nRtTROLSHXhN6luu6LQfBLhmbG4=
 		</data>
 		<key>Headers/TemporalsDetectionAlg.h</key>
 		<data>
@@ -3370,7 +3410,7 @@
 		</data>
 		<key>Headers/TimeDelaySnoozeOption.h</key>
 		<data>
-		b9sewdpQ4YcRzKahud0piqNuIPY=
+		Dr/7gzSe1Ed9axP0yujIwVl/14w=
 		</data>
 		<key>Headers/TimeFormatUtil.h</key>
 		<data>
@@ -3386,27 +3426,27 @@
 		</data>
 		<key>Headers/TimeRangeSnoozeOption.h</key>
 		<data>
-		E7y++Mvfj3eK25YYgvvp98kRAXs=
+		ruNIIjv3mijD1brf/OPp8Mac0b4=
 		</data>
 		<key>Headers/TimeTrigger.h</key>
 		<data>
-		+iCa6x+imPpj0aBg7iZP4+ByTnE=
+		k1omkXNaRmyRzK6R3Qu2NFXUWoA=
 		</data>
 		<key>Headers/TimeTriggerInner.h</key>
 		<data>
-		NSunF61OSd4UxekMc88v1rL7/e0=
+		//FR6rBh+a0ZFtj9L2qnl7S8knw=
 		</data>
 		<key>Headers/TimeTriggersManager.h</key>
 		<data>
-		JIRGo9IYwTgijIQ8FCh4BTPBsOI=
+		lySXIEinpZCOg0a7yWKkhtlK4DU=
 		</data>
 		<key>Headers/TimeTriggersMemoryStorage.h</key>
 		<data>
-		F/SuoVDHgK8f8A4kJWNc4Qtc7Fg=
+		OHo4omDtjFv6Mev2+HFdeI3f2f8=
 		</data>
 		<key>Headers/TimeTriggersPersistentStorage.h</key>
 		<data>
-		eh+bkEdjizrjv2QyJMNn6rvXjeo=
+		/p2glHiUAfN0qZG+DAzz47CvM4w=
 		</data>
 		<key>Headers/TimeUtils.h</key>
 		<data>
@@ -3434,15 +3474,15 @@
 		</data>
 		<key>Headers/TrafficIndication.h</key>
 		<data>
-		nw2jGt5QgH3jYZkbw2ASj8N0aAc=
+		kvW9BF5QGSlKBaUbsVAyDg2yljA=
 		</data>
 		<key>Headers/TransportType.h</key>
 		<data>
-		K1HY17eTuzp4wLmcxDggmyDlDRc=
+		x2so8Uk82O77INrAihLU1PsgSHE=
 		</data>
 		<key>Headers/TriggerAudit.h</key>
 		<data>
-		hVlayhB9IiF0PjcxmugjKwS6Cks=
+		YvXvzx5bW6u+VjFWoWaXS8z2ES0=
 		</data>
 		<key>Headers/TriggerBuildException.h</key>
 		<data>
@@ -3450,27 +3490,27 @@
 		</data>
 		<key>Headers/TriggerLifeCycleAuditManager.h</key>
 		<data>
-		CjOyeNKjDYSe6JIwvRSk5VCJ0G0=
+		5/vOgwxkdD0quJ8HhjpVDOHZj9s=
 		</data>
 		<key>Headers/TriggerLifeCycleAuditManagerStub.h</key>
 		<data>
-		zjV7cS2DEzhQqP8ac2NaIy5a+tg=
+		TfsiUuTy75yu0T8TVLKPUlj81xQ=
 		</data>
 		<key>Headers/TriggerStatus.h</key>
 		<data>
-		irbIxu1qtH0gOm6bUg9JI81Aq9s=
+		Vmtq3b0hOLw4Z9jD2LnnFk7x7LY=
 		</data>
 		<key>Headers/TriggerStatusInner.h</key>
 		<data>
-		R2Oru6kSjjWZ0NzNKZ+GBfrmXo8=
+		z9sWqyl8neGdOv250yfbsY7HEYI=
 		</data>
 		<key>Headers/TriggerType.h</key>
 		<data>
-		FQ33deeIPHRQbqTfpMP1FtwcqUA=
+		kxgffI1fTF7O2jcKnCHjq9ZIIdg=
 		</data>
 		<key>Headers/TriggeredAlertResultType.h</key>
 		<data>
-		oEeXe+Xou1v3FMpMZ6A08M6iS8s=
+		eNiEqb7r84yJoupeDyS6PRt39kI=
 		</data>
 		<key>Headers/TriggersListenerList.h</key>
 		<data>
@@ -3482,11 +3522,11 @@
 		</data>
 		<key>Headers/TriggersManagerImpl.h</key>
 		<data>
-		d75l7CRKyfgalY7UM57ytDMLLMM=
+		arePu90PktfpPw3fjfar1K/WCes=
 		</data>
 		<key>Headers/TruncatedExponentialBackoffAlgorithmHelper.h</key>
 		<data>
-		kQf93fFEFRQ6G5UQA16ZPTonFqk=
+		35nsRFDybIZJis0IbrC6bd27td0=
 		</data>
 		<key>Headers/TtlAlertsProviderFactoryInitializer.h</key>
 		<data>
@@ -3494,7 +3534,7 @@
 		</data>
 		<key>Headers/TtlRouteData.h</key>
 		<data>
-		6FguKLgPfHkY1vnt6+ioTN04DAk=
+		N8qTA3c7ebYiDymjFjWcF/paZVk=
 		</data>
 		<key>Headers/UUIDGenerator.h</key>
 		<data>
@@ -3502,43 +3542,43 @@
 		</data>
 		<key>Headers/UniqueCalendarEvent.h</key>
 		<data>
-		Xl+e6DYhExLsnxwXCLqzCMwY3pQ=
+		jKyFlFxd5AfQohc4uSKgMxF68EQ=
 		</data>
 		<key>Headers/UnknownState.h</key>
 		<data>
-		D1o95f4X76tT31oH9dlOrBqBVoA=
+		a18WPIGDQLuejaj2G2O/Qvgu61o=
 		</data>
 		<key>Headers/UpdateAlertResultType.h</key>
 		<data>
-		pWM6Wf0dzMS1ZFwgoCdp3TZLx+8=
+		pKraupWCmfNBCPDASX/wxEA3I+s=
 		</data>
 		<key>Headers/UserActionType.h</key>
 		<data>
-		myvlCn3nntZFD6z4aihViTc5DBY=
+		6k8GtDPcWVsGr9jkwjqP7apLI28=
 		</data>
 		<key>Headers/UserInputData.h</key>
 		<data>
-		RPfTApUqA+6ugaaTP7ctoP0zLEQ=
+		aS+WvWLUKUGx6wqKl6IvwnA5w8U=
 		</data>
 		<key>Headers/UserInputSensorData.h</key>
 		<data>
-		HgqWTPpI1gQf06nGMVYrOkQbUNc=
+		10c3z9IEppZsLXjm9A6pvqL0rrs=
 		</data>
 		<key>Headers/UserInputType.h</key>
 		<data>
-		fofvxR3XgMLs9HMN5Z5fMJrRwyc=
+		BqwdYlhjDHV1jyvVMH78MzKGn6M=
 		</data>
 		<key>Headers/UserPlaceInteraction.h</key>
 		<data>
-		Vug/bdFkOn2R2vlbZR+WrRus72w=
+		8l7LK95X/5yEBoUZ5FQplylYSgE=
 		</data>
 		<key>Headers/UserPlaceInteractionType.h</key>
 		<data>
-		3mBrQUsMZjaTL4ofl4z3HEQlf9o=
+		KWrvmNoECQOqc3PRCJD8HO0mvUQ=
 		</data>
 		<key>Headers/UserPrefs.h</key>
 		<data>
-		LZ1p1zvHPbV48INrWm60RtPshZQ=
+		u5Gil0gXkROqKuvR9rOxbDad8KE=
 		</data>
 		<key>Headers/UserState.h</key>
 		<data>
@@ -3546,15 +3586,15 @@
 		</data>
 		<key>Headers/UserStateAudit.h</key>
 		<data>
-		L8Bf18xWYYL1SuWz5rp1mL0zaGg=
+		Cj33Lee4UaiinJhDeXUO50CzG3o=
 		</data>
 		<key>Headers/UserStateAuditManager.h</key>
 		<data>
-		9BI0gDPdYRcDvVvxW75oPZZ8WW4=
+		KgZp9a8lDvin5uj33OvxFcajS34=
 		</data>
 		<key>Headers/UserStateAuditManagerStub.h</key>
 		<data>
-		2ZhBbwI6HcmvtwBEkrd1JnvXv9E=
+		66psjNpZwZJG2zCdE+5B9I/XSm8=
 		</data>
 		<key>Headers/UserStateChanges.h</key>
 		<data>
@@ -3566,15 +3606,15 @@
 		</data>
 		<key>Headers/UserStateDataChangesAudit.h</key>
 		<data>
-		esTJdbs7OeCmzJW50PgXUhmXtMU=
+		u1lAeswMVUMDo1kZ0NgZFnCbCys=
 		</data>
 		<key>Headers/UserStateDataMotAudit.h</key>
 		<data>
-		CNMxbgwb0+EqqavDz/LQ3ORiFWQ=
+		EGc0UrLEwQTqgU1+kp4mplC2XQs=
 		</data>
 		<key>Headers/UserStateDataVisitsAudit.h</key>
 		<data>
-		QPrjTQjgFnfqqycHdl/MJkpSE84=
+		ApimUxOFxJWYmlMSG5lphIVh5gE=
 		</data>
 		<key>Headers/UserStateFactoryInitializer.h</key>
 		<data>
@@ -3582,27 +3622,31 @@
 		</data>
 		<key>Headers/UserStateFilter.h</key>
 		<data>
-		HmXmF2aNk+X21ellTzk0KeL4ZI4=
+		9oKQ0lpQagzbIBFGCmR8q5mNSNY=
 		</data>
 		<key>Headers/UserStateHistory.h</key>
 		<data>
-		uxQGpgL22PNGyhWNLylLz4bOyvE=
+		0M7IqQ+/CqdtDwQRGCkQAuWxUrE=
 		</data>
-		<key>Headers/UserStateManagerImp.h</key>
+		<key>Headers/UserStateManager.h</key>
 		<data>
-		EaCzd10AjwdFRZmo9v+DknN+3jQ=
+		PWXnNw8eCf7mtUfHxRd98pxsdDs=
 		</data>
-		<key>Headers/UserStateManagerImpDebug.h</key>
+		<key>Headers/UserStateManagerModule.h</key>
 		<data>
-		Nbgqbh6ukkf9R47fgitGj22MraQ=
+		b3dV+9ghVpVkSIoD8qrvQrdoeEk=
+		</data>
+		<key>Headers/UserStateManagerModuleDebug.h</key>
+		<data>
+		C1X46tcBNQy77wL8HkoZqXKSrC8=
 		</data>
 		<key>Headers/UserStateMonitor.h</key>
 		<data>
-		bklazPP1RdmQ2OatrIv6OE3FMfc=
+		C9JwX2IfFLZOObBsDVOZP/6H+vg=
 		</data>
 		<key>Headers/UserStateType.h</key>
 		<data>
-		vdFh4fR1Ty7MOA//pZlJXxtUvck=
+		tsxlHWGpK6vYaT75pcgiqppebNU=
 		</data>
 		<key>Headers/V2Params.h</key>
 		<data>
@@ -3622,27 +3666,27 @@
 		</data>
 		<key>Headers/VipStateDataProvider.h</key>
 		<data>
-		Ii7peMxsHqSmWBdvxu0Xcwa2FDg=
+		M2h+GWbBTeZHXrcYD9lv0aXUPmw=
 		</data>
 		<key>Headers/VipStateType.h</key>
 		<data>
-		BTe8quL9mGF1DUl/Jvr07pylwds=
+		/9nxsb3Sh2Hzu7MlUJ4sfTTg8Xo=
 		</data>
 		<key>Headers/Visit.h</key>
 		<data>
-		phrQCHOUkCambkUEdgcBSLyEkp0=
+		Dao6dk6yqN7oHxPgS8v0gBOh2DE=
 		</data>
 		<key>Headers/VisitDetectionModule.h</key>
 		<data>
-		tV1etNi/xRv1ojq2Pxd/BqQKzBk=
+		+7/dthbRLskHT7wKiBbjShVPtDk=
 		</data>
 		<key>Headers/VisitFuseDetectorImpl.h</key>
 		<data>
-		f3an5KtDcjCl1TtToYVh4Y5Bwxw=
+		azROdBWDDR/pBuUXmkoUigno2zU=
 		</data>
 		<key>Headers/VisitInPlaceModule.h</key>
 		<data>
-		jgNmsiSwdDG0ZUTwRpa71bmBejk=
+		CliQQP7jCXoyftRrwVmtXvNTQyI=
 		</data>
 		<key>Headers/VisitTimeofDay.h</key>
 		<data>
@@ -3650,23 +3694,23 @@
 		</data>
 		<key>Headers/VisitWifiDetectorImpl.h</key>
 		<data>
-		Ia1zLnYxHzO0nt3hcUkvMiRJQmw=
+		1LChIYfut3M1pZMRAzmbOLvsLc4=
 		</data>
 		<key>Headers/VisitedPlace.h</key>
 		<data>
-		xIisb5sCzSArMgNG9n6kNvWFi/g=
+		FGSXaynMswiUg333Wwzw9x/HcaI=
 		</data>
 		<key>Headers/VisitedPlaceConfidence.h</key>
 		<data>
-		+CTnt4XiTcEUKkoHk0hFh8SbHYQ=
+		H0ihdJbUFzlZxl2RZoTIZjMhKms=
 		</data>
 		<key>Headers/VisitedPlaces.h</key>
 		<data>
-		W8fHDq8IjVnLfwumOKgApfvtkO0=
+		IKBVifAKwR1OP/uzAtnlAjSUjx8=
 		</data>
 		<key>Headers/VisitsDetetionListener.h</key>
 		<data>
-		voYQfpn/aLvqK1PKHmoNpeHqd8s=
+		hMYGWBJmjZMSy283MYCYZ9TLTFs=
 		</data>
 		<key>Headers/WaitTimer.h</key>
 		<data>
@@ -3678,11 +3722,11 @@
 		</data>
 		<key>Headers/WifiBaseSensorData.h</key>
 		<data>
-		C9o2KOMa8GbXSYtDbxfQdTIQZRI=
+		+sC+0ZIybiBZQIvmOr2iDpZ4NqE=
 		</data>
 		<key>Headers/WifiData.h</key>
 		<data>
-		OJqLPIBP8nkkNVaTKBYfb+1SHdQ=
+		YIuNV/Hjy4JC8fJBoi9c6etUj2w=
 		</data>
 		<key>Headers/WifiFingerPrintBuilder.h</key>
 		<data>
@@ -3690,7 +3734,7 @@
 		</data>
 		<key>Headers/WifiFingerPrintCollection.h</key>
 		<data>
-		238ii8sB/651rcaZGTKlVHGIydI=
+		GleZA7jS+4fAg6Flk2Xk/RgBLNU=
 		</data>
 		<key>Headers/WifiScan.h</key>
 		<data>
@@ -3702,7 +3746,7 @@
 		</data>
 		<key>Headers/WifiSignature.h</key>
 		<data>
-		g69FYWWL/ft5mEmEH93pyc08Gnc=
+		ndN1LuTwnGLruzhZAtIBy4mpbf8=
 		</data>
 		<key>Headers/WifiSimilarityAlg.h</key>
 		<data>
@@ -3714,11 +3758,11 @@
 		</data>
 		<key>Headers/WifiState.h</key>
 		<data>
-		Z00cUQWa3EyRP5n5aBw1Ml/mKg8=
+		b8p+I7n0iyKT8XlozHJVrmXw0jM=
 		</data>
 		<key>Headers/WorkingHoursVisitCondition.h</key>
 		<data>
-		VTicdO725UMhMKFQZxaSUiGU+Cg=
+		I1hWeRZSqyca4Je5u0POz0jBTVg=
 		</data>
 		<key>Headers/XY.h</key>
 		<data>
@@ -3726,23 +3770,23 @@
 		</data>
 		<key>Headers/eAuditLabels.h</key>
 		<data>
-		7CuDIScTChqVVC3SBultVNnhr3Y=
+		QLVGH7VWWO0lF+6CyYYoRLWdYN8=
 		</data>
 		<key>Headers/eDayOfReminder.h</key>
 		<data>
-		gCcZcwSGdiBcktbVdeOWLE6Ph/w=
+		NouXr0IRj+DiTKU/1IAS50PJPro=
 		</data>
 		<key>Headers/eExtendedEventReminderType.h</key>
 		<data>
-		7bIdPxy4jJkRUWAbPXnCRUpKyDA=
+		8cZNR9rpPKFZg7QByjC6Cw2IjIE=
 		</data>
 		<key>Headers/eExtendedEventState.h</key>
 		<data>
-		i/woiVG2/r62P+ydPiFkW761l9E=
+		lN+Xga1k10/wjAWR1tYC6uKrKmc=
 		</data>
 		<key>Headers/eTriggerBuildExceptionType.h</key>
 		<data>
-		T6LSijdUJRRbS+0WiGRRTQuwhBw=
+		ZQFxZghjkaoJAa6ZmV6g2HdV2f8=
 		</data>
 		<key>Headers/nanotime.h</key>
 		<data>
@@ -3769,31 +3813,31 @@
 	<dict>
 		<key>Headers/ABaseRemindersPersistentStorage.h</key>
 		<data>
-		PdqybOPGliK8haPAnX0cF14knOo=
+		4aFw/A0r+P26euCHQ+dijJP5nHA=
 		</data>
 		<key>Headers/ABaseTriggersManager.h</key>
 		<data>
-		A/LYcWEx+gUd/KqtUIoKuP/9Aiw=
+		kQoxCPmL8q3hh1OnvRwugMPtpvg=
 		</data>
 		<key>Headers/ABaseTriggersMemoryStorage.h</key>
 		<data>
-		v6pJ6aCUGVRbtpVaRw+lcEztDsY=
+		lxH8AFF+8FZPpHGcOBiMgztUb/Y=
 		</data>
 		<key>Headers/ABaseTriggersPersistentStorage.h</key>
 		<data>
-		RT2O0dKff/GqU9XzuO6HJyisVRk=
+		nhVqd5XisjZ7/oudJWQaX7CUqSY=
 		</data>
 		<key>Headers/ADbManager.h</key>
 		<data>
-		6RQBUazteOqDjXsJUQuVzlQvacE=
+		7WaKFofIJRUU10PFLTFweJNXiOU=
 		</data>
 		<key>Headers/AHttpTransmitter.h</key>
 		<data>
-		RoGuTC991aXIq0m9igrskXqMDJ0=
+		FPk0wqEgVzCzkkCDlsNAYQT7qnY=
 		</data>
 		<key>Headers/AMessageEngine.h</key>
 		<data>
-		g1liYNYAlUil0f43i+Jqbsmpq98=
+		th2nE2aF8RJk7lIt4317zWPyuNU=
 		</data>
 		<key>Headers/AObjectFactory.h</key>
 		<data>
@@ -3809,15 +3853,15 @@
 		</data>
 		<key>Headers/AReminderTemplate.h</key>
 		<data>
-		qYr1H+r9DFrt2YR96skQpwnHMJ8=
+		82bcOB7lkO1/GpIW6+HEvpBx+qE=
 		</data>
 		<key>Headers/ARemindersManager.h</key>
 		<data>
-		4bSXOcETTzes8/O8cfvXXyL4Eqs=
+		F4GiyINLjqDSl/lxHOmUsNA4CPM=
 		</data>
 		<key>Headers/ARemindersMemoryStorage.h</key>
 		<data>
-		aNiU63nBEL3+GW6x3ikTKH7HjY4=
+		5DvOWoBOvkHfsURaCD7LmFa0Jn4=
 		</data>
 		<key>Headers/ARequest.h</key>
 		<data>
@@ -3841,7 +3885,7 @@
 		</data>
 		<key>Headers/ARouteData.h</key>
 		<data>
-		8ZcT5qNapZIUgOntOs0exoyWE+c=
+		pxpAR4yBYmGDsWhyI/z+ZwyNtWA=
 		</data>
 		<key>Headers/ASensorsEnginePlatformAPI.h</key>
 		<data>
@@ -3849,27 +3893,27 @@
 		</data>
 		<key>Headers/AStateDataProvider.h</key>
 		<data>
-		zZu6bpKbZ8lC8WtgfH1Hze6/h3g=
+		W9vFIZQnRKV1oi0CRe1JMTIoEAc=
 		</data>
 		<key>Headers/ATSOBaseDBObject.h</key>
 		<data>
-		7elehZRxhT5uR/6klBD3/6Ctp9k=
+		fZ9vSwZHZ3XkM8A1R1uez95n0hc=
 		</data>
 		<key>Headers/ATSOLogger.h</key>
 		<data>
-		EGzgcqZXM3Zv4EklTdCOyelL9XM=
+		cS26B4gLFhs1PIrlwwdWyJgPw74=
 		</data>
 		<key>Headers/ATSOPlace.h</key>
 		<data>
-		6Y+1fqRQYFzqJhomeaXP91U1BD8=
+		NNjcD5cFrKCyY7tPuAzflOYMEW4=
 		</data>
 		<key>Headers/ATSOSemanticPlace.h</key>
 		<data>
-		MDw00RtBnEC0e1Oqiq+Vdznh6oI=
+		DWi1HEesEMTHa3vjF1BT5ELIKvM=
 		</data>
 		<key>Headers/ATSOSyncDbObject.h</key>
 		<data>
-		4MLn2cAII+/7xRKvaSDvpF2sdwU=
+		PoiuNfX5H4xv+8Mw6YVIyzUiTpY=
 		</data>
 		<key>Headers/AbstractHWSensor.h</key>
 		<data>
@@ -3877,19 +3921,19 @@
 		</data>
 		<key>Headers/AbstractHWTestLocationSensor.h</key>
 		<data>
-		g9XVPJTvJSbqnvrz1EHsTNz0tro=
+		JSCdKfv99h/XFpuMRz29EjBctX4=
 		</data>
 		<key>Headers/AbstractHWTestSensor.h</key>
 		<data>
-		AttNWygINms7ghZW0UmCAZhtJsg=
+		dCMzuKmQIo53en38rcgBW9H2t2o=
 		</data>
 		<key>Headers/AbstractState.h</key>
 		<data>
-		TZj4P+JI6dGUGILq758Xi3ccxEM=
+		8N4ro8E1cvvZjGC2FVSWNZsJlCk=
 		</data>
 		<key>Headers/ActivitySensorData.h</key>
 		<data>
-		BFTZsqLuG39c2YHsO8wBBR2DiDg=
+		kDfBgEFQ+wd8qlyISe686UkEPjs=
 		</data>
 		<key>Headers/AddPlaceMsg.h</key>
 		<data>
@@ -3905,19 +3949,19 @@
 		</data>
 		<key>Headers/AlertBuildExceptionType.h</key>
 		<data>
-		sry8BrLQCubjdFYNX+TLkGxPJRc=
+		uSCS0oFdxpTRq09gkPYqZ/gbWOI=
 		</data>
 		<key>Headers/AlertState.h</key>
 		<data>
-		rHMh9MXfsss8+NSGYszQHT6/BmA=
+		4jeLyVat4YcEj4Mv6PKTMDSPejQ=
 		</data>
 		<key>Headers/AlertsRepository.h</key>
 		<data>
-		e8DZVO4M3PPaS8NDY23azoizDsg=
+		HdQ0fAbTislWY42GO3jt7wyYwK0=
 		</data>
 		<key>Headers/AlertsRepositoryDebug.h</key>
 		<data>
-		UBMhrTZg+fPgxUgWvoYgkN10jqg=
+		kAh1KX+zFj18jVmJG43dNB6u/j0=
 		</data>
 		<key>Headers/AndroidInitFacade.h</key>
 		<data>
@@ -3925,11 +3969,11 @@
 		</data>
 		<key>Headers/AndroidInitTestFacade.h</key>
 		<data>
-		V8kRn89trYTEEw0xtE/u2WDcMi0=
+		Iu5MwaMQytk28jY31FCLLxb5c5E=
 		</data>
 		<key>Headers/AndroidSyncPlatformHandler.h</key>
 		<data>
-		wfbQEYnFhi+0Z3DBYGKcC90TapU=
+		c6sGWECti/c+0lhU2qmYgxhzVGA=
 		</data>
 		<key>Headers/ApGrid.h</key>
 		<data>
@@ -3937,7 +3981,7 @@
 		</data>
 		<key>Headers/ApPosition.h</key>
 		<data>
-		KDCfaujqoGnlW19WtZe2XKydLwU=
+		Pq/al7yqAVEEDbWn5uUIRIfB7wM=
 		</data>
 		<key>Headers/ApPositioningAlg.h</key>
 		<data>
@@ -3945,23 +3989,23 @@
 		</data>
 		<key>Headers/ApStat.h</key>
 		<data>
-		rk5hBoI8NDWWoAEI08oVaVUoqA0=
+		xIiUPbshEso8eGJNau0manguXmI=
 		</data>
 		<key>Headers/ApiUsageAuditObj.h</key>
 		<data>
-		TIblNi3OM7dGLvhS5kH8r0IlYlg=
+		EAitc/1rQCRUiOzR1XbMkXmstTE=
 		</data>
 		<key>Headers/ApiUsageDebug.h</key>
 		<data>
-		+SWyrkJfUebgqMQUfYF5lXAk7bU=
+		YCyvmQj+nSS5WhRxeEYpKRbvTqE=
 		</data>
 		<key>Headers/ApiUsageUtil.h</key>
 		<data>
-		kJE8vB2qiv4sJrpXOvZtNXYLKXY=
+		R7lWACZw8XVk3VExciBLcTFDdo4=
 		</data>
 		<key>Headers/AssociatedWifiSpot.h</key>
 		<data>
-		OrweUXIjDJLtayIlM5R4ibPXEB8=
+		t/0dvP1S3KJ2ktLCI4b5/x07YZU=
 		</data>
 		<key>Headers/AssociatedWifiSpotsBuilder.h</key>
 		<data>
@@ -3969,23 +4013,23 @@
 		</data>
 		<key>Headers/AttendeeMeetingData.h</key>
 		<data>
-		yw5vamixPsWELVPkRMguZGeidmI=
+		xIW1+I0gauBqurY782sZeTYJXyc=
 		</data>
 		<key>Headers/AttendeeStatus.h</key>
 		<data>
-		ukosOlxjcyM/hB5MJJh8JKl8pD0=
+		ugC1jToJHMLGT/Imv1vx+1ff0OM=
 		</data>
 		<key>Headers/AttendeeType.h</key>
 		<data>
-		pRe+iY5UE6o2jWXIb9xWDO/uEVM=
+		pqME+nksiadU93HaKy07vm1RZ2A=
 		</data>
 		<key>Headers/AuditManager.h</key>
 		<data>
-		b7BJRNfo/zUP3Ixuu0Wegq+bkts=
+		NkF1a0StGIoOThj/yJ9OfmQ4wI8=
 		</data>
 		<key>Headers/AuditManagerForTests.h</key>
 		<data>
-		sHkrkc3xZmgbNbQMERt2VVga2X0=
+		mq/oH69ob6H3ixNqHqZwGuxKAzs=
 		</data>
 		<key>Headers/AuditMeetingResolver.h</key>
 		<data>
@@ -3993,15 +4037,15 @@
 		</data>
 		<key>Headers/AuditSchedulerStrategy.h</key>
 		<data>
-		c0XT8JdP8dkm8+lm4QqmWWHyZBs=
+		Xr3WaYzuv1W11tBXSTgmK+FChVg=
 		</data>
 		<key>Headers/AuditSendTime.h</key>
 		<data>
-		zP5WGYd+GfnZzpe6s0asOYkT+4g=
+		s9jSOUK9r0GSGKbnl1sN2XeZgH0=
 		</data>
 		<key>Headers/AuditSendTimeLevel.h</key>
 		<data>
-		AzwA+uupVEfXQoNQSIkkZhWpouo=
+		8tuqlYpPk7WQofSRxF7EWUqlgwE=
 		</data>
 		<key>Headers/AuditSettings.h</key>
 		<data>
@@ -4009,71 +4053,71 @@
 		</data>
 		<key>Headers/AuditWifiBatteryStrategy.h</key>
 		<data>
-		1t3pOwbgUvA8RMMPM5D4RHUe9zo=
+		Elt1I9v8v+HwMzc7AhLOIU0ITN0=
 		</data>
 		<key>Headers/AuditWifiStrategy.h</key>
 		<data>
-		jmf8aNxP3GWKY4Ba8gvSIODuBjQ=
+		HORV2fe6L9k2Ae7vrFtW2cmpKw8=
 		</data>
 		<key>Headers/AuthorizationManagerImpl.h</key>
 		<data>
-		rEjq3eJkcIrHjxZVGFd68L1sSWg=
+		TnACmQSxzl8ycaKDJ3SvuqZ03bE=
 		</data>
 		<key>Headers/BackoffAlgorithmHelperBase.h</key>
 		<data>
-		RmDDKrskx0G8W2ZXLfZGH0BJXhQ=
+		NpwHTjddEvjYXSi7RJJKPht3d/M=
 		</data>
 		<key>Headers/BackoffAlgorithmType.h</key>
 		<data>
-		oULqINWZDhM3VAFqJlnae6jSQqA=
+		x2rsI7ugcJCTAz0oPCOVr77SDgI=
 		</data>
 		<key>Headers/BaseEvent.h</key>
 		<data>
-		+52GDF512ABK3sN21SboCd2w9dc=
+		V3gzfG16zS6OQlN3cvzCwf8yvjY=
 		</data>
 		<key>Headers/BasePhoneReminder.h</key>
 		<data>
-		M7eWHG9HXk4jy/BcA5/ihLIl8Po=
+		fr6ciR4oz2IAM5gK1xvpW1aDyEw=
 		</data>
 		<key>Headers/BasePhoneReminderInner.h</key>
 		<data>
-		86OS0jVeX0/c9qrSgt7MSdS3caM=
+		/Vbm+jrsnCxDr+SzBR5MnPBUmJ0=
 		</data>
 		<key>Headers/BaseReminder.h</key>
 		<data>
-		1uKCIf1CdM7QGlnuRSG7rLDCQXM=
+		8k0s7Iul88pcG4fbxaQ6dnRsuN8=
 		</data>
 		<key>Headers/BaseReminderInner.h</key>
 		<data>
-		YFPLojZN+C+cHM4pl+a0Ec+qAEo=
+		IWCcgJ5LBRItw/DJC0m6Md4i8rs=
 		</data>
 		<key>Headers/BaseSensorData.h</key>
 		<data>
-		6uwNMx3FDWWK5+GdzNVA0CQuMVk=
+		o1HcquR3iK1Wv9PEJbZmVjWM2C0=
 		</data>
 		<key>Headers/BaseTrigger.h</key>
 		<data>
-		CZ5gdnBT7fOlmZIjwf/L4cSv6gE=
+		wmCOWMTEPZOsRAKw2V6sA/Zawpo=
 		</data>
 		<key>Headers/BaseTriggerInner.h</key>
 		<data>
-		TSk6ACJwUxQ/W7VjZ2e4qD8vh4E=
+		HUDadL6VnIOFcWJ3CpV3TzXOs4I=
 		</data>
 		<key>Headers/BaseUserStateChangeProvider.h</key>
 		<data>
-		1lU8w1V7p9N0TxN4LifDYMQJydA=
+		JGYEDJajjFoAHVzzPAMgr6UFMik=
 		</data>
 		<key>Headers/BasicRouteProviderImpl.h</key>
 		<data>
-		XEiVANeHWLE1bs+XCZo4hHCBnS0=
+		6u0ZZAt+wrTdrRkO5zfWIwa+iuI=
 		</data>
 		<key>Headers/BasicRouteProviderStub.h</key>
 		<data>
-		C2Zyac/ucjDjiPrR0dUd0eRyg4w=
+		YZ4NqvNdsI9n9Rb6rrHiPd4dzBM=
 		</data>
 		<key>Headers/BatteryLeverInfoData.h</key>
 		<data>
-		f2BGYBZie6/+jdVOr4TcDNJSTeU=
+		cViahh+2xMqtyu754owAmwMXue8=
 		</data>
 		<key>Headers/BatteryStateInfo.h</key>
 		<data>
@@ -4081,15 +4125,15 @@
 		</data>
 		<key>Headers/BeEvent.h</key>
 		<data>
-		W64sGzelz5/APDhHeqIA0e6sZOE=
+		IFbanYi0GTZ+XkYcf4Mbj+/jMXM=
 		</data>
 		<key>Headers/BeEventTemplate.h</key>
 		<data>
-		ggtEnFWAB9CgFt6fqJqy85N/QtQ=
+		uCNwjjlDxUJmatk0j2/aH6mTJnE=
 		</data>
 		<key>Headers/BeManager.h</key>
 		<data>
-		Lk26i9iuAPrlVLwnobdyDI8pqJo=
+		dq7NyIRZtadTfec7WUmtFlv77tU=
 		</data>
 		<key>Headers/BlockingDaoFactory.h</key>
 		<data>
@@ -4097,11 +4141,11 @@
 		</data>
 		<key>Headers/BluetoothDeviceInfo.h</key>
 		<data>
-		xaTdkhqJWpbyw0Jn/tsQTzjyRBk=
+		W0cfHeacEMh4a+6PhKrkaVDPBlY=
 		</data>
 		<key>Headers/BluetoothDeviceSensorData.h</key>
 		<data>
-		LxuGqqdtlfHvoJAfCQrGra7xO0A=
+		L0YI8R1r1amyvu5GxGf4SW50gtM=
 		</data>
 		<key>Headers/BoundingBox.h</key>
 		<data>
@@ -4117,15 +4161,15 @@
 		</data>
 		<key>Headers/BuildPrefs.h</key>
 		<data>
-		hv+TXhBUobjmIr3MyrscyuDa8oc=
+		uWM2UjM6jWmq1laBVIX3R1UXx3g=
 		</data>
 		<key>Headers/BuildPrefsStub.h</key>
 		<data>
-		XlyrEWcUuNOuEJQwMM0r/6XiLY4=
+		OJs9hFOqsbmePCuQ+tYKD3ZEN0Q=
 		</data>
 		<key>Headers/CLUSTER_STATE.h</key>
 		<data>
-		Vi5osb2R7tdGx2XjFHrSElEmpa0=
+		KrQrzjTvXNNCo2wKWyhSzS0aB5s=
 		</data>
 		<key>Headers/CalendarDetails.h</key>
 		<data>
@@ -4133,15 +4177,19 @@
 		</data>
 		<key>Headers/CalendarDetailsProvider.h</key>
 		<data>
-		oVgQRq1Egu0uxwQCvCADleJojfs=
+		pAcfAJ36NOY8JywoaDoVpLAWVeo=
+		</data>
+		<key>Headers/CalendarDetailsProviderModule.h</key>
+		<data>
+		loYDB37p8x7+SGokxFny+GZSX6I=
 		</data>
 		<key>Headers/CalendarEvent.h</key>
 		<data>
-		7QSbAN2tB+6yadB21U8U7wLWuyM=
+		OWJpWqQzoGH0IXW5GC8usB2rJR8=
 		</data>
 		<key>Headers/CalendarEventsManager.h</key>
 		<data>
-		o+z5r1oKQJEJAFYPTYefxjnNDRE=
+		FOuGb2T4LjrgPGR9685hOcA4yPo=
 		</data>
 		<key>Headers/CalendarOperationException.h</key>
 		<data>
@@ -4153,27 +4201,27 @@
 		</data>
 		<key>Headers/CallReminder.h</key>
 		<data>
-		EDIP8XxtYjbuhbRVPYQ2zQMSdsQ=
+		FXJv7z0y2BmWFds9DI2hA8HsjuY=
 		</data>
 		<key>Headers/CallReminderInner.h</key>
 		<data>
-		sUJsoZiOsrShwENo7gb+cfoPcxA=
+		ld1yiZ9I+Yi59AqL071sCCADTbo=
 		</data>
 		<key>Headers/CallRemindersManager.h</key>
 		<data>
-		v4i2eadO32G0mUHZrcjjT37C1C4=
+		jwFCz3cR6PdE0576Z4CL3tw6yeI=
 		</data>
 		<key>Headers/CallRemindersMemoryStorage.h</key>
 		<data>
-		68VUJVGAuVaYYAkv8nu1W0TpR5I=
+		KxbFeYe7jUPwT8a58MIJp5wGl64=
 		</data>
 		<key>Headers/CallRemindersPersistentStorage.h</key>
 		<data>
-		cT3UFeMtzMiGVQhaUeXU655iMiY=
+		Lolm5yC67g3lhI7NnqkhRelsOpQ=
 		</data>
 		<key>Headers/CallType.h</key>
 		<data>
-		bEx6o7OxwuKztSlWb3ZcwtC/IsA=
+		+MuNMjnaXALgSjT9ATdxCPX1q8g=
 		</data>
 		<key>Headers/ChargeDataHelper.h</key>
 		<data>
@@ -4181,31 +4229,31 @@
 		</data>
 		<key>Headers/ChargeMethod.h</key>
 		<data>
-		clohUqdFuyQOXUFpHUn+dDMMuzU=
+		iOfjZxTDY4OfQ50CO5xG1FaPFBo=
 		</data>
 		<key>Headers/ChargeTrigger.h</key>
 		<data>
-		MkV6kj2n36agJKAiLVei7fMUkK0=
+		XKKFnUIU+nJM6Ln8Uk2Z73zqOPI=
 		</data>
 		<key>Headers/ChargeTriggerInner.h</key>
 		<data>
-		90/ZTVZSG7JTuSrtciV/X13ocfA=
+		o863Kv5ZTAjor8Y9cdu05+g/If8=
 		</data>
 		<key>Headers/ChargeTriggerType.h</key>
 		<data>
-		uHjRvHxWm5bqfOeJcozIAZrOE48=
+		GhR0wWzB6JeyW2dGJLDUK1wtw64=
 		</data>
 		<key>Headers/ChargeTriggersManager.h</key>
 		<data>
-		scwKOB9tN/hU93mriJLro2NW0mQ=
+		f4yTYX2c9n2gNlw4v3JjvnG4L9w=
 		</data>
 		<key>Headers/ChargeTriggersMemoryStorage.h</key>
 		<data>
-		JTQt3DK8+xwR3ITWO5557+sIpJY=
+		5WGxMVakqJ9xAsT6TPW81FhHfnI=
 		</data>
 		<key>Headers/ChargeTriggersPersistentStorage.h</key>
 		<data>
-		mVUrVnDaCAPRS81sAck12LEp/QI=
+		dirTamFFOM+J8H7qHQspTUyxa80=
 		</data>
 		<key>Headers/ClassFactory.h</key>
 		<data>
@@ -4221,7 +4269,7 @@
 		</data>
 		<key>Headers/Cluster.h</key>
 		<data>
-		OCzbxOPyBAXY5GtRZo7AzIE3vQQ=
+		iwRJzQr3nXNt2SW+wPwXKzngt2s=
 		</data>
 		<key>Headers/ClusterLocation.h</key>
 		<data>
@@ -4233,11 +4281,11 @@
 		</data>
 		<key>Headers/ClusterSensedPlace.h</key>
 		<data>
-		AEKYzekzLaI0IA6LlH2rUSYAQhk=
+		/yVij3n43lZCuK6e4bA2ZLnEFKA=
 		</data>
 		<key>Headers/ClusterStatistics.h</key>
 		<data>
-		32+SiXWfxn1ey6TpWw5fivUhdQs=
+		aWfioysy6OlMNvqr8q5a6Nhw9d0=
 		</data>
 		<key>Headers/ClusteringParameters.h</key>
 		<data>
@@ -4273,7 +4321,7 @@
 		</data>
 		<key>Headers/ContactInfo.h</key>
 		<data>
-		uCAh8Q/bWx7IAWqi5GynZrzt24M=
+		ah/78/RaGigT47FqLXRtz3Ft/VU=
 		</data>
 		<key>Headers/ConvexHull.h</key>
 		<data>
@@ -4281,11 +4329,11 @@
 		</data>
 		<key>Headers/Coord.h</key>
 		<data>
-		IviYrSd6toRP0h0RFv6I74Wgk+Q=
+		8M+h8HlK3ZF1NtbIsAB09Aspvcg=
 		</data>
 		<key>Headers/DBApStat.h</key>
 		<data>
-		Y7MMSMAkcpBRKYJLZkgBN0gqxpM=
+		zvpZCR8eSqx0+tfcZqSxxQOoAb8=
 		</data>
 		<key>Headers/DBConfig.h</key>
 		<data>
@@ -4293,7 +4341,7 @@
 		</data>
 		<key>Headers/DBLocationData.h</key>
 		<data>
-		TOZpXTVw/QMt6HCu+txrRpegNdU=
+		ubtApI4OZ1sha9JSXmWio2NGAMU=
 		</data>
 		<key>Headers/DBObjectWithOperation.h</key>
 		<data>
@@ -4301,47 +4349,47 @@
 		</data>
 		<key>Headers/DBOperation.h</key>
 		<data>
-		Pd43NEMcyh+S33wHh3Priq7KT2Q=
+		omwS/bNenktFCImo7ycADNjC8Fc=
 		</data>
 		<key>Headers/DBPolicyHistoryInfo.h</key>
 		<data>
-		/6LcYKV0Os7VUtdQo6/Tf4CvK4Y=
+		v+fyaak1gJLUsxuYZvl+x5TAPI0=
 		</data>
 		<key>Headers/DBPolygon.h</key>
 		<data>
-		K/ouLuFOyiip1cMjQn8fP5oUPHY=
+		LpO5gdFB6lRMumIs394vl/QFkG8=
 		</data>
 		<key>Headers/DBRefPoint.h</key>
 		<data>
-		z2PdE0DVB+7njOx0RtugCVvL9nU=
+		dhzCC2Tg3ZxfSFjcNzc3PCw1qlg=
 		</data>
 		<key>Headers/DBRepositoryFileImpl.h</key>
 		<data>
-		+U/5rM9kRxQm2jXzQPIgSPE/UqM=
+		xLQRTTZDrPvewts/SLVz9o12tnI=
 		</data>
 		<key>Headers/DBResponse.h</key>
 		<data>
-		ImtVpwTqd/cHpdvP2gXbSFV0lvg=
+		WAznRjY3ckPcVzg8+zECJ8+3TPg=
 		</data>
 		<key>Headers/DBSensorDataFile.h</key>
 		<data>
-		0UfOQKUTbgm9cbZ3Sgf2VRNr4sE=
+		VZODGHRfGV0cq0aaKZsy3NOWVB0=
 		</data>
 		<key>Headers/DBSourceDefinition.h</key>
 		<data>
-		wivZekJv5BcwJGS17MjGJEMMHYA=
+		zrqT3KI7/VoI3AxkUM7+EvAnrCU=
 		</data>
 		<key>Headers/DBVisit.h</key>
 		<data>
-		n/vRYjreKPJIxwXKRMBzXbP6VOk=
+		hSI9bMSclVoeLapd9UQ/MhU1VqA=
 		</data>
 		<key>Headers/DBWifiSignature.h</key>
 		<data>
-		OkPT42N3tfDH+CAewLlmGQtncGk=
+		XCrK3dZMfY/QdCDHlxM4xys6GeQ=
 		</data>
 		<key>Headers/DaoCommonMethods.h</key>
 		<data>
-		bOBcZPRlfMc+z/qWJPIGqyuwhK8=
+		hzHBNJ34YEGgDV0obhKlGz6sOjM=
 		</data>
 		<key>Headers/DaoFactory.h</key>
 		<data>
@@ -4349,15 +4397,15 @@
 		</data>
 		<key>Headers/DaoSendSyncImmediatelyStrategy.h</key>
 		<data>
-		C28bgYgcR9x68SWMC6ouCD+canM=
+		yC63YkH4ycfNrdc85ng9RHOYwjE=
 		</data>
 		<key>Headers/DaoSendSyncTimerIntervalStrategy.h</key>
 		<data>
-		7tcEhHGAVhuA451ye+r1eQSD2u0=
+		IuxvMUli58OU8J8StgWnts0cabI=
 		</data>
 		<key>Headers/DaoType.h</key>
 		<data>
-		XgxxnKAQYhIbbhOsAn7GWHRSBSs=
+		uxygsFjj1rMDm2XhdLmgizw+2BA=
 		</data>
 		<key>Headers/DaoTypeToClassConvertor.h</key>
 		<data>
@@ -4365,7 +4413,7 @@
 		</data>
 		<key>Headers/DataBaseControl.h</key>
 		<data>
-		KprSsvW86GWzcDH4SMIqmIlMIi0=
+		h6ORCEMBMf2shaPI3Gqkq642lRQ=
 		</data>
 		<key>Headers/DataObjectFactory.h</key>
 		<data>
@@ -4373,23 +4421,23 @@
 		</data>
 		<key>Headers/DateFormatType.h</key>
 		<data>
-		hA++WgaUcp4LWLZ48/HAtnkNrts=
+		z8yGGBvAuTvzucmCYTNfhv0+uHs=
 		</data>
 		<key>Headers/DefaultSQLCreateUpdateStrategy.h</key>
 		<data>
-		oEe0SD3RRJgrKc4AadXk5g9R8ug=
+		JRtj8ZD8eviQlGqu8mrxlGYlvPU=
 		</data>
 		<key>Headers/DetectedPlace.h</key>
 		<data>
-		U1wEXyceHz9caUz9ZtiYwzIWACc=
+		J7ENmuyfgiUNARetTLiCyN1Mjn8=
 		</data>
 		<key>Headers/DeviceConnectionState.h</key>
 		<data>
-		p+Zc0Ir/yH3LXrWjIEJvBwjiTsk=
+		8/lq/NqWKxtPDWkSjIcvv8xqYzw=
 		</data>
 		<key>Headers/DeviceDataAuditObj.h</key>
 		<data>
-		FoKrDD170K5F7sZhszUyiao24Lw=
+		uRVPAmQIlxjnoMsKqktISdoO+pQ=
 		</data>
 		<key>Headers/DeviceStateData.h</key>
 		<data>
@@ -4397,19 +4445,19 @@
 		</data>
 		<key>Headers/DeviceStateManager.h</key>
 		<data>
-		/8DztlHs0/LJfWTkI1lazesXRiM=
+		vA9yCOGyuJkqmVpd4A9n0bXD6PQ=
 		</data>
 		<key>Headers/DeviceStateManagerMock.h</key>
 		<data>
-		UsbTDhznRH3Vd3EOORvTQqaFLlM=
+		jy7ooCLBfqC0dUZe1Omqzl62t84=
 		</data>
 		<key>Headers/DeviceStateSensorData.h</key>
 		<data>
-		+oyDkbiPkMti6LKPkUXhHk3+R5w=
+		Qs2RQ5V4P7mfwzPxF1SunRu6qvw=
 		</data>
 		<key>Headers/DeviceStateType.h</key>
 		<data>
-		h8a8S2BSw08rmb1xo7fnzucu4LU=
+		STKQ97aZXPedxJhNGf5I9BRX9qo=
 		</data>
 		<key>Headers/DjClusterAlg.h</key>
 		<data>
@@ -4417,51 +4465,51 @@
 		</data>
 		<key>Headers/DoAtTimeBeforeTemplate.h</key>
 		<data>
-		BY3sxZhV8dy2Ly6so3Coa1ys+q4=
+		OlksQsNHzKEZrp0/hq44jCrbG5U=
 		</data>
 		<key>Headers/DoAtTimeOfDayTemplate.h</key>
 		<data>
-		b3/rsGUoxVfYJlsdbI2xEk8WglM=
+		CeoopXlR7mWpaVjZiMjOrIyi2TA=
 		</data>
 		<key>Headers/DoReminder.h</key>
 		<data>
-		z2rodtieDstBfAWBZ7aTjgdbnGg=
+		UrBoIzHQGJr7nJu/Z/HEr8dgJfI=
 		</data>
 		<key>Headers/DoReminderInner.h</key>
 		<data>
-		KllfeJoyER6LmduzRVQzLFtwNMo=
+		z6NDsIQLPHdPDTlr4Ud01TosNis=
 		</data>
 		<key>Headers/DoRemindersManager.h</key>
 		<data>
-		S8QWG8Xr8jhF6tY7d+ZV9vRWTuA=
+		No3jW13D4MebyZ79JT61njgPr1A=
 		</data>
 		<key>Headers/DoRemindersMemoryStorage.h</key>
 		<data>
-		TEMBuYoi5WpkB3xyup/uZdkx3SU=
+		eq/uJT3+DQpTygFFT9Re9LmYdpA=
 		</data>
 		<key>Headers/DoRemindersPersistentStorage.h</key>
 		<data>
-		EM8ovgyq/tv9Vw3126SNBOeGdQw=
+		p8J29695qidG6NEj28y9KL1/ITI=
 		</data>
 		<key>Headers/ETARequest.h</key>
 		<data>
-		tP3hE7U8gYbuJaih4F3PC2rYmSk=
+		hvRpvxPVbnIUBcxNsabWSczCF34=
 		</data>
 		<key>Headers/ETARequestDataObj.h</key>
 		<data>
-		220j4I2Ri+eTqOtTRM6jSo+6cVQ=
+		Qx7WCoDqFu5SEKG0dLMBPibVEnk=
 		</data>
 		<key>Headers/ETARequestResponseDataObj.h</key>
 		<data>
-		QJR88LjZbP0uhKbGmf29/5yBu80=
+		9MPc8m2pPjvK60OCqEw0FxsiwtA=
 		</data>
 		<key>Headers/ETAResponse.h</key>
 		<data>
-		tveCbqC8JfZ28QtiIH0qrVPost0=
+		qDI2V7O7jWASnH0giwW8FMeUQd4=
 		</data>
 		<key>Headers/ETAResponseDataObj.h</key>
 		<data>
-		gsGfKKJEdTGKpGdT0U84iyuoxKw=
+		XHu9vGdUHt85vWLsdMKGyCgtMFA=
 		</data>
 		<key>Headers/Edge.h</key>
 		<data>
@@ -4469,15 +4517,15 @@
 		</data>
 		<key>Headers/EndSuspendState.h</key>
 		<data>
-		W0SYYAF64kYXLKngWFvOMvRNpmg=
+		M9BiPRO+o2FUlqEoXNLCri+2syg=
 		</data>
 		<key>Headers/EndVipState.h</key>
 		<data>
-		0p9vfHi6N1a5FGCbaPm4m8fvs+Q=
+		LkOMfN7EW4PoIh1M16MmpMXTj0U=
 		</data>
 		<key>Headers/EtaRouteData.h</key>
 		<data>
-		GX8CqDbLGtiXLytC3Tsoci99Ykk=
+		wRGpe/pm8TSVh+PmRNOJDy3Ptvg=
 		</data>
 		<key>Headers/EventContext.h</key>
 		<data>
@@ -4485,7 +4533,7 @@
 		</data>
 		<key>Headers/EventIdInfo.h</key>
 		<data>
-		9C5FaJ9ZS2giF8C+7rN7V+KAwcw=
+		E6fNKi/u+JkqE6roZdoiE7wNebw=
 		</data>
 		<key>Headers/EventIdManager.h</key>
 		<data>
@@ -4493,23 +4541,27 @@
 		</data>
 		<key>Headers/EventTriggerType.h</key>
 		<data>
-		Lgq+Wd1F+ONK4kdZWY1e601/bng=
+		P/O6+hlzvM8WORQUQIWBlSrXXnY=
 		</data>
 		<key>Headers/EventsAudit.h</key>
 		<data>
-		yVBA9wfhvJ06r2+A7hGm4kpmx58=
+		LMGKs1rtBKqQJQgvd+w84eF32wQ=
 		</data>
 		<key>Headers/EventsClassPool.h</key>
 		<data>
-		eFrUSrUmtqNKIHKcLd89u7UaPRw=
+		xWZxYzCVl43RY8PkqsXNs6pTKhI=
 		</data>
 		<key>Headers/EventsEngine.h</key>
 		<data>
-		NYS/EBiPFRx6ApNaT9G6Yz9Wro0=
+		Vm4czj3rNMVf/LcNDPZa1FN9DpM=
 		</data>
-		<key>Headers/EventsEngineDebug.h</key>
+		<key>Headers/EventsEngineModule.h</key>
 		<data>
-		5/T3RLboTmksVtARg+/cv/rg6Vk=
+		2aCjqnXllnUDKkUBnQ01/hH5KXU=
+		</data>
+		<key>Headers/EventsEngineModuleDebug.h</key>
+		<data>
+		kh70+LKIxRvfe/KVB8En40I2R+Q=
 		</data>
 		<key>Headers/EventsFactoryInitializer.h</key>
 		<data>
@@ -4517,11 +4569,11 @@
 		</data>
 		<key>Headers/EventsManager.h</key>
 		<data>
-		/jy2uhpKxO0L3VteIiDioc43VfE=
+		UGzsJ5LWA/duJKzZV+k0/W9dQwM=
 		</data>
 		<key>Headers/EventsManagerDebug.h</key>
 		<data>
-		hPD8bhWtwxGTo3+vU2C2oHZz0kA=
+		7+zUFrWjnUQ+41zZKxyomwR1cl4=
 		</data>
 		<key>Headers/EventsPersistenceUtil.h</key>
 		<data>
@@ -4541,27 +4593,27 @@
 		</data>
 		<key>Headers/ExtendedEventTemplate.h</key>
 		<data>
-		2nL2WSvrcmquxWPmtFIGxrjXAHo=
+		EjPqGdfiZNZdDFDibLGcshOz/mk=
 		</data>
 		<key>Headers/ExtendedEventsManager.h</key>
 		<data>
-		t8dD2aXczY68CClZUQp+HNAViZE=
+		S2Io6nVcf6zmojg0zIh7fpd+RXI=
 		</data>
 		<key>Headers/ExternalEngine.h</key>
 		<data>
-		RBO5LwbeM/QcQzcdxppwRW0rapw=
+		WY8Gs3JSqTug/SNAkVK1gGQX3vI=
 		</data>
 		<key>Headers/ExternalPlacesModule.h</key>
 		<data>
-		vzyZIfLKA0h+Wkps3+SlE5Nz1pE=
+		RDeXHbt0yOdmpTNGtgOjjQ2FXZg=
 		</data>
 		<key>Headers/FakeTimer.h</key>
 		<data>
-		2vjor2YmrzTA/hSs/I0r1bKcX4o=
+		vXuiRR1efn6nEjKRw0jldHuQNBg=
 		</data>
 		<key>Headers/FilePlacesDao.h</key>
 		<data>
-		v4CilIB7LuOnZG3LT2GYd05vkQY=
+		oLGoose5XfI1a0Sb8OoCboPn7U8=
 		</data>
 		<key>Headers/FileStreamManager.h</key>
 		<data>
@@ -4569,7 +4621,7 @@
 		</data>
 		<key>Headers/FlowType.h</key>
 		<data>
-		TnXaf0yAJ8ghLFo05LDytGOu8fc=
+		s1ayg1shrUMw6ag6HQOGsVQ9KP4=
 		</data>
 		<key>Headers/FuseFilter.h</key>
 		<data>
@@ -4577,11 +4629,11 @@
 		</data>
 		<key>Headers/FusePoint.h</key>
 		<data>
-		y4MMwReWn45nnvtxqki0yjNkRaY=
+		+dfSTVRerNSK4uzEpWJOpdeJpSo=
 		</data>
 		<key>Headers/FuseSensorData.h</key>
 		<data>
-		dqkKe1eI1iFuuIc/WFwuexUT7UU=
+		q6BhtKpMDPef0xyS5LbplYVzxiI=
 		</data>
 		<key>Headers/FusedLocVisitDetector.h</key>
 		<data>
@@ -4589,7 +4641,7 @@
 		</data>
 		<key>Headers/GPSSensorData.h</key>
 		<data>
-		zlKjFymd+YBjsGjn12whxkjorX4=
+		LIokSLFEgNaKf8Gii8MazxNXHE4=
 		</data>
 		<key>Headers/GaussianMixtureModel.h</key>
 		<data>
@@ -4597,23 +4649,23 @@
 		</data>
 		<key>Headers/GenericClientUserIDDaoDecorator.h</key>
 		<data>
-		ZaBB6FS29EF5+BLjLTK+EMPgTro=
+		dTop3vgyGgPaJ4n0BFrWhm0oel8=
 		</data>
 		<key>Headers/GenericFileDao.h</key>
 		<data>
-		Sl0Ip4CnRHsnE6GagyFBD+9S6ec=
+		ngzmOSoWYmUql8hKJg+/GVwFsqU=
 		</data>
 		<key>Headers/GenericMemoryDao.h</key>
 		<data>
-		/g2YwNLISQmJRv86Qis1mWIP3GQ=
+		jEx5h6BphT5kBwT1myPNG6sAheA=
 		</data>
 		<key>Headers/GenericSQLDao.h</key>
 		<data>
-		/OYTa2J1f91qIC00ESPbAmd2TqQ=
+		R4vLir6IPSeXrhdruTXKZTxCoXQ=
 		</data>
 		<key>Headers/GenericSyncDaoDecorator.h</key>
 		<data>
-		eo/b5jexU/CSj8XwJND9cTy9ujs=
+		+skMj6Xf97zip93wlpFqc3brl/E=
 		</data>
 		<key>Headers/GeoUtil.h</key>
 		<data>
@@ -4621,7 +4673,7 @@
 		</data>
 		<key>Headers/GeographicData.h</key>
 		<data>
-		Dor3Z1vZNxWtrg69HBm0GdFZ7zM=
+		q3zmeITNhN/kU3EaKt8+MGN9jmQ=
 		</data>
 		<key>Headers/GmmAlgo.h</key>
 		<data>
@@ -4629,7 +4681,7 @@
 		</data>
 		<key>Headers/GpsState.h</key>
 		<data>
-		fBuJDckMCYVfSZIuFwn6PKuMLtc=
+		BRqwsAc25Q43Pyypxq4erBuaeew=
 		</data>
 		<key>Headers/Grid.h</key>
 		<data>
@@ -4645,11 +4697,11 @@
 		</data>
 		<key>Headers/HttpAuditTransmitter.h</key>
 		<data>
-		FVseuQZOlizDO6XbxpfsKxbBmA0=
+		y7pzc0DLw2a3y8DhE3B8lt/jnmE=
 		</data>
 		<key>Headers/HttpProviderNull.h</key>
 		<data>
-		FDsy66t4YSAeeqIo6ZL01ctof/E=
+		dZggCTizOh5qMuKgAMK00UCtwvY=
 		</data>
 		<key>Headers/HttpProviderSettings.h</key>
 		<data>
@@ -4657,15 +4709,15 @@
 		</data>
 		<key>Headers/HttpProviderStub.h</key>
 		<data>
-		IT9C29d24gCvxTIKLzYiMZdEoZM=
+		ukOAO/P8MF5Q9U4j0JEPATP00gI=
 		</data>
 		<key>Headers/HttpProviderWrapper.h</key>
 		<data>
-		wBHWbJBjf+BjfgRZJERKvhBYaZg=
+		hJ9l7J4pLsZFXO8jOsGpJ1OVbNw=
 		</data>
 		<key>Headers/HttpProviderWrapperStub.h</key>
 		<data>
-		2DB/LbJOjqI7eiRmhXsUt3rnXw4=
+		VyKMF1VnXwAqWyT48Ib+qVNjn3g=
 		</data>
 		<key>Headers/HttpSentDataInfo.h</key>
 		<data>
@@ -4677,7 +4729,7 @@
 		</data>
 		<key>Headers/IApStat.h</key>
 		<data>
-		rjmb8ny5v4uh55fRr1yrL/bWe1w=
+		TKhKmcvGN+p5O9RUW/EFdIjnpog=
 		</data>
 		<key>Headers/IApiUsageUtil.h</key>
 		<data>
@@ -4733,7 +4785,7 @@
 		</data>
 		<key>Headers/IBuildPrefs.h</key>
 		<data>
-		Hw0dwN1urQnjRW+qbT+nl12hwUA=
+		s4f2s1VVVnlZRhEi6OdRMdGWrLA=
 		</data>
 		<key>Headers/ICalendar.h</key>
 		<data>
@@ -4742,6 +4794,10 @@
 		<key>Headers/ICalendarDetailsProvider.h</key>
 		<data>
 		V8hwGTGfJ9e7tWXKjgIoMWNzOvo=
+		</data>
+		<key>Headers/ICalendarDetailsProviderModule.h</key>
+		<data>
+		wKR7feYvPGstq2po3Zg7TgJPWAg=
 		</data>
 		<key>Headers/ICalendarEventsManager.h</key>
 		<data>
@@ -4753,19 +4809,19 @@
 		</data>
 		<key>Headers/ICallRemindersManager.h</key>
 		<data>
-		x097aZ6jJ4z6VrkG23gtB+epplM=
+		8mR2mBGGwcbjJF8VQ6hKPzcVtU0=
 		</data>
 		<key>Headers/ICallRemindersStorage.h</key>
 		<data>
-		zFCbOxlR5y6SNeOU1JAMRoG04LQ=
+		6gQBTzDQeNw9LSdpueKg6avqa0U=
 		</data>
 		<key>Headers/IChargeTriggerStorage.h</key>
 		<data>
-		WEyuI44W2gjn24qmV86lYPdzSUQ=
+		DrlIlhzn3miYPyPdye9eqinJHaQ=
 		</data>
 		<key>Headers/IChargeTriggersManager.h</key>
 		<data>
-		e/RLnRZfEQvLqa/UvlurogK9TXw=
+		PcM6kH0R9C/YvdoJohIcm43oeSg=
 		</data>
 		<key>Headers/IContentValues.h</key>
 		<data>
@@ -4801,7 +4857,7 @@
 		</data>
 		<key>Headers/IDaoSendSyncStrategy.h</key>
 		<data>
-		xvlD589x+hWFvh260mTnhWE/YvQ=
+		y4DxiDL2XiCdE0ZsfN9Q5J09+FA=
 		</data>
 		<key>Headers/IDbManager.h</key>
 		<data>
@@ -4817,7 +4873,7 @@
 		</data>
 		<key>Headers/IDetectionModule.h</key>
 		<data>
-		zGkO1jMZYq0m0/bqiecuFaw9rkE=
+		Bzlf57XbrRAdarjTT4sjxK6wocs=
 		</data>
 		<key>Headers/IDeviceInfo.h</key>
 		<data>
@@ -4833,11 +4889,11 @@
 		</data>
 		<key>Headers/IDoRemindersManager.h</key>
 		<data>
-		HtBRAZhrStosd3DKcw7NA0FDcsY=
+		6c1Q88qpXcFcPIypF1Fn0kDLbHA=
 		</data>
 		<key>Headers/IDoRemindersStorage.h</key>
 		<data>
-		FTZlPYhEeb0Iy/niz+eKB4GJJjc=
+		I7PK2XHqMGnsDIlHCl/6Q43cmQM=
 		</data>
 		<key>Headers/IEvent.h</key>
 		<data>
@@ -4859,6 +4915,10 @@
 		<data>
 		wT5lSHDwA9TNzOL6DfGp5GiGBM0=
 		</data>
+		<key>Headers/IEventsEngineModule.h</key>
+		<data>
+		hCdr3WC0RcwoFuo2GPqbjY+LOW4=
+		</data>
 		<key>Headers/IEventsManager.h</key>
 		<data>
 		zYsuh5BYgEs2wZAY8H4wFyeb6vg=
@@ -4873,7 +4933,7 @@
 		</data>
 		<key>Headers/IExternalMessageEngine.h</key>
 		<data>
-		/VSxarA2Jr0CuBY4dBeBb2qbNBk=
+		3vuJS4AMSjc0hTTdAQk4QfVODfc=
 		</data>
 		<key>Headers/IExternalPlaceListener.h</key>
 		<data>
@@ -4901,7 +4961,7 @@
 		</data>
 		<key>Headers/IHttpAuditTransmitter.h</key>
 		<data>
-		cJY+MmPU2fZNWTKtEKdWUkBfepk=
+		82UZeeIe9nDTRUPONr5fJQCEhg0=
 		</data>
 		<key>Headers/IHttpProvider.h</key>
 		<data>
@@ -4917,7 +4977,7 @@
 		</data>
 		<key>Headers/IInternalMessageEngine.h</key>
 		<data>
-		+pAeUxQNvIFxxfGjJ2GECSHGjDo=
+		WNpY+I3YyI2c3raIpQG0chYReAk=
 		</data>
 		<key>Headers/IJSONUtils.h</key>
 		<data>
@@ -4929,7 +4989,7 @@
 		</data>
 		<key>Headers/ILocationData.h</key>
 		<data>
-		4MOvK/Erfew5anwkKaHfYlCk64E=
+		aXkQG4JkxDlEvT2dlXX9cgWogeo=
 		</data>
 		<key>Headers/ILocationProvider.h</key>
 		<data>
@@ -4989,15 +5049,15 @@
 		</data>
 		<key>Headers/IMotStateDataProvider.h</key>
 		<data>
-		ZEA0CksJc+w80RpK0RX5DkdsQQ0=
+		drPP7BM8UGoGUE53Bc3IJY+wCxk=
 		</data>
 		<key>Headers/IMotTriggerStorage.h</key>
 		<data>
-		NGKbq5OckybeGMY0YE6v/FjbWk8=
+		vKLVE5LyU1caoEpiUJVNpyldSjo=
 		</data>
 		<key>Headers/IMotTriggersManager.h</key>
 		<data>
-		NbqGvuPu00WBupe0gv8Oc8huFFY=
+		N+rCGE0s2SOuRNMrywP4b23+oOs=
 		</data>
 		<key>Headers/IMotUpdateListener.h</key>
 		<data>
@@ -5013,11 +5073,11 @@
 		</data>
 		<key>Headers/INotificationRemindersManager.h</key>
 		<data>
-		C/DLHozOAq2sqDLBfwS6s85WdtQ=
+		IJNvnW+e/2M1KT2S00fxGKm+kh0=
 		</data>
 		<key>Headers/INotificationRemindersStorage.h</key>
 		<data>
-		avoTTG+SlCFSNTAqBwFhgEM/IMc=
+		4nBiSZSKl3y8eMKQ3AZykqqVf/M=
 		</data>
 		<key>Headers/IOSAuthCredentialsProvider.h</key>
 		<data>
@@ -5033,15 +5093,15 @@
 		</data>
 		<key>Headers/IOSWakeLock.h</key>
 		<data>
-		2ftN8wQo/G+A5a+9ZyC8f1N0/d4=
+		SKKUX6Sp42Ak9eyGPPV/8LfFZ/k=
 		</data>
 		<key>Headers/IPC.h</key>
 		<data>
-		DKmMGJFtXZdRs3OHw5aBAKulfmc=
+		93G8F1GXk/A7KZwY25nQeisJngw=
 		</data>
 		<key>Headers/IPeriodicDetectionModule.h</key>
 		<data>
-		Wb3wacQGMJkFc/R/9ovpK00lO1Q=
+		B/4pvtSg7izQr2Pj4687QaHjxpE=
 		</data>
 		<key>Headers/IPlaceDao.h</key>
 		<data>
@@ -5055,9 +5115,9 @@
 		<data>
 		1xFi4KHrJEGOMYYC0WxYccS48VQ=
 		</data>
-		<key>Headers/IPlaceRepoInternal.h</key>
+		<key>Headers/IPlaceRepoModule.h</key>
 		<data>
-		NXydxosqvnM3iNMBgUGNmPFcjpY=
+		l33CQ4B2zTOG240sf63M0DFkOhY=
 		</data>
 		<key>Headers/IPlacesEngine.h</key>
 		<data>
@@ -5065,11 +5125,11 @@
 		</data>
 		<key>Headers/IPlacesTriggersManager.h</key>
 		<data>
-		dE8kZi43D4Dv0GwUONzP1CXPuw0=
+		5+WwU0dkRg3C0zy8hhhWB6SIBzM=
 		</data>
 		<key>Headers/IPlacesTriggersStorage.h</key>
 		<data>
-		2CneYZO5kZ0GD5Z6zgg/SXsMrfY=
+		cZ0JqlyYmTuVRzqNuF/pi4YVcsU=
 		</data>
 		<key>Headers/IPlatformServices.h</key>
 		<data>
@@ -5077,7 +5137,7 @@
 		</data>
 		<key>Headers/IPolicyHistoryInfo.h</key>
 		<data>
-		DjIn8hBv+IHazaDizFGGlKnvOwg=
+		aHNO6vb2ncHM/5VWdafOghpZn3Q=
 		</data>
 		<key>Headers/IPolicyListener.h</key>
 		<data>
@@ -5097,7 +5157,7 @@
 		</data>
 		<key>Headers/IRefPoint.h</key>
 		<data>
-		vGiOtmkxbzw1Px3lgYpLN6/quSM=
+		dnHURGPEHdPmlNxSAbldZvjiGPY=
 		</data>
 		<key>Headers/IReminder.h</key>
 		<data>
@@ -5111,13 +5171,21 @@
 		<data>
 		eoMlfqltoypYjpM2OSpM/2NRmsE=
 		</data>
+		<key>Headers/IRemindersManagerModule.h</key>
+		<data>
+		N/36PfBOobn258GLHGv7u8UvHlM=
+		</data>
 		<key>Headers/IRemindersStorage.h</key>
 		<data>
 		x+tVgnBRxUXcHVSRf9Tn12LZR0M=
 		</data>
 		<key>Headers/IResolver.h</key>
 		<data>
-		YABh3AXAz2kj+FhY5kKi+pyRvvk=
+		BgNzjEwRLwSyTVSjeyG1dS+PZXU=
+		</data>
+		<key>Headers/IResolverModule.h</key>
+		<data>
+		Lvewtv7PbFH90nZ7N8cyeiFHyto=
 		</data>
 		<key>Headers/IRouteData.h</key>
 		<data>
@@ -5133,11 +5201,11 @@
 		</data>
 		<key>Headers/IRouteProviderInner.h</key>
 		<data>
-		p7JYxyVackvQ/mhrBD7TOudHo9Y=
+		dhz/Ycyb5UuHNfixx/TNNV7+/3g=
 		</data>
 		<key>Headers/ISdkDefaultPrefs.h</key>
 		<data>
-		9Q5VjajlNhWpKQdAUzAkDG+XdMQ=
+		f2YRSChTg0bPnlFy42Bj+uLx0Ak=
 		</data>
 		<key>Headers/ISegmentedRouteProvider.h</key>
 		<data>
@@ -5173,7 +5241,7 @@
 		</data>
 		<key>Headers/ISqlDb.h</key>
 		<data>
-		QE9DkdWoL01/pXoclNJ28ve8Ad8=
+		H5F6jawrV12K7qeBMk7QfMgiPyM=
 		</data>
 		<key>Headers/ISqlHelper.h</key>
 		<data>
@@ -5253,7 +5321,7 @@
 		</data>
 		<key>Headers/ITSOBaseDBObject.h</key>
 		<data>
-		1zjR7XrS+xA5DjiXmOeE84OkUBE=
+		GnAU+IGll9WMA1FA82pFFVkRZV0=
 		</data>
 		<key>Headers/ITSOCalendarsManager.h</key>
 		<data>
@@ -5281,15 +5349,15 @@
 		</data>
 		<key>Headers/ITSOPlace.h</key>
 		<data>
-		/kTJiLy718nD7ytObWEZj88HENY=
+		HqfPypHaxkN4pImNcnYuNkvJh0Q=
 		</data>
 		<key>Headers/ITSOSemanticPlace.h</key>
 		<data>
-		Y/TFJqlci4BGUegtEiKErDIn8KU=
+		vN5ccJ8A5OBGTjDB6GLZIJvILtA=
 		</data>
 		<key>Headers/ITSOSyncDbObject.h</key>
 		<data>
-		fqhcIuCIi/GtcXDHhzlkicBakiw=
+		Iur8uqBfcmbAGnZxTOs+74ygDxY=
 		</data>
 		<key>Headers/ITSOTimeUtil.h</key>
 		<data>
@@ -5297,11 +5365,11 @@
 		</data>
 		<key>Headers/ITimeTriggerStorage.h</key>
 		<data>
-		b6nz9lxpidUVLJkxisxNWEfSed4=
+		PcFUCDaBQmNtESMHiBC6pHw0iFc=
 		</data>
 		<key>Headers/ITimeTriggersManager.h</key>
 		<data>
-		QmKrK67W6VY0X31tfTDCYmJpcEo=
+		glvXOa1OMcJTTLVfP6vS5l0mR8M=
 		</data>
 		<key>Headers/ITimeUtil_ISO8601.h</key>
 		<data>
@@ -5341,15 +5409,15 @@
 		</data>
 		<key>Headers/ITriggersManagerInner.h</key>
 		<data>
-		aDbQd048FfOvme2LblnqFKUV7AI=
+		ksIbI3gIXl6f4WXc/FivC7bBTY4=
 		</data>
 		<key>Headers/IUserPrefs.h</key>
 		<data>
-		fYz/QYIxdOOQH/QTU7mPa7mjKQI=
+		RdVdPNqTx2kVqWSVKG9xuL7etgA=
 		</data>
 		<key>Headers/IUserStateAuditManager.h</key>
 		<data>
-		WSUvYD914p2740BYWSFO0j2FOxM=
+		Nw8krpcBMd9fQPKYYsyaukrcg0k=
 		</data>
 		<key>Headers/IUserStateChangeListener.h</key>
 		<data>
@@ -5361,23 +5429,23 @@
 		</data>
 		<key>Headers/IUserStateFilter.h</key>
 		<data>
-		SkHXLjUx7JGFSbJa01RNFrUTMwY=
+		RE2MaGnNo/gVjsVX1YFXOWRWF5o=
 		</data>
 		<key>Headers/IUserStateManager.h</key>
 		<data>
 		U98you9k1m2wq4KlmIqXbrmjIDo=
 		</data>
-		<key>Headers/IUserStateManagerInternal.h</key>
+		<key>Headers/IUserStateManagerModule.h</key>
 		<data>
-		XOU9KSV91cME/Yz2LqiyJoB8kZE=
+		lmXjQiTPv6LhKCgIagN8gW5D3VY=
 		</data>
 		<key>Headers/IUserStateMonitor.h</key>
 		<data>
-		5OolcKgaxdDK98Rd1wW6VEbAhfs=
+		e8FU831WkoNWoZz5uNx6B45f9hI=
 		</data>
 		<key>Headers/IVipStateDataProvider.h</key>
 		<data>
-		qmdqmzE9OzMU1uDyIo38Aq9vbLI=
+		JHfBBUlmLuidnQc11lGlh8gdsRA=
 		</data>
 		<key>Headers/IVisitDetectorImpl.h</key>
 		<data>
@@ -5385,7 +5453,7 @@
 		</data>
 		<key>Headers/IVisitEntry.h</key>
 		<data>
-		bTC+EJyXX5hD/eex/TmAP/Dxq8s=
+		rZEijNF0e++Ek+CaEseqAXzzvB0=
 		</data>
 		<key>Headers/IVisitInPlaceListener.h</key>
 		<data>
@@ -5401,7 +5469,7 @@
 		</data>
 		<key>Headers/IWifiSignature.h</key>
 		<data>
-		s3qftABV2RaK+9wPoKOA8G+rJFQ=
+		RyrNuQaLJPDbyZxZ/50h8DYCF5I=
 		</data>
 		<key>Headers/IllegalNumberException.h</key>
 		<data>
@@ -5409,31 +5477,35 @@
 		</data>
 		<key>Headers/ImportanceType.h</key>
 		<data>
-		hVsOgoMjKKH1P70u0Tf3+IWchho=
+		cwOcwHrWcN+VwuEHrs778GoITF4=
 		</data>
 		<key>Headers/InPlaceConfidence.h</key>
 		<data>
-		Sk3s9xdPcW1QvBeJO3NMtYI261A=
+		bwBCrGA3JJjLiDwjQZNpmEZF4dk=
 		</data>
 		<key>Headers/InProgressState.h</key>
 		<data>
-		g2W3dCNHuZ2RAYBR0z3FgPNrXTg=
+		XdmVTRPLOAV+2nqUUEUn6WITpCk=
 		</data>
 		<key>Headers/InnerMessageType.h</key>
 		<data>
-		BdZqsR/rX3xIxfIzZpJGXrRlQO4=
+		SqL+g4HFywH5PQVOPA/1MnIm1Qc=
+		</data>
+		<key>Headers/InstanceFactory.h</key>
+		<data>
+		hotR0FZPQUrQJw+1JAnIJW61q28=
 		</data>
 		<key>Headers/InternalEngine.h</key>
 		<data>
-		LppN1VsBjWAZ/SJnXYW0RtOAqo4=
+		Zt/uKo/g6/roKPKwDV7+po1I57I=
 		</data>
 		<key>Headers/J2SESensorsEnginePlatformImpl.h</key>
 		<data>
-		fpLwdMplFHbMOmc9u/hIzFqvlkk=
+		X8C7aXDW5sF9YKn4J45RhAWZj4o=
 		</data>
 		<key>Headers/J2SESystemUtils.h</key>
 		<data>
-		UL/BLgW/w9FG8WhiyBiX3j/ApMk=
+		eQluj5tnUObPyeUCVDs1QYkSudI=
 		</data>
 		<key>Headers/JB.h</key>
 		<data>
@@ -5797,11 +5869,11 @@
 		</data>
 		<key>Headers/JavaAlarmManagerDebug.h</key>
 		<data>
-		KHvnfGsJTb8NWFssoE5AmYX556Q=
+		yO1vrAdCo7kXuayZqs3iQsU3j48=
 		</data>
 		<key>Headers/JavaCalendar.h</key>
 		<data>
-		Rl9L7UKZcN/4zWc2Y4j9w2BjH24=
+		oQvCGRFyCgR48MvW3HAa/upX6yc=
 		</data>
 		<key>Headers/JavaCommonFactoryInitializer.h</key>
 		<data>
@@ -5809,7 +5881,7 @@
 		</data>
 		<key>Headers/JavaTSOLogger.h</key>
 		<data>
-		/rqFgZXQ0yvTCe/Q3tZncipeAMw=
+		UtCWn0gpG9RWSbETHsclOslNggY=
 		</data>
 		<key>Headers/JavaTSOPlacesFactoryInitializer.h</key>
 		<data>
@@ -5817,15 +5889,15 @@
 		</data>
 		<key>Headers/JavaWakeLock.h</key>
 		<data>
-		WcPW+nUN+npU3SFR+kdcV2waypU=
+		s+7O3kvCVhT2kO8xH5uptkjXrp8=
 		</data>
 		<key>Headers/LOG_LEVEL.h</key>
 		<data>
-		woIME2cpD06JKi90NPW0DhWmk+4=
+		cvhFdJHBQmqpjPZt//pLN2CXhrY=
 		</data>
 		<key>Headers/LocVisitState.h</key>
 		<data>
-		la0gfXb2HPgKRSjOmV25GxzZKAI=
+		hdhWEetTAofrJZdjNZD2TCBQFsI=
 		</data>
 		<key>Headers/Location.h</key>
 		<data>
@@ -5833,11 +5905,11 @@
 		</data>
 		<key>Headers/LocationApi.h</key>
 		<data>
-		JiKwM0hK7TnRx/sS9dL/veYYm6A=
+		AXY+OXieoNdhHnJUE9FL0zjM8Ts=
 		</data>
 		<key>Headers/LocationBaseSensorData.h</key>
 		<data>
-		dImf5bXJgyWStzNCHJ0mwM7fQRk=
+		mRA5SOhXHlzMrI8i5kgex6qkIQI=
 		</data>
 		<key>Headers/LocationBuilder.h</key>
 		<data>
@@ -5845,7 +5917,7 @@
 		</data>
 		<key>Headers/LocationCluster.h</key>
 		<data>
-		7ik1KPHHLB5mJ/x5PzO8PP/zPlM=
+		fE06er2FQgk+Ig7C7keXDjWtLok=
 		</data>
 		<key>Headers/LocationClusterAgent.h</key>
 		<data>
@@ -5853,7 +5925,7 @@
 		</data>
 		<key>Headers/LocationData.h</key>
 		<data>
-		l4ANibJ7Fb3PvX6sHZdcWr8/TL0=
+		IGS+Evn0pkrx0kcFEcWxRijdu/E=
 		</data>
 		<key>Headers/LocationProvider.h</key>
 		<data>
@@ -5861,7 +5933,7 @@
 		</data>
 		<key>Headers/LocationProviderDebug.h</key>
 		<data>
-		H6/WGtJWXOK8sG6B0NgUBTtQKgs=
+		bodLOWYT1X2ktiaKdrBWXPacABM=
 		</data>
 		<key>Headers/LocationServicesStateInfo.h</key>
 		<data>
@@ -5869,7 +5941,7 @@
 		</data>
 		<key>Headers/LocationType.h</key>
 		<data>
-		/xoDg2LZ1xzhdlMSuJkelCtWn5o=
+		6/xfmC0L0I/dPh5yrz4FX66eyGk=
 		</data>
 		<key>Headers/LogFilePrefs.h</key>
 		<data>
@@ -5881,19 +5953,19 @@
 		</data>
 		<key>Headers/ManualDetectedSensedPlace.h</key>
 		<data>
-		C7ytwO26qvC2kdhhI0eVHN0+1uM=
+		d379+OK/h07opLQ7m0uuVOHLCBI=
 		</data>
 		<key>Headers/ManualPlace.h</key>
 		<data>
-		zgY/Tmy72x5cx6jmDdGVIVutryM=
+		fBjBFWDqU608oMQLzwlYv2MPoS0=
 		</data>
 		<key>Headers/ManualPlaceSource.h</key>
 		<data>
-		3k1bCoTKRQo6+tL0VTcEa42IJfs=
+		0jHkBKImVc3m9aGbdrmVFil8LwA=
 		</data>
 		<key>Headers/ManualSensedPlace.h</key>
 		<data>
-		JeHlHP7v11y1N41sCk/0s95qiFs=
+		iOHg0YAGw2aSwdhG0Mnzy3cgUes=
 		</data>
 		<key>Headers/MapConversionUtils.h</key>
 		<data>
@@ -5905,7 +5977,7 @@
 		</data>
 		<key>Headers/Mat.h</key>
 		<data>
-		1mEUcvPk/O7HYXNv3kuIl+Jc/2k=
+		tmZQ0Uo4EPBIAmCa+0Zu+p03E+g=
 		</data>
 		<key>Headers/MeetingAttendee.h</key>
 		<data>
@@ -5917,15 +5989,15 @@
 		</data>
 		<key>Headers/MeetingReminderType.h</key>
 		<data>
-		3ZK1alklQbCVt+DFMV4VvKAHU3o=
+		VDFqsW0UBDUzs00LD4SNmGkyaZ4=
 		</data>
 		<key>Headers/MeetingResolverType.h</key>
 		<data>
-		Za9T1hoURcjAkHH5LjXXJdXFF6g=
+		ZoD7OxUjP66/GWA1zW6EhfUbPX8=
 		</data>
 		<key>Headers/MemoryPlacesDao.h</key>
 		<data>
-		b8s2slDxKc9+eQCtu96pyMJtIOk=
+		NHDyYlCzoCZvQ4eaLu2W0CyECl4=
 		</data>
 		<key>Headers/MemoryRepository.h</key>
 		<data>
@@ -5933,15 +6005,15 @@
 		</data>
 		<key>Headers/MemoryRepositoryFileImpl.h</key>
 		<data>
-		LL0O5snSwhURliZgi4FMb1TmeFg=
+		ewEpmRjmBPkG2fIwLSDToSnCqVM=
 		</data>
 		<key>Headers/MessageImpl.h</key>
 		<data>
-		uj4edhaZ4x44/HufauloJxSKa/4=
+		otJA/XMp64CUn0YBJ0eJdzB6ZXw=
 		</data>
 		<key>Headers/MessageType.h</key>
 		<data>
-		xEohu4krUdVVJ3IGneAZ6Wq+h5Y=
+		EKMKwz9+B1lR4GyE1vTa7BkjN4o=
 		</data>
 		<key>Headers/MessageWithValidation.h</key>
 		<data>
@@ -5953,19 +6025,19 @@
 		</data>
 		<key>Headers/ModuleProduct.h</key>
 		<data>
-		UzSDh3fgZE/02OJWt/RccwjCIFI=
+		UA4MJv0hf2MBP7YJJvOLcsjf07Q=
 		</data>
 		<key>Headers/ModuleProductType.h</key>
 		<data>
-		4/wXS3r7lTFbDIvwSPnCy6GED9M=
+		lpZYc3AHN2euBUDrJrvKtglfxJk=
 		</data>
 		<key>Headers/ModuleState.h</key>
 		<data>
-		uqI4NtBRpn0FG20rT9L4hhyBEag=
+		eA7w2o6ISVaiFA+UaZOUypJe1fk=
 		</data>
 		<key>Headers/ModuleType.h</key>
 		<data>
-		3+L/oqt/gwEanQ2PLrQwEm1nYyI=
+		rXFz6RaOeNiGAFGTeHo5u2vbOjQ=
 		</data>
 		<key>Headers/ModulesInitFacade.h</key>
 		<data>
@@ -5973,7 +6045,7 @@
 		</data>
 		<key>Headers/Mot.h</key>
 		<data>
-		5NylJ0gCdQVPiDpgPv6AXXNp4Fw=
+		KyyFNSVa2SF4ho/ckRTwJNsdgLM=
 		</data>
 		<key>Headers/MotBtHelper.h</key>
 		<data>
@@ -5985,23 +6057,23 @@
 		</data>
 		<key>Headers/MotDetectionModule.h</key>
 		<data>
-		XxaxcnwoLv8maaCpCSvvsJKK41I=
+		EcB1NDm4zrX83MpClPY9G5DpvZY=
 		</data>
 		<key>Headers/MotDetectorV2.h</key>
 		<data>
-		9V36e2/sRPAgVjWxyV572KVSylM=
+		LiKpYnVdHtAJjT83pQ/1wloe0is=
 		</data>
 		<key>Headers/MotDetectoriPhone.h</key>
 		<data>
-		0lS7bIE2iTqcMmZdg17hQe0ZopQ=
+		kEMybnPyZbWX8y44J22IceKyvV4=
 		</data>
 		<key>Headers/MotDetectoriPhoneNaive.h</key>
 		<data>
-		Lffvclxilc+Bod3lI+TVt/zhX0c=
+		8HGwAXUdsIFqCmwsIBa/d+SdwtE=
 		</data>
 		<key>Headers/MotInfo.h</key>
 		<data>
-		u08F3x39fCTumlAWiuDLjFqSCWc=
+		gL5a/cmK7Sa+QmMHcayPrnDoaI0=
 		</data>
 		<key>Headers/MotLocationHelperIphone.h</key>
 		<data>
@@ -6009,39 +6081,39 @@
 		</data>
 		<key>Headers/MotRecommenderImpl.h</key>
 		<data>
-		aj/JjEVA5Njka6Jhhp12gbntAdE=
+		xTw8UJ+n506UGASfRY3FVBCze/Q=
 		</data>
 		<key>Headers/MotStateDataProvider.h</key>
 		<data>
-		4xsrXUV85SplcsfcdNEdEcKNkzg=
+		0DjWWI9YCUtvmkXnqsiG3Dg7xxw=
 		</data>
 		<key>Headers/MotTransition.h</key>
 		<data>
-		dX3CryNJjnbLGzvtm5sg5jHhtYA=
+		5xD8+LyQvtQFEn05/nElXS/aGXw=
 		</data>
 		<key>Headers/MotTrigger.h</key>
 		<data>
-		cSh2088FWbqypF4/aET3BmZ/VW4=
+		7UKsGFq1CaldhQM4MBjgf+l7dqE=
 		</data>
 		<key>Headers/MotTriggerInner.h</key>
 		<data>
-		nhtyfAfkL4ZJsilCnRGNmuM/daE=
+		zemJHxLYCXAhsuqjfqpKkANAxrk=
 		</data>
 		<key>Headers/MotTriggersManager.h</key>
 		<data>
-		k8EKoQGJQMkt2ZU5tF4ogDN0wHg=
+		usKB3k5lJPjaEatmAU21Qql5Yew=
 		</data>
 		<key>Headers/MotTriggersMemoryStorage.h</key>
 		<data>
-		dPF/piEOPepNjVOwu5SYlIsKY4s=
+		OEmmL9LpqbF4ZV2hWAVNI+stPf8=
 		</data>
 		<key>Headers/MotTriggersPersistentStorage.h</key>
 		<data>
-		St2uJffCl+1A8/+eTCS8D5xHqSg=
+		wCgr0ZEIXjVEL+B//yWRbWqMkLY=
 		</data>
 		<key>Headers/MotType.h</key>
 		<data>
-		xRuWWNLG5p8wI2ZdVHneB4mmHy4=
+		DjAnlTw7VKSydXoS7AS6ewytrgg=
 		</data>
 		<key>Headers/MultiInstanceFactory.h</key>
 		<data>
@@ -6113,11 +6185,11 @@
 		</data>
 		<key>Headers/NetworkConsumptionData.h</key>
 		<data>
-		LApBx5Z+JNDV5vcu3T0apqGm3Mc=
+		q5RAstDf6uR/fwc6uOch7WfsfTs=
 		</data>
 		<key>Headers/NetworkState.h</key>
 		<data>
-		9IhssLJVz3gS8qAbfy4xFQIIMUQ=
+		IDB1iknlF9tRPuKIOEWI8VKUCPM=
 		</data>
 		<key>Headers/NetworkStateInfo.h</key>
 		<data>
@@ -6125,19 +6197,19 @@
 		</data>
 		<key>Headers/NextNotificationCalculator.h</key>
 		<data>
-		phXacr3UYyRnwIHzqQOh3Ji+1Z8=
+		ShPF8F5SYhGymyY7FfinkuUJ6v4=
 		</data>
 		<key>Headers/NextNotificationCalculatorDebug.h</key>
 		<data>
-		SbtN90xOP/frDJREsHid5Nk+FvY=
+		rW7whNp2BRcVTWt42waA4RF77e0=
 		</data>
 		<key>Headers/NextWakeUpCalculatorNaiveImpl.h</key>
 		<data>
-		KrRw4vjGpxLDiXcWzlQ4cz6NKRI=
+		B2SuTKnG/YHCeEu4KIee0xBEiAM=
 		</data>
 		<key>Headers/NextWakeUpCalculatorStub.h</key>
 		<data>
-		hOFRojlygt8AF1cx+yZ2Xidm9K8=
+		JADvZ8DLM/es9aavmPKDTokbgV4=
 		</data>
 		<key>Headers/NextWakeUpPrefs.h</key>
 		<data>
@@ -6145,7 +6217,7 @@
 		</data>
 		<key>Headers/NightVisitCondition.h</key>
 		<data>
-		ASsAEFPdrn7HMIu4EChEdftFtac=
+		TYfzkXOPwYViItajULC5JcWGgjE=
 		</data>
 		<key>Headers/NonBlockFuture.h</key>
 		<data>
@@ -6153,39 +6225,39 @@
 		</data>
 		<key>Headers/NotificationReminder.h</key>
 		<data>
-		iUzE0IHFHhK+HVtKmhxIpYAnvnY=
+		g5GmIyov0zu23L599wU4L3mnKTU=
 		</data>
 		<key>Headers/NotificationReminderInner.h</key>
 		<data>
-		EGplA3cNZZusW/zhEmxtGnwAfaY=
+		NV1QF590rdBLm9aukoMYhZvtWo8=
 		</data>
 		<key>Headers/NotificationRemindersManager.h</key>
 		<data>
-		QvJuwYuNqXdFO3PaPmAIE0VwzEg=
+		e1jxC+AR1gC2jpVZVmTfppVnPX0=
 		</data>
 		<key>Headers/NotificationRemindersMemoryStorage.h</key>
 		<data>
-		/Rg6+0mVNmGjgeCqQj8X4IqZiXY=
+		QHnC9HbHkVKSEfVNH0A6SOEjbww=
 		</data>
 		<key>Headers/NotificationRemindersPersistentStorage.h</key>
 		<data>
-		XOnX6fp/ASmD93Rc1Ef3qi47OFk=
+		bOfnODCpEqMEChaWITMAXejq9DY=
 		</data>
 		<key>Headers/NotifyAtTimeOfDayTemplate.h</key>
 		<data>
-		QQ05McTf43V2B6yz5V4jbEi+B4s=
+		YGctDWFbTzJVIkDsdNEkiIBlCrg=
 		</data>
 		<key>Headers/NotifyType.h</key>
 		<data>
-		NP/4dWDtVFTWME8KiCl29EEOJIQ=
+		RdAdjPpv6jgGFcnto+4pazu3qJI=
 		</data>
 		<key>Headers/NullReplaySensor.h</key>
 		<data>
-		N9Efae7ukOaB9A+Np50yrWlY66A=
+		G7e6DX5LTHgqVn8idBEZwiP/CA8=
 		</data>
 		<key>Headers/NullSensorsEnginePlatformImpl.h</key>
 		<data>
-		zNAVjLc2bfpQ8MBD63jQZltvoEk=
+		yER0KAMcXTBsgDJDJd/wZf9y27Q=
 		</data>
 		<key>Headers/ObserverHelper.h</key>
 		<data>
@@ -6193,7 +6265,7 @@
 		</data>
 		<key>Headers/PhoneNumber.h</key>
 		<data>
-		QMl3WAt4sC9gvkQDkAWm54FObIY=
+		8Z3F7pThLUCi7aM0C8QNEPWHnNY=
 		</data>
 		<key>Headers/PhoneStateInfo.h</key>
 		<data>
@@ -6201,7 +6273,7 @@
 		</data>
 		<key>Headers/PlaceAp.h</key>
 		<data>
-		viMpaekpIh4syhZsS1gEBjkhbns=
+		cwiQyvqW2u8sTUv8xnpja1gTmJE=
 		</data>
 		<key>Headers/PlaceDataHelper.h</key>
 		<data>
@@ -6209,7 +6281,7 @@
 		</data>
 		<key>Headers/PlaceDetectionModule.h</key>
 		<data>
-		qcG3Q8phNX0sqpb9KvuKq6H1QWY=
+		Yi5fntyvGzOsMPf3EV0OBThb43g=
 		</data>
 		<key>Headers/PlaceDetector.h</key>
 		<data>
@@ -6217,23 +6289,27 @@
 		</data>
 		<key>Headers/PlaceID.h</key>
 		<data>
-		z5N9SBDkr0J/6wex+Oj4VUUtIZU=
+		Fe38S/S938Y3+C/nZ2sSsVjwsYw=
 		</data>
 		<key>Headers/PlaceReDetection.h</key>
 		<data>
-		7PqrfIHWIv/0AiX3eBxQIpMlxUk=
+		yUttlrUCDEVVHqpfIY1ZR82L6KI=
 		</data>
 		<key>Headers/PlaceRefPoint.h</key>
 		<data>
-		34JBGTtiORUeGz+3ZtBupvAb2ww=
+		ypKcMrZE720MsCXthQSmYyeJ6HM=
 		</data>
-		<key>Headers/PlaceRepoImpl.h</key>
+		<key>Headers/PlaceRepo.h</key>
 		<data>
-		zUUmLO0pvW6K9d7aiHkkD/lNKnA=
+		WbHYlmtm0PSNvPMXr2HARns+ajA=
 		</data>
-		<key>Headers/PlaceRepoInternalMock.h</key>
+		<key>Headers/PlaceRepoModule.h</key>
 		<data>
-		dSVBa1dl6TX6/u73xTXDtLD6Ce8=
+		aLg6ighHfhA6+cfOI8ixxQkGfFM=
+		</data>
+		<key>Headers/PlaceRepoModuleMock.h</key>
+		<data>
+		2Om+TsPChhJsrqHk/or9zVkMbIA=
 		</data>
 		<key>Headers/PlaceSignatureAlg.h</key>
 		<data>
@@ -6241,35 +6317,35 @@
 		</data>
 		<key>Headers/PlaceSnoozeOption.h</key>
 		<data>
-		1DhoGu6h5057lYm/aE1++6GgpSE=
+		cHzzx0VZGeEll0VlcC8bfl1nUyc=
 		</data>
 		<key>Headers/PlaceStatus.h</key>
 		<data>
-		eo3OQoD3BIWpcVKdzlBh+KI38QA=
+		ncUb8otg9Jg3vXn+qMlkjxqtXYo=
 		</data>
 		<key>Headers/PlaceSyncDaoDecorator.h</key>
 		<data>
-		DanHvFK9P8LzdwXMpeocte20FMc=
+		/8wnpXTEbvvjcODa7T5RdwZFPLg=
 		</data>
 		<key>Headers/PlaceTrigger.h</key>
 		<data>
-		sIxSa9MVmpgkWNUSADmRlbH5ROw=
+		GBwEgc/eNbMiJDRw9NxjZciA940=
 		</data>
 		<key>Headers/PlaceTriggerInner.h</key>
 		<data>
-		ZpgKJDCmVInoKRhFXMxPzy6U1uU=
+		4x+5igKt7ZXBE7PLYd425po1kJ0=
 		</data>
 		<key>Headers/PlaceTriggerType.h</key>
 		<data>
-		VbONxNdbOcHIgnGATLhYM7ewxQg=
+		2cTdMc2o90yzSzP6kejeUUPQrtg=
 		</data>
 		<key>Headers/PlacesActivityType.h</key>
 		<data>
-		7T0U0yMMe45yZrYqT8jZM0IXKqg=
+		5vuvubjqYse+pkLXa0tJAk9kNFA=
 		</data>
 		<key>Headers/PlacesClientUserIdDaoDecorator.h</key>
 		<data>
-		kssPD/h2gX5V0spGwihEJNbj4U4=
+		/i1UdH2vDSpnxPw4cw+CER1UorY=
 		</data>
 		<key>Headers/PlacesConfig.h</key>
 		<data>
@@ -6277,11 +6353,11 @@
 		</data>
 		<key>Headers/PlacesDao.h</key>
 		<data>
-		IygoN37CwW/3hBJeKCVw57E1Ksc=
+		wadOYZn8LuflL4IvoEXqAB/sA3M=
 		</data>
 		<key>Headers/PlacesEngineImpl.h</key>
 		<data>
-		v53kX//d081QEbjPKVuFnfSqHnA=
+		wd421AH7cV1l78sxQs8QBDMWNuA=
 		</data>
 		<key>Headers/PlacesTimeFormatUtil.h</key>
 		<data>
@@ -6289,15 +6365,15 @@
 		</data>
 		<key>Headers/PlacesTriggersManager.h</key>
 		<data>
-		OtHqVKWYn0KC0TNRc08/xI7yJQM=
+		Qc+ZsZEGsyo//DYeLUzyU/R74IE=
 		</data>
 		<key>Headers/PlacesTriggersMemoryStorage.h</key>
 		<data>
-		kjADt0eGtPAa5gJ8xtoi0v8z8z4=
+		atVWcCz+/X5nSi7jItFlniiN5qA=
 		</data>
 		<key>Headers/PlacesTriggersPersistentStorage.h</key>
 		<data>
-		/BU8/YoQVy6ikK3B1EyAjtfRIhg=
+		NfpRNJiFZftet7WlgtJb58aHUaw=
 		</data>
 		<key>Headers/PlacesUtil.h</key>
 		<data>
@@ -6325,11 +6401,11 @@
 		</data>
 		<key>Headers/PolicyHistoryInfo.h</key>
 		<data>
-		SvIBZ0BdOvMM8Ck/P1rHLA1B18o=
+		fq5Mn84ZAqFabySx2Wl3L7r0fQE=
 		</data>
 		<key>Headers/PolicyMode.h</key>
 		<data>
-		p6vqjbRRTX52PhtjRj2pqklTyB4=
+		x/MVlGgTYMXJSWn8Lsm1V+UhUmM=
 		</data>
 		<key>Headers/PolicyStats.h</key>
 		<data>
@@ -6337,11 +6413,11 @@
 		</data>
 		<key>Headers/Polygon.h</key>
 		<data>
-		maLT8Ww4yZmCavdkzMuU3FhNGL8=
+		e/XrqlJnks5r/JTsgvzcDjMfpuw=
 		</data>
 		<key>Headers/PrefsFileType.h</key>
 		<data>
-		w5MOSIJ+OYZ7tgYDGjWfWybiEHA=
+		TTYgYrAItcBeMLnUHkMZ1UrHVDc=
 		</data>
 		<key>Headers/PrefsStorage.h</key>
 		<data>
@@ -6349,7 +6425,7 @@
 		</data>
 		<key>Headers/PrivacyType.h</key>
 		<data>
-		urz2YPbo0rhaeY+EHyR/kUk7L7Y=
+		DaBhkytBQQdrcxWb6JnS3IWED0I=
 		</data>
 		<key>Headers/ProcessedClusterData.h</key>
 		<data>
@@ -6361,7 +6437,7 @@
 		</data>
 		<key>Headers/ProxyTSOLogger.h</key>
 		<data>
-		wm2A2rmM5wWFIduMnV/oEoKTywA=
+		+8H9fJWysoTxxbbEZGoruEc70yU=
 		</data>
 		<key>Headers/Quad.h</key>
 		<data>
@@ -6381,7 +6457,7 @@
 		</data>
 		<key>Headers/ReceiverSensorsDefaultRequest.h</key>
 		<data>
-		FQheYbVXG9SYDsTnPOPbg62+h0U=
+		qvlOyH0F7nLLJanqDeqiw34Dvac=
 		</data>
 		<key>Headers/ReceiverSensorsRequest.h</key>
 		<data>
@@ -6389,19 +6465,19 @@
 		</data>
 		<key>Headers/RecurrenceDetails.h</key>
 		<data>
-		EOWOpU3cD3PpQ17eYOtBHVgXHSU=
+		Ii5cOF32kT7ZwYPV+LP1PGOeqEU=
 		</data>
 		<key>Headers/RecurrencePersistenceData.h</key>
 		<data>
-		E5G0HlQnmMgXx8m8DR71eaN+G14=
+		BRhaJGw7yjm45bE4DcamaOhe6rs=
 		</data>
 		<key>Headers/RecurrenceType.h</key>
 		<data>
-		G9OLslrvCdvN/AHWBC/AlljubWA=
+		+XF3vu8j+UPfQZlU1iTTrkkj9FA=
 		</data>
 		<key>Headers/RefPoint.h</key>
 		<data>
-		5XWyv4kKzjkHOah2HIXqUBEA15w=
+		obINZoar1k/xjUgdKA9K14WVW9Y=
 		</data>
 		<key>Headers/ReminderBuildException.h</key>
 		<data>
@@ -6409,23 +6485,23 @@
 		</data>
 		<key>Headers/ReminderBuildExceptionType.h</key>
 		<data>
-		EE5A1zya7TzMPB7yra/XC8gepto=
+		pJk0iVPml05GfhrefFlHbqkG/fc=
 		</data>
 		<key>Headers/ReminderEndReason.h</key>
 		<data>
-		X9+MNR/Fw2L9I8zvOR11nBZ78lM=
+		u8y8eJNrZL0kmC7lZl/clY9jTDI=
 		</data>
 		<key>Headers/ReminderStatus.h</key>
 		<data>
-		SlNB0FauTSsFgbT4PlQ7+rW/Vuk=
+		rCaak9rftGBO7iSLyEtqVBoXsKA=
 		</data>
 		<key>Headers/ReminderStatusInner.h</key>
 		<data>
-		zZ0Gg9wnZgE1C4wS96ChKrPKas8=
+		NhIRtiR7UyHGaA556xTFoKLDnDo=
 		</data>
 		<key>Headers/ReminderType.h</key>
 		<data>
-		uqzlf+G/1PtXF8zjvVBhxtcvzZs=
+		o1wD5KM8RpgGm4tqvstIKYWQuFM=
 		</data>
 		<key>Headers/RemindersFactoryInitializer.h</key>
 		<data>
@@ -6433,11 +6509,15 @@
 		</data>
 		<key>Headers/RemindersManager.h</key>
 		<data>
-		wBrmXmQQqJApYidNYDhnHJ9ZOe4=
+		XKoGXI7tOy1Tpxm9iHy5CSRH8dQ=
 		</data>
-		<key>Headers/RemindersManagerImpl.h</key>
+		<key>Headers/RemindersManagerFactory.h</key>
 		<data>
-		d7X9As0zlOb3eUDeWaU6hytXxVY=
+		KSMtRJvtdnG0MsNBtmEmgWwaCMo=
+		</data>
+		<key>Headers/RemindersManagerModule.h</key>
+		<data>
+		PO07Id+iqbcNVTGGTV0q+CDoqmE=
 		</data>
 		<key>Headers/RemindersResult.h</key>
 		<data>
@@ -6445,7 +6525,7 @@
 		</data>
 		<key>Headers/ReplayMode.h</key>
 		<data>
-		T/aFwvXRakgW1n+E9wbEy5p8hjE=
+		SSegu5AAM3wucILgT3ZREYh1yfA=
 		</data>
 		<key>Headers/ResmapledFuse.h</key>
 		<data>
@@ -6453,67 +6533,71 @@
 		</data>
 		<key>Headers/ResolveBusinessPhoneResponse.h</key>
 		<data>
-		rozstNm6MHMorWC+jNtIDzZWajE=
+		yYFk1B95Qv3TRlUzBnzflykRyKA=
 		</data>
 		<key>Headers/ResolveRequestV1.h</key>
 		<data>
-		yv2L0ZIGxUv/QrMtWwbET90qSkc=
+		XOWupQAU6IWr9c7g7XotJj1iQEU=
 		</data>
 		<key>Headers/ResolveResponseV1.h</key>
 		<data>
-		Zy0hIwcwCCx/DXTfUfKmw2UlEYA=
+		MJi3w9r5jGM0OifEIN+iLX3J948=
 		</data>
 		<key>Headers/ResolvedLocation.h</key>
 		<data>
-		c4OBOBSULzzat9WVw4fNhnYNkgY=
+		ypO+78u/aBqS6zp9D/lq1kh1tmM=
 		</data>
 		<key>Headers/ResolvedLocationAttribute.h</key>
 		<data>
-		WzAEFLu3M/1AGdcfjsp+V7XwqJQ=
+		1ULU9nUUdIqrlCkUj6/wmChISAw=
 		</data>
 		<key>Headers/ResolvedLocationsResponse.h</key>
 		<data>
-		L1xDEJjhZP457SEi8rIUdQGIH4o=
+		NszEA/CpTtOy7fBRHy6fBackUlg=
 		</data>
 		<key>Headers/ResolvedPlaceV1.h</key>
 		<data>
-		nwZtPeNkhS7uKMGELouRB2Befew=
+		5V1/sCNX/VQPw9DEojDT8cRfmIY=
 		</data>
 		<key>Headers/ResolvedResultType.h</key>
 		<data>
-		K7DVY0YkRHSC1IcxW2qkdaEdyw4=
+		jDbk/ECUPBsv1O85UK54f0/ocAI=
+		</data>
+		<key>Headers/Resolver.h</key>
+		<data>
+		Pzl7Vu5lr1V9+3QC494TXCUCSl8=
 		</data>
 		<key>Headers/ResolverApiType.h</key>
 		<data>
-		dhlxf68WLv2gSRKoARvnU5NHqQU=
+		iwIf5JvoE/3LBKwxhU7MlAYnIv4=
 		</data>
 		<key>Headers/ResolverClassPool.h</key>
 		<data>
-		ITntzNZ6MTII5AWcC2vNDzGpgSo=
+		T7Yq517PbPyfKjifgkDcugPAMUg=
 		</data>
 		<key>Headers/ResolverEngine.h</key>
 		<data>
-		2G21Vks9vavpr+BkjJfx8PHqoJQ=
+		dmAUGGALcF7JoM0BoVw0HzjhsYM=
 		</data>
 		<key>Headers/ResolverFactoryInitializer.h</key>
 		<data>
 		QwJaCkUCglgy9yXNeCIaSx7deak=
 		</data>
-		<key>Headers/ResolverImpl.h</key>
-		<data>
-		dp86EtM+Zpy2MBmO4FrEzYXRkGo=
-		</data>
-		<key>Headers/ResolverImplStub.h</key>
-		<data>
-		vcn+7CHKmkwqdSMY8ZOvI8X1W8E=
-		</data>
 		<key>Headers/ResolverImplTsoSdkConverter.h</key>
 		<data>
 		hSDb1q54jFAVRZ6Al98OUe1Cyxc=
 		</data>
+		<key>Headers/ResolverModule.h</key>
+		<data>
+		xFUHyOImUe8L/ATbxh6Kp9Hm1rI=
+		</data>
+		<key>Headers/ResolverModuleStub.h</key>
+		<data>
+		IfY2TUWnIxHP6SCaQzq1TgQdcxc=
+		</data>
 		<key>Headers/ResolverSdkAuditObj.h</key>
 		<data>
-		f/+eGs65VXuSEhHFgMUUzBsNLQw=
+		WJ9IlmLStcBATHtB7cada2vjA5M=
 		</data>
 		<key>Headers/ResolverSdkRequestParams.h</key>
 		<data>
@@ -6521,7 +6605,7 @@
 		</data>
 		<key>Headers/ResourceManager.h</key>
 		<data>
-		sd4T0+zZXL4f5hh3Kma/2H4C8NQ=
+		GKb5AMFe4bTd8P0r968XyE7IDUk=
 		</data>
 		<key>Headers/Result.h</key>
 		<data>
@@ -6529,11 +6613,11 @@
 		</data>
 		<key>Headers/ResultCode.h</key>
 		<data>
-		YcY9/E0VfUabwqQkcKOklWEICR4=
+		h9g3eczs3q8ivwstozhR3/nyDHQ=
 		</data>
 		<key>Headers/ResultData.h</key>
 		<data>
-		/eMyb0sXunI1AuBHwUkw//3hvhM=
+		P8xn1Mj9mmguuhzilITZfGQUHO8=
 		</data>
 		<key>Headers/ResultEnumConverter.h</key>
 		<data>
@@ -6541,11 +6625,11 @@
 		</data>
 		<key>Headers/ResultStatus.h</key>
 		<data>
-		CF+uHGyT2iqONL7XO1QnCH1KVuc=
+		2SfdST5TGCcE4HoDE6rOlkKLkfw=
 		</data>
 		<key>Headers/RetCode.h</key>
 		<data>
-		nFV2VVVq63GcyxG+0MGOqWN/I2k=
+		7DLbxOq0NKQC6KTtWinSfqpGZXY=
 		</data>
 		<key>Headers/RouteCacheData.h</key>
 		<data>
@@ -6553,51 +6637,51 @@
 		</data>
 		<key>Headers/RouteDataObjectFactory.h</key>
 		<data>
-		qLK32JuHl8NO6N3IQSvXaZZmzoA=
+		lVnr2hQAiUzX1GGghdSHEIVEcgg=
 		</data>
 		<key>Headers/RouteDataType.h</key>
 		<data>
-		yZwNFvyPDPyPRa3vB0E/RCtWpYQ=
+		FGJ/u1iwA7n8yW9ob9XLWLBv8ME=
 		</data>
 		<key>Headers/RouteError.h</key>
 		<data>
-		tDpfdCm9Rod1Jnuk8Fy//UEhMZo=
+		NkdkjZrciAQpngbtNUZnkXT23tc=
 		</data>
 		<key>Headers/RouteErrorDataObj.h</key>
 		<data>
-		bJ9v0vaheQUyO7QL4km34Nn4c5k=
+		hIQ3dwMO4qWoK9COc8KcMR4lAiw=
 		</data>
 		<key>Headers/RouteErrorType.h</key>
 		<data>
-		VHhofhcIJqw+Ee818Idq+djtoyY=
+		JkxBPrA5w5iZcWyaaJUnLH/5Fbo=
 		</data>
 		<key>Headers/RouteInfo.h</key>
 		<data>
-		5YS7LvsmVEQdn1rEaEW9fAUPweI=
+		qVZyUFJk/U8o6EyKVVHtPzE9KDU=
 		</data>
 		<key>Headers/RouteInfoDataObj.h</key>
 		<data>
-		zfcK16PjKS+izb7Hfzr5zqPbBQc=
+		ymFvd3KUfD49hojGjx6MiIVIFr0=
+		</data>
+		<key>Headers/RouteProvider.h</key>
+		<data>
+		h90MBCL6kbTQof4PSxWS/SGaL2k=
 		</data>
 		<key>Headers/RouteProviderCacheImpl.h</key>
 		<data>
-		lx462tR/OzgQ99h1FhUaawI26cU=
+		mq6ZkjslcKzeIBKGvZc+QA69sXE=
 		</data>
 		<key>Headers/RouteProviderCacheStub.h</key>
 		<data>
-		oA5F39Ij/jq7gj7KHb4YaE1WmuQ=
+		u3Kkfcy/+qAbvc1SGiDA5OrdWYA=
 		</data>
 		<key>Headers/RouteProviderFactoryInitializer.h</key>
 		<data>
 		CTeB5rbO4b3WGIAmk29rvs6UgzI=
 		</data>
-		<key>Headers/RouteProviderImpl.h</key>
-		<data>
-		f/tIs6k4BMsHPLbGUxZH0Rym2dk=
-		</data>
 		<key>Headers/RouteProviderInnerImpl.h</key>
 		<data>
-		9UPfDHsO+hvjpEaVRWCDa+x1Lng=
+		WT58FFeU1HL4a88GmPfX6M5GjYI=
 		</data>
 		<key>Headers/RouteSegment.h</key>
 		<data>
@@ -6605,7 +6689,7 @@
 		</data>
 		<key>Headers/SDKLoader.h</key>
 		<data>
-		W+GWxhGUejhfEVs0Dq9etqTNilw=
+		eLq4TDjA+HJplVAsOinqiffuhnc=
 		</data>
 		<key>Headers/SDKPolicy.h</key>
 		<data>
@@ -6617,43 +6701,43 @@
 		</data>
 		<key>Headers/ScheduledTaskPersistence.h</key>
 		<data>
-		1e4lFxMCkqHvdEFERb6CRolFXpU=
+		cQA4AOTBcVx37lOCLveTKjxPUQo=
 		</data>
 		<key>Headers/ScheduledTasksManager.h</key>
 		<data>
-		OnyUh//kmTHTBQegUSZZ4Z3HDkE=
+		0dKxb49vZlGw2uWuVCa/bj7KvKM=
 		</data>
 		<key>Headers/SdkDefaultPrefs.h</key>
 		<data>
-		nKfgSrW9a0Ke/Qm3LHFeZAzhnVw=
+		s329A+TC0348vAOj4pHGaGiHgjQ=
 		</data>
 		<key>Headers/SegmentType.h</key>
 		<data>
-		8kOLBZkVlzPOUNF5GvtaxPP0njs=
+		akulYy8VbIMPpcJ2x/uMJjVwa50=
 		</data>
 		<key>Headers/SegmentedRouteProviderImpl.h</key>
 		<data>
-		LjWSQZXB0aqb3vHRe+2XCLf5grI=
+		Es9k1A1RfGDU2W0rew+BXIuuIVY=
 		</data>
 		<key>Headers/SegmentedRouteProviderImplDebug.h</key>
 		<data>
-		f8gitqHW7lz2sAC1kaBCXELXhIo=
+		/nrKX1YfatyHvHXBuXH+Ys1XgY0=
 		</data>
 		<key>Headers/SemanticData.h</key>
 		<data>
-		EhOfuBl9m37RtfPJ/A14FwErfPg=
+		j3ezbG1iLY37qsdf8zzGOAATh+U=
 		</data>
 		<key>Headers/SemanticDetectedPlace.h</key>
 		<data>
-		sHhBozVbmngnziKu/5q7fpVj1wc=
+		xeAndJrQslXQCCqsBEgNtM7W4bc=
 		</data>
 		<key>Headers/SemanticDetectionModule.h</key>
 		<data>
-		0TYxhoIXukTzporVd1VyJACb030=
+		iYeKZHjuc7boHVhyNVaoQzdxd2U=
 		</data>
 		<key>Headers/SemanticKey.h</key>
 		<data>
-		TWYZDqPnrYY4MNJ7mqdh37Nvpww=
+		LeL03UK9ezwWBnHo8tz0k42L9NE=
 		</data>
 		<key>Headers/SemanticPlaceProbabilty.h</key>
 		<data>
@@ -6661,11 +6745,11 @@
 		</data>
 		<key>Headers/SemanticSensedPlace.h</key>
 		<data>
-		vFN/Co0Ew5FUIvB+d8Sv7yK53Ho=
+		SCHy4a7Czb2c0O5lGqd6I7HAEO0=
 		</data>
 		<key>Headers/SemanticTag.h</key>
 		<data>
-		spnrk9aUCHiK/JWCwphrNJeQ1UM=
+		tmkwjaEMHDeFYbgQqYrkMP3g2eU=
 		</data>
 		<key>Headers/SensedPlace.h</key>
 		<data>
@@ -6673,7 +6757,7 @@
 		</data>
 		<key>Headers/SensorDumpFileLogger.h</key>
 		<data>
-		RVO7SMgkfwd7ySumlp8OW9UkySQ=
+		1CJxqZ+c5srTkbv5aGre/EAxT1s=
 		</data>
 		<key>Headers/SensorModeRequest.h</key>
 		<data>
@@ -6685,7 +6769,7 @@
 		</data>
 		<key>Headers/SensorRawDataAudit.h</key>
 		<data>
-		OpgoyIAoTnmP9/AzgnQUY2NG/Ag=
+		qR3w2vPwVMJ4Pf14+xzBOusm5eM=
 		</data>
 		<key>Headers/SensorState.h</key>
 		<data>
@@ -6693,7 +6777,7 @@
 		</data>
 		<key>Headers/SensorStateManager.h</key>
 		<data>
-		NwBJVMVdSHIRWKQJbeZDMRSRzQg=
+		bNuJc4JNNnutTEcezUfDTHdVrOU=
 		</data>
 		<key>Headers/SensorStateManagerReceiver.h</key>
 		<data>
@@ -6701,27 +6785,27 @@
 		</data>
 		<key>Headers/SensorStateType.h</key>
 		<data>
-		wdeOufMv0eWuetEqwLf5a7X8rmo=
+		0RMZPPi7XFcO1taeikscqRibtm8=
 		</data>
 		<key>Headers/SensorType.h</key>
 		<data>
-		Fb2yNmQUDYKd+U8osbbnaqpOovY=
+		T1B+yzUSI3Hb/auodn7LOGloqqY=
 		</data>
 		<key>Headers/SensorsEngine.h</key>
 		<data>
-		Yy068q3lkqh/A+jTAan29nPxDto=
+		kEWwWlKNWIQaIf9CWjsfbJseWgE=
 		</data>
 		<key>Headers/SensorsEnginePlatformImplTest.h</key>
 		<data>
-		xsB5WmGObzBovKeWdbVFXbdsOpo=
+		K/WymX78S2FXilvgSyaQCM/n6IY=
 		</data>
 		<key>Headers/ShowAsType.h</key>
 		<data>
-		rZiZTe53CriovZCHWu8M9cRgIPk=
+		G/ycOGhUCDQV2qkHsr9rufEvLpg=
 		</data>
 		<key>Headers/Similarity.h</key>
 		<data>
-		m8Ew7UKAtwjwbv8Nj33dNQT7/GU=
+		IMWaNoo7MJfEqWeaocix3FXv8f8=
 		</data>
 		<key>Headers/SimpleTimer.h</key>
 		<data>
@@ -6733,11 +6817,11 @@
 		</data>
 		<key>Headers/SimulatedSensor.h</key>
 		<data>
-		uOZ1a94mvwMzF8vJQ/ewzFd26SY=
+		ouNIwguYKYGb9KyNReAKB18fsGw=
 		</data>
 		<key>Headers/SimulatedTimeMode.h</key>
 		<data>
-		VMXaMDza5QYC8H59xeEFUZE51gc=
+		OiwKfh23np9viPU9nyWmCUh6fJc=
 		</data>
 		<key>Headers/SingleSensorPolicy.h</key>
 		<data>
@@ -6757,59 +6841,59 @@
 		</data>
 		<key>Headers/SnoozeOptionsProvider.h</key>
 		<data>
-		vCkIvK0LiSSYs/rnAU+lpuZvjbI=
+		nThl9H2r2EYDgpwZ6QdZGIrZfH8=
 		</data>
 		<key>Headers/SnoozeOptionsProviderMock.h</key>
 		<data>
-		8FzOrudJw3xj1LVncGpsgfA61M4=
+		df1IWZjlyvB1lYOnZ+YFgCL8fw8=
 		</data>
 		<key>Headers/SnoozeTimeRange.h</key>
 		<data>
-		rHxbYdfieltDII11PiOt24whbLo=
+		wxOswt528RVXjh5AUTvKqVh9CMc=
 		</data>
 		<key>Headers/SnoozeType.h</key>
 		<data>
-		DVJDmuMgW6jlN6Y3xxrMdLiTqN0=
+		1U6GDyFZ1k36D8/5h4L3v/JlaOI=
 		</data>
 		<key>Headers/SourceDataType.h</key>
 		<data>
-		fGY4Q6wu6CfaT1yruuuI1c4ht8A=
+		U18mtXusmye6VGLEQJ50TvuRC+I=
 		</data>
 		<key>Headers/SqlPlacesDao.h</key>
 		<data>
-		GiUEk0hy2XswfjfFwaI/mpR4orQ=
+		ZAqmGBeaLbYhII+gzOPtKUM8L9g=
 		</data>
 		<key>Headers/StartSuspendState.h</key>
 		<data>
-		IR71q1ufejpkNS+so3PS71TVPOk=
+		iW+6bQ4JPlItGqkmXacZaXQ5IzQ=
 		</data>
 		<key>Headers/StartVipState.h</key>
 		<data>
-		9bJPDeB5z3WCukyXr1Dla6fVdf4=
+		UilFpbl5+H15qgVzzoOPoHaisVc=
 		</data>
 		<key>Headers/State.h</key>
 		<data>
-		gQMA9n4rD547ImqtDPzbLHw8hzY=
+		6F8Lp3wdapl7gWBNa+UEBcGU32U=
 		</data>
 		<key>Headers/StatsFileLogger.h</key>
 		<data>
-		pFDkWBmxnm3aXQP+mwvqT9dI3Hs=
+		2l+7y1R9SRYqGUzK8OengZ45cPM=
 		</data>
 		<key>Headers/StatsFileType.h</key>
 		<data>
-		S01QVM+OW5wPTyyrI5wcQ0G0JAA=
+		cPL/rK7ztPXYIK6HZ5EDg43ZqoM=
 		</data>
 		<key>Headers/StorageFSImpl.h</key>
 		<data>
-		9+KFaTdTDnmm5ViwVJ1aDQO7tTM=
+		duiQs5QvOIUC0zqyzh7+gAw1h0g=
 		</data>
 		<key>Headers/StorageManager.h</key>
 		<data>
-		jDPH9F+/R9QKjGsAgxxGOK41plw=
+		L9RCvM3KRFN8jNRKJaYBka+HJkE=
 		</data>
 		<key>Headers/StorageType.h</key>
 		<data>
-		DMhUBvF6r+fa7ErKS3dQ4UXD4I4=
+		L7bFcSvWz91defpl5SDACWHHnSE=
 		</data>
 		<key>Headers/StorageTypeData.h</key>
 		<data>
@@ -6817,11 +6901,11 @@
 		</data>
 		<key>Headers/StringDaoQuery.h</key>
 		<data>
-		jbvRoj+8sGJQY5TvIt1C0gfl5Pg=
+		lw6wST4p/o1Xqi5MLskEGxw8WP8=
 		</data>
 		<key>Headers/StubPrefsLoader.h</key>
 		<data>
-		yoxfa3C7EuQmKZhTc7/BPnFGB/k=
+		oEVnVW3GSInOwG+36m0grV/dOpk=
 		</data>
 		<key>Headers/SyncComparator.h</key>
 		<data>
@@ -6829,27 +6913,27 @@
 		</data>
 		<key>Headers/SyncDao.h</key>
 		<data>
-		353YcEftntnEljPzJKmL5dvwv6o=
+		odJKuWqw6YwaM9OJ+kSxYX/Bk7c=
 		</data>
 		<key>Headers/SyncFileDao.h</key>
 		<data>
-		IsUkJ7leuJ5zQbMCyNRI73rSLU8=
+		CznTNsmAnU3BSeyI4YvEJmKTfgo=
 		</data>
 		<key>Headers/SyncMemoryDao.h</key>
 		<data>
-		/0GHuL3+NnyznCCd2RW0kMGZ/Qo=
+		aZBaolTPxLZEtdgM1mh88xdIqdc=
 		</data>
 		<key>Headers/SyncObject.h</key>
 		<data>
-		p44r2IV+uygBgI0wuhVkUJ7FCOk=
+		P5of/U+MN63Dop/0d8IpoJdYI0o=
 		</data>
 		<key>Headers/SyncSQLCreateUpdateStrategy.h</key>
 		<data>
-		DADLUvBx61zUpLq2I0ZoYb6xJm0=
+		yxtkZU/FnK5ofpJSsYFpoGt4BfU=
 		</data>
 		<key>Headers/SyncSQLDao.h</key>
 		<data>
-		gIznMUFWn9p8RSO29/mzIu+jgLk=
+		ycYliczSK9mTUCRh6sVZHkncGkc=
 		</data>
 		<key>Headers/SyncSlaveDbs.h</key>
 		<data>
@@ -6865,7 +6949,7 @@
 		</data>
 		<key>Headers/TSO.h</key>
 		<data>
-		0vimOMX/Rr+7nF8TlXpU/p6l3jM=
+		DowGXxo3YyCRqF4bMlAs2EYKAwg=
 		</data>
 		<key>Headers/TSOAlert.h</key>
 		<data>
@@ -6881,11 +6965,11 @@
 		</data>
 		<key>Headers/TSOAlertTriggeredResult.h</key>
 		<data>
-		RQ3qJFgzkM0UdErQOfD8gl/vt/I=
+		TYaBGtGq5hRDy+pBLxXYDTkcjOE=
 		</data>
 		<key>Headers/TSOAlertUpdatedResult.h</key>
 		<data>
-		3S8vPjBCLgXTFb2q+cyZUA1WBwk=
+		VWfrr2PuMZ/mPq79J4bPw0xu+rA=
 		</data>
 		<key>Headers/TSOAlertsEngine.h</key>
 		<data>
@@ -6893,35 +6977,35 @@
 		</data>
 		<key>Headers/TSOAlertsEngineImpl.h</key>
 		<data>
-		Q1PmJCOU7/4fmc3gFmWV56FUFGg=
+		LeMHz/8+YFmvER3pQTwgOsxstQ4=
 		</data>
 		<key>Headers/TSOAlertsMotChangeListener.h</key>
 		<data>
-		dXMz/+UoVOJ426366FMK5kGpWTI=
+		pDj4lpYO1oIZOGmo6Esy3hSjypg=
 		</data>
 		<key>Headers/TSOAlertsProviderImpl.h</key>
 		<data>
-		3QQVqiaTyH23Gl1GZQ1vXXB88Vg=
+		WX8y4AW/ki/3cAS8qvzSCagPTK4=
 		</data>
 		<key>Headers/TSOAlertsProviderStub.h</key>
 		<data>
-		Yv2D1ggLsBtYxlICEUZ+ssI28Ug=
+		6Pmqb0cr9VJO7+PC9pY3JNbO7uc=
 		</data>
 		<key>Headers/TSOAuditObject.h</key>
 		<data>
-		jtF4IQmm1Us8Tv7pGIPuxeCNfrQ=
+		w16TRadMgswGFXQosT7meQ6Jr7Q=
 		</data>
 		<key>Headers/TSOBeEvent.h</key>
 		<data>
-		SNv4XNIQWB5j8gsrDbooFzAuCCg=
+		f5KLCF2FlPhr+O3ySP+jnN6bD50=
 		</data>
 		<key>Headers/TSOCalendarEvent.h</key>
 		<data>
-		sUkP9auEBbWoY9AlGsCPClybz58=
+		+vlnNozkW8IGltAoJ0HNdGwH1mY=
 		</data>
 		<key>Headers/TSOCalendarEventCache.h</key>
 		<data>
-		WzROKMuaAkpygfcIP9CDrdt5kXA=
+		zuh8CXMS8L4jGR/6jmGe7ldc9zk=
 		</data>
 		<key>Headers/TSOCalendarMeeting.h</key>
 		<data>
@@ -6929,27 +7013,27 @@
 		</data>
 		<key>Headers/TSOCalendarsManager.h</key>
 		<data>
-		R1ewoggVV+asEdbnvzs03sWvKf4=
+		VW2S1VNFx9km+0g/KgTswNlqVDE=
 		</data>
 		<key>Headers/TSOCloudResponse.h</key>
 		<data>
-		/TQnF6YpoPzZzOhJpX0+0vQnyh0=
+		I+wQSIlQ0n8H0tAOfHOJZzICGYQ=
 		</data>
 		<key>Headers/TSOCompositeEvent.h</key>
 		<data>
-		w0mKMStBL4sO0x+e0Ze/zKrwv6U=
+		5fmhGTulPh2pBlP3AhavORSQ3Ak=
 		</data>
 		<key>Headers/TSOCompositeLoggerPlaces.h</key>
 		<data>
-		twFBsKdEMM8QRmSFgSqce4gdX9E=
+		f45BGWAmnr2bYtYg8VhnCT4dgbc=
 		</data>
 		<key>Headers/TSOCoordinate.h</key>
 		<data>
-		RtdGzS5gC1jqz4xCh17RZiWe+j4=
+		xmgjfY/1noFrRjbb0OB2ERPpfzk=
 		</data>
 		<key>Headers/TSOCoordinateDataObj.h</key>
 		<data>
-		ATB3pz3IC1/OwwGmCJ66D6hMRsg=
+		xti0Gm8YD+0KXd9yIJA1BBdWRpE=
 		</data>
 		<key>Headers/TSOCoordinateUtils.h</key>
 		<data>
@@ -6965,11 +7049,11 @@
 		</data>
 		<key>Headers/TSOEvent.h</key>
 		<data>
-		BX93UuLQATAhyuKZOsEXjXebFsU=
+		PyKRH1+xqsZB1YQuqXcHUnawKRA=
 		</data>
 		<key>Headers/TSOEventAuditObj.h</key>
 		<data>
-		LoHDhsUpTBfdKYXG1A+0vh8WklA=
+		jNQ4TN5BrcShXE0QO5vbm/u4zVI=
 		</data>
 		<key>Headers/TSOEventAuditObjectFactory.h</key>
 		<data>
@@ -6977,7 +7061,7 @@
 		</data>
 		<key>Headers/TSOEventChangeType.h</key>
 		<data>
-		s3kFSNDbKOlYdpSp1zmBtae+Atw=
+		kn3osi3gZ4leWbq6m+5pCQayLcc=
 		</data>
 		<key>Headers/TSOEventTriggeredMsg.h</key>
 		<data>
@@ -6985,7 +7069,7 @@
 		</data>
 		<key>Headers/TSOEventType.h</key>
 		<data>
-		nbqeZYf8c2ORi0Amj64kigYJiPs=
+		YO3n8xRKE6bvvk4IQQRupHRSoSA=
 		</data>
 		<key>Headers/TSOEventsResponse.h</key>
 		<data>
@@ -6997,11 +7081,11 @@
 		</data>
 		<key>Headers/TSOLocationProviderImplBase.h</key>
 		<data>
-		DK154MNu/eruoAneF9je7pE6VAg=
+		2R0xgoY4bC9VzaEmY9DyU/lY+jA=
 		</data>
 		<key>Headers/TSOLocationProviderImplNull.h</key>
 		<data>
-		KWGgWPd82yg8MRoRi37JwekzrAo=
+		fg8H6c1xW8qglwf2o6RQizTZxoM=
 		</data>
 		<key>Headers/TSOLoggerConst.h</key>
 		<data>
@@ -7013,19 +7097,19 @@
 		</data>
 		<key>Headers/TSOLoggerPlacesFileImpl.h</key>
 		<data>
-		xjOhN/9rF6OGe9QsaBPPAM951/4=
+		rgQPPeXGx1SGwf9YdntNA0qCaRk=
 		</data>
 		<key>Headers/TSOLoggerPlacesStdoutImpl.h</key>
 		<data>
-		EHyf5iAeQffubQG9cnWXKSRLLPs=
+		DdV4BLs9kQRYf9xZ2Eqwvn8S1Cw=
 		</data>
 		<key>Headers/TSONullLoggerPlaces.h</key>
 		<data>
-		7IVBisjE66lvkaV8CTtGu7nvCAk=
+		eju09TNL2OWLYAJX0v2T39zUrqA=
 		</data>
 		<key>Headers/TSOPlace.h</key>
 		<data>
-		INOdet8kAqMii6XyPyctfsrNm1Q=
+		ZwxDqnBTcxPYV6opfHeG5g7SCvc=
 		</data>
 		<key>Headers/TSOPlaceAdapter.h</key>
 		<data>
@@ -7037,7 +7121,7 @@
 		</data>
 		<key>Headers/TSOPlaceGetSyncRequest.h</key>
 		<data>
-		/uukvYJRUmyheDdQH8TAAAlHC5s=
+		ZzTludD9L581mHA96iRSM2T4DRM=
 		</data>
 		<key>Headers/TSOPlacesEngine.h</key>
 		<data>
@@ -7049,15 +7133,15 @@
 		</data>
 		<key>Headers/TSOPlacesGetSyncResponse.h</key>
 		<data>
-		Hzdt+ApUb8k65IU/oKfYVUSns98=
+		TF8rkHYUk9zO0D5bvkC/E9Ytzyg=
 		</data>
 		<key>Headers/TSOPlacesWriteRequest.h</key>
 		<data>
-		HuwSODciDMJb3QMeWriMkm91fjs=
+		h0tYM9KdcFhNrAhzBKEmyitJQlU=
 		</data>
 		<key>Headers/TSOPlacesWriteResponse.h</key>
 		<data>
-		yb/7lC7WgdZ4fllzivzVOaigNPg=
+		/Debi7BmjtkKTTXusRLYjF0frAc=
 		</data>
 		<key>Headers/TSOPosition.h</key>
 		<data>
@@ -7065,11 +7149,11 @@
 		</data>
 		<key>Headers/TSORetCodeResponse.h</key>
 		<data>
-		6m7sZ4DQoklT6BATX8sxQJGbjaM=
+		TCZ4ZO9FSUykMlmot2r2A7WJgYA=
 		</data>
 		<key>Headers/TSOSlaveDBSyncResponse.h</key>
 		<data>
-		wRR4TrwV6GQJYZJ519YWDzmg9TA=
+		poVBfI8Krh+9L29unlF6l+83YiM=
 		</data>
 		<key>Headers/TSOSqlDbException.h</key>
 		<data>
@@ -7077,39 +7161,39 @@
 		</data>
 		<key>Headers/TSOTimeUtil.h</key>
 		<data>
-		kJVvXVAk1/hTaxKV/i7qWWLkI0o=
+		QXwz23Cc+jJtt0KOa7rb0fjEMzQ=
 		</data>
 		<key>Headers/TSOTimeUtilDebug.h</key>
 		<data>
-		xyV7Z/bZEirh4V3IBYds439nY8I=
+		6cSnn/3PS/b4tbNZNlKRHo4j9oA=
 		</data>
 		<key>Headers/TSOUserIdRequest.h</key>
 		<data>
-		+MFAhwsvp8KhXygCSdGHkGxBlxI=
+		OaTmFq+9zxHTuXrb1hmxLVySt5c=
 		</data>
 		<key>Headers/TSOUserInfo.h</key>
 		<data>
-		ZzOeAEptw1bJo7oGXaLW7WxrrGo=
+		YAkHZ7F3zsXClU6LTtXtMgKWfAA=
 		</data>
 		<key>Headers/TTLRequest.h</key>
 		<data>
-		4xVNRJw13zppHEcwHS7orR06G9o=
+		CznigGw9FjoF3w34PJoCyw+DcuQ=
 		</data>
 		<key>Headers/TTLRequestDataObj.h</key>
 		<data>
-		er06ht4ijX5jQL5T3vZjlAibaFU=
+		lvpSZj3X0BJ9a8Q7qr11CWjQIj4=
 		</data>
 		<key>Headers/TTLRequestResponseDataObj.h</key>
 		<data>
-		FUK3iDrVS9bfo8kzqAfjRXKSsvM=
+		MxKiJ9tbxdBo7ppH/h9r9PUs46E=
 		</data>
 		<key>Headers/TTLResponse.h</key>
 		<data>
-		D1L9zBW8lXy017h34vdwvDXuLm4=
+		yL0uSIWWoloYPQYacAh0OwMlrXE=
 		</data>
 		<key>Headers/TTLResponseDataObj.h</key>
 		<data>
-		1rc2VcP5KuBcWVc1HC2/nrxesAA=
+		nRtTROLSHXhN6luu6LQfBLhmbG4=
 		</data>
 		<key>Headers/TemporalsDetectionAlg.h</key>
 		<data>
@@ -7133,7 +7217,7 @@
 		</data>
 		<key>Headers/TimeDelaySnoozeOption.h</key>
 		<data>
-		b9sewdpQ4YcRzKahud0piqNuIPY=
+		Dr/7gzSe1Ed9axP0yujIwVl/14w=
 		</data>
 		<key>Headers/TimeFormatUtil.h</key>
 		<data>
@@ -7149,27 +7233,27 @@
 		</data>
 		<key>Headers/TimeRangeSnoozeOption.h</key>
 		<data>
-		E7y++Mvfj3eK25YYgvvp98kRAXs=
+		ruNIIjv3mijD1brf/OPp8Mac0b4=
 		</data>
 		<key>Headers/TimeTrigger.h</key>
 		<data>
-		+iCa6x+imPpj0aBg7iZP4+ByTnE=
+		k1omkXNaRmyRzK6R3Qu2NFXUWoA=
 		</data>
 		<key>Headers/TimeTriggerInner.h</key>
 		<data>
-		NSunF61OSd4UxekMc88v1rL7/e0=
+		//FR6rBh+a0ZFtj9L2qnl7S8knw=
 		</data>
 		<key>Headers/TimeTriggersManager.h</key>
 		<data>
-		JIRGo9IYwTgijIQ8FCh4BTPBsOI=
+		lySXIEinpZCOg0a7yWKkhtlK4DU=
 		</data>
 		<key>Headers/TimeTriggersMemoryStorage.h</key>
 		<data>
-		F/SuoVDHgK8f8A4kJWNc4Qtc7Fg=
+		OHo4omDtjFv6Mev2+HFdeI3f2f8=
 		</data>
 		<key>Headers/TimeTriggersPersistentStorage.h</key>
 		<data>
-		eh+bkEdjizrjv2QyJMNn6rvXjeo=
+		/p2glHiUAfN0qZG+DAzz47CvM4w=
 		</data>
 		<key>Headers/TimeUtils.h</key>
 		<data>
@@ -7197,15 +7281,15 @@
 		</data>
 		<key>Headers/TrafficIndication.h</key>
 		<data>
-		nw2jGt5QgH3jYZkbw2ASj8N0aAc=
+		kvW9BF5QGSlKBaUbsVAyDg2yljA=
 		</data>
 		<key>Headers/TransportType.h</key>
 		<data>
-		K1HY17eTuzp4wLmcxDggmyDlDRc=
+		x2so8Uk82O77INrAihLU1PsgSHE=
 		</data>
 		<key>Headers/TriggerAudit.h</key>
 		<data>
-		hVlayhB9IiF0PjcxmugjKwS6Cks=
+		YvXvzx5bW6u+VjFWoWaXS8z2ES0=
 		</data>
 		<key>Headers/TriggerBuildException.h</key>
 		<data>
@@ -7213,27 +7297,27 @@
 		</data>
 		<key>Headers/TriggerLifeCycleAuditManager.h</key>
 		<data>
-		CjOyeNKjDYSe6JIwvRSk5VCJ0G0=
+		5/vOgwxkdD0quJ8HhjpVDOHZj9s=
 		</data>
 		<key>Headers/TriggerLifeCycleAuditManagerStub.h</key>
 		<data>
-		zjV7cS2DEzhQqP8ac2NaIy5a+tg=
+		TfsiUuTy75yu0T8TVLKPUlj81xQ=
 		</data>
 		<key>Headers/TriggerStatus.h</key>
 		<data>
-		irbIxu1qtH0gOm6bUg9JI81Aq9s=
+		Vmtq3b0hOLw4Z9jD2LnnFk7x7LY=
 		</data>
 		<key>Headers/TriggerStatusInner.h</key>
 		<data>
-		R2Oru6kSjjWZ0NzNKZ+GBfrmXo8=
+		z9sWqyl8neGdOv250yfbsY7HEYI=
 		</data>
 		<key>Headers/TriggerType.h</key>
 		<data>
-		FQ33deeIPHRQbqTfpMP1FtwcqUA=
+		kxgffI1fTF7O2jcKnCHjq9ZIIdg=
 		</data>
 		<key>Headers/TriggeredAlertResultType.h</key>
 		<data>
-		oEeXe+Xou1v3FMpMZ6A08M6iS8s=
+		eNiEqb7r84yJoupeDyS6PRt39kI=
 		</data>
 		<key>Headers/TriggersListenerList.h</key>
 		<data>
@@ -7245,11 +7329,11 @@
 		</data>
 		<key>Headers/TriggersManagerImpl.h</key>
 		<data>
-		d75l7CRKyfgalY7UM57ytDMLLMM=
+		arePu90PktfpPw3fjfar1K/WCes=
 		</data>
 		<key>Headers/TruncatedExponentialBackoffAlgorithmHelper.h</key>
 		<data>
-		kQf93fFEFRQ6G5UQA16ZPTonFqk=
+		35nsRFDybIZJis0IbrC6bd27td0=
 		</data>
 		<key>Headers/TtlAlertsProviderFactoryInitializer.h</key>
 		<data>
@@ -7257,7 +7341,7 @@
 		</data>
 		<key>Headers/TtlRouteData.h</key>
 		<data>
-		6FguKLgPfHkY1vnt6+ioTN04DAk=
+		N8qTA3c7ebYiDymjFjWcF/paZVk=
 		</data>
 		<key>Headers/UUIDGenerator.h</key>
 		<data>
@@ -7265,43 +7349,43 @@
 		</data>
 		<key>Headers/UniqueCalendarEvent.h</key>
 		<data>
-		Xl+e6DYhExLsnxwXCLqzCMwY3pQ=
+		jKyFlFxd5AfQohc4uSKgMxF68EQ=
 		</data>
 		<key>Headers/UnknownState.h</key>
 		<data>
-		D1o95f4X76tT31oH9dlOrBqBVoA=
+		a18WPIGDQLuejaj2G2O/Qvgu61o=
 		</data>
 		<key>Headers/UpdateAlertResultType.h</key>
 		<data>
-		pWM6Wf0dzMS1ZFwgoCdp3TZLx+8=
+		pKraupWCmfNBCPDASX/wxEA3I+s=
 		</data>
 		<key>Headers/UserActionType.h</key>
 		<data>
-		myvlCn3nntZFD6z4aihViTc5DBY=
+		6k8GtDPcWVsGr9jkwjqP7apLI28=
 		</data>
 		<key>Headers/UserInputData.h</key>
 		<data>
-		RPfTApUqA+6ugaaTP7ctoP0zLEQ=
+		aS+WvWLUKUGx6wqKl6IvwnA5w8U=
 		</data>
 		<key>Headers/UserInputSensorData.h</key>
 		<data>
-		HgqWTPpI1gQf06nGMVYrOkQbUNc=
+		10c3z9IEppZsLXjm9A6pvqL0rrs=
 		</data>
 		<key>Headers/UserInputType.h</key>
 		<data>
-		fofvxR3XgMLs9HMN5Z5fMJrRwyc=
+		BqwdYlhjDHV1jyvVMH78MzKGn6M=
 		</data>
 		<key>Headers/UserPlaceInteraction.h</key>
 		<data>
-		Vug/bdFkOn2R2vlbZR+WrRus72w=
+		8l7LK95X/5yEBoUZ5FQplylYSgE=
 		</data>
 		<key>Headers/UserPlaceInteractionType.h</key>
 		<data>
-		3mBrQUsMZjaTL4ofl4z3HEQlf9o=
+		KWrvmNoECQOqc3PRCJD8HO0mvUQ=
 		</data>
 		<key>Headers/UserPrefs.h</key>
 		<data>
-		LZ1p1zvHPbV48INrWm60RtPshZQ=
+		u5Gil0gXkROqKuvR9rOxbDad8KE=
 		</data>
 		<key>Headers/UserState.h</key>
 		<data>
@@ -7309,15 +7393,15 @@
 		</data>
 		<key>Headers/UserStateAudit.h</key>
 		<data>
-		L8Bf18xWYYL1SuWz5rp1mL0zaGg=
+		Cj33Lee4UaiinJhDeXUO50CzG3o=
 		</data>
 		<key>Headers/UserStateAuditManager.h</key>
 		<data>
-		9BI0gDPdYRcDvVvxW75oPZZ8WW4=
+		KgZp9a8lDvin5uj33OvxFcajS34=
 		</data>
 		<key>Headers/UserStateAuditManagerStub.h</key>
 		<data>
-		2ZhBbwI6HcmvtwBEkrd1JnvXv9E=
+		66psjNpZwZJG2zCdE+5B9I/XSm8=
 		</data>
 		<key>Headers/UserStateChanges.h</key>
 		<data>
@@ -7329,15 +7413,15 @@
 		</data>
 		<key>Headers/UserStateDataChangesAudit.h</key>
 		<data>
-		esTJdbs7OeCmzJW50PgXUhmXtMU=
+		u1lAeswMVUMDo1kZ0NgZFnCbCys=
 		</data>
 		<key>Headers/UserStateDataMotAudit.h</key>
 		<data>
-		CNMxbgwb0+EqqavDz/LQ3ORiFWQ=
+		EGc0UrLEwQTqgU1+kp4mplC2XQs=
 		</data>
 		<key>Headers/UserStateDataVisitsAudit.h</key>
 		<data>
-		QPrjTQjgFnfqqycHdl/MJkpSE84=
+		ApimUxOFxJWYmlMSG5lphIVh5gE=
 		</data>
 		<key>Headers/UserStateFactoryInitializer.h</key>
 		<data>
@@ -7345,27 +7429,31 @@
 		</data>
 		<key>Headers/UserStateFilter.h</key>
 		<data>
-		HmXmF2aNk+X21ellTzk0KeL4ZI4=
+		9oKQ0lpQagzbIBFGCmR8q5mNSNY=
 		</data>
 		<key>Headers/UserStateHistory.h</key>
 		<data>
-		uxQGpgL22PNGyhWNLylLz4bOyvE=
+		0M7IqQ+/CqdtDwQRGCkQAuWxUrE=
 		</data>
-		<key>Headers/UserStateManagerImp.h</key>
+		<key>Headers/UserStateManager.h</key>
 		<data>
-		EaCzd10AjwdFRZmo9v+DknN+3jQ=
+		PWXnNw8eCf7mtUfHxRd98pxsdDs=
 		</data>
-		<key>Headers/UserStateManagerImpDebug.h</key>
+		<key>Headers/UserStateManagerModule.h</key>
 		<data>
-		Nbgqbh6ukkf9R47fgitGj22MraQ=
+		b3dV+9ghVpVkSIoD8qrvQrdoeEk=
+		</data>
+		<key>Headers/UserStateManagerModuleDebug.h</key>
+		<data>
+		C1X46tcBNQy77wL8HkoZqXKSrC8=
 		</data>
 		<key>Headers/UserStateMonitor.h</key>
 		<data>
-		bklazPP1RdmQ2OatrIv6OE3FMfc=
+		C9JwX2IfFLZOObBsDVOZP/6H+vg=
 		</data>
 		<key>Headers/UserStateType.h</key>
 		<data>
-		vdFh4fR1Ty7MOA//pZlJXxtUvck=
+		tsxlHWGpK6vYaT75pcgiqppebNU=
 		</data>
 		<key>Headers/V2Params.h</key>
 		<data>
@@ -7385,27 +7473,27 @@
 		</data>
 		<key>Headers/VipStateDataProvider.h</key>
 		<data>
-		Ii7peMxsHqSmWBdvxu0Xcwa2FDg=
+		M2h+GWbBTeZHXrcYD9lv0aXUPmw=
 		</data>
 		<key>Headers/VipStateType.h</key>
 		<data>
-		BTe8quL9mGF1DUl/Jvr07pylwds=
+		/9nxsb3Sh2Hzu7MlUJ4sfTTg8Xo=
 		</data>
 		<key>Headers/Visit.h</key>
 		<data>
-		phrQCHOUkCambkUEdgcBSLyEkp0=
+		Dao6dk6yqN7oHxPgS8v0gBOh2DE=
 		</data>
 		<key>Headers/VisitDetectionModule.h</key>
 		<data>
-		tV1etNi/xRv1ojq2Pxd/BqQKzBk=
+		+7/dthbRLskHT7wKiBbjShVPtDk=
 		</data>
 		<key>Headers/VisitFuseDetectorImpl.h</key>
 		<data>
-		f3an5KtDcjCl1TtToYVh4Y5Bwxw=
+		azROdBWDDR/pBuUXmkoUigno2zU=
 		</data>
 		<key>Headers/VisitInPlaceModule.h</key>
 		<data>
-		jgNmsiSwdDG0ZUTwRpa71bmBejk=
+		CliQQP7jCXoyftRrwVmtXvNTQyI=
 		</data>
 		<key>Headers/VisitTimeofDay.h</key>
 		<data>
@@ -7413,23 +7501,23 @@
 		</data>
 		<key>Headers/VisitWifiDetectorImpl.h</key>
 		<data>
-		Ia1zLnYxHzO0nt3hcUkvMiRJQmw=
+		1LChIYfut3M1pZMRAzmbOLvsLc4=
 		</data>
 		<key>Headers/VisitedPlace.h</key>
 		<data>
-		xIisb5sCzSArMgNG9n6kNvWFi/g=
+		FGSXaynMswiUg333Wwzw9x/HcaI=
 		</data>
 		<key>Headers/VisitedPlaceConfidence.h</key>
 		<data>
-		+CTnt4XiTcEUKkoHk0hFh8SbHYQ=
+		H0ihdJbUFzlZxl2RZoTIZjMhKms=
 		</data>
 		<key>Headers/VisitedPlaces.h</key>
 		<data>
-		W8fHDq8IjVnLfwumOKgApfvtkO0=
+		IKBVifAKwR1OP/uzAtnlAjSUjx8=
 		</data>
 		<key>Headers/VisitsDetetionListener.h</key>
 		<data>
-		voYQfpn/aLvqK1PKHmoNpeHqd8s=
+		hMYGWBJmjZMSy283MYCYZ9TLTFs=
 		</data>
 		<key>Headers/WaitTimer.h</key>
 		<data>
@@ -7441,11 +7529,11 @@
 		</data>
 		<key>Headers/WifiBaseSensorData.h</key>
 		<data>
-		C9o2KOMa8GbXSYtDbxfQdTIQZRI=
+		+sC+0ZIybiBZQIvmOr2iDpZ4NqE=
 		</data>
 		<key>Headers/WifiData.h</key>
 		<data>
-		OJqLPIBP8nkkNVaTKBYfb+1SHdQ=
+		YIuNV/Hjy4JC8fJBoi9c6etUj2w=
 		</data>
 		<key>Headers/WifiFingerPrintBuilder.h</key>
 		<data>
@@ -7453,7 +7541,7 @@
 		</data>
 		<key>Headers/WifiFingerPrintCollection.h</key>
 		<data>
-		238ii8sB/651rcaZGTKlVHGIydI=
+		GleZA7jS+4fAg6Flk2Xk/RgBLNU=
 		</data>
 		<key>Headers/WifiScan.h</key>
 		<data>
@@ -7465,7 +7553,7 @@
 		</data>
 		<key>Headers/WifiSignature.h</key>
 		<data>
-		g69FYWWL/ft5mEmEH93pyc08Gnc=
+		ndN1LuTwnGLruzhZAtIBy4mpbf8=
 		</data>
 		<key>Headers/WifiSimilarityAlg.h</key>
 		<data>
@@ -7477,11 +7565,11 @@
 		</data>
 		<key>Headers/WifiState.h</key>
 		<data>
-		Z00cUQWa3EyRP5n5aBw1Ml/mKg8=
+		b8p+I7n0iyKT8XlozHJVrmXw0jM=
 		</data>
 		<key>Headers/WorkingHoursVisitCondition.h</key>
 		<data>
-		VTicdO725UMhMKFQZxaSUiGU+Cg=
+		I1hWeRZSqyca4Je5u0POz0jBTVg=
 		</data>
 		<key>Headers/XY.h</key>
 		<data>
@@ -7489,23 +7577,23 @@
 		</data>
 		<key>Headers/eAuditLabels.h</key>
 		<data>
-		7CuDIScTChqVVC3SBultVNnhr3Y=
+		QLVGH7VWWO0lF+6CyYYoRLWdYN8=
 		</data>
 		<key>Headers/eDayOfReminder.h</key>
 		<data>
-		gCcZcwSGdiBcktbVdeOWLE6Ph/w=
+		NouXr0IRj+DiTKU/1IAS50PJPro=
 		</data>
 		<key>Headers/eExtendedEventReminderType.h</key>
 		<data>
-		7bIdPxy4jJkRUWAbPXnCRUpKyDA=
+		8cZNR9rpPKFZg7QByjC6Cw2IjIE=
 		</data>
 		<key>Headers/eExtendedEventState.h</key>
 		<data>
-		i/woiVG2/r62P+ydPiFkW761l9E=
+		lN+Xga1k10/wjAWR1tYC6uKrKmc=
 		</data>
 		<key>Headers/eTriggerBuildExceptionType.h</key>
 		<data>
-		T6LSijdUJRRbS+0WiGRRTQuwhBw=
+		ZQFxZghjkaoJAa6ZmV6g2HdV2f8=
 		</data>
 		<key>Headers/nanotime.h</key>
 		<data>

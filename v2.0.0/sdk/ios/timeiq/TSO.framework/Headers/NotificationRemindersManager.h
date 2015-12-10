@@ -9,8 +9,8 @@
 @protocol INotificationRemindersStorage;
 
 #import "JB.h"
-#include "ARemindersManager.h"
-#include "INotificationRemindersManager.h"
+#import "ARemindersManager.h"
+#import "INotificationRemindersManager.h"
 
 /**
  @brief Created by mleib on 04/05/2015.

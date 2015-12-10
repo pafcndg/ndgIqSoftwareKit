@@ -9,7 +9,7 @@
 @protocol IGenericDaoQuery;
 
 #import "JB.h"
-#include "ICreateUpdateStrategy.h"
+#import "ICreateUpdateStrategy.h"
 
 /**
  @brief Handle the logic of creating or updating the local Table in the DB, in case of sync db the table looks different from the generic schema (4 columns: Id, Blog, TimeStamp, DaoType) and need a different strategy.

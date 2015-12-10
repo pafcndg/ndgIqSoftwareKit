@@ -11,7 +11,7 @@
 #import "JBArrayList.h"
 
 #import "JB.h"
-#include "Coord.h"
+#import "Coord.h"
 
 @interface ApPosition : Coord {
  @public

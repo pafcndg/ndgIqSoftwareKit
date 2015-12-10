@@ -9,7 +9,7 @@
 @class SnoozeTimeRange;
 
 #import "JB.h"
-#include "SnoozeOption.h"
+#import "SnoozeOption.h"
 
 /**
  @brief This class represents a snooze option that is a delay in time of the notification according to specified time range options

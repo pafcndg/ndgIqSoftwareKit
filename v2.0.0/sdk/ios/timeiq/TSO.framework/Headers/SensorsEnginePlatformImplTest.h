@@ -9,7 +9,7 @@
 @class SDKPolicy;
 
 #import "JB.h"
-#include "ASensorsEnginePlatformAPI.h"
+#import "ASensorsEnginePlatformAPI.h"
 
 /**
  @brief Created by eleuchte on 04/03/2015.

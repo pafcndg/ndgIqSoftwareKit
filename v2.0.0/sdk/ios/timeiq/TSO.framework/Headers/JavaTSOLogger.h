@@ -7,7 +7,7 @@
 #define _JavaTSOLogger_H_
 
 #import "JB.h"
-#include "ATSOLogger.h"
+#import "ATSOLogger.h"
 
 /**
  @brief Created by smoradof on 3/15/15.

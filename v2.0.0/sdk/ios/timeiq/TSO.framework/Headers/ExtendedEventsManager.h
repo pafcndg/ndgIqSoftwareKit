@@ -13,17 +13,17 @@
 @class ExtendedEventTemplate;
 #import "JBArrayList.h"
 @class eDayOfReminder;
-@protocol IEventsEngine;
+@protocol IEventsEngineModule;
 @protocol IExtendedEventsHandler;
 @protocol IExternalMessageEngine;
 @protocol IMessage;
 @protocol IReminder;
-@protocol IRemindersManager;
+@protocol IRemindersManagerModule;
 @protocol ITSOLogger;
 #import "JBArrayList.h"
 
 #import "JB.h"
-#include "IMessageListener.h"
+#import "IMessageListener.h"
 
 #define ExtendedEventsManager_ADD_TO_CALENDAR YES
 
@@ -32,8 +32,8 @@
  */
 @interface ExtendedEventsManager : NSObject < IMessageListener > {
  @public
-  id<IEventsEngine> mEventsEngine_;
-  id<IRemindersManager> mRemindersManager_;
+  id<IEventsEngineModule> mEventsEngine_;
+  id<IRemindersManagerModule> mRemindersManager_;
   ArrayList *mInstances_;
   ArrayList *mTemplates_;
   id<IExtendedEventsHandler> mTsoEventsHandler_;
@@ -109,8 +109,8 @@
 FOUNDATION_EXPORT BOOL ExtendedEventsManager_initialized;
 J2OBJC_STATIC_INIT(ExtendedEventsManager)
 
-//J2OBJC_FIELD_SETTER(ExtendedEventsManager, mEventsEngine_, id<IEventsEngine>)
-//J2OBJC_FIELD_SETTER(ExtendedEventsManager, mRemindersManager_, id<IRemindersManager>)
+//J2OBJC_FIELD_SETTER(ExtendedEventsManager, mEventsEngine_, id<IEventsEngineModule>)
+//J2OBJC_FIELD_SETTER(ExtendedEventsManager, mRemindersManager_, id<IRemindersManagerModule>)
 //J2OBJC_FIELD_SETTER(ExtendedEventsManager, mInstances_, ArrayList *)
 //J2OBJC_FIELD_SETTER(ExtendedEventsManager, mTemplates_, ArrayList *)
 //J2OBJC_FIELD_SETTER(ExtendedEventsManager, mTsoEventsHandler_, id<IExtendedEventsHandler>)

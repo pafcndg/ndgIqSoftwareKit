@@ -10,8 +10,8 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "IMappable.h"
-#include "AResolverResponse.h"
+#import "IMappable.h"
+#import "AResolverResponse.h"
 
 /**
  @brief ResolveBusinessPhoneResponse used to hold resolver results of business locations when the search term is a phone number

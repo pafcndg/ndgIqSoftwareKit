@@ -16,7 +16,7 @@
 @protocol ITSOLogger;
 
 #import "JB.h"
-#include "IBasicRouteProvider.h"
+#import "IBasicRouteProvider.h"
 
 @interface BasicRouteProviderImpl : NSObject < IBasicRouteProvider > {
  @public

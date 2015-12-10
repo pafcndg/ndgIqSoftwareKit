@@ -12,7 +12,7 @@
 @class UpdateAlertResultType;
 
 #import "JB.h"
-#include "TSOAlertResult.h"
+#import "TSOAlertResult.h"
 
 /**
  @brief The result object that the ITSOAlertListener gets when an alert is updated

@@ -12,7 +12,7 @@
 @class TSOPlace;
 
 #import "JB.h"
-#include "BaseEvent.h"
+#import "BaseEvent.h"
 
 /**
  @brief The BE event is the basic event type.

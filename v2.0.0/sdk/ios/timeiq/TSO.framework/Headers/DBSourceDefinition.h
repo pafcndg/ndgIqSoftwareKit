@@ -11,7 +11,7 @@
 #import "JBHashSet.h"
 
 #import "JB.h"
-#include "IDBSourceDefinition.h"
+#import "IDBSourceDefinition.h"
 
 /**
  @brief Created by aeirew on 15/07/2015.

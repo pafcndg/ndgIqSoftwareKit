@@ -10,9 +10,9 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "IMappable.h"
-#include "ITSOBaseDBObject.h"
-#include "LocationBaseSensorData.h"
+#import "IMappable.h"
+#import "ITSOBaseDBObject.h"
+#import "LocationBaseSensorData.h"
 #import "JBSerializable.h"
 
 /**

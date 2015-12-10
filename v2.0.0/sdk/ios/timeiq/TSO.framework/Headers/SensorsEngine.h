@@ -26,8 +26,8 @@
 #import "JBHashSet.h"
 
 #import "JB.h"
-#include "ISensorsEngine.h"
-#include "IPolicyListener.h"
+#import "ISensorsEngine.h"
+#import "IPolicyListener.h"
 
 /**
  */

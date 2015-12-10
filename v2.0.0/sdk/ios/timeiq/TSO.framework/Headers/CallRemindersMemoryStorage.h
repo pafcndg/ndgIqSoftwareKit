@@ -7,8 +7,8 @@
 #define _CallRemindersMemoryStorage_H_
 
 #import "JB.h"
-#include "ARemindersMemoryStorage.h"
-#include "ICallRemindersStorage.h"
+#import "ARemindersMemoryStorage.h"
+#import "ICallRemindersStorage.h"
 
 /**
  @brief Created by mleib on 30/04/2015.

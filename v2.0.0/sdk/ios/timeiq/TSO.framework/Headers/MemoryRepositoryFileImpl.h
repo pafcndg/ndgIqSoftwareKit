@@ -10,7 +10,7 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "IMemoryRepositoryImpl.h"
+#import "IMemoryRepositoryImpl.h"
 
 /**
  @brief Created by aeirew on 28/01/2015.

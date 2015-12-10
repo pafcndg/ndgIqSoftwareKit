@@ -13,8 +13,8 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "ATSOBaseDBObject.h"
-#include "ITSOEvent.h"
+#import "ATSOBaseDBObject.h"
+#import "ITSOEvent.h"
 
 /**
  @brief Created by stzour on 07/06/2015.

@@ -13,8 +13,8 @@
 @class TSOCoordinate;
 
 #import "JB.h"
-#include "ILocationProvider.h"
-#include "ISensorDataReceiver.h"
+#import "ILocationProvider.h"
+#import "ISensorDataReceiver.h"
 
 /**
  @brief Created by orencoh2 on 23/11/14.

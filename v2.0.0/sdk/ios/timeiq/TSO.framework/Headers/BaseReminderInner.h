@@ -17,8 +17,8 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "ATSOBaseDBObject.h"
-#include "IReminderInner.h"
+#import "ATSOBaseDBObject.h"
+#import "IReminderInner.h"
 
 /**
  @brief Created by mleib on 26/04/2015.

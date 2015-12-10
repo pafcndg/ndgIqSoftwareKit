@@ -12,8 +12,8 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "IMappable.h"
-#include "ARequestDataObj.h"
+#import "IMappable.h"
+#import "ARequestDataObj.h"
 
 @interface TTLRequestDataObj : ARequestDataObj < IMappable > {
  @public

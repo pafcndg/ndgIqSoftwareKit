@@ -11,7 +11,7 @@
 #import "JBHashSet.h"
 
 #import "JB.h"
-#include "ISyncDao.h"
+#import "ISyncDao.h"
 
 /**
  @brief Created by aeirew on 16/09/2015.

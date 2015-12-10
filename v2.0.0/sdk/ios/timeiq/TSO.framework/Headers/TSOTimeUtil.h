@@ -7,7 +7,7 @@
 #define _TSOTimeUtil_H_
 
 #import "JB.h"
-#include "ITSOTimeUtil.h"
+#import "ITSOTimeUtil.h"
 
 /**
  @brief Created by smoradof on 1/20/15.

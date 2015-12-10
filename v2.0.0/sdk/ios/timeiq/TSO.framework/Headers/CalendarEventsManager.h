@@ -20,23 +20,23 @@
 @class TSOPlace;
 @protocol IInternalMessageEngine;
 @protocol ILocationProvider;
-@protocol IResolver;
+@protocol IResolverModule;
 @protocol ISdkDefaultPrefs;
 @protocol ITSOAlarmManager;
 @protocol ITSOCalendarsManager;
 @protocol ITSOEvent;
 @protocol ITSOLogger;
 @protocol ITSOTimeUtil;
-@protocol IUserStateManagerInternal;
+@protocol IUserStateManagerModule;
 #import "TrReadWriteLock.h"
 #import "TrReadWriteLock.h"
 #import "JBArrayList.h"
 #import "JBHashSet.h"
 
 #import "JB.h"
-#include "ICalendarListener.h"
-#include "ITSOAlarmListener.h"
-#include "IEventSyncListener.h"
+#import "ICalendarListener.h"
+#import "ITSOAlarmListener.h"
+#import "IEventSyncListener.h"
 #import "JBCallable.h"
 
 #define CalendarEventsManager_DAY 86400000LL
@@ -59,8 +59,8 @@
   EventsAudit *eventsAudit_;
   EventIdManager *eventIdManager_;
   EventsPersistenceUtil *persistenceUtil_;
-  id<IResolver> resolver_;
-  id<IUserStateManagerInternal> userStateManager_;
+  id<IResolverModule> resolver_;
+  id<IUserStateManagerModule> userStateManager_;
   id<ITSOAlarmManager> alarmManager_;
   id<ITSOTimeUtil> timerUtil_;
   id<ITSOLogger> logger_;
@@ -88,10 +88,10 @@
                       withEventsAudit:(EventsAudit *)eventsAudit
             withEventsPersistenceUtil:(EventsPersistenceUtil *)persistenceUtil
                     withTSOEventsSync:(TSOEventsSync *)sync
-                        withIResolver:(id<IResolver>)resolver
+                  withIResolverModule:(id<IResolverModule>)resolver
              withITSOCalendarsManager:(id<ITSOCalendarsManager>)calendarsManager
                  withISdkDefaultPrefs:(id<ISdkDefaultPrefs>)userPref
-        withIUserStateManagerInternal:(id<IUserStateManagerInternal>)userStateManager
+          withIUserStateManagerModule:(id<IUserStateManagerModule>)userStateManager
                  withITSOAlarmManager:(id<ITSOAlarmManager>)alarmManager
                      withITSOTimeUtil:(id<ITSOTimeUtil>)timerUtil
                        withITSOLogger:(id<ITSOLogger>)logger
@@ -215,8 +215,8 @@ __attribute__((always_inline)) inline void CalendarEventsManager_init() {}
 //J2OBJC_FIELD_SETTER(CalendarEventsManager, eventsAudit_, EventsAudit *)
 //J2OBJC_FIELD_SETTER(CalendarEventsManager, eventIdManager_, EventIdManager *)
 //J2OBJC_FIELD_SETTER(CalendarEventsManager, persistenceUtil_, EventsPersistenceUtil *)
-//J2OBJC_FIELD_SETTER(CalendarEventsManager, resolver_, id<IResolver>)
-//J2OBJC_FIELD_SETTER(CalendarEventsManager, userStateManager_, id<IUserStateManagerInternal>)
+//J2OBJC_FIELD_SETTER(CalendarEventsManager, resolver_, id<IResolverModule>)
+//J2OBJC_FIELD_SETTER(CalendarEventsManager, userStateManager_, id<IUserStateManagerModule>)
 //J2OBJC_FIELD_SETTER(CalendarEventsManager, alarmManager_, id<ITSOAlarmManager>)
 //J2OBJC_FIELD_SETTER(CalendarEventsManager, timerUtil_, id<ITSOTimeUtil>)
 //J2OBJC_FIELD_SETTER(CalendarEventsManager, logger_, id<ITSOLogger>)

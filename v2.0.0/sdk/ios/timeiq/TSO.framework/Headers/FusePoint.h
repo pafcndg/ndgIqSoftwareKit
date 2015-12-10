@@ -7,7 +7,7 @@
 #define _FusePoint_H_
 
 #import "JB.h"
-#include "Coord.h"
+#import "Coord.h"
 
 @interface FusePoint : Coord {
  @public

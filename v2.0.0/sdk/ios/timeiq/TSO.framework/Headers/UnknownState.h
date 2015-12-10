@@ -11,8 +11,8 @@
 @class Visit;
 
 #import "JB.h"
-#include "AbstractState.h"
-#include "IState.h"
+#import "AbstractState.h"
+#import "IState.h"
 
 #define UnknownState_WIFI_UNKOWN_INFLUENCE_IN_MINS 5.0
 

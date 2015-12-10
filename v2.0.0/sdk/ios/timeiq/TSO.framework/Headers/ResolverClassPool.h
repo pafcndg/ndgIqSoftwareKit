@@ -6,7 +6,7 @@
 #ifndef _ResolverClassPool_H_
 #define _ResolverClassPool_H_
 
-@protocol IResolver;
+@protocol IResolverModule;
 
 #import "JB.h"
 
@@ -16,7 +16,7 @@
 @interface ResolverClassPool : NSObject {
 }
 
-+ (id<IResolver>)getResolver;
++ (id<IResolverModule>)getResolver;
 
 - (instancetype)init;
 

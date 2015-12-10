@@ -13,7 +13,7 @@
 @class WifiScan;
 
 #import "JB.h"
-#include "SensedPlace.h"
+#import "SensedPlace.h"
 
 /**
  @brief Created by asamouch on 02/08/2015.

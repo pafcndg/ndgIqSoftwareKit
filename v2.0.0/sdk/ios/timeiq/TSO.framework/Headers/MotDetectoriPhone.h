@@ -23,8 +23,8 @@
 @protocol JavaUtilMap_Entry;
 
 #import "JB.h"
-#include "ITSOAlarmListener.h"
-#include "MotDetectoriPhoneNaive.h"
+#import "ITSOAlarmListener.h"
+#import "MotDetectoriPhoneNaive.h"
 #import "JBComparator.h"
 
 #define MotDetectoriPhone_AR_MOVING_WINDOW_SIZE 90000

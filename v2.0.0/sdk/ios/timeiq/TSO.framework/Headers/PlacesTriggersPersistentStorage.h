@@ -12,8 +12,8 @@
 #import "JBHashSet.h"
 
 #import "JB.h"
-#include "ABaseTriggersPersistentStorage.h"
-#include "IPlacesTriggersStorage.h"
+#import "ABaseTriggersPersistentStorage.h"
+#import "IPlacesTriggersStorage.h"
 
 /**
  @brief Created by Yaron Abramovich on 19.5.15

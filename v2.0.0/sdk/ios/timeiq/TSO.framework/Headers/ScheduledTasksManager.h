@@ -14,7 +14,7 @@
 @protocol ITimeUtil_ISO8601;
 
 #import "JB.h"
-#include "ITSOAlarmListener.h"
+#import "ITSOAlarmListener.h"
 
 #define ScheduledTasksManager_MINIMUM_DELAY 300000
 #define ScheduledTasksManager_PLACE_DETECTION_DAO_SYNC_REPEAT_INTERVAL 28800000

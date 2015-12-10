@@ -18,7 +18,7 @@
 #import "JBArrayList.h"
 
 #import "JB.h"
-#include "IDBRepositoryImpl.h"
+#import "IDBRepositoryImpl.h"
 
 /**
  @brief Created by orencoh2 on 8/12/14.

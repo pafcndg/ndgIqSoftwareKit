@@ -7,7 +7,7 @@
 #define _IDoRemindersStorage_H_
 
 #import "JB.h"
-#include "IRemindersStorage.h"
+#import "IRemindersStorage.h"
 
 /**
  @brief Created by mleib on 30/04/2015.

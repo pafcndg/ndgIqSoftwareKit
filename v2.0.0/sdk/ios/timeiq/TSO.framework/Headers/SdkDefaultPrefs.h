@@ -10,8 +10,8 @@
 @class Result;
 
 #import "JB.h"
-#include "APrefs.h"
-#include "ISdkDefaultPrefs.h"
+#import "APrefs.h"
+#import "ISdkDefaultPrefs.h"
 
 /**
  @brief Created by mleib on 02/08/2015.

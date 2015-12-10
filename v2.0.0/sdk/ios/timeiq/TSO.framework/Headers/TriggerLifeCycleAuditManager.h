@@ -12,8 +12,8 @@
 @protocol ITriggersManagerInner;
 
 #import "JB.h"
-#include "ITriggerLifeCycleAuditManager.h"
-#include "ITriggerLifeCycleListener.h"
+#import "ITriggerLifeCycleAuditManager.h"
+#import "ITriggerLifeCycleListener.h"
 
 /**
  @brief Created by mleib on 26/07/2015.

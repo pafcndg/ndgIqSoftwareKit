@@ -10,7 +10,7 @@
 #import "JBFuture.h"
 
 #import "JB.h"
-#include "IHttpProviderWrapper.h"
+#import "IHttpProviderWrapper.h"
 
 /**
  @brief Created by aeirew on 12/08/2015.

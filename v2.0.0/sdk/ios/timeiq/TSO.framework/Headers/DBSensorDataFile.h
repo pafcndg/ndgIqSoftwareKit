@@ -11,7 +11,7 @@
 @class SensorType;
 
 #import "JB.h"
-#include "ISensorDataReceiver.h"
+#import "ISensorDataReceiver.h"
 
 /**
  @brief Created by aeirew on 04/01/2015.

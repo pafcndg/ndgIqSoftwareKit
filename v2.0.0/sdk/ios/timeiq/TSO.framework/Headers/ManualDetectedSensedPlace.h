@@ -10,7 +10,7 @@
 @class TSOCoordinate;
 
 #import "JB.h"
-#include "ClusterSensedPlace.h"
+#import "ClusterSensedPlace.h"
 
 /**
  @brief Created by ylempert on 14-May-15.

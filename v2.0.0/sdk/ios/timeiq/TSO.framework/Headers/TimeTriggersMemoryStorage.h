@@ -9,8 +9,8 @@
 #import "JBHashSet.h"
 
 #import "JB.h"
-#include "ABaseTriggersMemoryStorage.h"
-#include "ITimeTriggerStorage.h"
+#import "ABaseTriggersMemoryStorage.h"
+#import "ITimeTriggerStorage.h"
 
 /**
  @brief Created by smoradof on 5/5/2015.

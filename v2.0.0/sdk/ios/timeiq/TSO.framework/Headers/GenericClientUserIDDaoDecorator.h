@@ -13,9 +13,9 @@
 #import "JBArrayList.h"
 
 #import "JB.h"
-#include "IDaoDecorator.h"
-#include "IGenericDaoImpl.h"
-#include "ISyncMethods.h"
+#import "IDaoDecorator.h"
+#import "IGenericDaoImpl.h"
+#import "ISyncMethods.h"
 
 /**
  @brief Created by aeirew on 09/08/2015.

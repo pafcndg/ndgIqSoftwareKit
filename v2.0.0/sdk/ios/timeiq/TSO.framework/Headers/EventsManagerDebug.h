@@ -17,11 +17,11 @@
 @protocol ITSOAlertsEngine;
 @protocol ITSOLogger;
 @protocol ITSOTimeUtil;
-@protocol IUserStateManagerInternal;
+@protocol IUserStateManagerModule;
 #import "JBHashSet.h"
 
 #import "JB.h"
-#include "EventsManager.h"
+#import "EventsManager.h"
 
 /**
  @brief Created by eskoran on 31/05/2015.
@@ -36,7 +36,7 @@
                               withEventsAudit:(EventsAudit *)eventsAuditManager
                          withITSOAlertsEngine:(id<ITSOAlertsEngine>)ttlProvider
                              withITSOTimeUtil:(id<ITSOTimeUtil>)timeUtil
-                withIUserStateManagerInternal:(id<IUserStateManagerInternal>)userStateManager
+                  withIUserStateManagerModule:(id<IUserStateManagerModule>)userStateManager
                          withITSOAlarmManager:(id<ITSOAlarmManager>)alarmEngine
                         withILocationProvider:(id<ILocationProvider>)locationProvider
                                withITSOLogger:(id<ITSOLogger>)logger;

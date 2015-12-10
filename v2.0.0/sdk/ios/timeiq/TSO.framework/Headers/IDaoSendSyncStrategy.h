@@ -11,7 +11,7 @@
 #import "JBArrayList.h"
 
 #import "JB.h"
-#include "IDeviceStateListener.h"
+#import "IDeviceStateListener.h"
 
 /**
  @brief Created by aeirew on 04/08/2015.

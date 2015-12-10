@@ -10,8 +10,8 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "IMappable.h"
-#include "AResolverResponse.h"
+#import "IMappable.h"
+#import "AResolverResponse.h"
 
 /**
  @brief ResolvedLocationsResponse is used to hold location resolver responses

@@ -9,8 +9,8 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "ATSOBaseDBObject.h"
-#include "ITSOSyncDbObject.h"
+#import "ATSOBaseDBObject.h"
+#import "ITSOSyncDbObject.h"
 
 @interface ATSOSyncDbObject : ATSOBaseDBObject < ITSOSyncDbObject > {
  @public

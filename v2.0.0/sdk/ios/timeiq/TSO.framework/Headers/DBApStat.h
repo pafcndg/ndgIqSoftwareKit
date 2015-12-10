@@ -11,7 +11,7 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "IApStat.h"
+#import "IApStat.h"
 
 @interface DBApStat : NSObject < IApStat > {
  @public

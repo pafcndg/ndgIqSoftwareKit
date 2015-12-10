@@ -14,7 +14,7 @@
 @class LocationCluster_NavPointEx;
 
 #import "JB.h"
-#include "NavPoint.h"
+#import "NavPoint.h"
 
 /**
  @brief A clustering algorithm - given a sequence of GPS locations, analyzes the sequence (taken into account data noises) and creates clusters that represent places where the user spends longer than a given duration of time.

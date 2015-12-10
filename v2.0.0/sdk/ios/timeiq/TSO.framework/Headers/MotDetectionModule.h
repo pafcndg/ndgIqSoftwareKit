@@ -19,9 +19,9 @@
 #import "JBArrayList.h"
 
 #import "JB.h"
-#include "IDetectionModule.h"
-#include "IMotDetectionModule.h"
-#include "ISensorDataReceiver.h"
+#import "IDetectionModule.h"
+#import "IMotDetectionModule.h"
+#import "ISensorDataReceiver.h"
 
 @interface MotDetectionModule : NSObject < IDetectionModule, ISensorDataReceiver, IMotDetectionModule > {
  @public

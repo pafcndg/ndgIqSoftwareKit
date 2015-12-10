@@ -7,7 +7,7 @@
 #define _IHttpAuditTransmitter_H_
 
 #import "JB.h"
-#include "ITransmitter.h"
+#import "ITransmitter.h"
 
 /**
  @brief Created by ibeider on 11/10/2015.

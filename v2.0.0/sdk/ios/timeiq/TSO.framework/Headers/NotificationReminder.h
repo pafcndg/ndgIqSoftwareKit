@@ -13,7 +13,7 @@
 @protocol ITrigger;
 
 #import "JB.h"
-#include "BasePhoneReminder.h"
+#import "BasePhoneReminder.h"
 
 /**
  @brief This class represents a reminder notification that will be sent at a defined time to a certain contact

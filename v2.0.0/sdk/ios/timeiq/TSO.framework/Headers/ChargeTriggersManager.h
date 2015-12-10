@@ -18,9 +18,9 @@
 #import "JBArrayList.h"
 
 #import "JB.h"
-#include "IDeviceStateListener.h"
-#include "ABaseTriggersManager.h"
-#include "IChargeTriggersManager.h"
+#import "IDeviceStateListener.h"
+#import "ABaseTriggersManager.h"
+#import "IChargeTriggersManager.h"
 
 /**
  @brief Created by mleib on 26/04/2015.

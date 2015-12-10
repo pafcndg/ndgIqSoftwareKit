@@ -16,7 +16,7 @@
 #import "JBArrayList.h"
 
 #import "JB.h"
-#include "IStorage.h"
+#import "IStorage.h"
 #import "JBFilenameFilter.h"
 
 #define StorageFSImpl_MAX_FILE_SIZE 262144LL

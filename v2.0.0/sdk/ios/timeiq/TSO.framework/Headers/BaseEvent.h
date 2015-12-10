@@ -12,7 +12,7 @@
 @class TransportType;
 
 #import "JB.h"
-#include "IEvent.h"
+#import "IEvent.h"
 
 /**
  @brief Basic event type to be extended by other event types in the system

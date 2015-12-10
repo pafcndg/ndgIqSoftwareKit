@@ -24,14 +24,14 @@
 @protocol ITSOAlertsRepository;
 @protocol ITSOLogger;
 @protocol ITSOTimeUtil;
-@protocol IUserStateManagerInternal;
+@protocol IUserStateManagerModule;
 #import "JBExecutorService.h"
 #import "JBArrayList.h"
 
 #import "JB.h"
-#include "ITSOAlarmListener.h"
-#include "IAlertsOnMotChangeListener.h"
-#include "ITSOAlertProvider.h"
+#import "ITSOAlarmListener.h"
+#import "IAlertsOnMotChangeListener.h"
+#import "ITSOAlertProvider.h"
 #import "JBRunnable.h"
 
 /**
@@ -46,7 +46,7 @@
   id<INextNotificationCalculator> m_nextAlertCalculator_;
   id<INextWakeUpCalculator> m_nextWakeUpCalculator_;
   id<IRouteProviderInner> m_routeProvider_;
-  id<IUserStateManagerInternal> m_userStateManager_;
+  id<IUserStateManagerModule> m_userStateManager_;
   id<ITSOAlertsMotChangeListener> m_alertsMotChangeListener_;
   id<ILocationProvider> m_locationProvider_;
   id<ITSOAlertListener> m_tsoAlertsListener_;
@@ -61,7 +61,7 @@
              withINextNotificationCalculator:(id<INextNotificationCalculator>)nextAlertCalculator
                    withINextWakeUpCalculator:(id<INextWakeUpCalculator>)nextWakeUpCalculator
                      withIRouteProviderInner:(id<IRouteProviderInner>)routeProvider
-               withIUserStateManagerInternal:(id<IUserStateManagerInternal>)userStateManager
+                 withIUserStateManagerModule:(id<IUserStateManagerModule>)userStateManager
              withITSOAlertsMotChangeListener:(id<ITSOAlertsMotChangeListener>)alertsMotChangeListener
                        withILocationProvider:(id<ILocationProvider>)locationProvider;
 
@@ -149,7 +149,7 @@ J2OBJC_STATIC_INIT(TSOAlertsProviderImpl)
 //J2OBJC_FIELD_SETTER(TSOAlertsProviderImpl, m_nextAlertCalculator_, id<INextNotificationCalculator>)
 //J2OBJC_FIELD_SETTER(TSOAlertsProviderImpl, m_nextWakeUpCalculator_, id<INextWakeUpCalculator>)
 //J2OBJC_FIELD_SETTER(TSOAlertsProviderImpl, m_routeProvider_, id<IRouteProviderInner>)
-//J2OBJC_FIELD_SETTER(TSOAlertsProviderImpl, m_userStateManager_, id<IUserStateManagerInternal>)
+//J2OBJC_FIELD_SETTER(TSOAlertsProviderImpl, m_userStateManager_, id<IUserStateManagerModule>)
 //J2OBJC_FIELD_SETTER(TSOAlertsProviderImpl, m_alertsMotChangeListener_, id<ITSOAlertsMotChangeListener>)
 //J2OBJC_FIELD_SETTER(TSOAlertsProviderImpl, m_locationProvider_, id<ILocationProvider>)
 //J2OBJC_FIELD_SETTER(TSOAlertsProviderImpl, m_tsoAlertsListener_, id<ITSOAlertListener>)

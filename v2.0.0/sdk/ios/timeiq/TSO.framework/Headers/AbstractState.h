@@ -12,7 +12,7 @@
 @class Visit;
 
 #import "JB.h"
-#include "IState.h"
+#import "IState.h"
 
 @interface AbstractState : NSObject < IState > {
  @public

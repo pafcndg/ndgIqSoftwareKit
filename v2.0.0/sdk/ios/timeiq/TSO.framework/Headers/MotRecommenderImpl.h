@@ -18,7 +18,7 @@
 @protocol ITSOTimeUtil;
 
 #import "JB.h"
-#include "IMotRecommender.h"
+#import "IMotRecommender.h"
 
 #define MotRecommenderImpl_MAX_WALKING_DISTANCE_IN_METERS_FOR_NO_TRANSPORT_TYPE 1800.0
 #define MotRecommenderImpl_MAX_WALKING_DISTANCE_IN_METERS_FOR_WALK_TRANSPORT_TYPE 5000.0

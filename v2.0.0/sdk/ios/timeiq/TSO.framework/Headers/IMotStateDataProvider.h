@@ -7,7 +7,7 @@
 #define _IMotStateDataProvider_H_
 
 #import "JB.h"
-#include "IStateDataProvider.h"
+#import "IStateDataProvider.h"
 
 /**
  @brief Created by gilsharo on 6/8/2015.

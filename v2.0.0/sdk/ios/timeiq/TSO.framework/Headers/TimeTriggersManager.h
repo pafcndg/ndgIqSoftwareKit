@@ -14,9 +14,9 @@
 @protocol ITriggerLifeCycleListener;
 
 #import "JB.h"
-#include "ITSOAlarmListener.h"
-#include "ABaseTriggersManager.h"
-#include "ITimeTriggersManager.h"
+#import "ITSOAlarmListener.h"
+#import "ABaseTriggersManager.h"
+#import "ITimeTriggersManager.h"
 
 /**
  @brief Created by mleib on 26/04/2015.

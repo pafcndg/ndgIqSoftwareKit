@@ -7,7 +7,7 @@
 #define _ReceiverSensorsDefaultRequest_H_
 
 #import "JB.h"
-#include "ReceiverSensorsRequest.h"
+#import "ReceiverSensorsRequest.h"
 
 /**
  @brief Created by eleuchte on 04/02/2015.

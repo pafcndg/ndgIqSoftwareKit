@@ -11,7 +11,7 @@
 @protocol ITSOLogger;
 
 #import "JB.h"
-#include "IAuthorizationManager.h"
+#import "IAuthorizationManager.h"
 
 /**
  @brief Created by orencoh2 on 23/3/15.

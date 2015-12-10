@@ -9,7 +9,7 @@
 @class SensorType;
 
 #import "JB.h"
-#include "AbstractHWSensor.h"
+#import "AbstractHWSensor.h"
 
 @interface NullReplaySensor : AbstractHWSensor {
  @public

@@ -20,9 +20,9 @@
 #import "JBExecutorService.h"
 
 #import "JB.h"
-#include "IAuditManager.h"
-#include "IForwarder.h"
-#include "ITransfer.h"
+#import "IAuditManager.h"
+#import "IForwarder.h"
+#import "ITransfer.h"
 #import "JBRunnable.h"
 
 /**

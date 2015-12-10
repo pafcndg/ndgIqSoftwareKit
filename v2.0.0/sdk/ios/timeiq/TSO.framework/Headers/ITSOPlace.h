@@ -9,7 +9,7 @@
 @class Coord;
 
 #import "JB.h"
-#include "ITSOSyncDbObject.h"
+#import "ITSOSyncDbObject.h"
 
 @protocol ITSOPlace < ITSOSyncDbObject, NSObject >
 - (Coord *)getCenter;

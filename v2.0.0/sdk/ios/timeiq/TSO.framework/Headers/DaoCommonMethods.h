@@ -13,7 +13,7 @@
 @protocol ISyncEventListener;
 
 #import "JB.h"
-#include "IDaoCommonMethods.h"
+#import "IDaoCommonMethods.h"
 
 /**
  @brief Created by aeirew on 17/09/2015.

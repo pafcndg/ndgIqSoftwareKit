@@ -11,9 +11,9 @@
 @protocol IUserStateMonitor;
 
 #import "JB.h"
-#include "IUserStateChangeListener.h"
-#include "BaseUserStateChangeProvider.h"
-#include "IUserStateFilter.h"
+#import "IUserStateChangeListener.h"
+#import "BaseUserStateChangeProvider.h"
+#import "IUserStateFilter.h"
 
 /**
  @brief Created by gilsharo on 5/18/2015.

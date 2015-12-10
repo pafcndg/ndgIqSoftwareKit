@@ -10,7 +10,7 @@
 @class SnoozeType;
 
 #import "JB.h"
-#include "SnoozeOption.h"
+#import "SnoozeOption.h"
 
 /**
  @brief This class represents a snooze option defined for a specific place

@@ -18,7 +18,7 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "IDetectedPlace.h"
+#import "IDetectedPlace.h"
 
 @interface Cluster : NSObject < IDetectedPlace > {
  @public

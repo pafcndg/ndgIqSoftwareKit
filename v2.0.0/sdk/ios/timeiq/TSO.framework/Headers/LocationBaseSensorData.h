@@ -12,8 +12,8 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "IMappable.h"
-#include "BaseSensorData.h"
+#import "IMappable.h"
+#import "BaseSensorData.h"
 #import "JBSerializable.h"
 
 /**

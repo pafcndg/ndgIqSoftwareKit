@@ -7,7 +7,7 @@
 #define _ProxyTSOLogger_H_
 
 #import "JB.h"
-#include "ATSOLogger.h"
+#import "ATSOLogger.h"
 
 /**
  @brief Created by orencoh2 on 5/7/15.

@@ -17,7 +17,7 @@
 @protocol ISegmentedRouteProvider;
 
 #import "JB.h"
-#include "IRouteProviderInner.h"
+#import "IRouteProviderInner.h"
 
 #define RouteProviderInnerImpl_LOW_LOCATION_ACCURACY 1000.0
 #define RouteProviderInnerImpl_USER_LOCATION_ACCURACY 250.0

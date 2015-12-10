@@ -16,7 +16,7 @@
 #import "JBArrayList.h"
 
 #import "JB.h"
-#include "IGenericDaoImpl.h"
+#import "IGenericDaoImpl.h"
 
 /**
  @brief Created by aeirew on 25/06/2015.

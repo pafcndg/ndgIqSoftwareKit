@@ -22,7 +22,7 @@
 @class TTLResponseDataObj;
 
 #import "JB.h"
-#include "DataObjectFactory.h"
+#import "DataObjectFactory.h"
 
 @interface RouteDataObjectFactory : DataObjectFactory {
 }

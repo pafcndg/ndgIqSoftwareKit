@@ -13,8 +13,8 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "IMappable.h"
-#include "ATSOBaseDBObject.h"
+#import "IMappable.h"
+#import "ATSOBaseDBObject.h"
 
 /**
  @brief Created by ylempert on 13-May-15.

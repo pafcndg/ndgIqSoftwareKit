@@ -12,7 +12,7 @@
 @protocol IState;
 
 #import "JB.h"
-#include "AbstractState.h"
+#import "AbstractState.h"
 
 #define EndVipState_WIFI_END_INFLUENCE_IN_MINS 5LL
 

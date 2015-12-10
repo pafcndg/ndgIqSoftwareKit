@@ -12,7 +12,7 @@
 @protocol ITrigger;
 
 #import "JB.h"
-#include "IReminder.h"
+#import "IReminder.h"
 
 /**
  @brief This class should not be used "as is", the classes that should be used are it's subclasses Created by smoradof on 6/18/2015.

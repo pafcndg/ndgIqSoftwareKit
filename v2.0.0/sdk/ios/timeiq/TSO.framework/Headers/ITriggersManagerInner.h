@@ -9,7 +9,7 @@
 @protocol ITriggerLifeCycleListener;
 
 #import "JB.h"
-#include "ITriggersManager.h"
+#import "ITriggersManager.h"
 
 /**
  @brief Created by mleib on 06/07/2015.

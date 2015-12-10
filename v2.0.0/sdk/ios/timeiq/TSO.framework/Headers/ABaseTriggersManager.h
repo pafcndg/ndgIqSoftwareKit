@@ -14,7 +14,7 @@
 #import "JBHashSet.h"
 
 #import "JB.h"
-#include "IBaseTriggersManager.h"
+#import "IBaseTriggersManager.h"
 #import "JBTimerTask.h"
 
 #define ABaseTriggersManager_DELAY_TRIGGER_TIME 10LL

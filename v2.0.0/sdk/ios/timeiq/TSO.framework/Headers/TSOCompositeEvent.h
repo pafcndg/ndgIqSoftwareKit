@@ -12,7 +12,7 @@
 #import "JBArrayList.h"
 
 #import "JB.h"
-#include "ITSOEvent.h"
+#import "ITSOEvent.h"
 
 /**
  @brief Created by kyablonk on 05/07/2015.

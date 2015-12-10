@@ -10,8 +10,8 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "IMappable.h"
-#include "LocationBaseSensorData.h"
+#import "IMappable.h"
+#import "LocationBaseSensorData.h"
 #import "JBSerializable.h"
 
 /**

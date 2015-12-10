@@ -13,7 +13,7 @@
 @protocol ITSOTimeUtil;
 
 #import "JB.h"
-#include "INextNotificationCalculator.h"
+#import "INextNotificationCalculator.h"
 
 /**
  @brief Created by smoradof on 1/19/15.

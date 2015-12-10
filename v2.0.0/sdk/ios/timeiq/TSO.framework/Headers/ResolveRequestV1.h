@@ -15,8 +15,8 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "IMappable.h"
-#include "IAutenticacion.h"
+#import "IMappable.h"
+#import "IAutenticacion.h"
 
 @interface ResolveRequestV1 : NSObject < IMappable, IAutenticacion > {
  @public

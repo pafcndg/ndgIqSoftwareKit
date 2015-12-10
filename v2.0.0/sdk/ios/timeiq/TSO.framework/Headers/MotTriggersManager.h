@@ -12,26 +12,26 @@
 @protocol IManagersListener;
 @protocol IMotTriggerStorage;
 @protocol ITriggerLifeCycleListener;
-@protocol IUserStateManagerInternal;
+@protocol IUserStateManagerModule;
 
 #import "JB.h"
-#include "IUserStateChangeListener.h"
-#include "ABaseTriggersManager.h"
-#include "IMotTriggersManager.h"
+#import "IUserStateChangeListener.h"
+#import "ABaseTriggersManager.h"
+#import "IMotTriggersManager.h"
 
 /**
  @brief Created by mleib on 26/04/2015.
  */
 @interface MotTriggersManager : ABaseTriggersManager < IMotTriggersManager, IUserStateChangeListener > {
  @public
-  id<IUserStateManagerInternal> m_userStateManager_;
+  id<IUserStateManagerModule> m_userStateManager_;
   boolean m_isRegistered_;
 }
 
 - (instancetype)init;
 
 - (instancetype)initWithIMotTriggerStorage:(id<IMotTriggerStorage>)motTriggerStorage
-             withIUserStateManagerInternal:(id<IUserStateManagerInternal>)userStateManager;
+               withIUserStateManagerModule:(id<IUserStateManagerModule>)userStateManager;
 
 - (void)startWithIManagersListener:(id<IManagersListener>)triggerListener
      withITriggerLifeCycleListener:(id<ITriggerLifeCycleListener>)triggerLifeCycleListener;
@@ -68,7 +68,7 @@
 FOUNDATION_EXPORT BOOL MotTriggersManager_initialized;
 J2OBJC_STATIC_INIT(MotTriggersManager)
 
-//J2OBJC_FIELD_SETTER(MotTriggersManager, m_userStateManager_, id<IUserStateManagerInternal>)
+//J2OBJC_FIELD_SETTER(MotTriggersManager, m_userStateManager_, id<IUserStateManagerModule>)
 
 FOUNDATION_EXPORT id MotTriggersManager_m_lock_;
 J2OBJC_STATIC_FIELD_GETTER(MotTriggersManager, m_lock_, id)

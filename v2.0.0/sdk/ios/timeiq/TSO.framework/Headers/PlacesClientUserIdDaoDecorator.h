@@ -10,8 +10,8 @@
 @protocol ITSOSemanticPlace;
 
 #import "JB.h"
-#include "IPlaceDao.h"
-#include "GenericClientUserIDDaoDecorator.h"
+#import "IPlaceDao.h"
+#import "GenericClientUserIDDaoDecorator.h"
 
 /**
  @brief Created by aeirew on 09/08/2015.

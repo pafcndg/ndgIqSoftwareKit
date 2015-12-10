@@ -12,7 +12,7 @@
 #import "JBArrayList.h"
 
 #import "JB.h"
-#include "IRouteData.h"
+#import "IRouteData.h"
 
 /**
  @brief The result of ISegmentedRouteProvider#getTTL(TSOCoordinate,TSOCoordinate,long,MotType,MotType) <BR> It contains a list of RouteSegment ordered by time, from the time to leave until the arrival time.

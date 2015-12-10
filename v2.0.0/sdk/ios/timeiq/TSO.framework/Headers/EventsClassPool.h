@@ -13,7 +13,7 @@
 @class EventsManager;
 @class EventsPersistenceUtil;
 @class TSOEventsSync;
-@protocol IEventsEngine;
+@protocol IEventsEngineModule;
 
 #import "JB.h"
 
@@ -23,7 +23,7 @@
 @interface EventsClassPool : NSObject {
 }
 
-+ (id<IEventsEngine>)getEventsEngine;
++ (id<IEventsEngineModule>)getEventsEngine;
 
 + (BeManager *)getBeManager;
 

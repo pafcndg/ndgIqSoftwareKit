@@ -31,8 +31,8 @@
 #import "JBHashSet.h"
 
 #import "JB.h"
-#include "IDetectionModule.h"
-#include "ISensorDataReceiver.h"
+#import "IDetectionModule.h"
+#import "ISensorDataReceiver.h"
 
 #define VisitInPlaceModule_MaxDistanceToManul 100.0
 #define VisitInPlaceModule_SensingDistance 1500.0

@@ -15,7 +15,7 @@
 #import "JBHashtable.h"
 
 #import "JB.h"
-#include "ITSOAlertsRepository.h"
+#import "ITSOAlertsRepository.h"
 
 /**
  @brief Created by smoradof on 12/16/2014.

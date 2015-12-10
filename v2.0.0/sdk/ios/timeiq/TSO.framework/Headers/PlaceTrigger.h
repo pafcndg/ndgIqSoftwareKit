@@ -12,7 +12,7 @@
 @class TriggerStatus;
 
 #import "JB.h"
-#include "BaseTrigger.h"
+#import "BaseTrigger.h"
 
 /**
  @brief This class represents a trigger based on pre-defined actions for a specific location

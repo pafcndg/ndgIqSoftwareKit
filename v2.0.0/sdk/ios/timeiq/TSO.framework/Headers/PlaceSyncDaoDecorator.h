@@ -11,8 +11,8 @@
 @protocol ITSOSemanticPlace;
 
 #import "JB.h"
-#include "IPlaceDao.h"
-#include "GenericSyncDaoDecorator.h"
+#import "IPlaceDao.h"
+#import "GenericSyncDaoDecorator.h"
 
 @interface PlaceSyncDaoDecorator : GenericSyncDaoDecorator < IPlaceDao > {
 }

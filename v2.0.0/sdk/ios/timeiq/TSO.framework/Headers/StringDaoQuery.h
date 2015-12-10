@@ -7,7 +7,7 @@
 #define _StringDaoQuery_H_
 
 #import "JB.h"
-#include "IGenericDaoQuery.h"
+#import "IGenericDaoQuery.h"
 
 /**
  @brief Created by aeirew on 24/08/2015.
