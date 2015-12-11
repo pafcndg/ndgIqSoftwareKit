@@ -1,15 +1,5 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
-ext {
-
-
-//    useCSWNetworking = "true"
-
-//    useInternalStorage = "false"
-//    useLegacyFolder = "false"
-
-}
-
 buildscript {
     repositories {
 
@@ -49,11 +39,8 @@ subprojects {
 allprojects {
     repositories {
         jcenter()
-    //    maven {
-    //        url 'http://artndgi.iil.intel.com/artifactory/repo'
-    //    }
 
-        maven { url "${rootProject.projectDir}/../maven-repo/" }
+        maven { url "${rootProject.projectDir}/../../../sdk/android/maven-repo/" }
     }
     tasks.withType(JavaCompile) {
         sourceCompatibility = "1.7"
@@ -74,9 +61,6 @@ allprojects {
         }
 
     }
-
-    group = 'com.intel.ndgi'
-    version="0.0.1-SNAPSHOT"
 }
 
 

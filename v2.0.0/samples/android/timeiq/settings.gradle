@@ -1,14 +1,1 @@
 include ':app', ':developer-lib'
-
-//include 'common-lib'
-//project(':common-lib').projectDir = new File('../tso-android-sdk/sources/common-lib')
-//project(':common-lib').name='common-lib'
-
-//include ':java-platform-lib'
-//project(':java-platform-lib').projectDir = new File('../tso-android-sdk/sources/java-platform-lib')
-//project(':java-platform-lib').name='java-platform-lib'
-
-//include 'android-platform-lib'
-//project(':android-platform-lib').projectDir = new File('../tso-android-sdk/sources/android-platform-lib')
-//project(':android-platform-lib').name='android-platform-lib'
-
