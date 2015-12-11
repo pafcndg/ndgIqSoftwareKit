@@ -1,0 +1,11 @@
+EMBEDDED_CONTENT_CONTAINS_SWIFT = YES
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/GoogleMaps/Frameworks"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/CrittercismSDK" "${PODS_ROOT}/Headers/Public/GoogleMaps"
+LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
+LIBRARY_SEARCH_PATHS = "$(PODS_ROOT)/CrittercismSDK/CrittercismSDK"
+OTHER_CFLAGS = $(inherited) -iquote "$CONFIGURATION_BUILD_DIR/SMDatePicker.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/TimeAgoInWords.framework/Headers" -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/CrittercismSDK" -isystem "${PODS_ROOT}/Headers/Public/GoogleMaps"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"Crittercism_v5_4_5" -l"c++" -l"icucore" -l"z" -framework "AVFoundation" -framework "Accelerate" -framework "CoreBluetooth" -framework "CoreData" -framework "CoreGraphics" -framework "CoreLocation" -framework "CoreText" -framework "GLKit" -framework "GoogleMaps" -framework "ImageIO" -framework "OpenGLES" -framework "QuartzCore" -framework "SMDatePicker" -framework "Security" -framework "SystemConfiguration" -framework "TimeAgoInWords"
+OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
+PODS_FRAMEWORK_BUILD_PATH = $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods-timeiq-ra-ios
+PODS_ROOT = ${SRCROOT}/Pods

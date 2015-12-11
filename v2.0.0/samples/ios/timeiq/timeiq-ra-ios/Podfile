@@ -1,0 +1,22 @@
+# Uncomment this line to define a global platform for your project
+platform :ios, '8.0'
+# Uncomment this line if you're using Swift
+use_frameworks!
+
+target 'timeiq-ra-ios' do
+
+pod 'TimeAgoInWords', '~> 2.0'
+pod 'SMDatePicker', '~> 0.0'
+pod 'GoogleMaps'
+pod 'CrittercismSDK'
+
+end
+
+target 'timeiq-ra-iosTests' do
+
+end
+
+target 'timeiq-ra-iosUITests' do
+
+end
+

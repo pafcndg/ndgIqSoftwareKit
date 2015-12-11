@@ -1,0 +1,10 @@
+framework module BodyIQ {
+  umbrella header "BodyIQ.h"
+
+  export *
+  module * { export * }
+}
+
+module BodyIQ.Swift {
+    header "BodyIQ-Swift.h"
+}

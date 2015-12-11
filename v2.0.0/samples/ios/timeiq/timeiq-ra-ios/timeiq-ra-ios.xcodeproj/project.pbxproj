@@ -1,0 +1,909 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		064B6AED1C03045900175222 /* signUpWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B6AEC1C03045900175222 /* signUpWebViewController.swift */; };
+		064B6AF11C0333A200175222 /* upcomingEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B6AF01C0333A200175222 /* upcomingEventTableViewCell.swift */; };
+		064B6AF31C03607900175222 /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B6AF21C03607900175222 /* common.swift */; };
+		064B6AF71C04691500175222 /* PairVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B6AF61C04691500175222 /* PairVC.swift */; };
+		064B6AF91C04695600175222 /* DeviceConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B6AF81C04695600175222 /* DeviceConnectionManager.swift */; };
+		064B6AFD1C046AC400175222 /* device.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 064B6AFC1C046AC400175222 /* device.storyboard */; };
+		064B6B021C04E88D00175222 /* calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 064B6B011C04E88D00175222 /* calendar.storyboard */; };
+		0655D5291C0DA20300D39E45 /* TimeIQCalendarUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0655D5281C0DA20300D39E45 /* TimeIQCalendarUtils.swift */; };
+		065AAD3F1BF4D1B80003A788 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 065AAD3E1BF4D1B80003A788 /* MessageUI.framework */; };
+		0673BA631BEB3E3000BB1098 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0673BA611BEB3E3000BB1098 /* Main.storyboard */; };
+		0673BA641BEB3E3000BB1098 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0673BA621BEB3E3000BB1098 /* Login.storyboard */; };
+		0673BA661BEBA34F00BB1098 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0673BA651BEBA34F00BB1098 /* AddressBook.framework */; };
+		0673BA681BEBA43000BB1098 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0673BA671BEBA43000BB1098 /* AddressBookUI.framework */; };
+		068CACEA1C021CEB0092C71D /* AddBeReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068CACBD1C021CEB0092C71D /* AddBeReminderViewController.swift */; };
+		068CACEB1C021CEB0092C71D /* AddReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068CACBE1C021CEB0092C71D /* AddReminderViewController.swift */; };
+		068CACED1C021CEB0092C71D /* BaseAddReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068CACC01C021CEB0092C71D /* BaseAddReminderViewController.swift */; };
+		068CACEE1C021CEB0092C71D /* CalendarSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068CACC11C021CEB0092C71D /* CalendarSelectVC.swift */; };
+		068CACEF1C021CEB0092C71D /* ConnectToDeviceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068CACC21C021CEB0092C71D /* ConnectToDeviceVC.swift */; };
+		068CACF01C021CEB0092C71D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068CACC31C021CEB0092C71D /* Constants.swift */; };
+		068CACF81C021CEB0092C71D /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068CACCB1C021CEB0092C71D /* loginViewController.swift */; };
+		068CACFB1C021CEB0092C71D /* triggerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068CACCE1C021CEB0092C71D /* triggerTableViewCell.swift */; };
+		068CACFC1C021CEB0092C71D /* PagedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068CACCF1C021CEB0092C71D /* PagedViewController.swift */; };
+		068CACFD1C021CEB0092C71D /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068CACD01C021CEB0092C71D /* PlacesViewController.swift */; };
+		068CACFE1C021CEB0092C71D /* placeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068CACD11C021CEB0092C71D /* placeTableViewCell.swift */; };
+		068CACFF1C021CEB0092C71D /* RemindersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068CACD21C021CEB0092C71D /* RemindersViewController.swift */; };
+		068CAD001C021CEB0092C71D /* reminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068CACD31C021CEB0092C71D /* reminderTableViewCell.swift */; };
+		068CAD051C021CEB0092C71D /* SearchPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068CACD81C021CEB0092C71D /* SearchPlaceViewController.swift */; };
+		068CAD071C021CEB0092C71D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068CACDA1C021CEB0092C71D /* SettingsViewController.swift */; };
+		068CAD081C021CEB0092C71D /* signUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068CACDB1C021CEB0092C71D /* signUpViewController.swift */; };
+		068CAD091C021CEB0092C71D /* SimpleAuthCredentialsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068CACDC1C021CEB0092C71D /* SimpleAuthCredentialsProvider.swift */; };
+		068CAD0C1C021CEB0092C71D /* TextFormatterUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068CACDF1C021CEB0092C71D /* TextFormatterUtil.swift */; };
+		068CAD0D1C021CEB0092C71D /* TimeInString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068CACE01C021CEB0092C71D /* TimeInString.swift */; };
+		068CAD0E1C021CEB0092C71D /* TimeIQBGService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068CACE11C021CEB0092C71D /* TimeIQBGService.swift */; };
+		068CAD0F1C021CEB0092C71D /* TimeIQEventsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068CACE21C021CEB0092C71D /* TimeIQEventsUtils.swift */; };
+		068CAD101C021CEB0092C71D /* TimeIQPlacesUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068CACE31C021CEB0092C71D /* TimeIQPlacesUtil.swift */; };
+		068CAD111C021CEB0092C71D /* TimeIQRemindersUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068CACE41C021CEB0092C71D /* TimeIQRemindersUtils.swift */; };
+		068CAD121C021CEB0092C71D /* UpcomingEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068CACE51C021CEB0092C71D /* UpcomingEventsViewController.swift */; };
+		068CAD161C021CEB0092C71D /* WriteCalendarSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068CACE91C021CEB0092C71D /* WriteCalendarSelectVC.swift */; };
+		06A67E7E1BE8F7B9003AEDEE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 06A67E761BE8A74E003AEDEE /* Localizable.strings */; };
+		06EE60761BE63B57001BD8EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EE60751BE63B57001BD8EB /* AppDelegate.swift */; };
+		06EE607D1BE63B57001BD8EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06EE607C1BE63B57001BD8EB /* Assets.xcassets */; };
+		06EE60801BE63B57001BD8EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06EE607E1BE63B57001BD8EB /* LaunchScreen.storyboard */; };
+		06EE608B1BE63B57001BD8EB /* timeiq_ra_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EE608A1BE63B57001BD8EB /* timeiq_ra_iosTests.swift */; };
+		06EE60961BE63B57001BD8EB /* timeiq_ra_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EE60951BE63B57001BD8EB /* timeiq_ra_iosUITests.swift */; };
+		1E1BC22C1C1B6D20004BE169 /* CDKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1BC22B1C1B6D20004BE169 /* CDKCore.framework */; };
+		1E1BC22E1C1B6D2D004BE169 /* IQCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1BC22D1C1B6D2D004BE169 /* IQCore.framework */; };
+		1E1BC2301C1B6D34004BE169 /* TSO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1BC22F1C1B6D34004BE169 /* TSO.framework */; };
+		1E1BC2311C1B6D42004BE169 /* TSO.framework in Copy TSO Framework */ = {isa = PBXBuildFile; fileRef = 1E1BC22F1C1B6D34004BE169 /* TSO.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1E1BC2321C1B6D42004BE169 /* IQCore.framework in Copy TSO Framework */ = {isa = PBXBuildFile; fileRef = 1E1BC22D1C1B6D2D004BE169 /* IQCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1E1BC2331C1B6D42004BE169 /* CDKCore.framework in Copy TSO Framework */ = {isa = PBXBuildFile; fileRef = 1E1BC22B1C1B6D20004BE169 /* CDKCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1E1BC2361C1B6D83004BE169 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1BC2341C1B6D83004BE169 /* Realm.framework */; };
+		1E1BC2371C1B6D83004BE169 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1BC2351C1B6D83004BE169 /* RealmSwift.framework */; };
+		1E1BC2381C1B6D8A004BE169 /* Realm.framework in Copy TSO Framework */ = {isa = PBXBuildFile; fileRef = 1E1BC2341C1B6D83004BE169 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1E1BC2391C1B6D8A004BE169 /* RealmSwift.framework in Copy TSO Framework */ = {isa = PBXBuildFile; fileRef = 1E1BC2351C1B6D83004BE169 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6646670F1DB5EB8CF983789F /* Pods_timeiq_ra_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659701323CB2B63F36DF2F3F /* Pods_timeiq_ra_ios.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		06EE60871BE63B57001BD8EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 06EE606A1BE63B57001BD8EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 06EE60711BE63B57001BD8EB;
+			remoteInfo = "timeiq-ra-ios";
+		};
+		06EE60921BE63B57001BD8EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 06EE606A1BE63B57001BD8EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 06EE60711BE63B57001BD8EB;
+			remoteInfo = "timeiq-ra-ios";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		06A67E781BE8D877003AEDEE /* Copy TSO Framework */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1E1BC2381C1B6D8A004BE169 /* Realm.framework in Copy TSO Framework */,
+				1E1BC2391C1B6D8A004BE169 /* RealmSwift.framework in Copy TSO Framework */,
+				1E1BC2311C1B6D42004BE169 /* TSO.framework in Copy TSO Framework */,
+				1E1BC2321C1B6D42004BE169 /* IQCore.framework in Copy TSO Framework */,
+				1E1BC2331C1B6D42004BE169 /* CDKCore.framework in Copy TSO Framework */,
+			);
+			name = "Copy TSO Framework";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		064B6AEC1C03045900175222 /* signUpWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signUpWebViewController.swift; sourceTree = "<group>"; };
+		064B6AF01C0333A200175222 /* upcomingEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = upcomingEventTableViewCell.swift; sourceTree = "<group>"; };
+		064B6AF21C03607900175222 /* common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = common.swift; sourceTree = "<group>"; };
+		064B6AF61C04691500175222 /* PairVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PairVC.swift; sourceTree = "<group>"; };
+		064B6AF81C04695600175222 /* DeviceConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceConnectionManager.swift; sourceTree = "<group>"; };
+		064B6AFC1C046AC400175222 /* device.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = device.storyboard; sourceTree = "<group>"; };
+		064B6B011C04E88D00175222 /* calendar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = calendar.storyboard; sourceTree = "<group>"; };
+		0655D5281C0DA20300D39E45 /* TimeIQCalendarUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeIQCalendarUtils.swift; sourceTree = "<group>"; };
+		065AAD3E1BF4D1B80003A788 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		0673BA611BEB3E3000BB1098 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		0673BA621BEB3E3000BB1098 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		0673BA651BEBA34F00BB1098 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		0673BA671BEBA43000BB1098 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		068CACBD1C021CEB0092C71D /* AddBeReminderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBeReminderViewController.swift; sourceTree = "<group>"; };
+		068CACBE1C021CEB0092C71D /* AddReminderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReminderViewController.swift; sourceTree = "<group>"; };
+		068CACC01C021CEB0092C71D /* BaseAddReminderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAddReminderViewController.swift; sourceTree = "<group>"; };
+		068CACC11C021CEB0092C71D /* CalendarSelectVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarSelectVC.swift; sourceTree = "<group>"; };
+		068CACC21C021CEB0092C71D /* ConnectToDeviceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectToDeviceVC.swift; sourceTree = "<group>"; };
+		068CACC31C021CEB0092C71D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		068CACCB1C021CEB0092C71D /* loginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
+		068CACCE1C021CEB0092C71D /* triggerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = triggerTableViewCell.swift; sourceTree = "<group>"; };
+		068CACCF1C021CEB0092C71D /* PagedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagedViewController.swift; sourceTree = "<group>"; };
+		068CACD01C021CEB0092C71D /* PlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
+		068CACD11C021CEB0092C71D /* placeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = placeTableViewCell.swift; sourceTree = "<group>"; };
+		068CACD21C021CEB0092C71D /* RemindersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemindersViewController.swift; sourceTree = "<group>"; };
+		068CACD31C021CEB0092C71D /* reminderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = reminderTableViewCell.swift; sourceTree = "<group>"; };
+		068CACD81C021CEB0092C71D /* SearchPlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPlaceViewController.swift; sourceTree = "<group>"; };
+		068CACDA1C021CEB0092C71D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		068CACDB1C021CEB0092C71D /* signUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signUpViewController.swift; sourceTree = "<group>"; };
+		068CACDC1C021CEB0092C71D /* SimpleAuthCredentialsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleAuthCredentialsProvider.swift; sourceTree = "<group>"; };
+		068CACDF1C021CEB0092C71D /* TextFormatterUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFormatterUtil.swift; sourceTree = "<group>"; };
+		068CACE01C021CEB0092C71D /* TimeInString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeInString.swift; sourceTree = "<group>"; };
+		068CACE11C021CEB0092C71D /* TimeIQBGService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeIQBGService.swift; sourceTree = "<group>"; };
+		068CACE21C021CEB0092C71D /* TimeIQEventsUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeIQEventsUtils.swift; sourceTree = "<group>"; };
+		068CACE31C021CEB0092C71D /* TimeIQPlacesUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeIQPlacesUtil.swift; sourceTree = "<group>"; };
+		068CACE41C021CEB0092C71D /* TimeIQRemindersUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeIQRemindersUtils.swift; sourceTree = "<group>"; };
+		068CACE51C021CEB0092C71D /* UpcomingEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingEventsViewController.swift; sourceTree = "<group>"; };
+		068CACE91C021CEB0092C71D /* WriteCalendarSelectVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteCalendarSelectVC.swift; sourceTree = "<group>"; };
+		069E4AEA1C182A2D00226019 /* timeiq-ra-ios-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "timeiq-ra-ios-Bridging-Header.h"; path = "src/timeiq-ra-ios-Bridging-Header.h"; sourceTree = "<group>"; };
+		06A67E751BE8A74E003AEDEE /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		06EE60721BE63B57001BD8EB /* timeiq-ra-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "timeiq-ra-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		06EE60751BE63B57001BD8EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		06EE607C1BE63B57001BD8EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		06EE607F1BE63B57001BD8EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		06EE60811BE63B57001BD8EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06EE60861BE63B57001BD8EB /* timeiq-ra-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "timeiq-ra-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		06EE608A1BE63B57001BD8EB /* timeiq_ra_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timeiq_ra_iosTests.swift; sourceTree = "<group>"; };
+		06EE608C1BE63B57001BD8EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06EE60911BE63B57001BD8EB /* timeiq-ra-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "timeiq-ra-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		06EE60951BE63B57001BD8EB /* timeiq_ra_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timeiq_ra_iosUITests.swift; sourceTree = "<group>"; };
+		06EE60971BE63B57001BD8EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E1BC22B1C1B6D20004BE169 /* CDKCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CDKCore.framework; path = ../../../../sdk/ios/cloud/CDKCore.framework; sourceTree = "<group>"; };
+		1E1BC22D1C1B6D2D004BE169 /* IQCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQCore.framework; path = ../../../../sdk/ios/core/IQCore.framework; sourceTree = "<group>"; };
+		1E1BC22F1C1B6D34004BE169 /* TSO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TSO.framework; path = ../../../../sdk/ios/timeiq/TSO.framework; sourceTree = "<group>"; };
+		1E1BC2341C1B6D83004BE169 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = ../Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		1E1BC2351C1B6D83004BE169 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = ../Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		659701323CB2B63F36DF2F3F /* Pods_timeiq_ra_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_timeiq_ra_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B702C736DAD16735B3E92E73 /* Pods-timeiq-ra-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-timeiq-ra-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-timeiq-ra-ios/Pods-timeiq-ra-ios.release.xcconfig"; sourceTree = "<group>"; };
+		CAC24CA2BBD3EB1AD196CD23 /* Pods-timeiq-ra-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-timeiq-ra-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-timeiq-ra-ios/Pods-timeiq-ra-ios.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		06EE606F1BE63B57001BD8EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E1BC2301C1B6D34004BE169 /* TSO.framework in Frameworks */,
+				065AAD3F1BF4D1B80003A788 /* MessageUI.framework in Frameworks */,
+				1E1BC2371C1B6D83004BE169 /* RealmSwift.framework in Frameworks */,
+				0673BA681BEBA43000BB1098 /* AddressBookUI.framework in Frameworks */,
+				1E1BC22C1C1B6D20004BE169 /* CDKCore.framework in Frameworks */,
+				1E1BC2361C1B6D83004BE169 /* Realm.framework in Frameworks */,
+				1E1BC22E1C1B6D2D004BE169 /* IQCore.framework in Frameworks */,
+				0673BA661BEBA34F00BB1098 /* AddressBook.framework in Frameworks */,
+				6646670F1DB5EB8CF983789F /* Pods_timeiq_ra_ios.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06EE60831BE63B57001BD8EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06EE608E1BE63B57001BD8EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		064B6AF51C0468BF00175222 /* device */ = {
+			isa = PBXGroup;
+			children = (
+				064B6AF81C04695600175222 /* DeviceConnectionManager.swift */,
+				064B6AF61C04691500175222 /* PairVC.swift */,
+				068CACC21C021CEB0092C71D /* ConnectToDeviceVC.swift */,
+				064B6AFC1C046AC400175222 /* device.storyboard */,
+			);
+			name = device;
+			sourceTree = "<group>";
+		};
+		0673BA601BEB3E3000BB1098 /* storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				0673BA611BEB3E3000BB1098 /* Main.storyboard */,
+				0673BA621BEB3E3000BB1098 /* Login.storyboard */,
+			);
+			path = storyboard;
+			sourceTree = "<group>";
+		};
+		068CAC491C01AE660092C71D /* src */ = {
+			isa = PBXGroup;
+			children = (
+				064B6AF51C0468BF00175222 /* device */,
+				068CAD1F1C021D470092C71D /* login */,
+				068CAD1D1C021D330092C71D /* places */,
+				068CAD1C1C021D290092C71D /* settings */,
+				068CAD1B1C021D1D0092C71D /* events */,
+				068CAD1A1C021D150092C71D /* common */,
+				068CAD191C021D070092C71D /* utils */,
+				068CAD171C021CF30092C71D /* reminders */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		068CAD171C021CF30092C71D /* reminders */ = {
+			isa = PBXGroup;
+			children = (
+				068CACCF1C021CEB0092C71D /* PagedViewController.swift */,
+				068CAD201C021D920092C71D /* be */,
+				068CACCE1C021CEB0092C71D /* triggerTableViewCell.swift */,
+				068CACD21C021CEB0092C71D /* RemindersViewController.swift */,
+				068CACD31C021CEB0092C71D /* reminderTableViewCell.swift */,
+				068CACC01C021CEB0092C71D /* BaseAddReminderViewController.swift */,
+				068CACBE1C021CEB0092C71D /* AddReminderViewController.swift */,
+			);
+			name = reminders;
+			sourceTree = "<group>";
+		};
+		068CAD191C021D070092C71D /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				068CACDF1C021CEB0092C71D /* TextFormatterUtil.swift */,
+				068CACE11C021CEB0092C71D /* TimeIQBGService.swift */,
+				068CACE21C021CEB0092C71D /* TimeIQEventsUtils.swift */,
+				068CACE31C021CEB0092C71D /* TimeIQPlacesUtil.swift */,
+				068CACE41C021CEB0092C71D /* TimeIQRemindersUtils.swift */,
+				0655D5281C0DA20300D39E45 /* TimeIQCalendarUtils.swift */,
+			);
+			name = utils;
+			sourceTree = "<group>";
+		};
+		068CAD1A1C021D150092C71D /* common */ = {
+			isa = PBXGroup;
+			children = (
+				068CACE01C021CEB0092C71D /* TimeInString.swift */,
+				068CACC31C021CEB0092C71D /* Constants.swift */,
+				064B6AF21C03607900175222 /* common.swift */,
+			);
+			name = common;
+			sourceTree = "<group>";
+		};
+		068CAD1B1C021D1D0092C71D /* events */ = {
+			isa = PBXGroup;
+			children = (
+				068CACE51C021CEB0092C71D /* UpcomingEventsViewController.swift */,
+				064B6AF01C0333A200175222 /* upcomingEventTableViewCell.swift */,
+			);
+			name = events;
+			sourceTree = "<group>";
+		};
+		068CAD1C1C021D290092C71D /* settings */ = {
+			isa = PBXGroup;
+			children = (
+				068CACC11C021CEB0092C71D /* CalendarSelectVC.swift */,
+				068CACE91C021CEB0092C71D /* WriteCalendarSelectVC.swift */,
+				068CACDA1C021CEB0092C71D /* SettingsViewController.swift */,
+				064B6B011C04E88D00175222 /* calendar.storyboard */,
+			);
+			name = settings;
+			sourceTree = "<group>";
+		};
+		068CAD1D1C021D330092C71D /* places */ = {
+			isa = PBXGroup;
+			children = (
+				068CACD01C021CEB0092C71D /* PlacesViewController.swift */,
+				068CACD11C021CEB0092C71D /* placeTableViewCell.swift */,
+				068CAD1E1C021D3A0092C71D /* autocomplete */,
+			);
+			name = places;
+			sourceTree = "<group>";
+		};
+		068CAD1E1C021D3A0092C71D /* autocomplete */ = {
+			isa = PBXGroup;
+			children = (
+				068CACD81C021CEB0092C71D /* SearchPlaceViewController.swift */,
+			);
+			name = autocomplete;
+			sourceTree = "<group>";
+		};
+		068CAD1F1C021D470092C71D /* login */ = {
+			isa = PBXGroup;
+			children = (
+				068CACCB1C021CEB0092C71D /* loginViewController.swift */,
+				068CACDB1C021CEB0092C71D /* signUpViewController.swift */,
+				064B6AEC1C03045900175222 /* signUpWebViewController.swift */,
+				068CACDC1C021CEB0092C71D /* SimpleAuthCredentialsProvider.swift */,
+			);
+			name = login;
+			sourceTree = "<group>";
+		};
+		068CAD201C021D920092C71D /* be */ = {
+			isa = PBXGroup;
+			children = (
+				068CACBD1C021CEB0092C71D /* AddBeReminderViewController.swift */,
+			);
+			name = be;
+			sourceTree = "<group>";
+		};
+		06EE60691BE63B57001BD8EB = {
+			isa = PBXGroup;
+			children = (
+				06EE60741BE63B57001BD8EB /* timeiq-ra-ios */,
+				06EE60891BE63B57001BD8EB /* timeiq-ra-iosTests */,
+				06EE60941BE63B57001BD8EB /* timeiq-ra-iosUITests */,
+				06EE60731BE63B57001BD8EB /* Products */,
+				CA60544CC9707BA042E33141 /* Pods */,
+				7533134024B9C16AC0764406 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		06EE60731BE63B57001BD8EB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				06EE60721BE63B57001BD8EB /* timeiq-ra-ios.app */,
+				06EE60861BE63B57001BD8EB /* timeiq-ra-iosTests.xctest */,
+				06EE60911BE63B57001BD8EB /* timeiq-ra-iosUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		06EE60741BE63B57001BD8EB /* timeiq-ra-ios */ = {
+			isa = PBXGroup;
+			children = (
+				068CAC491C01AE660092C71D /* src */,
+				0673BA601BEB3E3000BB1098 /* storyboard */,
+				06EE60751BE63B57001BD8EB /* AppDelegate.swift */,
+				069E4AEA1C182A2D00226019 /* timeiq-ra-ios-Bridging-Header.h */,
+				06EE607C1BE63B57001BD8EB /* Assets.xcassets */,
+				06EE607E1BE63B57001BD8EB /* LaunchScreen.storyboard */,
+				06EE60811BE63B57001BD8EB /* Info.plist */,
+			);
+			path = "timeiq-ra-ios";
+			sourceTree = "<group>";
+		};
+		06EE60891BE63B57001BD8EB /* timeiq-ra-iosTests */ = {
+			isa = PBXGroup;
+			children = (
+				06EE608A1BE63B57001BD8EB /* timeiq_ra_iosTests.swift */,
+				06EE608C1BE63B57001BD8EB /* Info.plist */,
+				06A67E761BE8A74E003AEDEE /* Localizable.strings */,
+			);
+			path = "timeiq-ra-iosTests";
+			sourceTree = "<group>";
+		};
+		06EE60941BE63B57001BD8EB /* timeiq-ra-iosUITests */ = {
+			isa = PBXGroup;
+			children = (
+				06EE60951BE63B57001BD8EB /* timeiq_ra_iosUITests.swift */,
+				06EE60971BE63B57001BD8EB /* Info.plist */,
+			);
+			path = "timeiq-ra-iosUITests";
+			sourceTree = "<group>";
+		};
+		7533134024B9C16AC0764406 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1E1BC2341C1B6D83004BE169 /* Realm.framework */,
+				1E1BC2351C1B6D83004BE169 /* RealmSwift.framework */,
+				1E1BC22F1C1B6D34004BE169 /* TSO.framework */,
+				1E1BC22D1C1B6D2D004BE169 /* IQCore.framework */,
+				1E1BC22B1C1B6D20004BE169 /* CDKCore.framework */,
+				065AAD3E1BF4D1B80003A788 /* MessageUI.framework */,
+				0673BA671BEBA43000BB1098 /* AddressBookUI.framework */,
+				0673BA651BEBA34F00BB1098 /* AddressBook.framework */,
+				659701323CB2B63F36DF2F3F /* Pods_timeiq_ra_ios.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CA60544CC9707BA042E33141 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CAC24CA2BBD3EB1AD196CD23 /* Pods-timeiq-ra-ios.debug.xcconfig */,
+				B702C736DAD16735B3E92E73 /* Pods-timeiq-ra-ios.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		06EE60711BE63B57001BD8EB /* timeiq-ra-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 06EE609A1BE63B57001BD8EB /* Build configuration list for PBXNativeTarget "timeiq-ra-ios" */;
+			buildPhases = (
+				636083F359A2809F423C6627 /* Check Pods Manifest.lock */,
+				06EE606E1BE63B57001BD8EB /* Sources */,
+				06EE606F1BE63B57001BD8EB /* Frameworks */,
+				06EE60701BE63B57001BD8EB /* Resources */,
+				A5519B6F2AD6794C5C19F3D7 /* Embed Pods Frameworks */,
+				8DFB9E118DAF32A1747F6427 /* Copy Pods Resources */,
+				06A67E781BE8D877003AEDEE /* Copy TSO Framework */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "timeiq-ra-ios";
+			productName = "timeiq-ra-ios";
+			productReference = 06EE60721BE63B57001BD8EB /* timeiq-ra-ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+		06EE60851BE63B57001BD8EB /* timeiq-ra-iosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 06EE609D1BE63B57001BD8EB /* Build configuration list for PBXNativeTarget "timeiq-ra-iosTests" */;
+			buildPhases = (
+				06EE60821BE63B57001BD8EB /* Sources */,
+				06EE60831BE63B57001BD8EB /* Frameworks */,
+				06EE60841BE63B57001BD8EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				06EE60881BE63B57001BD8EB /* PBXTargetDependency */,
+			);
+			name = "timeiq-ra-iosTests";
+			productName = "timeiq-ra-iosTests";
+			productReference = 06EE60861BE63B57001BD8EB /* timeiq-ra-iosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		06EE60901BE63B57001BD8EB /* timeiq-ra-iosUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 06EE60A01BE63B57001BD8EB /* Build configuration list for PBXNativeTarget "timeiq-ra-iosUITests" */;
+			buildPhases = (
+				06EE608D1BE63B57001BD8EB /* Sources */,
+				06EE608E1BE63B57001BD8EB /* Frameworks */,
+				06EE608F1BE63B57001BD8EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				06EE60931BE63B57001BD8EB /* PBXTargetDependency */,
+			);
+			name = "timeiq-ra-iosUITests";
+			productName = "timeiq-ra-iosUITests";
+			productReference = 06EE60911BE63B57001BD8EB /* timeiq-ra-iosUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		06EE606A1BE63B57001BD8EB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = Intel;
+				TargetAttributes = {
+					06EE60711BE63B57001BD8EB = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = M4BCYUQAZQ;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+					06EE60851BE63B57001BD8EB = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 06EE60711BE63B57001BD8EB;
+					};
+					06EE60901BE63B57001BD8EB = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 06EE60711BE63B57001BD8EB;
+					};
+				};
+			};
+			buildConfigurationList = 06EE606D1BE63B57001BD8EB /* Build configuration list for PBXProject "timeiq-ra-ios" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				he,
+			);
+			mainGroup = 06EE60691BE63B57001BD8EB;
+			productRefGroup = 06EE60731BE63B57001BD8EB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				06EE60711BE63B57001BD8EB /* timeiq-ra-ios */,
+				06EE60851BE63B57001BD8EB /* timeiq-ra-iosTests */,
+				06EE60901BE63B57001BD8EB /* timeiq-ra-iosUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		06EE60701BE63B57001BD8EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				064B6B021C04E88D00175222 /* calendar.storyboard in Resources */,
+				06EE60801BE63B57001BD8EB /* LaunchScreen.storyboard in Resources */,
+				0673BA631BEB3E3000BB1098 /* Main.storyboard in Resources */,
+				06A67E7E1BE8F7B9003AEDEE /* Localizable.strings in Resources */,
+				06EE607D1BE63B57001BD8EB /* Assets.xcassets in Resources */,
+				064B6AFD1C046AC400175222 /* device.storyboard in Resources */,
+				0673BA641BEB3E3000BB1098 /* Login.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06EE60841BE63B57001BD8EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06EE608F1BE63B57001BD8EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		636083F359A2809F423C6627 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8DFB9E118DAF32A1747F6427 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-timeiq-ra-ios/Pods-timeiq-ra-ios-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A5519B6F2AD6794C5C19F3D7 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-timeiq-ra-ios/Pods-timeiq-ra-ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		06EE606E1BE63B57001BD8EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				068CAD0F1C021CEB0092C71D /* TimeIQEventsUtils.swift in Sources */,
+				068CAD121C021CEB0092C71D /* UpcomingEventsViewController.swift in Sources */,
+				068CACFC1C021CEB0092C71D /* PagedViewController.swift in Sources */,
+				068CAD0C1C021CEB0092C71D /* TextFormatterUtil.swift in Sources */,
+				064B6AED1C03045900175222 /* signUpWebViewController.swift in Sources */,
+				06EE60761BE63B57001BD8EB /* AppDelegate.swift in Sources */,
+				064B6AF91C04695600175222 /* DeviceConnectionManager.swift in Sources */,
+				0655D5291C0DA20300D39E45 /* TimeIQCalendarUtils.swift in Sources */,
+				068CAD051C021CEB0092C71D /* SearchPlaceViewController.swift in Sources */,
+				068CAD091C021CEB0092C71D /* SimpleAuthCredentialsProvider.swift in Sources */,
+				068CACEE1C021CEB0092C71D /* CalendarSelectVC.swift in Sources */,
+				068CAD111C021CEB0092C71D /* TimeIQRemindersUtils.swift in Sources */,
+				068CAD081C021CEB0092C71D /* signUpViewController.swift in Sources */,
+				068CACEB1C021CEB0092C71D /* AddReminderViewController.swift in Sources */,
+				064B6AF11C0333A200175222 /* upcomingEventTableViewCell.swift in Sources */,
+				068CACED1C021CEB0092C71D /* BaseAddReminderViewController.swift in Sources */,
+				068CACEF1C021CEB0092C71D /* ConnectToDeviceVC.swift in Sources */,
+				068CACF81C021CEB0092C71D /* loginViewController.swift in Sources */,
+				064B6AF31C03607900175222 /* common.swift in Sources */,
+				068CAD001C021CEB0092C71D /* reminderTableViewCell.swift in Sources */,
+				068CAD101C021CEB0092C71D /* TimeIQPlacesUtil.swift in Sources */,
+				068CAD071C021CEB0092C71D /* SettingsViewController.swift in Sources */,
+				068CAD0D1C021CEB0092C71D /* TimeInString.swift in Sources */,
+				068CACFD1C021CEB0092C71D /* PlacesViewController.swift in Sources */,
+				068CACFF1C021CEB0092C71D /* RemindersViewController.swift in Sources */,
+				068CACFE1C021CEB0092C71D /* placeTableViewCell.swift in Sources */,
+				068CACFB1C021CEB0092C71D /* triggerTableViewCell.swift in Sources */,
+				068CACEA1C021CEB0092C71D /* AddBeReminderViewController.swift in Sources */,
+				068CACF01C021CEB0092C71D /* Constants.swift in Sources */,
+				068CAD161C021CEB0092C71D /* WriteCalendarSelectVC.swift in Sources */,
+				064B6AF71C04691500175222 /* PairVC.swift in Sources */,
+				068CAD0E1C021CEB0092C71D /* TimeIQBGService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06EE60821BE63B57001BD8EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06EE608B1BE63B57001BD8EB /* timeiq_ra_iosTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06EE608D1BE63B57001BD8EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06EE60961BE63B57001BD8EB /* timeiq_ra_iosUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		06EE60881BE63B57001BD8EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 06EE60711BE63B57001BD8EB /* timeiq-ra-ios */;
+			targetProxy = 06EE60871BE63B57001BD8EB /* PBXContainerItemProxy */;
+		};
+		06EE60931BE63B57001BD8EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 06EE60711BE63B57001BD8EB /* timeiq-ra-ios */;
+			targetProxy = 06EE60921BE63B57001BD8EB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		06A67E761BE8A74E003AEDEE /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				06A67E751BE8A74E003AEDEE /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		06EE607E1BE63B57001BD8EB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				06EE607F1BE63B57001BD8EB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		06EE60981BE63B57001BD8EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		06EE60991BE63B57001BD8EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		06EE609B1BE63B57001BD8EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CAC24CA2BBD3EB1AD196CD23 /* Pods-timeiq-ra-ios.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/../../../../sdk/ios/cloud",
+					"$(PROJECT_DIR)/../../../../sdk/ios/core",
+					"$(PROJECT_DIR)/../../../../sdk/ios/timeiq",
+					"$(PROJECT_DIR)/../Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "timeiq-ra-ios/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.intel.ndgi.sdk.sensors.timeiq-ra-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "timeiq-ra-ios/src/timeiq-ra-ios-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		06EE609C1BE63B57001BD8EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B702C736DAD16735B3E92E73 /* Pods-timeiq-ra-ios.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/../../../../sdk/ios/cloud",
+					"$(PROJECT_DIR)/../../../../sdk/ios/core",
+					"$(PROJECT_DIR)/../../../../sdk/ios/timeiq",
+					"$(PROJECT_DIR)/../Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "timeiq-ra-ios/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.intel.ndgi.sdk.sensors.timeiq-ra-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "timeiq-ra-ios/src/timeiq-ra-ios-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		06EE609E1BE63B57001BD8EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "timeiq-ra-iosTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.intel.ndgi.sdk.sensors..timeiq-ra-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/timeiq-ra-ios.app/timeiq-ra-ios";
+			};
+			name = Debug;
+		};
+		06EE609F1BE63B57001BD8EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "timeiq-ra-iosTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.intel.ndgi.sdk.sensors..timeiq-ra-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/timeiq-ra-ios.app/timeiq-ra-ios";
+			};
+			name = Release;
+		};
+		06EE60A11BE63B57001BD8EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "timeiq-ra-iosUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.intel.ndgi.sdk.sensors..timeiq-ra-iosUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "timeiq-ra-ios";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		06EE60A21BE63B57001BD8EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "timeiq-ra-iosUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.intel.ndgi.sdk.sensors..timeiq-ra-iosUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "timeiq-ra-ios";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		06EE606D1BE63B57001BD8EB /* Build configuration list for PBXProject "timeiq-ra-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06EE60981BE63B57001BD8EB /* Debug */,
+				06EE60991BE63B57001BD8EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		06EE609A1BE63B57001BD8EB /* Build configuration list for PBXNativeTarget "timeiq-ra-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06EE609B1BE63B57001BD8EB /* Debug */,
+				06EE609C1BE63B57001BD8EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		06EE609D1BE63B57001BD8EB /* Build configuration list for PBXNativeTarget "timeiq-ra-iosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06EE609E1BE63B57001BD8EB /* Debug */,
+				06EE609F1BE63B57001BD8EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		06EE60A01BE63B57001BD8EB /* Build configuration list for PBXNativeTarget "timeiq-ra-iosUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06EE60A11BE63B57001BD8EB /* Debug */,
+				06EE60A21BE63B57001BD8EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 06EE606A1BE63B57001BD8EB /* Project object */;
+}

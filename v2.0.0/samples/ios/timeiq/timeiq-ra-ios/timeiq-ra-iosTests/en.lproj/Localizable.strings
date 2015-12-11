@@ -1,0 +1,176 @@
+/* 
+  Localizable.strings
+  timeiq-ra-ios
+
+  Created by AviadX Ganon on 03/11/2015.
+  Copyright © 2015 Intel. All rights reserved.
+*/
+
+"reminder_call" = "Call %@";
+"reminder_notify" = "Notify %@";
+"reminder_do" = "%@";
+
+//"ttl_min" = "%ds min";
+
+"TRIGGER_TYPE_LEAVE" = "When you leave...";
+"TRIGGER_TYPE_LEAVE_FROM" = "When you leave %@";
+
+"TRIGGER_TYPE_ARRIVE" = "When you arrive...";
+"TRIGGER_TYPE_ARRIVE_TO" = "When you arrive to %@";
+
+"TRIGGER_TYPE_NEXT_DRIVE" = "On your next drive";
+"TRIGGER_TYPE_BATTERY" = "When battery is over %@";
+"TRIGGER_TYPE_TIME" = "On specific time";
+
+"placeholder_do" = "What do you need to do?";
+"placeholder_call" = "Who do you need to call?";
+"placeholder_notify" = "Who do you need to notify?";
+"placeholder_be" = "Where do you need to be?";
+
+"placeholder_notification_message" = "Enter your desired text";
+
+"search_placeholder" = "Start typing a place name or an adress";
+
+"reminder_subtext_arrived" = "You arrived %@";
+"reminder_subtext_left" = "You left %@";
+"reminder_subtext_driving" = "You have started to drive";
+"reminder_subtext_battery_above" = "Your battery level is above 15%";
+"reminder_subtext_time" = "It\'s %@";
+"event_subtext" = "%@ %@ to be there by %@";
+
+"place_trigger" = "%@ %@";
+"trigger_header_in_section" = " select a reminder";
+
+"be_at" = "Be at %@";
+"be_in_conflict_with" = " In conflict with";
+
+"date.in_num_days-one" = "in %f day";
+"date.in_num_hours-one" = "in %f hour";
+"date.in_num_minutes-one" = "in %f minute";
+"date.in_num_seconds-one" = "in %f second";
+"date.num_days_ago-one" = "%f day ago";
+"date.num_hours_ago-one" = "%f hour ago";
+"date.num_minutes_ago-one" = "%f minute ago";
+"date.num_seconds_ago-one" = "%f second ago";
+"date.in_num_days-other" = "in %f days";
+"date.in_num_hours-other" = "in %f hours";
+"date.in_num_minutes-other" = "in %f minutes";
+"date.in_num_seconds-other" = "in %f seconds";
+"date.num_days_ago-other" = "%f days ago";
+"date.num_hours_ago-other" = "%f hours ago";
+"date.num_minutes_ago-other" = "%f minutes ago";
+"date.num_seconds_ago-other" = "%f seconds ago";
+
+"error_title" = "Error";
+"missing_data" = "Missing data";
+"reminder_error_nothing_selected" = "Missing reminder data";
+"reminder_error_missing_data" = "Missing Trigger or reminder data";
+"reminder_error_missing_arrive_place" = "Missing Arrive Place";
+"reminder_error_missing_leave_place" = "Missing Leave Place";
+"reminder_error_missing_reminder_time" = "Missing Reminder Time";
+"reminder_error_missing_target_location" = "Missing Target Location";
+"reminder_error_missing_event_time" = "Missing Event Time";
+"reminder_error_missing_target_contact" = "Missing Target Contact";
+"reminder_error_missing_do_action" = "Missing Do Action";
+
+"do_message" = "%@";
+"call_message" = "Call %@";
+"notify_message" = "Notify %@";
+
+"reminder_was_added" = "Reminder was added";
+"reminder_was_not_added" = "error adding reminder: ";
+"could_not_create_reminder" = "Could not create reminder (%@)";
+"reminder_was_edited" = "Reminder was edited";
+"reminder_was_not_edited" = "Reminder was not edited";
+"reminder_was_not_edited_data_lost" = "Reminder was not edited, data was lost";
+"reminder_was_deleted" = "Reminder was deleted";
+"reminder_was_not_deleted" = "Reminder was not deleted (%@)";
+"reminder_wrong_id" = "failed to get reminder (wrong ID)";
+
+"snooze_option_title" = "Snooze options";
+"snooze_option_when_charging" = "When charging";
+"snooze_option_from_the_car" = "From the car";
+"snooze_option_next_drive" = "Next drive";
+"snooze_option_from_place" = "From %@";
+"snooze_option_define_home" = "Define home";
+"snooze_option_define_work" = "Define work";
+"snooze_option_next_time_at_current_place" = "Next time %@";
+"snooze_option_leave_current_place" = "When I leave %@";
+"snooze_option_in_x_min" = "In %1$d minutes";
+"snooze_option_time_range_this_morning" = "In the morning";
+"snooze_option_time_range_later_today" = "Later today";
+"snooze_option_time_range_in_the_evening" = "In the evening";
+"snooze_option_time_range_later_tonight" = "Later tonight";
+"snooze_option_time_range_tomorrow_morning" = "Tomorrow morning";
+
+"snooze_option_error_reminder_id_null" = "Reminder ID was null";
+"snooze_option_error_no_snooze_options_to_choose_from" = "No snooze options to choose from";
+
+"snooze_option_snoozed" = "Reminder snoozed";
+
+"nothing_to_display_reminder" = "Click + to add a reminder";
+"nothing_to_display_events" = "Free for the next few hours";
+"nothing_to_display_events_no_readable_calendars" = "There are no viewable calendars set, please set at least one from the application menu";
+"nothing_to_display_autocomplete_places" = "No place match found";
+
+// TTL
+"ttl_calculating" = "Calculating TTL";
+"ttl_mot_type_string_car" = "drive";
+"ttl_mot_type_string_walk" = "walk";
+"ttl_error_cannot_find_location_null" = "No valid user location";
+"ttl_error_cannot_find_location_error" = "No valid user location (%@)";
+"ttl_error_event_is_null" = "Please specify a valid event (event is null)";
+"ttl_error_overdue" = "The event is overdue";
+"ttl_error_general" = "There was an error getting TTL (%@)";
+"ttl_error_null_ttl" = "The TTL result was null";
+"eta_error_general" = "There was an error getting ETA (%@)";
+"eta_error_null" = "The ETA result was null";
+"route_at_destination" = "You\'re at location";
+"route_near_destination" = "You\'re nearby. It\'s %@ %@";
+"route_ok_not_late" = "Need to leave here by %@, %@ %@";
+"route_ok_late" = "About to be late, ETA %@, %@ %@";
+"route_ok_while_driving_not_late" = "On time, %@, %@";
+"route_ok_while_driving_late" = "Late, ETA %@, %@ %@";
+"route_too_far_for_driving" = "Seems too far for driving";
+"route_too_far_for_walking" = "Seems too far for walking";
+"ttl_leave" = "Leave here by %@, %@ %@";
+"ttl_late" = "About to be %@ late, %@ %@";
+"ttl_min" = "%d min";
+"route_at_destination" = "You\'re at location";
+"route_near_destination" = "You\'re nearby. It\'s %@ %@";
+"route_ok_not_late" = "Need to leave here by %@ %@ %@";
+"route_ok_late" = "About to be late, ETA %@ %@ %@";
+"route_ok_while_driving_not_late" = "On time, %@ %@";
+"route_ok_while_driving_late" = "Late, ETA %@ %@ %@";
+"route_too_far_for_driving" = "Seems too far for driving";
+"route_too_far_for_walking" = "Seems too far for walking";
+
+//"ttl_min" = "%@ min";
+"ttl_hour_and_min" = "%d hour and %d min";
+"trigger_was_not_selected" = "No trigger was selected";
+"wrong_credentials" = "The email address or password you entered is incorrect";
+"phone_name_cant_be_empty" = "Please provide email and password";
+"wrong_email_pass" = "Wrong email or password";
+"app_version_title_text" = "App version:";
+"build_date_title_text" = "Build date:";
+"delete_place_disclaimer" = "By pressing DELETE, all reminders using this place will not pop";
+
+"be_event_no_writable_calendar" = "You must insert the main calendar from the application menu";
+"be_event_was_added" = "Be event was added";
+"be_event_was_not_added" = "Be event was NOT added";
+
+// add/edit place
+"google_api_client_error_general" = "An error occurred, please make sure that you have the Play Store installed and are connected to the internet";
+"google_api_client_error_cannot_connect" = "Could not connect to GoogleApiClient (%1$s)";
+"save_dialog_progress_dialog_title" = "Fetching data";
+"save_dialog_progress_dialog_body" = "Getting all location details";
+"toast_location_saved" = "Location saved";
+"toast_location_saved_but_old_not_removed" = "Place saved, but could not remove the old place";
+"toast_no_valid_name" = "Please enter a name";
+"toast_no_valid_address" = "Please enter a valid address";
+"toast_unknown_error" = "unknown error";
+"toast_no_resolved_location" = "No valid location selected";
+"toast_no_valid_coordinate" = "No valid place coordinate";
+"toast_could_not_add_place" = "Could not add place (%1$s)";
+"toast_place_id_is_null" = "PlaceID of the place provided is null";
+"toast_place_not_found" = "Could not find a place with the given place ID";
