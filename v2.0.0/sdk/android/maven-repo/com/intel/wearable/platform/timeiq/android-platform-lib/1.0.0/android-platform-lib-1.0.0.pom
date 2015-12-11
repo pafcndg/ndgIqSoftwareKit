@@ -9,13 +9,26 @@
   <dependencies>
     <dependency>
       <groupId>com.intel.wearable.platform.timeiq</groupId>
-      <artifactId>java-platform-lib</artifactId>
+      <artifactId>common-lib</artifactId>
       <version>1.0.0</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.intel.wearable.cloudsdk</groupId>
+      <artifactId>core</artifactId>
+      <version>3.1.2</version>
+      <type>aar</type>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>com.android.support</groupId>
       <artifactId>multidex</artifactId>
+      <version>1.0.0</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.intel.wearable.platform.timeiq</groupId>
+      <artifactId>java-platform-lib</artifactId>
       <version>1.0.0</version>
       <scope>compile</scope>
     </dependency>
@@ -50,22 +63,9 @@
       <scope>compile</scope>
     </dependency>
     <dependency>
-      <groupId>com.intel.wearable.platform.timeiq</groupId>
-      <artifactId>common-lib</artifactId>
-      <version>1.0.0</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
       <groupId>com.google.code.gson</groupId>
       <artifactId>gson</artifactId>
       <version>2.2.4</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.intel.wearable.cloudsdk</groupId>
-      <artifactId>core</artifactId>
-      <version>3.0.0</version>
-      <type>aar</type>
       <scope>compile</scope>
     </dependency>
     <dependency>
