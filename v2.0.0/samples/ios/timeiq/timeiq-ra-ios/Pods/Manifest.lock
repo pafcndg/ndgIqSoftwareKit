@@ -1,0 +1,19 @@
+PODS:
+  - CrittercismSDK (5.4.5)
+  - GoogleMaps (1.10.5)
+  - SMDatePicker (0.0.1)
+  - TimeAgoInWords (2.0.0)
+
+DEPENDENCIES:
+  - CrittercismSDK
+  - GoogleMaps
+  - SMDatePicker (~> 0.0)
+  - TimeAgoInWords (~> 2.0)
+
+SPEC CHECKSUMS:
+  CrittercismSDK: ac7fd22cd81d63a6398febc9f97427dca54edfc1
+  GoogleMaps: da51c62c338c2d9c47cdad470a0d1e0e4b8544e4
+  SMDatePicker: 72a0c674a66ad82c77336d8f356e5df0ed978c2e
+  TimeAgoInWords: be1144596814c8de5d2fe51a60977ec98115e4fb
+
+COCOAPODS: 0.39.0

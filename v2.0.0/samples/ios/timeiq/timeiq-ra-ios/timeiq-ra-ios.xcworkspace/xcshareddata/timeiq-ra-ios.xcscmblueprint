@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "CE74109B2A10AD847B7071E24B047626668E902C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "DFF9F7E165FCA8E71B02D6114D82C0E7797B2B2E" : 0,
+    "CE74109B2A10AD847B7071E24B047626668E902C" : 0,
+    "5EADABE1F9AEA4961DE888BF5A0A50BC9D50B427" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "175C1DA3-6B3B-4202-8AB5-2CBA4DA0E3E4",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "DFF9F7E165FCA8E71B02D6114D82C0E7797B2B2E" : "ios-tso-sdk-sensorapp\/ios-tso-sdk\/",
+    "CE74109B2A10AD847B7071E24B047626668E902C" : "timeiq-ra-ios\/",
+    "5EADABE1F9AEA4961DE888BF5A0A50BC9D50B427" : "ios-tso-sdk-sensorapp\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "timeiq-ra-ios",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "timeiq-ra-ios.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "ssh:\/\/stash.ndg.intel.com:7999\/tsosdk\/ios-tso-sdk-sensorapp.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5EADABE1F9AEA4961DE888BF5A0A50BC9D50B427"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "ssh:\/\/stash.ndg.intel.com:7999\/~aviadgax\/timeiq-ra-ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "CE74109B2A10AD847B7071E24B047626668E902C"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "ssh:\/\/stash.ndg.intel.com:7999\/tsosdk\/ios-tso-sdk.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DFF9F7E165FCA8E71B02D6114D82C0E7797B2B2E"
+    }
+  ]
+}

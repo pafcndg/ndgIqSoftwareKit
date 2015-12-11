@@ -1,0 +1,706 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1A8F3DB2ECF3974234AE36810433ACC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		246A7085885BFD2E0F1A85A57E3E1728 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		4EE28AB08866D965AFADDB87D2C53EB5 /* Pods-timeiq-ra-ios-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 50ABFB550480710A7F2BCB0013A1B2A2 /* Pods-timeiq-ra-ios-dummy.m */; };
+		5551881665A5DC567CA188289FABD149 /* TimeAgoInWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = C934047E9B9D9B328175DD4284240E21 /* TimeAgoInWords.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5FD166762D68CB916D9EEAD76DEE3AA2 /* SMDatePicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 354B9F4ECDC2DC8AAD453A77E154A0BE /* SMDatePicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63D5BCB759BDD86371254D8A319A678C /* SMDatePicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B54B2519E4A84797F15D04561CD10FF6 /* SMDatePicker-dummy.m */; };
+		64F6586A870A75DC5C5156219E6E8BD6 /* TimeAgoInWords-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2FC540C9F407FF064B413072C569F7 /* TimeAgoInWords-dummy.m */; };
+		6C60ACB2959C17215D67CF3AB3199757 /* Pods-timeiq-ra-ios-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 71FB96B8742A5627993B81A9468B275A /* Pods-timeiq-ra-ios-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6FD74CDEF03A4AE9908207EB2FDAD912 /* TimeAgoInWords-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 68B4B88D61575BB74069BA5109446B5F /* TimeAgoInWords-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		91E7B50B5D7CB1E14194C27057209BF6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		D82CDFF49040E9DE3F60A1E51109940D /* SMDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157CCDC7A167D4A8FE86067A030A2228 /* SMDatePicker.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1B89BAD876B49EB96590CD2D5066C793 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8890A8DE030EDA3B7183AC0253527B33;
+			remoteInfo = TimeAgoInWords;
+		};
+		6E066F92296711678772F22FFA261980 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F84D8FF6EA17BCBEC0C8FF00ADCBAA3B;
+			remoteInfo = SMDatePicker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		116C05B45E3E7E595445DF565F2B4EC1 /* CrittercismConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CrittercismConfig.h; path = CrittercismSDK/CrittercismConfig.h; sourceTree = "<group>"; };
+		157CCDC7A167D4A8FE86067A030A2228 /* SMDatePicker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SMDatePicker.swift; path = SMDatePicker/SMDatePicker.swift; sourceTree = "<group>"; };
+		1C809BFDD0BAA721CBAFF9FE4CD332FC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30AA5B6F594DE0AD3D39D1FA9F8DA445 /* SMDatePicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SMDatePicker.modulemap; sourceTree = "<group>"; };
+		354B9F4ECDC2DC8AAD453A77E154A0BE /* SMDatePicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SMDatePicker-umbrella.h"; sourceTree = "<group>"; };
+		38C2D4376980AD3DAEFC6505832880E7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		41FDC1A6937C2A88217B33AF925D6E7B /* Pods-timeiq-ra-ios-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-timeiq-ra-ios-acknowledgements.plist"; sourceTree = "<group>"; };
+		43CFCCE23E3A3F410FBB1D13E0A89C15 /* SMDatePicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SMDatePicker.xcconfig; sourceTree = "<group>"; };
+		50ABFB550480710A7F2BCB0013A1B2A2 /* Pods-timeiq-ra-ios-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-timeiq-ra-ios-dummy.m"; sourceTree = "<group>"; };
+		50C7EF513B48050615CB2DCED50CDEFF /* TimeAgoInWords.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TimeAgoInWords.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AB8DBB0C956154C9B7D839E02C85746 /* CrittercismDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CrittercismDelegate.h; path = CrittercismSDK/CrittercismDelegate.h; sourceTree = "<group>"; };
+		5DCF69A42C90C2EC56607372DEFEB231 /* CRFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CRFilter.h; path = CrittercismSDK/CRFilter.h; sourceTree = "<group>"; };
+		5E7867D024D0423BCA1BA0145C8B60A5 /* TimeAgoInWords.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = TimeAgoInWords.modulemap; sourceTree = "<group>"; };
+		5E81617FC3FC327A96BD22827436774B /* Pods-timeiq-ra-ios-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-timeiq-ra-ios-resources.sh"; sourceTree = "<group>"; };
+		5F28EF3C0FB4EA9694A5BD7FB75DF602 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64A066EF63FB46A7F735588AC3B4F135 /* TimeAgoInWords-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TimeAgoInWords-prefix.pch"; sourceTree = "<group>"; };
+		68B4B88D61575BB74069BA5109446B5F /* TimeAgoInWords-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TimeAgoInWords-umbrella.h"; sourceTree = "<group>"; };
+		6EB1C64C386FD4D64F125541CC0044CC /* SMDatePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SMDatePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		71FB96B8742A5627993B81A9468B275A /* Pods-timeiq-ra-ios-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-timeiq-ra-ios-umbrella.h"; sourceTree = "<group>"; };
+		7B152DE3E2FC5B35DD90B667D7A5CE01 /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		89F2523B586FFD4E59E7A90C7A28E735 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
+		92C02D9B091A8C61C59D7802839B54C6 /* Pods-timeiq-ra-ios-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-timeiq-ra-ios-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A0AC081452088EA0EE457DFDE1131DD5 /* Crittercism.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Crittercism.h; path = CrittercismSDK/Crittercism.h; sourceTree = "<group>"; };
+		A3B5340E62D04257807347F391785EE7 /* Pods-timeiq-ra-ios-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-timeiq-ra-ios-frameworks.sh"; sourceTree = "<group>"; };
+		AB39B5705C2252676BC16291280A4071 /* Pods-timeiq-ra-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-timeiq-ra-ios.release.xcconfig"; sourceTree = "<group>"; };
+		B54B2519E4A84797F15D04561CD10FF6 /* SMDatePicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SMDatePicker-dummy.m"; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C6FD584CE4615FD28D8C1FEA5AC6BD65 /* CrittercismLoggingLevel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CrittercismLoggingLevel.h; path = CrittercismSDK/CrittercismLoggingLevel.h; sourceTree = "<group>"; };
+		C7A5A3601DE6AFA345A47882BC743CC0 /* Pods_timeiq_ra_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_timeiq_ra_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C934047E9B9D9B328175DD4284240E21 /* TimeAgoInWords.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TimeAgoInWords.swift; sourceTree = "<group>"; };
+		E5F23534C80234CA92887570526970E3 /* Pods-timeiq-ra-ios.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-timeiq-ra-ios.modulemap"; sourceTree = "<group>"; };
+		EDD011F41B26B8672612EA48AEE3C4EF /* SMDatePicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SMDatePicker-prefix.pch"; sourceTree = "<group>"; };
+		EFD98A5F53B18C3CDC1C0E75B2DE01BE /* TimeAgoInWords.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TimeAgoInWords.xcconfig; sourceTree = "<group>"; };
+		F34A35899DE00036F3BA7CC6D9F17FCF /* Pods-timeiq-ra-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-timeiq-ra-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		FA2FC540C9F407FF064B413072C569F7 /* TimeAgoInWords-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TimeAgoInWords-dummy.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		73C4018E3ABEC5CD73DA0FDD09CC225D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91E7B50B5D7CB1E14194C27057209BF6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73ED0AB52DC21D63C5CC095E76963EF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				246A7085885BFD2E0F1A85A57E3E1728 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93F44D61D6B32DAC9F4DAE98E4B284BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A8F3DB2ECF3974234AE36810433ACC5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		16E30CEAAF1D678931BF3A66FB9484E2 /* CrittercismSDK */ = {
+			isa = PBXGroup;
+			children = (
+				5DCF69A42C90C2EC56607372DEFEB231 /* CRFilter.h */,
+				A0AC081452088EA0EE457DFDE1131DD5 /* Crittercism.h */,
+				116C05B45E3E7E595445DF565F2B4EC1 /* CrittercismConfig.h */,
+				5AB8DBB0C956154C9B7D839E02C85746 /* CrittercismDelegate.h */,
+				C6FD584CE4615FD28D8C1FEA5AC6BD65 /* CrittercismLoggingLevel.h */,
+			);
+			path = CrittercismSDK;
+			sourceTree = "<group>";
+		};
+		2E42766B813532238953C53F676B64F4 /* SMDatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				157CCDC7A167D4A8FE86067A030A2228 /* SMDatePicker.swift */,
+				BC198816564500E6295650FF41BC9416 /* Support Files */,
+			);
+			path = SMDatePicker;
+			sourceTree = "<group>";
+		};
+		308A124D0EDE29F661339EA5A3F6A49B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				89F2523B586FFD4E59E7A90C7A28E735 /* GoogleMaps.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5A52DE5AF7053D1CB1E9B8B895A3D7BB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C7A5A3601DE6AFA345A47882BC743CC0 /* Pods_timeiq_ra_ios.framework */,
+				6EB1C64C386FD4D64F125541CC0044CC /* SMDatePicker.framework */,
+				50C7EF513B48050615CB2DCED50CDEFF /* TimeAgoInWords.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5F8D9FAA561357B0AFCDCE901702956E /* TimeAgoInWords */ = {
+			isa = PBXGroup;
+			children = (
+				C934047E9B9D9B328175DD4284240E21 /* TimeAgoInWords.swift */,
+				6916C7CFEAAC0C685886257F8E1BA276 /* Support Files */,
+			);
+			path = TimeAgoInWords;
+			sourceTree = "<group>";
+		};
+		6916C7CFEAAC0C685886257F8E1BA276 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				38C2D4376980AD3DAEFC6505832880E7 /* Info.plist */,
+				5E7867D024D0423BCA1BA0145C8B60A5 /* TimeAgoInWords.modulemap */,
+				EFD98A5F53B18C3CDC1C0E75B2DE01BE /* TimeAgoInWords.xcconfig */,
+				FA2FC540C9F407FF064B413072C569F7 /* TimeAgoInWords-dummy.m */,
+				64A066EF63FB46A7F735588AC3B4F135 /* TimeAgoInWords-prefix.pch */,
+				68B4B88D61575BB74069BA5109446B5F /* TimeAgoInWords-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/TimeAgoInWords";
+			sourceTree = "<group>";
+		};
+		73EA2F9AEF8CB5DE245DACB98E10D4A6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				16E30CEAAF1D678931BF3A66FB9484E2 /* CrittercismSDK */,
+				F062279E4746E25B60ADB53735D464C1 /* GoogleMaps */,
+				2E42766B813532238953C53F676B64F4 /* SMDatePicker */,
+				5F8D9FAA561357B0AFCDCE901702956E /* TimeAgoInWords */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		75E0F65E3A840D01CF5758B757DE50A5 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B1DCBB30799A9570003701EF3D679C76 /* Pods-timeiq-ra-ios */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				73EA2F9AEF8CB5DE245DACB98E10D4A6 /* Pods */,
+				5A52DE5AF7053D1CB1E9B8B895A3D7BB /* Products */,
+				75E0F65E3A840D01CF5758B757DE50A5 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		ACD57DF46F5A41815721476A19247F86 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7B152DE3E2FC5B35DD90B667D7A5CE01 /* GoogleMaps.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		B1DCBB30799A9570003701EF3D679C76 /* Pods-timeiq-ra-ios */ = {
+			isa = PBXGroup;
+			children = (
+				5F28EF3C0FB4EA9694A5BD7FB75DF602 /* Info.plist */,
+				E5F23534C80234CA92887570526970E3 /* Pods-timeiq-ra-ios.modulemap */,
+				92C02D9B091A8C61C59D7802839B54C6 /* Pods-timeiq-ra-ios-acknowledgements.markdown */,
+				41FDC1A6937C2A88217B33AF925D6E7B /* Pods-timeiq-ra-ios-acknowledgements.plist */,
+				50ABFB550480710A7F2BCB0013A1B2A2 /* Pods-timeiq-ra-ios-dummy.m */,
+				A3B5340E62D04257807347F391785EE7 /* Pods-timeiq-ra-ios-frameworks.sh */,
+				5E81617FC3FC327A96BD22827436774B /* Pods-timeiq-ra-ios-resources.sh */,
+				71FB96B8742A5627993B81A9468B275A /* Pods-timeiq-ra-ios-umbrella.h */,
+				F34A35899DE00036F3BA7CC6D9F17FCF /* Pods-timeiq-ra-ios.debug.xcconfig */,
+				AB39B5705C2252676BC16291280A4071 /* Pods-timeiq-ra-ios.release.xcconfig */,
+			);
+			name = "Pods-timeiq-ra-ios";
+			path = "Target Support Files/Pods-timeiq-ra-ios";
+			sourceTree = "<group>";
+		};
+		BC198816564500E6295650FF41BC9416 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1C809BFDD0BAA721CBAFF9FE4CD332FC /* Info.plist */,
+				30AA5B6F594DE0AD3D39D1FA9F8DA445 /* SMDatePicker.modulemap */,
+				43CFCCE23E3A3F410FBB1D13E0A89C15 /* SMDatePicker.xcconfig */,
+				B54B2519E4A84797F15D04561CD10FF6 /* SMDatePicker-dummy.m */,
+				EDD011F41B26B8672612EA48AEE3C4EF /* SMDatePicker-prefix.pch */,
+				354B9F4ECDC2DC8AAD453A77E154A0BE /* SMDatePicker-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SMDatePicker";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		F062279E4746E25B60ADB53735D464C1 /* GoogleMaps */ = {
+			isa = PBXGroup;
+			children = (
+				308A124D0EDE29F661339EA5A3F6A49B /* Frameworks */,
+				ACD57DF46F5A41815721476A19247F86 /* Resources */,
+			);
+			path = GoogleMaps;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		47A5E9EB55055D190736AF72202B6023 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FD74CDEF03A4AE9908207EB2FDAD912 /* TimeAgoInWords-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DC7A6D785BBD29C9B7725A627721C07 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C60ACB2959C17215D67CF3AB3199757 /* Pods-timeiq-ra-ios-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6E3C445ED87C9BC37C04B126F5991D6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FD166762D68CB916D9EEAD76DEE3AA2 /* SMDatePicker-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8890A8DE030EDA3B7183AC0253527B33 /* TimeAgoInWords */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0BB7E71C9AA0243FF4A81E1979E18380 /* Build configuration list for PBXNativeTarget "TimeAgoInWords" */;
+			buildPhases = (
+				1F130A6261C55966C3B0865DCF7FB944 /* Sources */,
+				73ED0AB52DC21D63C5CC095E76963EF4 /* Frameworks */,
+				47A5E9EB55055D190736AF72202B6023 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TimeAgoInWords;
+			productName = TimeAgoInWords;
+			productReference = 50C7EF513B48050615CB2DCED50CDEFF /* TimeAgoInWords.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B9F7E78ECF53E675C3B4F8CC57CAEE42 /* Pods-timeiq-ra-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80F590EFB6D40F50B9AC75BA9407A2A6 /* Build configuration list for PBXNativeTarget "Pods-timeiq-ra-ios" */;
+			buildPhases = (
+				1A54FFC076BCE3C63253AC88E328BC16 /* Sources */,
+				93F44D61D6B32DAC9F4DAE98E4B284BA /* Frameworks */,
+				8DC7A6D785BBD29C9B7725A627721C07 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9DE95FC293879579A8805EEAB86094C9 /* PBXTargetDependency */,
+				A4C75EF604F9AE18D2331EB54C1EAE5C /* PBXTargetDependency */,
+			);
+			name = "Pods-timeiq-ra-ios";
+			productName = "Pods-timeiq-ra-ios";
+			productReference = C7A5A3601DE6AFA345A47882BC743CC0 /* Pods_timeiq_ra_ios.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F84D8FF6EA17BCBEC0C8FF00ADCBAA3B /* SMDatePicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0A211183BC85117C59A5B5F883CDD82 /* Build configuration list for PBXNativeTarget "SMDatePicker" */;
+			buildPhases = (
+				51B390403FA9C1EB61F30EB6838A7A6F /* Sources */,
+				73C4018E3ABEC5CD73DA0FDD09CC225D /* Frameworks */,
+				D6E3C445ED87C9BC37C04B126F5991D6 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SMDatePicker;
+			productName = SMDatePicker;
+			productReference = 6EB1C64C386FD4D64F125541CC0044CC /* SMDatePicker.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 5A52DE5AF7053D1CB1E9B8B895A3D7BB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B9F7E78ECF53E675C3B4F8CC57CAEE42 /* Pods-timeiq-ra-ios */,
+				F84D8FF6EA17BCBEC0C8FF00ADCBAA3B /* SMDatePicker */,
+				8890A8DE030EDA3B7183AC0253527B33 /* TimeAgoInWords */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1A54FFC076BCE3C63253AC88E328BC16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EE28AB08866D965AFADDB87D2C53EB5 /* Pods-timeiq-ra-ios-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F130A6261C55966C3B0865DCF7FB944 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64F6586A870A75DC5C5156219E6E8BD6 /* TimeAgoInWords-dummy.m in Sources */,
+				5551881665A5DC567CA188289FABD149 /* TimeAgoInWords.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51B390403FA9C1EB61F30EB6838A7A6F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63D5BCB759BDD86371254D8A319A678C /* SMDatePicker-dummy.m in Sources */,
+				D82CDFF49040E9DE3F60A1E51109940D /* SMDatePicker.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9DE95FC293879579A8805EEAB86094C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SMDatePicker;
+			target = F84D8FF6EA17BCBEC0C8FF00ADCBAA3B /* SMDatePicker */;
+			targetProxy = 6E066F92296711678772F22FFA261980 /* PBXContainerItemProxy */;
+		};
+		A4C75EF604F9AE18D2331EB54C1EAE5C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TimeAgoInWords;
+			target = 8890A8DE030EDA3B7183AC0253527B33 /* TimeAgoInWords */;
+			targetProxy = 1B89BAD876B49EB96590CD2D5066C793 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		12A1FDB9144576B0DB62F22C994D2E22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F34A35899DE00036F3BA7CC6D9F17FCF /* Pods-timeiq-ra-ios.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-timeiq-ra-ios/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-timeiq-ra-ios/Pods-timeiq-ra-ios.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_timeiq_ra_ios;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		381805AAAC6F0420852007A5809A8505 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB39B5705C2252676BC16291280A4071 /* Pods-timeiq-ra-ios.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-timeiq-ra-ios/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-timeiq-ra-ios/Pods-timeiq-ra-ios.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_timeiq_ra_ios;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8A6E469A7966652119EA4563FD047B49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43CFCCE23E3A3F410FBB1D13E0A89C15 /* SMDatePicker.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SMDatePicker/SMDatePicker-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SMDatePicker/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SMDatePicker/SMDatePicker.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SMDatePicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A442A7BD5A3FEA8824B99EAF3E8C115B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFD98A5F53B18C3CDC1C0E75B2DE01BE /* TimeAgoInWords.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/TimeAgoInWords/TimeAgoInWords-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TimeAgoInWords/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TimeAgoInWords/TimeAgoInWords.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = TimeAgoInWords;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		C9F9B030852A363DE5162AA7C1C1485B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43CFCCE23E3A3F410FBB1D13E0A89C15 /* SMDatePicker.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SMDatePicker/SMDatePicker-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SMDatePicker/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SMDatePicker/SMDatePicker.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SMDatePicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D2D708A142E99FD0BAFE51C161494D60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFD98A5F53B18C3CDC1C0E75B2DE01BE /* TimeAgoInWords.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/TimeAgoInWords/TimeAgoInWords-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TimeAgoInWords/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TimeAgoInWords/TimeAgoInWords.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = TimeAgoInWords;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FB45FFD90572718D82AB9092B750F0CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0BB7E71C9AA0243FF4A81E1979E18380 /* Build configuration list for PBXNativeTarget "TimeAgoInWords" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A442A7BD5A3FEA8824B99EAF3E8C115B /* Debug */,
+				D2D708A142E99FD0BAFE51C161494D60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */,
+				FB45FFD90572718D82AB9092B750F0CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80F590EFB6D40F50B9AC75BA9407A2A6 /* Build configuration list for PBXNativeTarget "Pods-timeiq-ra-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12A1FDB9144576B0DB62F22C994D2E22 /* Debug */,
+				381805AAAC6F0420852007A5809A8505 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0A211183BC85117C59A5B5F883CDD82 /* Build configuration list for PBXNativeTarget "SMDatePicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A6E469A7966652119EA4563FD047B49 /* Debug */,
+				C9F9B030852A363DE5162AA7C1C1485B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

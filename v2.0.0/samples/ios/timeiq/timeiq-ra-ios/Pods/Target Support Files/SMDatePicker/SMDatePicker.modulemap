@@ -1,0 +1,6 @@
+framework module SMDatePicker {
+  umbrella header "SMDatePicker-umbrella.h"
+
+  export *
+  module * { export * }
+}
