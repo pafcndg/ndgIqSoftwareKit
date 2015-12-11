@@ -1,0 +1,4 @@
+v2.0.0/sdk/android/timeiq/.idea
+v2.0.0/sdk/android/timeiq/.gradle
+*.iml
+v2.0.0/sdk/android/timeiq/build/intermediates/dex-cache

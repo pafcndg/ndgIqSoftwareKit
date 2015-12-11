@@ -13,14 +13,14 @@ def quoteString = { s ->
 }
 
 android {
-    signingConfigs {
-        timeIQ_app_key {
-            keyAlias 'timeiq_ndg'
-            keyPassword 'intelndgi'
-            storeFile file('../key/timeIQ_app_key.jks')
-            storePassword 'intelndgi'
-        }
-    }
+//    signingConfigs {
+//        timeIQ_app_key {
+//            keyAlias 'timeiq_ndg'
+//            keyPassword 'intelndgi'
+//            storeFile file('../key/timeIQ_app_key.jks')
+//            storePassword 'intelndgi'
+//        }
+//    }
     defaultConfig {
         applicationId "com.intel.wearable.platform.timeiq.refapp"
 
@@ -36,11 +36,11 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.timeIQ_app_key
+           // signingConfig signingConfigs.timeIQ_app_key
             resValue "string", "GOOGLE_API_KEY", google_api_key
         }
         debug {
-            signingConfig signingConfigs.timeIQ_app_key
+           // signingConfig signingConfigs.timeIQ_app_key
             resValue "string", "GOOGLE_API_KEY", google_api_key
         }
     }
