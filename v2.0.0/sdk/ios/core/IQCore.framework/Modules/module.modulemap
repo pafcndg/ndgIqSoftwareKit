@@ -1,0 +1,10 @@
+framework module IQCore {
+  umbrella header "IQCore.h"
+
+  export *
+  module * { export * }
+}
+
+module IQCore.Swift {
+    header "IQCore-Swift.h"
+}
