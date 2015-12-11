@@ -33,7 +33,6 @@ import com.intel.wearable.platform.timeiq.refapp.apitoolbox.TimeIQRemindersUtils
 import com.intel.wearable.platform.timeiq.refapp.auth.AuthUtil;
 import com.intel.wearable.platform.timeiq.refapp.auth.ICredentialsProvider;
 import com.intel.wearable.platform.timeiq.refapp.coreiq.CoreIQUtil;
-import com.intel.wearable.platform.timeiq.refapp.developer.fragments.state.DeveloperHistoryManager;
 import com.intel.wearable.platform.timeiq.refapp.notifications.NotificationAction;
 import com.intel.wearable.platform.timeiq.refapp.notifications.NotificationData;
 import com.intel.wearable.platform.timeiq.refapp.notifications.NotificationHelper;
@@ -55,7 +54,6 @@ public class TimeIQBGService extends Service implements IMessageListener, CoreIQ
     public static final TimeIQApi mTimeIQApi = new TimeIQApi();
 
     private NotificationsBroadcastReceiver mNotificationsBroadcastReceiver;
-    private DeveloperHistoryManager mDeveloperHistoryManager;
 
 
     @Override
@@ -108,8 +106,6 @@ public class TimeIQBGService extends Service implements IMessageListener, CoreIQ
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.d(TAG, "onStartCommand");
         if ( mTimeIQApi.isInitialized()) {
-            // TODO - remove before release (this will not compile once the Developer Module is removed)
-            mDeveloperHistoryManager = new DeveloperHistoryManager(getApplicationContext());
 
             Log.d(TAG , "Service onStartCommand - init Ok - STICKY");
             return Service.START_STICKY;
@@ -124,7 +120,6 @@ public class TimeIQBGService extends Service implements IMessageListener, CoreIQ
     @Override
     public void onDestroy() {
         Log.d(TAG, "onDestroy");
-        mDeveloperHistoryManager.onDestroy();
         unregisterReceiver(mNotificationsBroadcastReceiver);
         TimeIQInitUtils.onDestroyService(this);
         super.onDestroy();

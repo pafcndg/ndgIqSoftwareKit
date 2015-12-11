@@ -26,7 +26,6 @@ import com.intel.wearable.platform.timeiq.refapp.calendar.ActivityReadableCalend
 import com.intel.wearable.platform.timeiq.refapp.calendar.ActivityWritableCalendar;
 import com.intel.wearable.platform.timeiq.refapp.coreiq.CoreIQUtil;
 import com.intel.wearable.platform.timeiq.refapp.coreiq.ScanningActivity;
-import com.intel.wearable.platform.timeiq.refapp.developer.DeveloperActivity;
 import com.intel.wearable.platform.timeiq.refapp.googleAnalytics.GoogleAnalyticsTrackers;
 
 public class MainActivity extends ColoredStatusBarActivity {
@@ -136,8 +135,6 @@ public class MainActivity extends ColoredStatusBarActivity {
             startReadableCalendarDialog();
         } else if (id == R.id.action_writable_calendars) {
             startWritableCalendarDialog();
-        } else if (id == R.id.action_developer) {
-            startDeveloperActivity();
         }  else if (id == R.id.action_about) {
             startAboutActivity();
         } else if(id == R.id.action_pairing){
@@ -167,10 +164,6 @@ public class MainActivity extends ColoredStatusBarActivity {
         startActivity(aboutActivity);
     }
 
-    private void startDeveloperActivity() {
-        Intent developerActivity = new Intent(getApplicationContext(), DeveloperActivity.class);
-        startActivity(developerActivity);
-    }
 
     private void setHomeAndWorkIfNeeded() {
         TimeIQPlacesUtils.setPlaceFromAutoDetectedIfNotSet(this, TimeIQPlacesUtils.PlaceToAutoDetect.HOME);

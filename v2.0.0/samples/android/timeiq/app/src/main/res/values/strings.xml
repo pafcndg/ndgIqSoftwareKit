@@ -182,10 +182,6 @@
     <string name="error_readable_calendars_none_selected_text">There must be at least one viewable calendar selected</string>
     <string name="error_no_calendars_to_choose_from">No calendar to choose from</string>
 
-    <!-- Developer -->
-    <string name="action_developer">Developer</string>
-
-
     <!-- add/edit place -->
     <string name="google_api_client_error_general">An error occurred, please make sure that you have the Play Store installed and that you are connected to the internet</string>
     <string name="google_api_client_error_cannot_connect">Could not connect to GoogleApiClient (%1$s)</string>
