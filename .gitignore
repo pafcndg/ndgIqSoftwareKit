@@ -4,3 +4,4 @@ v2.0.0/sdk/android/timeiq/.gradle
 v2.0.0/sdk/android/timeiq/build/intermediates/dex-cache
 v2.0.0/samples/android/timeiq/.gradle
 v2.0.0/samples/android/timeiq/.idea
+local.properties
