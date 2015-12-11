@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--  The property id associated with this analytics tracker -->
+    <string name="ga_trackingId">UA-70841648-1</string>
+
+    <!-- End current session if app sleeps for a period of time -->
+    <integer name="ga_sessionTimeout">60</integer>
+
+    <item name="ga_dispatchPeriod" format="integer" type="integer">300</item>
+
+    <bool name="ga_reportUncaughtExceptions">true</bool>
+
+</resources>

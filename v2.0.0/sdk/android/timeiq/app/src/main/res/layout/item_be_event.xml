@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/imageViewLayout"
+        android:orientation="vertical"
+        android:layout_width="@dimen/list_item_start_width"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/reminder_icon"
+            android:src="@drawable/list_meeting"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="@dimen/list_item_image_vertical_margin"
+            android:layout_marginBottom="@dimen/list_item_image_vertical_margin"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/imageViewLayout"
+        android:layout_toStartOf="@+id/added_layout"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="be text"
+            android:id="@+id/main_text"
+            android:ellipsize="end"
+            android:singleLine="true"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="location text"
+            android:id="@+id/location_text"
+            android:ellipsize="end"
+            android:singleLine="true"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="ttl\eta text"
+            android:id="@+id/ttl_text"
+            android:singleLine="false"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/added_layout"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        >
+
+        <TextView
+            android:id="@+id/from"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="from"
+            android:layout_gravity="center_horizontal"
+            android:gravity="end"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="&#x2193;"
+            android:layout_gravity="center_horizontal"
+            android:gravity="end"
+            />
+
+        <TextView
+            android:id="@+id/to"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="to"
+            android:layout_gravity="center_horizontal"
+            android:gravity="end"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>

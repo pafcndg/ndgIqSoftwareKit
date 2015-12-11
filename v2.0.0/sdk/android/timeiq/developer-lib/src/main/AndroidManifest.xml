@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.intel.wearable.platform.timeiq.refapp.developer" >
+
+    <application>
+        <activity
+            android:name=".DeveloperActivity"
+            android:label="@string/developer_activity_developer_title"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            >
+        </activity>
+        <activity
+            android:name=".fragments.state.StateHistoryActivity"
+            android:label="@string/developer_fragment_state_history_button_text"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+        <activity
+            android:name=".activities.MapActivity"
+            android:label="@string/developer_map_activity_title"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+
+    </application>
+
+</manifest>

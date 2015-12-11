@@ -1,0 +1,77 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.intel.wearable.platform.timeiq.refapp.reminders.add_edit.BaseFragmentEditReminder">
+
+    <EditText
+        android:id="@+id/fragment_input_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="What"
+        style="@style/Base.V12.Widget.AppCompat.EditText"
+        android:gravity="center_horizontal"
+        android:inputType="textCapSentences" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Select a reminder"
+        android:id="@+id/list_guide_text"
+        android:layout_below="@+id/fragment_input_text"
+        android:layout_alignParentStart="true"/>
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/reminderTypeListView"
+        android:layout_below="@+id/list_guide_text"
+        android:layout_alignParentStart="true"/>
+
+    <LinearLayout
+        android:id="@+id/notification_reminder_layout"
+        android:layout_below="@id/reminderTypeListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/notification_reminder_sms_title"
+            />
+
+        <EditText
+            android:id="@+id/notification_reminder_sms_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/light_gray"
+            android:gravity="start|top"
+            android:inputType="textMultiLine|textCapSentences"
+            android:minLines="3"
+            android:maxLines="3"
+            />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/delete_button"
+        android:layout_below="@id/notification_reminder_layout"
+        android:layout_width="@dimen/delete_button_size"
+        android:layout_height="wrap_content"
+        android:text="@string/delete_button"
+        android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:layout_marginTop="@dimen/delete_button_top_margin"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"
+        />
+
+
+</RelativeLayout>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.intel.wearable.platform.timeiq.refapp">
+
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        tools:replace="android:supportsRtl"
+        android:supportsRtl="false"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".SplashActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- timeIq background service (sticky) -->
+        <service android:name=".TimeIQBGService" />
+
+        <!-- automatic service startup -->
+        <receiver android:name=".AutoStartReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".main.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".reminders.add_edit.ActivityAddReminder"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name=".reminders.add_edit.ActivityEditReminder"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name=".places.add_edit.ActivityAddOrEditPlace"
+            android:label="@string/title_activity_activity_edit_places"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".places.add_edit.ActivityPlacePicker"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".reminders.snooze.SnoozeOptionsActivity"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".calendar.ActivityReadableCalendar"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".calendar.ActivityWritableCalendar"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".reminders.add_edit.ActivityEditBeEvent"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan">
+        </activity>
+        <activity
+            android:name=".AboutActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".coreiq.ScanningActivity"
+            android:label="@string/title_activity_pairing"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity android:name=".coreiq.PairingActivity"
+            android:label="@string/title_activity_pairing"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/GOOGLE_API_KEY"/>
+
+        <meta-data android:name="deployment-type" android:value="tsodev" />
+        <meta-data android:name="domain-name" android:value="td.wearables.infra-host.com" />
+        <meta-data android:name="client-id" android:value="ndgThunderDome" />
+        <meta-data android:name="client-secret" android:value="ndgThunderDomeSecRet" />
+
+
+    </application>
+
+</manifest>

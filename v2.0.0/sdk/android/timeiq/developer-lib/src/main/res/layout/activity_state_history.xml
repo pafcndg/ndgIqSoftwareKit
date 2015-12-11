@@ -1,0 +1,113 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.intel.wearables.platform.timeiq.userstate.gui.StateHistoryActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            >
+
+            <CheckBox
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/history_filter_mot_checkbox"
+                android:text="@string/developer_fragment_state_history_filter_mot_checkbox_text"
+                android:layout_weight="1"
+                android:checked="true"
+                android:onClick="refresh"
+                />
+
+            <CheckBox
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/history_filter_vip_checkbox"
+                android:text="@string/developer_fragment_state_history_filter_vip_checkbox_text"
+                android:layout_weight="1"
+                android:checked="true"
+                android:onClick="refresh"
+                />
+
+            <CheckBox
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/history_filter_battery_charge_checkbox"
+                android:text="@string/developer_fragment_state_history_filter_battery_charge_checkbox_text"
+                android:layout_weight="1"
+                android:checked="true"
+                android:onClick="refresh"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            >
+
+            <!--<CheckBox-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:id="@+id/history_filter_battery_level_checkbox"-->
+                <!--android:text="@string/history_filter_battery_level_checkbox_text"-->
+                <!--android:layout_weight="1"-->
+                <!--android:checked="true"-->
+                <!--android:onClick="refresh"-->
+                <!--/>-->
+
+            <CheckBox
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/history_filter_network_checkbox"
+                android:text="@string/developer_fragment_state_history_filter_network_checkbox_text"
+                android:layout_weight="1"
+                android:checked="true"
+                android:onClick="refresh"
+                />
+
+            <CheckBox
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/history_filter_gps_checkbox"
+                android:text="@string/developer_fragment_state_history_filter_gps_checkbox_text"
+                android:layout_weight="1"
+                android:checked="true"
+                android:onClick="refresh"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:orientation="vertical"
+            >
+
+            <fragment
+                android:id="@+id/state_log"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                class="com.intel.wearable.platform.timeiq.refapp.developer.fragments.state.StateLogListFragment"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>
