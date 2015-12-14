@@ -53,14 +53,14 @@
 		06EE60961BE63B57001BD8EB /* timeiq_ra_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EE60951BE63B57001BD8EB /* timeiq_ra_iosUITests.swift */; };
 		1E1BC22C1C1B6D20004BE169 /* CDKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1BC22B1C1B6D20004BE169 /* CDKCore.framework */; };
 		1E1BC22E1C1B6D2D004BE169 /* IQCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1BC22D1C1B6D2D004BE169 /* IQCore.framework */; };
-		1E1BC2301C1B6D34004BE169 /* TSO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1BC22F1C1B6D34004BE169 /* TSO.framework */; };
-		1E1BC2311C1B6D42004BE169 /* TSO.framework in Copy TSO Framework */ = {isa = PBXBuildFile; fileRef = 1E1BC22F1C1B6D34004BE169 /* TSO.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1E1BC2321C1B6D42004BE169 /* IQCore.framework in Copy TSO Framework */ = {isa = PBXBuildFile; fileRef = 1E1BC22D1C1B6D2D004BE169 /* IQCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1E1BC2331C1B6D42004BE169 /* CDKCore.framework in Copy TSO Framework */ = {isa = PBXBuildFile; fileRef = 1E1BC22B1C1B6D20004BE169 /* CDKCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1E1BC2361C1B6D83004BE169 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1BC2341C1B6D83004BE169 /* Realm.framework */; };
 		1E1BC2371C1B6D83004BE169 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1BC2351C1B6D83004BE169 /* RealmSwift.framework */; };
 		1E1BC2381C1B6D8A004BE169 /* Realm.framework in Copy TSO Framework */ = {isa = PBXBuildFile; fileRef = 1E1BC2341C1B6D83004BE169 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1E1BC2391C1B6D8A004BE169 /* RealmSwift.framework in Copy TSO Framework */ = {isa = PBXBuildFile; fileRef = 1E1BC2351C1B6D83004BE169 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1EEB40621C1EFB8A001A58B3 /* TimeIQ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EEB40611C1EFB8A001A58B3 /* TimeIQ.framework */; };
+		1EEB40631C1EFB90001A58B3 /* TimeIQ.framework in Copy TSO Framework */ = {isa = PBXBuildFile; fileRef = 1EEB40611C1EFB8A001A58B3 /* TimeIQ.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6646670F1DB5EB8CF983789F /* Pods_timeiq_ra_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659701323CB2B63F36DF2F3F /* Pods_timeiq_ra_ios.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,9 +88,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				1EEB40631C1EFB90001A58B3 /* TimeIQ.framework in Copy TSO Framework */,
 				1E1BC2381C1B6D8A004BE169 /* Realm.framework in Copy TSO Framework */,
 				1E1BC2391C1B6D8A004BE169 /* RealmSwift.framework in Copy TSO Framework */,
-				1E1BC2311C1B6D42004BE169 /* TSO.framework in Copy TSO Framework */,
 				1E1BC2321C1B6D42004BE169 /* IQCore.framework in Copy TSO Framework */,
 				1E1BC2331C1B6D42004BE169 /* CDKCore.framework in Copy TSO Framework */,
 			);
@@ -153,9 +153,9 @@
 		06EE60971BE63B57001BD8EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E1BC22B1C1B6D20004BE169 /* CDKCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CDKCore.framework; path = ../../../../sdk/ios/cloud/CDKCore.framework; sourceTree = "<group>"; };
 		1E1BC22D1C1B6D2D004BE169 /* IQCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQCore.framework; path = ../../../../sdk/ios/core/IQCore.framework; sourceTree = "<group>"; };
-		1E1BC22F1C1B6D34004BE169 /* TSO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TSO.framework; path = ../../../../sdk/ios/timeiq/TSO.framework; sourceTree = "<group>"; };
 		1E1BC2341C1B6D83004BE169 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = ../Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		1E1BC2351C1B6D83004BE169 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = ../Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		1EEB40611C1EFB8A001A58B3 /* TimeIQ.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TimeIQ.framework; path = ../../../../sdk/ios/timeiq/TimeIQ.framework; sourceTree = "<group>"; };
 		659701323CB2B63F36DF2F3F /* Pods_timeiq_ra_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_timeiq_ra_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B702C736DAD16735B3E92E73 /* Pods-timeiq-ra-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-timeiq-ra-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-timeiq-ra-ios/Pods-timeiq-ra-ios.release.xcconfig"; sourceTree = "<group>"; };
 		CAC24CA2BBD3EB1AD196CD23 /* Pods-timeiq-ra-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-timeiq-ra-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-timeiq-ra-ios/Pods-timeiq-ra-ios.debug.xcconfig"; sourceTree = "<group>"; };
@@ -166,7 +166,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E1BC2301C1B6D34004BE169 /* TSO.framework in Frameworks */,
 				065AAD3F1BF4D1B80003A788 /* MessageUI.framework in Frameworks */,
 				1E1BC2371C1B6D83004BE169 /* RealmSwift.framework in Frameworks */,
 				0673BA681BEBA43000BB1098 /* AddressBookUI.framework in Frameworks */,
@@ -175,6 +174,7 @@
 				1E1BC22E1C1B6D2D004BE169 /* IQCore.framework in Frameworks */,
 				0673BA661BEBA34F00BB1098 /* AddressBook.framework in Frameworks */,
 				6646670F1DB5EB8CF983789F /* Pods_timeiq_ra_ios.framework in Frameworks */,
+				1EEB40621C1EFB8A001A58B3 /* TimeIQ.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,9 +382,9 @@
 		7533134024B9C16AC0764406 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1EEB40611C1EFB8A001A58B3 /* TimeIQ.framework */,
 				1E1BC2341C1B6D83004BE169 /* Realm.framework */,
 				1E1BC2351C1B6D83004BE169 /* RealmSwift.framework */,
-				1E1BC22F1C1B6D34004BE169 /* TSO.framework */,
 				1E1BC22D1C1B6D2D004BE169 /* IQCore.framework */,
 				1E1BC22B1C1B6D20004BE169 /* CDKCore.framework */,
 				065AAD3E1BF4D1B80003A788 /* MessageUI.framework */,

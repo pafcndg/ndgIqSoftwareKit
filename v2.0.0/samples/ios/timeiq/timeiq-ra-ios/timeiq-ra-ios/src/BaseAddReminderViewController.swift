@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import TSO
+import TimeIQ
 
 protocol BaseAddReminderViewControllerDelegate {
     func didAddReminder()

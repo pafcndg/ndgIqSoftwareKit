@@ -8,7 +8,7 @@
 
 import UIKit
 import EventKit
-import TSO
+import TimeIQ
 
 class CalendarSelectVC: UITableViewController, WriteCalendarDelegate {
     

@@ -1,0 +1,6 @@
+framework module TimeIQ {
+  umbrella header "TimeIQ.h"
+
+  export *
+  module * { export * }
+}

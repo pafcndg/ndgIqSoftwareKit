@@ -1,0 +1,19 @@
+{
+    "NextWakeUpPrefs": {
+        "LONG_MIN_TIME_BEFORE_NOTIFY_IN_MILLIS": [300000, 1.0],
+        "LONG_MIN_TIME_BEFORE_START_IN_MILLIS": [18000000, 1.0],
+        "DOUBLE_ALERT_TIME_FACTOR": [0.3333333333333333, 1.0]
+    },
+    "CalendarPrefs" : {
+        "BOOLEAN_READ_FROM_CALENDAR" : [true,1.0]
+    },
+    "UserStateProviderPrefs" :{
+        "DOUBLE_LOW_LOCATION_ACCURACY_OF_ONE_KILOMETER_FOR_RESOLVER" : [1000, 1.0],
+        "LONG_HIGH_LOCATION_MAX_AGE_OF_THREE_DAYS_FOR_RESOLVER" : [259200000, 1.0]
+    },
+    "RouteProviderCache": {
+        "INT_WALK_DATA_MAX_SIZE": [50, 1.0],
+        "INT_DRIVE_ETA_DATA_MAX_SIZE": [50, 1.0],
+        "INT_DRIVE_TTL_DATA_MAX_SIZE": [50, 1.0]
+    }
+}

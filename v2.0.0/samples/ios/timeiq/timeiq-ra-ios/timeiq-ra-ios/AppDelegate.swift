@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import TSO
+import TimeIQ
 import GoogleMaps
 import EventKit
 

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import TSO
+import TimeIQ
 
 private let TIME_DELAY: long64 = TimeUnit.MINUTES().toMillisWithLong(5);
 

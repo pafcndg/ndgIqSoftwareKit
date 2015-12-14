@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import TSO
+import TimeIQ
 import AddressBook
 import AddressBookUI
 import SMDatePicker

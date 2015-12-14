@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import TSO
+import TimeIQ
 import SMDatePicker
 
 class AddBeReminderViewController: BaseAddReminderViewController, PlacesViewControllerDelegate, SMDatePickerDelegate, UITextFieldDelegate {

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import TSO
+import TimeIQ
 
 class TimeIQRemindersUtils {
     
