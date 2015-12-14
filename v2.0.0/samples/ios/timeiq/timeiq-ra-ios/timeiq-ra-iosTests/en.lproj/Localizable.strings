@@ -29,7 +29,7 @@
 
 "placeholder_notification_message" = "Enter your desired text";
 
-"search_placeholder" = "Start typing a place name or an adress";
+"search_placeholder" = "Start typing a place name or an address";
 
 "reminder_subtext_arrived" = "You arrived %@";
 "reminder_subtext_left" = "You left %@";
@@ -108,7 +108,7 @@
 
 "snooze_option_snoozed" = "Reminder snoozed";
 
-"nothing_to_display_reminder" = "Click + to add a reminder";
+"nothing_to_display_reminder" = "Click \"+\" to add a reminder";
 "nothing_to_display_events" = "Free for the next few hours";
 "nothing_to_display_events_no_readable_calendars" = "There are no viewable calendars set, please set at least one from the application menu";
 "nothing_to_display_autocomplete_places" = "No place match found";

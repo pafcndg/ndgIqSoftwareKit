@@ -11,13 +11,13 @@ import TSO
 
 class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    var dataSource = ["calendar", "pairing"]
+    var dataSource = ["Calendar", "Pairing"]
     var settingsTableView: UITableView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dataSource.append("version" + SystemConfig_VERSION_) //+ " (" + BuildConfig_BUILD_DATE_SHORT_ + ")")
+        dataSource.append("Version " + SystemConfig_VERSION_) //+ " (" + BuildConfig_BUILD_DATE_SHORT_ + ")")
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
