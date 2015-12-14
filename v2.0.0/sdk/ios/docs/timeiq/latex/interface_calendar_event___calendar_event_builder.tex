@@ -1,0 +1,117 @@
+\hypertarget{interface_calendar_event___calendar_event_builder}{}\section{Calendar\+Event\+\_\+\+Calendar\+Event\+Builder Class Reference}
+\label{interface_calendar_event___calendar_event_builder}\index{Calendar\+Event\+\_\+\+Calendar\+Event\+Builder@{Calendar\+Event\+\_\+\+Calendar\+Event\+Builder}}
+
+
+Event builder for Calendar\+Events.  
+
+
+
+
+{\ttfamily \#import $<$Calendar\+Event.\+h$>$}
+
+
+
+Inherits \hyperlink{interface_base_event___base_event_builder}{Base\+Event\+\_\+\+Base\+Event\+Builder}.
+
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) -\/ \hyperlink{interface_calendar_event___calendar_event_builder_acb5d1e85decc979de60ef369ae515398}{init\+With\+N\+S\+String\+:with\+Long\+:}
+\begin{DoxyCompactList}\small\item\em Constructs a new Calendar\+Event\+Builder from location field and arrival time. \end{DoxyCompactList}\item 
+(\hyperlink{interface_calendar_event___calendar_event_builder}{Calendar\+Event\+\_\+\+Calendar\+Event\+Builder} $\ast$) -\/ \hyperlink{interface_calendar_event___calendar_event_builder_a8a73c597ee2dcb0eba77d0e935244196}{is\+From\+Be\+With\+Boolean\+:}
+\begin{DoxyCompactList}\small\item\em Sets whether or not the \hyperlink{interface_calendar_event}{Calendar\+Event} was created from \hyperlink{interface_be_event}{Be\+Event} and returns an updated Calendar\+Event\+Builder. \end{DoxyCompactList}\item 
+(\hyperlink{interface_calendar_event}{Calendar\+Event} $\ast$) -\/ \hyperlink{interface_calendar_event___calendar_event_builder_a97b773ce341839e80511e0dac001164a}{build}
+\begin{DoxyCompactList}\small\item\em Returns a \hyperlink{interface_calendar_event}{Calendar\+Event} with all the previously defined parameters. \end{DoxyCompactList}\item 
+(void) -\/ \hyperlink{interface_calendar_event___calendar_event_builder_a87ca0f31acb3c7aadbd5d1508423aec6}{copy\+All\+Fields\+To\+:}
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+N\+S\+String $\ast$ \hyperlink{interface_calendar_event___calendar_event_builder_a952b3b0d70a19d27d08e0b83dea7cc5b}{location\+Field\+\_\+}
+\item 
+boolean \hyperlink{interface_calendar_event___calendar_event_builder_a3da81d41d4bf1cc20df0310f14ad7f8c}{is\+From\+Be\+\_\+\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Event builder for Calendar\+Events. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_calendar_event___calendar_event_builder_a97b773ce341839e80511e0dac001164a}{}\index{Calendar\+Event\+\_\+\+Calendar\+Event\+Builder@{Calendar\+Event\+\_\+\+Calendar\+Event\+Builder}!build@{build}}
+\index{build@{build}!Calendar\+Event\+\_\+\+Calendar\+Event\+Builder@{Calendar\+Event\+\_\+\+Calendar\+Event\+Builder}}
+\subsubsection[{build()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Calendar\+Event} $\ast$) build 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_calendar_event___calendar_event_builder_a97b773ce341839e80511e0dac001164a}
+
+
+Returns a \hyperlink{interface_calendar_event}{Calendar\+Event} with all the previously defined parameters. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{interface_calendar_event}{Calendar\+Event} 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_base_event___base_event_builder_aad8b1cfd4b7d6a5748ba871a32de9b4f}{Base\+Event\+\_\+\+Base\+Event\+Builder}.
+
+\hypertarget{interface_calendar_event___calendar_event_builder_a87ca0f31acb3c7aadbd5d1508423aec6}{}\index{Calendar\+Event\+\_\+\+Calendar\+Event\+Builder@{Calendar\+Event\+\_\+\+Calendar\+Event\+Builder}!copy\+All\+Fields\+To\+:@{copy\+All\+Fields\+To\+:}}
+\index{copy\+All\+Fields\+To\+:@{copy\+All\+Fields\+To\+:}!Calendar\+Event\+\_\+\+Calendar\+Event\+Builder@{Calendar\+Event\+\_\+\+Calendar\+Event\+Builder}}
+\subsubsection[{copy\+All\+Fields\+To\+:(\+Calendar\+Event\+\_\+\+Calendar\+Event\+Builder $\ast$other)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) copy\+All\+Fields\+To\+: 
+\begin{DoxyParamCaption}
+\item[{({\bf Calendar\+Event\+\_\+\+Calendar\+Event\+Builder} $\ast$)}]{other}
+\end{DoxyParamCaption}
+}\label{interface_calendar_event___calendar_event_builder_a87ca0f31acb3c7aadbd5d1508423aec6}
+\hypertarget{interface_calendar_event___calendar_event_builder_acb5d1e85decc979de60ef369ae515398}{}\index{Calendar\+Event\+\_\+\+Calendar\+Event\+Builder@{Calendar\+Event\+\_\+\+Calendar\+Event\+Builder}!init\+With\+N\+S\+String\+:with\+Long\+:@{init\+With\+N\+S\+String\+:with\+Long\+:}}
+\index{init\+With\+N\+S\+String\+:with\+Long\+:@{init\+With\+N\+S\+String\+:with\+Long\+:}!Calendar\+Event\+\_\+\+Calendar\+Event\+Builder@{Calendar\+Event\+\_\+\+Calendar\+Event\+Builder}}
+\subsubsection[{init\+With\+N\+S\+String\+:with\+Long\+:(\+N\+S\+String $\ast$location\+Field,[with\+Long] long64 arrival\+Time)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\+With\+N\+S\+String\+: 
+\begin{DoxyParamCaption}
+\item[{(N\+S\+String $\ast$)}]{location\+Field}
+\item[{withLong:(long64)}]{arrival\+Time}
+\end{DoxyParamCaption}
+}\label{interface_calendar_event___calendar_event_builder_acb5d1e85decc979de60ef369ae515398}
+
+
+Constructs a new Calendar\+Event\+Builder from location field and arrival time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em location\+Field} & location field string as stated in calendar event \\
+\hline
+{\em arrival\+Time} & arrival time to destination location in milliseconds \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_calendar_event___calendar_event_builder_a8a73c597ee2dcb0eba77d0e935244196}{}\index{Calendar\+Event\+\_\+\+Calendar\+Event\+Builder@{Calendar\+Event\+\_\+\+Calendar\+Event\+Builder}!is\+From\+Be\+With\+Boolean\+:@{is\+From\+Be\+With\+Boolean\+:}}
+\index{is\+From\+Be\+With\+Boolean\+:@{is\+From\+Be\+With\+Boolean\+:}!Calendar\+Event\+\_\+\+Calendar\+Event\+Builder@{Calendar\+Event\+\_\+\+Calendar\+Event\+Builder}}
+\subsubsection[{is\+From\+Be\+With\+Boolean\+:(boolean is\+From\+Be)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Calendar\+Event\+\_\+\+Calendar\+Event\+Builder} $\ast$) is\+From\+Be\+With\+Boolean\+: 
+\begin{DoxyParamCaption}
+\item[{(boolean)}]{is\+From\+Be}
+\end{DoxyParamCaption}
+}\label{interface_calendar_event___calendar_event_builder_a8a73c597ee2dcb0eba77d0e935244196}
+
+
+Sets whether or not the \hyperlink{interface_calendar_event}{Calendar\+Event} was created from \hyperlink{interface_be_event}{Be\+Event} and returns an updated Calendar\+Event\+Builder. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is\+From\+Be} & true if \hyperlink{interface_calendar_event}{Calendar\+Event} was created from \hyperlink{interface_be_event}{Be\+Event}, false otherwise \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Calendar\+Event\+Builder 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{interface_calendar_event___calendar_event_builder_a3da81d41d4bf1cc20df0310f14ad7f8c}{}\index{Calendar\+Event\+\_\+\+Calendar\+Event\+Builder@{Calendar\+Event\+\_\+\+Calendar\+Event\+Builder}!is\+From\+Be\+\_\+\+\_\+@{is\+From\+Be\+\_\+\+\_\+}}
+\index{is\+From\+Be\+\_\+\+\_\+@{is\+From\+Be\+\_\+\+\_\+}!Calendar\+Event\+\_\+\+Calendar\+Event\+Builder@{Calendar\+Event\+\_\+\+Calendar\+Event\+Builder}}
+\subsubsection[{is\+From\+Be\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (boolean) is\+From\+Be\+\_\+\+\_\+}\label{interface_calendar_event___calendar_event_builder_a3da81d41d4bf1cc20df0310f14ad7f8c}
+\hypertarget{interface_calendar_event___calendar_event_builder_a952b3b0d70a19d27d08e0b83dea7cc5b}{}\index{Calendar\+Event\+\_\+\+Calendar\+Event\+Builder@{Calendar\+Event\+\_\+\+Calendar\+Event\+Builder}!location\+Field\+\_\+@{location\+Field\+\_\+}}
+\index{location\+Field\+\_\+@{location\+Field\+\_\+}!Calendar\+Event\+\_\+\+Calendar\+Event\+Builder@{Calendar\+Event\+\_\+\+Calendar\+Event\+Builder}}
+\subsubsection[{location\+Field\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+String$\ast$) location\+Field\+\_\+}\label{interface_calendar_event___calendar_event_builder_a952b3b0d70a19d27d08e0b83dea7cc5b}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src\+\_\+converted/com/intel/wearable/platform/timeiq/api/events/\hyperlink{_calendar_event_8h}{Calendar\+Event.\+h}\end{DoxyCompactItemize}

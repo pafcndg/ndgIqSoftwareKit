@@ -1,0 +1,35 @@
+\hypertarget{_i_reminders_manager_8h}{}\section{src\+\_\+converted/com/intel/wearable/platform/timeiq/api/reminders/\+I\+Reminders\+Manager.h File Reference}
+\label{_i_reminders_manager_8h}\index{src\+\_\+converted/com/intel/wearable/platform/timeiq/api/reminders/\+I\+Reminders\+Manager.\+h@{src\+\_\+converted/com/intel/wearable/platform/timeiq/api/reminders/\+I\+Reminders\+Manager.\+h}}
+{\ttfamily \#import \char`\"{}J\+B\+Enum\+Set.\+h\char`\"{}}\\*
+{\ttfamily \#import \char`\"{}J\+B.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+protocol \hyperlink{protocol_i_reminders_manager-p}{$<$\+I\+Reminders\+Manager$>$}
+\begin{DoxyCompactList}\small\item\em Enables to add reminder with a trigger. the manager will send a message through the Events\+Manager. include utility methods for get reminders, remove and snooze them. Example for creating and adding a reminder for \char`\"{}\+Turn on the car lights\char`\"{} when you start driving\+: //create a trigger\+: \hyperlink{protocol_i_trigger-p}{I\+Trigger} trigger = null; try \{ trigger = new Mot\+Trigger.\+Mot\+Trigger\+Builder(Mot\+Type.\+C\+A\+R, \hyperlink{interface_mot_transition_aeb5b28b53b3593273c47a4e1a5c2210b}{S\+T\+A\+R\+T (\+Mot\+Transition)}).build(); // trigger for mot to change to car started (will not be triggered now, if you are currently driving) \} catch (\hyperlink{interface_trigger_build_exception}{Trigger\+Build\+Exception} e) \{ \} //create a reminder \hyperlink{protocol_i_reminder-p}{I\+Reminder} reminder = null; if (trigger != null) \{ try \{ reminder = new Do\+Reminder.\+Do\+Reminder\+Builder(trigger, \char`\"{}\+Turn on the car lights\char`\"{}).build(); \}catch (\hyperlink{interface_reminder_build_exception}{Reminder\+Build\+Exception} e) \{ \} \} if(reminder != null) \{ // add the reminder \hyperlink{interface_result}{Result} result = Time\+I\+Q\+B\+G\+Service.\+m\+Time\+I\+Q\+Api.\+get\+Reminders\+Manager().add\+Reminder(reminder); // Time\+I\+Q\+B\+G\+Service.\+m\+Time\+I\+Q\+Api -\/ see below String message = result.\+is\+Success() ? \char`\"{}reminder\+\_\+was\+\_\+added\char`\"{} \+: // reminder added O\+K \char`\"{}reminder\+\_\+was\+\_\+not\+\_\+added\char`\"{} + result.\+get\+Message(); // reminder was not added with the error \} to initialize the S\+D\+K and listen for reminders that were triggered see\+: Time\+I\+Q\+Api. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_i_reminders_manager_8h_abca63c28fbbc469b5de8639337d13057}{Com\+Intel\+Wearable\+Platform\+Timeiq\+Api\+Reminders\+I\+Reminders\+Manager}~\hyperlink{protocol_i_reminders_manager-p}{I\+Reminders\+Manager}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_i_reminders_manager_8h_ac2ec349733f0050193e0f28e93f96a4e}{\+\_\+\+\_\+attribute\+\_\+\+\_\+} ((always\+\_\+inline)) inline void I\+Reminders\+Manager\+\_\+init()
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_i_reminders_manager_8h_abca63c28fbbc469b5de8639337d13057}{}\index{I\+Reminders\+Manager.\+h@{I\+Reminders\+Manager.\+h}!Com\+Intel\+Wearable\+Platform\+Timeiq\+Api\+Reminders\+I\+Reminders\+Manager@{Com\+Intel\+Wearable\+Platform\+Timeiq\+Api\+Reminders\+I\+Reminders\+Manager}}
+\index{Com\+Intel\+Wearable\+Platform\+Timeiq\+Api\+Reminders\+I\+Reminders\+Manager@{Com\+Intel\+Wearable\+Platform\+Timeiq\+Api\+Reminders\+I\+Reminders\+Manager}!I\+Reminders\+Manager.\+h@{I\+Reminders\+Manager.\+h}}
+\subsubsection[{Com\+Intel\+Wearable\+Platform\+Timeiq\+Api\+Reminders\+I\+Reminders\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}\#define Com\+Intel\+Wearable\+Platform\+Timeiq\+Api\+Reminders\+I\+Reminders\+Manager~{\bf I\+Reminders\+Manager}}\label{_i_reminders_manager_8h_abca63c28fbbc469b5de8639337d13057}
+
+
+\subsection{Function Documentation}
+\hypertarget{_i_reminders_manager_8h_ac2ec349733f0050193e0f28e93f96a4e}{}\index{I\+Reminders\+Manager.\+h@{I\+Reminders\+Manager.\+h}!\+\_\+\+\_\+attribute\+\_\+\+\_\+@{\+\_\+\+\_\+attribute\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+attribute\+\_\+\+\_\+@{\+\_\+\+\_\+attribute\+\_\+\+\_\+}!I\+Reminders\+Manager.\+h@{I\+Reminders\+Manager.\+h}}
+\subsubsection[{\+\_\+\+\_\+attribute\+\_\+\+\_\+((always\+\_\+inline)) inline void I\+Reminders\+Manager\+\_\+init()}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+\+\_\+attribute\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{(always\+\_\+inline)}]{}
+\end{DoxyParamCaption}
+)}\label{_i_reminders_manager_8h_ac2ec349733f0050193e0f28e93f96a4e}

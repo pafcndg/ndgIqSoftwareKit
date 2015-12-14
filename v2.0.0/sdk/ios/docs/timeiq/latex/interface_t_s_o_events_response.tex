@@ -1,0 +1,96 @@
+\hypertarget{interface_t_s_o_events_response}{}\section{T\+S\+O\+Events\+Response Class Reference}
+\label{interface_t_s_o_events_response}\index{T\+S\+O\+Events\+Response@{T\+S\+O\+Events\+Response}}
+
+
+This class is the Events Engine response to get\+Event functions. The developer requests current events or events in time frame and receives the events list within this class.  
+
+
+
+
+{\ttfamily \#import $<$T\+S\+O\+Events\+Response.\+h$>$}
+
+
+
+Inherits N\+S\+Object.
+
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) -\/ \hyperlink{interface_t_s_o_events_response_aa2339558c458d46fd1d1747512e84bc1}{init\+With\+Java\+Util\+List\+:}
+\item 
+(Array\+List $\ast$) -\/ \hyperlink{interface_t_s_o_events_response_ae41d975d647fe61408b41c15adabc927}{get\+Events\+List}
+\begin{DoxyCompactList}\small\item\em This function returns the event list within the response. \end{DoxyCompactList}\item 
+(void) -\/ \hyperlink{interface_t_s_o_events_response_a45808a1f550355e92194cb5f4413aa78}{set\+Events\+List\+With\+Java\+Util\+List\+:}
+\begin{DoxyCompactList}\small\item\em This function allows the developer to set the event list returned within the response. \end{DoxyCompactList}\item 
+(void) -\/ \hyperlink{interface_t_s_o_events_response_a5892332c9e33c04d529db37bd53d57ee}{copy\+All\+Fields\+To\+:}
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Array\+List $\ast$ \hyperlink{interface_t_s_o_events_response_a693e242a4e9a0fb6cd8edc1da85cc7d5}{events\+List\+\_\+}
+\begin{DoxyCompactList}\small\item\em The list of returned events -\/ according to the requested query. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is the Events Engine response to get\+Event functions. The developer requests current events or events in time frame and receives the events list within this class. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_t_s_o_events_response_a5892332c9e33c04d529db37bd53d57ee}{}\index{T\+S\+O\+Events\+Response@{T\+S\+O\+Events\+Response}!copy\+All\+Fields\+To\+:@{copy\+All\+Fields\+To\+:}}
+\index{copy\+All\+Fields\+To\+:@{copy\+All\+Fields\+To\+:}!T\+S\+O\+Events\+Response@{T\+S\+O\+Events\+Response}}
+\subsubsection[{copy\+All\+Fields\+To\+:(\+T\+S\+O\+Events\+Response $\ast$other)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) copy\+All\+Fields\+To\+: 
+\begin{DoxyParamCaption}
+\item[{({\bf T\+S\+O\+Events\+Response} $\ast$)}]{other}
+\end{DoxyParamCaption}
+}\label{interface_t_s_o_events_response_a5892332c9e33c04d529db37bd53d57ee}
+\hypertarget{interface_t_s_o_events_response_ae41d975d647fe61408b41c15adabc927}{}\index{T\+S\+O\+Events\+Response@{T\+S\+O\+Events\+Response}!get\+Events\+List@{get\+Events\+List}}
+\index{get\+Events\+List@{get\+Events\+List}!T\+S\+O\+Events\+Response@{T\+S\+O\+Events\+Response}}
+\subsubsection[{get\+Events\+List()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (Array\+List$\ast$) get\+Events\+List 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_t_s_o_events_response_ae41d975d647fe61408b41c15adabc927}
+
+
+This function returns the event list within the response. 
+
+\begin{DoxyReturn}{Returns}
+List$<$\+I\+Event$>$ -\/ the list of events 
+\end{DoxyReturn}
+\hypertarget{interface_t_s_o_events_response_aa2339558c458d46fd1d1747512e84bc1}{}\index{T\+S\+O\+Events\+Response@{T\+S\+O\+Events\+Response}!init\+With\+Java\+Util\+List\+:@{init\+With\+Java\+Util\+List\+:}}
+\index{init\+With\+Java\+Util\+List\+:@{init\+With\+Java\+Util\+List\+:}!T\+S\+O\+Events\+Response@{T\+S\+O\+Events\+Response}}
+\subsubsection[{init\+With\+Java\+Util\+List\+:(\+Array\+List $\ast$events)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\+With\+Java\+Util\+List\+: 
+\begin{DoxyParamCaption}
+\item[{(Array\+List $\ast$)}]{events}
+\end{DoxyParamCaption}
+}\label{interface_t_s_o_events_response_aa2339558c458d46fd1d1747512e84bc1}
+\hypertarget{interface_t_s_o_events_response_a45808a1f550355e92194cb5f4413aa78}{}\index{T\+S\+O\+Events\+Response@{T\+S\+O\+Events\+Response}!set\+Events\+List\+With\+Java\+Util\+List\+:@{set\+Events\+List\+With\+Java\+Util\+List\+:}}
+\index{set\+Events\+List\+With\+Java\+Util\+List\+:@{set\+Events\+List\+With\+Java\+Util\+List\+:}!T\+S\+O\+Events\+Response@{T\+S\+O\+Events\+Response}}
+\subsubsection[{set\+Events\+List\+With\+Java\+Util\+List\+:(\+Array\+List $\ast$events\+List)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) set\+Events\+List\+With\+Java\+Util\+List\+: 
+\begin{DoxyParamCaption}
+\item[{(Array\+List $\ast$)}]{events\+List}
+\end{DoxyParamCaption}
+}\label{interface_t_s_o_events_response_a45808a1f550355e92194cb5f4413aa78}
+
+
+This function allows the developer to set the event list returned within the response. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em events\+List} & -\/ list of events to be included in the response \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{interface_t_s_o_events_response_a693e242a4e9a0fb6cd8edc1da85cc7d5}{}\index{T\+S\+O\+Events\+Response@{T\+S\+O\+Events\+Response}!events\+List\+\_\+@{events\+List\+\_\+}}
+\index{events\+List\+\_\+@{events\+List\+\_\+}!T\+S\+O\+Events\+Response@{T\+S\+O\+Events\+Response}}
+\subsubsection[{events\+List\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (Array\+List$\ast$) events\+List\+\_\+}\label{interface_t_s_o_events_response_a693e242a4e9a0fb6cd8edc1da85cc7d5}
+
+
+The list of returned events -\/ according to the requested query. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src\+\_\+converted/com/intel/wearable/platform/timeiq/api/events/\hyperlink{_t_s_o_events_response_8h}{T\+S\+O\+Events\+Response.\+h}\end{DoxyCompactItemize}

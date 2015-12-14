@@ -1,0 +1,41 @@
+\hypertarget{_i_route_provider_8h}{}\section{src\+\_\+converted/com/intel/wearable/platform/timeiq/api/route/\+I\+Route\+Provider.h File Reference}
+\label{_i_route_provider_8h}\index{src\+\_\+converted/com/intel/wearable/platform/timeiq/api/route/\+I\+Route\+Provider.\+h@{src\+\_\+converted/com/intel/wearable/platform/timeiq/api/route/\+I\+Route\+Provider.\+h}}
+{\ttfamily \#import \char`\"{}J\+B.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+protocol \hyperlink{protocol_i_route_provider-p}{$<$\+I\+Route\+Provider$>$}
+\begin{DoxyCompactList}\small\item\em Means to get T\+T\+L (Time To Leave) or E\+T\+A (Estimated Time of Arrival) routes and to get route segments (via \hyperlink{interface_ttl_route_data}{Ttl\+Route\+Data} or \hyperlink{interface_eta_route_data}{Eta\+Route\+Data} ). ~\newline
+ The preferred transport type supplied by the user will be taken into account for the route calculation, but the calculated M\+O\+T might differ from it.~\newline
+ Routes are received from server and might be cached locally (i.\+e. network might be used).~\newline
+ The cache takes into account the origin, destination and the arrival time (some difference is allowed). ~\newline
+ ~\newline
+ $<$\+U$>$Example\+:$<$/\+U$>$ get T\+T\+L route from (lat1, long1) to (lat2, long2) for an event that will start in 2 hours, we prefer driving ~\newline
+ ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_i_route_provider_8h_a84dcb8e99a6e48216e3e6c9b17a7dbd0}{Com\+Intel\+Wearable\+Platform\+Timeiq\+Api\+Route\+I\+Route\+Provider}~\hyperlink{protocol_i_route_provider-p}{I\+Route\+Provider}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_i_route_provider_8h_a7cb64ebe2142a665356d152c44bbe88b}{\+\_\+\+\_\+attribute\+\_\+\+\_\+} ((always\+\_\+inline)) inline void I\+Route\+Provider\+\_\+init()
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_i_route_provider_8h_a84dcb8e99a6e48216e3e6c9b17a7dbd0}{}\index{I\+Route\+Provider.\+h@{I\+Route\+Provider.\+h}!Com\+Intel\+Wearable\+Platform\+Timeiq\+Api\+Route\+I\+Route\+Provider@{Com\+Intel\+Wearable\+Platform\+Timeiq\+Api\+Route\+I\+Route\+Provider}}
+\index{Com\+Intel\+Wearable\+Platform\+Timeiq\+Api\+Route\+I\+Route\+Provider@{Com\+Intel\+Wearable\+Platform\+Timeiq\+Api\+Route\+I\+Route\+Provider}!I\+Route\+Provider.\+h@{I\+Route\+Provider.\+h}}
+\subsubsection[{Com\+Intel\+Wearable\+Platform\+Timeiq\+Api\+Route\+I\+Route\+Provider}]{\setlength{\rightskip}{0pt plus 5cm}\#define Com\+Intel\+Wearable\+Platform\+Timeiq\+Api\+Route\+I\+Route\+Provider~{\bf I\+Route\+Provider}}\label{_i_route_provider_8h_a84dcb8e99a6e48216e3e6c9b17a7dbd0}
+
+
+\subsection{Function Documentation}
+\hypertarget{_i_route_provider_8h_a7cb64ebe2142a665356d152c44bbe88b}{}\index{I\+Route\+Provider.\+h@{I\+Route\+Provider.\+h}!\+\_\+\+\_\+attribute\+\_\+\+\_\+@{\+\_\+\+\_\+attribute\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+attribute\+\_\+\+\_\+@{\+\_\+\+\_\+attribute\+\_\+\+\_\+}!I\+Route\+Provider.\+h@{I\+Route\+Provider.\+h}}
+\subsubsection[{\+\_\+\+\_\+attribute\+\_\+\+\_\+((always\+\_\+inline)) inline void I\+Route\+Provider\+\_\+init()}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+\+\_\+attribute\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{(always\+\_\+inline)}]{}
+\end{DoxyParamCaption}
+)}\label{_i_route_provider_8h_a7cb64ebe2142a665356d152c44bbe88b}

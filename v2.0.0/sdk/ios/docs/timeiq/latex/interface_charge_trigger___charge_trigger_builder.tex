@@ -1,0 +1,110 @@
+\hypertarget{interface_charge_trigger___charge_trigger_builder}{}\section{Charge\+Trigger\+\_\+\+Charge\+Trigger\+Builder Class Reference}
+\label{interface_charge_trigger___charge_trigger_builder}\index{Charge\+Trigger\+\_\+\+Charge\+Trigger\+Builder@{Charge\+Trigger\+\_\+\+Charge\+Trigger\+Builder}}
+
+
+Builder for the \hyperlink{interface_charge_trigger}{Charge\+Trigger} class.  
+
+
+
+
+{\ttfamily \#import $<$Charge\+Trigger.\+h$>$}
+
+
+
+Inherits \hyperlink{interface_base_trigger___base_trigger_builder}{Base\+Trigger\+\_\+\+Base\+Trigger\+Builder}.
+
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) -\/ \hyperlink{interface_charge_trigger___charge_trigger_builder_a6c0788de16254daf9fedef3575bf857a}{init\+With\+Charge\+Trigger\+Type\+:}
+\begin{DoxyCompactList}\small\item\em Create a builder for creating the \hyperlink{interface_charge_trigger}{Charge\+Trigger}. \end{DoxyCompactList}\item 
+(\hyperlink{interface_charge_trigger___charge_trigger_builder}{Charge\+Trigger\+\_\+\+Charge\+Trigger\+Builder} $\ast$) -\/ \hyperlink{interface_charge_trigger___charge_trigger_builder_a68ce0f5b13356ced87ac1365ae39c647}{set\+Percent\+With\+Int\+:}
+\item 
+(\hyperlink{interface_charge_trigger}{Charge\+Trigger} $\ast$) -\/ \hyperlink{interface_charge_trigger___charge_trigger_builder_a4cb65484e366fbe80293dcabdb4e61e4}{build}
+\begin{DoxyCompactList}\small\item\em Create the \hyperlink{interface_charge_trigger}{Charge\+Trigger}. \end{DoxyCompactList}\item 
+(void) -\/ \hyperlink{interface_charge_trigger___charge_trigger_builder_a006df63b30bc6bb0668c3ade22c40bd6}{copy\+All\+Fields\+To\+:}
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{interface_charge_trigger_type}{Charge\+Trigger\+Type} $\ast$ \hyperlink{interface_charge_trigger___charge_trigger_builder_a8eaf3c776ccd33b53583550a7c7eac48}{charge\+Trigger\+Type\+\_\+}
+\item 
+int \hyperlink{interface_charge_trigger___charge_trigger_builder_a16534ce3fa19580bff7b1d20857bd322}{percent\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Builder for the \hyperlink{interface_charge_trigger}{Charge\+Trigger} class. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_charge_trigger___charge_trigger_builder_a4cb65484e366fbe80293dcabdb4e61e4}{}\index{Charge\+Trigger\+\_\+\+Charge\+Trigger\+Builder@{Charge\+Trigger\+\_\+\+Charge\+Trigger\+Builder}!build@{build}}
+\index{build@{build}!Charge\+Trigger\+\_\+\+Charge\+Trigger\+Builder@{Charge\+Trigger\+\_\+\+Charge\+Trigger\+Builder}}
+\subsubsection[{build()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Charge\+Trigger} $\ast$) build 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_charge_trigger___charge_trigger_builder_a4cb65484e366fbe80293dcabdb4e61e4}
+
+
+Create the \hyperlink{interface_charge_trigger}{Charge\+Trigger}. 
+
+\begin{DoxyReturn}{Returns}
+the \hyperlink{interface_charge_trigger}{Charge\+Trigger} 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{interface_trigger_build_exception}{Trigger\+Build\+Exception}} & will be thrown when input is missing or invalid (see \hyperlink{interfacee_trigger_build_exception_type}{e\+Trigger\+Build\+Exception\+Type} for reasons) \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{interface_charge_trigger___charge_trigger_builder_a006df63b30bc6bb0668c3ade22c40bd6}{}\index{Charge\+Trigger\+\_\+\+Charge\+Trigger\+Builder@{Charge\+Trigger\+\_\+\+Charge\+Trigger\+Builder}!copy\+All\+Fields\+To\+:@{copy\+All\+Fields\+To\+:}}
+\index{copy\+All\+Fields\+To\+:@{copy\+All\+Fields\+To\+:}!Charge\+Trigger\+\_\+\+Charge\+Trigger\+Builder@{Charge\+Trigger\+\_\+\+Charge\+Trigger\+Builder}}
+\subsubsection[{copy\+All\+Fields\+To\+:(\+Charge\+Trigger\+\_\+\+Charge\+Trigger\+Builder $\ast$other)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) copy\+All\+Fields\+To\+: 
+\begin{DoxyParamCaption}
+\item[{({\bf Charge\+Trigger\+\_\+\+Charge\+Trigger\+Builder} $\ast$)}]{other}
+\end{DoxyParamCaption}
+}\label{interface_charge_trigger___charge_trigger_builder_a006df63b30bc6bb0668c3ade22c40bd6}
+\hypertarget{interface_charge_trigger___charge_trigger_builder_a6c0788de16254daf9fedef3575bf857a}{}\index{Charge\+Trigger\+\_\+\+Charge\+Trigger\+Builder@{Charge\+Trigger\+\_\+\+Charge\+Trigger\+Builder}!init\+With\+Charge\+Trigger\+Type\+:@{init\+With\+Charge\+Trigger\+Type\+:}}
+\index{init\+With\+Charge\+Trigger\+Type\+:@{init\+With\+Charge\+Trigger\+Type\+:}!Charge\+Trigger\+\_\+\+Charge\+Trigger\+Builder@{Charge\+Trigger\+\_\+\+Charge\+Trigger\+Builder}}
+\subsubsection[{init\+With\+Charge\+Trigger\+Type\+:(\+Charge\+Trigger\+Type $\ast$charge\+Trigger\+Type)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\+With\+Charge\+Trigger\+Type\+: 
+\begin{DoxyParamCaption}
+\item[{({\bf Charge\+Trigger\+Type} $\ast$)}]{charge\+Trigger\+Type}
+\end{DoxyParamCaption}
+}\label{interface_charge_trigger___charge_trigger_builder_a6c0788de16254daf9fedef3575bf857a}
+
+
+Create a builder for creating the \hyperlink{interface_charge_trigger}{Charge\+Trigger}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em charge\+Trigger\+Type} & the charge type that will determine the state in which the trigger will trigger \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_charge_trigger___charge_trigger_builder_a68ce0f5b13356ced87ac1365ae39c647}{}\index{Charge\+Trigger\+\_\+\+Charge\+Trigger\+Builder@{Charge\+Trigger\+\_\+\+Charge\+Trigger\+Builder}!set\+Percent\+With\+Int\+:@{set\+Percent\+With\+Int\+:}}
+\index{set\+Percent\+With\+Int\+:@{set\+Percent\+With\+Int\+:}!Charge\+Trigger\+\_\+\+Charge\+Trigger\+Builder@{Charge\+Trigger\+\_\+\+Charge\+Trigger\+Builder}}
+\subsubsection[{set\+Percent\+With\+Int\+:(int percent)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Charge\+Trigger\+\_\+\+Charge\+Trigger\+Builder} $\ast$) set\+Percent\+With\+Int\+: 
+\begin{DoxyParamCaption}
+\item[{(int)}]{percent}
+\end{DoxyParamCaption}
+}\label{interface_charge_trigger___charge_trigger_builder_a68ce0f5b13356ced87ac1365ae39c647}
+
+\begin{DoxyParams}{Parameters}
+{\em percent} & the battery percent threshold for \hyperlink{interface_charge_trigger_type_ab1a40ffd1e9830bd9dc54bc5c55f387f}{B\+A\+T\+T\+E\+R\+Y\+\_\+\+L\+O\+W (\+Charge\+Trigger\+Type)} \textbackslash{} \hyperlink{interface_charge_trigger_type_a3665b6e02ea5679dadf5f819fbbcbc05}{B\+A\+T\+T\+E\+R\+Y\+\_\+\+O\+K (\+Charge\+Trigger\+Type)} (defaults to Charge\+Trigger\+Builder\+::\+D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+E\+R\+C\+E\+N\+T , does not affect other types) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the builder 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{interface_charge_trigger___charge_trigger_builder_a8eaf3c776ccd33b53583550a7c7eac48}{}\index{Charge\+Trigger\+\_\+\+Charge\+Trigger\+Builder@{Charge\+Trigger\+\_\+\+Charge\+Trigger\+Builder}!charge\+Trigger\+Type\+\_\+@{charge\+Trigger\+Type\+\_\+}}
+\index{charge\+Trigger\+Type\+\_\+@{charge\+Trigger\+Type\+\_\+}!Charge\+Trigger\+\_\+\+Charge\+Trigger\+Builder@{Charge\+Trigger\+\_\+\+Charge\+Trigger\+Builder}}
+\subsubsection[{charge\+Trigger\+Type\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Charge\+Trigger\+Type}$\ast$) charge\+Trigger\+Type\+\_\+}\label{interface_charge_trigger___charge_trigger_builder_a8eaf3c776ccd33b53583550a7c7eac48}
+\hypertarget{interface_charge_trigger___charge_trigger_builder_a16534ce3fa19580bff7b1d20857bd322}{}\index{Charge\+Trigger\+\_\+\+Charge\+Trigger\+Builder@{Charge\+Trigger\+\_\+\+Charge\+Trigger\+Builder}!percent\+\_\+@{percent\+\_\+}}
+\index{percent\+\_\+@{percent\+\_\+}!Charge\+Trigger\+\_\+\+Charge\+Trigger\+Builder@{Charge\+Trigger\+\_\+\+Charge\+Trigger\+Builder}}
+\subsubsection[{percent\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (int) percent\+\_\+}\label{interface_charge_trigger___charge_trigger_builder_a16534ce3fa19580bff7b1d20857bd322}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src\+\_\+converted/com/intel/wearable/platform/timeiq/api/triggers/charge/\hyperlink{_charge_trigger_8h}{Charge\+Trigger.\+h}\end{DoxyCompactItemize}

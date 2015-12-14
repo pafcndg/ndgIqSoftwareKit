@@ -1,0 +1,154 @@
+\hypertarget{interface_t_s_o_event_triggered_msg}{}\section{T\+S\+O\+Event\+Triggered\+Msg Class Reference}
+\label{interface_t_s_o_event_triggered_msg}\index{T\+S\+O\+Event\+Triggered\+Msg@{T\+S\+O\+Event\+Triggered\+Msg}}
+
+
+This is the message that is sent as a trigger for a specific event. It contains the event itself and data regarding the route to the event location.  
+
+
+
+
+{\ttfamily \#import $<$T\+S\+O\+Event\+Triggered\+Msg.\+h$>$}
+
+
+
+Inherits N\+S\+Object.
+
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(id$<$ \hyperlink{protocol_i_route_data-p}{I\+Route\+Data} $>$) -\/ \hyperlink{interface_t_s_o_event_triggered_msg_a30a12cce58d0255b5605ed281bb964b7}{get\+Route\+Data}
+\begin{DoxyCompactList}\small\item\em Returns information regarding the route from the user\textquotesingle{}s current location to the event location. \end{DoxyCompactList}\item 
+(void) -\/ \hyperlink{interface_t_s_o_event_triggered_msg_afe2c5693616ab42116d90f8aae57bc5d}{set\+Route\+Data\+With\+I\+Route\+Data\+:}
+\begin{DoxyCompactList}\small\item\em Sets information regarding the route from the user\textquotesingle{}s current location to the event location. \end{DoxyCompactList}\item 
+(id$<$ \hyperlink{protocol_i_event-p}{I\+Event} $>$) -\/ \hyperlink{interface_t_s_o_event_triggered_msg_af6136fc0726f7ec75ce9da41e2405774}{get\+Event}
+\begin{DoxyCompactList}\small\item\em Returns the event which is triggered. \end{DoxyCompactList}\item 
+(void) -\/ \hyperlink{interface_t_s_o_event_triggered_msg_ac04c2407ff0c83437fd2513ee2cee3df}{set\+Event\+With\+I\+Event\+:}
+\begin{DoxyCompactList}\small\item\em Sets the event which is triggered. \end{DoxyCompactList}\item 
+(void) -\/ \hyperlink{interface_t_s_o_event_triggered_msg_a1b5fe9f73b1b21c213f726c0c2b3c476}{set\+Status\+With\+Result\+Code\+:}
+\begin{DoxyCompactList}\small\item\em Sets \hyperlink{protocol_i_route_data-p}{I\+Route\+Data} related requests status. \end{DoxyCompactList}\item 
+(instancetype) -\/ \hyperlink{interface_t_s_o_event_triggered_msg_a200ba418c5580e2e72a035957e16bb7d}{init}
+\item 
+(void) -\/ \hyperlink{interface_t_s_o_event_triggered_msg_aa703a9403a6e2b3c8be3781cb44078e0}{copy\+All\+Fields\+To\+:}
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+id$<$ \hyperlink{protocol_i_event-p}{I\+Event} $>$ \hyperlink{interface_t_s_o_event_triggered_msg_ad092932cdc0be1300beccb620d238c69}{event\+\_\+}
+\item 
+id$<$ \hyperlink{protocol_i_route_data-p}{I\+Route\+Data} $>$ \hyperlink{interface_t_s_o_event_triggered_msg_aee479aab58199a8fa7d57331eb87e981}{route\+Data\+\_\+}
+\item 
+\hyperlink{interface_result_code}{Result\+Code} $\ast$ \hyperlink{interface_t_s_o_event_triggered_msg_af9269dce72a2dfa75855f790b98e3a92}{status\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is the message that is sent as a trigger for a specific event. It contains the event itself and data regarding the route to the event location. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_t_s_o_event_triggered_msg_aa703a9403a6e2b3c8be3781cb44078e0}{}\index{T\+S\+O\+Event\+Triggered\+Msg@{T\+S\+O\+Event\+Triggered\+Msg}!copy\+All\+Fields\+To\+:@{copy\+All\+Fields\+To\+:}}
+\index{copy\+All\+Fields\+To\+:@{copy\+All\+Fields\+To\+:}!T\+S\+O\+Event\+Triggered\+Msg@{T\+S\+O\+Event\+Triggered\+Msg}}
+\subsubsection[{copy\+All\+Fields\+To\+:(\+T\+S\+O\+Event\+Triggered\+Msg $\ast$other)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) copy\+All\+Fields\+To\+: 
+\begin{DoxyParamCaption}
+\item[{({\bf T\+S\+O\+Event\+Triggered\+Msg} $\ast$)}]{other}
+\end{DoxyParamCaption}
+}\label{interface_t_s_o_event_triggered_msg_aa703a9403a6e2b3c8be3781cb44078e0}
+\hypertarget{interface_t_s_o_event_triggered_msg_af6136fc0726f7ec75ce9da41e2405774}{}\index{T\+S\+O\+Event\+Triggered\+Msg@{T\+S\+O\+Event\+Triggered\+Msg}!get\+Event@{get\+Event}}
+\index{get\+Event@{get\+Event}!T\+S\+O\+Event\+Triggered\+Msg@{T\+S\+O\+Event\+Triggered\+Msg}}
+\subsubsection[{get\+Event()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id$<${\bf I\+Event}$>$) get\+Event 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_t_s_o_event_triggered_msg_af6136fc0726f7ec75ce9da41e2405774}
+
+
+Returns the event which is triggered. 
+
+\begin{DoxyReturn}{Returns}
+event which is triggered 
+\end{DoxyReturn}
+\hypertarget{interface_t_s_o_event_triggered_msg_a30a12cce58d0255b5605ed281bb964b7}{}\index{T\+S\+O\+Event\+Triggered\+Msg@{T\+S\+O\+Event\+Triggered\+Msg}!get\+Route\+Data@{get\+Route\+Data}}
+\index{get\+Route\+Data@{get\+Route\+Data}!T\+S\+O\+Event\+Triggered\+Msg@{T\+S\+O\+Event\+Triggered\+Msg}}
+\subsubsection[{get\+Route\+Data()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id$<${\bf I\+Route\+Data}$>$) get\+Route\+Data 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_t_s_o_event_triggered_msg_a30a12cce58d0255b5605ed281bb964b7}
+
+
+Returns information regarding the route from the user\textquotesingle{}s current location to the event location. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{protocol_i_route_data-p}{I\+Route\+Data} which describes optimised route between the user\textquotesingle{}s current location to the event location 
+\end{DoxyReturn}
+\hypertarget{interface_t_s_o_event_triggered_msg_a200ba418c5580e2e72a035957e16bb7d}{}\index{T\+S\+O\+Event\+Triggered\+Msg@{T\+S\+O\+Event\+Triggered\+Msg}!init@{init}}
+\index{init@{init}!T\+S\+O\+Event\+Triggered\+Msg@{T\+S\+O\+Event\+Triggered\+Msg}}
+\subsubsection[{init()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_t_s_o_event_triggered_msg_a200ba418c5580e2e72a035957e16bb7d}
+\hypertarget{interface_t_s_o_event_triggered_msg_ac04c2407ff0c83437fd2513ee2cee3df}{}\index{T\+S\+O\+Event\+Triggered\+Msg@{T\+S\+O\+Event\+Triggered\+Msg}!set\+Event\+With\+I\+Event\+:@{set\+Event\+With\+I\+Event\+:}}
+\index{set\+Event\+With\+I\+Event\+:@{set\+Event\+With\+I\+Event\+:}!T\+S\+O\+Event\+Triggered\+Msg@{T\+S\+O\+Event\+Triggered\+Msg}}
+\subsubsection[{set\+Event\+With\+I\+Event\+:(id$<$ I\+Event $>$ event)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) set\+Event\+With\+I\+Event\+: 
+\begin{DoxyParamCaption}
+\item[{(id$<$ {\bf I\+Event} $>$)}]{event}
+\end{DoxyParamCaption}
+}\label{interface_t_s_o_event_triggered_msg_ac04c2407ff0c83437fd2513ee2cee3df}
+
+
+Sets the event which is triggered. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & the event which is triggered \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_t_s_o_event_triggered_msg_afe2c5693616ab42116d90f8aae57bc5d}{}\index{T\+S\+O\+Event\+Triggered\+Msg@{T\+S\+O\+Event\+Triggered\+Msg}!set\+Route\+Data\+With\+I\+Route\+Data\+:@{set\+Route\+Data\+With\+I\+Route\+Data\+:}}
+\index{set\+Route\+Data\+With\+I\+Route\+Data\+:@{set\+Route\+Data\+With\+I\+Route\+Data\+:}!T\+S\+O\+Event\+Triggered\+Msg@{T\+S\+O\+Event\+Triggered\+Msg}}
+\subsubsection[{set\+Route\+Data\+With\+I\+Route\+Data\+:(id$<$ I\+Route\+Data $>$ route\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) set\+Route\+Data\+With\+I\+Route\+Data\+: 
+\begin{DoxyParamCaption}
+\item[{(id$<$ {\bf I\+Route\+Data} $>$)}]{route\+Data}
+\end{DoxyParamCaption}
+}\label{interface_t_s_o_event_triggered_msg_afe2c5693616ab42116d90f8aae57bc5d}
+
+
+Sets information regarding the route from the user\textquotesingle{}s current location to the event location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em route\+Data} & \hyperlink{protocol_i_route_data-p}{I\+Route\+Data} which describes optimised route between the user\textquotesingle{}s current location to the event location \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_t_s_o_event_triggered_msg_a1b5fe9f73b1b21c213f726c0c2b3c476}{}\index{T\+S\+O\+Event\+Triggered\+Msg@{T\+S\+O\+Event\+Triggered\+Msg}!set\+Status\+With\+Result\+Code\+:@{set\+Status\+With\+Result\+Code\+:}}
+\index{set\+Status\+With\+Result\+Code\+:@{set\+Status\+With\+Result\+Code\+:}!T\+S\+O\+Event\+Triggered\+Msg@{T\+S\+O\+Event\+Triggered\+Msg}}
+\subsubsection[{set\+Status\+With\+Result\+Code\+:(\+Result\+Code $\ast$status)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) set\+Status\+With\+Result\+Code\+: 
+\begin{DoxyParamCaption}
+\item[{({\bf Result\+Code} $\ast$)}]{status}
+\end{DoxyParamCaption}
+}\label{interface_t_s_o_event_triggered_msg_a1b5fe9f73b1b21c213f726c0c2b3c476}
+
+
+Sets \hyperlink{protocol_i_route_data-p}{I\+Route\+Data} related requests status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em status} & e\+Result\+Code which describes \hyperlink{protocol_i_route_data-p}{I\+Route\+Data} related requests status \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{interface_t_s_o_event_triggered_msg_ad092932cdc0be1300beccb620d238c69}{}\index{T\+S\+O\+Event\+Triggered\+Msg@{T\+S\+O\+Event\+Triggered\+Msg}!event\+\_\+@{event\+\_\+}}
+\index{event\+\_\+@{event\+\_\+}!T\+S\+O\+Event\+Triggered\+Msg@{T\+S\+O\+Event\+Triggered\+Msg}}
+\subsubsection[{event\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id$<${\bf I\+Event}$>$) event\+\_\+}\label{interface_t_s_o_event_triggered_msg_ad092932cdc0be1300beccb620d238c69}
+\hypertarget{interface_t_s_o_event_triggered_msg_aee479aab58199a8fa7d57331eb87e981}{}\index{T\+S\+O\+Event\+Triggered\+Msg@{T\+S\+O\+Event\+Triggered\+Msg}!route\+Data\+\_\+@{route\+Data\+\_\+}}
+\index{route\+Data\+\_\+@{route\+Data\+\_\+}!T\+S\+O\+Event\+Triggered\+Msg@{T\+S\+O\+Event\+Triggered\+Msg}}
+\subsubsection[{route\+Data\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id$<${\bf I\+Route\+Data}$>$) route\+Data\+\_\+}\label{interface_t_s_o_event_triggered_msg_aee479aab58199a8fa7d57331eb87e981}
+\hypertarget{interface_t_s_o_event_triggered_msg_af9269dce72a2dfa75855f790b98e3a92}{}\index{T\+S\+O\+Event\+Triggered\+Msg@{T\+S\+O\+Event\+Triggered\+Msg}!status\+\_\+@{status\+\_\+}}
+\index{status\+\_\+@{status\+\_\+}!T\+S\+O\+Event\+Triggered\+Msg@{T\+S\+O\+Event\+Triggered\+Msg}}
+\subsubsection[{status\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Result\+Code}$\ast$) status\+\_\+}\label{interface_t_s_o_event_triggered_msg_af9269dce72a2dfa75855f790b98e3a92}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src\+\_\+converted/com/intel/wearable/platform/timeiq/api/events/\hyperlink{_t_s_o_event_triggered_msg_8h}{T\+S\+O\+Event\+Triggered\+Msg.\+h}\end{DoxyCompactItemize}

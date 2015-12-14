@@ -1,0 +1,47 @@
+\hypertarget{protocol_i_message_listener-p}{}\section{$<$I\+Message\+Listener$>$ Protocol Reference}
+\label{protocol_i_message_listener-p}\index{$<$\+I\+Message\+Listener$>$@{$<$\+I\+Message\+Listener$>$}}
+
+
+Listener interface through which the S\+D\+K user can get messages from the S\+D\+K infrastructure. After implementing this interface -\/ the user needs to register is in the Message Handler. The messages will be received through the on\+Receive method.  
+
+
+
+
+{\ttfamily \#import $<$I\+Message\+Listener.\+h$>$}
+
+
+
+Inherits $<$\+N\+S\+Object$>$.
+
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{protocol_i_message_listener-p_ad07f8f7f2ff4180a8dd404d7a8302f9b}{on\+Receive\+With\+I\+Message\+:}
+\begin{DoxyCompactList}\small\item\em The communication channel through which the S\+D\+K messages are received. The user should implement the message handling logic in this function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Listener interface through which the S\+D\+K user can get messages from the S\+D\+K infrastructure. After implementing this interface -\/ the user needs to register is in the Message Handler. The messages will be received through the on\+Receive method. 
+
+\subsection{Method Documentation}
+\hypertarget{protocol_i_message_listener-p_ad07f8f7f2ff4180a8dd404d7a8302f9b}{}\index{I\+Message\+Listener-\/p@{I\+Message\+Listener-\/p}!on\+Receive\+With\+I\+Message\+:@{on\+Receive\+With\+I\+Message\+:}}
+\index{on\+Receive\+With\+I\+Message\+:@{on\+Receive\+With\+I\+Message\+:}!I\+Message\+Listener-\/p@{I\+Message\+Listener-\/p}}
+\subsubsection[{on\+Receive\+With\+I\+Message\+:(id$<$ I\+Message $>$ message)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) on\+Receive\+With\+I\+Message\+: 
+\begin{DoxyParamCaption}
+\item[{(id$<$ {\bf I\+Message} $>$)}]{message}
+\end{DoxyParamCaption}
+}\label{protocol_i_message_listener-p_ad07f8f7f2ff4180a8dd404d7a8302f9b}
+
+
+The communication channel through which the S\+D\+K messages are received. The user should implement the message handling logic in this function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & -\/ The S\+D\+K message \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this protocol was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src\+\_\+converted/com/intel/wearable/platform/timeiq/api/common/message\+Handler/\hyperlink{_i_message_listener_8h}{I\+Message\+Listener.\+h}\end{DoxyCompactItemize}

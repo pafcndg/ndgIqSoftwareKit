@@ -1,0 +1,106 @@
+\hypertarget{interface_base_phone_reminder___base_phone_based_reminder_builder}{}\section{Base\+Phone\+Reminder\+\_\+\+Base\+Phone\+Based\+Reminder\+Builder Class Reference}
+\label{interface_base_phone_reminder___base_phone_based_reminder_builder}\index{Base\+Phone\+Reminder\+\_\+\+Base\+Phone\+Based\+Reminder\+Builder@{Base\+Phone\+Reminder\+\_\+\+Base\+Phone\+Based\+Reminder\+Builder}}
+
+
+{\ttfamily \#import $<$Base\+Phone\+Reminder.\+h$>$}
+
+
+
+Inherits \hyperlink{interface_base_reminder___base_reminder_builder}{Base\+Reminder\+\_\+\+Base\+Reminder\+Builder}.
+
+
+
+Inherited by \hyperlink{interface_call_reminder___call_reminder_builder}{Call\+Reminder\+\_\+\+Call\+Reminder\+Builder}, and \hyperlink{interface_notification_reminder___notification_reminder_builder}{Notification\+Reminder\+\_\+\+Notification\+Reminder\+Builder}.
+
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) -\/ \hyperlink{interface_base_phone_reminder___base_phone_based_reminder_builder_aaee86c0093f5655af55d4a34aaf42993}{init\+With\+I\+Trigger\+:with\+Contact\+Info\+:with\+Reminder\+Type\+:}
+\begin{DoxyCompactList}\small\item\em Create a builder for creating the \hyperlink{interface_base_phone_reminder}{Base\+Phone\+Reminder}. \end{DoxyCompactList}\item 
+(\hyperlink{interface_base_phone_reminder}{Base\+Phone\+Reminder} $\ast$) -\/ \hyperlink{interface_base_phone_reminder___base_phone_based_reminder_builder_ac1f348dfe7f94c54af6af2195baa2e9a}{build}
+\begin{DoxyCompactList}\small\item\em Create the \hyperlink{interface_base_phone_reminder}{Base\+Phone\+Reminder}. \end{DoxyCompactList}\item 
+(\hyperlink{interface_contact_info}{Contact\+Info} $\ast$) -\/ \hyperlink{interface_base_phone_reminder___base_phone_based_reminder_builder_a6a23f39e99f262f4a2e6dc173cd17537}{get\+Contact\+Info}
+\item 
+(void) -\/ \hyperlink{interface_base_phone_reminder___base_phone_based_reminder_builder_a6de6d2ae2bd9d3cd2dd645f5941692be}{copy\+All\+Fields\+To\+:}
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{interface_contact_info}{Contact\+Info} $\ast$ \hyperlink{interface_base_phone_reminder___base_phone_based_reminder_builder_af3648db8eee1351063af8e8078269381}{contact\+Info\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Method Documentation}
+\hypertarget{interface_base_phone_reminder___base_phone_based_reminder_builder_ac1f348dfe7f94c54af6af2195baa2e9a}{}\index{Base\+Phone\+Reminder\+\_\+\+Base\+Phone\+Based\+Reminder\+Builder@{Base\+Phone\+Reminder\+\_\+\+Base\+Phone\+Based\+Reminder\+Builder}!build@{build}}
+\index{build@{build}!Base\+Phone\+Reminder\+\_\+\+Base\+Phone\+Based\+Reminder\+Builder@{Base\+Phone\+Reminder\+\_\+\+Base\+Phone\+Based\+Reminder\+Builder}}
+\subsubsection[{build()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Base\+Phone\+Reminder} $\ast$) build 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_base_phone_reminder___base_phone_based_reminder_builder_ac1f348dfe7f94c54af6af2195baa2e9a}
+
+
+Create the \hyperlink{interface_base_phone_reminder}{Base\+Phone\+Reminder}. 
+
+\begin{DoxyReturn}{Returns}
+the \hyperlink{interface_base_phone_reminder}{Base\+Phone\+Reminder} 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{interface_reminder_build_exception}{Reminder\+Build\+Exception}} & will be thrown when input is missing or invalid (see \hyperlink{interface_reminder_build_exception_type}{Reminder\+Build\+Exception\+Type} for reasons) \\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \hyperlink{interface_call_reminder___call_reminder_builder_ad2167565916b7f445bbc882b6f06bff7}{Call\+Reminder\+\_\+\+Call\+Reminder\+Builder}, and \hyperlink{interface_notification_reminder___notification_reminder_builder_ace3be92622f45a7da7b779aa88cdaaeb}{Notification\+Reminder\+\_\+\+Notification\+Reminder\+Builder}.
+
+\hypertarget{interface_base_phone_reminder___base_phone_based_reminder_builder_a6de6d2ae2bd9d3cd2dd645f5941692be}{}\index{Base\+Phone\+Reminder\+\_\+\+Base\+Phone\+Based\+Reminder\+Builder@{Base\+Phone\+Reminder\+\_\+\+Base\+Phone\+Based\+Reminder\+Builder}!copy\+All\+Fields\+To\+:@{copy\+All\+Fields\+To\+:}}
+\index{copy\+All\+Fields\+To\+:@{copy\+All\+Fields\+To\+:}!Base\+Phone\+Reminder\+\_\+\+Base\+Phone\+Based\+Reminder\+Builder@{Base\+Phone\+Reminder\+\_\+\+Base\+Phone\+Based\+Reminder\+Builder}}
+\subsubsection[{copy\+All\+Fields\+To\+:(\+Base\+Phone\+Reminder\+\_\+\+Base\+Phone\+Based\+Reminder\+Builder $\ast$other)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) copy\+All\+Fields\+To\+: 
+\begin{DoxyParamCaption}
+\item[{({\bf Base\+Phone\+Reminder\+\_\+\+Base\+Phone\+Based\+Reminder\+Builder} $\ast$)}]{other}
+\end{DoxyParamCaption}
+}\label{interface_base_phone_reminder___base_phone_based_reminder_builder_a6de6d2ae2bd9d3cd2dd645f5941692be}
+\hypertarget{interface_base_phone_reminder___base_phone_based_reminder_builder_a6a23f39e99f262f4a2e6dc173cd17537}{}\index{Base\+Phone\+Reminder\+\_\+\+Base\+Phone\+Based\+Reminder\+Builder@{Base\+Phone\+Reminder\+\_\+\+Base\+Phone\+Based\+Reminder\+Builder}!get\+Contact\+Info@{get\+Contact\+Info}}
+\index{get\+Contact\+Info@{get\+Contact\+Info}!Base\+Phone\+Reminder\+\_\+\+Base\+Phone\+Based\+Reminder\+Builder@{Base\+Phone\+Reminder\+\_\+\+Base\+Phone\+Based\+Reminder\+Builder}}
+\subsubsection[{get\+Contact\+Info()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Contact\+Info} $\ast$) get\+Contact\+Info 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_base_phone_reminder___base_phone_based_reminder_builder_a6a23f39e99f262f4a2e6dc173cd17537}
+\begin{DoxyReturn}{Returns}
+the contact that is associated with this reminder 
+\end{DoxyReturn}
+\hypertarget{interface_base_phone_reminder___base_phone_based_reminder_builder_aaee86c0093f5655af55d4a34aaf42993}{}\index{Base\+Phone\+Reminder\+\_\+\+Base\+Phone\+Based\+Reminder\+Builder@{Base\+Phone\+Reminder\+\_\+\+Base\+Phone\+Based\+Reminder\+Builder}!init\+With\+I\+Trigger\+:with\+Contact\+Info\+:with\+Reminder\+Type\+:@{init\+With\+I\+Trigger\+:with\+Contact\+Info\+:with\+Reminder\+Type\+:}}
+\index{init\+With\+I\+Trigger\+:with\+Contact\+Info\+:with\+Reminder\+Type\+:@{init\+With\+I\+Trigger\+:with\+Contact\+Info\+:with\+Reminder\+Type\+:}!Base\+Phone\+Reminder\+\_\+\+Base\+Phone\+Based\+Reminder\+Builder@{Base\+Phone\+Reminder\+\_\+\+Base\+Phone\+Based\+Reminder\+Builder}}
+\subsubsection[{init\+With\+I\+Trigger\+:with\+Contact\+Info\+:with\+Reminder\+Type\+:(id$<$ I\+Trigger $>$ trigger,[with\+Contact\+Info] Contact\+Info $\ast$contact\+Info,[with\+Reminder\+Type] Reminder\+Type $\ast$reminder\+Type)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\+With\+I\+Trigger\+: 
+\begin{DoxyParamCaption}
+\item[{(id$<$ {\bf I\+Trigger} $>$)}]{trigger}
+\item[{withContactInfo:({\bf Contact\+Info} $\ast$)}]{contact\+Info}
+\item[{withReminderType:({\bf Reminder\+Type} $\ast$)}]{reminder\+Type}
+\end{DoxyParamCaption}
+}\label{interface_base_phone_reminder___base_phone_based_reminder_builder_aaee86c0093f5655af55d4a34aaf42993}
+
+
+Create a builder for creating the \hyperlink{interface_base_phone_reminder}{Base\+Phone\+Reminder}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em trigger} & the trigger that will make the reminder notify \\
+\hline
+{\em contact\+Info} & the contact that is associated with this reminder \\
+\hline
+{\em reminder\+Type} & the type of the reminder ( \hyperlink{interface_reminder_type_a0c8d007a3b46883b983facbd27ea9d99}{D\+O (\+Reminder\+Type)} for \hyperlink{interface_do_reminder}{Do\+Reminder} , \hyperlink{interface_reminder_type_a4e429298799342d7c7114880e645d073}{C\+A\+L\+L (\+Reminder\+Type)} for \hyperlink{interface_call_reminder}{Call\+Reminder} or \hyperlink{interface_reminder_type_abb04f7b2c8b0be93d21bc77ade83c0fc}{N\+O\+T\+I\+F\+Y (\+Reminder\+Type)} for \hyperlink{interface_notification_reminder}{Notification\+Reminder} ) \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{interface_base_phone_reminder___base_phone_based_reminder_builder_af3648db8eee1351063af8e8078269381}{}\index{Base\+Phone\+Reminder\+\_\+\+Base\+Phone\+Based\+Reminder\+Builder@{Base\+Phone\+Reminder\+\_\+\+Base\+Phone\+Based\+Reminder\+Builder}!contact\+Info\+\_\+@{contact\+Info\+\_\+}}
+\index{contact\+Info\+\_\+@{contact\+Info\+\_\+}!Base\+Phone\+Reminder\+\_\+\+Base\+Phone\+Based\+Reminder\+Builder@{Base\+Phone\+Reminder\+\_\+\+Base\+Phone\+Based\+Reminder\+Builder}}
+\subsubsection[{contact\+Info\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Contact\+Info}$\ast$) contact\+Info\+\_\+}\label{interface_base_phone_reminder___base_phone_based_reminder_builder_af3648db8eee1351063af8e8078269381}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src\+\_\+converted/com/intel/wearable/platform/timeiq/api/reminders/phone\+Based\+Reminder/\hyperlink{_base_phone_reminder_8h}{Base\+Phone\+Reminder.\+h}\end{DoxyCompactItemize}

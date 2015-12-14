@@ -1,0 +1,165 @@
+\hypertarget{interface_be_event___be_event_builder}{}\section{Be\+Event\+\_\+\+Be\+Event\+Builder Class Reference}
+\label{interface_be_event___be_event_builder}\index{Be\+Event\+\_\+\+Be\+Event\+Builder@{Be\+Event\+\_\+\+Be\+Event\+Builder}}
+
+
+Event builder for Be\+Events.  
+
+
+
+
+{\ttfamily \#import $<$Be\+Event.\+h$>$}
+
+
+
+Inherits \hyperlink{interface_base_event___base_event_builder}{Base\+Event\+\_\+\+Base\+Event\+Builder}.
+
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) -\/ \hyperlink{interface_be_event___be_event_builder_a3e9d355a5fc1b9f69849773e37ec7403}{init\+With\+T\+S\+O\+Place\+:with\+Long\+:}
+\begin{DoxyCompactList}\small\item\em Constructs a new Be\+Event\+Builder from location and arrival time. \end{DoxyCompactList}\item 
+(instancetype) -\/ \hyperlink{interface_be_event___be_event_builder_ac88487fd0f086971afac04eb51a0af0b}{init\+With\+Be\+Event\+:}
+\begin{DoxyCompactList}\small\item\em Constructs a new Be\+Event\+Builder from existing \hyperlink{interface_be_event}{Be\+Event}. \end{DoxyCompactList}\item 
+(\hyperlink{interface_be_event___be_event_builder}{Be\+Event\+\_\+\+Be\+Event\+Builder} $\ast$) -\/ \hyperlink{interface_be_event___be_event_builder_aa2f5445af660771f98e0940983f398cf}{recurrence\+Details\+With\+Recurrence\+Details\+:}
+\begin{DoxyCompactList}\small\item\em Sets the recurrence details of the \hyperlink{interface_be_event}{Be\+Event} and returns an updated \hyperlink{interface_be_event}{Be\+Event}. \end{DoxyCompactList}\item 
+(\hyperlink{interface_be_event___be_event_builder}{Be\+Event\+\_\+\+Be\+Event\+Builder} $\ast$) -\/ \hyperlink{interface_be_event___be_event_builder_a75fe88e5d200b0e3c8b2c73b3e7f8084}{add\+To\+Calendar\+With\+Boolean\+:}
+\begin{DoxyCompactList}\small\item\em Sets whether or not this \hyperlink{interface_be_event}{Be\+Event} should be added to calendar and returns an updated \hyperlink{interface_be_event}{Be\+Event}. \end{DoxyCompactList}\item 
+(\hyperlink{interface_be_event}{Be\+Event} $\ast$) -\/ \hyperlink{interface_be_event___be_event_builder_a032b362a94c541b08de82d68cbbe4733}{build}
+\begin{DoxyCompactList}\small\item\em Returns a \hyperlink{interface_be_event}{Be\+Event} with all the previously defined parameters. \end{DoxyCompactList}\item 
+(void) -\/ \hyperlink{interface_be_event___be_event_builder_abda4b3350bfb4fe3cc12956e31c9cd33}{copy\+All\+Fields\+To\+:}
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+boolean \hyperlink{interface_be_event___be_event_builder_ad3328ec0ebc43e1542abf85f71511826}{add\+To\+Calendar\+\_\+\+\_\+}
+\item 
+\hyperlink{interface_recurrence_details}{Recurrence\+Details} $\ast$ \hyperlink{interface_be_event___be_event_builder_a755c4793d4746d78c5731e2a9628eb1e}{recurrence\+Details\+\_\+\+\_\+}
+\item 
+long64 \hyperlink{interface_be_event___be_event_builder_adc297c87c707e948202af179f92aa6b8}{creation\+Time\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Event builder for Be\+Events. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_be_event___be_event_builder_a75fe88e5d200b0e3c8b2c73b3e7f8084}{}\index{Be\+Event\+\_\+\+Be\+Event\+Builder@{Be\+Event\+\_\+\+Be\+Event\+Builder}!add\+To\+Calendar\+With\+Boolean\+:@{add\+To\+Calendar\+With\+Boolean\+:}}
+\index{add\+To\+Calendar\+With\+Boolean\+:@{add\+To\+Calendar\+With\+Boolean\+:}!Be\+Event\+\_\+\+Be\+Event\+Builder@{Be\+Event\+\_\+\+Be\+Event\+Builder}}
+\subsubsection[{add\+To\+Calendar\+With\+Boolean\+:(boolean add\+To\+Calendar)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Be\+Event\+\_\+\+Be\+Event\+Builder} $\ast$) add\+To\+Calendar\+With\+Boolean\+: 
+\begin{DoxyParamCaption}
+\item[{(boolean)}]{add\+To\+Calendar}
+\end{DoxyParamCaption}
+}\label{interface_be_event___be_event_builder_a75fe88e5d200b0e3c8b2c73b3e7f8084}
+
+
+Sets whether or not this \hyperlink{interface_be_event}{Be\+Event} should be added to calendar and returns an updated \hyperlink{interface_be_event}{Be\+Event}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em add\+To\+Calendar} & true if this \hyperlink{interface_be_event}{Be\+Event} should be added to calendar, false otherwise \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Be\+Event\+Builder 
+\end{DoxyReturn}
+\hypertarget{interface_be_event___be_event_builder_a032b362a94c541b08de82d68cbbe4733}{}\index{Be\+Event\+\_\+\+Be\+Event\+Builder@{Be\+Event\+\_\+\+Be\+Event\+Builder}!build@{build}}
+\index{build@{build}!Be\+Event\+\_\+\+Be\+Event\+Builder@{Be\+Event\+\_\+\+Be\+Event\+Builder}}
+\subsubsection[{build()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Be\+Event} $\ast$) build 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_be_event___be_event_builder_a032b362a94c541b08de82d68cbbe4733}
+
+
+Returns a \hyperlink{interface_be_event}{Be\+Event} with all the previously defined parameters. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{interface_be_event}{Be\+Event} 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_base_event___base_event_builder_aad8b1cfd4b7d6a5748ba871a32de9b4f}{Base\+Event\+\_\+\+Base\+Event\+Builder}.
+
+\hypertarget{interface_be_event___be_event_builder_abda4b3350bfb4fe3cc12956e31c9cd33}{}\index{Be\+Event\+\_\+\+Be\+Event\+Builder@{Be\+Event\+\_\+\+Be\+Event\+Builder}!copy\+All\+Fields\+To\+:@{copy\+All\+Fields\+To\+:}}
+\index{copy\+All\+Fields\+To\+:@{copy\+All\+Fields\+To\+:}!Be\+Event\+\_\+\+Be\+Event\+Builder@{Be\+Event\+\_\+\+Be\+Event\+Builder}}
+\subsubsection[{copy\+All\+Fields\+To\+:(\+Be\+Event\+\_\+\+Be\+Event\+Builder $\ast$other)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) copy\+All\+Fields\+To\+: 
+\begin{DoxyParamCaption}
+\item[{({\bf Be\+Event\+\_\+\+Be\+Event\+Builder} $\ast$)}]{other}
+\end{DoxyParamCaption}
+}\label{interface_be_event___be_event_builder_abda4b3350bfb4fe3cc12956e31c9cd33}
+\hypertarget{interface_be_event___be_event_builder_ac88487fd0f086971afac04eb51a0af0b}{}\index{Be\+Event\+\_\+\+Be\+Event\+Builder@{Be\+Event\+\_\+\+Be\+Event\+Builder}!init\+With\+Be\+Event\+:@{init\+With\+Be\+Event\+:}}
+\index{init\+With\+Be\+Event\+:@{init\+With\+Be\+Event\+:}!Be\+Event\+\_\+\+Be\+Event\+Builder@{Be\+Event\+\_\+\+Be\+Event\+Builder}}
+\subsubsection[{init\+With\+Be\+Event\+:(\+Be\+Event $\ast$be\+Event)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\+With\+Be\+Event\+: 
+\begin{DoxyParamCaption}
+\item[{({\bf Be\+Event} $\ast$)}]{be\+Event}
+\end{DoxyParamCaption}
+}\label{interface_be_event___be_event_builder_ac88487fd0f086971afac04eb51a0af0b}
+
+
+Constructs a new Be\+Event\+Builder from existing \hyperlink{interface_be_event}{Be\+Event}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em be\+Event} & the \hyperlink{interface_be_event}{Be\+Event} to copy from \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_be_event___be_event_builder_a3e9d355a5fc1b9f69849773e37ec7403}{}\index{Be\+Event\+\_\+\+Be\+Event\+Builder@{Be\+Event\+\_\+\+Be\+Event\+Builder}!init\+With\+T\+S\+O\+Place\+:with\+Long\+:@{init\+With\+T\+S\+O\+Place\+:with\+Long\+:}}
+\index{init\+With\+T\+S\+O\+Place\+:with\+Long\+:@{init\+With\+T\+S\+O\+Place\+:with\+Long\+:}!Be\+Event\+\_\+\+Be\+Event\+Builder@{Be\+Event\+\_\+\+Be\+Event\+Builder}}
+\subsubsection[{init\+With\+T\+S\+O\+Place\+:with\+Long\+:(\+T\+S\+O\+Place $\ast$location,[with\+Long] long64 arrival\+Time)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\+With\+T\+S\+O\+Place\+: 
+\begin{DoxyParamCaption}
+\item[{({\bf T\+S\+O\+Place} $\ast$)}]{location}
+\item[{withLong:(long64)}]{arrival\+Time}
+\end{DoxyParamCaption}
+}\label{interface_be_event___be_event_builder_a3e9d355a5fc1b9f69849773e37ec7403}
+
+
+Constructs a new Be\+Event\+Builder from location and arrival time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & the location of the event, represented as \hyperlink{interface_t_s_o_place}{T\+S\+O\+Place} \\
+\hline
+{\em arrival\+Time} & the planned arrival time in milliseconds \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{interface_base_event___base_event_builder_a1be1105c49f37448450aa47e580d6161}{Base\+Event\+\_\+\+Base\+Event\+Builder}.
+
+\hypertarget{interface_be_event___be_event_builder_aa2f5445af660771f98e0940983f398cf}{}\index{Be\+Event\+\_\+\+Be\+Event\+Builder@{Be\+Event\+\_\+\+Be\+Event\+Builder}!recurrence\+Details\+With\+Recurrence\+Details\+:@{recurrence\+Details\+With\+Recurrence\+Details\+:}}
+\index{recurrence\+Details\+With\+Recurrence\+Details\+:@{recurrence\+Details\+With\+Recurrence\+Details\+:}!Be\+Event\+\_\+\+Be\+Event\+Builder@{Be\+Event\+\_\+\+Be\+Event\+Builder}}
+\subsubsection[{recurrence\+Details\+With\+Recurrence\+Details\+:(\+Recurrence\+Details $\ast$recurrence\+Details)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Be\+Event\+\_\+\+Be\+Event\+Builder} $\ast$) recurrence\+Details\+With\+Recurrence\+Details\+: 
+\begin{DoxyParamCaption}
+\item[{({\bf Recurrence\+Details} $\ast$)}]{recurrence\+Details}
+\end{DoxyParamCaption}
+}\label{interface_be_event___be_event_builder_aa2f5445af660771f98e0940983f398cf}
+
+
+Sets the recurrence details of the \hyperlink{interface_be_event}{Be\+Event} and returns an updated \hyperlink{interface_be_event}{Be\+Event}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em recurrence\+Details} & includes details regarding the times, frequencies and end time of recurring event \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Be\+Event\+Builder 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{interface_be_event___be_event_builder_ad3328ec0ebc43e1542abf85f71511826}{}\index{Be\+Event\+\_\+\+Be\+Event\+Builder@{Be\+Event\+\_\+\+Be\+Event\+Builder}!add\+To\+Calendar\+\_\+\+\_\+@{add\+To\+Calendar\+\_\+\+\_\+}}
+\index{add\+To\+Calendar\+\_\+\+\_\+@{add\+To\+Calendar\+\_\+\+\_\+}!Be\+Event\+\_\+\+Be\+Event\+Builder@{Be\+Event\+\_\+\+Be\+Event\+Builder}}
+\subsubsection[{add\+To\+Calendar\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (boolean) add\+To\+Calendar\+\_\+\+\_\+}\label{interface_be_event___be_event_builder_ad3328ec0ebc43e1542abf85f71511826}
+\hypertarget{interface_be_event___be_event_builder_adc297c87c707e948202af179f92aa6b8}{}\index{Be\+Event\+\_\+\+Be\+Event\+Builder@{Be\+Event\+\_\+\+Be\+Event\+Builder}!creation\+Time\+\_\+@{creation\+Time\+\_\+}}
+\index{creation\+Time\+\_\+@{creation\+Time\+\_\+}!Be\+Event\+\_\+\+Be\+Event\+Builder@{Be\+Event\+\_\+\+Be\+Event\+Builder}}
+\subsubsection[{creation\+Time\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (long64) creation\+Time\+\_\+}\label{interface_be_event___be_event_builder_adc297c87c707e948202af179f92aa6b8}
+\hypertarget{interface_be_event___be_event_builder_a755c4793d4746d78c5731e2a9628eb1e}{}\index{Be\+Event\+\_\+\+Be\+Event\+Builder@{Be\+Event\+\_\+\+Be\+Event\+Builder}!recurrence\+Details\+\_\+\+\_\+@{recurrence\+Details\+\_\+\+\_\+}}
+\index{recurrence\+Details\+\_\+\+\_\+@{recurrence\+Details\+\_\+\+\_\+}!Be\+Event\+\_\+\+Be\+Event\+Builder@{Be\+Event\+\_\+\+Be\+Event\+Builder}}
+\subsubsection[{recurrence\+Details\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Recurrence\+Details}$\ast$) recurrence\+Details\+\_\+\+\_\+}\label{interface_be_event___be_event_builder_a755c4793d4746d78c5731e2a9628eb1e}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src\+\_\+converted/com/intel/wearable/platform/timeiq/api/events/\hyperlink{_be_event_8h}{Be\+Event.\+h}\end{DoxyCompactItemize}

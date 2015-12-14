@@ -1,0 +1,333 @@
+\hypertarget{interface_contact_info}{}\section{Contact\+Info Class Reference}
+\label{interface_contact_info}\index{Contact\+Info@{Contact\+Info}}
+
+
+This class represents a person\textquotesingle{}s contact information.  
+
+
+
+
+{\ttfamily \#import $<$Contact\+Info.\+h$>$}
+
+
+
+Inherits N\+S\+Object, and $<$\+I\+Mappable$>$.
+
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) -\/ \hyperlink{interface_contact_info_a4be099fdf5705e7db70ea153e716174d}{init}
+\begin{DoxyCompactList}\small\item\em For internal use. \end{DoxyCompactList}\item 
+(instancetype) -\/ \hyperlink{interface_contact_info_a2c5c78360dad69ed2c889047b1921125}{init\+With\+N\+S\+String\+:with\+N\+S\+String\+:with\+Date\+:with\+N\+S\+String\+:}
+\begin{DoxyCompactList}\small\item\em Create a \hyperlink{interface_contact_info}{Contact\+Info} that represents a person\textquotesingle{}s contact ~\newline
+ remember to use \#set\+Preferred\+Phone\+Number(\+Phone\+Number) or \#set\+Preferred\+Phone\+Number(\+String) \end{DoxyCompactList}\item 
+(instancetype) -\/ \hyperlink{interface_contact_info_af932c9f22b893e1ebf450f28aac49424}{init\+With\+N\+S\+String\+:with\+N\+S\+String\+:with\+Date\+:with\+Java\+Util\+Collection\+:}
+\begin{DoxyCompactList}\small\item\em Create a \hyperlink{interface_contact_info}{Contact\+Info} that represents a person\textquotesingle{}s contact ~\newline
+ remember to use \#set\+Preferred\+Phone\+Number(\+Phone\+Number) or \#set\+Preferred\+Phone\+Number(\+String) \end{DoxyCompactList}\item 
+(void) -\/ \hyperlink{interface_contact_info_a78552a7734920671d8d9a3279979738e}{init\+\_\+\+\_\+\+With\+N\+S\+String\+:with\+N\+S\+String\+:with\+Date\+:with\+Java\+Util\+Collection\+:}
+\item 
+(instancetype) -\/ \hyperlink{interface_contact_info_a5c337129db82ecbec2291024a95e6dd8}{init\+With\+N\+S\+String\+:with\+N\+S\+String\+:with\+Date\+:with\+Array\+List\+:}
+\item 
+(\hyperlink{interface_contact_info}{Contact\+Info} $\ast$) -\/ \hyperlink{interface_contact_info_ae94da2f6b9f53e9321d5060829d6fbab}{clone}
+\item 
+(void) -\/ \hyperlink{interface_contact_info_a3fcb8137d5c962bd93e0a26dc1cff9bb}{set\+Preferred\+Phone\+Number\+With\+N\+S\+String\+:}
+\begin{DoxyCompactList}\small\item\em Use to set the contact\textquotesingle{}s preferred phone number, this will {\bfseries not} be assumed, but will be added if to the contact phone numbers if not added yet. \end{DoxyCompactList}\item 
+(void) -\/ \hyperlink{interface_contact_info_a24ce0f58618d37d4ef30f3a75d3d838c}{set\+Preferred\+Phone\+Number\+With\+Phone\+Number\+:}
+\begin{DoxyCompactList}\small\item\em Use to set the contact\textquotesingle{}s preferred phone number, this will {\bfseries not} be assumed, but will be added if to the contact phone numbers if not added yet. \end{DoxyCompactList}\item 
+(N\+S\+String $\ast$) -\/ \hyperlink{interface_contact_info_a1c2fef05ccedc862c74411266b6cd5e5}{get\+Id}
+\begin{DoxyCompactList}\small\item\em Get the unique identifier of the contact. \end{DoxyCompactList}\item 
+(N\+S\+String $\ast$) -\/ \hyperlink{interface_contact_info_a9aa8b428a7ee940b1db38de715ba74a7}{get\+Name}
+\begin{DoxyCompactList}\small\item\em Get the name of the person. \end{DoxyCompactList}\item 
+(Date $\ast$) -\/ \hyperlink{interface_contact_info_aee6448a5ecdbbeacbbfeb5e35317fb9d}{get\+Birthday}
+\begin{DoxyCompactList}\small\item\em Get the birthday of the person. \end{DoxyCompactList}\item 
+(Set $\ast$) -\/ \hyperlink{interface_contact_info_a8d3f32621adcf075b8f4569445ad9fe6}{get\+Phone\+Numbers}
+\begin{DoxyCompactList}\small\item\em Get a collection of the contact\textquotesingle{}s phone numbers. \end{DoxyCompactList}\item 
+(\hyperlink{interface_phone_number}{Phone\+Number} $\ast$) -\/ \hyperlink{interface_contact_info_ae5de9b9e017fa48efd8dcc30205179d1}{get\+Preferred\+Phone\+Number}
+\begin{DoxyCompactList}\small\item\em Get the preferred phone number of the contact (null if not set) \end{DoxyCompactList}\item 
+(boolean) -\/ \hyperlink{interface_contact_info_a33026f641c756a1d263dd15e270c9e54}{is\+Equal\+:}
+\item 
+(N\+S\+U\+Integer) -\/ \hyperlink{interface_contact_info_a76805e61b71f7bef1b652fa2adae5540}{hash}
+\item 
+(void) -\/ \hyperlink{interface_contact_info_ab7529beb16604cdcfc6218ef0ce3614d}{init\+Object\+From\+Map\+With\+Java\+Util\+Map\+:}
+\begin{DoxyCompactList}\small\item\em For internal use. \end{DoxyCompactList}\item 
+(Hash\+Map $\ast$) -\/ \hyperlink{interface_contact_info_a4fada730efb17fa23bd87271c46659e6}{object\+To\+Map}
+\begin{DoxyCompactList}\small\item\em For internal use. \end{DoxyCompactList}\item 
+(void) -\/ \hyperlink{interface_contact_info_a5631628efe2c0dae84dff49e6c507d5d}{copy\+All\+Fields\+To\+:}
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+N\+S\+String $\ast$ \hyperlink{interface_contact_info_a40d0e1360de3473fdd1334fe34c99f63}{m\+\_\+id\+\_\+}
+\item 
+N\+S\+String $\ast$ \hyperlink{interface_contact_info_af22bda997f3412dc374c4e49e8ef1f5b}{m\+\_\+name\+\_\+}
+\item 
+Date $\ast$ \hyperlink{interface_contact_info_a28569ebc5e7c0b06d3b0479ebf46cb39}{m\+\_\+birthday\+\_\+}
+\item 
+Array\+List $\ast$ \hyperlink{interface_contact_info_a6445dc57a7d77146ce1df8638c591068}{m\+\_\+phone\+Numbers\+\_\+}
+\item 
+\hyperlink{interface_phone_number}{Phone\+Number} $\ast$ \hyperlink{interface_contact_info_a5d96317ffff5e452c9a2c6aa167df54b}{m\+\_\+preferred\+Phone\+Number\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents a person\textquotesingle{}s contact information. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_contact_info_ae94da2f6b9f53e9321d5060829d6fbab}{}\index{Contact\+Info@{Contact\+Info}!clone@{clone}}
+\index{clone@{clone}!Contact\+Info@{Contact\+Info}}
+\subsubsection[{clone()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Contact\+Info} $\ast$) clone 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_contact_info_ae94da2f6b9f53e9321d5060829d6fbab}
+\hypertarget{interface_contact_info_a5631628efe2c0dae84dff49e6c507d5d}{}\index{Contact\+Info@{Contact\+Info}!copy\+All\+Fields\+To\+:@{copy\+All\+Fields\+To\+:}}
+\index{copy\+All\+Fields\+To\+:@{copy\+All\+Fields\+To\+:}!Contact\+Info@{Contact\+Info}}
+\subsubsection[{copy\+All\+Fields\+To\+:(\+Contact\+Info $\ast$other)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) copy\+All\+Fields\+To\+: 
+\begin{DoxyParamCaption}
+\item[{({\bf Contact\+Info} $\ast$)}]{other}
+\end{DoxyParamCaption}
+}\label{interface_contact_info_a5631628efe2c0dae84dff49e6c507d5d}
+\hypertarget{interface_contact_info_aee6448a5ecdbbeacbbfeb5e35317fb9d}{}\index{Contact\+Info@{Contact\+Info}!get\+Birthday@{get\+Birthday}}
+\index{get\+Birthday@{get\+Birthday}!Contact\+Info@{Contact\+Info}}
+\subsubsection[{get\+Birthday()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (Date $\ast$) get\+Birthday 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_contact_info_aee6448a5ecdbbeacbbfeb5e35317fb9d}
+
+
+Get the birthday of the person. 
+
+\begin{DoxyReturn}{Returns}
+the birthday of the person 
+\end{DoxyReturn}
+\hypertarget{interface_contact_info_a1c2fef05ccedc862c74411266b6cd5e5}{}\index{Contact\+Info@{Contact\+Info}!get\+Id@{get\+Id}}
+\index{get\+Id@{get\+Id}!Contact\+Info@{Contact\+Info}}
+\subsubsection[{get\+Id()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+String $\ast$) get\+Id 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_contact_info_a1c2fef05ccedc862c74411266b6cd5e5}
+
+
+Get the unique identifier of the contact. 
+
+\begin{DoxyReturn}{Returns}
+the unique identifier of the contact 
+\end{DoxyReturn}
+\hypertarget{interface_contact_info_a9aa8b428a7ee940b1db38de715ba74a7}{}\index{Contact\+Info@{Contact\+Info}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!Contact\+Info@{Contact\+Info}}
+\subsubsection[{get\+Name()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+String $\ast$) get\+Name 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_contact_info_a9aa8b428a7ee940b1db38de715ba74a7}
+
+
+Get the name of the person. 
+
+\begin{DoxyReturn}{Returns}
+the name of the person 
+\end{DoxyReturn}
+\hypertarget{interface_contact_info_a8d3f32621adcf075b8f4569445ad9fe6}{}\index{Contact\+Info@{Contact\+Info}!get\+Phone\+Numbers@{get\+Phone\+Numbers}}
+\index{get\+Phone\+Numbers@{get\+Phone\+Numbers}!Contact\+Info@{Contact\+Info}}
+\subsubsection[{get\+Phone\+Numbers()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (Set$\ast$) get\+Phone\+Numbers 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_contact_info_a8d3f32621adcf075b8f4569445ad9fe6}
+
+
+Get a collection of the contact\textquotesingle{}s phone numbers. 
+
+\begin{DoxyReturn}{Returns}
+a collection of the contact\textquotesingle{}s phone numbers 
+\end{DoxyReturn}
+\hypertarget{interface_contact_info_ae5de9b9e017fa48efd8dcc30205179d1}{}\index{Contact\+Info@{Contact\+Info}!get\+Preferred\+Phone\+Number@{get\+Preferred\+Phone\+Number}}
+\index{get\+Preferred\+Phone\+Number@{get\+Preferred\+Phone\+Number}!Contact\+Info@{Contact\+Info}}
+\subsubsection[{get\+Preferred\+Phone\+Number()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Phone\+Number} $\ast$) get\+Preferred\+Phone\+Number 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_contact_info_ae5de9b9e017fa48efd8dcc30205179d1}
+
+
+Get the preferred phone number of the contact (null if not set) 
+
+\begin{DoxyReturn}{Returns}
+the preferred phone number of the contact 
+\end{DoxyReturn}
+\hypertarget{interface_contact_info_a76805e61b71f7bef1b652fa2adae5540}{}\index{Contact\+Info@{Contact\+Info}!hash@{hash}}
+\index{hash@{hash}!Contact\+Info@{Contact\+Info}}
+\subsubsection[{hash()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+U\+Integer) hash 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_contact_info_a76805e61b71f7bef1b652fa2adae5540}
+\hypertarget{interface_contact_info_a4be099fdf5705e7db70ea153e716174d}{}\index{Contact\+Info@{Contact\+Info}!init@{init}}
+\index{init@{init}!Contact\+Info@{Contact\+Info}}
+\subsubsection[{init()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_contact_info_a4be099fdf5705e7db70ea153e716174d}
+
+
+For internal use. 
+
+\hypertarget{interface_contact_info_a78552a7734920671d8d9a3279979738e}{}\index{Contact\+Info@{Contact\+Info}!init\+\_\+\+\_\+\+With\+N\+S\+String\+:with\+N\+S\+String\+:with\+Date\+:with\+Java\+Util\+Collection\+:@{init\+\_\+\+\_\+\+With\+N\+S\+String\+:with\+N\+S\+String\+:with\+Date\+:with\+Java\+Util\+Collection\+:}}
+\index{init\+\_\+\+\_\+\+With\+N\+S\+String\+:with\+N\+S\+String\+:with\+Date\+:with\+Java\+Util\+Collection\+:@{init\+\_\+\+\_\+\+With\+N\+S\+String\+:with\+N\+S\+String\+:with\+Date\+:with\+Java\+Util\+Collection\+:}!Contact\+Info@{Contact\+Info}}
+\subsubsection[{init\+\_\+\+\_\+\+With\+N\+S\+String\+:with\+N\+S\+String\+:with\+Date\+:with\+Java\+Util\+Collection\+:(\+N\+S\+String $\ast$id\+\_\+,[with\+N\+S\+String] N\+S\+String $\ast$name,[with\+Date] Date $\ast$birthday,[with\+Java\+Util\+Collection] Set $\ast$\+O\+B\+J\+C\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+F\+A\+M\+I\+L\+Y\+\_\+\+N\+O\+N\+E)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) init\+\_\+\+\_\+\+With\+N\+S\+String\+: 
+\begin{DoxyParamCaption}
+\item[{(N\+S\+String $\ast$)}]{id\+\_\+}
+\item[{withNSString:(N\+S\+String $\ast$)}]{name}
+\item[{withDate:(Date $\ast$)}]{birthday}
+\item[{withJavaUtilCollection:(Set $\ast$)}]{O\+B\+J\+C\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+F\+A\+M\+I\+L\+Y\+\_\+\+N\+O\+N\+E}
+\end{DoxyParamCaption}
+}\label{interface_contact_info_a78552a7734920671d8d9a3279979738e}
+\hypertarget{interface_contact_info_ab7529beb16604cdcfc6218ef0ce3614d}{}\index{Contact\+Info@{Contact\+Info}!init\+Object\+From\+Map\+With\+Java\+Util\+Map\+:@{init\+Object\+From\+Map\+With\+Java\+Util\+Map\+:}}
+\index{init\+Object\+From\+Map\+With\+Java\+Util\+Map\+:@{init\+Object\+From\+Map\+With\+Java\+Util\+Map\+:}!Contact\+Info@{Contact\+Info}}
+\subsubsection[{init\+Object\+From\+Map\+With\+Java\+Util\+Map\+:(\+Hash\+Map $\ast$\+O\+B\+J\+C\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+F\+A\+M\+I\+L\+Y\+\_\+\+N\+O\+N\+E)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) init\+Object\+From\+Map\+With\+Java\+Util\+Map\+: 
+\begin{DoxyParamCaption}
+\item[{(Hash\+Map $\ast$)}]{O\+B\+J\+C\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+F\+A\+M\+I\+L\+Y\+\_\+\+N\+O\+N\+E}
+\end{DoxyParamCaption}
+}\label{interface_contact_info_ab7529beb16604cdcfc6218ef0ce3614d}
+
+
+For internal use. 
+
+\hypertarget{interface_contact_info_a5c337129db82ecbec2291024a95e6dd8}{}\index{Contact\+Info@{Contact\+Info}!init\+With\+N\+S\+String\+:with\+N\+S\+String\+:with\+Date\+:with\+Array\+List\+:@{init\+With\+N\+S\+String\+:with\+N\+S\+String\+:with\+Date\+:with\+Array\+List\+:}}
+\index{init\+With\+N\+S\+String\+:with\+N\+S\+String\+:with\+Date\+:with\+Array\+List\+:@{init\+With\+N\+S\+String\+:with\+N\+S\+String\+:with\+Date\+:with\+Array\+List\+:}!Contact\+Info@{Contact\+Info}}
+\subsubsection[{init\+With\+N\+S\+String\+:with\+N\+S\+String\+:with\+Date\+:with\+Array\+List\+:(\+N\+S\+String $\ast$id\+\_\+,[with\+N\+S\+String] N\+S\+String $\ast$name,[with\+Date] Date $\ast$birthday,[with\+Array\+List] Array\+List $\ast$phone\+Numbers)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\+With\+N\+S\+String\+: 
+\begin{DoxyParamCaption}
+\item[{(N\+S\+String $\ast$)}]{id\+\_\+}
+\item[{withNSString:(N\+S\+String $\ast$)}]{name}
+\item[{withDate:(Date $\ast$)}]{birthday}
+\item[{withArrayList:(Array\+List $\ast$)}]{phone\+Numbers}
+\end{DoxyParamCaption}
+}\label{interface_contact_info_a5c337129db82ecbec2291024a95e6dd8}
+\hypertarget{interface_contact_info_af932c9f22b893e1ebf450f28aac49424}{}\index{Contact\+Info@{Contact\+Info}!init\+With\+N\+S\+String\+:with\+N\+S\+String\+:with\+Date\+:with\+Java\+Util\+Collection\+:@{init\+With\+N\+S\+String\+:with\+N\+S\+String\+:with\+Date\+:with\+Java\+Util\+Collection\+:}}
+\index{init\+With\+N\+S\+String\+:with\+N\+S\+String\+:with\+Date\+:with\+Java\+Util\+Collection\+:@{init\+With\+N\+S\+String\+:with\+N\+S\+String\+:with\+Date\+:with\+Java\+Util\+Collection\+:}!Contact\+Info@{Contact\+Info}}
+\subsubsection[{init\+With\+N\+S\+String\+:with\+N\+S\+String\+:with\+Date\+:with\+Java\+Util\+Collection\+:(\+N\+S\+String $\ast$id\+\_\+,[with\+N\+S\+String] N\+S\+String $\ast$name,[with\+Date] Date $\ast$birthday,[with\+Java\+Util\+Collection] Set $\ast$phone\+Numbers)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\+With\+N\+S\+String\+: 
+\begin{DoxyParamCaption}
+\item[{(N\+S\+String $\ast$)}]{id\+\_\+}
+\item[{withNSString:(N\+S\+String $\ast$)}]{name}
+\item[{withDate:(Date $\ast$)}]{birthday}
+\item[{withJavaUtilCollection:(Set $\ast$)}]{phone\+Numbers}
+\end{DoxyParamCaption}
+}\label{interface_contact_info_af932c9f22b893e1ebf450f28aac49424}
+
+
+Create a \hyperlink{interface_contact_info}{Contact\+Info} that represents a person\textquotesingle{}s contact ~\newline
+ remember to use \#set\+Preferred\+Phone\+Number(\+Phone\+Number) or \#set\+Preferred\+Phone\+Number(\+String) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & a unique identifier of the contact \\
+\hline
+{\em name} & the name of the person \\
+\hline
+{\em birthday} & the birthday of the person \\
+\hline
+{\em phone\+Numbers} & a collection of the contact\textquotesingle{}s phone numbers (single number can be given using \#\+Contact\+Info(\+String,\+String,\+Date,\+String) ) \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_contact_info_a2c5c78360dad69ed2c889047b1921125}{}\index{Contact\+Info@{Contact\+Info}!init\+With\+N\+S\+String\+:with\+N\+S\+String\+:with\+Date\+:with\+N\+S\+String\+:@{init\+With\+N\+S\+String\+:with\+N\+S\+String\+:with\+Date\+:with\+N\+S\+String\+:}}
+\index{init\+With\+N\+S\+String\+:with\+N\+S\+String\+:with\+Date\+:with\+N\+S\+String\+:@{init\+With\+N\+S\+String\+:with\+N\+S\+String\+:with\+Date\+:with\+N\+S\+String\+:}!Contact\+Info@{Contact\+Info}}
+\subsubsection[{init\+With\+N\+S\+String\+:with\+N\+S\+String\+:with\+Date\+:with\+N\+S\+String\+:(\+N\+S\+String $\ast$id\+\_\+,[with\+N\+S\+String] N\+S\+String $\ast$name,[with\+Date] Date $\ast$birthday,[with\+N\+S\+String] N\+S\+String $\ast$phone\+Number)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\+With\+N\+S\+String\+: 
+\begin{DoxyParamCaption}
+\item[{(N\+S\+String $\ast$)}]{id\+\_\+}
+\item[{withNSString:(N\+S\+String $\ast$)}]{name}
+\item[{withDate:(Date $\ast$)}]{birthday}
+\item[{withNSString:(N\+S\+String $\ast$)}]{phone\+Number}
+\end{DoxyParamCaption}
+}\label{interface_contact_info_a2c5c78360dad69ed2c889047b1921125}
+
+
+Create a \hyperlink{interface_contact_info}{Contact\+Info} that represents a person\textquotesingle{}s contact ~\newline
+ remember to use \#set\+Preferred\+Phone\+Number(\+Phone\+Number) or \#set\+Preferred\+Phone\+Number(\+String) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & a unique identifier of the contact \\
+\hline
+{\em name} & the name of the person \\
+\hline
+{\em birthday} & the birthday of the person \\
+\hline
+{\em phone\+Number} & a string representing the contact\textquotesingle{}s phone number (multiple numbers can be given using \#\+Contact\+Info(\+String,\+String,\+Date,\+Collection) ) \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_contact_info_a33026f641c756a1d263dd15e270c9e54}{}\index{Contact\+Info@{Contact\+Info}!is\+Equal\+:@{is\+Equal\+:}}
+\index{is\+Equal\+:@{is\+Equal\+:}!Contact\+Info@{Contact\+Info}}
+\subsubsection[{is\+Equal\+:(id o)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (boolean) is\+Equal\+: 
+\begin{DoxyParamCaption}
+\item[{(id)}]{o}
+\end{DoxyParamCaption}
+}\label{interface_contact_info_a33026f641c756a1d263dd15e270c9e54}
+\hypertarget{interface_contact_info_a4fada730efb17fa23bd87271c46659e6}{}\index{Contact\+Info@{Contact\+Info}!object\+To\+Map@{object\+To\+Map}}
+\index{object\+To\+Map@{object\+To\+Map}!Contact\+Info@{Contact\+Info}}
+\subsubsection[{object\+To\+Map()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (Hash\+Map$\ast$) object\+To\+Map 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_contact_info_a4fada730efb17fa23bd87271c46659e6}
+
+
+For internal use. 
+
+\hypertarget{interface_contact_info_a3fcb8137d5c962bd93e0a26dc1cff9bb}{}\index{Contact\+Info@{Contact\+Info}!set\+Preferred\+Phone\+Number\+With\+N\+S\+String\+:@{set\+Preferred\+Phone\+Number\+With\+N\+S\+String\+:}}
+\index{set\+Preferred\+Phone\+Number\+With\+N\+S\+String\+:@{set\+Preferred\+Phone\+Number\+With\+N\+S\+String\+:}!Contact\+Info@{Contact\+Info}}
+\subsubsection[{set\+Preferred\+Phone\+Number\+With\+N\+S\+String\+:(\+N\+S\+String $\ast$preferred\+Phone\+Number)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) set\+Preferred\+Phone\+Number\+With\+N\+S\+String\+: 
+\begin{DoxyParamCaption}
+\item[{(N\+S\+String $\ast$)}]{preferred\+Phone\+Number}
+\end{DoxyParamCaption}
+}\label{interface_contact_info_a3fcb8137d5c962bd93e0a26dc1cff9bb}
+
+
+Use to set the contact\textquotesingle{}s preferred phone number, this will {\bfseries not} be assumed, but will be added if to the contact phone numbers if not added yet. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em preferred\+Phone\+Number} & the phone number to set as preferred \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_contact_info_a24ce0f58618d37d4ef30f3a75d3d838c}{}\index{Contact\+Info@{Contact\+Info}!set\+Preferred\+Phone\+Number\+With\+Phone\+Number\+:@{set\+Preferred\+Phone\+Number\+With\+Phone\+Number\+:}}
+\index{set\+Preferred\+Phone\+Number\+With\+Phone\+Number\+:@{set\+Preferred\+Phone\+Number\+With\+Phone\+Number\+:}!Contact\+Info@{Contact\+Info}}
+\subsubsection[{set\+Preferred\+Phone\+Number\+With\+Phone\+Number\+:(\+Phone\+Number $\ast$preferred\+Phone\+Number)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) set\+Preferred\+Phone\+Number\+With\+Phone\+Number\+: 
+\begin{DoxyParamCaption}
+\item[{({\bf Phone\+Number} $\ast$)}]{preferred\+Phone\+Number}
+\end{DoxyParamCaption}
+}\label{interface_contact_info_a24ce0f58618d37d4ef30f3a75d3d838c}
+
+
+Use to set the contact\textquotesingle{}s preferred phone number, this will {\bfseries not} be assumed, but will be added if to the contact phone numbers if not added yet. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em preferred\+Phone\+Number} & the phone number to set as preferred \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{interface_contact_info_a28569ebc5e7c0b06d3b0479ebf46cb39}{}\index{Contact\+Info@{Contact\+Info}!m\+\_\+birthday\+\_\+@{m\+\_\+birthday\+\_\+}}
+\index{m\+\_\+birthday\+\_\+@{m\+\_\+birthday\+\_\+}!Contact\+Info@{Contact\+Info}}
+\subsubsection[{m\+\_\+birthday\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (Date$\ast$) m\+\_\+birthday\+\_\+}\label{interface_contact_info_a28569ebc5e7c0b06d3b0479ebf46cb39}
+\hypertarget{interface_contact_info_a40d0e1360de3473fdd1334fe34c99f63}{}\index{Contact\+Info@{Contact\+Info}!m\+\_\+id\+\_\+@{m\+\_\+id\+\_\+}}
+\index{m\+\_\+id\+\_\+@{m\+\_\+id\+\_\+}!Contact\+Info@{Contact\+Info}}
+\subsubsection[{m\+\_\+id\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+String$\ast$) m\+\_\+id\+\_\+}\label{interface_contact_info_a40d0e1360de3473fdd1334fe34c99f63}
+\hypertarget{interface_contact_info_af22bda997f3412dc374c4e49e8ef1f5b}{}\index{Contact\+Info@{Contact\+Info}!m\+\_\+name\+\_\+@{m\+\_\+name\+\_\+}}
+\index{m\+\_\+name\+\_\+@{m\+\_\+name\+\_\+}!Contact\+Info@{Contact\+Info}}
+\subsubsection[{m\+\_\+name\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+String$\ast$) m\+\_\+name\+\_\+}\label{interface_contact_info_af22bda997f3412dc374c4e49e8ef1f5b}
+\hypertarget{interface_contact_info_a6445dc57a7d77146ce1df8638c591068}{}\index{Contact\+Info@{Contact\+Info}!m\+\_\+phone\+Numbers\+\_\+@{m\+\_\+phone\+Numbers\+\_\+}}
+\index{m\+\_\+phone\+Numbers\+\_\+@{m\+\_\+phone\+Numbers\+\_\+}!Contact\+Info@{Contact\+Info}}
+\subsubsection[{m\+\_\+phone\+Numbers\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (Array\+List$\ast$) m\+\_\+phone\+Numbers\+\_\+}\label{interface_contact_info_a6445dc57a7d77146ce1df8638c591068}
+\hypertarget{interface_contact_info_a5d96317ffff5e452c9a2c6aa167df54b}{}\index{Contact\+Info@{Contact\+Info}!m\+\_\+preferred\+Phone\+Number\+\_\+@{m\+\_\+preferred\+Phone\+Number\+\_\+}}
+\index{m\+\_\+preferred\+Phone\+Number\+\_\+@{m\+\_\+preferred\+Phone\+Number\+\_\+}!Contact\+Info@{Contact\+Info}}
+\subsubsection[{m\+\_\+preferred\+Phone\+Number\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Phone\+Number}$\ast$) m\+\_\+preferred\+Phone\+Number\+\_\+}\label{interface_contact_info_a5d96317ffff5e452c9a2c6aa167df54b}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src\+\_\+converted/com/intel/wearable/platform/timeiq/api/common/contact/\hyperlink{_contact_info_8h}{Contact\+Info.\+h}\end{DoxyCompactItemize}

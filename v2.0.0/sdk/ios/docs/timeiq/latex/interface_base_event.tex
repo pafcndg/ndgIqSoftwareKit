@@ -1,0 +1,471 @@
+\hypertarget{interface_base_event}{}\section{Base\+Event Class Reference}
+\label{interface_base_event}\index{Base\+Event@{Base\+Event}}
+
+
+Basic event type to be extended by other event types in the system.  
+
+
+
+
+{\ttfamily \#import $<$Base\+Event.\+h$>$}
+
+
+
+Inherits N\+S\+Object, and \hyperlink{protocol_i_event-p}{$<$\+I\+Event$>$}.
+
+
+
+Inherited by \hyperlink{interface_be_event}{Be\+Event}, and \hyperlink{interface_calendar_event}{Calendar\+Event}.
+
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) -\/ \hyperlink{interface_base_event_ae79385e6fd1e96d0f0cc17a9b1df9ab5}{init\+With\+Base\+Event\+\_\+\+Base\+Event\+Builder\+:}
+\item 
+(\hyperlink{interface_t_s_o_place}{T\+S\+O\+Place} $\ast$) -\/ \hyperlink{interface_base_event_ac6024f9a94d21c69b6279ba965600301}{get\+Location}
+\begin{DoxyCompactList}\small\item\em Event location. \end{DoxyCompactList}\item 
+(long64) -\/ \hyperlink{interface_base_event_a37d6a6ab180647f517cae75137c91b32}{get\+Arrival\+Time}
+\begin{DoxyCompactList}\small\item\em Event start time. \end{DoxyCompactList}\item 
+(N\+S\+String $\ast$) -\/ \hyperlink{interface_base_event_a183986d8f6c728edba174569a5b07700}{get\+Calendar\+Id}
+\begin{DoxyCompactList}\small\item\em Returns the calendar I\+D in which the event is written. \end{DoxyCompactList}\item 
+(long64) -\/ \hyperlink{interface_base_event_aaaf50d1e852caaed683b9b4a35b47606}{get\+Duration}
+\begin{DoxyCompactList}\small\item\em Event duration. \end{DoxyCompactList}\item 
+(N\+S\+String $\ast$) -\/ \hyperlink{interface_base_event_a04588643c661c925966214f42f4c9f3f}{get\+Id}
+\begin{DoxyCompactList}\small\item\em Event one-\/to-\/one identifier. \end{DoxyCompactList}\item 
+(N\+S\+String $\ast$) -\/ \hyperlink{interface_base_event_ad6eb9f816ce7c59bbd2c8d029cc27f33}{get\+Subject}
+\begin{DoxyCompactList}\small\item\em Event subject. \end{DoxyCompactList}\item 
+(N\+S\+String $\ast$) -\/ \hyperlink{interface_base_event_ad359d955f9853f5c5c50d0df359be50c}{get\+Description}
+\begin{DoxyCompactList}\small\item\em Event description. \end{DoxyCompactList}\item 
+(long64) -\/ \hyperlink{interface_base_event_a3abff8c812935b4bf65947ab07ab5b16}{get\+Reminder\+Time\+Before\+T\+T\+L}
+\begin{DoxyCompactList}\small\item\em The time to trigger a reminder before the Time-\/\+To-\/\+Leave to arrive on time to event. \end{DoxyCompactList}\item 
+(Transport\+Type $\ast$) -\/ \hyperlink{interface_base_event_ae5f6adb1975e6d8189cd8effab3ad02c}{get\+Preferred\+Transport\+Type}
+\begin{DoxyCompactList}\small\item\em The user preferred transport type to event. \end{DoxyCompactList}\item 
+(\hyperlink{interface_t_s_o_event_type}{T\+S\+O\+Event\+Type} $\ast$) -\/ \hyperlink{interface_base_event_a563e7f6ddb1b3543ebc3bdbade7678d2}{get\+Event\+Type}
+\begin{DoxyCompactList}\small\item\em Returns the event type. \end{DoxyCompactList}\item 
+(long64) -\/ \hyperlink{interface_base_event_a8ab6e634d8844b571978cfb762716595}{get\+General\+Alarm\+Time}
+\begin{DoxyCompactList}\small\item\em The time to trigger a reminder before the event starts, in case the Time-\/\+To-\/\+Leave alarm is disabled. \end{DoxyCompactList}\item 
+(boolean) -\/ \hyperlink{interface_base_event_a2a96376d69fdd82d780343cff7ee8193}{is\+Disable\+T\+T\+L\+Alerts}
+\begin{DoxyCompactList}\small\item\em Did the user enable the Time-\/\+To-\/\+Leave alarm to pop. \end{DoxyCompactList}\item 
+(boolean) -\/ \hyperlink{interface_base_event_a30cf54095aa91c34c77f4e39c845ff53}{is\+Disable\+General\+Reminder\+Alerts}
+\begin{DoxyCompactList}\small\item\em Did the user enable the General reminder alarm to pop. \end{DoxyCompactList}\item 
+(boolean) -\/ \hyperlink{interface_base_event_a1691270b618eacb59f0ac5f0638437ab}{is\+Alert\+On\+Event\+Start}
+\begin{DoxyCompactList}\small\item\em Did the user enable an alarm to trigger when event starts. \end{DoxyCompactList}\item 
+(boolean) -\/ \hyperlink{interface_base_event_a314fc1374ef4c52c565f76692ea04848}{is\+Alert\+On\+Event\+End}
+\begin{DoxyCompactList}\small\item\em Did the user enable an alarm to trigger when event ends. \end{DoxyCompactList}\item 
+(N\+S\+String $\ast$) -\/ \hyperlink{interface_base_event_aea05fd643a54c8ead0a23998d360cbff}{description}
+\item 
+(boolean) -\/ \hyperlink{interface_base_event_a4d0dc712efa28831b9486440fd0158bd}{is\+Equal\+:}
+\item 
+(N\+S\+U\+Integer) -\/ \hyperlink{interface_base_event_a523c34ab18910db6dff234d02ff9618c}{hash}
+\item 
+(void) -\/ \hyperlink{interface_base_event_a1221347765786cd64afa74bdcf10c835}{copy\+All\+Fields\+To\+:}
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{interface_t_s_o_place}{T\+S\+O\+Place} $\ast$ \hyperlink{interface_base_event_a7c8133029c1b40680a18f018f6cb37d8}{location\+\_\+}
+\item 
+long64 \hyperlink{interface_base_event_aa4f3ee06382da10b0682c75e41f15a27}{arrival\+Time\+\_\+}
+\item 
+N\+S\+String $\ast$ \hyperlink{interface_base_event_a8b076b0f0d3d0034957182ddc8f5a04e}{calendar\+Id\+\_\+}
+\item 
+long64 \hyperlink{interface_base_event_a096695f42ba508c550b5a8ec3f9b07ea}{duration\+\_\+}
+\item 
+N\+S\+String $\ast$ \hyperlink{interface_base_event_a3c192ced35381d10d483fba069102f2b}{id\+\_\+\+\_\+}
+\item 
+N\+S\+String $\ast$ \hyperlink{interface_base_event_a5afd766b21d39c0f158643038a694fed}{subject\+\_\+}
+\item 
+N\+S\+String $\ast$ \hyperlink{interface_base_event_ae0a6376ab05a24983deca22cd20861b9}{description\+\_\+\+\_\+}
+\item 
+long64 \hyperlink{interface_base_event_a22085a1f1df0d46b27ab2a859e4947be}{reminder\+Time\+Before\+T\+T\+L\+\_\+}
+\item 
+\hyperlink{interface_t_s_o_event_type}{T\+S\+O\+Event\+Type} $\ast$ \hyperlink{interface_base_event_a82014c3577aec81b69ecc4b7abdcc316}{event\+Type\+\_\+}
+\item 
+long64 \hyperlink{interface_base_event_af0eed092fc8508a8e3dfede3782c8133}{general\+Alarm\+Time\+\_\+}
+\item 
+boolean \hyperlink{interface_base_event_a65eaacb83b54ba467adebb354099d4b8}{disable\+T\+T\+L\+Alerts\+\_\+}
+\item 
+boolean \hyperlink{interface_base_event_abc90b83d98969a531e87ac598db8ec38}{disable\+General\+Reminder\+Alerts\+\_\+}
+\item 
+boolean \hyperlink{interface_base_event_a1a3d69f5009c3f0e783cb2b88cc3ae96}{alert\+On\+Event\+Start\+\_\+}
+\item 
+boolean \hyperlink{interface_base_event_a9c111ab0ab0caf03ea717e82f7eddffe}{alert\+On\+Event\+End\+\_\+}
+\item 
+Transport\+Type $\ast$ \hyperlink{interface_base_event_a4e5909f04ed95e1b62525e8103f4cf99}{preferred\+Transport\+Type\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Basic event type to be extended by other event types in the system. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_base_event_a1221347765786cd64afa74bdcf10c835}{}\index{Base\+Event@{Base\+Event}!copy\+All\+Fields\+To\+:@{copy\+All\+Fields\+To\+:}}
+\index{copy\+All\+Fields\+To\+:@{copy\+All\+Fields\+To\+:}!Base\+Event@{Base\+Event}}
+\subsubsection[{copy\+All\+Fields\+To\+:(\+Base\+Event $\ast$other)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) copy\+All\+Fields\+To\+: 
+\begin{DoxyParamCaption}
+\item[{({\bf Base\+Event} $\ast$)}]{other}
+\end{DoxyParamCaption}
+}\label{interface_base_event_a1221347765786cd64afa74bdcf10c835}
+\hypertarget{interface_base_event_aea05fd643a54c8ead0a23998d360cbff}{}\index{Base\+Event@{Base\+Event}!description@{description}}
+\index{description@{description}!Base\+Event@{Base\+Event}}
+\subsubsection[{description()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+String $\ast$) description 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_base_event_aea05fd643a54c8ead0a23998d360cbff}
+
+
+Implemented in \hyperlink{interface_be_event_af4269010bf1a0a5ffa6d5d5c84463c14}{Be\+Event}, and \hyperlink{interface_calendar_event_a8de7d40afbde448418e85373c80b3652}{Calendar\+Event}.
+
+\hypertarget{interface_base_event_a37d6a6ab180647f517cae75137c91b32}{}\index{Base\+Event@{Base\+Event}!get\+Arrival\+Time@{get\+Arrival\+Time}}
+\index{get\+Arrival\+Time@{get\+Arrival\+Time}!Base\+Event@{Base\+Event}}
+\subsubsection[{get\+Arrival\+Time()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (long64) get\+Arrival\+Time 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_base_event_a37d6a6ab180647f517cae75137c91b32}
+
+
+Event start time. 
+
+\begin{DoxyReturn}{Returns}
+a long that represents the event arrival time 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{protocol_i_event-p_a6cf40b28e45bb8daf220634719789257}{$<$\+I\+Event$>$}.
+
+\hypertarget{interface_base_event_a183986d8f6c728edba174569a5b07700}{}\index{Base\+Event@{Base\+Event}!get\+Calendar\+Id@{get\+Calendar\+Id}}
+\index{get\+Calendar\+Id@{get\+Calendar\+Id}!Base\+Event@{Base\+Event}}
+\subsubsection[{get\+Calendar\+Id()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+String $\ast$) get\+Calendar\+Id 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_base_event_a183986d8f6c728edba174569a5b07700}
+
+
+Returns the calendar I\+D in which the event is written. 
+
+\begin{DoxyReturn}{Returns}
+the calendar\+Id in which the event is written 
+\end{DoxyReturn}
+\hypertarget{interface_base_event_ad359d955f9853f5c5c50d0df359be50c}{}\index{Base\+Event@{Base\+Event}!get\+Description@{get\+Description}}
+\index{get\+Description@{get\+Description}!Base\+Event@{Base\+Event}}
+\subsubsection[{get\+Description()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+String $\ast$) get\+Description 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_base_event_ad359d955f9853f5c5c50d0df359be50c}
+
+
+Event description. 
+
+\begin{DoxyReturn}{Returns}
+a String that describes the event description 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{protocol_i_event-p_a65f9e7bbad7339f070ebd608c38540f3}{$<$\+I\+Event$>$}.
+
+\hypertarget{interface_base_event_aaaf50d1e852caaed683b9b4a35b47606}{}\index{Base\+Event@{Base\+Event}!get\+Duration@{get\+Duration}}
+\index{get\+Duration@{get\+Duration}!Base\+Event@{Base\+Event}}
+\subsubsection[{get\+Duration()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (long64) get\+Duration 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_base_event_aaaf50d1e852caaed683b9b4a35b47606}
+
+
+Event duration. 
+
+\begin{DoxyReturn}{Returns}
+a long that represents the event duration 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{protocol_i_event-p_a577cd6d2610ca7df7eef235937fd6105}{$<$\+I\+Event$>$}.
+
+\hypertarget{interface_base_event_a563e7f6ddb1b3543ebc3bdbade7678d2}{}\index{Base\+Event@{Base\+Event}!get\+Event\+Type@{get\+Event\+Type}}
+\index{get\+Event\+Type@{get\+Event\+Type}!Base\+Event@{Base\+Event}}
+\subsubsection[{get\+Event\+Type()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf T\+S\+O\+Event\+Type} $\ast$) get\+Event\+Type 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_base_event_a563e7f6ddb1b3543ebc3bdbade7678d2}
+
+
+Returns the event type. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{interface_t_s_o_event_type}{T\+S\+O\+Event\+Type} 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{protocol_i_event-p_add6cde14025f53b895a590abb48691fa}{$<$\+I\+Event$>$}.
+
+
+
+Implemented in \hyperlink{interface_be_event_a940b72403160693699f912ef27e3ef05}{Be\+Event}, and \hyperlink{interface_calendar_event_a317a711a65dffbcd6b3072f71f4c471b}{Calendar\+Event}.
+
+\hypertarget{interface_base_event_a8ab6e634d8844b571978cfb762716595}{}\index{Base\+Event@{Base\+Event}!get\+General\+Alarm\+Time@{get\+General\+Alarm\+Time}}
+\index{get\+General\+Alarm\+Time@{get\+General\+Alarm\+Time}!Base\+Event@{Base\+Event}}
+\subsubsection[{get\+General\+Alarm\+Time()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (long64) get\+General\+Alarm\+Time 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_base_event_a8ab6e634d8844b571978cfb762716595}
+
+
+The time to trigger a reminder before the event starts, in case the Time-\/\+To-\/\+Leave alarm is disabled. 
+
+\begin{DoxyReturn}{Returns}
+a long that represents the reminder time 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{protocol_i_event-p_af2343abfbba77c3bb85722c5162e6d81}{$<$\+I\+Event$>$}.
+
+\hypertarget{interface_base_event_a04588643c661c925966214f42f4c9f3f}{}\index{Base\+Event@{Base\+Event}!get\+Id@{get\+Id}}
+\index{get\+Id@{get\+Id}!Base\+Event@{Base\+Event}}
+\subsubsection[{get\+Id()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+String $\ast$) get\+Id 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_base_event_a04588643c661c925966214f42f4c9f3f}
+
+
+Event one-\/to-\/one identifier. 
+
+\begin{DoxyReturn}{Returns}
+a string that represents the event identifier 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{protocol_i_event-p_a4af1b5764b650fc600f3042468803f89}{$<$\+I\+Event$>$}.
+
+\hypertarget{interface_base_event_ac6024f9a94d21c69b6279ba965600301}{}\index{Base\+Event@{Base\+Event}!get\+Location@{get\+Location}}
+\index{get\+Location@{get\+Location}!Base\+Event@{Base\+Event}}
+\subsubsection[{get\+Location()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf T\+S\+O\+Place} $\ast$) get\+Location 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_base_event_ac6024f9a94d21c69b6279ba965600301}
+
+
+Event location. 
+
+\begin{DoxyReturn}{Returns}
+T\+S\+O\+Location 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{protocol_i_event-p_af2043ccd14d1f83ffa8cfe41d7fb8f36}{$<$\+I\+Event$>$}.
+
+\hypertarget{interface_base_event_ae5f6adb1975e6d8189cd8effab3ad02c}{}\index{Base\+Event@{Base\+Event}!get\+Preferred\+Transport\+Type@{get\+Preferred\+Transport\+Type}}
+\index{get\+Preferred\+Transport\+Type@{get\+Preferred\+Transport\+Type}!Base\+Event@{Base\+Event}}
+\subsubsection[{get\+Preferred\+Transport\+Type()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (Transport\+Type $\ast$) get\+Preferred\+Transport\+Type 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_base_event_ae5f6adb1975e6d8189cd8effab3ad02c}
+
+
+The user preferred transport type to event. 
+
+\begin{DoxyReturn}{Returns}
+Transport\+Type 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{protocol_i_event-p_aba19a7534c8ebeea01f8b3ca714f7e4a}{$<$\+I\+Event$>$}.
+
+\hypertarget{interface_base_event_a3abff8c812935b4bf65947ab07ab5b16}{}\index{Base\+Event@{Base\+Event}!get\+Reminder\+Time\+Before\+T\+T\+L@{get\+Reminder\+Time\+Before\+T\+T\+L}}
+\index{get\+Reminder\+Time\+Before\+T\+T\+L@{get\+Reminder\+Time\+Before\+T\+T\+L}!Base\+Event@{Base\+Event}}
+\subsubsection[{get\+Reminder\+Time\+Before\+T\+T\+L()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (long64) get\+Reminder\+Time\+Before\+T\+T\+L 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_base_event_a3abff8c812935b4bf65947ab07ab5b16}
+
+
+The time to trigger a reminder before the Time-\/\+To-\/\+Leave to arrive on time to event. 
+
+\begin{DoxyReturn}{Returns}
+a long that represents the reminder time before Time-\/\+To-\/\+Leave. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{protocol_i_event-p_a75f19dea05b68025526fc2a6151dd9bb}{$<$\+I\+Event$>$}.
+
+\hypertarget{interface_base_event_ad6eb9f816ce7c59bbd2c8d029cc27f33}{}\index{Base\+Event@{Base\+Event}!get\+Subject@{get\+Subject}}
+\index{get\+Subject@{get\+Subject}!Base\+Event@{Base\+Event}}
+\subsubsection[{get\+Subject()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+String $\ast$) get\+Subject 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_base_event_ad6eb9f816ce7c59bbd2c8d029cc27f33}
+
+
+Event subject. 
+
+\begin{DoxyReturn}{Returns}
+a String that describes the event subject 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{protocol_i_event-p_ab9d37b5bb8ed11ff8e594cfbb4b3839e}{$<$\+I\+Event$>$}.
+
+\hypertarget{interface_base_event_a523c34ab18910db6dff234d02ff9618c}{}\index{Base\+Event@{Base\+Event}!hash@{hash}}
+\index{hash@{hash}!Base\+Event@{Base\+Event}}
+\subsubsection[{hash()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+U\+Integer) hash 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_base_event_a523c34ab18910db6dff234d02ff9618c}
+
+
+Implemented in \hyperlink{interface_be_event_acb1c61c919df7eabff62a1b4afe44d04}{Be\+Event}, and \hyperlink{interface_calendar_event_a154c2ff8ac25ef560a6808bc41b964f8}{Calendar\+Event}.
+
+\hypertarget{interface_base_event_ae79385e6fd1e96d0f0cc17a9b1df9ab5}{}\index{Base\+Event@{Base\+Event}!init\+With\+Base\+Event\+\_\+\+Base\+Event\+Builder\+:@{init\+With\+Base\+Event\+\_\+\+Base\+Event\+Builder\+:}}
+\index{init\+With\+Base\+Event\+\_\+\+Base\+Event\+Builder\+:@{init\+With\+Base\+Event\+\_\+\+Base\+Event\+Builder\+:}!Base\+Event@{Base\+Event}}
+\subsubsection[{init\+With\+Base\+Event\+\_\+\+Base\+Event\+Builder\+:(\+Base\+Event\+\_\+\+Base\+Event\+Builder $\ast$builder)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\+With\+Base\+Event\+\_\+\+Base\+Event\+Builder\+: 
+\begin{DoxyParamCaption}
+\item[{({\bf Base\+Event\+\_\+\+Base\+Event\+Builder} $\ast$)}]{builder}
+\end{DoxyParamCaption}
+}\label{interface_base_event_ae79385e6fd1e96d0f0cc17a9b1df9ab5}
+\hypertarget{interface_base_event_a314fc1374ef4c52c565f76692ea04848}{}\index{Base\+Event@{Base\+Event}!is\+Alert\+On\+Event\+End@{is\+Alert\+On\+Event\+End}}
+\index{is\+Alert\+On\+Event\+End@{is\+Alert\+On\+Event\+End}!Base\+Event@{Base\+Event}}
+\subsubsection[{is\+Alert\+On\+Event\+End()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (boolean) is\+Alert\+On\+Event\+End 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_base_event_a314fc1374ef4c52c565f76692ea04848}
+
+
+Did the user enable an alarm to trigger when event ends. 
+
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{protocol_i_event-p_aa531d6d732db162f2afb45b0a9094fa5}{$<$\+I\+Event$>$}.
+
+\hypertarget{interface_base_event_a1691270b618eacb59f0ac5f0638437ab}{}\index{Base\+Event@{Base\+Event}!is\+Alert\+On\+Event\+Start@{is\+Alert\+On\+Event\+Start}}
+\index{is\+Alert\+On\+Event\+Start@{is\+Alert\+On\+Event\+Start}!Base\+Event@{Base\+Event}}
+\subsubsection[{is\+Alert\+On\+Event\+Start()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (boolean) is\+Alert\+On\+Event\+Start 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_base_event_a1691270b618eacb59f0ac5f0638437ab}
+
+
+Did the user enable an alarm to trigger when event starts. 
+
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{protocol_i_event-p_afdd594ac0c983b204aa8550e3c7dfb10}{$<$\+I\+Event$>$}.
+
+\hypertarget{interface_base_event_a30cf54095aa91c34c77f4e39c845ff53}{}\index{Base\+Event@{Base\+Event}!is\+Disable\+General\+Reminder\+Alerts@{is\+Disable\+General\+Reminder\+Alerts}}
+\index{is\+Disable\+General\+Reminder\+Alerts@{is\+Disable\+General\+Reminder\+Alerts}!Base\+Event@{Base\+Event}}
+\subsubsection[{is\+Disable\+General\+Reminder\+Alerts()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (boolean) is\+Disable\+General\+Reminder\+Alerts 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_base_event_a30cf54095aa91c34c77f4e39c845ff53}
+
+
+Did the user enable the General reminder alarm to pop. 
+
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{protocol_i_event-p_a4aa248f17b9ba5eb195c5af99923ee62}{$<$\+I\+Event$>$}.
+
+\hypertarget{interface_base_event_a2a96376d69fdd82d780343cff7ee8193}{}\index{Base\+Event@{Base\+Event}!is\+Disable\+T\+T\+L\+Alerts@{is\+Disable\+T\+T\+L\+Alerts}}
+\index{is\+Disable\+T\+T\+L\+Alerts@{is\+Disable\+T\+T\+L\+Alerts}!Base\+Event@{Base\+Event}}
+\subsubsection[{is\+Disable\+T\+T\+L\+Alerts()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (boolean) is\+Disable\+T\+T\+L\+Alerts 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_base_event_a2a96376d69fdd82d780343cff7ee8193}
+
+
+Did the user enable the Time-\/\+To-\/\+Leave alarm to pop. 
+
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{protocol_i_event-p_a43115de987812e8481ec14cb8b908b96}{$<$\+I\+Event$>$}.
+
+\hypertarget{interface_base_event_a4d0dc712efa28831b9486440fd0158bd}{}\index{Base\+Event@{Base\+Event}!is\+Equal\+:@{is\+Equal\+:}}
+\index{is\+Equal\+:@{is\+Equal\+:}!Base\+Event@{Base\+Event}}
+\subsubsection[{is\+Equal\+:(id o)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (boolean) is\+Equal\+: 
+\begin{DoxyParamCaption}
+\item[{(id)}]{o}
+\end{DoxyParamCaption}
+}\label{interface_base_event_a4d0dc712efa28831b9486440fd0158bd}
+
+
+Implemented in \hyperlink{interface_be_event_a5b1ce21bef1f6ebfd424e8a557c51dae}{Be\+Event}, and \hyperlink{interface_calendar_event_a63f5a36a02abb63feee80343580afc73}{Calendar\+Event}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{interface_base_event_a9c111ab0ab0caf03ea717e82f7eddffe}{}\index{Base\+Event@{Base\+Event}!alert\+On\+Event\+End\+\_\+@{alert\+On\+Event\+End\+\_\+}}
+\index{alert\+On\+Event\+End\+\_\+@{alert\+On\+Event\+End\+\_\+}!Base\+Event@{Base\+Event}}
+\subsubsection[{alert\+On\+Event\+End\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (boolean) alert\+On\+Event\+End\+\_\+}\label{interface_base_event_a9c111ab0ab0caf03ea717e82f7eddffe}
+\hypertarget{interface_base_event_a1a3d69f5009c3f0e783cb2b88cc3ae96}{}\index{Base\+Event@{Base\+Event}!alert\+On\+Event\+Start\+\_\+@{alert\+On\+Event\+Start\+\_\+}}
+\index{alert\+On\+Event\+Start\+\_\+@{alert\+On\+Event\+Start\+\_\+}!Base\+Event@{Base\+Event}}
+\subsubsection[{alert\+On\+Event\+Start\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (boolean) alert\+On\+Event\+Start\+\_\+}\label{interface_base_event_a1a3d69f5009c3f0e783cb2b88cc3ae96}
+\hypertarget{interface_base_event_aa4f3ee06382da10b0682c75e41f15a27}{}\index{Base\+Event@{Base\+Event}!arrival\+Time\+\_\+@{arrival\+Time\+\_\+}}
+\index{arrival\+Time\+\_\+@{arrival\+Time\+\_\+}!Base\+Event@{Base\+Event}}
+\subsubsection[{arrival\+Time\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (long64) arrival\+Time\+\_\+}\label{interface_base_event_aa4f3ee06382da10b0682c75e41f15a27}
+\hypertarget{interface_base_event_a8b076b0f0d3d0034957182ddc8f5a04e}{}\index{Base\+Event@{Base\+Event}!calendar\+Id\+\_\+@{calendar\+Id\+\_\+}}
+\index{calendar\+Id\+\_\+@{calendar\+Id\+\_\+}!Base\+Event@{Base\+Event}}
+\subsubsection[{calendar\+Id\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+String$\ast$) calendar\+Id\+\_\+}\label{interface_base_event_a8b076b0f0d3d0034957182ddc8f5a04e}
+\hypertarget{interface_base_event_ae0a6376ab05a24983deca22cd20861b9}{}\index{Base\+Event@{Base\+Event}!description\+\_\+\+\_\+@{description\+\_\+\+\_\+}}
+\index{description\+\_\+\+\_\+@{description\+\_\+\+\_\+}!Base\+Event@{Base\+Event}}
+\subsubsection[{description\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+String$\ast$) description\+\_\+\+\_\+}\label{interface_base_event_ae0a6376ab05a24983deca22cd20861b9}
+\hypertarget{interface_base_event_abc90b83d98969a531e87ac598db8ec38}{}\index{Base\+Event@{Base\+Event}!disable\+General\+Reminder\+Alerts\+\_\+@{disable\+General\+Reminder\+Alerts\+\_\+}}
+\index{disable\+General\+Reminder\+Alerts\+\_\+@{disable\+General\+Reminder\+Alerts\+\_\+}!Base\+Event@{Base\+Event}}
+\subsubsection[{disable\+General\+Reminder\+Alerts\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (boolean) disable\+General\+Reminder\+Alerts\+\_\+}\label{interface_base_event_abc90b83d98969a531e87ac598db8ec38}
+\hypertarget{interface_base_event_a65eaacb83b54ba467adebb354099d4b8}{}\index{Base\+Event@{Base\+Event}!disable\+T\+T\+L\+Alerts\+\_\+@{disable\+T\+T\+L\+Alerts\+\_\+}}
+\index{disable\+T\+T\+L\+Alerts\+\_\+@{disable\+T\+T\+L\+Alerts\+\_\+}!Base\+Event@{Base\+Event}}
+\subsubsection[{disable\+T\+T\+L\+Alerts\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (boolean) disable\+T\+T\+L\+Alerts\+\_\+}\label{interface_base_event_a65eaacb83b54ba467adebb354099d4b8}
+\hypertarget{interface_base_event_a096695f42ba508c550b5a8ec3f9b07ea}{}\index{Base\+Event@{Base\+Event}!duration\+\_\+@{duration\+\_\+}}
+\index{duration\+\_\+@{duration\+\_\+}!Base\+Event@{Base\+Event}}
+\subsubsection[{duration\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (long64) duration\+\_\+}\label{interface_base_event_a096695f42ba508c550b5a8ec3f9b07ea}
+\hypertarget{interface_base_event_a82014c3577aec81b69ecc4b7abdcc316}{}\index{Base\+Event@{Base\+Event}!event\+Type\+\_\+@{event\+Type\+\_\+}}
+\index{event\+Type\+\_\+@{event\+Type\+\_\+}!Base\+Event@{Base\+Event}}
+\subsubsection[{event\+Type\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf T\+S\+O\+Event\+Type}$\ast$) event\+Type\+\_\+}\label{interface_base_event_a82014c3577aec81b69ecc4b7abdcc316}
+\hypertarget{interface_base_event_af0eed092fc8508a8e3dfede3782c8133}{}\index{Base\+Event@{Base\+Event}!general\+Alarm\+Time\+\_\+@{general\+Alarm\+Time\+\_\+}}
+\index{general\+Alarm\+Time\+\_\+@{general\+Alarm\+Time\+\_\+}!Base\+Event@{Base\+Event}}
+\subsubsection[{general\+Alarm\+Time\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (long64) general\+Alarm\+Time\+\_\+}\label{interface_base_event_af0eed092fc8508a8e3dfede3782c8133}
+\hypertarget{interface_base_event_a3c192ced35381d10d483fba069102f2b}{}\index{Base\+Event@{Base\+Event}!id\+\_\+\+\_\+@{id\+\_\+\+\_\+}}
+\index{id\+\_\+\+\_\+@{id\+\_\+\+\_\+}!Base\+Event@{Base\+Event}}
+\subsubsection[{id\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+String$\ast$) id\+\_\+\+\_\+}\label{interface_base_event_a3c192ced35381d10d483fba069102f2b}
+\hypertarget{interface_base_event_a7c8133029c1b40680a18f018f6cb37d8}{}\index{Base\+Event@{Base\+Event}!location\+\_\+@{location\+\_\+}}
+\index{location\+\_\+@{location\+\_\+}!Base\+Event@{Base\+Event}}
+\subsubsection[{location\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf T\+S\+O\+Place}$\ast$) location\+\_\+}\label{interface_base_event_a7c8133029c1b40680a18f018f6cb37d8}
+\hypertarget{interface_base_event_a4e5909f04ed95e1b62525e8103f4cf99}{}\index{Base\+Event@{Base\+Event}!preferred\+Transport\+Type\+\_\+@{preferred\+Transport\+Type\+\_\+}}
+\index{preferred\+Transport\+Type\+\_\+@{preferred\+Transport\+Type\+\_\+}!Base\+Event@{Base\+Event}}
+\subsubsection[{preferred\+Transport\+Type\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (Transport\+Type$\ast$) preferred\+Transport\+Type\+\_\+}\label{interface_base_event_a4e5909f04ed95e1b62525e8103f4cf99}
+\hypertarget{interface_base_event_a22085a1f1df0d46b27ab2a859e4947be}{}\index{Base\+Event@{Base\+Event}!reminder\+Time\+Before\+T\+T\+L\+\_\+@{reminder\+Time\+Before\+T\+T\+L\+\_\+}}
+\index{reminder\+Time\+Before\+T\+T\+L\+\_\+@{reminder\+Time\+Before\+T\+T\+L\+\_\+}!Base\+Event@{Base\+Event}}
+\subsubsection[{reminder\+Time\+Before\+T\+T\+L\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (long64) reminder\+Time\+Before\+T\+T\+L\+\_\+}\label{interface_base_event_a22085a1f1df0d46b27ab2a859e4947be}
+\hypertarget{interface_base_event_a5afd766b21d39c0f158643038a694fed}{}\index{Base\+Event@{Base\+Event}!subject\+\_\+@{subject\+\_\+}}
+\index{subject\+\_\+@{subject\+\_\+}!Base\+Event@{Base\+Event}}
+\subsubsection[{subject\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+String$\ast$) subject\+\_\+}\label{interface_base_event_a5afd766b21d39c0f158643038a694fed}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src\+\_\+converted/com/intel/wearable/platform/timeiq/api/events/\hyperlink{_base_event_8h}{Base\+Event.\+h}\end{DoxyCompactItemize}

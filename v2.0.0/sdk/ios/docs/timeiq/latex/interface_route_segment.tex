@@ -1,0 +1,260 @@
+\hypertarget{interface_route_segment}{}\section{Route\+Segment Class Reference}
+\label{interface_route_segment}\index{Route\+Segment@{Route\+Segment}}
+
+
+A segment of the route.  
+
+
+
+
+{\ttfamily \#import $<$Route\+Segment.\+h$>$}
+
+
+
+Inherits N\+S\+Object.
+
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) -\/ \hyperlink{interface_route_segment_a84b9de1dccdb9cd9511b43e5e836cd3d}{init\+With\+Segment\+Type\+:with\+Long\+:with\+Long\+:with\+T\+S\+O\+Coordinate\+:with\+T\+S\+O\+Coordinate\+:with\+Mot\+Type\+:with\+Route\+Info\+:}
+\item 
+(N\+S\+String $\ast$) -\/ \hyperlink{interface_route_segment_a4f031379fff20fa3b9239d39488e85c4}{description}
+\item 
+(long64) -\/ \hyperlink{interface_route_segment_a8ee73964122deb0a917c40f3bb4bf77e}{get\+Segment\+Start\+Time}
+\begin{DoxyCompactList}\small\item\em Get the segment\textquotesingle{}s start time. \end{DoxyCompactList}\item 
+(long64) -\/ \hyperlink{interface_route_segment_a0b857f7a2db2508eed43fc223d9c368e}{get\+Segment\+Duration}
+\begin{DoxyCompactList}\small\item\em Get the segment\textquotesingle{}s duration. \end{DoxyCompactList}\item 
+(\hyperlink{interface_segment_type}{Segment\+Type} $\ast$) -\/ \hyperlink{interface_route_segment_ab91ff54a454d8516259529c01b749004}{get\+Segment\+Type}
+\begin{DoxyCompactList}\small\item\em Get the segment type (one of \hyperlink{interface_segment_type}{Segment\+Type} ) \end{DoxyCompactList}\item 
+(T\+S\+O\+Coordinate $\ast$) -\/ \hyperlink{interface_route_segment_ab2e79de5a98f48aa88a4435eac19f744}{get\+Origin}
+\begin{DoxyCompactList}\small\item\em Get the origin of the segment. ~\newline
+ Might be same as the destination if there is no travel time, or if the origin is unknown. ~\newline
+ e.\+g. for Destination\+In\+Door -\/ we might not know where you are going to park, so the origin will be the same as the destination. \end{DoxyCompactList}\item 
+(T\+S\+O\+Coordinate $\ast$) -\/ \hyperlink{interface_route_segment_a8d9608461c696b2f9d919f8ae4cbf780}{get\+Destination}
+\begin{DoxyCompactList}\small\item\em Get the destination of the segment. ~\newline
+ might be same as Origin if there is no travel, or if the Destination is unknown. ~\newline
+ e.\+g. for Time\+To\+Car -\/ we might not know where your car is, so the destination will be the same as the origin. \end{DoxyCompactList}\item 
+(Mot\+Type $\ast$) -\/ \hyperlink{interface_route_segment_ae81d8d39b90e1b4c9a5446a3f8dec1c7}{get\+Mot\+Type}
+\begin{DoxyCompactList}\small\item\em Get the actual M\+O\+T type of the segment. ~\newline
+ e.\+g. for Time\+To\+Car you will get W\+A\+L\+K, and for Travel you might get W\+A\+L\+K, C\+A\+R or P\+U\+B\+L\+I\+C\+\_\+\+T\+R\+A\+N\+S\+P\+O\+R\+T. \end{DoxyCompactList}\item 
+(Route\+Info $\ast$) -\/ \hyperlink{interface_route_segment_a434aebe20fa72cbbb4401182455b0489}{get\+Route\+Info}
+\begin{DoxyCompactList}\small\item\em Get the route\+Info as received from Route\+Provider (if exists) \end{DoxyCompactList}\item 
+(boolean) -\/ \hyperlink{interface_route_segment_ad50edf8b160d570fd3534fe664efb3bd}{is\+Equal\+:}
+\item 
+(N\+S\+U\+Integer) -\/ \hyperlink{interface_route_segment_aeee8c6ace5147ac3e14dee485fc460c2}{hash}
+\item 
+(void) -\/ \hyperlink{interface_route_segment_ac133a788a7b0401f1b5dd2ad00e9ee3e}{copy\+All\+Fields\+To\+:}
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{interface_segment_type}{Segment\+Type} $\ast$ \hyperlink{interface_route_segment_ab1762837f643f617f97be950818df2ad}{m\+\_\+segment\+Type\+\_\+}
+\item 
+long64 \hyperlink{interface_route_segment_aac737b55a5fbf600894d4f7e0fe6fa89}{m\+\_\+start\+Time\+\_\+}
+\item 
+long64 \hyperlink{interface_route_segment_a679f3633b946463dac2bbd2b159d3fe7}{m\+\_\+duration\+\_\+}
+\item 
+T\+S\+O\+Coordinate $\ast$ \hyperlink{interface_route_segment_a858eb0c5ba342cbbfe5225ee95d7ca2c}{m\+\_\+origin\+\_\+}
+\item 
+T\+S\+O\+Coordinate $\ast$ \hyperlink{interface_route_segment_a4178c9dda7fca5b897864c04000783b1}{m\+\_\+destination\+\_\+}
+\item 
+Route\+Info $\ast$ \hyperlink{interface_route_segment_afa08d748dc2390acde699599b2ea798b}{m\+\_\+route\+Info\+\_\+}
+\item 
+Mot\+Type $\ast$ \hyperlink{interface_route_segment_aa6e57e1b1547a25c41f35834dfc61c14}{m\+\_\+mot\+Type\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A segment of the route. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_route_segment_ac133a788a7b0401f1b5dd2ad00e9ee3e}{}\index{Route\+Segment@{Route\+Segment}!copy\+All\+Fields\+To\+:@{copy\+All\+Fields\+To\+:}}
+\index{copy\+All\+Fields\+To\+:@{copy\+All\+Fields\+To\+:}!Route\+Segment@{Route\+Segment}}
+\subsubsection[{copy\+All\+Fields\+To\+:(\+Route\+Segment $\ast$other)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) copy\+All\+Fields\+To\+: 
+\begin{DoxyParamCaption}
+\item[{({\bf Route\+Segment} $\ast$)}]{other}
+\end{DoxyParamCaption}
+}\label{interface_route_segment_ac133a788a7b0401f1b5dd2ad00e9ee3e}
+\hypertarget{interface_route_segment_a4f031379fff20fa3b9239d39488e85c4}{}\index{Route\+Segment@{Route\+Segment}!description@{description}}
+\index{description@{description}!Route\+Segment@{Route\+Segment}}
+\subsubsection[{description()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+String $\ast$) description 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_route_segment_a4f031379fff20fa3b9239d39488e85c4}
+\hypertarget{interface_route_segment_a8d9608461c696b2f9d919f8ae4cbf780}{}\index{Route\+Segment@{Route\+Segment}!get\+Destination@{get\+Destination}}
+\index{get\+Destination@{get\+Destination}!Route\+Segment@{Route\+Segment}}
+\subsubsection[{get\+Destination()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (T\+S\+O\+Coordinate $\ast$) get\+Destination 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_route_segment_a8d9608461c696b2f9d919f8ae4cbf780}
+
+
+Get the destination of the segment. ~\newline
+ might be same as Origin if there is no travel, or if the Destination is unknown. ~\newline
+ e.\+g. for Time\+To\+Car -\/ we might not know where your car is, so the destination will be the same as the origin. 
+
+\begin{DoxyReturn}{Returns}
+the destination of the segment 
+\end{DoxyReturn}
+\hypertarget{interface_route_segment_ae81d8d39b90e1b4c9a5446a3f8dec1c7}{}\index{Route\+Segment@{Route\+Segment}!get\+Mot\+Type@{get\+Mot\+Type}}
+\index{get\+Mot\+Type@{get\+Mot\+Type}!Route\+Segment@{Route\+Segment}}
+\subsubsection[{get\+Mot\+Type()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (Mot\+Type $\ast$) get\+Mot\+Type 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_route_segment_ae81d8d39b90e1b4c9a5446a3f8dec1c7}
+
+
+Get the actual M\+O\+T type of the segment. ~\newline
+ e.\+g. for Time\+To\+Car you will get W\+A\+L\+K, and for Travel you might get W\+A\+L\+K, C\+A\+R or P\+U\+B\+L\+I\+C\+\_\+\+T\+R\+A\+N\+S\+P\+O\+R\+T. 
+
+\begin{DoxyReturn}{Returns}
+the actual M\+O\+T type of the segment 
+\end{DoxyReturn}
+\hypertarget{interface_route_segment_ab2e79de5a98f48aa88a4435eac19f744}{}\index{Route\+Segment@{Route\+Segment}!get\+Origin@{get\+Origin}}
+\index{get\+Origin@{get\+Origin}!Route\+Segment@{Route\+Segment}}
+\subsubsection[{get\+Origin()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (T\+S\+O\+Coordinate $\ast$) get\+Origin 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_route_segment_ab2e79de5a98f48aa88a4435eac19f744}
+
+
+Get the origin of the segment. ~\newline
+ Might be same as the destination if there is no travel time, or if the origin is unknown. ~\newline
+ e.\+g. for Destination\+In\+Door -\/ we might not know where you are going to park, so the origin will be the same as the destination. 
+
+\begin{DoxyReturn}{Returns}
+the origin of the segment 
+\end{DoxyReturn}
+\hypertarget{interface_route_segment_a434aebe20fa72cbbb4401182455b0489}{}\index{Route\+Segment@{Route\+Segment}!get\+Route\+Info@{get\+Route\+Info}}
+\index{get\+Route\+Info@{get\+Route\+Info}!Route\+Segment@{Route\+Segment}}
+\subsubsection[{get\+Route\+Info()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (Route\+Info $\ast$) get\+Route\+Info 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_route_segment_a434aebe20fa72cbbb4401182455b0489}
+
+
+Get the route\+Info as received from Route\+Provider (if exists) 
+
+\begin{DoxyReturn}{Returns}
+the route\+Info or null if does not exist 
+\end{DoxyReturn}
+\hypertarget{interface_route_segment_a0b857f7a2db2508eed43fc223d9c368e}{}\index{Route\+Segment@{Route\+Segment}!get\+Segment\+Duration@{get\+Segment\+Duration}}
+\index{get\+Segment\+Duration@{get\+Segment\+Duration}!Route\+Segment@{Route\+Segment}}
+\subsubsection[{get\+Segment\+Duration()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (long64) get\+Segment\+Duration 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_route_segment_a0b857f7a2db2508eed43fc223d9c368e}
+
+
+Get the segment\textquotesingle{}s duration. 
+
+\begin{DoxyReturn}{Returns}
+the segment\textquotesingle{}s duration in milliseconds 
+\end{DoxyReturn}
+\hypertarget{interface_route_segment_a8ee73964122deb0a917c40f3bb4bf77e}{}\index{Route\+Segment@{Route\+Segment}!get\+Segment\+Start\+Time@{get\+Segment\+Start\+Time}}
+\index{get\+Segment\+Start\+Time@{get\+Segment\+Start\+Time}!Route\+Segment@{Route\+Segment}}
+\subsubsection[{get\+Segment\+Start\+Time()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (long64) get\+Segment\+Start\+Time 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_route_segment_a8ee73964122deb0a917c40f3bb4bf77e}
+
+
+Get the segment\textquotesingle{}s start time. 
+
+\begin{DoxyReturn}{Returns}
+the segment\textquotesingle{}s start time in milliseconds 
+\end{DoxyReturn}
+\hypertarget{interface_route_segment_ab91ff54a454d8516259529c01b749004}{}\index{Route\+Segment@{Route\+Segment}!get\+Segment\+Type@{get\+Segment\+Type}}
+\index{get\+Segment\+Type@{get\+Segment\+Type}!Route\+Segment@{Route\+Segment}}
+\subsubsection[{get\+Segment\+Type()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Segment\+Type} $\ast$) get\+Segment\+Type 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_route_segment_ab91ff54a454d8516259529c01b749004}
+
+
+Get the segment type (one of \hyperlink{interface_segment_type}{Segment\+Type} ) 
+
+\begin{DoxyReturn}{Returns}
+the segment type (one of \hyperlink{interface_segment_type}{Segment\+Type} ) 
+\end{DoxyReturn}
+\hypertarget{interface_route_segment_aeee8c6ace5147ac3e14dee485fc460c2}{}\index{Route\+Segment@{Route\+Segment}!hash@{hash}}
+\index{hash@{hash}!Route\+Segment@{Route\+Segment}}
+\subsubsection[{hash()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+U\+Integer) hash 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_route_segment_aeee8c6ace5147ac3e14dee485fc460c2}
+\hypertarget{interface_route_segment_a84b9de1dccdb9cd9511b43e5e836cd3d}{}\index{Route\+Segment@{Route\+Segment}!init\+With\+Segment\+Type\+:with\+Long\+:with\+Long\+:with\+T\+S\+O\+Coordinate\+:with\+T\+S\+O\+Coordinate\+:with\+Mot\+Type\+:with\+Route\+Info\+:@{init\+With\+Segment\+Type\+:with\+Long\+:with\+Long\+:with\+T\+S\+O\+Coordinate\+:with\+T\+S\+O\+Coordinate\+:with\+Mot\+Type\+:with\+Route\+Info\+:}}
+\index{init\+With\+Segment\+Type\+:with\+Long\+:with\+Long\+:with\+T\+S\+O\+Coordinate\+:with\+T\+S\+O\+Coordinate\+:with\+Mot\+Type\+:with\+Route\+Info\+:@{init\+With\+Segment\+Type\+:with\+Long\+:with\+Long\+:with\+T\+S\+O\+Coordinate\+:with\+T\+S\+O\+Coordinate\+:with\+Mot\+Type\+:with\+Route\+Info\+:}!Route\+Segment@{Route\+Segment}}
+\subsubsection[{init\+With\+Segment\+Type\+:with\+Long\+:with\+Long\+:with\+T\+S\+O\+Coordinate\+:with\+T\+S\+O\+Coordinate\+:with\+Mot\+Type\+:with\+Route\+Info\+:(\+Segment\+Type $\ast$segment\+Type,[with\+Long] long64 start\+Time,[with\+Long] long64 duration,[with\+T\+S\+O\+Coordinate] T\+S\+O\+Coordinate $\ast$origin,[with\+T\+S\+O\+Coordinate] T\+S\+O\+Coordinate $\ast$destination,[with\+Mot\+Type] Mot\+Type $\ast$mot\+Type,[with\+Route\+Info] Route\+Info $\ast$route\+Info)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\+With\+Segment\+Type\+: 
+\begin{DoxyParamCaption}
+\item[{({\bf Segment\+Type} $\ast$)}]{segment\+Type}
+\item[{withLong:(long64)}]{start\+Time}
+\item[{withLong:(long64)}]{duration}
+\item[{withTSOCoordinate:(T\+S\+O\+Coordinate $\ast$)}]{origin}
+\item[{withTSOCoordinate:(T\+S\+O\+Coordinate $\ast$)}]{destination}
+\item[{withMotType:(Mot\+Type $\ast$)}]{mot\+Type}
+\item[{withRouteInfo:(Route\+Info $\ast$)}]{route\+Info}
+\end{DoxyParamCaption}
+}\label{interface_route_segment_a84b9de1dccdb9cd9511b43e5e836cd3d}
+
+\begin{DoxyParams}{Parameters}
+{\em segment\+Type} & one of \hyperlink{interface_segment_type}{Segment\+Type} \\
+\hline
+{\em start\+Time} & the start time of the segment \\
+\hline
+{\em duration} & the duration of the segment \\
+\hline
+{\em origin} & the origin location of the segment \\
+\hline
+{\em destination} & the destination location of the segment \\
+\hline
+{\em mot\+Type} & the segment\textquotesingle{}s M\+O\+T type \\
+\hline
+{\em route\+Info} & the route\+Info of the segment or null if does not exist \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_route_segment_ad50edf8b160d570fd3534fe664efb3bd}{}\index{Route\+Segment@{Route\+Segment}!is\+Equal\+:@{is\+Equal\+:}}
+\index{is\+Equal\+:@{is\+Equal\+:}!Route\+Segment@{Route\+Segment}}
+\subsubsection[{is\+Equal\+:(id o)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (boolean) is\+Equal\+: 
+\begin{DoxyParamCaption}
+\item[{(id)}]{o}
+\end{DoxyParamCaption}
+}\label{interface_route_segment_ad50edf8b160d570fd3534fe664efb3bd}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{interface_route_segment_a4178c9dda7fca5b897864c04000783b1}{}\index{Route\+Segment@{Route\+Segment}!m\+\_\+destination\+\_\+@{m\+\_\+destination\+\_\+}}
+\index{m\+\_\+destination\+\_\+@{m\+\_\+destination\+\_\+}!Route\+Segment@{Route\+Segment}}
+\subsubsection[{m\+\_\+destination\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (T\+S\+O\+Coordinate$\ast$) m\+\_\+destination\+\_\+}\label{interface_route_segment_a4178c9dda7fca5b897864c04000783b1}
+\hypertarget{interface_route_segment_a679f3633b946463dac2bbd2b159d3fe7}{}\index{Route\+Segment@{Route\+Segment}!m\+\_\+duration\+\_\+@{m\+\_\+duration\+\_\+}}
+\index{m\+\_\+duration\+\_\+@{m\+\_\+duration\+\_\+}!Route\+Segment@{Route\+Segment}}
+\subsubsection[{m\+\_\+duration\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (long64) m\+\_\+duration\+\_\+}\label{interface_route_segment_a679f3633b946463dac2bbd2b159d3fe7}
+\hypertarget{interface_route_segment_aa6e57e1b1547a25c41f35834dfc61c14}{}\index{Route\+Segment@{Route\+Segment}!m\+\_\+mot\+Type\+\_\+@{m\+\_\+mot\+Type\+\_\+}}
+\index{m\+\_\+mot\+Type\+\_\+@{m\+\_\+mot\+Type\+\_\+}!Route\+Segment@{Route\+Segment}}
+\subsubsection[{m\+\_\+mot\+Type\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (Mot\+Type$\ast$) m\+\_\+mot\+Type\+\_\+}\label{interface_route_segment_aa6e57e1b1547a25c41f35834dfc61c14}
+\hypertarget{interface_route_segment_a858eb0c5ba342cbbfe5225ee95d7ca2c}{}\index{Route\+Segment@{Route\+Segment}!m\+\_\+origin\+\_\+@{m\+\_\+origin\+\_\+}}
+\index{m\+\_\+origin\+\_\+@{m\+\_\+origin\+\_\+}!Route\+Segment@{Route\+Segment}}
+\subsubsection[{m\+\_\+origin\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (T\+S\+O\+Coordinate$\ast$) m\+\_\+origin\+\_\+}\label{interface_route_segment_a858eb0c5ba342cbbfe5225ee95d7ca2c}
+\hypertarget{interface_route_segment_afa08d748dc2390acde699599b2ea798b}{}\index{Route\+Segment@{Route\+Segment}!m\+\_\+route\+Info\+\_\+@{m\+\_\+route\+Info\+\_\+}}
+\index{m\+\_\+route\+Info\+\_\+@{m\+\_\+route\+Info\+\_\+}!Route\+Segment@{Route\+Segment}}
+\subsubsection[{m\+\_\+route\+Info\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (Route\+Info$\ast$) m\+\_\+route\+Info\+\_\+}\label{interface_route_segment_afa08d748dc2390acde699599b2ea798b}
+\hypertarget{interface_route_segment_ab1762837f643f617f97be950818df2ad}{}\index{Route\+Segment@{Route\+Segment}!m\+\_\+segment\+Type\+\_\+@{m\+\_\+segment\+Type\+\_\+}}
+\index{m\+\_\+segment\+Type\+\_\+@{m\+\_\+segment\+Type\+\_\+}!Route\+Segment@{Route\+Segment}}
+\subsubsection[{m\+\_\+segment\+Type\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Segment\+Type}$\ast$) m\+\_\+segment\+Type\+\_\+}\label{interface_route_segment_ab1762837f643f617f97be950818df2ad}
+\hypertarget{interface_route_segment_aac737b55a5fbf600894d4f7e0fe6fa89}{}\index{Route\+Segment@{Route\+Segment}!m\+\_\+start\+Time\+\_\+@{m\+\_\+start\+Time\+\_\+}}
+\index{m\+\_\+start\+Time\+\_\+@{m\+\_\+start\+Time\+\_\+}!Route\+Segment@{Route\+Segment}}
+\subsubsection[{m\+\_\+start\+Time\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (long64) m\+\_\+start\+Time\+\_\+}\label{interface_route_segment_aac737b55a5fbf600894d4f7e0fe6fa89}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src\+\_\+converted/com/intel/wearable/platform/timeiq/api/route/\hyperlink{_route_segment_8h}{Route\+Segment.\+h}\end{DoxyCompactItemize}

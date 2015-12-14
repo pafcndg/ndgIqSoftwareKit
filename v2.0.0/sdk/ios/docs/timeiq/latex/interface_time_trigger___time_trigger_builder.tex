@@ -1,0 +1,110 @@
+\hypertarget{interface_time_trigger___time_trigger_builder}{}\section{Time\+Trigger\+\_\+\+Time\+Trigger\+Builder Class Reference}
+\label{interface_time_trigger___time_trigger_builder}\index{Time\+Trigger\+\_\+\+Time\+Trigger\+Builder@{Time\+Trigger\+\_\+\+Time\+Trigger\+Builder}}
+
+
+Builder class that creates a \hyperlink{interface_time_trigger}{Time\+Trigger}.  
+
+
+
+
+{\ttfamily \#import $<$Time\+Trigger.\+h$>$}
+
+
+
+Inherits \hyperlink{interface_base_trigger___base_trigger_builder}{Base\+Trigger\+\_\+\+Base\+Trigger\+Builder}.
+
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) -\/ \hyperlink{interface_time_trigger___time_trigger_builder_a32ceb8e44df02177ea183645ac396f04}{init\+With\+Long\+:}
+\begin{DoxyCompactList}\small\item\em Create a builder for creating the \hyperlink{interface_time_trigger}{Time\+Trigger}. \end{DoxyCompactList}\item 
+(\hyperlink{interface_time_trigger___time_trigger_builder}{Time\+Trigger\+\_\+\+Time\+Trigger\+Builder} $\ast$) -\/ \hyperlink{interface_time_trigger___time_trigger_builder_ae57bbfa63c4c7b168e5190ab24e0e981}{is\+Exact\+With\+Boolean\+:}
+\item 
+(\hyperlink{interface_time_trigger}{Time\+Trigger} $\ast$) -\/ \hyperlink{interface_time_trigger___time_trigger_builder_ad2fb0d39e4889a46777e0a4ce8b5bd28}{build}
+\begin{DoxyCompactList}\small\item\em Create the \hyperlink{interface_time_trigger}{Time\+Trigger}. \end{DoxyCompactList}\item 
+(void) -\/ \hyperlink{interface_time_trigger___time_trigger_builder_aefec76db67f8380460ea1c7e54f0c36d}{copy\+All\+Fields\+To\+:}
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+long64 \hyperlink{interface_time_trigger___time_trigger_builder_af32978d17fc03fb098161b3a9846faa4}{trigger\+Time\+\_\+}
+\item 
+boolean \hyperlink{interface_time_trigger___time_trigger_builder_a352cd5a056b8b1fb883eb1e71cc5a5b6}{is\+Exact\+\_\+\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Builder class that creates a \hyperlink{interface_time_trigger}{Time\+Trigger}. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_time_trigger___time_trigger_builder_ad2fb0d39e4889a46777e0a4ce8b5bd28}{}\index{Time\+Trigger\+\_\+\+Time\+Trigger\+Builder@{Time\+Trigger\+\_\+\+Time\+Trigger\+Builder}!build@{build}}
+\index{build@{build}!Time\+Trigger\+\_\+\+Time\+Trigger\+Builder@{Time\+Trigger\+\_\+\+Time\+Trigger\+Builder}}
+\subsubsection[{build()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Time\+Trigger} $\ast$) build 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_time_trigger___time_trigger_builder_ad2fb0d39e4889a46777e0a4ce8b5bd28}
+
+
+Create the \hyperlink{interface_time_trigger}{Time\+Trigger}. 
+
+\begin{DoxyReturn}{Returns}
+the \hyperlink{interface_time_trigger}{Time\+Trigger} 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{interface_trigger_build_exception}{Trigger\+Build\+Exception}} & will be thrown when input is missing or invalid (see \hyperlink{interfacee_trigger_build_exception_type}{e\+Trigger\+Build\+Exception\+Type} for reasons) \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{interface_time_trigger___time_trigger_builder_aefec76db67f8380460ea1c7e54f0c36d}{}\index{Time\+Trigger\+\_\+\+Time\+Trigger\+Builder@{Time\+Trigger\+\_\+\+Time\+Trigger\+Builder}!copy\+All\+Fields\+To\+:@{copy\+All\+Fields\+To\+:}}
+\index{copy\+All\+Fields\+To\+:@{copy\+All\+Fields\+To\+:}!Time\+Trigger\+\_\+\+Time\+Trigger\+Builder@{Time\+Trigger\+\_\+\+Time\+Trigger\+Builder}}
+\subsubsection[{copy\+All\+Fields\+To\+:(\+Time\+Trigger\+\_\+\+Time\+Trigger\+Builder $\ast$other)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) copy\+All\+Fields\+To\+: 
+\begin{DoxyParamCaption}
+\item[{({\bf Time\+Trigger\+\_\+\+Time\+Trigger\+Builder} $\ast$)}]{other}
+\end{DoxyParamCaption}
+}\label{interface_time_trigger___time_trigger_builder_aefec76db67f8380460ea1c7e54f0c36d}
+\hypertarget{interface_time_trigger___time_trigger_builder_a32ceb8e44df02177ea183645ac396f04}{}\index{Time\+Trigger\+\_\+\+Time\+Trigger\+Builder@{Time\+Trigger\+\_\+\+Time\+Trigger\+Builder}!init\+With\+Long\+:@{init\+With\+Long\+:}}
+\index{init\+With\+Long\+:@{init\+With\+Long\+:}!Time\+Trigger\+\_\+\+Time\+Trigger\+Builder@{Time\+Trigger\+\_\+\+Time\+Trigger\+Builder}}
+\subsubsection[{init\+With\+Long\+:(long64 trigger\+Time)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\+With\+Long\+: 
+\begin{DoxyParamCaption}
+\item[{(long64)}]{trigger\+Time}
+\end{DoxyParamCaption}
+}\label{interface_time_trigger___time_trigger_builder_a32ceb8e44df02177ea183645ac396f04}
+
+
+Create a builder for creating the \hyperlink{interface_time_trigger}{Time\+Trigger}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em trigger\+Time} & the time that the trigger will be triggered \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_time_trigger___time_trigger_builder_ae57bbfa63c4c7b168e5190ab24e0e981}{}\index{Time\+Trigger\+\_\+\+Time\+Trigger\+Builder@{Time\+Trigger\+\_\+\+Time\+Trigger\+Builder}!is\+Exact\+With\+Boolean\+:@{is\+Exact\+With\+Boolean\+:}}
+\index{is\+Exact\+With\+Boolean\+:@{is\+Exact\+With\+Boolean\+:}!Time\+Trigger\+\_\+\+Time\+Trigger\+Builder@{Time\+Trigger\+\_\+\+Time\+Trigger\+Builder}}
+\subsubsection[{is\+Exact\+With\+Boolean\+:(boolean is\+Exact)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Time\+Trigger\+\_\+\+Time\+Trigger\+Builder} $\ast$) is\+Exact\+With\+Boolean\+: 
+\begin{DoxyParamCaption}
+\item[{(boolean)}]{is\+Exact}
+\end{DoxyParamCaption}
+}\label{interface_time_trigger___time_trigger_builder_ae57bbfa63c4c7b168e5190ab24e0e981}
+
+\begin{DoxyParams}{Parameters}
+{\em is\+Exact} & does the trigger time needs to be exact (exact time will be more accurate on the expense of performance) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the builder 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{interface_time_trigger___time_trigger_builder_a352cd5a056b8b1fb883eb1e71cc5a5b6}{}\index{Time\+Trigger\+\_\+\+Time\+Trigger\+Builder@{Time\+Trigger\+\_\+\+Time\+Trigger\+Builder}!is\+Exact\+\_\+\+\_\+@{is\+Exact\+\_\+\+\_\+}}
+\index{is\+Exact\+\_\+\+\_\+@{is\+Exact\+\_\+\+\_\+}!Time\+Trigger\+\_\+\+Time\+Trigger\+Builder@{Time\+Trigger\+\_\+\+Time\+Trigger\+Builder}}
+\subsubsection[{is\+Exact\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (boolean) is\+Exact\+\_\+\+\_\+}\label{interface_time_trigger___time_trigger_builder_a352cd5a056b8b1fb883eb1e71cc5a5b6}
+\hypertarget{interface_time_trigger___time_trigger_builder_af32978d17fc03fb098161b3a9846faa4}{}\index{Time\+Trigger\+\_\+\+Time\+Trigger\+Builder@{Time\+Trigger\+\_\+\+Time\+Trigger\+Builder}!trigger\+Time\+\_\+@{trigger\+Time\+\_\+}}
+\index{trigger\+Time\+\_\+@{trigger\+Time\+\_\+}!Time\+Trigger\+\_\+\+Time\+Trigger\+Builder@{Time\+Trigger\+\_\+\+Time\+Trigger\+Builder}}
+\subsubsection[{trigger\+Time\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (long64) trigger\+Time\+\_\+}\label{interface_time_trigger___time_trigger_builder_af32978d17fc03fb098161b3a9846faa4}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src\+\_\+converted/com/intel/wearable/platform/timeiq/api/triggers/time/\hyperlink{_time_trigger_8h}{Time\+Trigger.\+h}\end{DoxyCompactItemize}

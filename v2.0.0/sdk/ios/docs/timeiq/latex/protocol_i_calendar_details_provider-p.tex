@@ -1,0 +1,119 @@
+\hypertarget{protocol_i_calendar_details_provider-p}{}\section{$<$I\+Calendar\+Details\+Provider$>$ Protocol Reference}
+\label{protocol_i_calendar_details_provider-p}\index{$<$\+I\+Calendar\+Details\+Provider$>$@{$<$\+I\+Calendar\+Details\+Provider$>$}}
+
+
+This interface is responsible for all the calendar interaction the S\+D\+K functionality requires.  
+
+
+
+
+{\ttfamily \#import $<$I\+Calendar\+Details\+Provider.\+h$>$}
+
+
+
+Inherits $<$\+N\+S\+Object$>$.
+
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(\hyperlink{interface_result_data}{Result\+Data} $\ast$) -\/ \hyperlink{protocol_i_calendar_details_provider-p_ad37041e3bbe24889e6494af605e87d61}{get\+Available\+Calendars}
+\begin{DoxyCompactList}\small\item\em Gets the available calendars on the user\textquotesingle{}s device. \end{DoxyCompactList}\item 
+(\hyperlink{interface_result_data}{Result\+Data} $\ast$) -\/ \hyperlink{protocol_i_calendar_details_provider-p_af0e335a9f212eee9c37e9ce7bd8b51ed}{get\+Write\+Calendar}
+\begin{DoxyCompactList}\small\item\em Gets the defined write calendar -\/ the calendar to which the S\+D\+K can write events and other relevant information. \end{DoxyCompactList}\item 
+(\hyperlink{interface_result}{Result} $\ast$) -\/ \hyperlink{protocol_i_calendar_details_provider-p_a53140c4f14c778a9255bec0935da8831}{set\+Write\+Calendar\+With\+N\+S\+String\+:}
+\begin{DoxyCompactList}\small\item\em Sets the write calendar id as defined above. \end{DoxyCompactList}\item 
+(\hyperlink{interface_result_data}{Result\+Data} $\ast$) -\/ \hyperlink{protocol_i_calendar_details_provider-p_aaa5d7fb09f05b9bf0f12ae8dc8780210}{get\+Read\+Calendars}
+\begin{DoxyCompactList}\small\item\em Gets the defined read calendars for the S\+D\+K. \end{DoxyCompactList}\item 
+(\hyperlink{interface_result}{Result} $\ast$) -\/ \hyperlink{protocol_i_calendar_details_provider-p_a5205f8c02f82ecbb2c917bc2a6eba003}{set\+Read\+Calendars\+With\+Java\+Util\+List\+:}
+\begin{DoxyCompactList}\small\item\em Sets the defined list of calendars the S\+D\+K is able to read from on the user\textquotesingle{}s device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This interface is responsible for all the calendar interaction the S\+D\+K functionality requires. 
+
+\subsection{Method Documentation}
+\hypertarget{protocol_i_calendar_details_provider-p_ad37041e3bbe24889e6494af605e87d61}{}\index{I\+Calendar\+Details\+Provider-\/p@{I\+Calendar\+Details\+Provider-\/p}!get\+Available\+Calendars@{get\+Available\+Calendars}}
+\index{get\+Available\+Calendars@{get\+Available\+Calendars}!I\+Calendar\+Details\+Provider-\/p@{I\+Calendar\+Details\+Provider-\/p}}
+\subsubsection[{get\+Available\+Calendars()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Result\+Data} $\ast$) get\+Available\+Calendars 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{protocol_i_calendar_details_provider-p_ad37041e3bbe24889e6494af605e87d61}
+
+
+Gets the available calendars on the user\textquotesingle{}s device. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{interface_result_data}{Result\+Data}$<$List$<$\+Calendar\+Details$>$$>$ -\/ List of available calendars and their details \hyperlink{interface_calendar_details}{Calendar\+Details} upon success or a corresponding error upon failure. 
+\end{DoxyReturn}
+\hypertarget{protocol_i_calendar_details_provider-p_aaa5d7fb09f05b9bf0f12ae8dc8780210}{}\index{I\+Calendar\+Details\+Provider-\/p@{I\+Calendar\+Details\+Provider-\/p}!get\+Read\+Calendars@{get\+Read\+Calendars}}
+\index{get\+Read\+Calendars@{get\+Read\+Calendars}!I\+Calendar\+Details\+Provider-\/p@{I\+Calendar\+Details\+Provider-\/p}}
+\subsubsection[{get\+Read\+Calendars()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Result\+Data} $\ast$) get\+Read\+Calendars 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{protocol_i_calendar_details_provider-p_aaa5d7fb09f05b9bf0f12ae8dc8780210}
+
+
+Gets the defined read calendars for the S\+D\+K. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{interface_result_data}{Result\+Data}$<$List$<$\+Calendar\+Details$>$$>$ -\/ The list of the defined read calendar details \hyperlink{interface_calendar_details}{Calendar\+Details} from which the S\+D\+K can read events and other relevant information 
+\end{DoxyReturn}
+\hypertarget{protocol_i_calendar_details_provider-p_af0e335a9f212eee9c37e9ce7bd8b51ed}{}\index{I\+Calendar\+Details\+Provider-\/p@{I\+Calendar\+Details\+Provider-\/p}!get\+Write\+Calendar@{get\+Write\+Calendar}}
+\index{get\+Write\+Calendar@{get\+Write\+Calendar}!I\+Calendar\+Details\+Provider-\/p@{I\+Calendar\+Details\+Provider-\/p}}
+\subsubsection[{get\+Write\+Calendar()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Result\+Data} $\ast$) get\+Write\+Calendar 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{protocol_i_calendar_details_provider-p_af0e335a9f212eee9c37e9ce7bd8b51ed}
+
+
+Gets the defined write calendar -\/ the calendar to which the S\+D\+K can write events and other relevant information. 
+
+\begin{DoxyReturn}{Returns}
+Result\+Data$<$\+Calendar\+Details$>$ -\/ The write calendar details \hyperlink{interface_calendar_details}{Calendar\+Details} if it was defined or a corresponding error code. 
+\end{DoxyReturn}
+\hypertarget{protocol_i_calendar_details_provider-p_a5205f8c02f82ecbb2c917bc2a6eba003}{}\index{I\+Calendar\+Details\+Provider-\/p@{I\+Calendar\+Details\+Provider-\/p}!set\+Read\+Calendars\+With\+Java\+Util\+List\+:@{set\+Read\+Calendars\+With\+Java\+Util\+List\+:}}
+\index{set\+Read\+Calendars\+With\+Java\+Util\+List\+:@{set\+Read\+Calendars\+With\+Java\+Util\+List\+:}!I\+Calendar\+Details\+Provider-\/p@{I\+Calendar\+Details\+Provider-\/p}}
+\subsubsection[{set\+Read\+Calendars\+With\+Java\+Util\+List\+:(\+Array\+List $\ast$calendar\+Ids)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Result} $\ast$) set\+Read\+Calendars\+With\+Java\+Util\+List\+: 
+\begin{DoxyParamCaption}
+\item[{(Array\+List $\ast$)}]{calendar\+Ids}
+\end{DoxyParamCaption}
+}\label{protocol_i_calendar_details_provider-p_a5205f8c02f82ecbb2c917bc2a6eba003}
+
+
+Sets the defined list of calendars the S\+D\+K is able to read from on the user\textquotesingle{}s device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em calendar\+Ids} & -\/ A List of string values representing the read calendar ids. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{interface_result}{Result} -\/ Success or a corresponding error 
+\end{DoxyReturn}
+\hypertarget{protocol_i_calendar_details_provider-p_a53140c4f14c778a9255bec0935da8831}{}\index{I\+Calendar\+Details\+Provider-\/p@{I\+Calendar\+Details\+Provider-\/p}!set\+Write\+Calendar\+With\+N\+S\+String\+:@{set\+Write\+Calendar\+With\+N\+S\+String\+:}}
+\index{set\+Write\+Calendar\+With\+N\+S\+String\+:@{set\+Write\+Calendar\+With\+N\+S\+String\+:}!I\+Calendar\+Details\+Provider-\/p@{I\+Calendar\+Details\+Provider-\/p}}
+\subsubsection[{set\+Write\+Calendar\+With\+N\+S\+String\+:(\+N\+S\+String $\ast$calendar\+Id)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Result} $\ast$) set\+Write\+Calendar\+With\+N\+S\+String\+: 
+\begin{DoxyParamCaption}
+\item[{(N\+S\+String $\ast$)}]{calendar\+Id}
+\end{DoxyParamCaption}
+}\label{protocol_i_calendar_details_provider-p_a53140c4f14c778a9255bec0935da8831}
+
+
+Sets the write calendar id as defined above. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em calendar\+Id} & -\/ String that represents the calendar id as defined on the device \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{interface_result}{Result} -\/ Success or a corresponding error 
+\end{DoxyReturn}
+
+
+The documentation for this protocol was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src\+\_\+converted/com/intel/wearable/platform/timeiq/api/common/calendar/\hyperlink{_i_calendar_details_provider_8h}{I\+Calendar\+Details\+Provider.\+h}\end{DoxyCompactItemize}

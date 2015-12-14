@@ -1,0 +1,155 @@
+\hypertarget{interface_do_reminder}{}\section{Do\+Reminder Class Reference}
+\label{interface_do_reminder}\index{Do\+Reminder@{Do\+Reminder}}
+
+
+This class represents a reminder to do a certain action described as a user defined string.  
+
+
+
+
+{\ttfamily \#import $<$Do\+Reminder.\+h$>$}
+
+
+
+Inherits \hyperlink{interface_base_reminder}{Base\+Reminder}.
+
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) -\/ \hyperlink{interface_do_reminder_a00f7c6f1976c59af230c871b8f5a2f16}{init\+With\+Do\+Reminder\+\_\+\+Do\+Reminder\+Builder\+:}
+\begin{DoxyCompactList}\small\item\em Create the \hyperlink{interface_do_reminder}{Do\+Reminder} using a builder. \end{DoxyCompactList}\item 
+(instancetype) -\/ \hyperlink{interface_do_reminder_adf66930578abcecdef9ebab078c4d4a2}{init\+With\+N\+S\+String\+:with\+Reminder\+Type\+:with\+I\+Trigger\+:with\+N\+S\+String\+:with\+Reminder\+Status\+:with\+Long\+:with\+Long\+:}
+\begin{DoxyCompactList}\small\item\em Create the \hyperlink{interface_do_reminder}{Do\+Reminder} using parameters (the builder should be used in most cases) \end{DoxyCompactList}\item 
+(N\+S\+String $\ast$) -\/ \hyperlink{interface_do_reminder_a5de3176bd863676e5be29c272d2249e4}{get\+Do\+Action}
+\begin{DoxyCompactList}\small\item\em Gets the action that will be reminded to the user. \end{DoxyCompactList}\item 
+(boolean) -\/ \hyperlink{interface_do_reminder_afb8f30410b2b006cef9e16401b5ff66e}{is\+Equal\+:}
+\item 
+(N\+S\+U\+Integer) -\/ \hyperlink{interface_do_reminder_a84e247ea01392383b0a61fd35e005fb3}{hash}
+\item 
+(void) -\/ \hyperlink{interface_do_reminder_ac8bc7f2080c941473e7fd9f33f60cd9c}{copy\+All\+Fields\+To\+:}
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+N\+S\+String $\ast$ \hyperlink{interface_do_reminder_ac817c492031de1a60bbaaa7289ecce82}{m\+\_\+do\+Action\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents a reminder to do a certain action described as a user defined string. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_do_reminder_ac8bc7f2080c941473e7fd9f33f60cd9c}{}\index{Do\+Reminder@{Do\+Reminder}!copy\+All\+Fields\+To\+:@{copy\+All\+Fields\+To\+:}}
+\index{copy\+All\+Fields\+To\+:@{copy\+All\+Fields\+To\+:}!Do\+Reminder@{Do\+Reminder}}
+\subsubsection[{copy\+All\+Fields\+To\+:(\+Do\+Reminder $\ast$other)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) copy\+All\+Fields\+To\+: 
+\begin{DoxyParamCaption}
+\item[{({\bf Do\+Reminder} $\ast$)}]{other}
+\end{DoxyParamCaption}
+}\label{interface_do_reminder_ac8bc7f2080c941473e7fd9f33f60cd9c}
+\hypertarget{interface_do_reminder_a5de3176bd863676e5be29c272d2249e4}{}\index{Do\+Reminder@{Do\+Reminder}!get\+Do\+Action@{get\+Do\+Action}}
+\index{get\+Do\+Action@{get\+Do\+Action}!Do\+Reminder@{Do\+Reminder}}
+\subsubsection[{get\+Do\+Action()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+String $\ast$) get\+Do\+Action 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_do_reminder_a5de3176bd863676e5be29c272d2249e4}
+
+
+Gets the action that will be reminded to the user. 
+
+\begin{DoxyReturn}{Returns}
+the action that will be reminded to the user 
+\end{DoxyReturn}
+\hypertarget{interface_do_reminder_a84e247ea01392383b0a61fd35e005fb3}{}\index{Do\+Reminder@{Do\+Reminder}!hash@{hash}}
+\index{hash@{hash}!Do\+Reminder@{Do\+Reminder}}
+\subsubsection[{hash()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+U\+Integer) hash 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_do_reminder_a84e247ea01392383b0a61fd35e005fb3}
+
+
+Implements \hyperlink{interface_base_reminder_ad717943f532e8a7194395e549eadbfa1}{Base\+Reminder}.
+
+\hypertarget{interface_do_reminder_a00f7c6f1976c59af230c871b8f5a2f16}{}\index{Do\+Reminder@{Do\+Reminder}!init\+With\+Do\+Reminder\+\_\+\+Do\+Reminder\+Builder\+:@{init\+With\+Do\+Reminder\+\_\+\+Do\+Reminder\+Builder\+:}}
+\index{init\+With\+Do\+Reminder\+\_\+\+Do\+Reminder\+Builder\+:@{init\+With\+Do\+Reminder\+\_\+\+Do\+Reminder\+Builder\+:}!Do\+Reminder@{Do\+Reminder}}
+\subsubsection[{init\+With\+Do\+Reminder\+\_\+\+Do\+Reminder\+Builder\+:(\+Do\+Reminder\+\_\+\+Do\+Reminder\+Builder $\ast$do\+Reminder\+Builder)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\+With\+Do\+Reminder\+\_\+\+Do\+Reminder\+Builder\+: 
+\begin{DoxyParamCaption}
+\item[{({\bf Do\+Reminder\+\_\+\+Do\+Reminder\+Builder} $\ast$)}]{do\+Reminder\+Builder}
+\end{DoxyParamCaption}
+}\label{interface_do_reminder_a00f7c6f1976c59af230c871b8f5a2f16}
+
+
+Create the \hyperlink{interface_do_reminder}{Do\+Reminder} using a builder. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em do\+Reminder\+Builder} & the builder that has the input parameters for the reminder \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{interface_reminder_build_exception}{Reminder\+Build\+Exception}} & will be thrown when input is missing or invalid (see \hyperlink{interface_reminder_build_exception_type}{Reminder\+Build\+Exception\+Type} for reasons) \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{interface_do_reminder_adf66930578abcecdef9ebab078c4d4a2}{}\index{Do\+Reminder@{Do\+Reminder}!init\+With\+N\+S\+String\+:with\+Reminder\+Type\+:with\+I\+Trigger\+:with\+N\+S\+String\+:with\+Reminder\+Status\+:with\+Long\+:with\+Long\+:@{init\+With\+N\+S\+String\+:with\+Reminder\+Type\+:with\+I\+Trigger\+:with\+N\+S\+String\+:with\+Reminder\+Status\+:with\+Long\+:with\+Long\+:}}
+\index{init\+With\+N\+S\+String\+:with\+Reminder\+Type\+:with\+I\+Trigger\+:with\+N\+S\+String\+:with\+Reminder\+Status\+:with\+Long\+:with\+Long\+:@{init\+With\+N\+S\+String\+:with\+Reminder\+Type\+:with\+I\+Trigger\+:with\+N\+S\+String\+:with\+Reminder\+Status\+:with\+Long\+:with\+Long\+:}!Do\+Reminder@{Do\+Reminder}}
+\subsubsection[{init\+With\+N\+S\+String\+:with\+Reminder\+Type\+:with\+I\+Trigger\+:with\+N\+S\+String\+:with\+Reminder\+Status\+:with\+Long\+:with\+Long\+:(\+N\+S\+String $\ast$id\+\_\+,[with\+Reminder\+Type] Reminder\+Type $\ast$reminder\+Type,[with\+I\+Trigger] id$<$ I\+Trigger $>$ trigger,[with\+N\+S\+String] N\+S\+String $\ast$do\+Action,[with\+Reminder\+Status] Reminder\+Status $\ast$status,[with\+Long] long64 triggered\+Time,[with\+Long] long64 added\+Time)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\+With\+N\+S\+String\+: 
+\begin{DoxyParamCaption}
+\item[{(N\+S\+String $\ast$)}]{id\+\_\+}
+\item[{withReminderType:({\bf Reminder\+Type} $\ast$)}]{reminder\+Type}
+\item[{withITrigger:(id$<$ {\bf I\+Trigger} $>$)}]{trigger}
+\item[{withNSString:(N\+S\+String $\ast$)}]{do\+Action}
+\item[{withReminderStatus:({\bf Reminder\+Status} $\ast$)}]{status}
+\item[{withLong:(long64)}]{triggered\+Time}
+\item[{withLong:(long64)}]{added\+Time}
+\end{DoxyParamCaption}
+}\label{interface_do_reminder_adf66930578abcecdef9ebab078c4d4a2}
+
+
+Create the \hyperlink{interface_do_reminder}{Do\+Reminder} using parameters (the builder should be used in most cases) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the unique I\+D of the reminder \\
+\hline
+{\em reminder\+Type} & the type of the reminder ( \hyperlink{interface_reminder_type_a0c8d007a3b46883b983facbd27ea9d99}{D\+O (\+Reminder\+Type)} for \hyperlink{interface_do_reminder}{Do\+Reminder} , \hyperlink{interface_reminder_type_a4e429298799342d7c7114880e645d073}{C\+A\+L\+L (\+Reminder\+Type)} for Based\+Reminder.\+call\+Reminder.\+Call\+Reminder or \hyperlink{interface_reminder_type_abb04f7b2c8b0be93d21bc77ade83c0fc}{N\+O\+T\+I\+F\+Y (\+Reminder\+Type)} for Based\+Reminder.\+notification\+Reminder.\+Notification\+Reminder ) \\
+\hline
+{\em trigger} & the trigger that will make the reminder notify \\
+\hline
+{\em do\+Action} & the action that will be reminded to the user \\
+\hline
+{\em status} & the status of the reminder \\
+\hline
+{\em triggered\+Time} & the time that the reminder was triggered, or -\/1 if not triggered yet \\
+\hline
+{\em added\+Time} & the time that the reminder was added, or -\/1 if not added yet \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{interface_reminder_build_exception}{Reminder\+Build\+Exception}} & will be thrown when input is missing or invalid (see \hyperlink{interface_reminder_build_exception_type}{Reminder\+Build\+Exception\+Type} for reasons) \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{interface_do_reminder_afb8f30410b2b006cef9e16401b5ff66e}{}\index{Do\+Reminder@{Do\+Reminder}!is\+Equal\+:@{is\+Equal\+:}}
+\index{is\+Equal\+:@{is\+Equal\+:}!Do\+Reminder@{Do\+Reminder}}
+\subsubsection[{is\+Equal\+:(id o)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (boolean) is\+Equal\+: 
+\begin{DoxyParamCaption}
+\item[{(id)}]{o}
+\end{DoxyParamCaption}
+}\label{interface_do_reminder_afb8f30410b2b006cef9e16401b5ff66e}
+
+
+Implements \hyperlink{interface_base_reminder_a70c1501567218c45cc3574a15af85773}{Base\+Reminder}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{interface_do_reminder_ac817c492031de1a60bbaaa7289ecce82}{}\index{Do\+Reminder@{Do\+Reminder}!m\+\_\+do\+Action\+\_\+@{m\+\_\+do\+Action\+\_\+}}
+\index{m\+\_\+do\+Action\+\_\+@{m\+\_\+do\+Action\+\_\+}!Do\+Reminder@{Do\+Reminder}}
+\subsubsection[{m\+\_\+do\+Action\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+String$\ast$) m\+\_\+do\+Action\+\_\+}\label{interface_do_reminder_ac817c492031de1a60bbaaa7289ecce82}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src\+\_\+converted/com/intel/wearable/platform/timeiq/api/reminders/do\+Reminder/\hyperlink{_do_reminder_8h}{Do\+Reminder.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,176 @@
+\hypertarget{interface_resolved_locations_response}{}\section{Resolved\+Locations\+Response Class Reference}
+\label{interface_resolved_locations_response}\index{Resolved\+Locations\+Response@{Resolved\+Locations\+Response}}
+
+
+\hyperlink{interface_resolved_locations_response}{Resolved\+Locations\+Response} is used to hold location resolver responses.  
+
+
+
+
+{\ttfamily \#import $<$Resolved\+Locations\+Response.\+h$>$}
+
+
+
+Inherits A\+Resolver\+Response, and $<$\+I\+Mappable$>$.
+
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(Array\+List $\ast$) -\/ \hyperlink{interface_resolved_locations_response_add531dfac4994edc75512e1b4ae46e14}{get\+Definite\+Results}
+\begin{DoxyCompactList}\small\item\em Returns the list of locations with high certainty in the response. \end{DoxyCompactList}\item 
+(void) -\/ \hyperlink{interface_resolved_locations_response_a301b3275b28e0d75733b3476bdad69d6}{set\+Definite\+Results\+With\+Java\+Util\+List\+:}
+\begin{DoxyCompactList}\small\item\em sets the list of locations with high certainty in the response \end{DoxyCompactList}\item 
+(Array\+List $\ast$) -\/ \hyperlink{interface_resolved_locations_response_a4ca13f3d93e9a616af1ad6521680f281}{get\+Plausible\+Results}
+\begin{DoxyCompactList}\small\item\em Returns the list of locations with low certainty in the response. \end{DoxyCompactList}\item 
+(void) -\/ \hyperlink{interface_resolved_locations_response_a3d6829376ede82e2eee904bf73a8946d}{set\+Plausible\+Results\+With\+Java\+Util\+List\+:}
+\begin{DoxyCompactList}\small\item\em Sets the list of locations with low certainty in the response. \end{DoxyCompactList}\item 
+(N\+S\+String $\ast$) -\/ \hyperlink{interface_resolved_locations_response_a34bb2a56647626caec2cdd16da2f1fe2}{description}
+\item 
+(boolean) -\/ \hyperlink{interface_resolved_locations_response_a22c97deab9d3efc33f0d4aedd5f9a8af}{is\+Equal\+:}
+\item 
+(N\+S\+U\+Integer) -\/ \hyperlink{interface_resolved_locations_response_a826689383dcc7b3f04391aa49b4c9136}{hash}
+\item 
+(void) -\/ \hyperlink{interface_resolved_locations_response_a060889486649f8498142c5356e2c8637}{init\+Object\+From\+Map\+With\+Java\+Util\+Map\+:}
+\item 
+(Hash\+Map $\ast$) -\/ \hyperlink{interface_resolved_locations_response_aed07d6f865081b7ea4e97d288fa881ea}{object\+To\+Map}
+\item 
+(instancetype) -\/ \hyperlink{interface_resolved_locations_response_aab173837b9b64bf5db2ba8178279ed25}{init}
+\item 
+(void) -\/ \hyperlink{interface_resolved_locations_response_a98033ec46c7208b2df4e7928b7d755f2}{copy\+All\+Fields\+To\+:}
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Array\+List $\ast$ \hyperlink{interface_resolved_locations_response_a20011ed45472ff707a91c9a0fadbd0a6}{definite\+Results\+\_\+}
+\item 
+Array\+List $\ast$ \hyperlink{interface_resolved_locations_response_a6c6733b496c41ddd7e78d918782ce966}{plausible\+Results\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{interface_resolved_locations_response}{Resolved\+Locations\+Response} is used to hold location resolver responses. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_resolved_locations_response_a98033ec46c7208b2df4e7928b7d755f2}{}\index{Resolved\+Locations\+Response@{Resolved\+Locations\+Response}!copy\+All\+Fields\+To\+:@{copy\+All\+Fields\+To\+:}}
+\index{copy\+All\+Fields\+To\+:@{copy\+All\+Fields\+To\+:}!Resolved\+Locations\+Response@{Resolved\+Locations\+Response}}
+\subsubsection[{copy\+All\+Fields\+To\+:(\+Resolved\+Locations\+Response $\ast$other)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) copy\+All\+Fields\+To\+: 
+\begin{DoxyParamCaption}
+\item[{({\bf Resolved\+Locations\+Response} $\ast$)}]{other}
+\end{DoxyParamCaption}
+}\label{interface_resolved_locations_response_a98033ec46c7208b2df4e7928b7d755f2}
+\hypertarget{interface_resolved_locations_response_a34bb2a56647626caec2cdd16da2f1fe2}{}\index{Resolved\+Locations\+Response@{Resolved\+Locations\+Response}!description@{description}}
+\index{description@{description}!Resolved\+Locations\+Response@{Resolved\+Locations\+Response}}
+\subsubsection[{description()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+String $\ast$) description 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_resolved_locations_response_a34bb2a56647626caec2cdd16da2f1fe2}
+\hypertarget{interface_resolved_locations_response_add531dfac4994edc75512e1b4ae46e14}{}\index{Resolved\+Locations\+Response@{Resolved\+Locations\+Response}!get\+Definite\+Results@{get\+Definite\+Results}}
+\index{get\+Definite\+Results@{get\+Definite\+Results}!Resolved\+Locations\+Response@{Resolved\+Locations\+Response}}
+\subsubsection[{get\+Definite\+Results()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (Array\+List$\ast$) get\+Definite\+Results 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_resolved_locations_response_add531dfac4994edc75512e1b4ae46e14}
+
+
+Returns the list of locations with high certainty in the response. 
+
+\begin{DoxyReturn}{Returns}
+the list of definite resolved locations in the response 
+\end{DoxyReturn}
+\hypertarget{interface_resolved_locations_response_a4ca13f3d93e9a616af1ad6521680f281}{}\index{Resolved\+Locations\+Response@{Resolved\+Locations\+Response}!get\+Plausible\+Results@{get\+Plausible\+Results}}
+\index{get\+Plausible\+Results@{get\+Plausible\+Results}!Resolved\+Locations\+Response@{Resolved\+Locations\+Response}}
+\subsubsection[{get\+Plausible\+Results()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (Array\+List$\ast$) get\+Plausible\+Results 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_resolved_locations_response_a4ca13f3d93e9a616af1ad6521680f281}
+
+
+Returns the list of locations with low certainty in the response. 
+
+\begin{DoxyReturn}{Returns}
+the list of plausible resolved locations in the response 
+\end{DoxyReturn}
+\hypertarget{interface_resolved_locations_response_a826689383dcc7b3f04391aa49b4c9136}{}\index{Resolved\+Locations\+Response@{Resolved\+Locations\+Response}!hash@{hash}}
+\index{hash@{hash}!Resolved\+Locations\+Response@{Resolved\+Locations\+Response}}
+\subsubsection[{hash()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+U\+Integer) hash 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_resolved_locations_response_a826689383dcc7b3f04391aa49b4c9136}
+\hypertarget{interface_resolved_locations_response_aab173837b9b64bf5db2ba8178279ed25}{}\index{Resolved\+Locations\+Response@{Resolved\+Locations\+Response}!init@{init}}
+\index{init@{init}!Resolved\+Locations\+Response@{Resolved\+Locations\+Response}}
+\subsubsection[{init()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_resolved_locations_response_aab173837b9b64bf5db2ba8178279ed25}
+\hypertarget{interface_resolved_locations_response_a060889486649f8498142c5356e2c8637}{}\index{Resolved\+Locations\+Response@{Resolved\+Locations\+Response}!init\+Object\+From\+Map\+With\+Java\+Util\+Map\+:@{init\+Object\+From\+Map\+With\+Java\+Util\+Map\+:}}
+\index{init\+Object\+From\+Map\+With\+Java\+Util\+Map\+:@{init\+Object\+From\+Map\+With\+Java\+Util\+Map\+:}!Resolved\+Locations\+Response@{Resolved\+Locations\+Response}}
+\subsubsection[{init\+Object\+From\+Map\+With\+Java\+Util\+Map\+:(\+Hash\+Map $\ast$\+O\+B\+J\+C\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+F\+A\+M\+I\+L\+Y\+\_\+\+N\+O\+N\+E)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) init\+Object\+From\+Map\+With\+Java\+Util\+Map\+: 
+\begin{DoxyParamCaption}
+\item[{(Hash\+Map $\ast$)}]{O\+B\+J\+C\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+F\+A\+M\+I\+L\+Y\+\_\+\+N\+O\+N\+E}
+\end{DoxyParamCaption}
+}\label{interface_resolved_locations_response_a060889486649f8498142c5356e2c8637}
+\hypertarget{interface_resolved_locations_response_a22c97deab9d3efc33f0d4aedd5f9a8af}{}\index{Resolved\+Locations\+Response@{Resolved\+Locations\+Response}!is\+Equal\+:@{is\+Equal\+:}}
+\index{is\+Equal\+:@{is\+Equal\+:}!Resolved\+Locations\+Response@{Resolved\+Locations\+Response}}
+\subsubsection[{is\+Equal\+:(id o)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (boolean) is\+Equal\+: 
+\begin{DoxyParamCaption}
+\item[{(id)}]{o}
+\end{DoxyParamCaption}
+}\label{interface_resolved_locations_response_a22c97deab9d3efc33f0d4aedd5f9a8af}
+\hypertarget{interface_resolved_locations_response_aed07d6f865081b7ea4e97d288fa881ea}{}\index{Resolved\+Locations\+Response@{Resolved\+Locations\+Response}!object\+To\+Map@{object\+To\+Map}}
+\index{object\+To\+Map@{object\+To\+Map}!Resolved\+Locations\+Response@{Resolved\+Locations\+Response}}
+\subsubsection[{object\+To\+Map()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (Hash\+Map$\ast$) object\+To\+Map 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_resolved_locations_response_aed07d6f865081b7ea4e97d288fa881ea}
+\hypertarget{interface_resolved_locations_response_a301b3275b28e0d75733b3476bdad69d6}{}\index{Resolved\+Locations\+Response@{Resolved\+Locations\+Response}!set\+Definite\+Results\+With\+Java\+Util\+List\+:@{set\+Definite\+Results\+With\+Java\+Util\+List\+:}}
+\index{set\+Definite\+Results\+With\+Java\+Util\+List\+:@{set\+Definite\+Results\+With\+Java\+Util\+List\+:}!Resolved\+Locations\+Response@{Resolved\+Locations\+Response}}
+\subsubsection[{set\+Definite\+Results\+With\+Java\+Util\+List\+:(\+Array\+List $\ast$definite\+Results)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) set\+Definite\+Results\+With\+Java\+Util\+List\+: 
+\begin{DoxyParamCaption}
+\item[{(Array\+List $\ast$)}]{definite\+Results}
+\end{DoxyParamCaption}
+}\label{interface_resolved_locations_response_a301b3275b28e0d75733b3476bdad69d6}
+
+
+sets the list of locations with high certainty in the response 
+
+
+\begin{DoxyParams}{Parameters}
+{\em definite\+Results} & list of definite resolved locations in the response \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_resolved_locations_response_a3d6829376ede82e2eee904bf73a8946d}{}\index{Resolved\+Locations\+Response@{Resolved\+Locations\+Response}!set\+Plausible\+Results\+With\+Java\+Util\+List\+:@{set\+Plausible\+Results\+With\+Java\+Util\+List\+:}}
+\index{set\+Plausible\+Results\+With\+Java\+Util\+List\+:@{set\+Plausible\+Results\+With\+Java\+Util\+List\+:}!Resolved\+Locations\+Response@{Resolved\+Locations\+Response}}
+\subsubsection[{set\+Plausible\+Results\+With\+Java\+Util\+List\+:(\+Array\+List $\ast$plausible\+Results)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) set\+Plausible\+Results\+With\+Java\+Util\+List\+: 
+\begin{DoxyParamCaption}
+\item[{(Array\+List $\ast$)}]{plausible\+Results}
+\end{DoxyParamCaption}
+}\label{interface_resolved_locations_response_a3d6829376ede82e2eee904bf73a8946d}
+
+
+Sets the list of locations with low certainty in the response. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plausible\+Results} & list of plausible resolved locations in the response \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{interface_resolved_locations_response_a20011ed45472ff707a91c9a0fadbd0a6}{}\index{Resolved\+Locations\+Response@{Resolved\+Locations\+Response}!definite\+Results\+\_\+@{definite\+Results\+\_\+}}
+\index{definite\+Results\+\_\+@{definite\+Results\+\_\+}!Resolved\+Locations\+Response@{Resolved\+Locations\+Response}}
+\subsubsection[{definite\+Results\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (Array\+List$\ast$) definite\+Results\+\_\+}\label{interface_resolved_locations_response_a20011ed45472ff707a91c9a0fadbd0a6}
+\hypertarget{interface_resolved_locations_response_a6c6733b496c41ddd7e78d918782ce966}{}\index{Resolved\+Locations\+Response@{Resolved\+Locations\+Response}!plausible\+Results\+\_\+@{plausible\+Results\+\_\+}}
+\index{plausible\+Results\+\_\+@{plausible\+Results\+\_\+}!Resolved\+Locations\+Response@{Resolved\+Locations\+Response}}
+\subsubsection[{plausible\+Results\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (Array\+List$\ast$) plausible\+Results\+\_\+}\label{interface_resolved_locations_response_a6c6733b496c41ddd7e78d918782ce966}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src\+\_\+converted/com/intel/wearable/platform/timeiq/api/resolver/\hyperlink{_resolved_locations_response_8h}{Resolved\+Locations\+Response.\+h}\end{DoxyCompactItemize}

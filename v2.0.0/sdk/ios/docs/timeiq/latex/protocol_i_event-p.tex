@@ -1,0 +1,313 @@
+\hypertarget{protocol_i_event-p}{}\section{$<$I\+Event$>$ Protocol Reference}
+\label{protocol_i_event-p}\index{$<$\+I\+Event$>$@{$<$\+I\+Event$>$}}
+
+
+Interface for the variety of event types in the system.  
+
+
+
+
+{\ttfamily \#import $<$I\+Event.\+h$>$}
+
+
+
+Inherits $<$\+N\+S\+Object$>$.
+
+
+
+Inherited by \hyperlink{interface_base_event}{Base\+Event}.
+
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(\hyperlink{interface_t_s_o_place}{T\+S\+O\+Place} $\ast$) -\/ \hyperlink{protocol_i_event-p_af2043ccd14d1f83ffa8cfe41d7fb8f36}{get\+Location}
+\begin{DoxyCompactList}\small\item\em Returns location of event. \end{DoxyCompactList}\item 
+(long64) -\/ \hyperlink{protocol_i_event-p_a6cf40b28e45bb8daf220634719789257}{get\+Arrival\+Time}
+\begin{DoxyCompactList}\small\item\em Returns the planned arrival time to the event. \end{DoxyCompactList}\item 
+(long64) -\/ \hyperlink{protocol_i_event-p_a577cd6d2610ca7df7eef235937fd6105}{get\+Duration}
+\begin{DoxyCompactList}\small\item\em Returns the duration of the event is milliseconds. \end{DoxyCompactList}\item 
+(N\+S\+String $\ast$) -\/ \hyperlink{protocol_i_event-p_a4af1b5764b650fc600f3042468803f89}{get\+Id}
+\begin{DoxyCompactList}\small\item\em Returns the system identification for the event. \end{DoxyCompactList}\item 
+(N\+S\+String $\ast$) -\/ \hyperlink{protocol_i_event-p_ab9d37b5bb8ed11ff8e594cfbb4b3839e}{get\+Subject}
+\begin{DoxyCompactList}\small\item\em Returns the subject of the event. \end{DoxyCompactList}\item 
+(N\+S\+String $\ast$) -\/ \hyperlink{protocol_i_event-p_a65f9e7bbad7339f070ebd608c38540f3}{get\+Description}
+\begin{DoxyCompactList}\small\item\em Returns the description of the event. \end{DoxyCompactList}\item 
+(long64) -\/ \hyperlink{protocol_i_event-p_a75f19dea05b68025526fc2a6151dd9bb}{get\+Reminder\+Time\+Before\+T\+T\+L}
+\begin{DoxyCompactList}\small\item\em Returns the time in milliseconds to be alerted before the time to leave. \end{DoxyCompactList}\item 
+(\hyperlink{interface_t_s_o_event_type}{T\+S\+O\+Event\+Type} $\ast$) -\/ \hyperlink{protocol_i_event-p_add6cde14025f53b895a590abb48691fa}{get\+Event\+Type}
+\begin{DoxyCompactList}\small\item\em Returns the event type. \end{DoxyCompactList}\item 
+(long64) -\/ \hyperlink{protocol_i_event-p_af2343abfbba77c3bb85722c5162e6d81}{get\+General\+Alarm\+Time}
+\begin{DoxyCompactList}\small\item\em Returns the time of general alarm time (milliseconds before arrival time), which functions as a fallback for time to leave alerts. \end{DoxyCompactList}\item 
+(boolean) -\/ \hyperlink{protocol_i_event-p_a43115de987812e8481ec14cb8b908b96}{is\+Disable\+T\+T\+L\+Alerts}
+\begin{DoxyCompactList}\small\item\em Returns whether or not time to leave alerts are disabled. \end{DoxyCompactList}\item 
+(boolean) -\/ \hyperlink{protocol_i_event-p_a4aa248f17b9ba5eb195c5af99923ee62}{is\+Disable\+General\+Reminder\+Alerts}
+\begin{DoxyCompactList}\small\item\em Returns whether or not general reminder alerts are disabled. \end{DoxyCompactList}\item 
+(boolean) -\/ \hyperlink{protocol_i_event-p_afdd594ac0c983b204aa8550e3c7dfb10}{is\+Alert\+On\+Event\+Start}
+\begin{DoxyCompactList}\small\item\em Returns whether or not alerts on event start are enabled. \end{DoxyCompactList}\item 
+(boolean) -\/ \hyperlink{protocol_i_event-p_aa531d6d732db162f2afb45b0a9094fa5}{is\+Alert\+On\+Event\+End}
+\begin{DoxyCompactList}\small\item\em Returns whether or not alerts on event end are enabled. \end{DoxyCompactList}\item 
+(Transport\+Type $\ast$) -\/ \hyperlink{protocol_i_event-p_aba19a7534c8ebeea01f8b3ca714f7e4a}{get\+Preferred\+Transport\+Type}
+\begin{DoxyCompactList}\small\item\em Returns the preferred transport type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interface for the variety of event types in the system. 
+
+\subsection{Method Documentation}
+\hypertarget{protocol_i_event-p_a6cf40b28e45bb8daf220634719789257}{}\index{I\+Event-\/p@{I\+Event-\/p}!get\+Arrival\+Time@{get\+Arrival\+Time}}
+\index{get\+Arrival\+Time@{get\+Arrival\+Time}!I\+Event-\/p@{I\+Event-\/p}}
+\subsubsection[{get\+Arrival\+Time()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (long64) get\+Arrival\+Time 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{protocol_i_event-p_a6cf40b28e45bb8daf220634719789257}
+
+
+Returns the planned arrival time to the event. 
+
+\begin{DoxyReturn}{Returns}
+the arrival time in milliseconds 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{interface_base_event_a37d6a6ab180647f517cae75137c91b32}{Base\+Event}.
+
+\hypertarget{protocol_i_event-p_a65f9e7bbad7339f070ebd608c38540f3}{}\index{I\+Event-\/p@{I\+Event-\/p}!get\+Description@{get\+Description}}
+\index{get\+Description@{get\+Description}!I\+Event-\/p@{I\+Event-\/p}}
+\subsubsection[{get\+Description()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+String $\ast$) get\+Description 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{protocol_i_event-p_a65f9e7bbad7339f070ebd608c38540f3}
+
+
+Returns the description of the event. 
+
+\begin{DoxyReturn}{Returns}
+the description of the event 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{interface_base_event_ad359d955f9853f5c5c50d0df359be50c}{Base\+Event}.
+
+\hypertarget{protocol_i_event-p_a577cd6d2610ca7df7eef235937fd6105}{}\index{I\+Event-\/p@{I\+Event-\/p}!get\+Duration@{get\+Duration}}
+\index{get\+Duration@{get\+Duration}!I\+Event-\/p@{I\+Event-\/p}}
+\subsubsection[{get\+Duration()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (long64) get\+Duration 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{protocol_i_event-p_a577cd6d2610ca7df7eef235937fd6105}
+
+
+Returns the duration of the event is milliseconds. 
+
+\begin{DoxyReturn}{Returns}
+the duration of the event is milliseconds 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{interface_base_event_aaaf50d1e852caaed683b9b4a35b47606}{Base\+Event}.
+
+\hypertarget{protocol_i_event-p_add6cde14025f53b895a590abb48691fa}{}\index{I\+Event-\/p@{I\+Event-\/p}!get\+Event\+Type@{get\+Event\+Type}}
+\index{get\+Event\+Type@{get\+Event\+Type}!I\+Event-\/p@{I\+Event-\/p}}
+\subsubsection[{get\+Event\+Type()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf T\+S\+O\+Event\+Type} $\ast$) get\+Event\+Type 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{protocol_i_event-p_add6cde14025f53b895a590abb48691fa}
+
+
+Returns the event type. 
+
+\begin{DoxyReturn}{Returns}
+the event type as \hyperlink{interface_t_s_o_event_type}{T\+S\+O\+Event\+Type} 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{interface_base_event_a563e7f6ddb1b3543ebc3bdbade7678d2}{Base\+Event}, \hyperlink{interface_be_event_a940b72403160693699f912ef27e3ef05}{Be\+Event}, and \hyperlink{interface_calendar_event_a317a711a65dffbcd6b3072f71f4c471b}{Calendar\+Event}.
+
+\hypertarget{protocol_i_event-p_af2343abfbba77c3bb85722c5162e6d81}{}\index{I\+Event-\/p@{I\+Event-\/p}!get\+General\+Alarm\+Time@{get\+General\+Alarm\+Time}}
+\index{get\+General\+Alarm\+Time@{get\+General\+Alarm\+Time}!I\+Event-\/p@{I\+Event-\/p}}
+\subsubsection[{get\+General\+Alarm\+Time()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (long64) get\+General\+Alarm\+Time 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{protocol_i_event-p_af2343abfbba77c3bb85722c5162e6d81}
+
+
+Returns the time of general alarm time (milliseconds before arrival time), which functions as a fallback for time to leave alerts. 
+
+\begin{DoxyReturn}{Returns}
+the time of general alarm time in milliseconds 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{interface_base_event_a8ab6e634d8844b571978cfb762716595}{Base\+Event}.
+
+\hypertarget{protocol_i_event-p_a4af1b5764b650fc600f3042468803f89}{}\index{I\+Event-\/p@{I\+Event-\/p}!get\+Id@{get\+Id}}
+\index{get\+Id@{get\+Id}!I\+Event-\/p@{I\+Event-\/p}}
+\subsubsection[{get\+Id()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+String $\ast$) get\+Id 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{protocol_i_event-p_a4af1b5764b650fc600f3042468803f89}
+
+
+Returns the system identification for the event. 
+
+\begin{DoxyReturn}{Returns}
+the string that represents the system identification for the event 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{interface_base_event_a04588643c661c925966214f42f4c9f3f}{Base\+Event}.
+
+\hypertarget{protocol_i_event-p_af2043ccd14d1f83ffa8cfe41d7fb8f36}{}\index{I\+Event-\/p@{I\+Event-\/p}!get\+Location@{get\+Location}}
+\index{get\+Location@{get\+Location}!I\+Event-\/p@{I\+Event-\/p}}
+\subsubsection[{get\+Location()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf T\+S\+O\+Place} $\ast$) get\+Location 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{protocol_i_event-p_af2043ccd14d1f83ffa8cfe41d7fb8f36}
+
+
+Returns location of event. 
+
+\begin{DoxyReturn}{Returns}
+the location of event 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{interface_base_event_ac6024f9a94d21c69b6279ba965600301}{Base\+Event}.
+
+\hypertarget{protocol_i_event-p_aba19a7534c8ebeea01f8b3ca714f7e4a}{}\index{I\+Event-\/p@{I\+Event-\/p}!get\+Preferred\+Transport\+Type@{get\+Preferred\+Transport\+Type}}
+\index{get\+Preferred\+Transport\+Type@{get\+Preferred\+Transport\+Type}!I\+Event-\/p@{I\+Event-\/p}}
+\subsubsection[{get\+Preferred\+Transport\+Type()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (Transport\+Type $\ast$) get\+Preferred\+Transport\+Type 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{protocol_i_event-p_aba19a7534c8ebeea01f8b3ca714f7e4a}
+
+
+Returns the preferred transport type. 
+
+\begin{DoxyReturn}{Returns}
+the preferred transport type as Transport\+Type 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{interface_base_event_ae5f6adb1975e6d8189cd8effab3ad02c}{Base\+Event}.
+
+\hypertarget{protocol_i_event-p_a75f19dea05b68025526fc2a6151dd9bb}{}\index{I\+Event-\/p@{I\+Event-\/p}!get\+Reminder\+Time\+Before\+T\+T\+L@{get\+Reminder\+Time\+Before\+T\+T\+L}}
+\index{get\+Reminder\+Time\+Before\+T\+T\+L@{get\+Reminder\+Time\+Before\+T\+T\+L}!I\+Event-\/p@{I\+Event-\/p}}
+\subsubsection[{get\+Reminder\+Time\+Before\+T\+T\+L()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (long64) get\+Reminder\+Time\+Before\+T\+T\+L 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{protocol_i_event-p_a75f19dea05b68025526fc2a6151dd9bb}
+
+
+Returns the time in milliseconds to be alerted before the time to leave. 
+
+\begin{DoxyReturn}{Returns}
+the time in milliseconds to be alerted before the time to leave 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{interface_base_event_a3abff8c812935b4bf65947ab07ab5b16}{Base\+Event}.
+
+\hypertarget{protocol_i_event-p_ab9d37b5bb8ed11ff8e594cfbb4b3839e}{}\index{I\+Event-\/p@{I\+Event-\/p}!get\+Subject@{get\+Subject}}
+\index{get\+Subject@{get\+Subject}!I\+Event-\/p@{I\+Event-\/p}}
+\subsubsection[{get\+Subject()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+String $\ast$) get\+Subject 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{protocol_i_event-p_ab9d37b5bb8ed11ff8e594cfbb4b3839e}
+
+
+Returns the subject of the event. 
+
+\begin{DoxyReturn}{Returns}
+the subject of the event 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{interface_base_event_ad6eb9f816ce7c59bbd2c8d029cc27f33}{Base\+Event}.
+
+\hypertarget{protocol_i_event-p_aa531d6d732db162f2afb45b0a9094fa5}{}\index{I\+Event-\/p@{I\+Event-\/p}!is\+Alert\+On\+Event\+End@{is\+Alert\+On\+Event\+End}}
+\index{is\+Alert\+On\+Event\+End@{is\+Alert\+On\+Event\+End}!I\+Event-\/p@{I\+Event-\/p}}
+\subsubsection[{is\+Alert\+On\+Event\+End()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (boolean) is\+Alert\+On\+Event\+End 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{protocol_i_event-p_aa531d6d732db162f2afb45b0a9094fa5}
+
+
+Returns whether or not alerts on event end are enabled. 
+
+\begin{DoxyReturn}{Returns}
+true if alerts on event end are enabled, false otherwise 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{interface_base_event_a314fc1374ef4c52c565f76692ea04848}{Base\+Event}.
+
+\hypertarget{protocol_i_event-p_afdd594ac0c983b204aa8550e3c7dfb10}{}\index{I\+Event-\/p@{I\+Event-\/p}!is\+Alert\+On\+Event\+Start@{is\+Alert\+On\+Event\+Start}}
+\index{is\+Alert\+On\+Event\+Start@{is\+Alert\+On\+Event\+Start}!I\+Event-\/p@{I\+Event-\/p}}
+\subsubsection[{is\+Alert\+On\+Event\+Start()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (boolean) is\+Alert\+On\+Event\+Start 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{protocol_i_event-p_afdd594ac0c983b204aa8550e3c7dfb10}
+
+
+Returns whether or not alerts on event start are enabled. 
+
+\begin{DoxyReturn}{Returns}
+true if alerts on event start are enabled, false otherwise 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{interface_base_event_a1691270b618eacb59f0ac5f0638437ab}{Base\+Event}.
+
+\hypertarget{protocol_i_event-p_a4aa248f17b9ba5eb195c5af99923ee62}{}\index{I\+Event-\/p@{I\+Event-\/p}!is\+Disable\+General\+Reminder\+Alerts@{is\+Disable\+General\+Reminder\+Alerts}}
+\index{is\+Disable\+General\+Reminder\+Alerts@{is\+Disable\+General\+Reminder\+Alerts}!I\+Event-\/p@{I\+Event-\/p}}
+\subsubsection[{is\+Disable\+General\+Reminder\+Alerts()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (boolean) is\+Disable\+General\+Reminder\+Alerts 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{protocol_i_event-p_a4aa248f17b9ba5eb195c5af99923ee62}
+
+
+Returns whether or not general reminder alerts are disabled. 
+
+\begin{DoxyReturn}{Returns}
+true if general reminder alerts are disabled, false otherwise 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{interface_base_event_a30cf54095aa91c34c77f4e39c845ff53}{Base\+Event}.
+
+\hypertarget{protocol_i_event-p_a43115de987812e8481ec14cb8b908b96}{}\index{I\+Event-\/p@{I\+Event-\/p}!is\+Disable\+T\+T\+L\+Alerts@{is\+Disable\+T\+T\+L\+Alerts}}
+\index{is\+Disable\+T\+T\+L\+Alerts@{is\+Disable\+T\+T\+L\+Alerts}!I\+Event-\/p@{I\+Event-\/p}}
+\subsubsection[{is\+Disable\+T\+T\+L\+Alerts()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (boolean) is\+Disable\+T\+T\+L\+Alerts 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{protocol_i_event-p_a43115de987812e8481ec14cb8b908b96}
+
+
+Returns whether or not time to leave alerts are disabled. 
+
+\begin{DoxyReturn}{Returns}
+true if time to leave alerts are disabled, false otherwise 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{interface_base_event_a2a96376d69fdd82d780343cff7ee8193}{Base\+Event}.
+
+
+
+The documentation for this protocol was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src\+\_\+converted/com/intel/wearable/platform/timeiq/api/events/\hyperlink{_i_event_8h}{I\+Event.\+h}\end{DoxyCompactItemize}

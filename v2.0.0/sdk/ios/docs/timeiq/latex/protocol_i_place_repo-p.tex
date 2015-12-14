@@ -1,0 +1,153 @@
+\hypertarget{protocol_i_place_repo-p}{}\section{$<$I\+Place\+Repo$>$ Protocol Reference}
+\label{protocol_i_place_repo-p}\index{$<$\+I\+Place\+Repo$>$@{$<$\+I\+Place\+Repo$>$}}
+
+
+Created by ldagan on 18/10/2015.  
+
+
+
+
+{\ttfamily \#import $<$I\+Place\+Repo.\+h$>$}
+
+
+
+Inherits $<$\+N\+S\+Object$>$.
+
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(\hyperlink{interface_result_data}{Result\+Data} $\ast$) -\/ \hyperlink{protocol_i_place_repo-p_a7287f4f8513ef05dc8d4e3be8dbe5192}{add\+Place\+With\+T\+S\+O\+Place\+:}
+\begin{DoxyCompactList}\small\item\em Adds a user-\/defined place. \end{DoxyCompactList}\item 
+(\hyperlink{interface_result_data}{Result\+Data} $\ast$) -\/ \hyperlink{protocol_i_place_repo-p_a9efb316619dde4e2c0ab846ee804b18c}{add\+Place\+With\+T\+S\+O\+Place\+:with\+Semantic\+Key\+:}
+\begin{DoxyCompactList}\small\item\em Adds a user-\/defined place with a semantic key. \end{DoxyCompactList}\item 
+(\hyperlink{interface_result_data}{Result\+Data} $\ast$) -\/ \hyperlink{protocol_i_place_repo-p_a2d63c8ae45e3615a734a35193fb1da9c}{get\+All\+Places}
+\begin{DoxyCompactList}\small\item\em Returns a list of all user-\/defined places that where added using the \#add\+Place(\+T\+S\+O\+Place,\+Semantic\+Key) add\+Place method. \end{DoxyCompactList}\item 
+(\hyperlink{interface_result}{Result} $\ast$) -\/ \hyperlink{protocol_i_place_repo-p_a206c249746fdc45de38c5aad22008454}{remove\+Place\+With\+Place\+I\+D\+:}
+\begin{DoxyCompactList}\small\item\em Removes an existing user-\/defined place. \end{DoxyCompactList}\item 
+(\hyperlink{interface_result_data}{Result\+Data} $\ast$) -\/ \hyperlink{protocol_i_place_repo-p_a08a96b7e839e5bc2e87649fd1b132686}{get\+Place\+With\+Place\+I\+D\+:}
+\begin{DoxyCompactList}\small\item\em Returns a place for the given place id. \end{DoxyCompactList}\item 
+(\hyperlink{interface_result_data}{Result\+Data} $\ast$) -\/ \hyperlink{protocol_i_place_repo-p_a89001b700ad8d1b0cc1a78bba913ce9c}{get\+Place\+Id\+With\+Semantic\+Key\+:}
+\begin{DoxyCompactList}\small\item\em Returns a place id for the given semantic key. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Created by ldagan on 18/10/2015. 
+
+\subsection{Method Documentation}
+\hypertarget{protocol_i_place_repo-p_a7287f4f8513ef05dc8d4e3be8dbe5192}{}\index{I\+Place\+Repo-\/p@{I\+Place\+Repo-\/p}!add\+Place\+With\+T\+S\+O\+Place\+:@{add\+Place\+With\+T\+S\+O\+Place\+:}}
+\index{add\+Place\+With\+T\+S\+O\+Place\+:@{add\+Place\+With\+T\+S\+O\+Place\+:}!I\+Place\+Repo-\/p@{I\+Place\+Repo-\/p}}
+\subsubsection[{add\+Place\+With\+T\+S\+O\+Place\+:(\+T\+S\+O\+Place $\ast$place)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Result\+Data} $\ast$) add\+Place\+With\+T\+S\+O\+Place\+: 
+\begin{DoxyParamCaption}
+\item[{({\bf T\+S\+O\+Place} $\ast$)}]{place}
+\end{DoxyParamCaption}
+}\label{protocol_i_place_repo-p_a7287f4f8513ef05dc8d4e3be8dbe5192}
+
+
+Adds a user-\/defined place. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em place} & new place to add. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+id of the new place, or error code. 
+\end{DoxyReturn}
+\hypertarget{protocol_i_place_repo-p_a9efb316619dde4e2c0ab846ee804b18c}{}\index{I\+Place\+Repo-\/p@{I\+Place\+Repo-\/p}!add\+Place\+With\+T\+S\+O\+Place\+:with\+Semantic\+Key\+:@{add\+Place\+With\+T\+S\+O\+Place\+:with\+Semantic\+Key\+:}}
+\index{add\+Place\+With\+T\+S\+O\+Place\+:with\+Semantic\+Key\+:@{add\+Place\+With\+T\+S\+O\+Place\+:with\+Semantic\+Key\+:}!I\+Place\+Repo-\/p@{I\+Place\+Repo-\/p}}
+\subsubsection[{add\+Place\+With\+T\+S\+O\+Place\+:with\+Semantic\+Key\+:(\+T\+S\+O\+Place $\ast$place,[with\+Semantic\+Key] Semantic\+Key $\ast$semantic\+Key)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Result\+Data} $\ast$) {\bf add\+Place\+With\+T\+S\+O\+Place\+:} 
+\begin{DoxyParamCaption}
+\item[{({\bf T\+S\+O\+Place} $\ast$)}]{place}
+\item[{withSemanticKey:(Semantic\+Key $\ast$)}]{semantic\+Key}
+\end{DoxyParamCaption}
+}\label{protocol_i_place_repo-p_a9efb316619dde4e2c0ab846ee804b18c}
+
+
+Adds a user-\/defined place with a semantic key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em place} & new place to add. \\
+\hline
+{\em semantic\+Key} & key of new place. the key must be unique -\/ no two places can have the same key. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+id of the new place, or error code. 
+\end{DoxyReturn}
+\hypertarget{protocol_i_place_repo-p_a2d63c8ae45e3615a734a35193fb1da9c}{}\index{I\+Place\+Repo-\/p@{I\+Place\+Repo-\/p}!get\+All\+Places@{get\+All\+Places}}
+\index{get\+All\+Places@{get\+All\+Places}!I\+Place\+Repo-\/p@{I\+Place\+Repo-\/p}}
+\subsubsection[{get\+All\+Places()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Result\+Data} $\ast$) get\+All\+Places 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{protocol_i_place_repo-p_a2d63c8ae45e3615a734a35193fb1da9c}
+
+
+Returns a list of all user-\/defined places that where added using the \#add\+Place(\+T\+S\+O\+Place,\+Semantic\+Key) add\+Place method. 
+
+\begin{DoxyReturn}{Returns}
+list of places or error code. 
+\end{DoxyReturn}
+\hypertarget{protocol_i_place_repo-p_a89001b700ad8d1b0cc1a78bba913ce9c}{}\index{I\+Place\+Repo-\/p@{I\+Place\+Repo-\/p}!get\+Place\+Id\+With\+Semantic\+Key\+:@{get\+Place\+Id\+With\+Semantic\+Key\+:}}
+\index{get\+Place\+Id\+With\+Semantic\+Key\+:@{get\+Place\+Id\+With\+Semantic\+Key\+:}!I\+Place\+Repo-\/p@{I\+Place\+Repo-\/p}}
+\subsubsection[{get\+Place\+Id\+With\+Semantic\+Key\+:(\+Semantic\+Key $\ast$semantic\+Key)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Result\+Data} $\ast$) get\+Place\+Id\+With\+Semantic\+Key\+: 
+\begin{DoxyParamCaption}
+\item[{(Semantic\+Key $\ast$)}]{semantic\+Key}
+\end{DoxyParamCaption}
+}\label{protocol_i_place_repo-p_a89001b700ad8d1b0cc1a78bba913ce9c}
+
+
+Returns a place id for the given semantic key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em semantic\+Key} & semantic key of place to get \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+place id or error code 
+\end{DoxyReturn}
+\hypertarget{protocol_i_place_repo-p_a08a96b7e839e5bc2e87649fd1b132686}{}\index{I\+Place\+Repo-\/p@{I\+Place\+Repo-\/p}!get\+Place\+With\+Place\+I\+D\+:@{get\+Place\+With\+Place\+I\+D\+:}}
+\index{get\+Place\+With\+Place\+I\+D\+:@{get\+Place\+With\+Place\+I\+D\+:}!I\+Place\+Repo-\/p@{I\+Place\+Repo-\/p}}
+\subsubsection[{get\+Place\+With\+Place\+I\+D\+:(\+Place\+I\+D $\ast$place\+Id)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Result\+Data} $\ast$) get\+Place\+With\+Place\+I\+D\+: 
+\begin{DoxyParamCaption}
+\item[{(Place\+I\+D $\ast$)}]{place\+Id}
+\end{DoxyParamCaption}
+}\label{protocol_i_place_repo-p_a08a96b7e839e5bc2e87649fd1b132686}
+
+
+Returns a place for the given place id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Place\+I\+D} & id of place to get. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+place or error code. 
+\end{DoxyReturn}
+\hypertarget{protocol_i_place_repo-p_a206c249746fdc45de38c5aad22008454}{}\index{I\+Place\+Repo-\/p@{I\+Place\+Repo-\/p}!remove\+Place\+With\+Place\+I\+D\+:@{remove\+Place\+With\+Place\+I\+D\+:}}
+\index{remove\+Place\+With\+Place\+I\+D\+:@{remove\+Place\+With\+Place\+I\+D\+:}!I\+Place\+Repo-\/p@{I\+Place\+Repo-\/p}}
+\subsubsection[{remove\+Place\+With\+Place\+I\+D\+:(\+Place\+I\+D $\ast$place\+Id)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Result} $\ast$) remove\+Place\+With\+Place\+I\+D\+: 
+\begin{DoxyParamCaption}
+\item[{(Place\+I\+D $\ast$)}]{place\+Id}
+\end{DoxyParamCaption}
+}\label{protocol_i_place_repo-p_a206c249746fdc45de38c5aad22008454}
+
+
+Removes an existing user-\/defined place. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Place\+I\+D} & id of place to remove. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+result code for the operation. 
+\end{DoxyReturn}
+
+
+The documentation for this protocol was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src\+\_\+converted/com/intel/wearable/platform/timeiq/api/places/\hyperlink{_i_place_repo_8h}{I\+Place\+Repo.\+h}\end{DoxyCompactItemize}

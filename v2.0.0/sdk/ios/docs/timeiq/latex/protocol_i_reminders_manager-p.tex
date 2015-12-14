@@ -1,0 +1,247 @@
+\hypertarget{protocol_i_reminders_manager-p}{}\section{$<$I\+Reminders\+Manager$>$ Protocol Reference}
+\label{protocol_i_reminders_manager-p}\index{$<$\+I\+Reminders\+Manager$>$@{$<$\+I\+Reminders\+Manager$>$}}
+
+
+Enables to add reminder with a trigger. the manager will send a message through the Events\+Manager. include utility methods for get reminders, remove and snooze them. Example for creating and adding a reminder for \char`\"{}\+Turn on the car lights\char`\"{} when you start driving\+: //create a trigger\+: \hyperlink{protocol_i_trigger-p}{I\+Trigger} trigger = null; try \{ trigger = new Mot\+Trigger.\+Mot\+Trigger\+Builder(Mot\+Type.\+C\+A\+R, \hyperlink{interface_mot_transition_aeb5b28b53b3593273c47a4e1a5c2210b}{S\+T\+A\+R\+T (\+Mot\+Transition)}).build(); // trigger for mot to change to car started (will not be triggered now, if you are currently driving) \} catch (\hyperlink{interface_trigger_build_exception}{Trigger\+Build\+Exception} e) \{ \} //create a reminder \hyperlink{protocol_i_reminder-p}{I\+Reminder} reminder = null; if (trigger != null) \{ try \{ reminder = new Do\+Reminder.\+Do\+Reminder\+Builder(trigger, \char`\"{}\+Turn on the car lights\char`\"{}).build(); \}catch (\hyperlink{interface_reminder_build_exception}{Reminder\+Build\+Exception} e) \{ \} \} if(reminder != null) \{ // add the reminder \hyperlink{interface_result}{Result} result = Time\+I\+Q\+B\+G\+Service.\+m\+Time\+I\+Q\+Api.\+get\+Reminders\+Manager().add\+Reminder(reminder); // Time\+I\+Q\+B\+G\+Service.\+m\+Time\+I\+Q\+Api -\/ see below String message = result.\+is\+Success() ? \char`\"{}reminder\+\_\+was\+\_\+added\char`\"{} \+: // reminder added O\+K \char`\"{}reminder\+\_\+was\+\_\+not\+\_\+added\char`\"{} + result.\+get\+Message(); // reminder was not added with the error \} to initialize the S\+D\+K and listen for reminders that were triggered see\+: Time\+I\+Q\+Api.  
+
+
+
+
+{\ttfamily \#import $<$I\+Reminders\+Manager.\+h$>$}
+
+
+
+Inherits $<$\+N\+S\+Object$>$.
+
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(\hyperlink{interface_result}{Result} $\ast$) -\/ \hyperlink{protocol_i_reminders_manager-p_ac248b7f8a27a75c278840a0730353a64}{add\+Reminder\+With\+I\+Reminder\+:}
+\begin{DoxyCompactList}\small\item\em Add a new reminder. \end{DoxyCompactList}\item 
+(\hyperlink{interface_result}{Result} $\ast$) -\/ \hyperlink{protocol_i_reminders_manager-p_a1cf57074681eb8b70b7117441cf50c3b}{remove\+Reminder\+With\+N\+S\+String\+:}
+\begin{DoxyCompactList}\small\item\em Remove an existing reminder by its unique I\+D. \end{DoxyCompactList}\item 
+(\hyperlink{interface_result}{Result} $\ast$) -\/ \hyperlink{protocol_i_reminders_manager-p_a8bd817f76f58b3d31f914ce1c093e37a}{remove\+All\+Reminders}
+\begin{DoxyCompactList}\small\item\em Remove all the reminders. \end{DoxyCompactList}\item 
+(\hyperlink{interface_result_data}{Result\+Data} $\ast$) -\/ \hyperlink{protocol_i_reminders_manager-p_ab7915fbe5bb427f2898e8a4626b53419}{get\+Snooze\+Options\+With\+N\+S\+String\+:}
+\begin{DoxyCompactList}\small\item\em Get snooze options for a specific reminder using its unique I\+D ~\newline
+ the snooze options can be used to defer the reminder until a later time (or state) \end{DoxyCompactList}\item 
+(\hyperlink{interface_result}{Result} $\ast$) -\/ \hyperlink{protocol_i_reminders_manager-p_aff027d41ac4a793a2a72f326dfece125}{snooze\+Reminder\+With\+Snooze\+Option\+With\+N\+S\+String\+:with\+Snooze\+Option\+:}
+\begin{DoxyCompactList}\small\item\em Defer a specific reminder until a later time (or state) using snooze options ~\newline
+ {\bfseries Only a triggered ( \hyperlink{interface_reminder_status_a0589243c8a680fa3f44bc5a73db22681}{Triggered (\+Reminder\+Status)} ) reminder can be snoozed} \end{DoxyCompactList}\item 
+(\hyperlink{interface_result}{Result} $\ast$) -\/ \hyperlink{protocol_i_reminders_manager-p_a50b3d369f5a9fc60f120ade8542be115}{snooze\+Reminder\+With\+Trigger\+With\+N\+S\+String\+:with\+I\+Trigger\+:}
+\begin{DoxyCompactList}\small\item\em Defer a specific reminder until a later time (or state) using a new trigger ~\newline
+ {\bfseries Only a triggered ( \hyperlink{interface_reminder_status_a0589243c8a680fa3f44bc5a73db22681}{Triggered (\+Reminder\+Status)} ) reminder can be snoozed} \end{DoxyCompactList}\item 
+(void) -\/ \hyperlink{protocol_i_reminders_manager-p_a7473bc1afcac2a0a4b0b488b66efd60b}{on\+Destroy}
+\begin{DoxyCompactList}\small\item\em Use when stopping the reminders, to avoid reminders being triggered. \end{DoxyCompactList}\item 
+(\hyperlink{interface_result_data}{Result\+Data} $\ast$) -\/ \hyperlink{protocol_i_reminders_manager-p_a1e4824e9847ec4e4e524dda3f464a434}{get\+Reminder\+With\+N\+S\+String\+:}
+\begin{DoxyCompactList}\small\item\em Get an existing reminder by its unique I\+D. \end{DoxyCompactList}\item 
+(\hyperlink{interface_result_data}{Result\+Data} $\ast$) -\/ \hyperlink{protocol_i_reminders_manager-p_ac10b5d4bc09407bf9d12bf61cf83698c}{get\+Reminders\+With\+Enum\+Set\+:}
+\begin{DoxyCompactList}\small\item\em Get reminders by their status, for example\+: ~\newline
+ reminders\+Manager.\+get\+Reminders(Enum\+Set.\+all\+Of(Reminder\+Status.\+class)); ~\newline
+ or ~\newline
+ reminders\+Manager.\+get\+Reminders(Enum\+Set.\+of(\hyperlink{interface_reminder_status_a687076acfbd106692b1a784a0782e2af}{Active (\+Reminder\+Status)}));. \end{DoxyCompactList}\item 
+(\hyperlink{interface_result}{Result} $\ast$) -\/ \hyperlink{protocol_i_reminders_manager-p_aa4a3b2c0dc6e7f087af388f4c3c7186d}{end\+Reminder\+With\+N\+S\+String\+:with\+Reminder\+End\+Reason\+:}
+\begin{DoxyCompactList}\small\item\em Mark a triggered reminder as ended. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Enables to add reminder with a trigger. the manager will send a message through the Events\+Manager. include utility methods for get reminders, remove and snooze them. Example for creating and adding a reminder for \char`\"{}\+Turn on the car lights\char`\"{} when you start driving\+: //create a trigger\+: \hyperlink{protocol_i_trigger-p}{I\+Trigger} trigger = null; try \{ trigger = new Mot\+Trigger.\+Mot\+Trigger\+Builder(Mot\+Type.\+C\+A\+R, \hyperlink{interface_mot_transition_aeb5b28b53b3593273c47a4e1a5c2210b}{S\+T\+A\+R\+T (\+Mot\+Transition)}).build(); // trigger for mot to change to car started (will not be triggered now, if you are currently driving) \} catch (\hyperlink{interface_trigger_build_exception}{Trigger\+Build\+Exception} e) \{ \} //create a reminder \hyperlink{protocol_i_reminder-p}{I\+Reminder} reminder = null; if (trigger != null) \{ try \{ reminder = new Do\+Reminder.\+Do\+Reminder\+Builder(trigger, \char`\"{}\+Turn on the car lights\char`\"{}).build(); \}catch (\hyperlink{interface_reminder_build_exception}{Reminder\+Build\+Exception} e) \{ \} \} if(reminder != null) \{ // add the reminder \hyperlink{interface_result}{Result} result = Time\+I\+Q\+B\+G\+Service.\+m\+Time\+I\+Q\+Api.\+get\+Reminders\+Manager().add\+Reminder(reminder); // Time\+I\+Q\+B\+G\+Service.\+m\+Time\+I\+Q\+Api -\/ see below String message = result.\+is\+Success() ? \char`\"{}reminder\+\_\+was\+\_\+added\char`\"{} \+: // reminder added O\+K \char`\"{}reminder\+\_\+was\+\_\+not\+\_\+added\char`\"{} + result.\+get\+Message(); // reminder was not added with the error \} to initialize the S\+D\+K and listen for reminders that were triggered see\+: Time\+I\+Q\+Api. 
+
+\subsection{Method Documentation}
+\hypertarget{protocol_i_reminders_manager-p_ac248b7f8a27a75c278840a0730353a64}{}\index{I\+Reminders\+Manager-\/p@{I\+Reminders\+Manager-\/p}!add\+Reminder\+With\+I\+Reminder\+:@{add\+Reminder\+With\+I\+Reminder\+:}}
+\index{add\+Reminder\+With\+I\+Reminder\+:@{add\+Reminder\+With\+I\+Reminder\+:}!I\+Reminders\+Manager-\/p@{I\+Reminders\+Manager-\/p}}
+\subsubsection[{add\+Reminder\+With\+I\+Reminder\+:(id$<$ I\+Reminder $>$ reminder\+To\+Add)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Result} $\ast$) add\+Reminder\+With\+I\+Reminder\+: 
+\begin{DoxyParamCaption}
+\item[{(id$<$ {\bf I\+Reminder} $>$)}]{reminder\+To\+Add}
+\end{DoxyParamCaption}
+}\label{protocol_i_reminders_manager-p_ac248b7f8a27a75c278840a0730353a64}
+
+
+Add a new reminder. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reminder\+To\+Add} & the reminder to be added \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a result that state whether the adding process was successful (test with \hyperlink{interface_result_a3c3f1b7989edde161fb082fe178290be}{is\+Success (\+Result)} ) or not (error will be supplied in \hyperlink{interface_result_a1aba712f58f0fa0c066db7c8c34d5269}{get\+Result\+Code (\+Result)} and \hyperlink{interface_result_abe56628a08c33b12b2b62d18bd3a0f4f}{get\+Message (\+Result)} ) 
+\end{DoxyReturn}
+\hypertarget{protocol_i_reminders_manager-p_aa4a3b2c0dc6e7f087af388f4c3c7186d}{}\index{I\+Reminders\+Manager-\/p@{I\+Reminders\+Manager-\/p}!end\+Reminder\+With\+N\+S\+String\+:with\+Reminder\+End\+Reason\+:@{end\+Reminder\+With\+N\+S\+String\+:with\+Reminder\+End\+Reason\+:}}
+\index{end\+Reminder\+With\+N\+S\+String\+:with\+Reminder\+End\+Reason\+:@{end\+Reminder\+With\+N\+S\+String\+:with\+Reminder\+End\+Reason\+:}!I\+Reminders\+Manager-\/p@{I\+Reminders\+Manager-\/p}}
+\subsubsection[{end\+Reminder\+With\+N\+S\+String\+:with\+Reminder\+End\+Reason\+:(\+N\+S\+String $\ast$reminder\+Id,[with\+Reminder\+End\+Reason] Reminder\+End\+Reason $\ast$reminder\+End\+Reason)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Result} $\ast$) end\+Reminder\+With\+N\+S\+String\+: 
+\begin{DoxyParamCaption}
+\item[{(N\+S\+String $\ast$)}]{reminder\+Id}
+\item[{withReminderEndReason:({\bf Reminder\+End\+Reason} $\ast$)}]{reminder\+End\+Reason}
+\end{DoxyParamCaption}
+}\label{protocol_i_reminders_manager-p_aa4a3b2c0dc6e7f087af388f4c3c7186d}
+
+
+Mark a triggered reminder as ended. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reminder\+Id} & the unique I\+D of the reminder \\
+\hline
+{\em reminder\+End\+Reason} & The end reason of the reminder \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a result that state whether the ending process was successful (test with \hyperlink{interface_result_a3c3f1b7989edde161fb082fe178290be}{is\+Success (\+Result)} ) or not (error will be supplied in \hyperlink{interface_result_a1aba712f58f0fa0c066db7c8c34d5269}{get\+Result\+Code (\+Result)} and \hyperlink{interface_result_abe56628a08c33b12b2b62d18bd3a0f4f}{get\+Message (\+Result)} ) 
+\end{DoxyReturn}
+\hypertarget{protocol_i_reminders_manager-p_ac10b5d4bc09407bf9d12bf61cf83698c}{}\index{I\+Reminders\+Manager-\/p@{I\+Reminders\+Manager-\/p}!get\+Reminders\+With\+Enum\+Set\+:@{get\+Reminders\+With\+Enum\+Set\+:}}
+\index{get\+Reminders\+With\+Enum\+Set\+:@{get\+Reminders\+With\+Enum\+Set\+:}!I\+Reminders\+Manager-\/p@{I\+Reminders\+Manager-\/p}}
+\subsubsection[{get\+Reminders\+With\+Enum\+Set\+:(\+Enum\+Set $\ast$reminder\+Statuses)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Result\+Data} $\ast$) get\+Reminders\+With\+Enum\+Set\+: 
+\begin{DoxyParamCaption}
+\item[{(Enum\+Set $\ast$)}]{reminder\+Statuses}
+\end{DoxyParamCaption}
+}\label{protocol_i_reminders_manager-p_ac10b5d4bc09407bf9d12bf61cf83698c}
+
+
+Get reminders by their status, for example\+: ~\newline
+ reminders\+Manager.\+get\+Reminders(Enum\+Set.\+all\+Of(Reminder\+Status.\+class)); ~\newline
+ or ~\newline
+ reminders\+Manager.\+get\+Reminders(Enum\+Set.\+of(\hyperlink{interface_reminder_status_a687076acfbd106692b1a784a0782e2af}{Active (\+Reminder\+Status)}));. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reminder\+Statuses} & the status of the reminders that should be returned (as seen in the examples) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+multiple \hyperlink{protocol_i_reminder-p}{I\+Reminder} the \hyperlink{interface_result_data}{Result\+Data} is always success, the data might be an empty collection. 
+\end{DoxyReturn}
+\hypertarget{protocol_i_reminders_manager-p_a1e4824e9847ec4e4e524dda3f464a434}{}\index{I\+Reminders\+Manager-\/p@{I\+Reminders\+Manager-\/p}!get\+Reminder\+With\+N\+S\+String\+:@{get\+Reminder\+With\+N\+S\+String\+:}}
+\index{get\+Reminder\+With\+N\+S\+String\+:@{get\+Reminder\+With\+N\+S\+String\+:}!I\+Reminders\+Manager-\/p@{I\+Reminders\+Manager-\/p}}
+\subsubsection[{get\+Reminder\+With\+N\+S\+String\+:(\+N\+S\+String $\ast$reminder\+Id)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Result\+Data} $\ast$) get\+Reminder\+With\+N\+S\+String\+: 
+\begin{DoxyParamCaption}
+\item[{(N\+S\+String $\ast$)}]{reminder\+Id}
+\end{DoxyParamCaption}
+}\label{protocol_i_reminders_manager-p_a1e4824e9847ec4e4e524dda3f464a434}
+
+
+Get an existing reminder by its unique I\+D. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reminder\+Id} & the unique I\+D of the reminder \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{protocol_i_reminder-p}{I\+Reminder} 
+\end{DoxyReturn}
+\hypertarget{protocol_i_reminders_manager-p_ab7915fbe5bb427f2898e8a4626b53419}{}\index{I\+Reminders\+Manager-\/p@{I\+Reminders\+Manager-\/p}!get\+Snooze\+Options\+With\+N\+S\+String\+:@{get\+Snooze\+Options\+With\+N\+S\+String\+:}}
+\index{get\+Snooze\+Options\+With\+N\+S\+String\+:@{get\+Snooze\+Options\+With\+N\+S\+String\+:}!I\+Reminders\+Manager-\/p@{I\+Reminders\+Manager-\/p}}
+\subsubsection[{get\+Snooze\+Options\+With\+N\+S\+String\+:(\+N\+S\+String $\ast$reminder\+Id)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Result\+Data} $\ast$) get\+Snooze\+Options\+With\+N\+S\+String\+: 
+\begin{DoxyParamCaption}
+\item[{(N\+S\+String $\ast$)}]{reminder\+Id}
+\end{DoxyParamCaption}
+}\label{protocol_i_reminders_manager-p_ab7915fbe5bb427f2898e8a4626b53419}
+
+
+Get snooze options for a specific reminder using its unique I\+D ~\newline
+ the snooze options can be used to defer the reminder until a later time (or state) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reminder\+Id} & the unique I\+D of the reminder \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the snooze options that can be used to defer the reminder 
+\end{DoxyReturn}
+\hypertarget{protocol_i_reminders_manager-p_a7473bc1afcac2a0a4b0b488b66efd60b}{}\index{I\+Reminders\+Manager-\/p@{I\+Reminders\+Manager-\/p}!on\+Destroy@{on\+Destroy}}
+\index{on\+Destroy@{on\+Destroy}!I\+Reminders\+Manager-\/p@{I\+Reminders\+Manager-\/p}}
+\subsubsection[{on\+Destroy()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) on\+Destroy 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{protocol_i_reminders_manager-p_a7473bc1afcac2a0a4b0b488b66efd60b}
+
+
+Use when stopping the reminders, to avoid reminders being triggered. 
+
+\hypertarget{protocol_i_reminders_manager-p_a8bd817f76f58b3d31f914ce1c093e37a}{}\index{I\+Reminders\+Manager-\/p@{I\+Reminders\+Manager-\/p}!remove\+All\+Reminders@{remove\+All\+Reminders}}
+\index{remove\+All\+Reminders@{remove\+All\+Reminders}!I\+Reminders\+Manager-\/p@{I\+Reminders\+Manager-\/p}}
+\subsubsection[{remove\+All\+Reminders()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Result} $\ast$) remove\+All\+Reminders 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{protocol_i_reminders_manager-p_a8bd817f76f58b3d31f914ce1c093e37a}
+
+
+Remove all the reminders. 
+
+\begin{DoxyReturn}{Returns}
+a success result if the reminder was successfully removed and error result otherwise 
+\end{DoxyReturn}
+\hypertarget{protocol_i_reminders_manager-p_a1cf57074681eb8b70b7117441cf50c3b}{}\index{I\+Reminders\+Manager-\/p@{I\+Reminders\+Manager-\/p}!remove\+Reminder\+With\+N\+S\+String\+:@{remove\+Reminder\+With\+N\+S\+String\+:}}
+\index{remove\+Reminder\+With\+N\+S\+String\+:@{remove\+Reminder\+With\+N\+S\+String\+:}!I\+Reminders\+Manager-\/p@{I\+Reminders\+Manager-\/p}}
+\subsubsection[{remove\+Reminder\+With\+N\+S\+String\+:(\+N\+S\+String $\ast$reminder\+Id)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Result} $\ast$) remove\+Reminder\+With\+N\+S\+String\+: 
+\begin{DoxyParamCaption}
+\item[{(N\+S\+String $\ast$)}]{reminder\+Id}
+\end{DoxyParamCaption}
+}\label{protocol_i_reminders_manager-p_a1cf57074681eb8b70b7117441cf50c3b}
+
+
+Remove an existing reminder by its unique I\+D. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reminder\+Id} & the unique I\+D of the reminder \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a success result if the reminder was successfully removed and error result otherwise 
+\end{DoxyReturn}
+\hypertarget{protocol_i_reminders_manager-p_aff027d41ac4a793a2a72f326dfece125}{}\index{I\+Reminders\+Manager-\/p@{I\+Reminders\+Manager-\/p}!snooze\+Reminder\+With\+Snooze\+Option\+With\+N\+S\+String\+:with\+Snooze\+Option\+:@{snooze\+Reminder\+With\+Snooze\+Option\+With\+N\+S\+String\+:with\+Snooze\+Option\+:}}
+\index{snooze\+Reminder\+With\+Snooze\+Option\+With\+N\+S\+String\+:with\+Snooze\+Option\+:@{snooze\+Reminder\+With\+Snooze\+Option\+With\+N\+S\+String\+:with\+Snooze\+Option\+:}!I\+Reminders\+Manager-\/p@{I\+Reminders\+Manager-\/p}}
+\subsubsection[{snooze\+Reminder\+With\+Snooze\+Option\+With\+N\+S\+String\+:with\+Snooze\+Option\+:(\+N\+S\+String $\ast$reminder\+Id,[with\+Snooze\+Option] Snooze\+Option $\ast$snooze\+Option)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Result} $\ast$) snooze\+Reminder\+With\+Snooze\+Option\+With\+N\+S\+String\+: 
+\begin{DoxyParamCaption}
+\item[{(N\+S\+String $\ast$)}]{reminder\+Id}
+\item[{withSnoozeOption:({\bf Snooze\+Option} $\ast$)}]{snooze\+Option}
+\end{DoxyParamCaption}
+}\label{protocol_i_reminders_manager-p_aff027d41ac4a793a2a72f326dfece125}
+
+
+Defer a specific reminder until a later time (or state) using snooze options ~\newline
+ {\bfseries Only a triggered ( \hyperlink{interface_reminder_status_a0589243c8a680fa3f44bc5a73db22681}{Triggered (\+Reminder\+Status)} ) reminder can be snoozed} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reminder\+Id} & the unique I\+D of the reminder \\
+\hline
+{\em snooze\+Option} & the snooze options to be used to defer the reminder \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a result that state whether the snoozing process was successful (test with \hyperlink{interface_result_a3c3f1b7989edde161fb082fe178290be}{is\+Success (\+Result)} ) or not (error will be supplied in \hyperlink{interface_result_a1aba712f58f0fa0c066db7c8c34d5269}{get\+Result\+Code (\+Result)} and \hyperlink{interface_result_abe56628a08c33b12b2b62d18bd3a0f4f}{get\+Message (\+Result)} ) 
+\end{DoxyReturn}
+\hypertarget{protocol_i_reminders_manager-p_a50b3d369f5a9fc60f120ade8542be115}{}\index{I\+Reminders\+Manager-\/p@{I\+Reminders\+Manager-\/p}!snooze\+Reminder\+With\+Trigger\+With\+N\+S\+String\+:with\+I\+Trigger\+:@{snooze\+Reminder\+With\+Trigger\+With\+N\+S\+String\+:with\+I\+Trigger\+:}}
+\index{snooze\+Reminder\+With\+Trigger\+With\+N\+S\+String\+:with\+I\+Trigger\+:@{snooze\+Reminder\+With\+Trigger\+With\+N\+S\+String\+:with\+I\+Trigger\+:}!I\+Reminders\+Manager-\/p@{I\+Reminders\+Manager-\/p}}
+\subsubsection[{snooze\+Reminder\+With\+Trigger\+With\+N\+S\+String\+:with\+I\+Trigger\+:(\+N\+S\+String $\ast$reminder\+Id,[with\+I\+Trigger] id$<$ I\+Trigger $>$ new\+Trigger)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Result} $\ast$) snooze\+Reminder\+With\+Trigger\+With\+N\+S\+String\+: 
+\begin{DoxyParamCaption}
+\item[{(N\+S\+String $\ast$)}]{reminder\+Id}
+\item[{withITrigger:(id$<$ {\bf I\+Trigger} $>$)}]{new\+Trigger}
+\end{DoxyParamCaption}
+}\label{protocol_i_reminders_manager-p_a50b3d369f5a9fc60f120ade8542be115}
+
+
+Defer a specific reminder until a later time (or state) using a new trigger ~\newline
+ {\bfseries Only a triggered ( \hyperlink{interface_reminder_status_a0589243c8a680fa3f44bc5a73db22681}{Triggered (\+Reminder\+Status)} ) reminder can be snoozed} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reminder\+Id} & the unique I\+D of the reminder \\
+\hline
+{\em new\+Trigger} & the new trigger to be used to defer the reminder \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a result that state whether the snoozing process was successful (test with \hyperlink{interface_result_a3c3f1b7989edde161fb082fe178290be}{is\+Success (\+Result)} ) or not (error will be supplied in \hyperlink{interface_result_a1aba712f58f0fa0c066db7c8c34d5269}{get\+Result\+Code (\+Result)} and \hyperlink{interface_result_abe56628a08c33b12b2b62d18bd3a0f4f}{get\+Message (\+Result)} ) 
+\end{DoxyReturn}
+
+
+The documentation for this protocol was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src\+\_\+converted/com/intel/wearable/platform/timeiq/api/reminders/\hyperlink{_i_reminders_manager_8h}{I\+Reminders\+Manager.\+h}\end{DoxyCompactItemize}

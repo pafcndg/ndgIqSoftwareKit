@@ -1,0 +1,37 @@
+\hypertarget{_be_event_8h}{}\section{src\+\_\+converted/com/intel/wearable/platform/timeiq/api/events/\+Be\+Event.h File Reference}
+\label{_be_event_8h}\index{src\+\_\+converted/com/intel/wearable/platform/timeiq/api/events/\+Be\+Event.\+h@{src\+\_\+converted/com/intel/wearable/platform/timeiq/api/events/\+Be\+Event.\+h}}
+{\ttfamily \#import \char`\"{}J\+B.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Base\+Event.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{interface_be_event}{Be\+Event}
+\begin{DoxyCompactList}\small\item\em The B\+E event is the basic event type. The user states where he wants to be and at what time. He then receives time to leave alerts in order to get there on time. New events are constructed and added to the S\+D\+K using builders. The builders allow the flexibility of declaring mandatory parameters vs. optional parameters. For the B\+E event -\/ the destination location and the arrival time are the mandatory parameters. The option to add the event to the calendar is an optional parameter -\/ if not stated -\/ default is false. Usage Example\+: \hyperlink{interface_be_event}{Be\+Event} event = new Be\+Event.\+Be\+Event\+Builder(N\+E\+W\+\_\+\+Y\+O\+R\+K, System.\+current\+Time\+Millis() + T\+W\+O\+\_\+\+D\+A\+Y\+S).subject(\char`\"{}\+Basket\+Ball Practice\char`\"{}).reminder\+Time\+Before\+T\+T\+L(\+F\+I\+V\+E\+\_\+\+M\+I\+N\+U\+T\+E\+S).build();. \end{DoxyCompactList}\item 
+class \hyperlink{interface_be_event___be_event_builder}{Be\+Event\+\_\+\+Be\+Event\+Builder}
+\begin{DoxyCompactList}\small\item\em Event builder for Be\+Events. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{interface_be_event}{Be\+Event} \hyperlink{_be_event_8h_a56e0e36a5a07c9b8cbc2e1a147bc371e}{Com\+Intel\+Wearable\+Platform\+Timeiq\+Api\+Events\+Be\+Event}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_be_event_8h_a1fc078ef1825f978d7677b3eebec2f98}{\+\_\+\+\_\+attribute\+\_\+\+\_\+} ((always\+\_\+inline)) inline void Be\+Event\+\_\+init()
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{_be_event_8h_a56e0e36a5a07c9b8cbc2e1a147bc371e}{}\index{Be\+Event.\+h@{Be\+Event.\+h}!Com\+Intel\+Wearable\+Platform\+Timeiq\+Api\+Events\+Be\+Event@{Com\+Intel\+Wearable\+Platform\+Timeiq\+Api\+Events\+Be\+Event}}
+\index{Com\+Intel\+Wearable\+Platform\+Timeiq\+Api\+Events\+Be\+Event@{Com\+Intel\+Wearable\+Platform\+Timeiq\+Api\+Events\+Be\+Event}!Be\+Event.\+h@{Be\+Event.\+h}}
+\subsubsection[{Com\+Intel\+Wearable\+Platform\+Timeiq\+Api\+Events\+Be\+Event}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Be\+Event} {\bf Com\+Intel\+Wearable\+Platform\+Timeiq\+Api\+Events\+Be\+Event}}\label{_be_event_8h_a56e0e36a5a07c9b8cbc2e1a147bc371e}
+
+
+\subsection{Function Documentation}
+\hypertarget{_be_event_8h_a1fc078ef1825f978d7677b3eebec2f98}{}\index{Be\+Event.\+h@{Be\+Event.\+h}!\+\_\+\+\_\+attribute\+\_\+\+\_\+@{\+\_\+\+\_\+attribute\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+attribute\+\_\+\+\_\+@{\+\_\+\+\_\+attribute\+\_\+\+\_\+}!Be\+Event.\+h@{Be\+Event.\+h}}
+\subsubsection[{\+\_\+\+\_\+attribute\+\_\+\+\_\+((always\+\_\+inline)) inline void Be\+Event\+\_\+init()}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+\+\_\+attribute\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{(always\+\_\+inline)}]{}
+\end{DoxyParamCaption}
+)}\label{_be_event_8h_a1fc078ef1825f978d7677b3eebec2f98}

@@ -1,0 +1,238 @@
+\hypertarget{interface_a_route_data}{}\section{A\+Route\+Data Class Reference}
+\label{interface_a_route_data}\index{A\+Route\+Data@{A\+Route\+Data}}
+
+
+The result of I\+Segmented\+Route\+Provider\+::get\+T\+T\+L(\+T\+S\+O\+Coordinate,\+T\+S\+O\+Coordinate,long,\+Mot\+Type,\+Mot\+Type) ~\newline
+ It contains a list of \hyperlink{interface_route_segment}{Route\+Segment} ordered by time, from the time to leave until the arrival time.  
+
+
+
+
+{\ttfamily \#import $<$A\+Route\+Data.\+h$>$}
+
+
+
+Inherits N\+S\+Object, and \hyperlink{protocol_i_route_data-p}{$<$\+I\+Route\+Data$>$}.
+
+
+
+Inherited by \hyperlink{interface_eta_route_data}{Eta\+Route\+Data}, and \hyperlink{interface_ttl_route_data}{Ttl\+Route\+Data}.
+
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) -\/ \hyperlink{interface_a_route_data_a814626b1b0976eb940fcd28663dba869}{init\+With\+Route\+Data\+Type\+:with\+Double\+:with\+Java\+Util\+List\+:with\+Mot\+Type\+:}
+\item 
+(\hyperlink{interface_route_data_type}{Route\+Data\+Type} $\ast$) -\/ \hyperlink{interface_a_route_data_a83ae0240b6c6d74eec48c18affef5ed8}{get\+Route\+Data\+Type}
+\item 
+(Mot\+Type $\ast$) -\/ \hyperlink{interface_a_route_data_ae03003d7d3e0c495d97f6937bc2574d6}{get\+Main\+Mot\+Type}
+\begin{DoxyCompactList}\small\item\em Get the main M\+O\+T of the route. \end{DoxyCompactList}\item 
+(long64) -\/ \hyperlink{interface_a_route_data_acf451f91518fbe41d9846b5e99b4a0ea}{get\+Route\+Duration}
+\begin{DoxyCompactList}\small\item\em Get the route duration. \end{DoxyCompactList}\item 
+(T\+S\+O\+Coordinate $\ast$) -\/ \hyperlink{interface_a_route_data_a513d887d679c5ffb311f213b7835b783}{get\+Route\+Origin}
+\begin{DoxyCompactList}\small\item\em Get the origin of the route. \end{DoxyCompactList}\item 
+(T\+S\+O\+Coordinate $\ast$) -\/ \hyperlink{interface_a_route_data_a599be9184e3535898f97c7e382c16a59}{get\+Route\+Destination}
+\begin{DoxyCompactList}\small\item\em Get the destination of the route. \end{DoxyCompactList}\item 
+(double) -\/ \hyperlink{interface_a_route_data_a57b500e1b2d8360f24004039a4aa4ad6}{get\+Aerial\+Distance}
+\begin{DoxyCompactList}\small\item\em Get the aerial distance from origin to destination. \end{DoxyCompactList}\item 
+(Array\+List $\ast$) -\/ \hyperlink{interface_a_route_data_a27bdae817cfaf2c3eb4bc9db83407f11}{get\+Route\+Segments}
+\begin{DoxyCompactList}\small\item\em Get all the route segments that constitute the route to the destination location as defined by the user in creation time of the alert. ~\newline
+ The list of \hyperlink{interface_route_segment}{Route\+Segment} is ordered by time, from the time to leave until the arrival time.~\newline
+ \end{DoxyCompactList}\item 
+(N\+S\+String $\ast$) -\/ \hyperlink{interface_a_route_data_aaa6ed0427be252c3dd4c213f3fa535c1}{description}
+\item 
+(void) -\/ \hyperlink{interface_a_route_data_a9ad9c2e6b5669672b68bf053ca883c3a}{copy\+All\+Fields\+To\+:}
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{interface_route_data_type}{Route\+Data\+Type} $\ast$ \hyperlink{interface_a_route_data_ac67dd664469f96eef6892486da7a80d5}{m\+\_\+route\+Data\+Type\+\_\+}
+\item 
+double \hyperlink{interface_a_route_data_acff13e58629eac25965dbe1c1f13c131}{m\+\_\+aerial\+Distance\+\_\+}
+\item 
+Array\+List $\ast$ \hyperlink{interface_a_route_data_a5e80a8c6042bc60e66ef4c2c136e0f43}{m\+\_\+route\+Segments\+\_\+}
+\item 
+Mot\+Type $\ast$ \hyperlink{interface_a_route_data_ab09074b4f92fa23a20ef081a90e426bb}{m\+\_\+main\+Mot\+Type\+\_\+}
+\item 
+long64 \hyperlink{interface_a_route_data_aa612b37466c55d5f97a401495ea7ef7f}{m\+\_\+route\+Duration\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The result of I\+Segmented\+Route\+Provider\+::get\+T\+T\+L(\+T\+S\+O\+Coordinate,\+T\+S\+O\+Coordinate,long,\+Mot\+Type,\+Mot\+Type) ~\newline
+ It contains a list of \hyperlink{interface_route_segment}{Route\+Segment} ordered by time, from the time to leave until the arrival time. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_a_route_data_a9ad9c2e6b5669672b68bf053ca883c3a}{}\index{A\+Route\+Data@{A\+Route\+Data}!copy\+All\+Fields\+To\+:@{copy\+All\+Fields\+To\+:}}
+\index{copy\+All\+Fields\+To\+:@{copy\+All\+Fields\+To\+:}!A\+Route\+Data@{A\+Route\+Data}}
+\subsubsection[{copy\+All\+Fields\+To\+:(\+A\+Route\+Data $\ast$other)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) copy\+All\+Fields\+To\+: 
+\begin{DoxyParamCaption}
+\item[{({\bf A\+Route\+Data} $\ast$)}]{other}
+\end{DoxyParamCaption}
+}\label{interface_a_route_data_a9ad9c2e6b5669672b68bf053ca883c3a}
+\hypertarget{interface_a_route_data_aaa6ed0427be252c3dd4c213f3fa535c1}{}\index{A\+Route\+Data@{A\+Route\+Data}!description@{description}}
+\index{description@{description}!A\+Route\+Data@{A\+Route\+Data}}
+\subsubsection[{description()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+String $\ast$) description 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_a_route_data_aaa6ed0427be252c3dd4c213f3fa535c1}
+\hypertarget{interface_a_route_data_a57b500e1b2d8360f24004039a4aa4ad6}{}\index{A\+Route\+Data@{A\+Route\+Data}!get\+Aerial\+Distance@{get\+Aerial\+Distance}}
+\index{get\+Aerial\+Distance@{get\+Aerial\+Distance}!A\+Route\+Data@{A\+Route\+Data}}
+\subsubsection[{get\+Aerial\+Distance()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (double) get\+Aerial\+Distance 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_a_route_data_a57b500e1b2d8360f24004039a4aa4ad6}
+
+
+Get the aerial distance from origin to destination. 
+
+\begin{DoxyReturn}{Returns}
+the aerial distance from origin to destination 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{protocol_i_route_data-p_aaf707f50d17f0f84f38403bf53526bb7}{$<$\+I\+Route\+Data$>$}.
+
+\hypertarget{interface_a_route_data_ae03003d7d3e0c495d97f6937bc2574d6}{}\index{A\+Route\+Data@{A\+Route\+Data}!get\+Main\+Mot\+Type@{get\+Main\+Mot\+Type}}
+\index{get\+Main\+Mot\+Type@{get\+Main\+Mot\+Type}!A\+Route\+Data@{A\+Route\+Data}}
+\subsubsection[{get\+Main\+Mot\+Type()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (Mot\+Type $\ast$) get\+Main\+Mot\+Type 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_a_route_data_ae03003d7d3e0c495d97f6937bc2574d6}
+
+
+Get the main M\+O\+T of the route. 
+
+\begin{DoxyReturn}{Returns}
+the main M\+O\+T of the route 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{protocol_i_route_data-p_a4014ff3249e3565565cd64857c028796}{$<$\+I\+Route\+Data$>$}.
+
+\hypertarget{interface_a_route_data_a83ae0240b6c6d74eec48c18affef5ed8}{}\index{A\+Route\+Data@{A\+Route\+Data}!get\+Route\+Data\+Type@{get\+Route\+Data\+Type}}
+\index{get\+Route\+Data\+Type@{get\+Route\+Data\+Type}!A\+Route\+Data@{A\+Route\+Data}}
+\subsubsection[{get\+Route\+Data\+Type()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Route\+Data\+Type} $\ast$) get\+Route\+Data\+Type 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_a_route_data_a83ae0240b6c6d74eec48c18affef5ed8}
+
+
+Reimplemented from \hyperlink{protocol_i_route_data-p_a4df31a87bea9720e673638d267e83bc0}{$<$\+I\+Route\+Data$>$}.
+
+\hypertarget{interface_a_route_data_a599be9184e3535898f97c7e382c16a59}{}\index{A\+Route\+Data@{A\+Route\+Data}!get\+Route\+Destination@{get\+Route\+Destination}}
+\index{get\+Route\+Destination@{get\+Route\+Destination}!A\+Route\+Data@{A\+Route\+Data}}
+\subsubsection[{get\+Route\+Destination()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (T\+S\+O\+Coordinate $\ast$) get\+Route\+Destination 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_a_route_data_a599be9184e3535898f97c7e382c16a59}
+
+
+Get the destination of the route. 
+
+\begin{DoxyReturn}{Returns}
+the destination of the route 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{protocol_i_route_data-p_a9b36e4b77bfdbd582afd144c10626824}{$<$\+I\+Route\+Data$>$}.
+
+\hypertarget{interface_a_route_data_acf451f91518fbe41d9846b5e99b4a0ea}{}\index{A\+Route\+Data@{A\+Route\+Data}!get\+Route\+Duration@{get\+Route\+Duration}}
+\index{get\+Route\+Duration@{get\+Route\+Duration}!A\+Route\+Data@{A\+Route\+Data}}
+\subsubsection[{get\+Route\+Duration()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (long64) get\+Route\+Duration 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_a_route_data_acf451f91518fbe41d9846b5e99b4a0ea}
+
+
+Get the route duration. 
+
+\begin{DoxyReturn}{Returns}
+the duration of the route 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{protocol_i_route_data-p_ab35b9ecfc71d31859544e5b125883d8d}{$<$\+I\+Route\+Data$>$}.
+
+\hypertarget{interface_a_route_data_a513d887d679c5ffb311f213b7835b783}{}\index{A\+Route\+Data@{A\+Route\+Data}!get\+Route\+Origin@{get\+Route\+Origin}}
+\index{get\+Route\+Origin@{get\+Route\+Origin}!A\+Route\+Data@{A\+Route\+Data}}
+\subsubsection[{get\+Route\+Origin()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (T\+S\+O\+Coordinate $\ast$) get\+Route\+Origin 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_a_route_data_a513d887d679c5ffb311f213b7835b783}
+
+
+Get the origin of the route. 
+
+\begin{DoxyReturn}{Returns}
+the origin of the route 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{protocol_i_route_data-p_ab227806f25364fdc2202bfd86df71570}{$<$\+I\+Route\+Data$>$}.
+
+\hypertarget{interface_a_route_data_a27bdae817cfaf2c3eb4bc9db83407f11}{}\index{A\+Route\+Data@{A\+Route\+Data}!get\+Route\+Segments@{get\+Route\+Segments}}
+\index{get\+Route\+Segments@{get\+Route\+Segments}!A\+Route\+Data@{A\+Route\+Data}}
+\subsubsection[{get\+Route\+Segments()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (Array\+List$\ast$) get\+Route\+Segments 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_a_route_data_a27bdae817cfaf2c3eb4bc9db83407f11}
+
+
+Get all the route segments that constitute the route to the destination location as defined by the user in creation time of the alert. ~\newline
+ The list of \hyperlink{interface_route_segment}{Route\+Segment} is ordered by time, from the time to leave until the arrival time.~\newline
+ 
+
+\begin{DoxyReturn}{Returns}
+a list of \hyperlink{interface_route_segment}{Route\+Segment} ordered from the time to leave until the arrival\+Time 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{protocol_i_route_data-p_ae659fc780b890d339f59908583f30028}{$<$\+I\+Route\+Data$>$}.
+
+\hypertarget{interface_a_route_data_a814626b1b0976eb940fcd28663dba869}{}\index{A\+Route\+Data@{A\+Route\+Data}!init\+With\+Route\+Data\+Type\+:with\+Double\+:with\+Java\+Util\+List\+:with\+Mot\+Type\+:@{init\+With\+Route\+Data\+Type\+:with\+Double\+:with\+Java\+Util\+List\+:with\+Mot\+Type\+:}}
+\index{init\+With\+Route\+Data\+Type\+:with\+Double\+:with\+Java\+Util\+List\+:with\+Mot\+Type\+:@{init\+With\+Route\+Data\+Type\+:with\+Double\+:with\+Java\+Util\+List\+:with\+Mot\+Type\+:}!A\+Route\+Data@{A\+Route\+Data}}
+\subsubsection[{init\+With\+Route\+Data\+Type\+:with\+Double\+:with\+Java\+Util\+List\+:with\+Mot\+Type\+:(\+Route\+Data\+Type $\ast$route\+Data\+Type,[with\+Double] double aerial\+Distance,[with\+Java\+Util\+List] Array\+List $\ast$route\+Segments,[with\+Mot\+Type] Mot\+Type $\ast$main\+Mot\+Type)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\+With\+Route\+Data\+Type\+: 
+\begin{DoxyParamCaption}
+\item[{({\bf Route\+Data\+Type} $\ast$)}]{route\+Data\+Type}
+\item[{withDouble:(double)}]{aerial\+Distance}
+\item[{withJavaUtilList:(Array\+List $\ast$)}]{route\+Segments}
+\item[{withMotType:(Mot\+Type $\ast$)}]{main\+Mot\+Type}
+\end{DoxyParamCaption}
+}\label{interface_a_route_data_a814626b1b0976eb940fcd28663dba869}
+
+\begin{DoxyParams}{Parameters}
+{\em route\+Segments} & list of \hyperlink{interface_route_segment}{Route\+Segment} ordered by time, from the time to leave until the arrival time \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{interface_a_route_data_acff13e58629eac25965dbe1c1f13c131}{}\index{A\+Route\+Data@{A\+Route\+Data}!m\+\_\+aerial\+Distance\+\_\+@{m\+\_\+aerial\+Distance\+\_\+}}
+\index{m\+\_\+aerial\+Distance\+\_\+@{m\+\_\+aerial\+Distance\+\_\+}!A\+Route\+Data@{A\+Route\+Data}}
+\subsubsection[{m\+\_\+aerial\+Distance\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (double) m\+\_\+aerial\+Distance\+\_\+}\label{interface_a_route_data_acff13e58629eac25965dbe1c1f13c131}
+\hypertarget{interface_a_route_data_ab09074b4f92fa23a20ef081a90e426bb}{}\index{A\+Route\+Data@{A\+Route\+Data}!m\+\_\+main\+Mot\+Type\+\_\+@{m\+\_\+main\+Mot\+Type\+\_\+}}
+\index{m\+\_\+main\+Mot\+Type\+\_\+@{m\+\_\+main\+Mot\+Type\+\_\+}!A\+Route\+Data@{A\+Route\+Data}}
+\subsubsection[{m\+\_\+main\+Mot\+Type\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (Mot\+Type$\ast$) m\+\_\+main\+Mot\+Type\+\_\+}\label{interface_a_route_data_ab09074b4f92fa23a20ef081a90e426bb}
+\hypertarget{interface_a_route_data_ac67dd664469f96eef6892486da7a80d5}{}\index{A\+Route\+Data@{A\+Route\+Data}!m\+\_\+route\+Data\+Type\+\_\+@{m\+\_\+route\+Data\+Type\+\_\+}}
+\index{m\+\_\+route\+Data\+Type\+\_\+@{m\+\_\+route\+Data\+Type\+\_\+}!A\+Route\+Data@{A\+Route\+Data}}
+\subsubsection[{m\+\_\+route\+Data\+Type\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Route\+Data\+Type}$\ast$) m\+\_\+route\+Data\+Type\+\_\+}\label{interface_a_route_data_ac67dd664469f96eef6892486da7a80d5}
+\hypertarget{interface_a_route_data_aa612b37466c55d5f97a401495ea7ef7f}{}\index{A\+Route\+Data@{A\+Route\+Data}!m\+\_\+route\+Duration\+\_\+@{m\+\_\+route\+Duration\+\_\+}}
+\index{m\+\_\+route\+Duration\+\_\+@{m\+\_\+route\+Duration\+\_\+}!A\+Route\+Data@{A\+Route\+Data}}
+\subsubsection[{m\+\_\+route\+Duration\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (long64) m\+\_\+route\+Duration\+\_\+}\label{interface_a_route_data_aa612b37466c55d5f97a401495ea7ef7f}
+\hypertarget{interface_a_route_data_a5e80a8c6042bc60e66ef4c2c136e0f43}{}\index{A\+Route\+Data@{A\+Route\+Data}!m\+\_\+route\+Segments\+\_\+@{m\+\_\+route\+Segments\+\_\+}}
+\index{m\+\_\+route\+Segments\+\_\+@{m\+\_\+route\+Segments\+\_\+}!A\+Route\+Data@{A\+Route\+Data}}
+\subsubsection[{m\+\_\+route\+Segments\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (Array\+List$\ast$) m\+\_\+route\+Segments\+\_\+}\label{interface_a_route_data_a5e80a8c6042bc60e66ef4c2c136e0f43}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src\+\_\+converted/com/intel/wearable/platform/timeiq/api/route/\hyperlink{_a_route_data_8h}{A\+Route\+Data.\+h}\end{DoxyCompactItemize}

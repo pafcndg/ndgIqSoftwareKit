@@ -1,0 +1,261 @@
+\hypertarget{interface_base_reminder}{}\section{Base\+Reminder Class Reference}
+\label{interface_base_reminder}\index{Base\+Reminder@{Base\+Reminder}}
+
+
+This class should not be used \char`\"{}as is\char`\"{}, the classes that should be used are it\textquotesingle{}s subclasses Created by smoradof on 6/18/2015.  
+
+
+
+
+{\ttfamily \#import $<$Base\+Reminder.\+h$>$}
+
+
+
+Inherits N\+S\+Object, and \hyperlink{protocol_i_reminder-p}{$<$\+I\+Reminder$>$}.
+
+
+
+Inherited by \hyperlink{interface_base_phone_reminder}{Base\+Phone\+Reminder}, and \hyperlink{interface_do_reminder}{Do\+Reminder}.
+
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) -\/ \hyperlink{interface_base_reminder_a9d17459a70f74036103d8f65b6e40020}{init\+With\+Base\+Reminder\+\_\+\+Base\+Reminder\+Builder\+:}
+\begin{DoxyCompactList}\small\item\em Create the reminder using a builder. \end{DoxyCompactList}\item 
+(instancetype) -\/ \hyperlink{interface_base_reminder_aac17cfd7a9b2047fb3becb98b8a78106}{init\+With\+N\+S\+String\+:with\+Reminder\+Type\+:with\+I\+Trigger\+:with\+Reminder\+Status\+:with\+Long\+:with\+Long\+:}
+\begin{DoxyCompactList}\small\item\em Create the reminder using parameters (the builder should be used in most cases) \end{DoxyCompactList}\item 
+(N\+S\+String $\ast$) -\/ \hyperlink{interface_base_reminder_a495e771d52cd121bd8e95d9395ceb739}{get\+Id}
+\item 
+(\hyperlink{interface_reminder_type}{Reminder\+Type} $\ast$) -\/ \hyperlink{interface_base_reminder_aedfc2216109157851d20c7346db9b395}{get\+Reminder\+Type}
+\item 
+(id$<$ \hyperlink{protocol_i_trigger-p}{I\+Trigger} $>$) -\/ \hyperlink{interface_base_reminder_abef4c5814802d4b4c3c7b0e7ce69836f}{get\+Trigger}
+\item 
+(\hyperlink{interface_reminder_status}{Reminder\+Status} $\ast$) -\/ \hyperlink{interface_base_reminder_a5843e828f5a7cc87e98a974050632820}{get\+Status}
+\item 
+(long64) -\/ \hyperlink{interface_base_reminder_a82ce33dce05cbc5ea950c3de86b30822}{get\+Triggered\+Time}
+\item 
+(boolean) -\/ \hyperlink{interface_base_reminder_a70c1501567218c45cc3574a15af85773}{is\+Equal\+:}
+\item 
+(N\+S\+U\+Integer) -\/ \hyperlink{interface_base_reminder_ad717943f532e8a7194395e549eadbfa1}{hash}
+\item 
+(long64) -\/ \hyperlink{interface_base_reminder_a106bf204bd9a385a8a69ac7e6cc5b867}{get\+Added\+Time}
+\item 
+(void) -\/ \hyperlink{interface_base_reminder_a80a4c8578ddeba6a9b5334fee3eb0742}{copy\+All\+Fields\+To\+:}
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+N\+S\+String $\ast$ \hyperlink{interface_base_reminder_a51f78abe97a4d90e6d9d6b31e4699f74}{m\+\_\+id\+\_\+}
+\item 
+\hyperlink{interface_reminder_type}{Reminder\+Type} $\ast$ \hyperlink{interface_base_reminder_abe855644a97127bd8bb6a275facc6934}{m\+\_\+reminder\+Type\+\_\+}
+\item 
+id$<$ \hyperlink{protocol_i_trigger-p}{I\+Trigger} $>$ \hyperlink{interface_base_reminder_a7224892c68e4067c1f6202126ddd3e59}{m\+\_\+trigger\+\_\+}
+\item 
+\hyperlink{interface_reminder_status}{Reminder\+Status} $\ast$ \hyperlink{interface_base_reminder_aecd9a338d6c4c3b60fc38a16db62609f}{m\+\_\+status\+\_\+}
+\item 
+long64 \hyperlink{interface_base_reminder_a77d288aac4cc1f3f082ca86e5f81786b}{m\+\_\+triggered\+Time\+\_\+}
+\item 
+long64 \hyperlink{interface_base_reminder_a7d9052ece1acb386bc6d2d9bf4579abc}{m\+\_\+added\+Time\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class should not be used \char`\"{}as is\char`\"{}, the classes that should be used are it\textquotesingle{}s subclasses Created by smoradof on 6/18/2015. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_base_reminder_a80a4c8578ddeba6a9b5334fee3eb0742}{}\index{Base\+Reminder@{Base\+Reminder}!copy\+All\+Fields\+To\+:@{copy\+All\+Fields\+To\+:}}
+\index{copy\+All\+Fields\+To\+:@{copy\+All\+Fields\+To\+:}!Base\+Reminder@{Base\+Reminder}}
+\subsubsection[{copy\+All\+Fields\+To\+:(\+Base\+Reminder $\ast$other)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) copy\+All\+Fields\+To\+: 
+\begin{DoxyParamCaption}
+\item[{({\bf Base\+Reminder} $\ast$)}]{other}
+\end{DoxyParamCaption}
+}\label{interface_base_reminder_a80a4c8578ddeba6a9b5334fee3eb0742}
+\hypertarget{interface_base_reminder_a106bf204bd9a385a8a69ac7e6cc5b867}{}\index{Base\+Reminder@{Base\+Reminder}!get\+Added\+Time@{get\+Added\+Time}}
+\index{get\+Added\+Time@{get\+Added\+Time}!Base\+Reminder@{Base\+Reminder}}
+\subsubsection[{get\+Added\+Time()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (long64) get\+Added\+Time 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_base_reminder_a106bf204bd9a385a8a69ac7e6cc5b867}
+\begin{DoxyReturn}{Returns}
+the time that the reminder was added, or -\/1 if not added yet 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{protocol_i_reminder-p_a8cf9d587047b3c98eccb0c14c04e055c}{$<$\+I\+Reminder$>$}.
+
+\hypertarget{interface_base_reminder_a495e771d52cd121bd8e95d9395ceb739}{}\index{Base\+Reminder@{Base\+Reminder}!get\+Id@{get\+Id}}
+\index{get\+Id@{get\+Id}!Base\+Reminder@{Base\+Reminder}}
+\subsubsection[{get\+Id()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+String $\ast$) get\+Id 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_base_reminder_a495e771d52cd121bd8e95d9395ceb739}
+\begin{DoxyReturn}{Returns}
+the unique I\+D of the reminder 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{protocol_i_reminder-p_a761163937af463373aeaa34cbe88cb7d}{$<$\+I\+Reminder$>$}.
+
+\hypertarget{interface_base_reminder_aedfc2216109157851d20c7346db9b395}{}\index{Base\+Reminder@{Base\+Reminder}!get\+Reminder\+Type@{get\+Reminder\+Type}}
+\index{get\+Reminder\+Type@{get\+Reminder\+Type}!Base\+Reminder@{Base\+Reminder}}
+\subsubsection[{get\+Reminder\+Type()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Reminder\+Type} $\ast$) get\+Reminder\+Type 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_base_reminder_aedfc2216109157851d20c7346db9b395}
+\begin{DoxyReturn}{Returns}
+the type of the reminder ( \hyperlink{interface_reminder_type_a0c8d007a3b46883b983facbd27ea9d99}{D\+O (\+Reminder\+Type)} for Reminder.\+Do\+Reminder , \hyperlink{interface_reminder_type_a4e429298799342d7c7114880e645d073}{C\+A\+L\+L (\+Reminder\+Type)} for Based\+Reminder.\+call\+Reminder.\+Call\+Reminder or \hyperlink{interface_reminder_type_abb04f7b2c8b0be93d21bc77ade83c0fc}{N\+O\+T\+I\+F\+Y (\+Reminder\+Type)} for Based\+Reminder.\+notification\+Reminder.\+Notification\+Reminder ) 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{protocol_i_reminder-p_a8c5bb51af2763d90d73ddf45d41e6f81}{$<$\+I\+Reminder$>$}.
+
+\hypertarget{interface_base_reminder_a5843e828f5a7cc87e98a974050632820}{}\index{Base\+Reminder@{Base\+Reminder}!get\+Status@{get\+Status}}
+\index{get\+Status@{get\+Status}!Base\+Reminder@{Base\+Reminder}}
+\subsubsection[{get\+Status()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Reminder\+Status} $\ast$) get\+Status 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_base_reminder_a5843e828f5a7cc87e98a974050632820}
+\begin{DoxyReturn}{Returns}
+the status of the reminder 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{protocol_i_reminder-p_a0bdcf4886f5f7c01f27f75bad5ca5e3a}{$<$\+I\+Reminder$>$}.
+
+\hypertarget{interface_base_reminder_abef4c5814802d4b4c3c7b0e7ce69836f}{}\index{Base\+Reminder@{Base\+Reminder}!get\+Trigger@{get\+Trigger}}
+\index{get\+Trigger@{get\+Trigger}!Base\+Reminder@{Base\+Reminder}}
+\subsubsection[{get\+Trigger()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id$<${\bf I\+Trigger}$>$) get\+Trigger 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_base_reminder_abef4c5814802d4b4c3c7b0e7ce69836f}
+\begin{DoxyReturn}{Returns}
+the trigger that will make the reminder notify 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{protocol_i_reminder-p_aada6cf3b1f9d765243d5b8a666065477}{$<$\+I\+Reminder$>$}.
+
+\hypertarget{interface_base_reminder_a82ce33dce05cbc5ea950c3de86b30822}{}\index{Base\+Reminder@{Base\+Reminder}!get\+Triggered\+Time@{get\+Triggered\+Time}}
+\index{get\+Triggered\+Time@{get\+Triggered\+Time}!Base\+Reminder@{Base\+Reminder}}
+\subsubsection[{get\+Triggered\+Time()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (long64) get\+Triggered\+Time 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_base_reminder_a82ce33dce05cbc5ea950c3de86b30822}
+\begin{DoxyReturn}{Returns}
+the time that the reminder was triggered, or -\/1 if not triggered yet 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{protocol_i_reminder-p_a0f41cce9325693cf871bd317d77ebf7d}{$<$\+I\+Reminder$>$}.
+
+\hypertarget{interface_base_reminder_ad717943f532e8a7194395e549eadbfa1}{}\index{Base\+Reminder@{Base\+Reminder}!hash@{hash}}
+\index{hash@{hash}!Base\+Reminder@{Base\+Reminder}}
+\subsubsection[{hash()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+U\+Integer) hash 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_base_reminder_ad717943f532e8a7194395e549eadbfa1}
+
+
+Implemented in \hyperlink{interface_base_phone_reminder_ab99a4ca85cea17115f96b81f65486481}{Base\+Phone\+Reminder}, \hyperlink{interface_notification_reminder_a2df0a4b1031225ccbcfed39d043a481b}{Notification\+Reminder}, and \hyperlink{interface_do_reminder_a84e247ea01392383b0a61fd35e005fb3}{Do\+Reminder}.
+
+\hypertarget{interface_base_reminder_a9d17459a70f74036103d8f65b6e40020}{}\index{Base\+Reminder@{Base\+Reminder}!init\+With\+Base\+Reminder\+\_\+\+Base\+Reminder\+Builder\+:@{init\+With\+Base\+Reminder\+\_\+\+Base\+Reminder\+Builder\+:}}
+\index{init\+With\+Base\+Reminder\+\_\+\+Base\+Reminder\+Builder\+:@{init\+With\+Base\+Reminder\+\_\+\+Base\+Reminder\+Builder\+:}!Base\+Reminder@{Base\+Reminder}}
+\subsubsection[{init\+With\+Base\+Reminder\+\_\+\+Base\+Reminder\+Builder\+:(\+Base\+Reminder\+\_\+\+Base\+Reminder\+Builder $\ast$reminder\+Builder)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\+With\+Base\+Reminder\+\_\+\+Base\+Reminder\+Builder\+: 
+\begin{DoxyParamCaption}
+\item[{({\bf Base\+Reminder\+\_\+\+Base\+Reminder\+Builder} $\ast$)}]{reminder\+Builder}
+\end{DoxyParamCaption}
+}\label{interface_base_reminder_a9d17459a70f74036103d8f65b6e40020}
+
+
+Create the reminder using a builder. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reminder\+Builder} & the builder that has the input parameters for the reminder \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{interface_reminder_build_exception}{Reminder\+Build\+Exception}} & will be thrown when input is missing or invalid (see \hyperlink{interface_reminder_build_exception_type}{Reminder\+Build\+Exception\+Type} for reasons) \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{interface_base_reminder_aac17cfd7a9b2047fb3becb98b8a78106}{}\index{Base\+Reminder@{Base\+Reminder}!init\+With\+N\+S\+String\+:with\+Reminder\+Type\+:with\+I\+Trigger\+:with\+Reminder\+Status\+:with\+Long\+:with\+Long\+:@{init\+With\+N\+S\+String\+:with\+Reminder\+Type\+:with\+I\+Trigger\+:with\+Reminder\+Status\+:with\+Long\+:with\+Long\+:}}
+\index{init\+With\+N\+S\+String\+:with\+Reminder\+Type\+:with\+I\+Trigger\+:with\+Reminder\+Status\+:with\+Long\+:with\+Long\+:@{init\+With\+N\+S\+String\+:with\+Reminder\+Type\+:with\+I\+Trigger\+:with\+Reminder\+Status\+:with\+Long\+:with\+Long\+:}!Base\+Reminder@{Base\+Reminder}}
+\subsubsection[{init\+With\+N\+S\+String\+:with\+Reminder\+Type\+:with\+I\+Trigger\+:with\+Reminder\+Status\+:with\+Long\+:with\+Long\+:(\+N\+S\+String $\ast$id\+\_\+,[with\+Reminder\+Type] Reminder\+Type $\ast$reminder\+Type,[with\+I\+Trigger] id$<$ I\+Trigger $>$ trigger,[with\+Reminder\+Status] Reminder\+Status $\ast$status,[with\+Long] long64 triggered\+Time,[with\+Long] long64 added\+Time)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\+With\+N\+S\+String\+: 
+\begin{DoxyParamCaption}
+\item[{(N\+S\+String $\ast$)}]{id\+\_\+}
+\item[{withReminderType:({\bf Reminder\+Type} $\ast$)}]{reminder\+Type}
+\item[{withITrigger:(id$<$ {\bf I\+Trigger} $>$)}]{trigger}
+\item[{withReminderStatus:({\bf Reminder\+Status} $\ast$)}]{status}
+\item[{withLong:(long64)}]{triggered\+Time}
+\item[{withLong:(long64)}]{added\+Time}
+\end{DoxyParamCaption}
+}\label{interface_base_reminder_aac17cfd7a9b2047fb3becb98b8a78106}
+
+
+Create the reminder using parameters (the builder should be used in most cases) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the unique I\+D of the reminder \\
+\hline
+{\em reminder\+Type} & the type of the reminder ( \hyperlink{interface_reminder_type_a0c8d007a3b46883b983facbd27ea9d99}{D\+O (\+Reminder\+Type)} for Reminder.\+Do\+Reminder , \hyperlink{interface_reminder_type_a4e429298799342d7c7114880e645d073}{C\+A\+L\+L (\+Reminder\+Type)} for Based\+Reminder.\+call\+Reminder.\+Call\+Reminder or \hyperlink{interface_reminder_type_abb04f7b2c8b0be93d21bc77ade83c0fc}{N\+O\+T\+I\+F\+Y (\+Reminder\+Type)} for Based\+Reminder.\+notification\+Reminder.\+Notification\+Reminder ) \\
+\hline
+{\em trigger} & the trigger that will make the reminder notify \\
+\hline
+{\em status} & the status of the reminder \\
+\hline
+{\em triggered\+Time} & the time that the reminder was triggered, or -\/1 if not triggered yet \\
+\hline
+{\em added\+Time} & the time that the reminder was added, or -\/1 if not added yet \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{interface_reminder_build_exception}{Reminder\+Build\+Exception}} & will be thrown when input is missing or invalid (see \hyperlink{interface_reminder_build_exception_type}{Reminder\+Build\+Exception\+Type} for reasons) \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{interface_base_reminder_a70c1501567218c45cc3574a15af85773}{}\index{Base\+Reminder@{Base\+Reminder}!is\+Equal\+:@{is\+Equal\+:}}
+\index{is\+Equal\+:@{is\+Equal\+:}!Base\+Reminder@{Base\+Reminder}}
+\subsubsection[{is\+Equal\+:(id o)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (boolean) is\+Equal\+: 
+\begin{DoxyParamCaption}
+\item[{(id)}]{o}
+\end{DoxyParamCaption}
+}\label{interface_base_reminder_a70c1501567218c45cc3574a15af85773}
+
+
+Implemented in \hyperlink{interface_base_phone_reminder_a5ff1630c1cf6e5b5ab8e0e0b096b7c02}{Base\+Phone\+Reminder}, \hyperlink{interface_notification_reminder_a3b064f06818449a51bc0a1a556513377}{Notification\+Reminder}, and \hyperlink{interface_do_reminder_afb8f30410b2b006cef9e16401b5ff66e}{Do\+Reminder}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{interface_base_reminder_a7d9052ece1acb386bc6d2d9bf4579abc}{}\index{Base\+Reminder@{Base\+Reminder}!m\+\_\+added\+Time\+\_\+@{m\+\_\+added\+Time\+\_\+}}
+\index{m\+\_\+added\+Time\+\_\+@{m\+\_\+added\+Time\+\_\+}!Base\+Reminder@{Base\+Reminder}}
+\subsubsection[{m\+\_\+added\+Time\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (long64) m\+\_\+added\+Time\+\_\+}\label{interface_base_reminder_a7d9052ece1acb386bc6d2d9bf4579abc}
+\hypertarget{interface_base_reminder_a51f78abe97a4d90e6d9d6b31e4699f74}{}\index{Base\+Reminder@{Base\+Reminder}!m\+\_\+id\+\_\+@{m\+\_\+id\+\_\+}}
+\index{m\+\_\+id\+\_\+@{m\+\_\+id\+\_\+}!Base\+Reminder@{Base\+Reminder}}
+\subsubsection[{m\+\_\+id\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+String$\ast$) m\+\_\+id\+\_\+}\label{interface_base_reminder_a51f78abe97a4d90e6d9d6b31e4699f74}
+\hypertarget{interface_base_reminder_abe855644a97127bd8bb6a275facc6934}{}\index{Base\+Reminder@{Base\+Reminder}!m\+\_\+reminder\+Type\+\_\+@{m\+\_\+reminder\+Type\+\_\+}}
+\index{m\+\_\+reminder\+Type\+\_\+@{m\+\_\+reminder\+Type\+\_\+}!Base\+Reminder@{Base\+Reminder}}
+\subsubsection[{m\+\_\+reminder\+Type\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Reminder\+Type}$\ast$) m\+\_\+reminder\+Type\+\_\+}\label{interface_base_reminder_abe855644a97127bd8bb6a275facc6934}
+\hypertarget{interface_base_reminder_aecd9a338d6c4c3b60fc38a16db62609f}{}\index{Base\+Reminder@{Base\+Reminder}!m\+\_\+status\+\_\+@{m\+\_\+status\+\_\+}}
+\index{m\+\_\+status\+\_\+@{m\+\_\+status\+\_\+}!Base\+Reminder@{Base\+Reminder}}
+\subsubsection[{m\+\_\+status\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Reminder\+Status}$\ast$) m\+\_\+status\+\_\+}\label{interface_base_reminder_aecd9a338d6c4c3b60fc38a16db62609f}
+\hypertarget{interface_base_reminder_a7224892c68e4067c1f6202126ddd3e59}{}\index{Base\+Reminder@{Base\+Reminder}!m\+\_\+trigger\+\_\+@{m\+\_\+trigger\+\_\+}}
+\index{m\+\_\+trigger\+\_\+@{m\+\_\+trigger\+\_\+}!Base\+Reminder@{Base\+Reminder}}
+\subsubsection[{m\+\_\+trigger\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id$<${\bf I\+Trigger}$>$) m\+\_\+trigger\+\_\+}\label{interface_base_reminder_a7224892c68e4067c1f6202126ddd3e59}
+\hypertarget{interface_base_reminder_a77d288aac4cc1f3f082ca86e5f81786b}{}\index{Base\+Reminder@{Base\+Reminder}!m\+\_\+triggered\+Time\+\_\+@{m\+\_\+triggered\+Time\+\_\+}}
+\index{m\+\_\+triggered\+Time\+\_\+@{m\+\_\+triggered\+Time\+\_\+}!Base\+Reminder@{Base\+Reminder}}
+\subsubsection[{m\+\_\+triggered\+Time\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (long64) m\+\_\+triggered\+Time\+\_\+}\label{interface_base_reminder_a77d288aac4cc1f3f082ca86e5f81786b}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src\+\_\+converted/com/intel/wearable/platform/timeiq/api/reminders/\hyperlink{_base_reminder_8h}{Base\+Reminder.\+h}\end{DoxyCompactItemize}

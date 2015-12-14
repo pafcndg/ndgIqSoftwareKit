@@ -1,0 +1,346 @@
+\hypertarget{interface_resolved_location}{}\section{Resolved\+Location Class Reference}
+\label{interface_resolved_location}\index{Resolved\+Location@{Resolved\+Location}}
+
+
+\hyperlink{interface_resolved_location}{Resolved\+Location} contains details regarding the resolved location.  
+
+
+
+
+{\ttfamily \#import $<$Resolved\+Location.\+h$>$}
+
+
+
+Inherits N\+S\+Object, and $<$\+I\+Mappable$>$.
+
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) -\/ \hyperlink{interface_resolved_location_ac968e5906c4bdac7750e62988bcee287}{init}
+\item 
+(instancetype) -\/ \hyperlink{interface_resolved_location_af6ea32fd5d15474b3ebb4c6dea0056e6}{init\+With\+T\+S\+O\+Coordinate\+:with\+N\+S\+String\+:with\+N\+S\+String\+:with\+Location\+Type\+:with\+N\+S\+String\+:with\+Place\+I\+D\+:}
+\item 
+(Place\+I\+D $\ast$) -\/ \hyperlink{interface_resolved_location_a2a78cde7a7a25c1e47839e4c3efecaab}{get\+Place\+I\+D}
+\begin{DoxyCompactList}\small\item\em Returns the Place\+I\+D. \end{DoxyCompactList}\item 
+(void) -\/ \hyperlink{interface_resolved_location_a9c5bce36e8e0d361680283c26d6c6c6c}{set\+Place\+I\+D\+With\+Place\+I\+D\+:}
+\begin{DoxyCompactList}\small\item\em Sets the Place\+I\+D. \end{DoxyCompactList}\item 
+(T\+S\+O\+Coordinate $\ast$) -\/ \hyperlink{interface_resolved_location_a16b9695d1a1b80e8360d25172e561654}{get\+Location}
+\begin{DoxyCompactList}\small\item\em Returns the latitude and longitude of the resolved location. \end{DoxyCompactList}\item 
+(void) -\/ \hyperlink{interface_resolved_location_a898160640576a3e395d27349bcfc13d4}{set\+Location\+With\+T\+S\+O\+Coordinate\+:}
+\begin{DoxyCompactList}\small\item\em Sets the the latitude and longitude of the resolved location. \end{DoxyCompactList}\item 
+(N\+S\+String $\ast$) -\/ \hyperlink{interface_resolved_location_a0b229e5202a3253f998607c819349d34}{get\+Address}
+\begin{DoxyCompactList}\small\item\em Reruns the address of the resolved location. \end{DoxyCompactList}\item 
+(void) -\/ \hyperlink{interface_resolved_location_a790bc2c89e573ff0e49275cbcec3c8fa}{set\+Address\+With\+N\+S\+String\+:}
+\begin{DoxyCompactList}\small\item\em Sets the address of the resolved location. \end{DoxyCompactList}\item 
+(N\+S\+String $\ast$) -\/ \hyperlink{interface_resolved_location_a72ca3dbdb5c80f27d5207bc1f7943c0a}{get\+Name}
+\begin{DoxyCompactList}\small\item\em Returns the name of the resolved location. \end{DoxyCompactList}\item 
+(void) -\/ \hyperlink{interface_resolved_location_af9a3832c0433bfa071aca060fc856435}{set\+Name\+With\+N\+S\+String\+:}
+\begin{DoxyCompactList}\small\item\em Sets the name of the resolved location. \end{DoxyCompactList}\item 
+(\hyperlink{interface_location_type}{Location\+Type} $\ast$) -\/ \hyperlink{interface_resolved_location_a50fddfcd9016238af0b2e953069e7189}{get\+Location\+Type}
+\begin{DoxyCompactList}\small\item\em Returns the location type (address, poi...) of the resolved location. \end{DoxyCompactList}\item 
+(void) -\/ \hyperlink{interface_resolved_location_a6ac66b81ebe46659395486dbfbf495a0}{set\+Location\+Type\+With\+Location\+Type\+:}
+\begin{DoxyCompactList}\small\item\em Sets the location type (address, poi...) of the resolved location. \end{DoxyCompactList}\item 
+(N\+S\+String $\ast$) -\/ \hyperlink{interface_resolved_location_a984015f39e03cafcc85add64290f1328}{get\+Details\+Id}
+\begin{DoxyCompactList}\small\item\em Returns the resolved location id set by data provider. \end{DoxyCompactList}\item 
+(void) -\/ \hyperlink{interface_resolved_location_a06a18d7dd7dd15c657012c34cac8baf4}{set\+Details\+Id\+With\+N\+S\+String\+:}
+\begin{DoxyCompactList}\small\item\em Sets the resolved location id set by data provider. \end{DoxyCompactList}\item 
+(N\+S\+String $\ast$) -\/ \hyperlink{interface_resolved_location_a4586d25c1aea1b4231656480c7b50a49}{description}
+\item 
+(boolean) -\/ \hyperlink{interface_resolved_location_a517c12200297246638505d3a1e03331a}{is\+Equal\+:}
+\item 
+(N\+S\+U\+Integer) -\/ \hyperlink{interface_resolved_location_a731d73d05bbd61d1840aa3f51662a9f9}{hash}
+\item 
+(void) -\/ \hyperlink{interface_resolved_location_aeacbde0720e7f2723475ab9bc73177b6}{init\+Object\+From\+Map\+With\+Java\+Util\+Map\+:}
+\item 
+(Hash\+Map $\ast$) -\/ \hyperlink{interface_resolved_location_af4f49d556c0f98ac3ed3a0827c8ff1fe}{object\+To\+Map}
+\item 
+(void) -\/ \hyperlink{interface_resolved_location_aeaf8c596d5ec6866a3b63583b7703264}{copy\+All\+Fields\+To\+:}
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T\+S\+O\+Coordinate $\ast$ \hyperlink{interface_resolved_location_ad7dba94c2ab6097a755a5ea12ce0608a}{location\+\_\+}
+\item 
+N\+S\+String $\ast$ \hyperlink{interface_resolved_location_a77d427561f6ec1a1ee95e57ca9577467}{address\+\_\+}
+\item 
+N\+S\+String $\ast$ \hyperlink{interface_resolved_location_acad6f92251f1776b162e841e696d305e}{name\+\_\+}
+\item 
+\hyperlink{interface_location_type}{Location\+Type} $\ast$ \hyperlink{interface_resolved_location_a3245ac55d10d98e088602bc370c3337d}{location\+Type\+\_\+}
+\item 
+N\+S\+String $\ast$ \hyperlink{interface_resolved_location_a96efd566353a71f21a783dc039b83673}{details\+Id\+\_\+}
+\item 
+Place\+I\+D $\ast$ \hyperlink{interface_resolved_location_a102fcd28defcc06837f9ab6d2385b44f}{place\+I\+D\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{interface_resolved_location}{Resolved\+Location} contains details regarding the resolved location. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_resolved_location_aeaf8c596d5ec6866a3b63583b7703264}{}\index{Resolved\+Location@{Resolved\+Location}!copy\+All\+Fields\+To\+:@{copy\+All\+Fields\+To\+:}}
+\index{copy\+All\+Fields\+To\+:@{copy\+All\+Fields\+To\+:}!Resolved\+Location@{Resolved\+Location}}
+\subsubsection[{copy\+All\+Fields\+To\+:(\+Resolved\+Location $\ast$other)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) copy\+All\+Fields\+To\+: 
+\begin{DoxyParamCaption}
+\item[{({\bf Resolved\+Location} $\ast$)}]{other}
+\end{DoxyParamCaption}
+}\label{interface_resolved_location_aeaf8c596d5ec6866a3b63583b7703264}
+\hypertarget{interface_resolved_location_a4586d25c1aea1b4231656480c7b50a49}{}\index{Resolved\+Location@{Resolved\+Location}!description@{description}}
+\index{description@{description}!Resolved\+Location@{Resolved\+Location}}
+\subsubsection[{description()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+String $\ast$) description 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_resolved_location_a4586d25c1aea1b4231656480c7b50a49}
+\hypertarget{interface_resolved_location_a0b229e5202a3253f998607c819349d34}{}\index{Resolved\+Location@{Resolved\+Location}!get\+Address@{get\+Address}}
+\index{get\+Address@{get\+Address}!Resolved\+Location@{Resolved\+Location}}
+\subsubsection[{get\+Address()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+String $\ast$) get\+Address 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_resolved_location_a0b229e5202a3253f998607c819349d34}
+
+
+Reruns the address of the resolved location. 
+
+\begin{DoxyReturn}{Returns}
+a string that contains the address of the resolved location 
+\end{DoxyReturn}
+\hypertarget{interface_resolved_location_a984015f39e03cafcc85add64290f1328}{}\index{Resolved\+Location@{Resolved\+Location}!get\+Details\+Id@{get\+Details\+Id}}
+\index{get\+Details\+Id@{get\+Details\+Id}!Resolved\+Location@{Resolved\+Location}}
+\subsubsection[{get\+Details\+Id()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+String $\ast$) get\+Details\+Id 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_resolved_location_a984015f39e03cafcc85add64290f1328}
+
+
+Returns the resolved location id set by data provider. 
+
+\begin{DoxyReturn}{Returns}
+a string that contains resolved location id set by data provider 
+\end{DoxyReturn}
+\hypertarget{interface_resolved_location_a16b9695d1a1b80e8360d25172e561654}{}\index{Resolved\+Location@{Resolved\+Location}!get\+Location@{get\+Location}}
+\index{get\+Location@{get\+Location}!Resolved\+Location@{Resolved\+Location}}
+\subsubsection[{get\+Location()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (T\+S\+O\+Coordinate $\ast$) get\+Location 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_resolved_location_a16b9695d1a1b80e8360d25172e561654}
+
+
+Returns the latitude and longitude of the resolved location. 
+
+\begin{DoxyReturn}{Returns}
+latitude and longitude of the resolved location 
+\end{DoxyReturn}
+\hypertarget{interface_resolved_location_a50fddfcd9016238af0b2e953069e7189}{}\index{Resolved\+Location@{Resolved\+Location}!get\+Location\+Type@{get\+Location\+Type}}
+\index{get\+Location\+Type@{get\+Location\+Type}!Resolved\+Location@{Resolved\+Location}}
+\subsubsection[{get\+Location\+Type()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Location\+Type} $\ast$) get\+Location\+Type 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_resolved_location_a50fddfcd9016238af0b2e953069e7189}
+
+
+Returns the location type (address, poi...) of the resolved location. 
+
+\begin{DoxyReturn}{Returns}
+the location type of the resolved location as a \hyperlink{interface_location_type}{Location\+Type} 
+\end{DoxyReturn}
+\hypertarget{interface_resolved_location_a72ca3dbdb5c80f27d5207bc1f7943c0a}{}\index{Resolved\+Location@{Resolved\+Location}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!Resolved\+Location@{Resolved\+Location}}
+\subsubsection[{get\+Name()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+String $\ast$) get\+Name 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_resolved_location_a72ca3dbdb5c80f27d5207bc1f7943c0a}
+
+
+Returns the name of the resolved location. 
+
+\begin{DoxyReturn}{Returns}
+a string that contains the name of the resolved location 
+\end{DoxyReturn}
+\hypertarget{interface_resolved_location_a2a78cde7a7a25c1e47839e4c3efecaab}{}\index{Resolved\+Location@{Resolved\+Location}!get\+Place\+I\+D@{get\+Place\+I\+D}}
+\index{get\+Place\+I\+D@{get\+Place\+I\+D}!Resolved\+Location@{Resolved\+Location}}
+\subsubsection[{get\+Place\+I\+D()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (Place\+I\+D $\ast$) get\+Place\+I\+D 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_resolved_location_a2a78cde7a7a25c1e47839e4c3efecaab}
+
+
+Returns the Place\+I\+D. 
+
+\begin{DoxyReturn}{Returns}
+Place\+I\+D 
+\end{DoxyReturn}
+\hypertarget{interface_resolved_location_a731d73d05bbd61d1840aa3f51662a9f9}{}\index{Resolved\+Location@{Resolved\+Location}!hash@{hash}}
+\index{hash@{hash}!Resolved\+Location@{Resolved\+Location}}
+\subsubsection[{hash()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+U\+Integer) hash 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_resolved_location_a731d73d05bbd61d1840aa3f51662a9f9}
+\hypertarget{interface_resolved_location_ac968e5906c4bdac7750e62988bcee287}{}\index{Resolved\+Location@{Resolved\+Location}!init@{init}}
+\index{init@{init}!Resolved\+Location@{Resolved\+Location}}
+\subsubsection[{init()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_resolved_location_ac968e5906c4bdac7750e62988bcee287}
+\hypertarget{interface_resolved_location_aeacbde0720e7f2723475ab9bc73177b6}{}\index{Resolved\+Location@{Resolved\+Location}!init\+Object\+From\+Map\+With\+Java\+Util\+Map\+:@{init\+Object\+From\+Map\+With\+Java\+Util\+Map\+:}}
+\index{init\+Object\+From\+Map\+With\+Java\+Util\+Map\+:@{init\+Object\+From\+Map\+With\+Java\+Util\+Map\+:}!Resolved\+Location@{Resolved\+Location}}
+\subsubsection[{init\+Object\+From\+Map\+With\+Java\+Util\+Map\+:(\+Hash\+Map $\ast$\+O\+B\+J\+C\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+F\+A\+M\+I\+L\+Y\+\_\+\+N\+O\+N\+E)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) init\+Object\+From\+Map\+With\+Java\+Util\+Map\+: 
+\begin{DoxyParamCaption}
+\item[{(Hash\+Map $\ast$)}]{O\+B\+J\+C\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+F\+A\+M\+I\+L\+Y\+\_\+\+N\+O\+N\+E}
+\end{DoxyParamCaption}
+}\label{interface_resolved_location_aeacbde0720e7f2723475ab9bc73177b6}
+\hypertarget{interface_resolved_location_af6ea32fd5d15474b3ebb4c6dea0056e6}{}\index{Resolved\+Location@{Resolved\+Location}!init\+With\+T\+S\+O\+Coordinate\+:with\+N\+S\+String\+:with\+N\+S\+String\+:with\+Location\+Type\+:with\+N\+S\+String\+:with\+Place\+I\+D\+:@{init\+With\+T\+S\+O\+Coordinate\+:with\+N\+S\+String\+:with\+N\+S\+String\+:with\+Location\+Type\+:with\+N\+S\+String\+:with\+Place\+I\+D\+:}}
+\index{init\+With\+T\+S\+O\+Coordinate\+:with\+N\+S\+String\+:with\+N\+S\+String\+:with\+Location\+Type\+:with\+N\+S\+String\+:with\+Place\+I\+D\+:@{init\+With\+T\+S\+O\+Coordinate\+:with\+N\+S\+String\+:with\+N\+S\+String\+:with\+Location\+Type\+:with\+N\+S\+String\+:with\+Place\+I\+D\+:}!Resolved\+Location@{Resolved\+Location}}
+\subsubsection[{init\+With\+T\+S\+O\+Coordinate\+:with\+N\+S\+String\+:with\+N\+S\+String\+:with\+Location\+Type\+:with\+N\+S\+String\+:with\+Place\+I\+D\+:(\+T\+S\+O\+Coordinate $\ast$location,[with\+N\+S\+String] N\+S\+String $\ast$address,[with\+N\+S\+String] N\+S\+String $\ast$name,[with\+Location\+Type] Location\+Type $\ast$location\+Type,[with\+N\+S\+String] N\+S\+String $\ast$details\+Id,[with\+Place\+I\+D] Place\+I\+D $\ast$place\+I\+D)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\+With\+T\+S\+O\+Coordinate\+: 
+\begin{DoxyParamCaption}
+\item[{(T\+S\+O\+Coordinate $\ast$)}]{location}
+\item[{withNSString:(N\+S\+String $\ast$)}]{address}
+\item[{withNSString:(N\+S\+String $\ast$)}]{name}
+\item[{withLocationType:({\bf Location\+Type} $\ast$)}]{location\+Type}
+\item[{withNSString:(N\+S\+String $\ast$)}]{details\+Id}
+\item[{withPlaceID:(Place\+I\+D $\ast$)}]{place\+I\+D}
+\end{DoxyParamCaption}
+}\label{interface_resolved_location_af6ea32fd5d15474b3ebb4c6dea0056e6}
+\hypertarget{interface_resolved_location_a517c12200297246638505d3a1e03331a}{}\index{Resolved\+Location@{Resolved\+Location}!is\+Equal\+:@{is\+Equal\+:}}
+\index{is\+Equal\+:@{is\+Equal\+:}!Resolved\+Location@{Resolved\+Location}}
+\subsubsection[{is\+Equal\+:(id o)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (boolean) is\+Equal\+: 
+\begin{DoxyParamCaption}
+\item[{(id)}]{o}
+\end{DoxyParamCaption}
+}\label{interface_resolved_location_a517c12200297246638505d3a1e03331a}
+\hypertarget{interface_resolved_location_af4f49d556c0f98ac3ed3a0827c8ff1fe}{}\index{Resolved\+Location@{Resolved\+Location}!object\+To\+Map@{object\+To\+Map}}
+\index{object\+To\+Map@{object\+To\+Map}!Resolved\+Location@{Resolved\+Location}}
+\subsubsection[{object\+To\+Map()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (Hash\+Map$\ast$) object\+To\+Map 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_resolved_location_af4f49d556c0f98ac3ed3a0827c8ff1fe}
+\hypertarget{interface_resolved_location_a790bc2c89e573ff0e49275cbcec3c8fa}{}\index{Resolved\+Location@{Resolved\+Location}!set\+Address\+With\+N\+S\+String\+:@{set\+Address\+With\+N\+S\+String\+:}}
+\index{set\+Address\+With\+N\+S\+String\+:@{set\+Address\+With\+N\+S\+String\+:}!Resolved\+Location@{Resolved\+Location}}
+\subsubsection[{set\+Address\+With\+N\+S\+String\+:(\+N\+S\+String $\ast$address)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) set\+Address\+With\+N\+S\+String\+: 
+\begin{DoxyParamCaption}
+\item[{(N\+S\+String $\ast$)}]{address}
+\end{DoxyParamCaption}
+}\label{interface_resolved_location_a790bc2c89e573ff0e49275cbcec3c8fa}
+
+
+Sets the address of the resolved location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & a string that contains the address of the resolved location \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_resolved_location_a06a18d7dd7dd15c657012c34cac8baf4}{}\index{Resolved\+Location@{Resolved\+Location}!set\+Details\+Id\+With\+N\+S\+String\+:@{set\+Details\+Id\+With\+N\+S\+String\+:}}
+\index{set\+Details\+Id\+With\+N\+S\+String\+:@{set\+Details\+Id\+With\+N\+S\+String\+:}!Resolved\+Location@{Resolved\+Location}}
+\subsubsection[{set\+Details\+Id\+With\+N\+S\+String\+:(\+N\+S\+String $\ast$details\+Id)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) set\+Details\+Id\+With\+N\+S\+String\+: 
+\begin{DoxyParamCaption}
+\item[{(N\+S\+String $\ast$)}]{details\+Id}
+\end{DoxyParamCaption}
+}\label{interface_resolved_location_a06a18d7dd7dd15c657012c34cac8baf4}
+
+
+Sets the resolved location id set by data provider. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em details\+Id} & a string that contains resolved location id set by data provider \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_resolved_location_a6ac66b81ebe46659395486dbfbf495a0}{}\index{Resolved\+Location@{Resolved\+Location}!set\+Location\+Type\+With\+Location\+Type\+:@{set\+Location\+Type\+With\+Location\+Type\+:}}
+\index{set\+Location\+Type\+With\+Location\+Type\+:@{set\+Location\+Type\+With\+Location\+Type\+:}!Resolved\+Location@{Resolved\+Location}}
+\subsubsection[{set\+Location\+Type\+With\+Location\+Type\+:(\+Location\+Type $\ast$location\+Type)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) set\+Location\+Type\+With\+Location\+Type\+: 
+\begin{DoxyParamCaption}
+\item[{({\bf Location\+Type} $\ast$)}]{location\+Type}
+\end{DoxyParamCaption}
+}\label{interface_resolved_location_a6ac66b81ebe46659395486dbfbf495a0}
+
+
+Sets the location type (address, poi...) of the resolved location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em location\+Type} & the location type of the resolved location \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_resolved_location_a898160640576a3e395d27349bcfc13d4}{}\index{Resolved\+Location@{Resolved\+Location}!set\+Location\+With\+T\+S\+O\+Coordinate\+:@{set\+Location\+With\+T\+S\+O\+Coordinate\+:}}
+\index{set\+Location\+With\+T\+S\+O\+Coordinate\+:@{set\+Location\+With\+T\+S\+O\+Coordinate\+:}!Resolved\+Location@{Resolved\+Location}}
+\subsubsection[{set\+Location\+With\+T\+S\+O\+Coordinate\+:(\+T\+S\+O\+Coordinate $\ast$location)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) set\+Location\+With\+T\+S\+O\+Coordinate\+: 
+\begin{DoxyParamCaption}
+\item[{(T\+S\+O\+Coordinate $\ast$)}]{location}
+\end{DoxyParamCaption}
+}\label{interface_resolved_location_a898160640576a3e395d27349bcfc13d4}
+
+
+Sets the the latitude and longitude of the resolved location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & latitude and longitude of the resolved location \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_resolved_location_af9a3832c0433bfa071aca060fc856435}{}\index{Resolved\+Location@{Resolved\+Location}!set\+Name\+With\+N\+S\+String\+:@{set\+Name\+With\+N\+S\+String\+:}}
+\index{set\+Name\+With\+N\+S\+String\+:@{set\+Name\+With\+N\+S\+String\+:}!Resolved\+Location@{Resolved\+Location}}
+\subsubsection[{set\+Name\+With\+N\+S\+String\+:(\+N\+S\+String $\ast$name)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) set\+Name\+With\+N\+S\+String\+: 
+\begin{DoxyParamCaption}
+\item[{(N\+S\+String $\ast$)}]{name}
+\end{DoxyParamCaption}
+}\label{interface_resolved_location_af9a3832c0433bfa071aca060fc856435}
+
+
+Sets the name of the resolved location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & a string that contains the name of the resolved location \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_resolved_location_a9c5bce36e8e0d361680283c26d6c6c6c}{}\index{Resolved\+Location@{Resolved\+Location}!set\+Place\+I\+D\+With\+Place\+I\+D\+:@{set\+Place\+I\+D\+With\+Place\+I\+D\+:}}
+\index{set\+Place\+I\+D\+With\+Place\+I\+D\+:@{set\+Place\+I\+D\+With\+Place\+I\+D\+:}!Resolved\+Location@{Resolved\+Location}}
+\subsubsection[{set\+Place\+I\+D\+With\+Place\+I\+D\+:(\+Place\+I\+D $\ast$place\+I\+D)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) set\+Place\+I\+D\+With\+Place\+I\+D\+: 
+\begin{DoxyParamCaption}
+\item[{(Place\+I\+D $\ast$)}]{place\+I\+D}
+\end{DoxyParamCaption}
+}\label{interface_resolved_location_a9c5bce36e8e0d361680283c26d6c6c6c}
+
+
+Sets the Place\+I\+D. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em place\+I\+D} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{interface_resolved_location_a77d427561f6ec1a1ee95e57ca9577467}{}\index{Resolved\+Location@{Resolved\+Location}!address\+\_\+@{address\+\_\+}}
+\index{address\+\_\+@{address\+\_\+}!Resolved\+Location@{Resolved\+Location}}
+\subsubsection[{address\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+String$\ast$) address\+\_\+}\label{interface_resolved_location_a77d427561f6ec1a1ee95e57ca9577467}
+\hypertarget{interface_resolved_location_a96efd566353a71f21a783dc039b83673}{}\index{Resolved\+Location@{Resolved\+Location}!details\+Id\+\_\+@{details\+Id\+\_\+}}
+\index{details\+Id\+\_\+@{details\+Id\+\_\+}!Resolved\+Location@{Resolved\+Location}}
+\subsubsection[{details\+Id\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+String$\ast$) details\+Id\+\_\+}\label{interface_resolved_location_a96efd566353a71f21a783dc039b83673}
+\hypertarget{interface_resolved_location_ad7dba94c2ab6097a755a5ea12ce0608a}{}\index{Resolved\+Location@{Resolved\+Location}!location\+\_\+@{location\+\_\+}}
+\index{location\+\_\+@{location\+\_\+}!Resolved\+Location@{Resolved\+Location}}
+\subsubsection[{location\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (T\+S\+O\+Coordinate$\ast$) location\+\_\+}\label{interface_resolved_location_ad7dba94c2ab6097a755a5ea12ce0608a}
+\hypertarget{interface_resolved_location_a3245ac55d10d98e088602bc370c3337d}{}\index{Resolved\+Location@{Resolved\+Location}!location\+Type\+\_\+@{location\+Type\+\_\+}}
+\index{location\+Type\+\_\+@{location\+Type\+\_\+}!Resolved\+Location@{Resolved\+Location}}
+\subsubsection[{location\+Type\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Location\+Type}$\ast$) location\+Type\+\_\+}\label{interface_resolved_location_a3245ac55d10d98e088602bc370c3337d}
+\hypertarget{interface_resolved_location_acad6f92251f1776b162e841e696d305e}{}\index{Resolved\+Location@{Resolved\+Location}!name\+\_\+@{name\+\_\+}}
+\index{name\+\_\+@{name\+\_\+}!Resolved\+Location@{Resolved\+Location}}
+\subsubsection[{name\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+String$\ast$) name\+\_\+}\label{interface_resolved_location_acad6f92251f1776b162e841e696d305e}
+\hypertarget{interface_resolved_location_a102fcd28defcc06837f9ab6d2385b44f}{}\index{Resolved\+Location@{Resolved\+Location}!place\+I\+D\+\_\+@{place\+I\+D\+\_\+}}
+\index{place\+I\+D\+\_\+@{place\+I\+D\+\_\+}!Resolved\+Location@{Resolved\+Location}}
+\subsubsection[{place\+I\+D\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (Place\+I\+D$\ast$) place\+I\+D\+\_\+}\label{interface_resolved_location_a102fcd28defcc06837f9ab6d2385b44f}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src\+\_\+converted/com/intel/wearable/platform/timeiq/api/resolver/\hyperlink{_resolved_location_8h}{Resolved\+Location.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,245 @@
+\hypertarget{interface_result}{}\section{Result Class Reference}
+\label{interface_result}\index{Result@{Result}}
+
+
+\hyperlink{interface_result}{Result} holds a result code describing the outcome of a specific S\+D\+K operation. The \hyperlink{interface_result_code}{Result\+Code} can be either S\+U\+C\+C\+E\+S\+S or a detailed error described by a corresponding error code. There is also a formatted message describing the \hyperlink{interface_result_code}{Result\+Code}.  
+
+
+
+
+{\ttfamily \#import $<$Result.\+h$>$}
+
+
+
+Inherits N\+S\+Object.
+
+
+
+Inherited by \hyperlink{interface_result_data}{Result\+Data}.
+
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) -\/ \hyperlink{interface_result_ad316bfb1fc5cd0d3bc4221868746c164}{init\+With\+Result\+Code\+:}
+\begin{DoxyCompactList}\small\item\em Constructs a \hyperlink{interface_result}{Result} given an appropriate \hyperlink{interface_result_code}{Result\+Code}. \end{DoxyCompactList}\item 
+(instancetype) -\/ \hyperlink{interface_result_a35c4c32bd595b710980c88eccf85ed6a}{init\+With\+Result\+:}
+\begin{DoxyCompactList}\small\item\em Constructs a \hyperlink{interface_result}{Result} that is a copy of another \hyperlink{interface_result}{Result} object. \end{DoxyCompactList}\item 
+(instancetype) -\/ \hyperlink{interface_result_a9a463afa02ca8f0fea4d05dd98468b1a}{init\+With\+Result\+Code\+:with\+N\+S\+String\+:}
+\begin{DoxyCompactList}\small\item\em Constructs a \hyperlink{interface_result}{Result} with result code and an appropriate message. \end{DoxyCompactList}\item 
+(instancetype) -\/ \hyperlink{interface_result_a69a87669b3432211addbb927e22f9de6}{init\+With\+Exception\+:}
+\begin{DoxyCompactList}\small\item\em Constructs a \hyperlink{interface_result}{Result} with an Error from a given exception. \end{DoxyCompactList}\item 
+(boolean) -\/ \hyperlink{interface_result_a3c3f1b7989edde161fb082fe178290be}{is\+Success}
+\begin{DoxyCompactList}\small\item\em Checks whether the outcome was successful. \end{DoxyCompactList}\item 
+(\hyperlink{interface_result_code}{Result\+Code} $\ast$) -\/ \hyperlink{interface_result_a1aba712f58f0fa0c066db7c8c34d5269}{get\+Result\+Code}
+\begin{DoxyCompactList}\small\item\em Gets the result code. \end{DoxyCompactList}\item 
+(N\+S\+String $\ast$) -\/ \hyperlink{interface_result_abe56628a08c33b12b2b62d18bd3a0f4f}{get\+Message}
+\begin{DoxyCompactList}\small\item\em Gets the detailed message describing the \hyperlink{interface_result}{Result}. \end{DoxyCompactList}\item 
+(boolean) -\/ \hyperlink{interface_result_a90b2fad03726c3afea795cdc3a18d093}{is\+Equal\+:}
+\item 
+(N\+S\+U\+Integer) -\/ \hyperlink{interface_result_a00d104d3acc5597e11c0e6b30da6f979}{hash}
+\item 
+(N\+S\+String $\ast$) -\/ \hyperlink{interface_result_a2609d3fcdb2e8c25235ce359f5cb695f}{description}
+\item 
+(N\+S\+String $\ast$) -\/ \hyperlink{interface_result_aceda0a8cb84e1c97c5c535fa8d971c41}{get\+Inner\+String}
+\item 
+(void) -\/ \hyperlink{interface_result_aafa1fc02d0de05e8cbc4177afff47569}{copy\+All\+Fields\+To\+:}
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{interface_result_code}{Result\+Code} $\ast$ \hyperlink{interface_result_ac9012dcb96277da30fa131abdcecd808}{result\+Code\+\_\+}
+\begin{DoxyCompactList}\small\item\em \hyperlink{interface_result}{Result} code describing the outcome. \end{DoxyCompactList}\item 
+N\+S\+String $\ast$ \hyperlink{interface_result_abc70a4b2ffccc33515721959d714e46d}{message\+\_\+}
+\begin{DoxyCompactList}\small\item\em Human Readable message describing the error code. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{interface_result}{Result} holds a result code describing the outcome of a specific S\+D\+K operation. The \hyperlink{interface_result_code}{Result\+Code} can be either S\+U\+C\+C\+E\+S\+S or a detailed error described by a corresponding error code. There is also a formatted message describing the \hyperlink{interface_result_code}{Result\+Code}. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_result_aafa1fc02d0de05e8cbc4177afff47569}{}\index{Result@{Result}!copy\+All\+Fields\+To\+:@{copy\+All\+Fields\+To\+:}}
+\index{copy\+All\+Fields\+To\+:@{copy\+All\+Fields\+To\+:}!Result@{Result}}
+\subsubsection[{copy\+All\+Fields\+To\+:(\+Result $\ast$other)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) copy\+All\+Fields\+To\+: 
+\begin{DoxyParamCaption}
+\item[{({\bf Result} $\ast$)}]{other}
+\end{DoxyParamCaption}
+}\label{interface_result_aafa1fc02d0de05e8cbc4177afff47569}
+\hypertarget{interface_result_a2609d3fcdb2e8c25235ce359f5cb695f}{}\index{Result@{Result}!description@{description}}
+\index{description@{description}!Result@{Result}}
+\subsubsection[{description()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+String $\ast$) description 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_result_a2609d3fcdb2e8c25235ce359f5cb695f}
+
+
+Implemented in \hyperlink{interface_result_data_a03704ce86cecbc79b4ca31b534f149ad}{Result\+Data}.
+
+\hypertarget{interface_result_aceda0a8cb84e1c97c5c535fa8d971c41}{}\index{Result@{Result}!get\+Inner\+String@{get\+Inner\+String}}
+\index{get\+Inner\+String@{get\+Inner\+String}!Result@{Result}}
+\subsubsection[{get\+Inner\+String()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+String $\ast$) get\+Inner\+String 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_result_aceda0a8cb84e1c97c5c535fa8d971c41}
+
+
+Implemented in \hyperlink{interface_result_data_af72eca602dd71025995f1b58f30db711}{Result\+Data}.
+
+\hypertarget{interface_result_abe56628a08c33b12b2b62d18bd3a0f4f}{}\index{Result@{Result}!get\+Message@{get\+Message}}
+\index{get\+Message@{get\+Message}!Result@{Result}}
+\subsubsection[{get\+Message()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+String $\ast$) get\+Message 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_result_abe56628a08c33b12b2b62d18bd3a0f4f}
+
+
+Gets the detailed message describing the \hyperlink{interface_result}{Result}. 
+
+\begin{DoxyReturn}{Returns}
+String -\/ the detailed message 
+\end{DoxyReturn}
+\hypertarget{interface_result_a1aba712f58f0fa0c066db7c8c34d5269}{}\index{Result@{Result}!get\+Result\+Code@{get\+Result\+Code}}
+\index{get\+Result\+Code@{get\+Result\+Code}!Result@{Result}}
+\subsubsection[{get\+Result\+Code()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Result\+Code} $\ast$) get\+Result\+Code 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_result_a1aba712f58f0fa0c066db7c8c34d5269}
+
+
+Gets the result code. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{interface_result_code}{Result\+Code} -\/ the result code 
+\end{DoxyReturn}
+\hypertarget{interface_result_a00d104d3acc5597e11c0e6b30da6f979}{}\index{Result@{Result}!hash@{hash}}
+\index{hash@{hash}!Result@{Result}}
+\subsubsection[{hash()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+U\+Integer) hash 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_result_a00d104d3acc5597e11c0e6b30da6f979}
+
+
+Implemented in \hyperlink{interface_result_data_a1da5e0fe60288310fb42716961643a65}{Result\+Data}.
+
+\hypertarget{interface_result_a69a87669b3432211addbb927e22f9de6}{}\index{Result@{Result}!init\+With\+Exception\+:@{init\+With\+Exception\+:}}
+\index{init\+With\+Exception\+:@{init\+With\+Exception\+:}!Result@{Result}}
+\subsubsection[{init\+With\+Exception\+:(\+Exception $\ast$e)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\+With\+Exception\+: 
+\begin{DoxyParamCaption}
+\item[{(Exception $\ast$)}]{e}
+\end{DoxyParamCaption}
+}\label{interface_result_a69a87669b3432211addbb927e22f9de6}
+
+
+Constructs a \hyperlink{interface_result}{Result} with an Error from a given exception. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & -\/ the exception \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{interface_result_data_aeb1da32c7bc8a16fe14716807d1fe298}{Result\+Data}.
+
+\hypertarget{interface_result_a35c4c32bd595b710980c88eccf85ed6a}{}\index{Result@{Result}!init\+With\+Result\+:@{init\+With\+Result\+:}}
+\index{init\+With\+Result\+:@{init\+With\+Result\+:}!Result@{Result}}
+\subsubsection[{init\+With\+Result\+:(\+Result $\ast$other)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\+With\+Result\+: 
+\begin{DoxyParamCaption}
+\item[{({\bf Result} $\ast$)}]{other}
+\end{DoxyParamCaption}
+}\label{interface_result_a35c4c32bd595b710980c88eccf85ed6a}
+
+
+Constructs a \hyperlink{interface_result}{Result} that is a copy of another \hyperlink{interface_result}{Result} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & -\/ the source \hyperlink{interface_result}{Result} object \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_result_ad316bfb1fc5cd0d3bc4221868746c164}{}\index{Result@{Result}!init\+With\+Result\+Code\+:@{init\+With\+Result\+Code\+:}}
+\index{init\+With\+Result\+Code\+:@{init\+With\+Result\+Code\+:}!Result@{Result}}
+\subsubsection[{init\+With\+Result\+Code\+:(\+Result\+Code $\ast$result\+Code)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\+With\+Result\+Code\+: 
+\begin{DoxyParamCaption}
+\item[{({\bf Result\+Code} $\ast$)}]{result\+Code}
+\end{DoxyParamCaption}
+}\label{interface_result_ad316bfb1fc5cd0d3bc4221868746c164}
+
+
+Constructs a \hyperlink{interface_result}{Result} given an appropriate \hyperlink{interface_result_code}{Result\+Code}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em result\+Code} & -\/ the result code \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_result_a9a463afa02ca8f0fea4d05dd98468b1a}{}\index{Result@{Result}!init\+With\+Result\+Code\+:with\+N\+S\+String\+:@{init\+With\+Result\+Code\+:with\+N\+S\+String\+:}}
+\index{init\+With\+Result\+Code\+:with\+N\+S\+String\+:@{init\+With\+Result\+Code\+:with\+N\+S\+String\+:}!Result@{Result}}
+\subsubsection[{init\+With\+Result\+Code\+:with\+N\+S\+String\+:(\+Result\+Code $\ast$result\+Code,[with\+N\+S\+String] N\+S\+String $\ast$message)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) {\bf init\+With\+Result\+Code\+:} 
+\begin{DoxyParamCaption}
+\item[{({\bf Result\+Code} $\ast$)}]{result\+Code}
+\item[{withNSString:(N\+S\+String $\ast$)}]{message}
+\end{DoxyParamCaption}
+}\label{interface_result_a9a463afa02ca8f0fea4d05dd98468b1a}
+
+
+Constructs a \hyperlink{interface_result}{Result} with result code and an appropriate message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em result\+Code} & -\/ the result code \\
+\hline
+{\em message} & -\/ an appropriate message describing the result code \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_result_a90b2fad03726c3afea795cdc3a18d093}{}\index{Result@{Result}!is\+Equal\+:@{is\+Equal\+:}}
+\index{is\+Equal\+:@{is\+Equal\+:}!Result@{Result}}
+\subsubsection[{is\+Equal\+:(id o)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (boolean) is\+Equal\+: 
+\begin{DoxyParamCaption}
+\item[{(id)}]{o}
+\end{DoxyParamCaption}
+}\label{interface_result_a90b2fad03726c3afea795cdc3a18d093}
+
+
+Implemented in \hyperlink{interface_result_data_a4f47df827f169dee73e7a0a382f2ab7e}{Result\+Data}.
+
+\hypertarget{interface_result_a3c3f1b7989edde161fb082fe178290be}{}\index{Result@{Result}!is\+Success@{is\+Success}}
+\index{is\+Success@{is\+Success}!Result@{Result}}
+\subsubsection[{is\+Success()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (boolean) is\+Success 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_result_a3c3f1b7989edde161fb082fe178290be}
+
+
+Checks whether the outcome was successful. 
+
+\begin{DoxyReturn}{Returns}
+boolean -\/ true if S\+U\+C\+C\+E\+S\+S false otherwise 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{interface_result_abc70a4b2ffccc33515721959d714e46d}{}\index{Result@{Result}!message\+\_\+@{message\+\_\+}}
+\index{message\+\_\+@{message\+\_\+}!Result@{Result}}
+\subsubsection[{message\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+String$\ast$) message\+\_\+}\label{interface_result_abc70a4b2ffccc33515721959d714e46d}
+
+
+Human Readable message describing the error code. 
+
+\hypertarget{interface_result_ac9012dcb96277da30fa131abdcecd808}{}\index{Result@{Result}!result\+Code\+\_\+@{result\+Code\+\_\+}}
+\index{result\+Code\+\_\+@{result\+Code\+\_\+}!Result@{Result}}
+\subsubsection[{result\+Code\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Result\+Code}$\ast$) result\+Code\+\_\+}\label{interface_result_ac9012dcb96277da30fa131abdcecd808}
+
+
+\hyperlink{interface_result}{Result} code describing the outcome. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src\+\_\+converted/com/intel/wearable/platform/timeiq/api/common/result/\hyperlink{_result_8h}{Result.\+h}\end{DoxyCompactItemize}

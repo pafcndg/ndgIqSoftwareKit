@@ -1,0 +1,102 @@
+\hypertarget{interface_call_reminder}{}\section{Call\+Reminder Class Reference}
+\label{interface_call_reminder}\index{Call\+Reminder@{Call\+Reminder}}
+
+
+This class represents a reminder to call a certain contact.  
+
+
+
+
+{\ttfamily \#import $<$Call\+Reminder.\+h$>$}
+
+
+
+Inherits \hyperlink{interface_base_phone_reminder}{Base\+Phone\+Reminder}.
+
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) -\/ \hyperlink{interface_call_reminder_a06d63dab0b5d216071e596eaceb26bd0}{init\+With\+Base\+Phone\+Reminder\+\_\+\+Base\+Phone\+Based\+Reminder\+Builder\+:}
+\begin{DoxyCompactList}\small\item\em Create the \hyperlink{interface_call_reminder}{Call\+Reminder} using a builder. \end{DoxyCompactList}\item 
+(instancetype) -\/ \hyperlink{interface_call_reminder_a2bc6d1cbfc4c636ff0ce5c7de8cd3ff3}{init\+With\+N\+S\+String\+:with\+Reminder\+Type\+:with\+I\+Trigger\+:with\+Contact\+Info\+:with\+Reminder\+Status\+:with\+Long\+:with\+Long\+:}
+\begin{DoxyCompactList}\small\item\em Create the \hyperlink{interface_call_reminder}{Call\+Reminder} using parameters (the builder should be used in most cases) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class represents a reminder to call a certain contact. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_call_reminder_a06d63dab0b5d216071e596eaceb26bd0}{}\index{Call\+Reminder@{Call\+Reminder}!init\+With\+Base\+Phone\+Reminder\+\_\+\+Base\+Phone\+Based\+Reminder\+Builder\+:@{init\+With\+Base\+Phone\+Reminder\+\_\+\+Base\+Phone\+Based\+Reminder\+Builder\+:}}
+\index{init\+With\+Base\+Phone\+Reminder\+\_\+\+Base\+Phone\+Based\+Reminder\+Builder\+:@{init\+With\+Base\+Phone\+Reminder\+\_\+\+Base\+Phone\+Based\+Reminder\+Builder\+:}!Call\+Reminder@{Call\+Reminder}}
+\subsubsection[{init\+With\+Base\+Phone\+Reminder\+\_\+\+Base\+Phone\+Based\+Reminder\+Builder\+:(\+Base\+Phone\+Reminder\+\_\+\+Base\+Phone\+Based\+Reminder\+Builder $\ast$a\+Phone\+Based\+Reminder\+Builder)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\+With\+Base\+Phone\+Reminder\+\_\+\+Base\+Phone\+Based\+Reminder\+Builder\+: 
+\begin{DoxyParamCaption}
+\item[{({\bf Base\+Phone\+Reminder\+\_\+\+Base\+Phone\+Based\+Reminder\+Builder} $\ast$)}]{a\+Phone\+Based\+Reminder\+Builder}
+\end{DoxyParamCaption}
+}\label{interface_call_reminder_a06d63dab0b5d216071e596eaceb26bd0}
+
+
+Create the \hyperlink{interface_call_reminder}{Call\+Reminder} using a builder. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Phone\+Based\+Reminder\+Builder} & the builder that has the input parameters for the reminder \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{interface_reminder_build_exception}{Reminder\+Build\+Exception}} & will be thrown when input is missing or invalid (see \hyperlink{interface_reminder_build_exception_type}{Reminder\+Build\+Exception\+Type} for reasons) \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \hyperlink{interface_base_phone_reminder_aeab8c1cc3bc492eabdd394bab7e28a21}{Base\+Phone\+Reminder}.
+
+\hypertarget{interface_call_reminder_a2bc6d1cbfc4c636ff0ce5c7de8cd3ff3}{}\index{Call\+Reminder@{Call\+Reminder}!init\+With\+N\+S\+String\+:with\+Reminder\+Type\+:with\+I\+Trigger\+:with\+Contact\+Info\+:with\+Reminder\+Status\+:with\+Long\+:with\+Long\+:@{init\+With\+N\+S\+String\+:with\+Reminder\+Type\+:with\+I\+Trigger\+:with\+Contact\+Info\+:with\+Reminder\+Status\+:with\+Long\+:with\+Long\+:}}
+\index{init\+With\+N\+S\+String\+:with\+Reminder\+Type\+:with\+I\+Trigger\+:with\+Contact\+Info\+:with\+Reminder\+Status\+:with\+Long\+:with\+Long\+:@{init\+With\+N\+S\+String\+:with\+Reminder\+Type\+:with\+I\+Trigger\+:with\+Contact\+Info\+:with\+Reminder\+Status\+:with\+Long\+:with\+Long\+:}!Call\+Reminder@{Call\+Reminder}}
+\subsubsection[{init\+With\+N\+S\+String\+:with\+Reminder\+Type\+:with\+I\+Trigger\+:with\+Contact\+Info\+:with\+Reminder\+Status\+:with\+Long\+:with\+Long\+:(\+N\+S\+String $\ast$id\+\_\+,[with\+Reminder\+Type] Reminder\+Type $\ast$reminder\+Type,[with\+I\+Trigger] id$<$ I\+Trigger $>$ trigger,[with\+Contact\+Info] Contact\+Info $\ast$contact\+Info,[with\+Reminder\+Status] Reminder\+Status $\ast$status,[with\+Long] long64 triggered\+Time,[with\+Long] long64 added\+Time)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\+With\+N\+S\+String\+: 
+\begin{DoxyParamCaption}
+\item[{(N\+S\+String $\ast$)}]{id\+\_\+}
+\item[{withReminderType:({\bf Reminder\+Type} $\ast$)}]{reminder\+Type}
+\item[{withITrigger:(id$<$ {\bf I\+Trigger} $>$)}]{trigger}
+\item[{withContactInfo:({\bf Contact\+Info} $\ast$)}]{contact\+Info}
+\item[{withReminderStatus:({\bf Reminder\+Status} $\ast$)}]{status}
+\item[{withLong:(long64)}]{triggered\+Time}
+\item[{withLong:(long64)}]{added\+Time}
+\end{DoxyParamCaption}
+}\label{interface_call_reminder_a2bc6d1cbfc4c636ff0ce5c7de8cd3ff3}
+
+
+Create the \hyperlink{interface_call_reminder}{Call\+Reminder} using parameters (the builder should be used in most cases) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the unique I\+D of the reminder \\
+\hline
+{\em reminder\+Type} & the type of the reminder ( \hyperlink{interface_reminder_type_a0c8d007a3b46883b983facbd27ea9d99}{D\+O (\+Reminder\+Type)} for \hyperlink{interface_do_reminder}{Do\+Reminder} , \hyperlink{interface_reminder_type_a4e429298799342d7c7114880e645d073}{C\+A\+L\+L (\+Reminder\+Type)} for \hyperlink{interface_call_reminder}{Call\+Reminder} or \hyperlink{interface_reminder_type_abb04f7b2c8b0be93d21bc77ade83c0fc}{N\+O\+T\+I\+F\+Y (\+Reminder\+Type)} for \hyperlink{interface_notification_reminder}{Notification\+Reminder} ) \\
+\hline
+{\em trigger} & the trigger that will make the reminder notify \\
+\hline
+{\em contact\+Info} & the contact that is associated with this reminder \\
+\hline
+{\em status} & the status of the reminder \\
+\hline
+{\em triggered\+Time} & the time that the reminder was triggered, or -\/1 if not triggered yet \\
+\hline
+{\em added\+Time} & the time that the reminder was added, or -\/1 if not added yet \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{interface_reminder_build_exception}{Reminder\+Build\+Exception}} & will be thrown when input is missing or invalid (see \hyperlink{interface_reminder_build_exception_type}{Reminder\+Build\+Exception\+Type} for reasons) \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \hyperlink{interface_base_phone_reminder_a4812344ea9cf4b468ecf286586a35ac4}{Base\+Phone\+Reminder}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src\+\_\+converted/com/intel/wearable/platform/timeiq/api/reminders/phone\+Based\+Reminder/call\+Reminder/\hyperlink{_call_reminder_8h}{Call\+Reminder.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,107 @@
+\hypertarget{protocol_i_route_provider-p}{}\section{$<$I\+Route\+Provider$>$ Protocol Reference}
+\label{protocol_i_route_provider-p}\index{$<$\+I\+Route\+Provider$>$@{$<$\+I\+Route\+Provider$>$}}
+
+
+Means to get T\+T\+L (Time To Leave) or E\+T\+A (Estimated Time of Arrival) routes and to get route segments (via \hyperlink{interface_ttl_route_data}{Ttl\+Route\+Data} or \hyperlink{interface_eta_route_data}{Eta\+Route\+Data} ). ~\newline
+ The preferred transport type supplied by the user will be taken into account for the route calculation, but the calculated M\+O\+T might differ from it.~\newline
+ Routes are received from server and might be cached locally (i.\+e. network might be used).~\newline
+ The cache takes into account the origin, destination and the arrival time (some difference is allowed). ~\newline
+ ~\newline
+ $<$\+U$>$Example\+:$<$/\+U$>$ get T\+T\+L route from (lat1, long1) to (lat2, long2) for an event that will start in 2 hours, we prefer driving ~\newline
+ ~\newline
+  
+
+
+
+
+{\ttfamily \#import $<$I\+Route\+Provider.\+h$>$}
+
+
+
+Inherits $<$\+N\+S\+Object$>$.
+
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(\hyperlink{interface_result_data}{Result\+Data} $\ast$) -\/ \hyperlink{protocol_i_route_provider-p_afe4c9350635e2be3fbd6c857061f58d1}{get\+T\+T\+L\+With\+T\+S\+O\+Coordinate\+:with\+T\+S\+O\+Coordinate\+:with\+Long\+:with\+Transport\+Type\+:}
+\begin{DoxyCompactList}\small\item\em Get the T\+T\+L (Time To Leave) from the origin, in order to arrive at a certain time to the destination. \end{DoxyCompactList}\item 
+(\hyperlink{interface_result_data}{Result\+Data} $\ast$) -\/ \hyperlink{protocol_i_route_provider-p_a0046766facf8401163ef3358a513d899}{get\+E\+T\+A\+With\+T\+S\+O\+Coordinate\+:with\+T\+S\+O\+Coordinate\+:with\+Long\+:with\+Transport\+Type\+:}
+\begin{DoxyCompactList}\small\item\em Get the E\+T\+A (Estimated Time of Arrival) from the origin to the destination for a given departure time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Means to get T\+T\+L (Time To Leave) or E\+T\+A (Estimated Time of Arrival) routes and to get route segments (via \hyperlink{interface_ttl_route_data}{Ttl\+Route\+Data} or \hyperlink{interface_eta_route_data}{Eta\+Route\+Data} ). ~\newline
+ The preferred transport type supplied by the user will be taken into account for the route calculation, but the calculated M\+O\+T might differ from it.~\newline
+ Routes are received from server and might be cached locally (i.\+e. network might be used).~\newline
+ The cache takes into account the origin, destination and the arrival time (some difference is allowed). ~\newline
+ ~\newline
+ $<$\+U$>$Example\+:$<$/\+U$>$ get T\+T\+L route from (lat1, long1) to (lat2, long2) for an event that will start in 2 hours, we prefer driving ~\newline
+ ~\newline
+ 
+
+
+\begin{DoxyPre} {\ttfamily \hyperlink{protocol_i_route_provider-p}{IRouteProvider} routeProvider = timeIQApi.getRouteProvider(); // get \hyperlink{protocol_i_route_provider-p}{IRouteProvider} long arrivalTime = System.currentTimeMillis() + TimeUnit.HOURS.toMillis(2);// arrival time is 2 hours from now TSOCoordinate origin = new TSOCoordinate(lat1, long1); // create origin TSOCoordinate destination = new TSOCoordinate(lat2, long2); // create destination ResultData<TtlRouteData> ttlRouteDataResultData = routeProvider.getTTL(origin, destination, arrivalTime, TransportType.CAR); // gets the TTL route from origin to destination (preferably by car)} \end{DoxyPre}
+ 
+
+\subsection{Method Documentation}
+\hypertarget{protocol_i_route_provider-p_a0046766facf8401163ef3358a513d899}{}\index{I\+Route\+Provider-\/p@{I\+Route\+Provider-\/p}!get\+E\+T\+A\+With\+T\+S\+O\+Coordinate\+:with\+T\+S\+O\+Coordinate\+:with\+Long\+:with\+Transport\+Type\+:@{get\+E\+T\+A\+With\+T\+S\+O\+Coordinate\+:with\+T\+S\+O\+Coordinate\+:with\+Long\+:with\+Transport\+Type\+:}}
+\index{get\+E\+T\+A\+With\+T\+S\+O\+Coordinate\+:with\+T\+S\+O\+Coordinate\+:with\+Long\+:with\+Transport\+Type\+:@{get\+E\+T\+A\+With\+T\+S\+O\+Coordinate\+:with\+T\+S\+O\+Coordinate\+:with\+Long\+:with\+Transport\+Type\+:}!I\+Route\+Provider-\/p@{I\+Route\+Provider-\/p}}
+\subsubsection[{get\+E\+T\+A\+With\+T\+S\+O\+Coordinate\+:with\+T\+S\+O\+Coordinate\+:with\+Long\+:with\+Transport\+Type\+:(\+T\+S\+O\+Coordinate $\ast$origin,[with\+T\+S\+O\+Coordinate] T\+S\+O\+Coordinate $\ast$destination,[with\+Long] long64 departure\+Time,[with\+Transport\+Type] Transport\+Type $\ast$preferred\+Transport\+Type)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Result\+Data} $\ast$) get\+E\+T\+A\+With\+T\+S\+O\+Coordinate\+: 
+\begin{DoxyParamCaption}
+\item[{(T\+S\+O\+Coordinate $\ast$)}]{origin}
+\item[{withTSOCoordinate:(T\+S\+O\+Coordinate $\ast$)}]{destination}
+\item[{withLong:(long64)}]{departure\+Time}
+\item[{withTransportType:(Transport\+Type $\ast$)}]{preferred\+Transport\+Type}
+\end{DoxyParamCaption}
+}\label{protocol_i_route_provider-p_a0046766facf8401163ef3358a513d899}
+
+
+Get the E\+T\+A (Estimated Time of Arrival) from the origin to the destination for a given departure time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin} & the origin location of the route \\
+\hline
+{\em destination} & the origin location of the route \\
+\hline
+{\em departure\+Time} & the desired departure time from the origin \\
+\hline
+{\em preferred\+Transport\+Type} & the preferred transport type (can be null for default behaviour) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \hyperlink{interface_eta_route_data}{Eta\+Route\+Data} with the routes segments 
+\end{DoxyReturn}
+\hypertarget{protocol_i_route_provider-p_afe4c9350635e2be3fbd6c857061f58d1}{}\index{I\+Route\+Provider-\/p@{I\+Route\+Provider-\/p}!get\+T\+T\+L\+With\+T\+S\+O\+Coordinate\+:with\+T\+S\+O\+Coordinate\+:with\+Long\+:with\+Transport\+Type\+:@{get\+T\+T\+L\+With\+T\+S\+O\+Coordinate\+:with\+T\+S\+O\+Coordinate\+:with\+Long\+:with\+Transport\+Type\+:}}
+\index{get\+T\+T\+L\+With\+T\+S\+O\+Coordinate\+:with\+T\+S\+O\+Coordinate\+:with\+Long\+:with\+Transport\+Type\+:@{get\+T\+T\+L\+With\+T\+S\+O\+Coordinate\+:with\+T\+S\+O\+Coordinate\+:with\+Long\+:with\+Transport\+Type\+:}!I\+Route\+Provider-\/p@{I\+Route\+Provider-\/p}}
+\subsubsection[{get\+T\+T\+L\+With\+T\+S\+O\+Coordinate\+:with\+T\+S\+O\+Coordinate\+:with\+Long\+:with\+Transport\+Type\+:(\+T\+S\+O\+Coordinate $\ast$origin,[with\+T\+S\+O\+Coordinate] T\+S\+O\+Coordinate $\ast$destination,[with\+Long] long64 arrival\+Time,[with\+Transport\+Type] Transport\+Type $\ast$preferred\+Transport\+Type)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Result\+Data} $\ast$) get\+T\+T\+L\+With\+T\+S\+O\+Coordinate\+: 
+\begin{DoxyParamCaption}
+\item[{(T\+S\+O\+Coordinate $\ast$)}]{origin}
+\item[{withTSOCoordinate:(T\+S\+O\+Coordinate $\ast$)}]{destination}
+\item[{withLong:(long64)}]{arrival\+Time}
+\item[{withTransportType:(Transport\+Type $\ast$)}]{preferred\+Transport\+Type}
+\end{DoxyParamCaption}
+}\label{protocol_i_route_provider-p_afe4c9350635e2be3fbd6c857061f58d1}
+
+
+Get the T\+T\+L (Time To Leave) from the origin, in order to arrive at a certain time to the destination. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin} & the origin location of the route \\
+\hline
+{\em destination} & the origin location of the route \\
+\hline
+{\em arrival\+Time} & the desired arrival time to the destination \\
+\hline
+{\em preferred\+Transport\+Type} & the preferred transport type (can be null for default behaviour) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \hyperlink{interface_ttl_route_data}{Ttl\+Route\+Data} with the routes segments 
+\end{DoxyReturn}
+
+
+The documentation for this protocol was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src\+\_\+converted/com/intel/wearable/platform/timeiq/api/route/\hyperlink{_i_route_provider_8h}{I\+Route\+Provider.\+h}\end{DoxyCompactItemize}

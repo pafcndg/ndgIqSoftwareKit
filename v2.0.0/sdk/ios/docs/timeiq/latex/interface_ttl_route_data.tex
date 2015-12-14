@@ -1,0 +1,124 @@
+\hypertarget{interface_ttl_route_data}{}\section{Ttl\+Route\+Data Class Reference}
+\label{interface_ttl_route_data}\index{Ttl\+Route\+Data@{Ttl\+Route\+Data}}
+
+
+The result of I\+Segmented\+Route\+Provider\+::get\+T\+T\+L(\+T\+S\+O\+Coordinate,\+T\+S\+O\+Coordinate,long,\+Mot\+Type,\+Mot\+Type) ~\newline
+ It contains a list of \hyperlink{interface_route_segment}{Route\+Segment} ordered by time, from the time to leave until the arrival time.  
+
+
+
+
+{\ttfamily \#import $<$Ttl\+Route\+Data.\+h$>$}
+
+
+
+Inherits \hyperlink{interface_a_route_data}{A\+Route\+Data}.
+
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) -\/ \hyperlink{interface_ttl_route_data_a9f4702311632ab8425b5a53fab6f96f4}{init\+With\+Route\+Data\+Type\+:with\+Double\+:with\+Java\+Util\+List\+:with\+Long\+:with\+Mot\+Type\+:}
+\item 
+(long64) -\/ \hyperlink{interface_ttl_route_data_ab4e0da7fdcf2d55436e1a912607e0106}{get\+Arrival\+Time}
+\begin{DoxyCompactList}\small\item\em Get the arrival time to the destination. \end{DoxyCompactList}\item 
+(long64) -\/ \hyperlink{interface_ttl_route_data_a9c7cea559bde28b030f7f3ea77d2199d}{get\+Departure\+Time}
+\begin{DoxyCompactList}\small\item\em Get the departure time from the origin. \end{DoxyCompactList}\item 
+(boolean) -\/ \hyperlink{interface_ttl_route_data_a3fbad490f2868e4393b1c1a087256fab}{is\+Ttl\+Route}
+\item 
+(void) -\/ \hyperlink{interface_ttl_route_data_a8fb823aee662ff58d871ab1807000598}{copy\+All\+Fields\+To\+:}
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+long64 \hyperlink{interface_ttl_route_data_a2d67f06048298a0dc31cec8ee973b59f}{m\+\_\+arrival\+Time\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The result of I\+Segmented\+Route\+Provider\+::get\+T\+T\+L(\+T\+S\+O\+Coordinate,\+T\+S\+O\+Coordinate,long,\+Mot\+Type,\+Mot\+Type) ~\newline
+ It contains a list of \hyperlink{interface_route_segment}{Route\+Segment} ordered by time, from the time to leave until the arrival time. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_ttl_route_data_a8fb823aee662ff58d871ab1807000598}{}\index{Ttl\+Route\+Data@{Ttl\+Route\+Data}!copy\+All\+Fields\+To\+:@{copy\+All\+Fields\+To\+:}}
+\index{copy\+All\+Fields\+To\+:@{copy\+All\+Fields\+To\+:}!Ttl\+Route\+Data@{Ttl\+Route\+Data}}
+\subsubsection[{copy\+All\+Fields\+To\+:(\+Ttl\+Route\+Data $\ast$other)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) copy\+All\+Fields\+To\+: 
+\begin{DoxyParamCaption}
+\item[{({\bf Ttl\+Route\+Data} $\ast$)}]{other}
+\end{DoxyParamCaption}
+}\label{interface_ttl_route_data_a8fb823aee662ff58d871ab1807000598}
+\hypertarget{interface_ttl_route_data_ab4e0da7fdcf2d55436e1a912607e0106}{}\index{Ttl\+Route\+Data@{Ttl\+Route\+Data}!get\+Arrival\+Time@{get\+Arrival\+Time}}
+\index{get\+Arrival\+Time@{get\+Arrival\+Time}!Ttl\+Route\+Data@{Ttl\+Route\+Data}}
+\subsubsection[{get\+Arrival\+Time()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (long64) get\+Arrival\+Time 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_ttl_route_data_ab4e0da7fdcf2d55436e1a912607e0106}
+
+
+Get the arrival time to the destination. 
+
+\begin{DoxyReturn}{Returns}
+the arrival time to the destination 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{protocol_i_route_data-p_a3ec47dbf095790ccaff50638570cc8bc}{$<$\+I\+Route\+Data$>$}.
+
+\hypertarget{interface_ttl_route_data_a9c7cea559bde28b030f7f3ea77d2199d}{}\index{Ttl\+Route\+Data@{Ttl\+Route\+Data}!get\+Departure\+Time@{get\+Departure\+Time}}
+\index{get\+Departure\+Time@{get\+Departure\+Time}!Ttl\+Route\+Data@{Ttl\+Route\+Data}}
+\subsubsection[{get\+Departure\+Time()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (long64) get\+Departure\+Time 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_ttl_route_data_a9c7cea559bde28b030f7f3ea77d2199d}
+
+
+Get the departure time from the origin. 
+
+\begin{DoxyReturn}{Returns}
+the departure time from the origin 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{protocol_i_route_data-p_a29e2cadfa6dc8302ae257ee771d71b03}{$<$\+I\+Route\+Data$>$}.
+
+\hypertarget{interface_ttl_route_data_a9f4702311632ab8425b5a53fab6f96f4}{}\index{Ttl\+Route\+Data@{Ttl\+Route\+Data}!init\+With\+Route\+Data\+Type\+:with\+Double\+:with\+Java\+Util\+List\+:with\+Long\+:with\+Mot\+Type\+:@{init\+With\+Route\+Data\+Type\+:with\+Double\+:with\+Java\+Util\+List\+:with\+Long\+:with\+Mot\+Type\+:}}
+\index{init\+With\+Route\+Data\+Type\+:with\+Double\+:with\+Java\+Util\+List\+:with\+Long\+:with\+Mot\+Type\+:@{init\+With\+Route\+Data\+Type\+:with\+Double\+:with\+Java\+Util\+List\+:with\+Long\+:with\+Mot\+Type\+:}!Ttl\+Route\+Data@{Ttl\+Route\+Data}}
+\subsubsection[{init\+With\+Route\+Data\+Type\+:with\+Double\+:with\+Java\+Util\+List\+:with\+Long\+:with\+Mot\+Type\+:(\+Route\+Data\+Type $\ast$route\+Data\+Type,[with\+Double] double aerial\+Distance,[with\+Java\+Util\+List] Array\+List $\ast$route\+Segments,[with\+Long] long64 arrival\+Time,[with\+Mot\+Type] Mot\+Type $\ast$main\+Mot\+Type)}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\+With\+Route\+Data\+Type\+: 
+\begin{DoxyParamCaption}
+\item[{({\bf Route\+Data\+Type} $\ast$)}]{route\+Data\+Type}
+\item[{withDouble:(double)}]{aerial\+Distance}
+\item[{withJavaUtilList:(Array\+List $\ast$)}]{route\+Segments}
+\item[{withLong:(long64)}]{arrival\+Time}
+\item[{withMotType:(Mot\+Type $\ast$)}]{main\+Mot\+Type}
+\end{DoxyParamCaption}
+}\label{interface_ttl_route_data_a9f4702311632ab8425b5a53fab6f96f4}
+
+\begin{DoxyParams}{Parameters}
+{\em route\+Segments} & list of \hyperlink{interface_route_segment}{Route\+Segment} ordered by time, from the time to leave until the arrival time \\
+\hline
+{\em arrival\+Time} & the arrival time to the destination \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_ttl_route_data_a3fbad490f2868e4393b1c1a087256fab}{}\index{Ttl\+Route\+Data@{Ttl\+Route\+Data}!is\+Ttl\+Route@{is\+Ttl\+Route}}
+\index{is\+Ttl\+Route@{is\+Ttl\+Route}!Ttl\+Route\+Data@{Ttl\+Route\+Data}}
+\subsubsection[{is\+Ttl\+Route()}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (boolean) is\+Ttl\+Route 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}\label{interface_ttl_route_data_a3fbad490f2868e4393b1c1a087256fab}
+
+
+Reimplemented from \hyperlink{protocol_i_route_data-p_ac9c0dcc96c2755b3f8e58150a1847d85}{$<$\+I\+Route\+Data$>$}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{interface_ttl_route_data_a2d67f06048298a0dc31cec8ee973b59f}{}\index{Ttl\+Route\+Data@{Ttl\+Route\+Data}!m\+\_\+arrival\+Time\+\_\+@{m\+\_\+arrival\+Time\+\_\+}}
+\index{m\+\_\+arrival\+Time\+\_\+@{m\+\_\+arrival\+Time\+\_\+}!Ttl\+Route\+Data@{Ttl\+Route\+Data}}
+\subsubsection[{m\+\_\+arrival\+Time\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (long64) m\+\_\+arrival\+Time\+\_\+}\label{interface_ttl_route_data_a2d67f06048298a0dc31cec8ee973b59f}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src\+\_\+converted/com/intel/wearable/platform/timeiq/api/route/\hyperlink{_ttl_route_data_8h}{Ttl\+Route\+Data.\+h}\end{DoxyCompactItemize}
