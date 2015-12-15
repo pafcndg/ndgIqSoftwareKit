@@ -79,7 +79,9 @@ public class BodyIQUtil implements ActivityIntervalListener, CoreIQUtil.IConnect
             mTotalMeters = sharedPreferences.getLong(METERS_TOKEN_KEY, 0);
             mLastUpdateTime = sharedPreferences.getLong(LAST_UPDATE_TOKEN_KEY, 0);
 
-            Body.init(context);
+            byte securityKey[] = new byte[64];
+            Body.init(context,securityKey);
+
             mContext = context;
             if ( hasProfile() ) {
                 Log.d(TAG, "Found Profile "+ BodyDataStore.getCurrentProfile().getUuid());

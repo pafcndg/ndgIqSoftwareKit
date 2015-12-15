@@ -6,3 +6,5 @@ v2.0.0/samples/android/timeiq/.gradle
 v2.0.0/samples/android/timeiq/.idea
 local.properties
 .DS_Store
+app-debug.apk
+v2.0.0/samples/android/timeiq/build/intermediates

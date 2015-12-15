@@ -7,6 +7,7 @@ import android.util.Log;
 
 import com.google.gson.Gson;
 import com.intel.wearable.platform.core.Core;
+import com.intel.wearable.platform.core.ICoreInitListener;
 import com.intel.wearable.platform.core.device.IWearableController;
 import com.intel.wearable.platform.core.device.IWearableScanner;
 import com.intel.wearable.platform.core.device.WearableBatteryStatus;
@@ -53,41 +54,65 @@ public class CoreIQUtil implements IWearableControllerListener, IWearableUserEve
 
     private ArrayList<SendToDeviceData> mSendToDeviceDataList = new ArrayList<>();
 
-    public static CoreIQUtil getInstance(){
+    private static final Object m_initLock = new Object();
+
+
+    public static CoreIQUtil getInstance() {
         return mCoreIQUtil;
     }
 
-    public CoreIQUtil(){
+    public CoreIQUtil() {
         Log.d(TAG, "constructor");
     }
 
-    public void init(Context context){
+    public synchronized void init(Context context) {
         Log.d(TAG, "init");
-        if( ! mIsInitialized ) {
-            mIsInitialized = true;
+        if (!mIsInitialized) {
+
             Log.d(TAG, "init: initializing");
-            Core.init(context);
-            if(BodyIQUtil.USE_BODY_IQ) {
-                BodyIQUtil.getInstance().init(context);
-            }
-            mContext = context;
-            SharedPreferences sharedPreferences = context.getSharedPreferences(CORE_TOKEN_PREFS_FILE, Context.MODE_PRIVATE);
-            String jsonString = sharedPreferences.getString(CORE_TOKEN_KEY, null);
-            if (!TextUtils.isEmpty(jsonString)) {
-                mCoreIQToken = new Gson().fromJson(jsonString, WearableToken.class);
-                Log.d(TAG, "init got token for: " + mCoreIQToken.getDisplayName());
-                mUserTryedToUnpairOrDisconnect = sharedPreferences.getBoolean(USER_DISCONNECTED_OR_UNPAIRED_KEY, false);
-                if( ! mUserTryedToUnpairOrDisconnect ){
-                    createCoreIQTController();
-                    connect();
+
+            final Context appContext = context;
+
+            final byte securityKey[] = new byte[64];
+
+            Core.init(appContext, new ICoreInitListener() {
+                @Override
+                public void onInitialized() {
+
+                    mIsInitialized = true;
+                    postInit(appContext);
                 }
+            }, securityKey);
+
+
+        }
+    }
+
+
+    private void postInit(final Context context) {
+
+        Log.d(TAG, " ---- initialized: " + mIsInitialized);
+
+        if (BodyIQUtil.USE_BODY_IQ) {
+            BodyIQUtil.getInstance().init(context);
+        }
+        mContext = context;
+        SharedPreferences sharedPreferences = context.getSharedPreferences(CORE_TOKEN_PREFS_FILE, Context.MODE_PRIVATE);
+        String jsonString = sharedPreferences.getString(CORE_TOKEN_KEY, null);
+        if (!TextUtils.isEmpty(jsonString)) {
+            mCoreIQToken = new Gson().fromJson(jsonString, WearableToken.class);
+            Log.d(TAG, "init got token for: " + mCoreIQToken.getDisplayName());
+            mUserTryedToUnpairOrDisconnect = sharedPreferences.getBoolean(USER_DISCONNECTED_OR_UNPAIRED_KEY, false);
+            if (!mUserTryedToUnpairOrDisconnect) {
+                createCoreIQTController();
+                connect();
             }
         }
     }
 
 
-    public IWearableScanner getScanner(){
-        if(mScanner == null){
+    public IWearableScanner getScanner() {
+        if (mScanner == null) {
             Log.d(TAG, "getScanner: getDefaultScanner");
             mScanner = WearableScannerFactory.getDefaultScanner();
         }
@@ -95,28 +120,27 @@ public class CoreIQUtil implements IWearableControllerListener, IWearableUserEve
     }
 
     public void setCoreIQToken(WearableToken coreIQToken) {
-        if(coreIQToken != null) {
+        if (coreIQToken != null) {
             Log.d(TAG, "setCoreIQToken not null");
             mCoreIQToken = coreIQToken;
             String jsonString = new Gson().toJson(coreIQToken);
             SharedPreferences sharedPreferences = mContext.getSharedPreferences(CORE_TOKEN_PREFS_FILE, Context.MODE_PRIVATE);
             sharedPreferences.edit().putString(CORE_TOKEN_KEY, jsonString).commit();
             createCoreIQTController();
-        }
-        else {
+        } else {
             Log.d(TAG, "setCoreIQToken null");
         }
     }
 
-    private IWearableController createCoreIQTController(){
+    private IWearableController createCoreIQTController() {
         Log.d(TAG, "createCoreIQTController");
-        if(mController != null){
+        if (mController != null) {
             WearableToken wearableToken = mController.getWearableToken();
-            if(mCoreIQToken == null || ! wearableToken.getAddress().equals(mCoreIQToken.getAddress()) ){
+            if (mCoreIQToken == null || !wearableToken.getAddress().equals(mCoreIQToken.getAddress())) {
                 mController = null;
             }
         }
-        if(mController == null && mCoreIQToken != null){
+        if (mController == null && mCoreIQToken != null) {
             Log.d(TAG, "createCoreIQTController creating a new controller");
             mController = WearableControllerFactory.getWearableController(mCoreIQToken, this);
         }
@@ -124,12 +148,12 @@ public class CoreIQUtil implements IWearableControllerListener, IWearableUserEve
     }
 
 
-    public void setCoreIQTControllerListener(IWearableControllerListener listener){
+    public void setCoreIQTControllerListener(IWearableControllerListener listener) {
         mOuterWearableControllerListener = listener;
     }
 
 
-    private class SendToDeviceData{
+    private class SendToDeviceData {
         int r;
         int g;
         int b;
@@ -147,7 +171,7 @@ public class CoreIQUtil implements IWearableControllerListener, IWearableUserEve
         }
     }
 
-    public boolean tryToReconnectIfNeeded(){
+    public boolean tryToReconnectIfNeeded() {
         boolean alreadyConnected = false;
         createCoreIQTController();
         if (mController != null && !mUserTryedToUnpairOrDisconnect) {
@@ -156,10 +180,9 @@ public class CoreIQUtil implements IWearableControllerListener, IWearableUserEve
                     mController.connect();
                     Log.d(TAG, "tryToReconnectIfNeeded: connecting OK");
                 } catch (Throwable throwable) {
-                    Log.d(TAG, "tryToReconnectIfNeeded: connecting error:" +  throwable.getMessage());
+                    Log.d(TAG, "tryToReconnectIfNeeded: connecting error:" + throwable.getMessage());
                 }
-            }
-            else {
+            } else {
                 alreadyConnected = true;
             }
         }
@@ -174,7 +197,7 @@ public class CoreIQUtil implements IWearableControllerListener, IWearableUserEve
                 errorStr = sendToDeviceInternal(r, g, b, ledIntensity, vibrationIntensity);
             } else {
 
-                errorStr = "device not connected. trying to connect, and try to resend with expiration of "+SEND_TO_DEVICE_EXPIRATION_TIME+" milliseconds";
+                errorStr = "device not connected. trying to connect, and try to resend with expiration of " + SEND_TO_DEVICE_EXPIRATION_TIME + " milliseconds";
                 synchronized (mSendToDeviceDataList) {
                     mSendToDeviceDataList.add(new SendToDeviceData(r, g, b, ledIntensity, vibrationIntensity, System.currentTimeMillis() + SEND_TO_DEVICE_EXPIRATION_TIME));
                 }
@@ -186,17 +209,16 @@ public class CoreIQUtil implements IWearableControllerListener, IWearableUserEve
                     Log.d(TAG, "connect: " + errorStr);
                 }
             }
-        }
-        else{
+        } else {
             errorStr = "no controller";
         }
-        Log.d(TAG, "sendToDevice: "+errorStr);
+        Log.d(TAG, "sendToDevice: " + errorStr);
         return errorStr;
     }
 
-    private String sendToDeviceInternal(int r, int g, int b, int ledIntensity, byte vibrationIntensity){
+    private String sendToDeviceInternal(int r, int g, int b, int ledIntensity, byte vibrationIntensity) {
         String errorStr;
-        if(mController.isConnected()) {
+        if (mController.isConnected()) {
             //led pattern:
             WearableNotification.LedPattern ledPattern = new WearableNotification.LedPattern(WearableNotification.LedPattern.Type.LED_BLINK, 0, null, 2, ledIntensity);
             ledPattern.addRGBColor(new WearableNotification.RGBColor(r, g, b));
@@ -204,38 +226,35 @@ public class CoreIQUtil implements IWearableControllerListener, IWearableUserEve
 
             WearableNotification wearableNotification;
             // Vibration Pattern:
-            if(vibrationIntensity > 0) {
+            if (vibrationIntensity > 0) {
                 WearableNotification.VibrationPattern vibrationPattern =
                         new WearableNotification.VibrationPattern(WearableNotification.VibrationPattern.Type.VIBRA_SQUARE, vibrationIntensity, 3);
                 vibrationPattern.addDuration(new WearableNotification.DurationPattern(500, 500));
 
                 wearableNotification = new WearableNotification(vibrationPattern, ledPattern, 0);
-            }
-            else{
+            } else {
                 wearableNotification = new WearableNotification(ledPattern);
             }
             INotificationController notificationController = mController.getNotificationController();
-            if(notificationController != null) {
+            if (notificationController != null) {
                 notificationController.sendNotification(wearableNotification);
                 errorStr = "notificationController.sendNotification";
-            }
-            else{
+            } else {
                 errorStr = "notificationController = null";
             }
-        }
-        else{
+        } else {
             errorStr = "device not connected";
         }
-        Log.d(TAG, "sendToDevice: "+errorStr);
+        Log.d(TAG, "sendToDevice: " + errorStr);
         return errorStr;
     }
 
 
-    public String pair(){
+    public String pair() {
         Log.d(TAG, "pair ...");
         onUserTriedToDisconnectOrUnpair(false);
         String errorMsg = null;
-        if(mController != null) {
+        if (mController != null) {
             try {
                 Log.d(TAG, "mController.pair()");
                 mController.pair();
@@ -247,21 +266,21 @@ public class CoreIQUtil implements IWearableControllerListener, IWearableUserEve
         return errorMsg;
     }
 
-    public void unpair(){
+    public void unpair() {
         Log.d(TAG, "unpair ...");
         onUserTriedToDisconnectOrUnpair(true);
         createCoreIQTController();
-        if(mController != null) {
+        if (mController != null) {
             mController.unpair();
         }
     }
 
-    public String connect(){
+    public String connect() {
         Log.d(TAG, "connect ...");
         onUserTriedToDisconnectOrUnpair(false);
         String errorMsg = null;
         createCoreIQTController();
-        if(mController != null) {
+        if (mController != null) {
             try {
                 mController.connect();
                 Log.d(TAG, "connect: OK");
@@ -273,42 +292,42 @@ public class CoreIQUtil implements IWearableControllerListener, IWearableUserEve
         return errorMsg;
     }
 
-    public boolean disconnect(){
+    public boolean disconnect() {
         Log.d(TAG, "disconnect ...");
         onUserTriedToDisconnectOrUnpair(true);
         boolean success = false;
         createCoreIQTController();
-        if(mController != null) {
+        if (mController != null) {
             success = mController.disconnect();
         }
         return success;
     }
 
-    public boolean isConnected(){
+    public boolean isConnected() {
         boolean isConnected = false;
         createCoreIQTController();
-        if(mController != null){
+        if (mController != null) {
             isConnected = mController.isConnected();
         }
         return isConnected;
     }
 
-    public boolean isPaired(){
+    public boolean isPaired() {
         boolean isPaired = false;
-        if(mController != null){
+        if (mController != null) {
             isPaired = mController.isPaired();
         }
         return isPaired;
     }
 
-    public void getBatteryStatusAsync(){
-        if(mController != null){
-             mController.getBatteryStatus();
+    public void getBatteryStatusAsync() {
+        if (mController != null) {
+            mController.getBatteryStatus();
         }
     }
 
-    private void onUserTriedToDisconnectOrUnpair(boolean userTryedToUnpairOrDisconnect){
-        if(userTryedToUnpairOrDisconnect != mUserTryedToUnpairOrDisconnect) {
+    private void onUserTriedToDisconnectOrUnpair(boolean userTryedToUnpairOrDisconnect) {
+        if (userTryedToUnpairOrDisconnect != mUserTryedToUnpairOrDisconnect) {
             mUserTryedToUnpairOrDisconnect = userTryedToUnpairOrDisconnect;
             SharedPreferences sharedPreferences = mContext.getSharedPreferences(CORE_TOKEN_PREFS_FILE, Context.MODE_PRIVATE);
             sharedPreferences.edit().putBoolean(USER_DISCONNECTED_OR_UNPAIRED_KEY, mUserTryedToUnpairOrDisconnect).commit();
@@ -318,7 +337,7 @@ public class CoreIQUtil implements IWearableControllerListener, IWearableUserEve
     @Override
     public void onConnecting(IWearableController iWearableController) {
         Log.d(TAG, "onConnecting");
-        if(mOuterWearableControllerListener != null){
+        if (mOuterWearableControllerListener != null) {
             mOuterWearableControllerListener.onConnecting(iWearableController);
         }
     }
@@ -326,7 +345,7 @@ public class CoreIQUtil implements IWearableControllerListener, IWearableUserEve
     @Override
     public void onConnected(IWearableController iWearableController) {
         Log.d(TAG, "onConnected");
-        if(mOuterWearableControllerListener != null){
+        if (mOuterWearableControllerListener != null) {
             mOuterWearableControllerListener.onConnected(iWearableController);
         }
         UserEventController.subscribe(this);
@@ -336,15 +355,14 @@ public class CoreIQUtil implements IWearableControllerListener, IWearableUserEve
             for (SendToDeviceData sendToDeviceData : mSendToDeviceDataList) {
                 if (sendToDeviceData.expirationTime > now) {
                     String msg = sendToDeviceInternal(sendToDeviceData.r, sendToDeviceData.g, sendToDeviceData.b, sendToDeviceData.ledIntensity, sendToDeviceData.vibrationIntensity);
-                    Log.d(TAG, "connect: send To Device waiting list: "+msg);
-                }
-                else{
+                    Log.d(TAG, "connect: send To Device waiting list: " + msg);
+                } else {
                     Log.d(TAG, "connect: send To Device waiting list: expired");
                 }
             }
             mSendToDeviceDataList.clear();
         }
-        if(mConnectionListener != null){
+        if (mConnectionListener != null) {
             mConnectionListener.onConnect();
         }
     }
@@ -352,11 +370,11 @@ public class CoreIQUtil implements IWearableControllerListener, IWearableUserEve
     @Override
     public void onDisconnecting(IWearableController iWearableController) {
         Log.d(TAG, "onDisconnecting");
-        if(mOuterWearableControllerListener != null){
+        if (mOuterWearableControllerListener != null) {
             mOuterWearableControllerListener.onDisconnecting(iWearableController);
         }
         UserEventController.unsubscribe();
-        if(mConnectionListener != null){
+        if (mConnectionListener != null) {
             mConnectionListener.onDisconnecting();
         }
     }
@@ -364,57 +382,58 @@ public class CoreIQUtil implements IWearableControllerListener, IWearableUserEve
     @Override
     public void onDisconnected(IWearableController iWearableController) {
         Log.d(TAG, "onDisconnected");
-        if(mOuterWearableControllerListener != null){
+        if (mOuterWearableControllerListener != null) {
             mOuterWearableControllerListener.onDisconnected(iWearableController);
         }
     }
 
     @Override
     public void onPairedStatusChanged(IWearableController iWearableController, boolean b) {
-        Log.d(TAG, "onPairedStatusChanged: "+b);
-        if(mOuterWearableControllerListener != null){
+        Log.d(TAG, "onPairedStatusChanged: " + b);
+        if (mOuterWearableControllerListener != null) {
             mOuterWearableControllerListener.onPairedStatusChanged(iWearableController, b);
         }
     }
 
     @Override
     public void onBatteryStatusUpdate(IWearableController iWearableController, WearableBatteryStatus wearableBatteryStatus) {
-        if(mOuterWearableControllerListener != null){
+        if (mOuterWearableControllerListener != null) {
             mOuterWearableControllerListener.onBatteryStatusUpdate(iWearableController, wearableBatteryStatus);
         }
     }
 
     @Override
     public void onFailure(IWearableController iWearableController, com.intel.wearable.platform.core.error.Error error) {
-        Log.d(TAG, "onFailure: "+error.getErrorMessage());
-        if(mOuterWearableControllerListener != null){
+        Log.d(TAG, "onFailure: " + error.getErrorMessage());
+        if (mOuterWearableControllerListener != null) {
             mOuterWearableControllerListener.onFailure(iWearableController, error);
         }
     }
 
-    public interface ITappingEventListener{
+    public interface ITappingEventListener {
         void onDoubleTap();
+
         void onTrippleTap();
     }
 
 
-    public interface IConnectionListener{
+    public interface IConnectionListener {
         void onConnect();
+
         void onDisconnecting();
     }
 
-    public void setConnectionListener(IConnectionListener connectionListener)
-    {
+    public void setConnectionListener(IConnectionListener connectionListener) {
         mConnectionListener = connectionListener;
     }
 
-    public void setTappingEventListener( ITappingEventListener tappingEventListener){
+    public void setTappingEventListener(ITappingEventListener tappingEventListener) {
         mTappingEventListener = tappingEventListener;
     }
 
     @Override
     public void onWearableUserEvent(WearableUserEvent event) {
-        if(mTappingEventListener != null) {
+        if (mTappingEventListener != null) {
             WearableUserEvent.UserEvent userEvent = event.getUserEvent();
             if (userEvent.getUserEventType().equals(WearableUserEvent.UserEventType.TAPPING)) {
                 WearableUserEvent.TappingEvent tappingEvent = (WearableUserEvent.TappingEvent) userEvent;
@@ -436,15 +455,15 @@ public class CoreIQUtil implements IWearableControllerListener, IWearableUserEve
         }
     }
 
-    public WearableToken getCoreIQToken(){
+    public WearableToken getCoreIQToken() {
         return mCoreIQToken;
     }
 
-    public String getDeviceSoftwareRevision(){
+    public String getDeviceSoftwareRevision() {
         String deviceSoftwareRevision = null;
-        if(mController != null){
+        if (mController != null) {
             final WearableIdentity wearableIdentity = mController.getWearableIdentity();
-            if(wearableIdentity != null) {
+            if (wearableIdentity != null) {
                 deviceSoftwareRevision = wearableIdentity.getSoftwareRevision();
             }
         }

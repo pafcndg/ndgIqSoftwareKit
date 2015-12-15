@@ -8,7 +8,7 @@ import android.content.Context;
 public class AuthUtil {
 
 
-    private static final String CSW_CLOUD_SERVER_URL = "https://tsodev-tsosdk.td.wearables.infra-host.com";//"https://sys-tsosdk.td.wearables.infra-host.com";
+    private static final String CSW_CLOUD_SERVER_URL = "https://tsodev-tsosdk.td.wearables.infra-host.com";
 
     public static ICredentialsProvider getAuthProvider(Context context) {
         return CSWAuthCredentialsProvider.getInstance(context);
