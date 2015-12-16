@@ -33,6 +33,11 @@ class LeftMenuViewController : UITableViewController {
     let menuOptions = ["Thunder 7"]
     
     
+    // MARK: UI
+    @IBOutlet weak var nameLb:UILabel!
+    @IBOutlet weak var emailLb:UILabel!
+    
+    
     // MARK: ViewController lifecycle
     
     override func viewDidLoad() {
@@ -45,6 +50,8 @@ class LeftMenuViewController : UITableViewController {
     override func viewWillAppear(animated: Bool) {
         
         super.viewWillAppear(animated)
+        
+        setupUser()
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -64,9 +71,23 @@ class LeftMenuViewController : UITableViewController {
     
     // MARK: Setup
     
-    private func setupNavBar() {
+    private func setupUser() {
         
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        do {
+            let user = try LocalDataStoreManager.getUser()
+            
+            nameLb.text  = user.firstName
+            
+            emailLb.text = user.email
+        }
+        catch LocalDataStoreError.UnreachableObject {
+            
+            self.showAlert("BodyIQRefApp".localized, message: "no_user".localized, ok: "ok".localized, cancel: "cancel".localized,
+                cancelAction: nil, okAction: nil, completion: nil)
+        }
+        catch let error as NSError {
+            DLog("Unexpected error: \(error.description)")
+        }
     }
     
     
@@ -111,8 +132,9 @@ class LeftMenuViewController : UITableViewController {
         // Disable the cell's selection property
         cell.selectionStyle     = UITableViewCellSelectionStyle.None
         
+        // FIXME: Update this when more devices
         // Fill cell
-        cell.deviceLb.text      = menuOptions[indexPath.row]
+        cell.deviceLb.text      = GlobalStorage.token?.displayName ?? ""
         
         return cell;
     }

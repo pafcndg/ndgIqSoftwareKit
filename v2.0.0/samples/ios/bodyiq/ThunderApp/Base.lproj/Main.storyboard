@@ -1311,6 +1311,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="8Aj-qp-XBf"/>
+                    <connections>
+                        <outlet property="emailLb" destination="Gdw-ht-q4Z" id="kNx-OQ-Tol"/>
+                        <outlet property="nameLb" destination="XDK-Hs-8Y7" id="hGA-Ve-OUo"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bDs-It-fL1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
