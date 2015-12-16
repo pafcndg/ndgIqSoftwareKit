@@ -111,7 +111,7 @@ class ActivityViewController: TabVCTemplate, UITableViewDelegate, UITableViewDat
     
     func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
-        return 60.0
+        return 44.0
     }
     
     
