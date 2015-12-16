@@ -173,8 +173,17 @@ class ScannerViewController: UITableViewController {
                         // Save device description in global storage
                         GlobalStorage.deviceDescription =  deviceDescription
                         
-                        dispatch_async(dispatch_get_main_queue()) {
-                            self?.performSegueWithIdentifier(Constants.ScannerToSidebar, sender: nil)
+                        
+                        // We only want to push the segue if we are in the ScannerViewController
+                        if let topController = UIApplication.topViewController() {
+                            
+                            if topController is ScannerViewController {
+                                
+                                dispatch_async(dispatch_get_main_queue()) {
+                                    
+                                    self?.performSegueWithIdentifier(Constants.ScannerToSidebar, sender: nil)
+                                }
+                            }
                         }
                     })
                 }
@@ -269,6 +278,22 @@ class ScannerViewController: UITableViewController {
         
         return "devices".localized;
         
+    }
+    
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 70
+    }
+    
+    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        
+        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
+        
+        // Background
+        header.contentView.backgroundColor      = UIColor.whiteColor()
+        
+        // Text
+        header.textLabel!.textColor             = UIColor.init(hex: 0x747474)
+        header.textLabel!.font                  = UIFont(name: "HelveticaNeueLight ", size: 17)
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

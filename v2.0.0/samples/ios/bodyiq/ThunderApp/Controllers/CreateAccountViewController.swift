@@ -61,9 +61,11 @@ class CreateAccountViewController: UIViewController {
         super.viewWillAppear(animated)
         
         // TEST
+        /*
         self.nameTextField.text     = "pablo"
         self.emailTextField.text    = "pablo@aumentia.com"
         self.passwordTextField.text = "asdf"
+        */
     }
     
     override func viewWillDisappear(animated: Bool) {

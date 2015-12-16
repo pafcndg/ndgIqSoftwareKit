@@ -321,10 +321,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="pD3-t1-kmU">
-                                <rect key="frame" x="147" y="104" width="306" height="178"/>
+                                <rect key="frame" x="195.5" y="104" width="209" height="178"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="209" id="7lb-5h-Kst"/>
-                                    <constraint firstAttribute="height" constant="178" id="VRW-GA-YoP"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="209" id="7lb-5h-Kst"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="178" id="VRW-GA-YoP"/>
+                                    <constraint firstAttribute="width" secondItem="pD3-t1-kmU" secondAttribute="height" multiplier="209:178" id="vcO-XX-9Un"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sjb-Vu-6tt" customClass="ThunderTextField" customModule="BodyIQRefApp" customModuleProvider="target">
