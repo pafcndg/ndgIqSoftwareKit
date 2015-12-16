@@ -1,0 +1,10 @@
+framework module CDKDocStore {
+  umbrella header "CDKDocStore.h"
+
+  export *
+  module * { export * }
+}
+
+module CDKDocStore.Swift {
+    header "CDKDocStore-Swift.h"
+}

@@ -1,0 +1,6 @@
+framework module CDKCore {
+  umbrella header "CDKCore.h"
+
+  export *
+  module * { export * }
+}

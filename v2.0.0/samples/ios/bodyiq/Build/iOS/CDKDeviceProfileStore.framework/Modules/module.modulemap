@@ -1,0 +1,10 @@
+framework module CDKDeviceProfileStore {
+  umbrella header "CDKDeviceProfileStore.h"
+
+  export *
+  module * { export * }
+}
+
+module CDKDeviceProfileStore.Swift {
+    header "CDKDeviceProfileStore-Swift.h"
+}

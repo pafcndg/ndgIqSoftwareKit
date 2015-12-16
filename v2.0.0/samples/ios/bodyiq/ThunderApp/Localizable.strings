@@ -1,0 +1,45 @@
+/* 
+  Localizable.strings
+  BodyIQRefApp
+
+  Created by Pablo Garcia-Morato on 15/11/15.
+  Copyright © 2015 Intel. All rights reserved.
+*/
+
+"thunderapp"        = "ThunderApp";
+"bodyiqrefapp"      = "BodyIQRefApp";
+"loading"           = "Loading...";
+"devices"           = "Devices";
+"unknown"           = "Unknown";
+"ok"                = "Ok";
+"cancel"            = "Cancel";
+"connect"           = "Do you want to connect to %@";
+"connect_ble"       = "Please connect your bluetooth ...";
+"account_creation"  = "Account Creation";
+"create_account"    = "Create an Account";
+"login"             = "Login";
+"skip"              = "skip this for now";
+"name"              = "Name";
+"email_address"     = "Email Address";
+"password"          = "Password";
+"submit"            = "Submit";
+"fill_name"         = "Please fill name";
+"fill_email"        = "Please fill email";
+"fill_password"     = "Please fill password";
+"wrong_email"       = "Email is not well formed";
+"no_user"           = "User does not exist";
+"invalid_user"      = "User or password do not match";
+"current_weight"    = "Current Weight";
+"current_height"    = "Current Height";
+"sync_device"       = "Sync Your Device";
+"all_activity"      = "All Activity";
+"daily_tracker"     = "Daily Tracker";
+"my_devices"        = "My Device(s)";
+"device_details"    = "Device Details";
+"device_info"       = "Device Information";
+"invalid_height"    = "Please enter valid height";
+"invalid_weight"    = "Please enter valid weight";
+"latest_firmware"   = "Check latest available firmware";
+"up_to_date"        = "You have the latest firmware";
+"getting_info"      = "Getting Info";
+"gender"            = "Gender";

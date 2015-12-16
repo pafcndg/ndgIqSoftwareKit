@@ -1,0 +1,10 @@
+framework module CDKBlobStore {
+  umbrella header "CDKBlobStore.h"
+
+  export *
+  module * { export * }
+}
+
+module CDKBlobStore.Swift {
+    header "CDKBlobStore-Swift.h"
+}

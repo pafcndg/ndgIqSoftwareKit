@@ -1,0 +1,1 @@
+Provides the cloud document storage API. Documents are provided by the app as free-form JSON objects along with an ID. The app can then store or retrieve the documents using the provided IDs. No other queries (besides those using document ID) are supported at the moment.
