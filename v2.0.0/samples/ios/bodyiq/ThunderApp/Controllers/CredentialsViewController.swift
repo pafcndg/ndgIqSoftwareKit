@@ -78,10 +78,10 @@ class CredentialsViewController: UIViewController {
         super.viewWillAppear(animated)
         
         // TEST
-        
+        /*
         emailTextField.text = "pablo@aumentia.com"
         passwordTextField.text = "asdf"
-        
+        */
     }
     
     override func viewWillDisappear(animated: Bool) {

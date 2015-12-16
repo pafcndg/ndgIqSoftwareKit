@@ -214,6 +214,6 @@ class DeviceViewController: UIViewController {
     private func setupNavBar() {
         
         self.navigationController?.setNavigationBarHidden(false, animated: true)
-        self.navigationItem.customize("Thunder 7", target: self, action: Selector("back:"))
+        self.navigationItem.customize(GlobalStorage.token?.displayName ?? "", target: self, action: Selector("back:"))
     }
 }
