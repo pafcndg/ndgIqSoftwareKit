@@ -1,10 +1,6 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
-## CrittercismSDK
-
-See http://www.crittercism.com/terms-services/
-
 ## GoogleMaps
 
 If you use the Google Maps SDK for iOS in your application, you must

@@ -22,8 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             GMSServices.provideAPIKey("AIzaSyDfYADuz7ZOTuZO7I1GKh-Q9Ay3Lkv987k");
         #endif
 
-        Crittercism.enableWithAppID("5667f058cb99e10e00c7e9b6")
-        
         customAppearance()
         setupNotificationSettings()
         getOrAskCalendarPermission()
