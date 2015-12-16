@@ -36,6 +36,7 @@ class LeftMenuViewController : UITableViewController {
     // MARK: UI
     @IBOutlet weak var nameLb:UILabel!
     @IBOutlet weak var emailLb:UILabel!
+    @IBOutlet weak var table:UITableView!
     
     
     // MARK: ViewController lifecycle
@@ -61,12 +62,18 @@ class LeftMenuViewController : UITableViewController {
     
     override func viewDidAppear(animated: Bool) {
         
-        super.viewDidAppear(animated)        
+        super.viewDidAppear(animated)
+        
+        // Start observing
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("refresh:"), name: Constants.ConnectionStateNotification, object: nil)
     }
     
     override func viewDidDisappear(animated: Bool) {
         
         super.viewDidDisappear(animated)
+        
+        // Stop observing
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     // MARK: Setup
@@ -88,6 +95,10 @@ class LeftMenuViewController : UITableViewController {
         catch let error as NSError {
             DLog("Unexpected error: \(error.description)")
         }
+    }
+    
+    @objc private func refresh(notification: NSNotification) {
+        table.reloadData()
     }
     
     
@@ -134,7 +145,8 @@ class LeftMenuViewController : UITableViewController {
         
         // FIXME: Update this when more devices
         // Fill cell
-        cell.deviceLb.text      = GlobalStorage.token?.displayName ?? ""
+        cell.deviceLb.text          = GlobalStorage.token?.displayName ?? ""
+        cell.connectedState.image   = (GlobalStorage.isDeviceConnected ? UIImage(named: "green_indicator") : UIImage(named: "red_indicator"))
         
         return cell;
     }

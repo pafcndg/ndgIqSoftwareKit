@@ -1230,6 +1230,7 @@
                     <connections>
                         <outlet property="emailLb" destination="Gdw-ht-q4Z" id="kNx-OQ-Tol"/>
                         <outlet property="nameLb" destination="XDK-Hs-8Y7" id="hGA-Ve-OUo"/>
+                        <outlet property="table" destination="bfc-hr-foE" id="645-Fd-v40"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bDs-It-fL1" userLabel="First Responder" sceneMemberID="firstResponder"/>
