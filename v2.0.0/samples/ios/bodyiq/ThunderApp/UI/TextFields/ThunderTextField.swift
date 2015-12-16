@@ -16,7 +16,7 @@ typealias TextDisplayAnimationComplete  = (Bool) -> ()
 
 
 /// Custom UITextField with visual effect around the control's lower edge
-@IBDesignable class ThunderTextField: UITextField {
+@IBDesignable class ThunderTextField: ThunderTextFieldWithListeners {
     
 
     // MARK: IBInspectable
@@ -73,11 +73,6 @@ typealias TextDisplayAnimationComplete  = (Bool) -> ()
     private let inactiveBorderLayer             = CALayer()
     private let activeBorderLayer               = CALayer()
     private var activePlaceholderPoint: CGPoint = CGPointZero
-    
-    private var texdDidBeginEditing: DidBeginEditing?
-    private var textDidEndEditing: DidEndEditing?
-    private var textDisplayAnimationComplete: TextDisplayAnimationComplete?
-    private var textEntryAnimationComplete: TextEntryAnimationComplete?
     
     
     // MARK: - Overrides
@@ -268,28 +263,6 @@ typealias TextDisplayAnimationComplete  = (Bool) -> ()
     */
     override func prepareForInterfaceBuilder() {
         drawViewsForRect(frame)
-    }
-    
-    
-    // MARK: Listener
-    
-    /**
-    Events listener
-    
-    - parameter texdDidBeginEditing:          Called when begin editing
-    - parameter textDidEndEditing:            Called when end editing
-    - parameter textDisplayAnimationComplete: Called when text display animation is completed
-    - parameter textEntryAnimationComplete:   Called when text entry animation is completed
-    */
-    func addEventsListener(texdDidBeginEditing: DidBeginEditing,
-        textDidEndEditing: DidEndEditing,
-        textDisplayAnimationComplete: TextDisplayAnimationComplete,
-        textEntryAnimationComplete: TextEntryAnimationComplete) {
-            
-            self.texdDidBeginEditing = texdDidBeginEditing
-            self.textDidEndEditing = textDidEndEditing
-            self.textDisplayAnimationComplete = textDisplayAnimationComplete
-            self.textEntryAnimationComplete = textEntryAnimationComplete
     }
     
     

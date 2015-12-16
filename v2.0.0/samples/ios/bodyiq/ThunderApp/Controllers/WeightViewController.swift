@@ -18,9 +18,9 @@ class WeightViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: UI
     
-    @IBOutlet weak var weigth1: UITextField!
-    @IBOutlet weak var weigth2: UITextField!
-    @IBOutlet weak var weigth3: UITextField!
+    @IBOutlet weak var weigth1: ThunderTextFieldWithListeners!
+    @IBOutlet weak var weigth2: ThunderTextFieldWithListeners!
+    @IBOutlet weak var weigth3: ThunderTextFieldWithListeners!
     
     
     // MARK: Buttons
@@ -114,6 +114,65 @@ class WeightViewController: UIViewController, UITextFieldDelegate {
         weigth2.delegate = self
         weigth3.font = UIFont(name: "HelveticaNeue", size: 70)
         weigth3.delegate = self
+        
+
+        weigth1.addEventsListener( { [weak self] in
+            
+            if let field = self?.weigth1 {
+                
+                self?.textFieldDidBeginEditing(field)
+            }
+            
+            }, textDidEndEditing: { [weak self] in
+                
+                if let field = self?.weigth1 {
+                    
+                    self?.textFieldDidEndEditing(field)
+                }
+                
+            }, textDisplayAnimationComplete: { (Bool) -> () in
+                
+            }, textEntryAnimationComplete: { (Bool) -> () in
+        })
+        
+        weigth2.addEventsListener( { [weak self] in
+            
+            if let field = self?.weigth2 {
+                
+                self?.textFieldDidBeginEditing(field)
+            }
+            
+            }, textDidEndEditing: { [weak self] in
+                
+                if let field = self?.weigth2 {
+                    
+                    self?.textFieldDidEndEditing(field)
+                }
+                
+            }, textDisplayAnimationComplete: { (Bool) -> () in
+                
+            }, textEntryAnimationComplete: { (Bool) -> () in
+        })
+        
+        weigth3.addEventsListener( { [weak self] in
+            
+            if let field = self?.weigth3 {
+                
+                self?.textFieldDidBeginEditing(field)
+            }
+            
+            }, textDidEndEditing: { [weak self] in
+                
+                if let field = self?.weigth3 {
+                    
+                    self?.textFieldDidEndEditing(field)
+                }
+                
+            }, textDisplayAnimationComplete: { (Bool) -> () in
+                
+            }, textEntryAnimationComplete: { (Bool) -> () in
+        })
+        
         
         let tapGesture = UITapGestureRecognizer(target: self, action: "tap:")
         view.addGestureRecognizer(tapGesture)

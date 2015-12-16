@@ -78,10 +78,10 @@ class CredentialsViewController: UIViewController {
         super.viewWillAppear(animated)
         
         // TEST
-        /*
+        
         emailTextField.text = "pablo@aumentia.com"
         passwordTextField.text = "asdf"
-        */
+        
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -148,24 +148,6 @@ class CredentialsViewController: UIViewController {
     
     
     // MARK: Keyboard
-    
-    private func textFieldDidBeginEditing(textField: UITextField) {
-        animateViewMoving(true, moveValue: 100)
-    }
-    private func textFieldDidEndEditing(textField: UITextField) {
-        animateViewMoving(false, moveValue: 100)
-    }
-    
-    private func animateViewMoving (up:Bool, moveValue :CGFloat){
-        
-        let movementDuration:NSTimeInterval = 0.3
-        let movement:CGFloat = ( up ? -moveValue : moveValue)
-        UIView.beginAnimations( "animateView", context: nil)
-        UIView.setAnimationBeginsFromCurrentState(true)
-        UIView.setAnimationDuration(movementDuration )
-        self.view.frame = CGRectOffset(self.view.frame, 0,  movement)
-        UIView.commitAnimations()
-    }
     
     func tap(gesture: UITapGestureRecognizer) {
         

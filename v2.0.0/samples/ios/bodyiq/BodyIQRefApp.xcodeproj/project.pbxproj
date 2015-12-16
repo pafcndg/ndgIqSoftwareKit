@@ -22,6 +22,7 @@
 		618B80751C06063000977A7A /* TimeSeriesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618B80741C06063000977A7A /* TimeSeriesManager.swift */; };
 		618E0D511C0221CB000D2A46 /* MockNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618E0D501C0221CB000D2A46 /* MockNotifications.swift */; };
 		61A383051BFFA3CB00E8C4ED /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A383041BFFA3CB00E8C4ED /* NotificationManager.swift */; };
+		61B2645B1C21859300815E96 /* ThunderTextFieldWithListeners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B2645A1C21859300815E96 /* ThunderTextFieldWithListeners.swift */; };
 		61C16CED1C04D62F009323F8 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C16CEC1C04D62F009323F8 /* UserManager.swift */; };
 		61C675D91C1A1C3E0078D693 /* DeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C675D81C1A1C3E0078D693 /* DeviceViewController.swift */; };
 		61C675E41C1A23250078D693 /* DeviceDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C675E31C1A23250078D693 /* DeviceDetailsViewController.swift */; };
@@ -185,6 +186,7 @@
 		618B80741C06063000977A7A /* TimeSeriesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSeriesManager.swift; sourceTree = "<group>"; };
 		618E0D501C0221CB000D2A46 /* MockNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNotifications.swift; sourceTree = "<group>"; };
 		61A383041BFFA3CB00E8C4ED /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		61B2645A1C21859300815E96 /* ThunderTextFieldWithListeners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThunderTextFieldWithListeners.swift; sourceTree = "<group>"; };
 		61C16CEC1C04D62F009323F8 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		61C675D81C1A1C3E0078D693 /* DeviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceViewController.swift; sourceTree = "<group>"; };
 		61C675E31C1A23250078D693 /* DeviceDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceDetailsViewController.swift; sourceTree = "<group>"; };
@@ -440,6 +442,7 @@
 			children = (
 				DAE5C2431C0E2170008884EF /* ThunderTextField.swift */,
 				DA8A5F6E1C110D3D00EFA485 /* ThunderTextFieldNumber.swift */,
+				61B2645A1C21859300815E96 /* ThunderTextFieldWithListeners.swift */,
 			);
 			path = TextFields;
 			sourceTree = "<group>";
@@ -792,6 +795,7 @@
 				DAF5A4561C0A405A00289C40 /* SplashViewController.swift in Sources */,
 				DA24A0E01C0A09500057DA13 /* NSDate+Utils.swift in Sources */,
 				DAB6860C1C0FAEA800D6486E /* ThunderDropdownListWrapperView.swift in Sources */,
+				61B2645B1C21859300815E96 /* ThunderTextFieldWithListeners.swift in Sources */,
 				DA09913E1C0EA0A900B56934 /* ThunderDropdownMenu.swift in Sources */,
 				61FC0D9B1C20E1C4004844E0 /* MBProgressHUD.m in Sources */,
 				61C675D91C1A1C3E0078D693 /* DeviceViewController.swift in Sources */,
