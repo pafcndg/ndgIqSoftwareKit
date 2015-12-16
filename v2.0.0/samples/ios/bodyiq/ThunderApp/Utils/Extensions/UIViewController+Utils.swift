@@ -169,10 +169,14 @@ extension UIViewController {
     }
     
     func connect() {
-        setupNavBar("green_indicator")
+        dispatch_async(dispatch_get_main_queue()) {
+            self.setupNavBar("green_indicator")
+        }
     }
     
     func disconnect() {
-        setupNavBar("red_indicator")
+        dispatch_async(dispatch_get_main_queue()) {
+            self.setupNavBar("red_indicator")
+        }
     }
 }
