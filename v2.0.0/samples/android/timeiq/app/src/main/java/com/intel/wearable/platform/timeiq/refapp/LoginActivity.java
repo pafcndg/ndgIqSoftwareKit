@@ -5,9 +5,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
-import android.text.Html;
 import android.text.TextUtils;
-import android.text.method.LinkMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -33,10 +31,6 @@ public class LoginActivity extends Activity implements View.OnClickListener
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_user_login);
-
-        TextView signUpLink = (TextView) findViewById(R.id.sign_up_Link_textView);
-        signUpLink.setText(Html.fromHtml(getString(R.string.sign_up_link)));
-        signUpLink.setMovementMethod(LinkMovementMethod.getInstance());
 
         mWrongCredentials = (TextView) findViewById(R.id.wrong_credentials);
         mWrongCredentials.setVisibility(View.GONE);

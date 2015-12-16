@@ -168,7 +168,6 @@
     <string name="username_title">Email:</string>
     <string name="user_id_submit">Sign In</string>
 
-    <string name="sign_up_link"><![CDATA[<a href="https://tsodev-login.td.wearables.infra-host.com/accounts/new?client_id=ndgThunderDome">Sign up</a>]]></string>
 
 <!-- Settings -->
     <string name="action_about">About</string>
