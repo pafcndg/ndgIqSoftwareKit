@@ -14,14 +14,6 @@
 		</dict>
 		<dict>
 			<key>FooterText</key>
-			<string>See http://www.crittercism.com/terms-services/</string>
-			<key>Title</key>
-			<string>CrittercismSDK</string>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-		</dict>
-		<dict>
-			<key>FooterText</key>
 			<string>If you use the Google Maps SDK for iOS in your application, you must
 include the attribution text as part of a legal notices section in your
 application. Including legal notices as an independent menu item, or as

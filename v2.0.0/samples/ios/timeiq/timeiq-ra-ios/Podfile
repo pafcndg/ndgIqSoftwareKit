@@ -8,7 +8,6 @@ target 'timeiq-ra-ios' do
 pod 'TimeAgoInWords', '~> 2.0'
 pod 'SMDatePicker', '~> 0.0'
 pod 'GoogleMaps'
-pod 'CrittercismSDK'
 
 end
 
