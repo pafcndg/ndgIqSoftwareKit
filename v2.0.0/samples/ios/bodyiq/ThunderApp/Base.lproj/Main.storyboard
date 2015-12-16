@@ -537,7 +537,6 @@
                         <color key="backgroundColor" red="0.01176470588" green="0.22352941179999999" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="c3V-tH-w5o" firstAttribute="centerY" secondItem="y5a-CH-iWA" secondAttribute="centerY" id="1eF-1U-Td1"/>
                             <constraint firstItem="c3V-tH-w5o" firstAttribute="height" secondItem="y5a-CH-iWA" secondAttribute="height" multiplier="0.8" id="QuC-Ju-XAg"/>
                             <constraint firstItem="c3V-tH-w5o" firstAttribute="width" secondItem="y5a-CH-iWA" secondAttribute="width" id="SED-hA-ZEC"/>
                             <constraint firstItem="bEj-jW-M6Y" firstAttribute="top" relation="greaterThanOrEqual" secondItem="c3V-tH-w5o" secondAttribute="bottom" id="XKU-Om-01p"/>
@@ -571,75 +570,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1DK-8t-FqJ" userLabel="Main Stack">
-                                <rect key="frame" x="0.0" y="60" width="600" height="480"/>
+                                <rect key="frame" x="0.0" y="104" width="600" height="480"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QLu-6A-gFd" userLabel="Helper1">
-                                        <rect key="frame" x="275" y="0.0" width="50" height="24"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="curie_chip" translatesAutoresizingMaskIntoConstraints="NO" id="i10-K3-Oo9">
-                                        <rect key="frame" x="240" y="24" width="120" height="120"/>
+                                        <rect key="frame" x="240" y="0.0" width="120" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="i10-K3-Oo9" secondAttribute="height" multiplier="1:1" id="Jia-3N-hOZ"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sync with your Intel(R) Curie(TM) to track your fitness session" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uAf-hU-dcJ">
-                                        <rect key="frame" x="30" y="144" width="540" height="48"/>
+                                        <rect key="frame" x="108.5" y="120" width="383.5" height="288"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eHs-M9-LEr" userLabel="Terms Main Stack">
-                                        <rect key="frame" x="300" y="192" width="0.0" height="182"/>
-                                        <subviews>
-                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By continuing, you agree to the" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a69-Ab-BxX">
-                                                <rect key="frame" x="-72" y="0.0" width="145" height="0.0"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="0Wk-3p-8EG" userLabel="Terms Links Stack">
-                                                <rect key="frame" x="-72" y="0.0" width="145" height="0.0"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epU-HS-qlh">
-                                                        <rect key="frame" x="0.0" y="0.0" width="75" height="0.0"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
-                                                        <state key="normal" title="Terms of Service">
-                                                            <color key="titleColor" red="0.035294117649999998" green="0.47058823529999999" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="skipButtonTap" destination="1bo-RX-doL" eventType="touchUpInside" id="myj-Qo-TYF"/>
-                                                        </connections>
-                                                    </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&amp;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mP0-d1-9cN">
-                                                        <rect key="frame" x="75" y="0.0" width="7" height="0.0"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
-                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RuM-PU-59M">
-                                                        <rect key="frame" x="82" y="0.0" width="63" height="0.0"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
-                                                        <state key="normal" title="Privacy Policy">
-                                                            <color key="titleColor" red="0.035294117649999998" green="0.47058823529999999" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="skipButtonTap" destination="1bo-RX-doL" eventType="touchUpInside" id="yLl-R6-vKx"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="0Wk-3p-8EG" firstAttribute="centerX" secondItem="eHs-M9-LEr" secondAttribute="centerX" id="DJ9-aA-IzD"/>
-                                            <constraint firstItem="a69-Ab-BxX" firstAttribute="top" secondItem="eHs-M9-LEr" secondAttribute="top" id="T9w-Qv-u44"/>
-                                        </constraints>
-                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dle-2i-RjY" userLabel="Button1 Stack">
-                                        <rect key="frame" x="180" y="374" width="240" height="48"/>
+                                        <rect key="frame" x="165" y="408" width="270" height="72"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVQ-lv-4gy" customClass="ThunderBtnType1" customModule="BodyIQRefApp" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="240" height="48"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="270" height="72"/>
                                                 <color key="backgroundColor" red="0.0" green="0.51372549020000002" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <state key="normal" title="Sync My Device"/>
@@ -648,56 +597,22 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="YVQ-lv-4gy" firstAttribute="centerX" secondItem="dle-2i-RjY" secondAttribute="centerX" id="513-Dy-jtx"/>
-                                            <constraint firstItem="YVQ-lv-4gy" firstAttribute="centerY" secondItem="dle-2i-RjY" secondAttribute="centerY" id="9WK-9M-xsc"/>
-                                        </constraints>
-                                    </stackView>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="edr-RY-dp7" userLabel="Helper2">
-                                        <rect key="frame" x="275" y="422" width="50" height="10"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rLn-NN-qF7" userLabel="Button2 Stack">
-                                        <rect key="frame" x="180" y="432" width="240" height="48"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shr-3w-awS" customClass="ThunderBtnType2" customModule="BodyIQRefApp" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="240" height="48"/>
-                                                <color key="backgroundColor" red="0.0" green="0.51372549020000002" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                <state key="normal" title="Sync Later">
-                                                    <color key="titleColor" red="0.036007424619999999" green="0.21722410149999999" blue="0.404581633" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="loginButtonTap" destination="1bo-RX-doL" eventType="touchUpInside" id="pBg-Or-Zte"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="shr-3w-awS" firstAttribute="centerY" secondItem="rLn-NN-qF7" secondAttribute="centerY" id="iWn-pD-NVP"/>
-                                            <constraint firstItem="shr-3w-awS" firstAttribute="centerX" secondItem="rLn-NN-qF7" secondAttribute="centerX" id="jfC-uY-E6x"/>
-                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="dle-2i-RjY" firstAttribute="height" secondItem="1DK-8t-FqJ" secondAttribute="height" multiplier="0.1" id="1dE-5p-Y1q"/>
-                                    <constraint firstItem="QLu-6A-gFd" firstAttribute="height" secondItem="1DK-8t-FqJ" secondAttribute="height" multiplier="0.05" id="A2g-YB-Kk7"/>
-                                    <constraint firstItem="uAf-hU-dcJ" firstAttribute="width" secondItem="1DK-8t-FqJ" secondAttribute="width" multiplier="0.9" id="FIs-Ca-Vi5"/>
-                                    <constraint firstItem="edr-RY-dp7" firstAttribute="height" secondItem="1DK-8t-FqJ" secondAttribute="height" multiplier="0.02" id="G50-ox-4tm"/>
-                                    <constraint firstItem="uAf-hU-dcJ" firstAttribute="height" secondItem="1DK-8t-FqJ" secondAttribute="height" multiplier="0.1" id="QGM-EE-WxU"/>
-                                    <constraint firstItem="rLn-NN-qF7" firstAttribute="width" secondItem="1DK-8t-FqJ" secondAttribute="width" multiplier="0.4" id="ZlM-Yw-GN3"/>
-                                    <constraint firstItem="dle-2i-RjY" firstAttribute="width" secondItem="1DK-8t-FqJ" secondAttribute="width" multiplier="0.4" id="gWg-dn-iRx"/>
-                                    <constraint firstItem="i10-K3-Oo9" firstAttribute="height" secondItem="1DK-8t-FqJ" secondAttribute="height" multiplier="0.25" id="lxM-rt-aNF"/>
-                                    <constraint firstItem="rLn-NN-qF7" firstAttribute="height" secondItem="1DK-8t-FqJ" secondAttribute="height" multiplier="0.1" id="rJ0-Xs-ZyZ"/>
+                                    <constraint firstItem="dle-2i-RjY" firstAttribute="height" secondItem="1DK-8t-FqJ" secondAttribute="height" multiplier="0.15" id="XWg-RF-Mcy"/>
+                                    <constraint firstItem="dle-2i-RjY" firstAttribute="width" secondItem="1DK-8t-FqJ" secondAttribute="width" multiplier="0.45" id="XkQ-Zb-gn6"/>
+                                    <constraint firstItem="i10-K3-Oo9" firstAttribute="height" secondItem="1DK-8t-FqJ" secondAttribute="height" multiplier="0.25" id="gW0-AD-AyX"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.01176470588" green="0.22352941179999999" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="1DK-8t-FqJ" firstAttribute="centerY" secondItem="nCC-bf-0jr" secondAttribute="centerY" id="3Ju-bq-97J"/>
-                            <constraint firstItem="1DK-8t-FqJ" firstAttribute="centerX" secondItem="nCC-bf-0jr" secondAttribute="centerX" id="Vmi-i3-hOV"/>
-                            <constraint firstItem="1DK-8t-FqJ" firstAttribute="height" secondItem="nCC-bf-0jr" secondAttribute="height" multiplier="0.8" id="dFT-G4-PHC"/>
-                            <constraint firstItem="1DK-8t-FqJ" firstAttribute="width" secondItem="nCC-bf-0jr" secondAttribute="width" id="j7a-mZ-Ocj"/>
+                            <constraint firstItem="1DK-8t-FqJ" firstAttribute="height" secondItem="nCC-bf-0jr" secondAttribute="height" multiplier="0.8" id="Qa1-UQ-toK"/>
+                            <constraint firstItem="1DK-8t-FqJ" firstAttribute="top" secondItem="skd-zQ-Bhn" secondAttribute="bottom" constant="40" id="VnG-FI-8Mu"/>
+                            <constraint firstItem="1DK-8t-FqJ" firstAttribute="centerX" secondItem="nCC-bf-0jr" secondAttribute="centerX" id="XST-bp-VoB"/>
+                            <constraint firstItem="1DK-8t-FqJ" firstAttribute="width" secondItem="nCC-bf-0jr" secondAttribute="width" id="jbo-9k-fq8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="SyncDevice" id="b0A-ff-O5y"/>
@@ -1403,9 +1318,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="568" height="508"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hFZ-SX-xTV" userLabel="Main Stack">
-                                <rect key="frame" x="0.0" y="104" width="568" height="407"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hFZ-SX-xTV" userLabel="Main Stack">
+                                <rect key="frame" x="0.0" y="50" width="568" height="407"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lxa-zj-4mA">
+                                        <rect key="frame" x="0.0" y="0.0" width="568" height="0.0"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oFL-4i-lg3" userLabel="Device Details">
                                         <rect key="frame" x="0.0" y="0.0" width="568" height="67"/>
                                         <subviews>
@@ -1665,6 +1584,11 @@
                         <segue destination="E5H-G3-uIP" kind="show" identifier="deviceToFirmware" id="8GJ-gZ-8CP"/>
                     </connections>
                 </viewController>
+                <view contentMode="scaleToFill" id="CQb-gj-9Qw">
+                    <rect key="frame" x="0.0" y="0.0" width="568" height="0.0"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VPS-dU-rSR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2012" y="3547"/>
@@ -1782,7 +1706,7 @@
                                                 <rect key="frame" x="147" y="0.0" width="306" height="90"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter your height" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jf3-wz-1x2">
-                                                <rect key="frame" x="224.5" y="90" width="151.5" height="30"/>
+                                                <rect key="frame" x="225" y="90" width="152" height="30"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1868,7 +1792,6 @@
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="nHT-4c-heI" firstAttribute="top" relation="greaterThanOrEqual" secondItem="aeJ-Ur-WXf" secondAttribute="bottom" id="CCL-36-Te8"/>
-                            <constraint firstItem="aeJ-Ur-WXf" firstAttribute="centerY" secondItem="LMT-Re-HlF" secondAttribute="centerY" id="FeY-V4-wtx"/>
                             <constraint firstItem="aeJ-Ur-WXf" firstAttribute="top" secondItem="LMT-Re-HlF" secondAttribute="topMargin" constant="80" id="KQL-0Q-Twq"/>
                             <constraint firstItem="aeJ-Ur-WXf" firstAttribute="centerX" secondItem="LMT-Re-HlF" secondAttribute="centerX" id="SY5-Go-2qZ"/>
                             <constraint firstItem="aeJ-Ur-WXf" firstAttribute="height" secondItem="LMT-Re-HlF" secondAttribute="height" multiplier="0.8" id="dfM-nV-TWE"/>
