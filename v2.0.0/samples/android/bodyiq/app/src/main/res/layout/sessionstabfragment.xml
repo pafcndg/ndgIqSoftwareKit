@@ -1,0 +1,51 @@
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/darkblue">
+
+    <ScrollView android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:showDividers="middle"
+            android:divider="?android:dividerHorizontal"
+            android:animateLayoutChanges="true"
+            android:layout_margin="20dp"
+        >
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- The "empty" view to show when there are no items in the "list" view defined above. -->
+    <TextView android:id="@+id/empty"
+        style="?android:textAppearanceMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:paddingTop="100dp"
+        android:text="@string/nosessions"
+        android:divider="@color/lightgray2"
+        android:textColor="@color/white" />
+
+
+    <Button
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/start_session"
+        android:layout_margin="15dp"
+        android:shadowColor="@color/black"
+        android:id="@+id/sessionbutton"
+        android:layout_gravity="bottom|right"/>
+
+
+
+
+
+</FrameLayout>

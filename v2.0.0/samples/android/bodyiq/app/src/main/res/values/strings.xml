@@ -1,0 +1,126 @@
+<resources>
+    <string name="app_name">BodyIQ RefApp</string>
+    <string name="action_settings">Settings</string>
+    <string name="login">Login</string>
+    <string name="skiplogin">or skip this for now</string>
+    <string name="createaccount">Create an Account</string>
+    <string name="accountcreation">Account Creation</string>
+    <string name="accountcomment">Please provide a valid name and email address</string>
+    <string name="name">Name</string>
+    <string name="genderdefault">Male</string>
+    <string name="email">Email Address</string>
+    <string name="password">Password</string>
+    <string name="submit">Submit</string>
+    <string name="weight">Weight</string>
+    <string name="height">Height</string>
+    <string name="desiredweight">Desired Weight</string>
+    <string name="weightunit">kg</string>
+    <string name="heightunit">cm</string>
+    <string name="invalidweight">Invalid Height</string>
+    <string name="invalidheight">Invalid Weight</string>
+    <string name="currentweight">Current Weight</string>
+    <string name="currentheight">Current Height</string>
+    <string name="fitnessgaols">Fitness Goals</string>
+    <string name="hintweight">Please fill your weight</string>
+    <string name="hintheight">Please fill your height</string>
+    <string name="syncdescription">Sync with your device to accurately track your fitness sessions</string>
+    <string name="continuetos">By continuing, you agree to the</string>
+    <string name="termsofservice">Terms of Service</string>
+    <string name="and">&amp;</string>
+    <string name="privacypolicy">Privacy Policy</string>
+    <string name="syncdevice">Sync My Device</string>
+    <string name="synclater">Sync Later</string>
+    <string name="nodevices">No Devices</string>
+    <string name="noname">No Name</string>
+    <string name="scanning">Scanning...</string>
+    <string name="bledevices">BLE Devices</string>
+    <string name="syncdevicetitle">Sync your device</string>
+
+    <string name="dailytracker">Daily Tracker</string>
+    <string name="allactivity">All Activities</string>
+    <string name="sessions">Sessions</string>
+    <string name="mydevices">My Device(s)</string>
+    <string name="adddevice">Add Device</string>
+    <string name="connected">Connected</string>
+    <string name="disconnected">Disconnected</string>
+
+
+    <string name="devicedetails">Device Details</string>
+    <string name="devicedetailsdesc">Specific info about your device</string>
+    <string name="notifications">Notifications</string>
+    <string name="notificationsdesc">Set and disable subscriptions</string>
+    <string name="console">Console</string>
+    <string name="consoledesc">View real-time data flow</string>
+
+    <string name="userevents">User Events</string>
+    <string name="usereventsdesc">Tapping or Button pressed</string>
+    <string name="systemevents">System Events</string>
+    <string name="systemeventsdesc">Wearable system events</string>
+
+
+    <string name="actions">Actions</string>
+    <string name="firmwareupdate">Firmware Update</string>
+    <string name="disconnect">Disconnect</string>
+
+
+    <string name="devicename">Device Name</string>
+    <string name="deviceaddress">Device Address</string>
+    <string name="manufacturing">Manufacturing Name</string>
+    <string name="modelname">Model Name</string>
+    <string name="serialnumber">Serial Number</string>
+    <string name="firmwarerevision">Firmware Revision</string>
+    <string name="softwarerevision">Software Revision</string>
+    <string name="hardwarerevision">Hardware Revision</string>
+    <string name="deviceinfo">Device Information</string>
+
+
+    <string name="dailygoalreached">Daily Goal Reached</string>
+    <string name="dailygoalreacheddesc">Send alert when daily goal reached</string>
+    <string name="drinkwater">Drink Water</string>
+    <string name="drinkwaterdesc">Remind me hourly to drink water</string>
+
+    <string name="subscriptions">Subscriptions</string>
+    <string name="batterylevellow">Battery Level Low</string>
+    <string name="batterylevellowdesc">Notify when battery level is low</string>
+    <string name="manualnotifications">Manual Notifications</string>
+    <string name="sendled">Send LED Notification</string>
+    <string name="sendleddesc">Manually send a notification to your device</string>
+    <string name="sendhaptic">Send Haptic Notification</string>
+    <string name="sendhapticdesc">Manually send a notification to your device</string>
+    <string name="nosessions">No Sessions</string>
+
+
+    <string name="newversion">"New Version Available"</string>
+    <string name="download">Download</string>
+    <string name="newversiondownloaded">New version downloaded, Upload to device?</string>
+    <string name="upload">Upload</string>
+    <string name="versioninstalled">Version installed successfully on device</string>
+    <string name="failedversion">New version failed to install</string>
+    <string name="checkupdatedesc">Check for a new version</string>
+    <string name="checkupdate">Check</string>
+
+    <string name="minpassword">Please enter minimum 5 characters password</string>
+    <string name="validemail">Please enter valid email address</string>
+    <string name="firstandlast">Please enter first and last name</string>
+    <string name="wrongmailorpassword">Wrong email or password</string>
+    <string name="needsignin">You need to create an account</string>
+
+
+    <string name="systemcrash">Wearable system crash:\u0020</string>
+    <string name="systemboot">Wearable boot:\u0020</string>
+    <string name="systemshutdown">Wearable shutdown:\u0020</string>
+    <string name="systembatterylow">Wearable battery low alert:\u0020</string>
+
+    <string name="tappingevent">Tapping event:\u0020</string>
+    <string name="buttonevent">Button event:\u0020</string>
+
+
+
+
+    <string-array name="genderoptions">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Unknown</item>
+    </string-array>
+
+</resources>
