@@ -174,13 +174,6 @@ class DeviceViewController: UIViewController {
         super.viewWillAppear(animated)
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        
-        userEvents.unsubscribe()
-        
-        super.viewWillDisappear(animated)
-    }
-    
     override func viewDidAppear(animated: Bool) {
         
         super.viewDidAppear(animated)
@@ -188,9 +181,17 @@ class DeviceViewController: UIViewController {
         // Start observing
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("setConnectionState:"), name: Constants.ConnectionStateNotification, object: nil)
         
-        connect()
+        setConnectionStatusIndicator()
         
         setupNavBar()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+    
+        super.viewWillDisappear(animated)
+        
+        userEvents.unsubscribe()
+        systemEvents.unsubscribe()
     }
     
     override func viewDidDisappear(animated: Bool) {

@@ -47,26 +47,26 @@ class FirmwareUpdateViewController: UITableViewController {
         setupInitialUI()
     }
 
-    override func viewDidAppear(animated: Bool) {
-        
-        super.viewDidAppear(animated)
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        
-        super.viewWillDisappear(animated)
-    }
-    
     override func viewWillAppear(animated: Bool) {
         
         super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        super.viewDidAppear(animated)
         
         // Start observing
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("setConnectionState:"), name: Constants.ConnectionStateNotification, object: nil)
         
         setupNavBar()
         
-        connect()
+        setConnectionStatusIndicator()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        
+        super.viewWillDisappear(animated)
     }
     
     override func viewDidDisappear(animated: Bool) {

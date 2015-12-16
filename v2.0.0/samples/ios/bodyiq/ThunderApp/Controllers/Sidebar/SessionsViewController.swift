@@ -52,6 +52,11 @@ class SessionsViewController: TabVCTemplate, UITableViewDelegate, UITableViewDat
         selectedTab = 1
     }
     
+    override func viewWillAppear(animated: Bool) {
+        
+        super.viewWillAppear(animated)
+    }
+    
     override func viewDidAppear(animated: Bool) {
         
         super.viewDidAppear(animated)
@@ -59,7 +64,11 @@ class SessionsViewController: TabVCTemplate, UITableViewDelegate, UITableViewDat
         // Start observing
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("setConnectionState:"), name: Constants.ConnectionStateNotification, object: nil)
         
-        connect()
+        setConnectionStatusIndicator()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
     }
     
     override func viewDidDisappear(animated: Bool) {

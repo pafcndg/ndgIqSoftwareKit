@@ -166,6 +166,8 @@ class ScannerViewController: UITableViewController {
                     
                     DLog("Connected")
                     
+                    GlobalStorage.isDeviceConnected = true
+                    
                     NSNotificationCenter.defaultCenter().postNotificationName(Constants.ConnectionStateNotification, object: self, userInfo: [Constants.IsConnectionState:true])
                     
                     GlobalStorage.controller?.deviceDescription( { [weak self] (deviceDescription) -> () in
@@ -190,6 +192,8 @@ class ScannerViewController: UITableViewController {
                 else {
                     
                     DLog("Disconnected")
+                    
+                    GlobalStorage.isDeviceConnected = false
                     
                     NSNotificationCenter.defaultCenter().postNotificationName(Constants.ConnectionStateNotification, object: self, userInfo: [Constants.IsConnectionState:false])
                     

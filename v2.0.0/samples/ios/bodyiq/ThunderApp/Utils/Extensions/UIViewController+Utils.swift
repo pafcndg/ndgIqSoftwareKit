@@ -151,7 +151,7 @@ extension UIViewController {
 
 extension UIViewController {
     
-    func setupNavBar(image: String) {
+    private func setupNavBar(image: String) {
         
         self.navigationItem.rightBarButtonItem = nil
         
@@ -180,15 +180,25 @@ extension UIViewController {
         }
     }
     
-    func connect() {
+    private func connect() {
         dispatch_async(dispatch_get_main_queue()) {
             self.setupNavBar("green_indicator")
         }
     }
     
-    func disconnect() {
+    private func disconnect() {
         dispatch_async(dispatch_get_main_queue()) {
             self.setupNavBar("red_indicator")
+        }
+    }
+    
+    func setConnectionStatusIndicator() {
+        
+        if GlobalStorage.isDeviceConnected {
+            connect()
+        }
+        else {
+            disconnect()
         }
     }
 }
