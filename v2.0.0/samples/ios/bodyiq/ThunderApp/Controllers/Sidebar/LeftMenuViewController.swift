@@ -34,6 +34,7 @@ class LeftMenuViewController : UITableViewController {
     
     
     // MARK: UI
+    
     @IBOutlet weak var nameLb:UILabel!
     @IBOutlet weak var emailLb:UILabel!
     @IBOutlet weak var table:UITableView!
@@ -76,6 +77,7 @@ class LeftMenuViewController : UITableViewController {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
+    
     // MARK: Setup
     
     private func setupUser() {
@@ -98,7 +100,10 @@ class LeftMenuViewController : UITableViewController {
     }
     
     @objc private func refresh(notification: NSNotification) {
-        table.reloadData()
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            self.table.reloadData()
+        }
     }
     
     

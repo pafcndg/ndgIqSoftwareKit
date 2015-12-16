@@ -16,6 +16,7 @@ class DeviceViewController: UIViewController {
     lazy var systemEvents   = SystemEventsManager.sharedInstance
     
     // MARK: UI
+    @IBOutlet weak var connectDisconnectLb: UILabel!
     
     
     // MARK: Buttons
@@ -41,65 +42,6 @@ class DeviceViewController: UIViewController {
         print("Go to firmware updates")
         
         performSegueWithIdentifier(Constants.DeviceToFirmware, sender: nil)
-        
-        /*
-        var loading     = MBProgressHUD()
-        loading.mode    = MBProgressHUDMode.Determinate
-        
-        let currentVersion = firmware.deviceFirmware()
-        
-        let message1 = "Current installed firmware: \(currentVersion). \n\n Check if there's any update?"
-        
-        showAlert("Firmware", message: message1, ok: "Yes", cancel: "No", cancelAction: { (UIAlertAction) -> () in
-            
-            }, okAction: { [weak self] (UIAlertAction) -> () in
-            
-                self?.firmware.latestCloudFirmwareInfo({firmware in
-                    
-                    dispatch_async(dispatch_get_main_queue()) {
-                    
-                        let version = firmware.version.componentsSeparatedByString(".")
-                        
-                        let v = currentVersion.substringWithRange(Range(start: (currentVersion.endIndex.advancedBy(-4)), end: currentVersion.endIndex))
-                        
-                        if version.last == v {
-                            self?.showAlert("Firmware", message: "You have the latest version.", ok: "Yes", cancel: "No", cancelAction: nil, okAction: nil, completion: nil)
-                        }
-                        else {
-                            self?.showAlert("Firmware", message: "There's a new version (\(firmware.version)). Do you want to update your device?", ok: "Yes", cancel: "No", cancelAction: nil, okAction: { (UIAlertAction) -> () in
-                                
-                                self?.firmware.downloadFirmware( { success in
-                                    
-                                    DLog("Downloading ...")
-                                    
-                                   loading           = MBProgressHUD.showHUDAddedTo(self!.view, animated: true)
-                                   loading.labelText = "Downloading started ..."
-                                    
-                                    }, failure: {failure in
-                                        
-                                        DLog("Failed to download:  \(failure.getCloudError())")
-                                        
-                                        loading.labelText = "Failed to download:  \(failure.getCloudError())"
-                                        
-                                    }, progress: {progress in
-                                        
-                                        DLog("Download Percent complete: \(progress)%")
-                                        
-                                        loading.progress = Float(progress)
-                                        
-                                    }, completed: {completed in
-                                        
-                                        DLog("Completed download: \(completed.getFileName()))")
-                                        
-                                        loading.hide(true)
-                                })
-                                
-                            }, completion: nil)
-                        }
-                    }//dispatch_async
-                })
-            }, completion: nil)
-            */
     }
     
     @IBAction func UserEventsButtonTap() {
@@ -154,9 +96,38 @@ class DeviceViewController: UIViewController {
     
     @IBAction func DisconnectButtonTap() {
         
-        print("Disconnect")
-        
-        GlobalStorage.controller?.disconnectFromController(nil)
+        if GlobalStorage.isDeviceConnected {
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                
+                self.connectDisconnectLb.text = "conn".localized
+                
+                GlobalStorage.controller?.disconnectFromController(nil)
+                
+                NSNotificationCenter.defaultCenter().postNotificationName(Constants.ConnectionStateNotification, object: self, userInfo: [Constants.IsConnectionState:false])
+            }
+        }
+        else {
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                
+                self.connectDisconnectLb.text = "dis".localized
+                
+                if let controller = GlobalStorage.controller?.controller {
+                    
+                    controller.connect({(wearableToken, error) -> () in
+                        
+                        if let err = error {
+                            
+                             DLog("\(err)")
+                        }
+                        else {
+                            NSNotificationCenter.defaultCenter().postNotificationName(Constants.ConnectionStateNotification, object: self, userInfo: [Constants.IsConnectionState:true])
+                        }
+                    })
+                }
+            }
+        }
     }
     
     
@@ -184,6 +155,8 @@ class DeviceViewController: UIViewController {
         setConnectionStatusIndicator()
         
         setupNavBar()
+        
+        self.connectDisconnectLb.text = GlobalStorage.isDeviceConnected ? "dis".localized : "conn".localized
     }
     
     override func viewWillDisappear(animated: Bool) {

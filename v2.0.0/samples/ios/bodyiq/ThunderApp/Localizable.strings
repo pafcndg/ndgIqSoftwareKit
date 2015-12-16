@@ -43,3 +43,5 @@
 "up_to_date"        = "You have the latest firmware";
 "getting_info"      = "Getting Info";
 "gender"            = "Gender";
+"conn"              = "Connect";
+"dis"               = "Disconnect";

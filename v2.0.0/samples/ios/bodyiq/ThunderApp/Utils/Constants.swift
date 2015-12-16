@@ -33,8 +33,8 @@ struct Constants {
     static let DeviceToFirmware             = "deviceToFirmware"
     
     // MARK: Notifications
-    static let ConnectionStateNotification  = "connectionStateNotification"
-    static let IsConnectionState            = "isConnectionState"
+    static let ConnectionStateNotification   = "connectionStateNotification"
+    static let IsConnectionState             = "isConnectionState"
     
     // MARK: Color palette
     static let BackgroundColor              = 0x033960 // R: 3 G: 57 B: 96

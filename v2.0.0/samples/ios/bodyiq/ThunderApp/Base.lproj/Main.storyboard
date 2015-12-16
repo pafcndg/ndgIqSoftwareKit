@@ -1582,6 +1582,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="sOZ-5k-Yge"/>
                     <connections>
+                        <outlet property="connectDisconnectLb" destination="Zmh-Uw-mcr" id="bFE-I5-jUx"/>
                         <segue destination="xCw-tV-iC5" kind="show" identifier="deviceToInfo" id="qqJ-bd-I0Q"/>
                         <segue destination="E5H-G3-uIP" kind="show" identifier="deviceToFirmware" id="8GJ-gZ-8CP"/>
                     </connections>
