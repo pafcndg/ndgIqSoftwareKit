@@ -18,6 +18,7 @@ struct GlobalStorage {
     static var controller:ControllerManager?        = nil
     static var user:UserManager?                    = nil
     static var ts:TimeSeriesManager?                = nil
+    static var isDeviceConnected:Bool               = false
     
     func destroy() {
         

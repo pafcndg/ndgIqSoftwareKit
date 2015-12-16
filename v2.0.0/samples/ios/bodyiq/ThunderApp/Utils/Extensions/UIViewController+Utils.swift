@@ -13,6 +13,9 @@ typealias CancelActionPerformed = (UIAlertAction) -> ()
 typealias OkActionPerformed     = (UIAlertAction) -> ()
 typealias AlertPerformed        = () -> ()
 
+
+// MARK: Status Bar
+
 extension UIViewController {
     
     public override class func initialize() {
@@ -71,6 +74,9 @@ extension UIViewController {
     }
 }
 
+
+// MARK - Alert
+
 extension UIViewController {
     
     func showAlert(title: String, message: String, ok: String, cancel: String,
@@ -115,6 +121,9 @@ extension UIViewController {
     }
 }
 
+
+// MARK - Text Field
+
 extension UIViewController {
     
     func textFieldDidBeginEditing(textField: UITextField) {
@@ -137,9 +146,12 @@ extension UIViewController {
     }
 }
 
+
+// MARK - Connection state 
+
 extension UIViewController {
     
-    func setupNavBar(image: String) {
+    private func setupNavBar(image: String) {
         
         self.navigationItem.rightBarButtonItem = nil
         
@@ -168,15 +180,25 @@ extension UIViewController {
         }
     }
     
-    func connect() {
+    private func connect() {
         dispatch_async(dispatch_get_main_queue()) {
             self.setupNavBar("green_indicator")
         }
     }
     
-    func disconnect() {
+    private func disconnect() {
         dispatch_async(dispatch_get_main_queue()) {
             self.setupNavBar("red_indicator")
+        }
+    }
+    
+    func setConnectionStatusIndicator() {
+        
+        if GlobalStorage.isDeviceConnected {
+            connect()
+        }
+        else {
+            disconnect()
         }
     }
 }

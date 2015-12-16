@@ -13,6 +13,7 @@
 		6118DCE01C1738C700B5B2BC /* SideBarNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6118DCDF1C1738C700B5B2BC /* SideBarNavigationController.swift */; };
 		6135CC171BF8F2AB000455BF /* ControllerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6135CC161BF8F2AB000455BF /* ControllerManager.swift */; };
 		615786991C0262540079E273 /* BodyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615786981C0262540079E273 /* BodyManager.swift */; };
+		615F11FC1C21E80600BB3C66 /* UIApplication+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615F11FB1C21E80600BB3C66 /* UIApplication+Utils.swift */; };
 		61685CA41C18B025005EFC9C /* ThunderCellBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61685CA31C18B025005EFC9C /* ThunderCellBackground.swift */; };
 		61685CA61C18BC71005EFC9C /* ThunderBtnType3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61685CA51C18BC71005EFC9C /* ThunderBtnType3.swift */; };
 		61685CA91C18D0FD005EFC9C /* ThunderCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61685CA81C18D0FD005EFC9C /* ThunderCircularProgress.swift */; };
@@ -177,6 +178,7 @@
 		6118DCDF1C1738C700B5B2BC /* SideBarNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarNavigationController.swift; sourceTree = "<group>"; };
 		6135CC161BF8F2AB000455BF /* ControllerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerManager.swift; sourceTree = "<group>"; };
 		615786981C0262540079E273 /* BodyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyManager.swift; sourceTree = "<group>"; };
+		615F11FB1C21E80600BB3C66 /* UIApplication+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Utils.swift"; sourceTree = "<group>"; };
 		61685CA31C18B025005EFC9C /* ThunderCellBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThunderCellBackground.swift; sourceTree = "<group>"; };
 		61685CA51C18BC71005EFC9C /* ThunderBtnType3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThunderBtnType3.swift; sourceTree = "<group>"; };
 		61685CA81C18D0FD005EFC9C /* ThunderCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThunderCircularProgress.swift; sourceTree = "<group>"; };
@@ -596,6 +598,7 @@
 				DAF5A45B1C0A4DD600289C40 /* UIViewController+Utils.swift */,
 				DA0991331C0E9A3900B56934 /* UIView+Utils.swift */,
 				DAB6860F1C0FB1DF00D6486E /* String+Utils.swift */,
+				615F11FB1C21E80600BB3C66 /* UIApplication+Utils.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -777,6 +780,7 @@
 				DAF3EA181BF119D3007B8222 /* Logger.swift in Sources */,
 				DAE5C23B1C0CDE7E008884EF /* ThunderBtnType2.swift in Sources */,
 				DAE5C2401C0D0C07008884EF /* ThunderNavBarItem.swift in Sources */,
+				615F11FC1C21E80600BB3C66 /* UIApplication+Utils.swift in Sources */,
 				DA4636D81C1279C900778F19 /* TabVCTemplate.swift in Sources */,
 				DAE5C2231C0BB50D008884EF /* ProgressView.swift in Sources */,
 				DA8A5F6D1C10FF8A00EFA485 /* WeightViewController.swift in Sources */,
@@ -974,6 +978,7 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Build/iOS";
 				INFOPLIST_FILE = ThunderApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_DYLIB_INSTALL_NAME = "";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
@@ -997,6 +1002,7 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Build/iOS";
 				INFOPLIST_FILE = ThunderApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_DYLIB_INSTALL_NAME = "";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;

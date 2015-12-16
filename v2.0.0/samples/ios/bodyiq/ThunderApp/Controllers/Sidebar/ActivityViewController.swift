@@ -59,6 +59,11 @@ class ActivityViewController: TabVCTemplate, UITableViewDelegate, UITableViewDat
         selectedTab = 0
     }
     
+    override func viewWillAppear(animated: Bool) {
+        
+        super.viewWillAppear(animated)
+    }
+    
     override func viewDidAppear(animated: Bool) {
         
         super.viewDidAppear(animated)
@@ -66,18 +71,18 @@ class ActivityViewController: TabVCTemplate, UITableViewDelegate, UITableViewDat
         setupNavBar()
         
         date.text = NSDate.currentDate("EEEE, MMMM dd")
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        
-        super.viewWillAppear(animated)
         
         // Start observing
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("setConnectionState:"), name: Constants.ConnectionStateNotification, object: nil)
         
-        connect()
+        setConnectionStatusIndicator()
         
         queryTimeSeries()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        
+        super.viewWillDisappear(animated)
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -86,11 +91,6 @@ class ActivityViewController: TabVCTemplate, UITableViewDelegate, UITableViewDat
         
         // Stop observing
         NSNotificationCenter.defaultCenter().removeObserver(self)
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        
-        super.viewWillDisappear(animated)
     }
     
     
