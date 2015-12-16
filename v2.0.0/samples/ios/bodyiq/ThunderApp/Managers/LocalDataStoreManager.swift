@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum DataAccessObject: String {
+private enum DataAccessObject: String {
     case User = "UserObjectKey"
 }
 
