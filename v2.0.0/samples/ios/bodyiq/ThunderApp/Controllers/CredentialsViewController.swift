@@ -149,6 +149,24 @@ class CredentialsViewController: UIViewController {
     
     // MARK: Keyboard
     
+    private func textFieldDidBeginEditing(textField: UITextField) {
+        animateViewMoving(true, moveValue: 100)
+    }
+    private func textFieldDidEndEditing(textField: UITextField) {
+        animateViewMoving(false, moveValue: 100)
+    }
+    
+    private func animateViewMoving (up:Bool, moveValue :CGFloat){
+        
+        let movementDuration:NSTimeInterval = 0.3
+        let movement:CGFloat = ( up ? -moveValue : moveValue)
+        UIView.beginAnimations( "animateView", context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(movementDuration )
+        self.view.frame = CGRectOffset(self.view.frame, 0,  movement)
+        UIView.commitAnimations()
+    }
+    
     func tap(gesture: UITapGestureRecognizer) {
         
         emailTextField.resignFirstResponder()
@@ -175,6 +193,48 @@ class CredentialsViewController: UIViewController {
         
         emailTextField.placeholder      = "email_address".localized
         passwordTextField.placeholder   = "password".localized
+        
+        
+        // Move emailTextField up when keyboard appears
+        emailTextField.addEventsListener( { [weak self] in
+            
+            if let email = self?.emailTextField {
+                
+                self?.textFieldDidBeginEditing(email)
+            }
+            
+            }, textDidEndEditing: { [weak self] in
+                
+                if let email = self?.emailTextField {
+                    
+                    self?.textFieldDidEndEditing(email)
+                }
+                
+            }, textDisplayAnimationComplete: { (Bool) -> () in
+                
+            }, textEntryAnimationComplete: { (Bool) -> () in
+        })
+        
+        // Move passwordTextField up when keyboard appears
+        passwordTextField.addEventsListener( { [weak self] in
+            
+            if let password = self?.passwordTextField {
+                
+                self?.textFieldDidBeginEditing(password)
+            }
+            
+            }, textDidEndEditing: { [weak self] in
+                
+                if let password = self?.passwordTextField {
+                    
+                    self?.textFieldDidEndEditing(password)
+                }
+                
+            }, textDisplayAnimationComplete: { (Bool) -> () in
+                
+            }, textEntryAnimationComplete: { (Bool) -> () in
+        })
+        
         
         let tapGesture = UITapGestureRecognizer(target: self, action: "tap:")
         view.addGestureRecognizer(tapGesture)

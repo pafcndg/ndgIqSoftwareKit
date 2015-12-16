@@ -120,6 +120,26 @@ class CreateAccountViewController: UIViewController {
         emailTextField.placeholder      = "email_address".localized
         passwordTextField.placeholder   = "password".localized
         
+        // Move emailTextField up when keyboard appears
+        emailTextField.addEventsListener( { [weak self] in
+            
+            if let email = self?.emailTextField {
+                
+                self?.textFieldDidBeginEditing(email)
+            }
+            
+            }, textDidEndEditing: { [weak self] in
+                
+                if let email = self?.emailTextField {
+                    
+                    self?.textFieldDidEndEditing(email)
+                }
+                
+            }, textDisplayAnimationComplete: { (Bool) -> () in
+                
+            }, textEntryAnimationComplete: { (Bool) -> () in
+        })
+        
         // Move passwordTextField up when keyboard appears
         passwordTextField.addEventsListener( { [weak self] in
             
