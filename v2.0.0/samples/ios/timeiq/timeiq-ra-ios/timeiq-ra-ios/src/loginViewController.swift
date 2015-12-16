@@ -11,13 +11,12 @@ import CDKCore
 
 let AUTO_LOGIN = "AUTO_LOGIN";
 
-class loginViewController: UITableViewController, signUpViewControllerDelegate, UITextFieldDelegate {
+class loginViewController: UITableViewController, UITextFieldDelegate {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var autoLoginSwitch: UISwitch!
-    @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
@@ -88,15 +87,10 @@ class loginViewController: UITableViewController, signUpViewControllerDelegate, 
         signInButton.enabled = flag
         signInButton.hidden = !flag
         autoLoginSwitch.enabled = flag
-        signUpButton.enabled = flag
     }
     
     override func scrollViewDidScroll(scrollView: UIScrollView) {
         self.view.endEditing(true)
-    }
-    
-    func didSignUpSuccessfully(email: String) {
-        self.emailTextField.text = email
     }
     
     class func isAutoLoginEnabled() -> Bool {

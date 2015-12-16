@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		064B6AED1C03045900175222 /* signUpWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B6AEC1C03045900175222 /* signUpWebViewController.swift */; };
 		064B6AF11C0333A200175222 /* upcomingEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B6AF01C0333A200175222 /* upcomingEventTableViewCell.swift */; };
 		064B6AF31C03607900175222 /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B6AF21C03607900175222 /* common.swift */; };
 		064B6AF71C04691500175222 /* PairVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064B6AF61C04691500175222 /* PairVC.swift */; };
@@ -35,7 +34,6 @@
 		068CAD001C021CEB0092C71D /* reminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068CACD31C021CEB0092C71D /* reminderTableViewCell.swift */; };
 		068CAD051C021CEB0092C71D /* SearchPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068CACD81C021CEB0092C71D /* SearchPlaceViewController.swift */; };
 		068CAD071C021CEB0092C71D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068CACDA1C021CEB0092C71D /* SettingsViewController.swift */; };
-		068CAD081C021CEB0092C71D /* signUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068CACDB1C021CEB0092C71D /* signUpViewController.swift */; };
 		068CAD091C021CEB0092C71D /* SimpleAuthCredentialsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068CACDC1C021CEB0092C71D /* SimpleAuthCredentialsProvider.swift */; };
 		068CAD0C1C021CEB0092C71D /* TextFormatterUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068CACDF1C021CEB0092C71D /* TextFormatterUtil.swift */; };
 		068CAD0D1C021CEB0092C71D /* TimeInString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068CACE01C021CEB0092C71D /* TimeInString.swift */; };
@@ -100,7 +98,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		064B6AEC1C03045900175222 /* signUpWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signUpWebViewController.swift; sourceTree = "<group>"; };
 		064B6AF01C0333A200175222 /* upcomingEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = upcomingEventTableViewCell.swift; sourceTree = "<group>"; };
 		064B6AF21C03607900175222 /* common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = common.swift; sourceTree = "<group>"; };
 		064B6AF61C04691500175222 /* PairVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PairVC.swift; sourceTree = "<group>"; };
@@ -128,7 +125,6 @@
 		068CACD31C021CEB0092C71D /* reminderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = reminderTableViewCell.swift; sourceTree = "<group>"; };
 		068CACD81C021CEB0092C71D /* SearchPlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPlaceViewController.swift; sourceTree = "<group>"; };
 		068CACDA1C021CEB0092C71D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		068CACDB1C021CEB0092C71D /* signUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signUpViewController.swift; sourceTree = "<group>"; };
 		068CACDC1C021CEB0092C71D /* SimpleAuthCredentialsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleAuthCredentialsProvider.swift; sourceTree = "<group>"; };
 		068CACDF1C021CEB0092C71D /* TextFormatterUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFormatterUtil.swift; sourceTree = "<group>"; };
 		068CACE01C021CEB0092C71D /* TimeInString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeInString.swift; sourceTree = "<group>"; };
@@ -309,8 +305,6 @@
 			isa = PBXGroup;
 			children = (
 				068CACCB1C021CEB0092C71D /* loginViewController.swift */,
-				068CACDB1C021CEB0092C71D /* signUpViewController.swift */,
-				064B6AEC1C03045900175222 /* signUpWebViewController.swift */,
 				068CACDC1C021CEB0092C71D /* SimpleAuthCredentialsProvider.swift */,
 			);
 			name = login;
@@ -602,7 +596,6 @@
 				068CAD121C021CEB0092C71D /* UpcomingEventsViewController.swift in Sources */,
 				068CACFC1C021CEB0092C71D /* PagedViewController.swift in Sources */,
 				068CAD0C1C021CEB0092C71D /* TextFormatterUtil.swift in Sources */,
-				064B6AED1C03045900175222 /* signUpWebViewController.swift in Sources */,
 				06EE60761BE63B57001BD8EB /* AppDelegate.swift in Sources */,
 				064B6AF91C04695600175222 /* DeviceConnectionManager.swift in Sources */,
 				0655D5291C0DA20300D39E45 /* TimeIQCalendarUtils.swift in Sources */,
@@ -610,7 +603,6 @@
 				068CAD091C021CEB0092C71D /* SimpleAuthCredentialsProvider.swift in Sources */,
 				068CACEE1C021CEB0092C71D /* CalendarSelectVC.swift in Sources */,
 				068CAD111C021CEB0092C71D /* TimeIQRemindersUtils.swift in Sources */,
-				068CAD081C021CEB0092C71D /* signUpViewController.swift in Sources */,
 				068CACEB1C021CEB0092C71D /* AddReminderViewController.swift in Sources */,
 				064B6AF11C0333A200175222 /* upcomingEventTableViewCell.swift in Sources */,
 				068CACED1C021CEB0092C71D /* BaseAddReminderViewController.swift in Sources */,
