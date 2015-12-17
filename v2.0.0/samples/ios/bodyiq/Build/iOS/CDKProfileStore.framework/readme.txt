@@ -1,1 +1,0 @@
-Provides the cloud user profile API. The application can store, update, or retrieve the user's profile data as a free-form JSON object.
