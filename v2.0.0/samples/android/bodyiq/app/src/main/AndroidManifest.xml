@@ -1,0 +1,102 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.intel.wearable.platform.bodyiq.refapp">
+
+    <uses-sdk android:minSdkVersion="19"
+        android:targetSdkVersion="22"
+        />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/appicon"
+        android:label="@string/app_name">
+
+        <meta-data
+            android:name="deployment-type"
+            android:value="int" />
+        <meta-data
+            android:name="domain-name"
+            android:value="td.wearables.infra-host.com" />
+        <meta-data
+            android:name="client-id"
+            android:value="ndgThunderDome" />
+        <meta-data
+            android:name="client-secret"
+            android:value="ndgThunderDomeSecRet" />
+        <meta-data
+            android:name="client-public-token"
+            android:value="eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJjNjY2ODA0ZS1jYWVlLTQyNWItODc5Mi1mYjBmMDhmYTE0ZjkiLCJzdWIiOiIzODNmODk5YS03NGI2LTRjMmQtODQ1NC00MGI2OGQ2Y2IyZWQiLCJzY29wZSI6WyJhbGwudXNlciJdLCJpYXQiOjE0NDQzNTExMjMsImV4cCI6MTQ3NTkwODcyMywiY2lkIjoibmRnVGh1bmRlckRvbWUiLCJsb2dpbl90eXBlIjoidWFhIiwiaXNzIjoiaHR0cHM6Ly9pbnQtdWFhLnRkLndlYXJhYmxlcy5pbmZyYS1ob3N0LmNvbS9vYXV0aC90b2tlbiIsImdyYW50X3R5cGUiOiJhdXRob3JpemF0aW9uX2NvZGUiLCJ1c2VyX25hbWUiOiJvbWFyeC5zaGFtc2VsZGluQGludGVsLmNvbSIsInVzZXJfaWQiOiI0N0I0MzU5Rjc4MTU5RUE3RTAyN0NDRTY2RTRFODk1RiIsImF1ZCI6WyJzd2Fzc2V0IiwiZGV2aWNlcHJvZmlsZSIsInVtIiwidWFtIiwiZG9jc3RvcmFnZSIsImVwcyIsInRpbWVzZXJpZXMiLCJvcGVuaWQiLCJ1YWEiLCJiaSIsImFwcHNldHRpbmdzIiwidGVtcHN0b3JhZ2UiXX0.ZOxfUxuh5eDSrFNqWCyBxOJO2NrPLgZRvub7M7Suu_0" />
+
+
+        <activity
+            android:name=".activities.SplashActivity"
+            android:theme="@style/SplashTheme"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <activity
+            android:name=".activities.AccountActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+
+        </activity>
+
+        <activity
+            android:name=".activities.DeviceSyncActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ToolBarStyle">
+        </activity>
+
+        <activity
+            android:name=".activities.FirmwareActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ToolBarStyle">
+        </activity>
+
+        <activity
+            android:name=".activities.DevicesListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ToolBarStyle">
+        </activity>
+
+        <activity
+            android:name=".activities.DeviceDetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ToolBarStyle">
+        </activity>
+
+        <activity
+            android:name=".activities.DeviceOptionsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ToolBarStyle">
+        </activity>
+
+        <activity
+            android:name=".activities.UserDetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ToolBarStyle">
+        </activity>
+
+        <activity
+            android:name=".activities.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ToolBarStyle">
+        </activity>
+
+        <activity
+            android:name=".activities.TrackerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.DesignDemo">
+        </activity>
+
+    </application>
+
+</manifest>

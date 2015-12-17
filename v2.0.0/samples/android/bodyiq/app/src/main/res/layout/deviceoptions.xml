@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+android:padding="10dp"
+    android:background="@color/darkblue"
+    >
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:padding="10dp"
+        android:id="@+id/deviceinfo"
+
+
+        >
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/darkcircle"
+            android:layout_gravity="center"/>
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/devicedetails"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:textColor="@color/white"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/devicedetailsdesc"
+                android:textColor="@color/blue"
+                android:textSize="14sp"
+                android:paddingLeft="20dp"
+                android:paddingTop="2dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:padding="10dp"
+
+        android:id="@+id/notifications"
+
+
+        >
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/darkcircle"
+            android:layout_gravity="center"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+
+
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/notifications"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:paddingLeft="20dp"
+                android:textColor="@color/white"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/notificationsdesc"
+                android:textColor="@color/blue"
+                android:textSize="14sp"
+                android:paddingLeft="20dp"
+                android:paddingTop="2dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:padding="10dp"
+
+
+        >
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+
+
+            >
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/userevents"
+            android:gravity="center"
+
+            android:buttonTint="@color/white"
+
+            android:checked="false"/>
+            </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical"
+
+
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/userevents"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+
+                android:textColor="@color/white"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/usereventsdesc"
+                android:textColor="@color/blue"
+                android:textSize="14sp"
+                android:paddingLeft="20dp"
+                android:paddingTop="2dp"/>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:padding="10dp"
+
+
+        >
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+
+
+            >
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/systemevents"
+                android:gravity="center"
+                android:buttonTint="@color/white"
+
+                android:checked="false"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical"
+
+
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/systemevents"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+
+                android:textColor="@color/white"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/systemeventsdesc"
+                android:textColor="@color/blue"
+                android:textSize="14sp"
+                android:paddingLeft="20dp"
+                android:paddingTop="2dp"/>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/blue"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="80dp"
+
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/actions"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:paddingLeft="80dp"
+        android:paddingTop="10dp"
+        android:textColor="@color/blue"
+        />
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:padding="10dp"
+        android:id="@+id/checkfirmware"
+
+
+        >
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/darkcircle"
+            android:layout_gravity="center"/>
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+
+
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/firmwareupdate"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:textColor="@color/white"
+                />
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:padding="10dp"
+        android:id="@+id/disconnect"
+
+
+
+        >
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/darkcircle"
+            android:layout_gravity="center"/>
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+
+
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/disconnect"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:paddingLeft="20dp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                />
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+</LinearLayout>

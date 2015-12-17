@@ -1,0 +1,169 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:padding="15dp"
+        android:id="@+id/dailytracker"
+        android:gravity="left">
+
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_alarm_black_24px"
+            android:layout_gravity="center"
+            />
+
+    <TextView android:id="@android:id/text1"
+        style="?android:textAppearanceMedium"
+        android:layout_width="wrap_content"
+        android:textColor="@color/lightblue"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:text="@string/dailytracker"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:paddingLeft="30dp" />
+
+        </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:padding="15dp"
+        android:id="@+id/allactivity"
+
+        android:gravity="left">
+
+        <ImageButton android:id="@+id/delete_button"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/network_bars"
+            android:layout_gravity="center"
+          />
+
+        <TextView android:id="@android:id/text1"
+            style="?android:textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:textColor="@color/darkblue"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:text="@string/allactivity"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingLeft="30dp" />
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/lightgray3"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:padding="15dp"
+        android:gravity="left">
+        <TextView android:id="@android:id/text1"
+            style="?android:textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:textColor="@color/darkgray"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:text="@string/mydevices"
+            android:layout_height="match_parent"
+            android:gravity="center"
+             />
+
+    </LinearLayout>
+
+
+       <LinearLayout
+        android:id="@+id/deviceinfo"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:padding="15dp"
+        android:gravity="left">
+
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/device_circle"
+            android:layout_gravity="center"
+             />
+
+        <TextView
+            style="?android:textAppearanceMedium"
+            android:id="@+id/devicename"
+            android:layout_width="wrap_content"
+            android:textColor="@color/darkblue"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:text="DEVICENAME"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingLeft="30dp" />
+
+           <ImageButton
+
+               android:layout_width="20dp"
+               android:layout_height="20dp"
+               android:background="@drawable/connectedcircle"
+               android:layout_gravity="center"
+               android:layout_marginLeft="10dp"
+               android:id="@+id/connectstatus"
+
+               />
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:padding="15dp"
+        android:gravity="left">
+
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/battery_full"
+            android:layout_gravity="center"
+         />
+
+
+        <TextView
+            android:id="@+id/batteryvalue"
+            style="?android:textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:textColor="@color/darkblue"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:text="66%"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:paddingLeft="30dp" />
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

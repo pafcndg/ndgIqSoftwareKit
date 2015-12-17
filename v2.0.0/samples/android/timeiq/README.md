@@ -1,5 +1,39 @@
 # TimeIQ
 
+### Setup
+
+ The TimeIQ sample project provided is a gradle project for development using the Android Studio IDE.
+
+ In order to successfully utilize the functionality of the sample project, you will need to register for Google's Android map API and to supply the key in the **gradle.properties** file located in the project's root directory.
+
+ You would also need to sign your apk in order to have Google API's working. For more information please refer to the Android Studio documentation at http://developer.android.com/tools/publishing/app-signing.html
+
+### Creating your own project
+
+If instead of using the sample app, you can setup a new project or modify an existing project to use the TimeIQ library as follows.
+
+- configure the project to run with minimum Android SDK API level 17 and with target API 21.
+- configure access to the local repository. The project will need to access the local maven repository supplied in the sdk named **maven-repo**. The following example is relative path from the TimeIQ sample project to the maven repository.
+
+```gradle
+ repositories {
+        jcenter()
+
+        maven { url "${rootProject.projectDir}/../../../sdk/android/maven-repo/" }
+    }
+```
+- Add the following dependencies to your project.
+
+```gradle
+    compile 'com.google.android.gms:play-services:8.1.0'
+
+    compile(group: 'com.intel.wearable.platform.timeiq', name: 'android-platform-lib', version: '1.0.0')
+    compile(group: 'com.intel.wearable.platform', name: 'core', version: '0.3.1')
+    compile(group: 'com.intel.wearable.platform', name: 'bodyiq', version: '0.4.1')
+```
+
+
+
 ### Initialization
 
 You will need to initialize the TimeIQApi in your main activity's OnCreate or in the service as seen below.
@@ -57,7 +91,7 @@ public class TimeIQBGService extends Service implements IMessageListener {
             initTimeIQMessageListener();
         }
     }
-    
+
     private void initTimeIQMessageListener() {
     // Add listener to TimeIQ messages:
         IMessageHandler timeIQMessageHandler = TimeIQBGService.mTimeIQApi.getMessageHandler();

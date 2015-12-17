@@ -1,0 +1,36 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        applicationId "sample.platform.wearable.intel.com.wearableplatformhelloworld"
+        minSdkVersion 19
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    println "root Dir: $rootDir"
+
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile "com.android.support:appcompat-v7:$GOOGLE_SUPPORT_APPCOMPAT_V7_VERSION"
+    compile 'com.android.support:design:23.1.0'
+    compile "com.android.support:support-annotations:$GOOGLE_SUPPORT_ANNOTATIONS_VERSION"
+    compile "org.apache.commons:commons-lang3:$APACHE_COMMONS_LANG3_VERSION"
+    compile "com.jakewharton.timber:timber:$JAKEWHARTON_TIMBER_VERSION"
+    compile "com.twofortyfouram:android-assertion:$TWOFORTYFOURAM_ANDROID_ASSERTION_VERSION"
+    compile "com.google.protobuf:protobuf-java:$GOOGLE_PROTOBUF_VERSION"
+    compile "io.realm:realm-android:$REALM_VERSION"
+    compile "com.intel.wearable.platform.icsf:icsflib:$ICSF_LIB_VERSION@aar"
+    compile(group: 'com.intel.wearable.platform', name: 'core', version: WEARABLE_CORE_SDK_VERSION_NAME, ext: 'aar')
+}
