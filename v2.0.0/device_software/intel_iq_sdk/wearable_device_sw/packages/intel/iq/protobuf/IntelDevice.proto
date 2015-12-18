@@ -1,0 +1,24 @@
+package intel;
+
+import "IntelCommon.proto";
+
+option java_package = "com.intel.messages.core";
+option java_outer_classname = "IntelDeviceProto";
+
+/* topic intel/core/device/datetime */
+/* returns IASP_STATUS_OK if everything fine, otherwise see list of error codes */
+/* returns DateTime protobuffer when getting the device datetime */
+/* parameter DateTime protobuffer when setting the device datetime */
+
+/* topic intel/core/device/name */
+/* returns IASP_STATUS_OK if everything fine, otherwise see list of error codes */
+/* parameter DeviceName protobuffer when setting device name */
+
+/* topic intel/core/device/factoryreset */
+/* returns IASP_STATUS_OK if everything fine, otherwise see list of error codes */
+/* parameter FactoryReset protobuffer when triggering a reset */
+
+/* used to trigger a factory reset*/
+message FactoryReset {
+	optional bool factory_reset = 1;
+}

@@ -1,0 +1,114 @@
+{
+ "flash" :  {
+  "commands" : [
+   {
+    "args" : "-a 4 -U ${panic_file}",
+    "timeout" : 3000,
+    "retry" : 1,
+    "restrict" : null,
+    "tool" : "dfuDownloader",
+    "description": "Backup panic partition"
+   },
+   {
+    "args" : "-a 4 -D ${panic_erase_file}",
+    "timeout" : 3000,
+    "retry" : 1,
+    "restrict" : null,
+    "tool" : "dfuDownloader",
+    "description": "Erase panic partition"
+   },
+   {
+    "args" : "-a 5 -U ${events_file}",
+    "timeout" : 3000,
+    "retry" : 1,
+    "restrict" : null,
+    "tool" : "dfuDownloader",
+    "description": "Backup events partition"
+   },
+   {
+    "args" : "-a 8 -U ${ble_core_file}",
+    "timeout" : 10000,
+    "retry" : 1,
+    "restrict" : null,
+    "tool" : "dfuDownloader",
+    "description": "Backup ble_core partition"
+   },
+
+   {
+    "args" : "-a 0 -R -U ${otp_file}",
+    "timeout" : 3000,
+    "retry" : 1,
+    "restrict" : null,
+    "tool" : "dfuDownloader",
+    "description": "Backup otp partition"
+   },
+   {
+       "args" : "--url http://goto.intel.com/ndg_crash_upload --work-dir ${flash_dir} --file ${panic_file} --file ${events_file} --file ${ble_core_file} --file ${otp_file} --json ${flash_dir}/crash.json --org ndg --project curie --type crash", "timeout" : 30000,
+       "timeout" : 30000,
+       "retry" : 2,
+       "mandatory" : false,
+       "restrict" : null,
+       "tool" : "eventUploader",
+       "description": "Upload panic and factory"
+   }
+
+  ],
+  "configurations" :   {
+   "usb" :    {
+    "brief" : "",
+    "default" : true,
+    "description" : "",
+    "documentation" : "http://goto.intel.com/flashtool",
+    "groupsState" :     {
+
+    },
+    "name" : "usb",
+    "startState" : "pos"
+   }
+  },
+  "groups" :   {
+
+  },
+  "platforms" : ["generic"],
+  "parameters" :   {
+   "panic_file" :    {
+    "description" : "Panic partition",
+    "name" : "panic",
+    "type" : "temporary_file",
+    "value" : "panic.bin"
+   },
+   "panic_erase_file" :    {
+    "description" : "Panic partition",
+    "name" : "panic",
+    "type" : "file",
+    "value" : "erase_panic.bin"
+   },
+   "events_file" :    {
+    "description" : "Events partition",
+    "name" : "events",
+    "type" : "temporary_file",
+    "value" : "events.bin"
+   },
+   "logs_file" :    {
+    "description" : "Logs partition",
+    "name" : "logs",
+    "type" : "temporary_file",
+    "value" : "logs.bin"
+   },
+   "ble_core_file" :    {
+    "description" : "ble_core partition",
+    "name" : "ble_core",
+    "type" : "temporary_file",
+    "value" : "ble_core.bin"
+   },
+   "otp_file" :    {
+    "description" : "ble_core partition",
+    "name" : "ble_core",
+    "type" : "temporary_file",
+    "value" : "otp.bin"
+   }
+
+  },
+  "version" : "3.0"
+ }
+}

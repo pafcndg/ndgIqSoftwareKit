@@ -1,0 +1,44 @@
+menu "User Interface"
+
+config UI_SERVICE_IMPL
+	bool "UI service implementation"
+	# depends on "HAS_XX" because we want the
+	# UI service to be available only if the
+	# corresponding hardware features are available
+	depends on HAS_HAPTIC || HAS_LED || HAS_BUTTON
+	# The board/project Kconfig must overload
+	# HAPTIC/LED/BUTTON to select the right drivers
+	# for the current board
+	select CFW
+
+config UI_SERVICE_IMPL_BUTTON
+	bool "Button support"
+	default y
+	select BUTTON
+	depends on HAS_BUTTON && UI_SERVICE_IMPL
+
+config UI_SERVICE_IMPL_LED
+	bool "LED support"
+	default y
+	select LED
+	depends on HAS_LED && UI_SERVICE_IMPL
+
+config UI_SERVICE_IMPL_HAPTIC
+	bool "Haptic support"
+	default y
+	select HAPTIC
+	depends on HAS_HAPTIC && UI_SERVICE_IMPL
+
+config TCMD_UI_SVC
+	bool "UI Service Test Command"
+	depends on TCMD
+	depends on UI_SERVICE_IMPL
+
+config UI_SERVICE
+	bool "UI service interface"
+	select CFW
+
+source "framework/src/lib/button/Kconfig"
+source "framework/src/lib/led/Kconfig"
+
+endmenu

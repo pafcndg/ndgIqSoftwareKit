@@ -1,0 +1,79 @@
+menu "Intel IQ Package"
+
+config BODY_IQ
+	bool "Body IQ"
+	select COMMON_IQ
+	select NANOPB_ENCODER
+	select TOPIC_MANAGER
+	select SENSING_MODULE_IQ
+	select SERVICES_QUARK_SE_STORAGE
+	select SERVICES_QUARK_SE_STORAGE_CIRCULAR
+	select LOG
+	depends on OS_ZEPHYR
+	help
+	Provides feedback on activity tracking to external client applications.
+
+config DEVICES_IQ
+	bool "Devices IQ"
+	select COMMON_IQ
+	select NANOPB_DECODER
+	select NANOPB_ENCODER
+	select TOPIC_MANAGER
+	select SERVICES_BLE
+	depends on HAS_PM_PUPDR
+	select PM_PUPDR
+	depends on HAS_INTEL_QRK_RTC
+	select INTEL_QRK_RTC
+	select LOG
+	depends on OS_ZEPHYR
+
+config FOTA_IQ
+	bool "FOTA IQ"
+	select COMMON_IQ
+	select NANOPB_DECODER
+	select NANOPB_ENCODER
+	select TOPIC_MANAGER
+	select RECOVERY_BOOT_TARGET
+	select PM_PUPDR
+	depends on OS_ZEPHYR
+	depends on BSP
+	depends on LOG
+	depends on CFW_SERVICE
+	depends on BLE_APP
+	depends on HAS_SPI_FLASH
+	select SPI_FLASH
+
+config NOTIFICATIONS_IQ
+	bool "Notications IQ"
+	select COMMON_IQ
+	select NANOPB_DECODER
+	select TOPIC_MANAGER
+	select UI_SERVICE
+	select LOG
+
+source "packages/intel/iq/events/Kconfig"
+
+config COMMON_IQ
+	bool
+
+config SENSING_MODULE_IQ
+	bool
+	help
+	Provides feedback from sensors to IQs
+	select SERVICES_SENSOR
+	select LOG
+
+config BODY_IQ_INTERVAL_REPORTS_DURATION
+	int "Interval between activity reports (in minutes)"
+	default 5
+	depends on BODY_IQ
+
+config ACTIVITY_STORAGE_SIZE
+	int "Size of the flash storage for activity reports (in bytes, 4096 multiple)"
+	default 32768
+	depends on BODY_IQ
+
+source "packages/intel/iq/protobuf/Kconfig"
+source "packages/intel/iq/itm/Kconfig"
+
+endmenu

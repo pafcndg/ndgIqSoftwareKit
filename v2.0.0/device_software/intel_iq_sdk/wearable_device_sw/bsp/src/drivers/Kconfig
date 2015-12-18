@@ -1,0 +1,31 @@
+menu "Drivers"
+
+config DEVICE_FRAMEWORK
+	bool
+	select PM #FIXME
+
+source "bsp/src/drivers/adc/Kconfig"
+source "bsp/src/drivers/aio/Kconfig"
+source "bsp/src/drivers/battery/Kconfig"
+source "bsp/src/drivers/display/Kconfig"
+source "bsp/src/drivers/gpio/Kconfig"
+source "bsp/src/drivers/haptic/Kconfig"
+source "bsp/src/drivers/led/Kconfig"
+source "bsp/src/drivers/i2c/Kconfig"
+source "bsp/src/drivers/ipc/Kconfig"
+source "bsp/src/drivers/mtd/Kconfig"
+source "bsp/src/drivers/pm/Kconfig"
+source "bsp/src/drivers/pwm/Kconfig"
+source "bsp/src/drivers/rtc/Kconfig"
+source "bsp/src/drivers/sba/Kconfig"
+source "bsp/src/drivers/sensor/Kconfig"
+source "bsp/src/drivers/spi/Kconfig"
+source "bsp/src/drivers/uart/Kconfig"
+source "bsp/src/drivers/usb/Kconfig"
+source "bsp/src/drivers/wdt/Kconfig"
+source "bsp/src/drivers/clk/Kconfig"
+source "bsp/src/drivers/nfc/Kconfig"
+source "bsp/src/drivers/fs/Kconfig"
+-source "$PROJECT_PATH/drivers.Kconfig"
+
+endmenu

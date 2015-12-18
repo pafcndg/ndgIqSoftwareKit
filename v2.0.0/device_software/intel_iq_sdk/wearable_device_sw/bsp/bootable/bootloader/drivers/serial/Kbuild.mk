@@ -1,0 +1,1 @@
+obj-$(CONFIG_NS16550) += ns16550.o

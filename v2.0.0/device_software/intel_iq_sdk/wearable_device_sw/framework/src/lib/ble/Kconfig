@@ -1,0 +1,7 @@
+config BLE_APP
+	bool "BLE Reference application implementation"
+	depends on CFW
+	depends on SERVICES_BLE
+	depends on SERVICES_BLE_IMPL
+	depends on IPC_UART_NS16550
+	depends on SERVICES_QUARK_SE_PROPERTIES

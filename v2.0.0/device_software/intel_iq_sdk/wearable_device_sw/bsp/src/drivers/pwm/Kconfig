@@ -1,0 +1,7 @@
+config HAS_INTEL_QRK_PWM
+	bool
+
+config INTEL_QRK_PWM
+	bool "Intel Quark PWM driver"
+	depends on HAS_INTEL_QRK_PWM
+	select CLK_SYSTEM

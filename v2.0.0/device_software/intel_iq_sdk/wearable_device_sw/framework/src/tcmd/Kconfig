@@ -1,0 +1,4 @@
+config TCMD_INJECT
+	bool "Inject Test Command"
+	depends on TCMD
+	depends on CFW

@@ -1,0 +1,23 @@
+{
+    "build": {
+        "buildId": "undef",
+        "fingerPrint": "undef"
+    },
+    "data0": "",
+    "data1": "",
+    "data2": "",
+    "data3": "",
+    "data4": "",
+    "data5": "",
+    "date": "undef",
+    "device": {
+        "deviceId": "undef"
+    },
+    "event": "CRASH",
+    "eventId": "$eventId",
+    "type": "",
+    "variant": "",
+    "org": "$org",
+    "project": "$project",
+    "type": "NOT_DECODED"
+}

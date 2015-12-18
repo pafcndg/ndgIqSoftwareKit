@@ -1,0 +1,11 @@
+menu "NFC Service"
+
+config NFC_SERVICE_IMPL
+    bool "NFC service implementation"
+    select CFW
+
+config NFC_SERVICE
+    bool "NFC service interface"
+    select CFW
+
+endmenu

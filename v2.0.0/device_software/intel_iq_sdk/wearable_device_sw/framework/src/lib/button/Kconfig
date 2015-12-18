@@ -1,0 +1,45 @@
+config HAS_BUTTON
+	bool
+	help
+	This feature should be selected automatically if the board
+	has a built-in LED support. It can also be selected
+	by the project Kconfig in case of customized hardware.
+
+menu "Buttons"
+
+	depends on HAS_BUTTON
+
+config BUTTON
+	bool
+	depends on HAS_BUTTON
+	help
+	This flag is used to resolve the dependencies
+	of the button driver for a specific hardware.
+	This flag must be overwritten in the board Kconfig
+
+config BUTTON_LIB
+	bool
+	help
+	This flag is used to compile the button generic lib
+
+config BUTTON_GPIO_SVC
+	bool "Button wrapper based on gpio service"
+	depends on HAS_BUTTON
+	select SERVICES_QUARK_SE_GPIO
+	select BUTTON_LIB
+	help
+	Button wrapper based on gpio service
+
+config BUTTON_MULTIPLE_PRESS
+	bool "Notify when several buttons are pressed in the same time"
+	depends on BUTTON_LIB
+	help
+	Send a MULTIPLE_PRESS notification if several buttons are pressed
+	in the same time
+
+config BUTTON_FEEDBACK
+	bool "Feedback between button actions"
+	depends on BUTTON_LIB
+	help
+	Send a feedback notification between button timing based actions
+endmenu

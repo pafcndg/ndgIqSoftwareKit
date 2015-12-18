@@ -1,0 +1,15 @@
+menu "GPIO"
+
+config SERVICES_QUARK_SE_GPIO
+	bool "Quark SE GPIO service client"
+	select CFW
+
+config SERVICES_QUARK_SE_GPIO_IMPL
+	bool "Quark SE GPIO service server"
+	depends on HAS_GPIO
+	select CFW
+	select SOC_GPIO if HAS_GPIO_SOC
+	select SS_GPIO if HAS_GPIO_SS
+
+endmenu
+

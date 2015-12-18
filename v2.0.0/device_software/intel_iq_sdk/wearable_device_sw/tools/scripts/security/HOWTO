@@ -1,0 +1,7 @@
+Generate keys:
+	./genkey.sh boot
+
+Generate C array:
+	python der2bin.py -s boot_private.der -p boot_public.der
+	xxd -i boot_private.bin
+	xxd -i boot_public.bin

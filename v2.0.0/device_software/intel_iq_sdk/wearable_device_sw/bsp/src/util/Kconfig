@@ -1,0 +1,28 @@
+menu "Utility libraries"
+
+config WORKQUEUE
+	bool "An OS agnostic workqueue implementation"
+	select LOG
+
+config CUNIT_TESTS
+	bool "Unit Tests Utils"
+	select LOG
+
+config LIST
+	bool "Generic list handler"
+
+menu "Flash circular storage"
+	depends on HAS_SPI_FLASH || HAS_FLASH_SOC
+
+config CSTORAGE_FLASH
+	bool
+
+config CSTORAGE_FLASH_SPI
+	bool "SPI Flash circular storage"
+	depends on HAS_SPI_FLASH
+	select CSTORAGE_FLASH
+	select SPI_FLASH
+
+endmenu
+
+endmenu

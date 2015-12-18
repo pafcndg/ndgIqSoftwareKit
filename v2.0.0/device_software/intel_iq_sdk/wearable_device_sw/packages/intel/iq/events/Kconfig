@@ -1,0 +1,28 @@
+menuconfig EVENTS_IQ
+	bool "Events IQ"
+	select COMMON_IQ
+	help
+	Provides feedback on internal device status to external client applications.
+
+config USER_EVENTS_IQ
+	bool "User Events IQ"
+	depends on EVENTS_IQ
+	select NANOPB_ENCODER
+	select TOPIC_MANAGER
+	select SENSING_MODULE_IQ
+	select UI_SERVICE
+	select LOG
+
+config SYSTEM_EVENTS_IQ
+	bool "System Events IQ"
+	depends on EVENTS_IQ
+	select NANOPB_ENCODER
+	select TOPIC_MANAGER
+	select SERVICES_QUARK_SE_STORAGE
+	select SERVICES_QUARK_SE_STORAGE_CIRCULAR
+	select LOG
+	depends on HAS_PM_PUPDR
+	select PM_PUPDR
+	depends on OS_ZEPHYR
+	depends on HAS_FLASH_SOC
+	select SOC_FLASH

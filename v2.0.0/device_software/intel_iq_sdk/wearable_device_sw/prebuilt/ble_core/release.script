@@ -1,0 +1,23 @@
+// check uicr sd jump address for factory
+mem32 10001014 1
+
+// use SWD mode
+si 1
+// enable the SWDIO reset to disable the debugger connection and allow shutdown
+w4 40000544 1
+sleep 1000
+
+// switch to JTAG mode to drive directly the pins
+si 0
+
+// for SDCLK to 0
+tck0
+sleep 100
+
+// drive SWDIO/nRESET to 0
+t0
+sleep 1000
+// drive SWDIO/nRESET to 1 to exit reset
+t1
+sleep 1000
+exit

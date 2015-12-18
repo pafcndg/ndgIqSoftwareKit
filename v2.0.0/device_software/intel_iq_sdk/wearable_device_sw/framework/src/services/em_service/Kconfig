@@ -1,0 +1,100 @@
+
+menu "Battery"
+
+config SERVICES_QUARK_SE_BATTERY
+	bool "Client"
+	select CFW
+	select SERVICES_QUARK_SE_PROPERTIES
+
+config SERVICES_QUARK_SE_BATTERY_IMPL
+	bool "Server"
+	select CFW
+	depends on HAS_USB_PM && (SOC_GPIO_AON||SOC_COMPARATOR)
+	depends on HAS_BATTERY
+	depends on HAS_CHARGER
+	select BATTERY
+	select CHARGER
+	select USB_PM if HAS_USB_PM && (SOC_GPIO_AON||SOC_COMPARATOR)
+	select SERVICES_QUARK_SE_POWER_SUPPLY
+	select SERVICES_QUARK_SE_CHARGER
+	select SERVICES_QUARK_SE_FUELGAUGE
+
+
+source "framework/src/services/em_service/battery_LUT/Kconfig"
+
+menu "Software drivers"
+
+config SERVICES_QUARK_SE_CHARGER
+	bool "Charging Service"
+	select SERVICES_QUARK_SE_GPIO
+
+config HAS_CHARGER
+	bool
+
+config CHARGER
+	bool "Charger feature"
+	default y if HAS_CHARGER
+	help
+	Enable the Charger
+
+config QUARK_CHARGER
+	bool "Quark SE SOC Charger driver"
+	depends on SERVICES_QUARK_SE_CHARGER
+	help
+	Enable SoC charger driver.
+
+config HAS_WC_CHARGER
+	bool
+
+config WC_CHARGER
+	bool "Wireless Charging feature"
+	default y if HAS_WC_CHARGER
+	help
+	Enable the Wireless Charging
+
+config QI_BQ51003
+	bool "QI charging driver for BQ51003"
+	depends on SERVICES_QUARK_SE_CHARGER
+	help
+	Enable the wireless charging feature for QI standard.
+
+config HAS_WIRED_CHARGER
+	bool
+
+config WIRED_CHARGER
+	bool "Wired Charging feature"
+	default y if HAS_WIRED_CHARGER
+	help
+	Enable the WIRED Charging
+
+config USB_POWER_SUPPLY
+	bool "USB charging driver"
+	depends on SERVICES_QUARK_SE_CHARGER
+	depends on USB_PM
+
+config SERVICES_QUARK_SE_FUELGAUGE
+	bool "Fuel gauge"
+	select SERVICES_QUARK_SE_ADC
+	select SERVICES_QUARK_SE_GPIO
+	select SERVICES_QUARK_SE_CHARGER
+
+config BATT_ADC_FACTOR
+	int "Battery ADC factor"
+	default 124 if BOARD_CURIE_CRB || BOARD_CURIE_ORB
+	default 110
+	depends on SERVICES_QUARK_SE_FUELGAUGE
+
+config FG_USE_SS_GPIO
+	bool
+	default y
+	depends on SERVICES_QUARK_SE_FUELGAUGE
+
+config FG_EN_GPIO_ID
+	int "GPIO Index for FG Enable pin"
+	default 14
+	depends on SERVICES_QUARK_SE_FUELGAUGE
+
+endmenu
+
+endmenu
+

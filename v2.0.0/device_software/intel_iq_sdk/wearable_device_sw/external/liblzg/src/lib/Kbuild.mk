@@ -1,0 +1,1 @@
+obj-$(CONFIG_COMP_LZG) += checksum.o decode.o version.o

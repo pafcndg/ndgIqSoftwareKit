@@ -1,0 +1,11 @@
+menu "Test services"
+
+config CFW_TEST_SERVICE_IMPL
+	bool "Test service implementation"
+	select CFW
+
+config CFW_TEST_SERVICE
+	bool "Test service interface"
+	select CFW
+
+endmenu

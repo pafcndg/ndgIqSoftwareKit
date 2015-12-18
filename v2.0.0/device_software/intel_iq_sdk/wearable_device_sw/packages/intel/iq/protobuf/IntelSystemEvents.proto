@@ -1,0 +1,58 @@
+package intel;
+
+import "IntelCommon.proto";
+
+option java_package = "com.intel.messages.core";
+option java_outer_classname = "IntelSystemEventProto";
+
+/* topic intel/core/events/system */
+
+message SystemEvent {
+	optional bootEvent     boot_event         = 1;
+	optional crashEvent    crash_event        = 3;
+	optional lowBattEvent  low_batt_event     = 2;
+	optional shutdownEvent shutdown_event     = 4;
+	optional DateTime      timestamp          = 5;
+
+	message bootEvent {
+		required bootType type = 1;
+	}
+
+	enum  bootType {
+		MAIN            =0;
+		OTA             =1;
+		FACTORY_RESET   =2;
+	}
+
+	message lowBattEvent {
+		required uint32 battery_level       = 1;
+	}
+
+	message crashEvent {
+		optional quarkPanic quark_panic     = 1;
+		optional arcPanic   arc_panic       = 2;
+	}
+
+	message quarkPanic {
+		required uint32   timestamp         = 1;
+		required uint32   eip               = 2;
+		required uint32   type              = 3;
+		required uint32   error             = 4;
+	}
+
+	message arcPanic {
+		required uint32   timestamp         = 1;
+		required uint32   eret              = 2;
+		required uint32   ecr               = 3;
+		required uint32   efa               = 4;
+	}
+
+	message shutdownEvent {
+		required shutdownType shutdown_type = 1;
+	}
+
+	enum  shutdownType {
+		USER_SHUTDOWN                       =0;
+		CRITICAL_BATTERY_SHUTDOWN           =1;
+	}
+}

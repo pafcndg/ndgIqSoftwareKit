@@ -1,0 +1,5 @@
+#include <board_config.h>
+
+h
+savebin ble_core/panic.bin CONFIG_PANIC_START CONFIG_PANIC_SIZE
+q

@@ -1,0 +1,56 @@
+menu "Sensors"
+
+config SERVICES_SENSOR
+	bool "Client"
+	select CFW
+
+config SERVICES_SENSOR_IMPL
+	bool "Server"
+	depends on HAS_BMI160
+	select CFW
+	select SERVICES_QUARK_SE_PROPERTIES
+	select BMI160
+	select SENSOR_CORE
+
+config SENSOR_CORE
+	bool
+
+if SENSOR_CORE
+
+config SENSOR_CORE_ALGO_COMMON
+	bool
+
+menu "Sensor Core Algorithms"
+
+config SENSOR_CORE_ALGO_UDG
+	bool "User Defined Gesture"
+	depends on HAS_PATTERN_MATCHING
+	select SENSOR_CORE_ALGO_COMMON
+	select PATTERN_MATCHING_DRV
+
+config SENSOR_CORE_ALGO_TAPPING
+	bool "Tapping"
+	select SENSOR_CORE_ALGO_COMMON
+
+config SENSOR_CORE_ALGO_SIMPLEGES
+	bool "Simple Gesture"
+	select SENSOR_CORE_ALGO_COMMON
+
+config SENSOR_CORE_ALGO_STEPCOUNTER_ACTIVITY
+	bool "Step counter and Activity classification"
+	select SENSOR_CORE_ALGO_COMMON
+
+config SENSOR_CORE_ALGO_BIKE
+	bool "Biking"
+	depends on SENSOR_CORE_ALGO_STEPCOUNTER_ACTIVITY
+	select SENSOR_CORE_ALGO_COMMON
+
+config SENSOR_CORE_ALGO_DEMO
+	bool "Algo Demo"
+	select SENSOR_CORE_ALGO_COMMON
+endmenu
+
+endif
+
+endmenu
+

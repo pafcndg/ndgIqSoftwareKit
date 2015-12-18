@@ -1,0 +1,16 @@
+config UART
+	bool
+
+config HAS_UART_NS16550
+	bool
+
+config UART_NS16550
+	bool "UART NS16550"
+	depends on HAS_UART_NS16550
+	select UART
+
+config UART_PM_NS16550
+	bool "Zephyr NS16550 driver power management wrapper"
+	depends on HAS_UART_NS16550
+	depends on OS_ZEPHYR
+	select DEVICE_FRAMEWORK

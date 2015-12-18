@@ -1,0 +1,136 @@
+config SENSOR_BUS_COMMON
+	bool
+
+config HAS_BMI160
+	bool
+
+config HAS_BMI160_I2C
+	bool
+	select HAS_BMI160
+
+config HAS_BMI160_SPI
+	bool
+	select HAS_BMI160
+
+menu "BMI160 driver"
+	config BMI160
+		bool "BMI160 sensor driver"
+		depends on (HAS_BMI160_I2C && HAS_SS_I2C) \
+		        || (HAS_BMI160_SPI && HAS_SS_SPI)
+		select SBA
+		select SENSOR_BUS_COMMON
+		select BMI160_I2C if HAS_BMI160_I2C
+		select SS_I2C if HAS_BMI160_I2C
+		select BMI160_SPI if HAS_BMI160_SPI
+		select SS_SPI if HAS_BMI160_SPI
+		select WORKQUEUE
+
+	config BMM150
+		bool "BMM150 compass sensor driver"
+		depends on BMI160
+		help
+            Enable BMM150 support in BMI160 driver since BMM150 is supposed to
+            connect to BMI160 and be managed by it.
+
+	config BMI160_PM
+		bool "BMI160 sensor power management"
+		depends on BMI160
+		default y
+		select BMI160_BMI160_LOWPOWER_AVG
+
+	config BMI160_ENABLE_DOUBLE_TAP
+		bool "Enable bmi160 chip double tap detection"
+		depends on BMI160
+		default n
+
+	config BMI160_LOWPOWER_AVG
+		int "average cyling number"
+		default 2
+		depends on BMI160_PM
+		help
+			Control the average cycling number of bmi160 accelerometer
+			in lowpower mode with undersampling enabled. The actual
+			average cycling number equals to 2^BMI160_BMI160_LOWPOWER_AVG.
+
+    config BMI160_LOWPOWER_AVG_NOMOTION
+		int "average cyling number in nomiton"
+		default 0
+		depends on BMI160_PM
+		help
+			Control the average cycling number of bmi160 accelerometer
+			in lowpower mode in nomotion state with undersampling enabled.
+			The actual average cycling number equals to 2^BMI160_LOWPOWER_AVG_NOMOTION.
+
+	config BMI160_DEFAULT_ACCEL_RANGE
+		int "accelerometer sensing range"
+		default 8
+		depends on BMI160
+		help
+			Default sensing range of bmi160 accelerometer. The value can be 2, 4, 8, 16.
+			So that bmi160 accelerometer sensing range can be +-2g, +-4g, +-8g, +-16g.
+
+	config BMI160_CONVERT_ACCEL_DATA
+		bool "convert accel data in mg"
+		default y
+		depends on BMI160
+		help
+			Convert accel sensor data in mg.
+
+	config BMI160_DEFAULT_GYRO_RANGE
+		int "gyro sensing range"
+		default 1000
+		depends on BMI160
+		help
+			Default sensing range of bmi160 gyro. The value can be 125, 250, 500, 1000, 2000.
+			So that bmi160 gyro sensing range can be +-125 degree/s, +-250 degree/s, +-500 degree/s,
+			+-1000 degree/s, +-2000 degree/s.
+
+	config BMI160_CONVERT_GYRO_DATA
+		bool "convert gyro data in millidegree/s"
+		default y
+		depends on BMI160
+		help
+			Convert accel sensor data in millidegree/s.
+endmenu
+
+config BMI160_I2C
+	bool
+
+config BMI160_SPI
+	bool
+
+config APDS9190
+	bool "apds9190 IR proximity driver"
+	depends on I2C
+	depends on DEVICE_FRAMEWORK
+
+config HAS_BME280
+	bool
+
+config HAS_BME280_I2C
+	bool
+	select HAS_BME280
+
+config HAS_BME280_SPI
+	bool
+	select HAS_BME280
+
+config BME280_I2C
+	bool
+
+config BME280_SPI
+	bool
+
+menu "BME280 driver"
+	config BME280
+		bool "BME280 sensor driver"
+		depends on (HAS_BME280_I2C && HAS_SS_I2C) \
+			    || (HAS_BME280_SPI && HAS_SS_SPI)
+		select SBA
+		select SENSOR_BUS_COMMON
+		select BME280_I2C if HAS_BME280_I2C
+		select SS_I2C if HAS_BME280_I2C
+		select BME280_SPI if HAS_BME280_SPI
+		select SS_SPI if HAS_BME280_SPI
+		select INFRA
+endmenu

@@ -1,0 +1,398 @@
+{
+  "features": [
+  {
+    "name": "Core features",
+    "folders": [
+      "bsp/src/",
+      "framework/src/lib/button/",
+      "framework/src/services/service_queue.c",
+      "external/nanopb/",
+      "projects/",
+      "external/zephyr/",
+      "framework/src/cfw/",
+      ":/"
+    ],
+    "excludes": [],
+    "children": [
+      {
+        "name": "BSP",
+        "folders": [
+          "bsp/src/",
+          "framework/src/lib/button/",
+          "framework/src/services/service_queue.c",
+          "external/nanopb/",
+          "projects/"
+        ],
+        "excludes": [
+          "bsp/src/drivers/"
+        ],
+        "children": []
+      },
+      {
+        "name": "Drivers",
+        "folders": [
+          "bsp/src/drivers/"
+        ],
+        "excludes": [],
+        "children": []
+      },
+      {
+        "name": "Zephyr OS",
+        "folders": [
+          "external/zephyr/"
+        ],
+        "excludes": [],
+        "children": []
+      },
+      {
+        "name": "Kernel",
+        "folders": [
+          ":/_k_"
+        ],
+        "excludes": [],
+        "children": []
+      },
+      {
+        "name": "CFW",
+        "folders": [
+          "framework/src/cfw/"
+        ],
+        "excludes": [],
+        "children": []
+      },
+      {
+        "name": "Sensor engine",
+        "folders": [
+        ],
+        "excludes": [],
+        "children": []
+      },
+      {
+        "name": "BLE support",
+        "folders": [
+        ],
+        "excludes": [],
+        "children": []
+      },
+      {
+        "name": "Other",
+        "folders": [
+          ":/"
+        ],
+        "excludes": [
+          ":/_k_"
+        ],
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Extra features",
+    "folders": [
+      "framework/src/services/",
+      "framework/src/lib/ble/",
+      "packages/intel/connectivity",
+      "packages/intel/iq",
+      "packages/intel/sensors",
+      "bsp/include/drivers/sensor/",
+      "framework/include/sensors/sensor_core/",
+      "framework/src/sensors/"
+    ],
+    "excludes": [
+      "framework/src/services/service_queue.c"
+    ],
+    "children": [
+      {
+        "name": "GPIO Service",
+        "folders": [
+          "framework/src/services/gpio_service/"
+        ],
+        "excludes": [],
+        "children": []
+      },
+      {
+        "name": "ADC Service",
+        "folders": [
+          "framework/src/services/adc_service/"
+        ],
+        "excludes": [],
+        "children": []
+      },
+      {
+        "name": "UI Service",
+        "folders": [
+          "framework/src/services/ui_service/"
+        ],
+        "excludes": [],
+        "children": []
+      },
+      {
+        "name": "Storage Service",
+        "folders": [
+          "framework/src/services/ll_storage_service/"
+        ],
+        "excludes": [],
+        "children": []
+      },
+      {
+        "name": "Properties Service",
+        "folders": [
+          "framework/src/services/properties_service/"
+        ],
+        "excludes": [],
+        "children": []
+      },
+      {
+        "name": "NFC Service",
+        "folders": [
+          "framework/src/services/nfc_service/"
+        ],
+        "excludes": [],
+        "children": []
+      },
+      {
+        "name": "Energy Management",
+        "folders": [
+          "framework/src/services/em_service"
+        ],
+        "excludes": [],
+        "children": [
+          {
+            "name": "Base",
+            "folders": [
+              "framework/src/services/em_service/"
+            ],
+            "excludes": [
+              "framework/src/services/em_service/battery_service",
+              "framework/src/services/em_service/adc_fuel_gauge",
+              "framework/src/services/em_service/charg",
+              "framework/src/services/em_service/qi_driver"
+            ],
+            "children": []
+          },
+          {
+            "name": "Battery Service",
+            "folders": [
+              "framework/src/services/em_service/battery_service"
+            ],
+            "excludes": [],
+            "children": []
+          },
+          {
+            "name": "Fuel Gauge",
+            "folders": [
+              "framework/src/services/em_service/adc_fuel_gauge"
+            ],
+            "excludes": [],
+            "children": []
+          },
+          {
+            "name": "Charging",
+            "folders": [
+              "framework/src/services/em_service/charg",
+              "framework/src/services/em_service/qi_driver"
+            ],
+            "excludes": [],
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "BLE services",
+        "folders": [
+            "framework/src/services/ble_service/",
+            "framework/src/lib/ble/",
+            "packages/intel/connectivity/ispp"
+        ],
+        "excludes": [],
+        "children": [
+          {
+            "name": "Basic support",
+            "folders": [
+              "framework/src/services/ble_service/",
+              "framework/src/lib/ble/"
+            ],
+            "excludes": [
+              "framework/src/services/ble_service/ble_service_bas",
+              "framework/src/services/ble_service/ble_service_dis",
+              "framework/src/services/ble_service/ble_service_ispp",
+              "framework/src/services/ble_service/ble_storage",
+              "framework/src/lib/ble/ble_app_storage.c"
+            ],
+            "children": []
+          },
+          {
+            "name": "BLE BAS",
+            "folders": [
+              "framework/src/services/ble_service/ble_service_bas"
+            ],
+            "excludes": [],
+            "children": []
+          },
+          {
+            "name": "BLE DIS",
+            "folders": [
+              "framework/src/services/ble_service/ble_service_dis"
+            ],
+            "excludes": [],
+            "children": []
+          },
+          {
+            "name": "BLE ISPP",
+            "folders": [
+              "framework/src/services/ble_service/ble_service_ispp",
+              "packages/intel/connectivity/ispp"
+            ],
+            "excludes": [],
+            "children": []
+          },
+          {
+            "name": "BLE Storage",
+            "folders": [
+              "framework/src/services/ble_service/ble_storage",
+              "framework/src/lib/ble/ble_app_storage.c"
+            ],
+            "excludes": [],
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "IQ",
+        "folders": [
+            "packages/intel/iq/",
+            "packages/intel/connectivity/iasp/"
+        ],
+        "excludes": [],
+        "children": [
+          {
+            "name": "IQ engine",
+            "folders": [
+              "packages/intel/iq/itm/",
+              "packages/intel/iq/protobuf/",
+              "packages/intel/connectivity/iasp/"
+            ],
+            "excludes": [],
+            "children": []
+          },
+          {
+            "name": "Body IQ",
+            "folders": [
+              "packages/intel/iq/body/"
+            ],
+            "excludes": [],
+            "children": []
+          },
+          {
+            "name": "Device IQ",
+            "folders": [
+              "packages/intel/iq/device/"
+            ],
+            "excludes": [],
+            "children": []
+          },
+          {
+            "name": "Events IQ",
+            "folders": [
+              "packages/intel/iq/events/"
+            ],
+            "excludes": [],
+            "children": []
+          },
+          {
+            "name": "Firmware update IQ",
+            "folders": [
+              "packages/intel/iq/fota/"
+            ],
+            "excludes": [],
+            "children": []
+          },
+          {
+            "name": "Notification IQ",
+            "folders": [
+              "packages/intel/iq/notifications/"
+            ],
+            "excludes": [],
+            "children": []
+          },
+          {
+            "name": "Sensing IQ",
+            "folders": [
+              "packages/intel/iq/sensing/"
+            ],
+            "excludes": [],
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Sensors",
+        "folders":  [
+          "bsp/include/drivers/sensor/",
+          "framework/include/sensors/sensor_core/",
+          "framework/src/sensors/",
+          "framework/src/services/sensor_service/",
+          "packages/intel/sensors/algo/"
+        ],
+        "excludes": [],
+        "children": [
+          {
+            "name": "Core",
+            "folders": [
+              "bsp/include/drivers/sensor/",
+              "framework/include/sensors/sensor_core/",
+              "framework/src/sensors/",
+              "framework/src/services/sensor_service/",
+              "packages/intel/sensors/algo/common/"
+            ],
+            "excludes": [
+              "framework/src/sensors/sensor_core/open_core/algo_support_src/"
+            ],
+            "children": []
+          },
+          {
+            "name": "Algo support",
+            "folders": [
+              "framework/src/sensors/sensor_core/open_core/algo_support_src/"
+            ],
+            "excludes": [],
+            "children": []
+          },
+          {
+            "name": "Algo: Activity",
+            "folders": [
+              "packages/intel/sensors/algo/activity_algos/"
+            ],
+            "excludes": [],
+            "children": []
+          },
+          {
+            "name": "Algo: Simple GES",
+            "folders": [
+              "packages/intel/sensors/algo/simpleges/"
+            ],
+            "excludes": [],
+            "children": []
+          },
+          {
+            "name": "Algo: Tapping",
+            "folders": [
+              "packages/intel/sensors/algo/tapping/"
+            ],
+            "excludes": [],
+            "children": []
+          },
+          {
+            "name": "Algo: User Defined Gesture",
+            "folders": [
+              "packages/intel/sensors/algo/udg/"
+            ],
+            "excludes": [],
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+  ]
+}

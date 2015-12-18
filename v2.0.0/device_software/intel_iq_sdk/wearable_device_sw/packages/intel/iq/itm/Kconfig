@@ -1,0 +1,8 @@
+menuconfig TOPIC_MANAGER
+	bool "Topic Manager"
+
+config TOPIC_IASP_IMPL
+	bool "Topic connection over IASP"
+	default y
+	depends on TOPIC_MANAGER
+	depends on SERVICES_BLE_IASP

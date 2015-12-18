@@ -1,0 +1,8 @@
+toolchain to cross-compile tools for all supported OS
+
+CRITICAL for openocd !!
+
+windows: mingw
+
+macos: https://github.com/tpoechtrager/osxcross ? (what is being used on OE ?)
+

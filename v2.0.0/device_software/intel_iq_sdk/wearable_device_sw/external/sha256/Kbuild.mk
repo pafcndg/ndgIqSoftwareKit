@@ -1,0 +1,1 @@
+obj-$(CONFIG_CRYPTO_SHA256) += sha256.o

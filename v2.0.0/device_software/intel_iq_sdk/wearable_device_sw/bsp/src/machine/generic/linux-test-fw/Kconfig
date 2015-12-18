@@ -1,0 +1,8 @@
+menu "Linux test fw"
+
+config HOST_TEST_FW
+	bool "Linux test fw"
+	help
+	Linux remote test framework
+
+endmenu

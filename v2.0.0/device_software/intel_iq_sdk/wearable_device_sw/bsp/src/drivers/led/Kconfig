@@ -1,0 +1,52 @@
+config HAS_LED
+	bool
+	help
+	This feature should be selected automatically if the board
+	has a built-in LED support. It can also be selected
+	by the project Kconfig in case of customized hardware.
+
+menu "LED"
+
+	depends on HAS_LED
+
+config LED
+	bool
+	help
+	This flag is used to resolve the dependencies
+	of the led driver for a specific hardware.
+	This flag must be overwritten in the board Kconfig
+
+config LED_MULTICOLOR
+	bool
+
+config SOC_LED
+	bool "SOC Led driver"
+	# Change Quark driver dependency when a generic PWM driver API is defined
+	depends on HAS_INTEL_QRK_PWM
+	select INTEL_QRK_PWM
+	select DEVICE_FRAMEWORK
+	select WAKELOCK
+
+config LP5562_LED
+	bool "LP5562 Led driver"
+	depends on HAS_INTEL_QRK_I2C
+	select I2C
+	select DEVICE_FRAMEWORK
+	select LED_MULTICOLOR
+
+config LED_WAVE_SUPPORT
+	bool "Led wave support"
+	depends on LP5562_LED
+
+choice
+       depends on LP5562_LED
+       prompt "LP5562 LED type"
+       config LP_5562_LED_C113
+       bool "C113"
+       config LP_5562_LED_C115
+       bool "C115"
+       config LP_5562_LED_LX404
+       bool "LX404"
+endchoice
+
+endmenu

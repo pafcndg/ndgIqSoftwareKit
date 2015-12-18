@@ -1,0 +1,8 @@
+menu "LED"
+
+config GPIO_LED
+    bool "Simple LED based on gpio service"
+    depends on HAS_LED
+    select SERVICES_QUARK_SE_GPIO
+
+endmenu

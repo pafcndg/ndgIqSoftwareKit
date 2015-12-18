@@ -1,0 +1,63 @@
+config NFC
+	bool
+
+config NFC_STN54E
+	bool "STN54E NFC chip on Intel QRK"
+	depends on HAS_INTEL_QRK_I2C
+	select SBA
+	select I2C
+	select INTEL_QRK_I2C
+	select WAKELOCK
+	select DEVICE_FRAMEWORK
+	select NFC
+
+config NFC_STN54E_TCMD
+	bool "STN54E NFC test commands"
+	depends on NFC_STN54E
+
+menu "STN54E driver config"
+	depends on NFC_STN54E
+
+	config STN54E_I2C_ADDR
+		hex "I2C address"
+		default 0x08
+
+	choice
+		prompt "I2C bus"
+
+	config NFC_STN54E_ON_I2C0
+		bool "I2C0"
+
+	config NFC_STN54E_ON_I2C1
+		bool "I2C1"
+
+	endchoice
+
+	config STN54E_RST_PIN
+		int "Reset pin"
+		default 15
+
+	config STN54E_IRQ_OUT_PIN
+		int "IRQ_OUT pin"
+		default 2
+
+	config STN54E_HAS_PWR_EN
+		bool "STN54E has power enable pin"
+		default n
+
+	config STN54E_PWR_EN_PIN
+		int "Power enable pin"
+		default 19
+		depends on STN54E_HAS_PWR_EN
+
+	config STN54E_HAS_BOOSTER
+		bool "STN54E uses AS39230 RF booster chip"
+		default n
+
+	config STN54E_BOOSTER_RST_PIN
+		int "RF booster reset pin"
+		default 18
+		depends on STN54E_HAS_BOOSTER
+
+endmenu
+

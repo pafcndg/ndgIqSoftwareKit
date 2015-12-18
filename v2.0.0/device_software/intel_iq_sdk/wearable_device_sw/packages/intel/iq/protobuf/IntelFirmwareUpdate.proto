@@ -1,0 +1,32 @@
+package intel;
+
+import "nanopb.proto";
+
+option java_package = "com.intel.messages.core";
+option java_outer_classname = "IntelFirmwareUpdateProto";
+
+/* topic intel/core/firmwareupdate */
+message FirmwareUpdate {
+
+	required firmwareOperation firmware_update_cmd = 1;
+	required uint32 firmware_total_length          = 2; /* Firmware total length in bytes */
+	optional bytes data                            = 3 [(nanopb).max_size = 130]; /* Firmware data chunk, max size = 130 */
+	optional uint32 offset                         = 4; /* Offset in byte of the firmware within the firmware total length */
+
+	enum firmwareOperation {
+		START    = 0; /* Start the firmware update. The protobuf shall contain  at least the firmware_total_length */
+		CONTINUE = 1; /* Continue the firmware update and provide next chunk of firmware data with the size */
+		CANCEL   = 2; /* Cancel the current firmware update and discard all previously transfered data */
+	}
+}
+
+/* topic intel/core/firmwareupdate/state */
+message FirmwareUpdateState {
+	optional respType firmware_update_state        = 1;
+
+	enum respType {
+		STARTED     = 0;
+		IN_PROGRESS = 1;
+		NONE        = 2;
+	}
+}

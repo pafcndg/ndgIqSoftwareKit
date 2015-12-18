@@ -1,0 +1,26 @@
+config HAS_HAPTIC
+	bool
+	help
+	This feature should be selected automatically if the board
+	has a built-in Haptic support. It can also be selected
+	by the project Kconfig in case of customized hardware.
+
+menu "Haptic"
+
+	depends on HAS_HAPTIC
+
+config HAPTIC
+	bool
+	help
+	This flag is used to resolve the dependencies
+	of the haptic driver for a specific hardware.
+	This flag must be overwritten in the board Kconfig
+
+config DRV2605
+	bool "DRV2605 Haptic driver"
+	depends on HAS_INTEL_QRK_I2C
+	select I2C
+	select WAKELOCK
+	select DEVICE_FRAMEWORK
+
+endmenu

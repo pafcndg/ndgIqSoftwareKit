@@ -1,0 +1,3 @@
+# Ltd FT2232C Dual USB-UART/FIFO IC
+# used on Curie board for UART and JTAG
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0403", MODE="0666"

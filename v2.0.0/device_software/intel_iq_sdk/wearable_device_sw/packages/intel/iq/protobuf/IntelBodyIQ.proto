@@ -1,0 +1,53 @@
+package intel;
+
+import "IntelCommon.proto";
+
+option java_package = "com.intel.messages.body";
+option java_outer_classname = "IntelBodyActivityProto";
+
+/* topic intel/body/activity */
+
+message Activity {
+
+	required activityType    type                 =1;
+	required DateTime        timestamp_begin      =2;
+	required DateTime        timestamp_end        =3;
+	optional activityStatus  activity_status      =4;
+	optional walkingActivity walking_activity     =5;
+	optional runningActivity running_activity     =6;
+	optional bikingActivity  biking_activity      =7;
+
+	message walkingActivity {
+		optional uint32 step_count = 1;
+	}
+
+	message runningActivity {
+		optional uint32 step_count = 1;
+	}
+
+	message bikingActivity {
+		/* nothing for now until external sensors support */
+	}
+
+	enum  activityType {
+		WALKING     =0;
+		RUNNING     =1;
+		BIKING      =2;
+
+	}
+	enum  activityStatus {
+		STARTED	     =0; /* activity is started */
+		ONGOING      =1; /* activity is on-going */
+		FINISHED     =2; /* activity is finished */
+	}
+}
+
+/* topic intel/body/activity/settings */
+
+message ActivitySettings {
+	optional bool   activity_classification_enable_disable  = 1;
+	optional uint32 activity_report_granularity             = 2;
+	/* in minutes - this is the maximum (end-begin) time window for each activity message */
+	optional bool   activity_discard_stored_data            = 3;
+	/* Discard all activities that has been detected (stored in flash or not) */
+}

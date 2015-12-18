@@ -1,0 +1,16 @@
+menu "Nanopb protobuf library"
+
+config NANOPB_DECODER
+	bool "Protobuf Decoder"
+	select NANOPB_COMMON
+
+config NANOPB_ENCODER
+	bool "Protobuf Encoder"
+	select NANOPB_COMMON
+
+config NANOPB_COMMON
+	bool
+	help
+	Common code for nanopb library
+
+endmenu

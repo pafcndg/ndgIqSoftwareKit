@@ -1,0 +1,19 @@
+config HAS_IPC_UART
+	bool
+
+config IPC_UART
+	bool "UART IPC link"
+	depends on HAS_IPC_UART
+	depends on HAS_GPIO_SOC_32 || BLE_CORE
+	select GPIO_SOC_32 if HAS_GPIO_SOC_32
+
+config IPC_UART_NS16550
+	bool "UART NS16550 IPC link driver"
+	depends on HAS_IPC_UART
+	depends on OS_ZEPHYR
+	select WAKELOCK
+
+config IPC_UART_BAUDRATE
+	int "IPC UART Baudrate"
+	default 115200
+	depends on IPC_UART

@@ -1,0 +1,13 @@
+menu "Analog Digital Converter"
+
+config SERVICES_QUARK_SE_ADC
+	bool "Client"
+	select CFW
+
+config SERVICES_QUARK_SE_ADC_IMPL
+	bool "Server"
+	depends on HAS_SS_ADC
+	select CFW
+	select SS_ADC
+
+endmenu

@@ -1,0 +1,10 @@
+config BATTERY
+	bool
+	depends on HAS_BATTERY
+
+config HAS_BATTERY
+	bool "Battery"
+	help
+	This feature should be selected automatically if the board
+	has a built-in battery, but can also be specified manually
+	in case of customized hardware.

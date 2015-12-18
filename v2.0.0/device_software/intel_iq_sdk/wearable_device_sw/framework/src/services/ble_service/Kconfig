@@ -1,0 +1,108 @@
+menu "BLE Service"
+
+config SERVICES_BLE
+	bool "BLE CFW based service APIs"
+	select CFW
+
+config SERVICES_BLE_IMPL
+	bool "BLE CFW base service implementation"
+	select CFW
+	select SERVICES_BLE_CORE
+	select BLUETOOTH_PERIPHERAL
+
+config BT_GATT_BLE_MAX_SERVICES
+	int "Maximum number BLE GATT services allowed to be registered"
+	default 3
+
+config BLUETOOTH_PERIPHERAL
+	bool "Bluetooth LE Peripheral API impelementation"
+
+config TCMD_BLE
+	bool "BLE test commands"
+	depends on TCMD
+	depends on SERVICES_BLE
+	default y if SERVICES_BLE
+
+config TCMD_BLE_DEBUG
+	bool "BLE debug test commands"
+	depends on TCMD_BLE
+
+config SERVICES_BLE_ISPP
+	bool "BLE ISPP"
+	depends on SERVICES_BLE_IMPL
+
+config SERVICES_BLE_IASP
+	bool "BLE IAS"
+	depends on SERVICES_BLE_ISPP
+	default y if SERVICES_BLE_ISPP
+
+config BLE_SM_IO_CAP_TEST
+	bool "SM Config test commands"
+	depends on TCMD_BLE
+	default n
+
+config SERVICES_BLE_BAS_USE_BAT
+	bool "Use battery service to update battery level"
+	depends on SERVICES_BLE_IMPL
+	depends on SERVICES_QUARK_SE_BATTERY
+	default y if SERVICES_QUARK_SE_BATTERY
+
+config SERVICES_BLE_STORAGE
+	bool "Use properties storage to store ble nv data"
+	depends on SERVICES_BLE_IMPL
+	depends on SERVICES_QUARK_SE_PROPERTIES
+	default y if SERVICES_QUARK_SE_PROPERTIES
+
+config SERVICES_BLE_CENTRAL
+	bool "BLE CFW based central role APIs"
+	depends on SERVICES_BLE
+
+config SERVICES_BLE_CORE
+	bool "BLE core APIs gap & gatt"
+	select SERVICES_BLE_GAP
+	select SERVICES_BLE_GATTS
+	select SERVICES_BLE_GATTC
+
+config SERVICES_BLE_GAP
+	bool "BLE core GAP APIs"
+
+config SERVICES_BLE_GATTS
+	bool "BLE core GATT Server APIs"
+
+config SERVICES_BLE_GATTC
+	bool "BLE core GATT Client APIs"
+
+config SERVICES_BLE_CORE_IMPL
+	bool "BLE core gap & gatt implementation"
+	select SERVICES_BLE_GAP_IMPL
+	select SERVICES_BLE_GATTS_IMPL
+	select SERVICES_BLE_GATTC_IMPL
+	select BLUETOOTH_PERIPHERAL
+
+config SERVICES_BLE_GAP_IMPL
+	bool "BLE core GAP implementation"
+
+config SERVICES_BLE_GATTS_IMPL
+	bool "BLE core GATT Server implementation"
+
+config SERVICES_BLE_GATTC_IMPL
+	bool "BLE core GATT Client implementation"
+
+menuconfig RPC
+	bool "RPC support"
+	default y
+	depends on IPC_UART
+
+config RPC_OUT
+	bool "Issues RPC requests"
+	default y
+	depends on RPC
+
+config RPC_IN
+	bool "Implements RPC requests"
+	default y
+	depends on RPC
+
+source "framework/src/lib/ble/Kconfig"
+
+endmenu

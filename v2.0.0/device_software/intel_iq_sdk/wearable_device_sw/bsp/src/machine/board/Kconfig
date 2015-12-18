@@ -1,0 +1,11 @@
+choice
+	prompt "Board"
+
+source "bsp/src/machine/board/curie_ctb/Kconfig"
+source "bsp/src/machine/board/curie_app/Kconfig"
+source "bsp/src/machine/board/curie_crb/Kconfig"
+source "bsp/src/machine/board/curie_orb/Kconfig"
+source "bsp/src/machine/board/curie_101/Kconfig"
+-source "$PROJECT_PATH/boards.Kconfig"
+
+endchoice

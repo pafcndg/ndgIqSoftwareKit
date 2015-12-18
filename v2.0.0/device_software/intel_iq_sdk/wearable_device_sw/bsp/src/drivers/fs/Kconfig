@@ -1,0 +1,8 @@
+
+config FAT_FS
+	bool "Enable FAT Filesystem Disk IO"
+	default n
+	depends on SPI_FLASH_INTEL_QRK
+	help
+	Enable FAT filesystem disk IO.
+

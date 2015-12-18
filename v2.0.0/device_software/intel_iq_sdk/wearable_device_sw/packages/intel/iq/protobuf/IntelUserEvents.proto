@@ -1,0 +1,32 @@
+package intel;
+
+option java_package = "com.intel.messages.core";
+option java_outer_classname = "IntelUserEventProto";
+
+/* topic intel/core/events/user */
+
+message UserEvent {
+	optional tappingEvent tapping_event = 1;
+	optional buttonEvent  button_event  = 2;
+
+	message tappingEvent {
+		required tappingEventType type      = 1;
+	}
+
+	message buttonEvent {
+		optional uint32 id                  = 1; /* for supporting multiple buttons */
+		required buttonEventType type       = 2;
+	}
+
+	enum  tappingEventType {
+		DOUBLE_TAP      =0;
+		TRIPLE_TAP      =1;
+	}
+
+	enum  buttonEventType {
+		SINGLE_PRESS    =0;
+		DOUBLE_PRESS    =1;
+		TRIPLE_PRESS    =2; /* defined , but not yet supported */
+		LONG_PRESS      =3;
+	}
+}

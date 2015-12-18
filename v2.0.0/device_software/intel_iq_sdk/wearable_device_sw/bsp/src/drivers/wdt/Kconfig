@@ -1,0 +1,30 @@
+config WDT
+	bool
+
+config HAS_INTEL_QRK_WDT
+	bool
+
+config INTEL_QRK_WDT
+	bool "Intel Quark WDT driver"
+	depends on HAS_INTEL_QRK_WDT
+	select WDT
+	select CLK_SYSTEM
+
+config TCMD_WDT
+	bool "WDT Test Command"
+	depends on TCMD
+	depends on INTEL_QRK_WDT
+
+if INTEL_QRK_WDT
+
+menu "WDT routed as NMI"
+
+config WDT_NMI
+	bool "WDT NMI"
+	help
+		Routes the WDT interrupt as NMI
+	depends on INTEL_QRK_WDT
+
+endmenu
+
+endif

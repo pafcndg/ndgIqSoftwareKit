@@ -1,0 +1,2 @@
+obj-$(CONFIG_SENSOR_CORE_ALGO_COMMON) += common/
+obj-$(CONFIG_SENSOR_CORE_ALGO_UDG) += udg/

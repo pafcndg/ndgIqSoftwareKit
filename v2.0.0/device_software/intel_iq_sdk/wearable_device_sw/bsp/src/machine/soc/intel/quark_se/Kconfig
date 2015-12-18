@@ -1,0 +1,254 @@
+config CURIE
+	bool
+	select QUARK_SE
+	select HAS_BLE_CORE
+	select HAS_BATTERY
+
+config QUARK_SE_DISABLE_INTERNAL_VREG
+	bool
+	default y
+	depends on CURIE
+
+config QUARK_SE_SWITCH_INTERNAL_OSCILLATOR
+	bool
+	default y
+	depends on CURIE
+
+config QUARK_SE
+	bool
+	select HAS_ARC
+	select HAS_QUARK
+
+# Hardware features supported by Quark SE based platforms
+
+# ARC | Quark
+config QUARK_SE_COMMON
+	bool
+	depends on QUARK_SE
+	default y if ARC || QUARK
+	select HAS_SOC_COMPARATOR
+	select HAS_GPIO_SOC_32
+	select HAS_GPIO_SOC_AON
+	select HAS_INTEL_QRK_I2C
+	select HAS_INTEL_QRK_SPI
+	select HAS_PATTERN_MATCHING
+	select HAS_IPC
+	select HAS_SHARED_MEM
+	# select only if ble_core is available and PM is used
+	# on the same core on which gpio aon is compiled
+	select BLE_CORE_SUSPEND_BLOCKER_PM if PM && HAS_BLE_CORE && SOC_GPIO_AON
+
+# ARC Only
+config QUARK_SE_ARC
+	bool
+	depends on QUARK_SE
+	default y if ARC
+	select HAS_USB_PM if BOARD_CURIE_APP
+	select HAS_PM_PUPDR
+	select HAS_GPIO_SS
+	select HAS_SS_ADC
+	select HAS_SS_I2C
+	select HAS_SS_SPI
+	select HAS_BMI160_I2C if BOARD_CURIE_APP
+	select HAS_BMI160_SPI if CURIE
+	select HAS_FLOAT
+
+# Quark Only
+config QUARK_SE_QUARK
+	bool
+	depends on QUARK_SE
+	default y if QUARK
+	select HAS_IPC_UART
+	select IPC_UART_NS16550 if IPC_UART
+	select HAS_FLASH_SOC
+	select HAS_ROM_SOC
+	select HAS_USB_PM if CURIE
+	select HAS_PM_PUPDR
+	select HAS_INTEL_QRK_PWM
+	select HAS_INTEL_QRK_RTC
+	select HAS_INTEL_QRK_AON_PT
+	select HAS_UART_NS16550
+	select HAS_USB
+	select HAS_INTEL_QRK_WDT
+	select HAS_CHARGER
+	# Select appropriate driver if feature is selected
+	select USB_SHARED_INTERFACE if USB
+
+# BLE Core only
+config QUARK_SE_BLE_CORE
+	bool
+	depends on QUARK_SE
+	default y if BLE_CORE
+	select HAS_IPC_UART
+	select BLE_LPM
+
+menu "Quark SE"
+	depends on QUARK_SE
+
+choice
+	prompt "Panic implementation"
+	depends on PANIC
+
+config QUARK_SE_PANIC_DEFAULT
+	bool "Default"
+	help
+		Default implementation includes hardware exceptions and panic
+		propagation.
+
+config QUARK_SE_PANIC_CUSTOM
+	bool "Custom"
+	help
+		Selecting this allows an Quark SE based project to use a different
+		panic implementation.
+
+endchoice
+
+config QUARK_SE_PANIC_DEBUG
+	bool "Panic debug logs"
+	default y
+	depends on QUARK_SE_PANIC_DEFAULT
+	help
+		Parse and print panic dumps for ARC/QRK cores before reset.
+
+config QUARK_SE_PINMUX_SETUP
+	bool "Pinmux Setup"
+	default y if QUARK_SE_QUARK
+	depends on QUARK_SE
+	help
+		Provides the default pinmux configuration for Quark SE. You
+		should call pinmux_config() to setup the pinmux.
+		Note that Quark boots first, so it is better if that is the
+		core that implements this functionality.
+
+config QUARK_SE_USB_SETUP
+	bool "Quark SE specific USB initialization"
+	default y
+	depends on QUARK_SE
+	depends on USB
+	depends on SOC_GPIO_32
+	help
+		Provides USB platform initialization for Quark SE.
+
+config QUARK_SE_UPTIME
+	bool "Quark SE uptime implementation"
+	default y
+	depends on QUARK_SE
+	help
+		Provides an implementation for get_uptime_32k() and
+		get_uptime() for Quark SE platform.
+
+config OS_ZEPHYR_LIBC_HOOKS
+	bool "LibC Hooks for Zephyr's LibC"
+	default y
+	depends on OS_ZEPHYR_MICROKERNEL
+	help
+		Provides basic stubs implementations for kill, getpid and sbrk
+		functions needed by Zephyr's LibC.
+
+config QUARK_SE_ARC_STARTUP_DISABLED
+	bool "Debug ARC startup with GDB"
+	depends on QUARK_SE
+	help
+		In order to be able to debug ARC startup, you need to connect to it with gdb before
+		the core starts. Selecting this option will prevent Quark to start the ARC processor,
+		allowing the debugger to do that manually.
+		NOTE: this should only be done for debugging sessions when debugging ARC startup.
+
+menu "Memory mapping"
+
+config QUARK_SE_ARC_RAM_SIZE
+	hex "ARC RAM size"
+	default 0x6000
+
+config QUARK_SE_ARC_DCCM_SIZE
+	hex "DCCM RAM size"
+	default 0x2000
+
+endmenu
+
+if QUARK_SE_QUARK
+menu "Quark SE Quark"
+
+config QUARK_SE_QUARK_INT_STUBS
+	bool "Interrupt Table for Quark on Zephyr"
+	default y
+	depends on OS_ZEPHYR
+	depends on QUARK_SE_QUARK
+	help
+		Provides static interrupt table.
+
+config QUARK_SE_QUARK_LOG_BACKEND_UART
+	bool "UART log backend for Quark on Zephyr"
+	default y
+	depends on OS_ZEPHYR
+	depends on QUARK_SE_QUARK
+	help
+		Provides a logger backend that uses UART1.
+
+config QUARK_SE_PROPERTIES_STORAGE
+	bool "Properties storage implementation for Quark SE"
+	depends on QUARK_SE_QUARK
+	depends on HAS_FLASH_SOC
+	select SOC_FLASH
+	help
+		It is based on the internal Quark SE Flash
+
+config QUARK_SE_QUARK_SOC_SETUP
+	bool "SoC Initialization for Quark on Zephyr"
+	default y
+	depends on QUARK_SE_QUARK_INT_STUBS
+	depends on OS_ZEPHYR
+	depends on QUARK_SE_QUARK
+	help
+		Provides SoC initialization.
+
+config QUARK_SE_QUARK_SOC_CONFIG
+	bool "SoC configuration for Quark"
+	default y
+	depends on QUARK_SE_QUARK
+	depends on DEVICE_FRAMEWORK
+	help
+		Device tree implementation as seen on Quark SE by Quark
+		core. Provides a function called init_all_devices() to
+		initialize the statically compiled device tree.
+
+config DEEPSLEEP
+	bool "Allow deep sleep in QUARK core"
+	depends on HAS_INTEL_QRK_AON_PT
+	depends on PM_PUPDR
+	depends on OS_ZEPHYR
+	select INTEL_QRK_AON_PT
+
+endmenu
+endif
+
+if QUARK_SE_ARC
+menu "Quark SE Arc"
+
+config QUARK_SE_ARC_SOC_SETUP
+	bool "SoC Initialization for ARC on Zephyr"
+	default y
+	depends on OS_ZEPHYR
+	depends on QUARK_SE_ARC
+	help
+		Provides SoC initialization.
+
+config QUARK_SE_ARC_SOC_CONFIG
+	bool "SoC configuration for ARC"
+	default y
+	depends on QUARK_SE_ARC
+	depends on DEVICE_FRAMEWORK
+	help
+		Device tree implementation as seen on Quark SE by ARC core.
+		Provides a function called init_all_devices() to initialize the
+		statically compiled device tree.
+
+config DEEPSLEEP
+	bool "Allow deep sleep in ARC core"
+	depends on PM_PUPDR
+	depends on OS_ZEPHYR
+
+endmenu
+endif
+
+endmenu

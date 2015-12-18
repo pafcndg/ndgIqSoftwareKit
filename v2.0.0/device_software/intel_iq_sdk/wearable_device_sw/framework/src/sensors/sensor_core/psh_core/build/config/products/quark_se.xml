@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2013
+Options for PSH FW.
+Author: Yang, Bin <bin.yang@intel.com>
+-->
+
+<options>
+    <!-- base options -->
+    <option name="variant" type="STRING" value="zephyr"/>
+
+    <!-- debug options -->
+    <option name="TRACE_ON" type="BOOL" value="y" class="debug"/>
+    <option name="VERBOSE_ON" type="BOOL" value="y" class="debug"/>
+
+    <!-- phy driver options -->
+    <phy_driver>
+        <accel_phy
+            freq_max="200"
+            bit_cfg_mask = "ACCEL_BIT_CFG_FS_8G | ACCEL_BIT_CFG_FS_16G | SNR_BIT_CFG_FIFO_ON"
+            sname="ACCEL_PHY_NAME_STR"
+            fifo_len = "32"
+        />
+        <gyro_phy
+            freq_max="200"
+            bit_cfg_mask = "ACCEL_BIT_CFG_FS_8G | ACCEL_BIT_CFG_FS_16G | SNR_BIT_CFG_FIFO_ON"
+            sname="GYRO_PHY_NAME_STR"
+        />
+        <motion_det
+            freq_max="FREQ_ASYNC"
+            sname="MOVE_DETECT_NAME_STR"
+        />
+    </phy_driver>
+
+    <sensor>
+        <!-- phy sensors -->
+        <accel_phy_dev
+            attri = "SENSOR_ATTRI_IS_PHYSICAL"
+            freq_max="100"
+            class="physical"
+            name="ACCEL_PHY_NAME_STR"
+            data_buf_size = "struct accel_phy_data">
+        </accel_phy_dev>
+
+        <gyro_phy_dev
+            attri = "SENSOR_ATTRI_IS_PHYSICAL"
+            freq_max="100"
+            class="physical"
+            name="GYRO_PHY_NAME_STR"
+            data_buf_size = "struct gyro_phy_data">
+        </gyro_phy_dev>
+
+        <move_detect_dev
+            attri = "SENSOR_ATTRI_IS_PHYSICAL"
+            freq_max="FREQ_ASYNC"
+            class="physical"
+            name="MOVE_DETECT_NAME_STR"
+            data_buf_size = "struct md_data">
+        </move_detect_dev>
+
+
+        <!-- abstract sensors -->
+
+        <gesturepersonalize
+            attri = "SENSOR_ATTRI_AUTO_IDLE | SENSOR_ATTRI_ACTIVE_IDLE"
+            freq_max = "FREQ_ASYNC"
+            data_buf_size= "struct gs_personalize"
+            class="abstract"
+            name = "GESTURE_PERSONALIZE" >
+
+            <rpt_info
+                sname = "ACCEL_PHY_NAME_STR"
+                buff_delay = "1000"
+                cfg_freq = "100"
+            />
+        </gesturepersonalize>
+
+        <stepcounter
+            attri = "SENSOR_ATTRI_AUTO_IDLE | SENSOR_ATTRI_ACTIVE_IDLE"
+            freq_max = "FREQ_ASYNC"
+            data_buf_size= "struct stepcounter_result"
+            class="abstract"
+            name = "STEPCOUNTER_NAME_STR" >
+
+            <rpt_info
+                sname = "ACCEL_PHY_NAME_STR"
+                buff_delay = "1000"
+                cfg_freq = "33"
+            />
+        </stepcounter>
+
+        <activity
+            attri = "SENSOR_ATTRI_AUTO_IDLE | SENSOR_ATTRI_ACTIVE_IDLE"
+            freq_max = "FREQ_ASYNC"
+            data_buf_size= "struct activity_result"
+            class="abstract"
+            name = "PHY_ACTIVITY_NAME_STR" >
+
+            <rpt_info
+                sname = "STEPCOUNTER_NAME_STR"
+                buff_delay = "1000"
+                cfg_freq = "33"
+            />
+        </activity>
+
+        <tapping
+            attri = "SENSOR_ATTRI_AUTO_IDLE | SENSOR_ATTRI_ACTIVE_IDLE"
+            freq_max = "FREQ_ASYNC"
+            data_buf_size= "struct tapping_result"
+            class="abstract"
+            name = "TAPPING_ATP" >
+
+            <rpt_info
+                sname = "ACCEL_PHY_NAME_STR"
+                buff_delay = "1000"
+                cfg_freq = "100"
+                />
+        </tapping>
+
+        <simpleges
+            attri = "SENSOR_ATTRI_AUTO_IDLE | SENSOR_ATTRI_ACTIVE_IDLE"
+            freq_max = "FREQ_ASYNC"
+            data_buf_size= "struct simpleges_result"
+            class="abstract"
+            name = "SIMPLEGES_ATP" >
+
+            <rpt_info
+                sname = "ACCEL_PHY_NAME_STR"
+                buff_delay = "1000"
+                cfg_freq = "20"
+            />
+        </simpleges>
+
+    </sensor>
+</options>
+

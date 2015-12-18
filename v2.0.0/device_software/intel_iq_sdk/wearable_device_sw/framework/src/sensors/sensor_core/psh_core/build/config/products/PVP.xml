@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2013
+Options for PSH FW.
+Author: Yang, Bin <bin.yang@intel.com>
+-->
+
+<options>
+    <!-- base options -->
+    <option name="variant" type="STRING" value="zephyr"/>
+
+    <!-- debug options -->
+    <option name="TRACE_ON" type="BOOL" value="y" class="debug"/>
+    <option name="VERBOSE_ON" type="BOOL" value="y" class="debug"/>
+
+    <!-- phy driver options -->
+    <phy_driver>
+        <ACCEL_PVP
+            freq_max="FREQ_ASYNC"
+            bit_cfg_mask = "ACCEL_BIT_CFG_FS_8G | ACCEL_BIT_CFG_FS_16G | SNR_BIT_CFG_FIFO_ON"
+            sname="ACCEL_PHY_NAME_STR"
+        />
+    </phy_driver>
+
+    <sensor>
+        <!-- phy sensors -->
+        <accel_pvp
+            attri = "SENSOR_ATTRI_IS_PHYSICAL"
+            freq_max="FREQ_ASYNC"
+            class="physical"
+            name="ACCEL_PHY_NAME_STR"
+            data_buf_size = "struct accel_pvp_data">
+        </accel_pvp>
+
+        <!-- abstract sensors -->
+        <pedometer
+            attri = "SENSOR_ATTRI_AUTO_IDLE | SENSOR_ATTRI_ACTIVE_IDLE"
+            freq_max = "FREQ_ASYNC"
+            data_buf_size= "struct accel_pvp_data"
+            class="abstract"
+            name = "PEDOMETER_NAME_STR" >
+
+            <rpt_info
+                sname = "ACCEL_PHY_NAME_STR"
+                cfg_freq = "FREQ_ASYNC"
+            />
+        </pedometer>
+
+        <gesturepersonalize
+            attri = "SENSOR_ATTRI_AUTO_IDLE | SENSOR_ATTRI_ACTIVE_IDLE"
+            freq_max = "FREQ_ASYNC"
+            data_buf_size= "struct gs_personalize"
+            class="abstract"
+            name = "GESTURE_PERSONALIZE" >
+
+            <rpt_info
+                sname = "ACCEL_PHY_NAME_STR"
+                cfg_freq = "100"
+            />
+        </gesturepersonalize>
+
+    </sensor>
+</options>
+

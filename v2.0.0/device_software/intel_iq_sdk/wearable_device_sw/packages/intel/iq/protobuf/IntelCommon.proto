@@ -1,0 +1,14 @@
+package intel;
+
+import "nanopb.proto";
+
+option java_package = "com.intel.messages.common";
+option java_outer_classname = "IntelCommonProto";
+
+message DateTime {
+	optional uint32 datetime                = 1;
+}
+
+message DeviceName {
+	optional string name                    = 1 [(nanopb).max_size = 20]; /* BLE_MAX_DEVICE_NAME = 20 */
+}

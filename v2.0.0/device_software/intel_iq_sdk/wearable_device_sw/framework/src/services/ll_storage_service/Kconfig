@@ -1,0 +1,24 @@
+if QUARK_SE_QUARK
+
+menu "Low level storage"
+
+config SERVICES_QUARK_SE_STORAGE
+	bool "Client"
+	select CFW
+
+config SERVICES_QUARK_SE_STORAGE_IMPL
+	bool "Server"
+	depends on HAS_FLASH
+	select CFW
+	select STORAGE_TASK
+	select SOC_FLASH if HAS_FLASH_SOC
+	select SPI_FLASH if HAS_SPI_FLASH
+
+config SERVICES_QUARK_SE_STORAGE_CIRCULAR
+	bool "Circular storage"
+	depends on HAS_SPI_FLASH
+	select CSTORAGE_FLASH_SPI
+
+endmenu
+
+endif

@@ -1,0 +1,24 @@
+config BOARD_MORPHEUS
+	bool "Curie Morpheus Board (CMB)"
+	select CURIE
+
+if BOARD_MORPHEUS
+
+# Set the default for this option, which is already defined in the Kconfig above
+config MACHINE_INCLUDE_PATH
+	string
+	default "$(T)/bsp/include/machine/board/curie_ctb/$(CONFIG_CORE_NAME)/"
+
+config BATT_ADC_FACTOR
+        int "Battery ADC factor"
+	default 124
+
+config FG_USE_SS_GPIO
+        bool "Fuel gauge SS gpio usage"
+        default y
+
+config FG_EN_GPIO_ID
+	int "GPIO Index for FG Enable pin"
+	default 14
+
+endif

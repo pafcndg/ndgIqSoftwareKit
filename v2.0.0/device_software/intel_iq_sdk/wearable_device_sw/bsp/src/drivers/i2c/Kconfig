@@ -1,0 +1,22 @@
+config I2C
+	bool
+
+config HAS_INTEL_QRK_I2C
+	bool
+
+config INTEL_QRK_I2C
+	bool "Intel Quark I2C driver"
+	depends on HAS_INTEL_QRK_I2C
+	select I2C
+	select SBA if TCMD
+	select CLK_SYSTEM
+
+config HAS_SS_I2C
+	bool
+
+config SS_I2C
+	bool "SS I2C driver"
+	depends on HAS_SS_I2C
+	select I2C
+	select SBA if TCMD
+	select CLK_SYSTEM

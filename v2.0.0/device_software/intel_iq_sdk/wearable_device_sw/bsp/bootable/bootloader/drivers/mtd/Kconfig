@@ -1,0 +1,17 @@
+config SPI_FLASH
+	bool
+
+config SPI_FLASH_W25Q16DV
+	bool "SPI NOR Flash Winbond W25Q16DV on Intel QRK"
+	select SPI_FLASH
+
+config SPI_FLASH_MX25U12835F
+	bool "SPI NOR Flash Macronix MX25U12835F on Intel QRK"
+	select SPI_FLASH
+	select SPI_MX25
+
+config SPI_FLASH_MX25R1635F
+	bool "SPI NOR Flash Macronix MX25R1635F on Intel QRK"
+	select SPI_FLASH
+	select SPI_MX25
+

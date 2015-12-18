@@ -1,0 +1,5 @@
+obj-$(CONFIG_SENSOR_CORE_ALGO_UDG) += gesturepersonalize.o
+obj-$(CONFIG_SENSOR_CORE_ALGO_TAPPING) += tapping.o
+obj-$(CONFIG_SENSOR_CORE_ALGO_SIMPLEGES) += simpleges.o
+obj-$(CONFIG_SENSOR_CORE_ALGO_STEPCOUNTER_ACTIVITY) += stepcounter.o
+obj-$(CONFIG_SENSOR_CORE_ALGO_STEPCOUNTER_ACTIVITY) += activity.o

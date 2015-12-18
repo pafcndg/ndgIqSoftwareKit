@@ -1,0 +1,62 @@
+config MACHINE_INCLUDE_PATH
+	string
+	help
+		The directory where the mandatory machine.h file for this machine is
+		located. It is automatically added to the include search path.
+
+# Board selection
+source "bsp/src/machine/board/Kconfig"
+
+# SoC features (can only be selected automatically by the board)
+source "bsp/src/machine/soc/intel/quark_se/Kconfig"
+
+config HAS_FLOAT
+	bool
+
+config HAS_ARC
+	bool
+
+config HAS_QUARK
+	bool
+
+config HAS_BLE_CORE
+	bool
+	select HAS_IPC
+
+choice
+	prompt "Core"
+	depends on HAS_ARC || HAS_QUARK || HAS_BLE_CORE
+
+config ARC
+	bool "ARC"
+	depends on HAS_ARC
+
+config QUARK
+	bool "Quark"
+	depends on HAS_QUARK
+
+config BLE_CORE
+	bool "BLE Core"
+	depends on HAS_BLE_CORE
+
+endchoice
+
+config BLE_LPM
+	bool "BLE Low Power Mode"
+	depends on BLE_CORE
+
+config CORE_NAME
+	string
+	default "arc" if ARC
+	default "quark" if QUARK
+	default "ble_core" if BLE_CORE
+
+config RECOVERY_BOOT_TARGET
+	bool
+	help
+		Mode to fallback when the main application mode is considered not
+		functional anymore.
+		It should be implemented by the board/application.
+
+comment "Define a proper Board Configuration to enable the Core menu"
+	depends on !HAS_ARC && !HAS_QUARK && !HAS_BLE_CORE

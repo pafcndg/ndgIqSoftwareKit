@@ -1,0 +1,6 @@
+if HAS_FLOAT
+
+config MATHLIB
+    bool "Math library"
+
+endif

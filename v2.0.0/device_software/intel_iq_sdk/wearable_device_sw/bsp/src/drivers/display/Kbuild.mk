@@ -1,0 +1,1 @@
+obj-$(CONFIG_DISPLAY_HD44780) += hd44780.o

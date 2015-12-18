@@ -1,0 +1,9 @@
+if !SENSING_MODULE_IQ
+
+config SENSING_HELPER
+	bool "Sensing helper"
+	depends on SERVICES_SENSOR
+	depends on !SENSING_MODULE_IQ
+	default y
+
+endif

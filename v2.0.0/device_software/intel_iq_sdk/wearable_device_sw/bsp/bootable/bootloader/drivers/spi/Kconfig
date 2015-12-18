@@ -1,0 +1,2 @@
+config SPI
+	bool "Intel Quark SPI driver"

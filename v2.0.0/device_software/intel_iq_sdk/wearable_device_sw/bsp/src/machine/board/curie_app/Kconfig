@@ -1,0 +1,32 @@
+config BOARD_CURIE_APP
+	bool "AtlasPeak Platform (APP)"
+	# List all available hardware for this board
+	select QUARK_SE
+	select HAS_BLE_CORE
+	select HAS_SPI_FLASH if QUARK
+	select HAS_LED if QUARK
+	select HAS_HAPTIC if QUARK
+	# Select appropriate driver if a feature is activated
+	select SPI_FLASH_MX25U12835F if (SPI_FLASH && QUARK)
+	select HAS_BME280_SPI
+
+if BOARD_CURIE_APP
+
+# Set the default for this option, which is already defined in the Kconfig above
+config MACHINE_INCLUDE_PATH
+	string
+	default     "$(T)/bsp/include/machine/board/curie_ctb/$(CONFIG_CORE_NAME)/"
+
+config BATT_ADC_FACTOR
+        int "Battery ADC factor"
+	default 110
+
+config FG_USE_SS_GPIO
+        bool "Fuel gauge SS gpio usage"
+        default y
+
+config FG_EN_GPIO_ID
+	int "GPIO Index for FG Enable pin"
+	default 14
+
+endif

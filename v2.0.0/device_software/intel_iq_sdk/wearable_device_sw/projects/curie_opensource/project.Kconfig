@@ -1,0 +1,5 @@
+config SENSING_HELPER
+	bool "Sensing helper"
+	depends on SERVICES_SENSOR
+	default y
+

@@ -1,0 +1,123 @@
+// r          Reset target         (RESET)
+// si         Select target interface. Syntax: si <Interface>,
+//            where 0=JTAG and 1=SWD.
+// tck0       Clear TCK
+// tck1       Set   TCK
+// t0         Clear TMS
+// t1         Set   TMS
+//
+// on JLink SWD connector
+//   1 = VTref
+//   2 = SWDIO/TMS
+//   3 = GND
+//   4 = SWCLK/TCK
+//   5 = GND
+//   6 = SWO/TDO
+//   7 = removed, should be a foolproof protection
+//   8 = TDI
+//   9 = Not Connected
+//  10 = nReset
+//
+//
+// this new reset sequence comes from the ARM Cortex M0 description:
+// To switch SWJ-DP from JTAG to SWD operation:
+//    Send more than 50 SWCLKTCK cycles with SWDIOTMS=1. This ensures that both SWD and JTAG are in their reset states.
+si 0
+tck0
+sleep 2
+t1
+sleep 2
+tck1
+sleep 2
+tck0
+sleep 2
+tck1
+sleep 2
+tck0
+sleep 2
+tck1
+sleep 2
+tck0
+sleep 2
+tck1
+sleep 2
+tck0
+sleep 2
+tck1
+sleep 2
+tck0
+sleep 2
+tck1
+sleep 2
+tck0
+sleep 2
+tck1
+sleep 2
+tck0
+sleep 2
+tck1
+sleep 2
+tck0
+sleep 2
+tck1
+sleep 2
+tck0
+sleep 2
+tck1
+sleep 2
+tck0
+sleep 2
+tck1
+sleep 2
+tck0
+sleep 2
+tck1
+sleep 2
+tck0
+sleep 2
+tck1
+sleep 2
+tck0
+sleep 2
+tck1
+sleep 2
+tck0
+sleep 2
+tck1
+sleep 2
+tck0
+sleep 2
+tck1
+sleep 2
+tck0
+sleep 2
+tck1
+sleep 2
+tck0
+sleep 2
+tck1
+sleep 2
+tck0
+sleep 2
+tck1
+sleep 2
+tck0
+sleep 2
+tck1
+sleep 2
+tck0
+sleep 2
+tck1
+sleep 2
+tck0
+sleep 2
+tck1
+sleep 2
+tck0
+sleep 2
+t0
+sleep 100
+si 1
+r
+exit
+

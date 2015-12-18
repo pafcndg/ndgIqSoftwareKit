@@ -1,0 +1,13 @@
+obj-$(CONFIG_SERVICES_BLE_IMPL) += ble_service.o
+obj-$(CONFIG_SERVICES_BLE) += ble_service_api.o
+obj-$(CONFIG_SERVICES_BLE_GATTS) += gatt.o
+obj-$(CONFIG_TCMD_BLE) += ble_tcmd.o
+obj-$(CONFIG_SERVICES_BLE_IMPL) += ble_service_core_int.o
+obj-$(CONFIG_SERVICES_BLE_IMPL) += ble_service_utils.o
+obj-$(CONFIG_SERVICES_BLE_IMPL) += ble_service_bas.o
+obj-$(CONFIG_SERVICES_BLE_IMPL) += ble_service_dis.o
+obj-$(CONFIG_SERVICES_BLE_ISPP) += ble_service_ispp.o
+obj-$(CONFIG_SERVICES_BLE_IMPL) += ble_service_test.o
+obj-$(CONFIG_BLE_CORE_TEST) += test/
+obj-$(CONFIG_RPC_IN) += rpc_deserialize.o
+obj-$(CONFIG_RPC_OUT) += rpc_serialize.o

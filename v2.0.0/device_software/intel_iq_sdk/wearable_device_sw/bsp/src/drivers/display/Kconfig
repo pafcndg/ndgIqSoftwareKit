@@ -1,0 +1,6 @@
+config DISPLAY_HD44780
+	bool "HD44780 display driver"
+	depends on HAS_GPIO_SOC_32
+	select SOC_GPIO
+	select SOC_GPIO_32
+	select DEVICE_FRAMEWORK

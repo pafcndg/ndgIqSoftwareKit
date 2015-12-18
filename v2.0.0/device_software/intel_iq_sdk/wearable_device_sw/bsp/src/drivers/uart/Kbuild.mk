@@ -1,0 +1,2 @@
+obj-$(CONFIG_UART_PM_NS16550) += ns16550_pm.o
+

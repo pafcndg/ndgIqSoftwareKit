@@ -1,0 +1,52 @@
+package intel;
+
+import "nanopb.proto";
+import "IntelCommon.proto";
+
+option java_package = "com.intel.messages.core";
+option java_outer_classname = "IntelNotificationProto";
+
+/* topic intel/core/notification */
+
+message Notification {
+	optional vibraPattern   vibra_notif     = 1;
+	optional ledPattern     led_notif       = 2;
+	optional uint32         delay_startup   = 3; /* delay between vibra pattern and led pattern */
+
+	message vibraPattern {
+		required vibraPatternType  type               = 1;
+		required uint32            amplitude          = 2 [(nanopb).int_size=IS_8]; /* range is 0x0 (OFF) to 0xFF (max amplitude supported by the device) */
+		repeated uint32            effect             = 3 [(nanopb).max_count=5, (nanopb).int_size=IS_8]; /* special effects are defined in the wearable device vibra hardware data sheet */
+		repeated durationPattern   duration           = 4 [(nanopb).max_count=4];
+		required uint32            repetition_count   = 5 [(nanopb).int_size=IS_8]; /* for repeating the same vibraPattern */
+	}
+
+	message ledPattern {
+		optional uint32           id                = 1 [(nanopb).int_size=IS_8]; /* boards can support more than one LED */
+		required ledPatternType   type              = 2;
+		repeated durationPattern  duration          = 3 [(nanopb).max_count=3];
+		repeated RGBcolor         rgb               = 4 [(nanopb).max_count=3];
+		required uint32           repetition_count  = 5 [(nanopb).int_size=IS_8]; /* for repeating the same LedPattern */
+		required uint32           intensity         = 6 [(nanopb).int_size=IS_8]; /* range is 0x0 (OFF) to 0xFF (max amplitude supported by the device) */
+	}
+
+	message RGBcolor {
+		required uint32 red                         = 1 [(nanopb).int_size=IS_8]; /* from 0(dark) to 255(bright) */
+		required uint32 green                       = 2 [(nanopb).int_size=IS_8]; /* from 0(dark) to 255(bright) */
+		required uint32 blue                        = 3 [(nanopb).int_size=IS_8]; /* from 0(dark) to 255(bright) */
+	}
+
+	enum  ledPatternType {
+		LED_BLINK                                   =1;
+		LED_WAVE                                    =2;
+	}
+
+	enum  vibraPatternType {
+		VIBRA_SQUARE            =1; /* amplitude, duration_on/off, duration_on_off, repetition_count */
+		VIBRA_SPECIAL_EFFECTS   =2; /* for using special effects that are embedded in the vibra driver */	}
+
+	message durationPattern {
+		optional uint32 duration_on             = 1 [(nanopb).int_size=IS_16]; /* in milliseconds */
+		optional uint32 duration_off            = 2 [(nanopb).int_size=IS_16]; /* in milliseconds */
+	}
+}

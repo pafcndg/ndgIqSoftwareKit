@@ -1,0 +1,13 @@
+source "framework/src/services/ble_service/Kconfig"
+source "framework/src/services/ui_service/Kconfig"
+source "framework/src/services/nfc_service/Kconfig"
+source "framework/src/services/test_service/Kconfig"
+source "framework/src/services/em_service/Kconfig"
+source "framework/src/services/gpio_service/Kconfig"
+source "framework/src/services/adc_service/Kconfig"
+source "framework/src/services/ll_storage_service/Kconfig"
+source "framework/src/services/properties_service/Kconfig"
+source "framework/src/services/sensor_service/Kconfig"
+
+config STORAGE_TASK
+	bool

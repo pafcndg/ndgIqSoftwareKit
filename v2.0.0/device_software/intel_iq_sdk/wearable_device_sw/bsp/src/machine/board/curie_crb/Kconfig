@@ -1,0 +1,58 @@
+config BOARD_CURIE_CRB
+	bool "Curie Customer Reference Board (CRB)"
+	select CURIE
+	select HAS_HAPTIC
+	select HAS_BUTTON
+	select HAS_LED
+	select HAS_SPI_FLASH
+	select HAS_WC_CHARGER if QUARK
+	select HAS_WIRED_CHARGER if QUARK
+	# Select appropriate driver if a feature is activated
+	select SPI_FLASH_MX25U12835F if (SPI_FLASH && QUARK)
+	select HAS_BOARD_SHUTDOWN
+	select QI_BQ51003 if (WC_CHARGER && SERVICES_QUARK_SE_CHARGER)
+	select USB_POWER_SUPPLY if (WIRED_CHARGER && SERVICES_QUARK_SE_CHARGER)
+	select QUARK_CHARGER if (CHARGER && SERVICES_QUARK_SE_CHARGER)
+	select HAS_BME280_I2C
+
+if BOARD_CURIE_CRB
+
+# Set the default for this option, which is already defined in the Kconfig above
+config MACHINE_INCLUDE_PATH
+	string
+	default "$(T)/bsp/include/machine/board/curie_ctb/$(CONFIG_CORE_NAME)/"
+
+# crb module is safe to stay on the external oscillator when usb is unplugged
+config QUARK_SE_SWITCH_INTERNAL_OSCILLATOR
+	bool
+	default n
+
+config LED
+	# Overwrite LED flag to resolve LED driver dependencies
+	# (select the right LED device and I2C bus)
+	select LP5562_LED
+	select INTEL_QRK_I2C
+
+config BUTTON
+	# Overwrite BUTTON flag to resolve button driver dependencies
+	# (button driver is based on gpio service on CRB hardware)
+	select BUTTON_GPIO_SVC
+
+config HAPTIC
+	# Overwrite HAPTIC flag to resolve haptic driver dependencies
+	select DRV2605
+	select INTEL_QRK_I2C
+
+config BATT_ADC_FACTOR
+        int "Battery ADC factor"
+	default 124
+
+config FG_USE_SS_GPIO
+        bool "Fuel gauge SS gpio usage"
+        default y
+
+config FG_EN_GPIO_ID
+	int "GPIO Index for FG Enable pin"
+	default 14
+
+endif

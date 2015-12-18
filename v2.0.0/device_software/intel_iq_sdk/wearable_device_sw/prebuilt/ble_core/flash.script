@@ -1,0 +1,10 @@
+h
+
+// enable the flash for writing
+w4 4001e504 1
+
+loadbin image.bin 0
+
+r
+
+qc

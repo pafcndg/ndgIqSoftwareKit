@@ -1,0 +1,621 @@
+{
+ "flash" :  {
+  "commands" : [
+   {
+    "args" : "-s ${flashDir} -f ${jtag_interface_cfg} -f ${jtag_reset_cfg}",
+    "timeout" : 60000,
+    "retry" : 3,
+    "tool" : "openocd",
+    "restrict" : [
+     "jtag_x86_rom",
+     "jtag_x86_rom+bootloader",
+     "jtag_full+ble_core_jtag_full",
+     "jtag_full" ],
+    "description": "Flash main core rom (jtag)"
+   },
+   {
+    "args" : "-s ${flashDir} -f ${jtag_interface_cfg} -f ${jtag_init_cfg} -f ${jtag_x86_rom_cfg} -f ${jtag_release_cfg}",
+    "timeout" : 60000,
+    "retry" : 3,
+    "tool" : "openocd",
+    "restrict" : [
+     "jtag_x86_rom",
+     "jtag_x86_rom+bootloader",
+     "jtag_full+ble_core_jtag_full",
+     "jtag_full" ],
+    "description": "Flash main core rom (jtag)"
+   },
+   {
+    "args" : "-a 0 -D ${x86_rom_binary}",
+    "timeout" : 30000,
+    "retry" : 3,
+    "restrict" : [
+     "usb_x86_rom",
+     "usb_x86_rom+bootloader" ],
+    "tool" : "dfuDownloader",
+    "description": "Flash main core rom (usb)"
+   },
+   {
+    "args" : "-s ${flashDir} -f ${jtag_interface_cfg} -f ${jtag_init_cfg} -f ${jtag_x86_bootloader_cfg} -f ${jtag_release_cfg}",
+    "timeout" : 120000,
+    "retry" : 3,
+    "restrict" : [
+     "jtag_x86_bootloader",
+     "jtag_x86_rom+bootloader",
+     "jtag_full+ble_core_jtag_full",
+     "jtag_full" ],
+    "tool" : "openocd",
+    "description": "Flash main core bootloader (jtag)"
+   },
+   {
+    "args" : "-a 7 -D ${x86_bootloader_binary}",
+    "timeout" : 30000,
+    "retry" : 3,
+    "restrict" : [
+     "usb_x86_bootloader",
+     "usb_x86_rom+bootloader",
+     "usb_full"],
+    "tool" : "dfuDownloader",
+    "description": "Flash main core bootloader (usb)"
+   },
+   {
+    "args" : "-a 2 -R -D ${bootupdater_binary}",
+    "timeout" : 30000,
+    "retry" : 3,
+    "restrict" : [
+     "usb_x86_bootloader",
+     "usb_x86_rom+bootloader",
+     "usb_full"],
+    "tool" : "dfuDownloader",
+    "description": "Flash bootupdater application (usb)"
+   },
+   {
+    "duration":20000,
+    "restrict":[
+    "usb_x86_bootloader",
+    "usb_full"],
+    "tool": "sleep",
+    "description": "waiting copy of bootloader ( by bootupdater application)"
+   },
+   {
+    "args" : "-s ${flashDir} -f ${jtag_interface_cfg} -f ${jtag_init_cfg} -f ${jtag_x86_apps_cfg} -f ${jtag_release_cfg}",
+    "timeout" : 120000,
+    "retry" : 3,
+    "restrict" : [
+     "jtag_x86_apps",
+     "jtag_full+ble_core_jtag_full",
+     "jtag_full" ],
+    "tool" : "openocd",
+    "description": "Flash main core apps (jtag)"
+   },
+   {
+    "args" : "-a 2 -D ${x86_apps_binary}",
+    "timeout" : 30000,
+    "retry" : 3,
+    "restrict" : [
+     "usb_x86_apps",
+     "usb_all_apps",
+     "usb_full" ],
+    "tool" : "dfuDownloader",
+    "description": "Flash main core binary (usb)"
+   },
+   {
+    "args" : "-s ${flashDir} -f ${jtag_interface_cfg} -f ${jtag_init_cfg} -f ${jtag_arc_apps_cfg} -f ${jtag_release_cfg}",
+    "timeout" : 120000,
+    "retry" : 3,
+    "restrict" : [
+     "jtag_arc_apps",
+     "jtag_full+ble_core_jtag_full",
+     "jtag_full" ],
+    "tool" : "openocd",
+    "description": "Flash sensor core apps (jtag)"
+   },
+   {
+    "args" : "-a 7 -D ${arc_binary}",
+    "timeout" : 30000,
+    "retry" : 3,
+    "restrict" : [
+     "usb_arc_apps",
+     "usb_all_apps",
+     "usb_full" ],
+    "tool" : "dfuDownloader",
+    "description": "Flash sensor core binary (usb)"
+   },
+   {
+    "args" : "-a 3 -D ${factory_nonpersistent_erase_file}",
+    "timeout" : 5000,
+    "retry" : 1,
+    "restrict" : [
+     "usb_blank_persistent",
+     "usb_full" ],
+    "tool" : "dfuDownloader",
+    "description": "Erase non persistent factory partition"
+   },
+   {
+    "args" : "-a 4 -D ${panic_erase_file}",
+    "timeout" : 5000,
+    "retry" : 1,
+    "restrict" : [
+     "usb_blank_persistent",
+     "usb_full" ],
+    "tool" : "dfuDownloader",
+    "description": "Erase panic partition"
+   },
+   {
+    "args" : "-a 5 -D ${factory_persistent_erase_file}",
+    "timeout" : 5000,
+    "retry" : 1,
+    "restrict" : [
+     "usb_blank_persistent"
+     ],
+    "tool" : "dfuDownloader",
+    "description": "Erase persistent factory partition"
+   },
+   {
+    "args" : "-a 8 -D ${ble_binary}",
+    "timeout" : 90000,
+    "retry" : 3,
+    "restrict" : [
+     "usb_all_apps",
+     "usb_ble_core_full",
+     "usb_full"],
+    "tool" : "dfuDownloader",
+    "description": "Flash ble core binary (usb)"
+   },
+   {
+    "args" : "-a 6 -R -D ${data_erase_file}",
+    "timeout" : 10000,
+    "retry" : 1,
+    "restrict" : [
+     "usb_blank_persistent",
+     "usb_full" ],
+    "tool" : "dfuDownloader",
+    "description": "Erase data partition"
+   },
+   {
+    "args" : "${ble_core_init_script}",
+    "successCondition" : "eval (${jlinkDownloaderCheck}); jlinkCheck(/Info: Found Cortex-M0 r0p0, Little endian/i);",
+    "timeout" : 3000,
+    "retry" : 3,
+    "restrict" : [
+     "ble_core_jtag_full",
+     "jtag_full+ble_core_jtag_full" ],
+    "tool" : "jlinkDownloader",
+    "description": "Initialize ble core"
+   },
+   {
+    "args" : "-device nrf51822 -if swd -speed 1000 ${ble_core_device_check_script}",
+    "successCondition" : "eval (${jlinkDownloaderCheck}); jlinkCheck(/20002020 = 00000010/i);",
+    "timeout" : 2000,
+    "retry" : 3,
+    "restrict" : [
+     "ble_core_jtag_full",
+     "jtag_full+ble_core_jtag_full" ],
+    "tool" : "jlinkDownloader",
+    "description": "Verify ble core state"
+   },
+   {
+    "args" : "-device nrf51822 -if swd -speed 1000 ${ble_core_eraseall_script}",
+    "successCondition" : "eval (${jlinkDownloaderCheck}); jlinkCheck(/Info: Found Cortex-M0 r0p0, Little endian/i);",
+    "timeout" : 3000,
+    "retry" : 3,
+    "restrict" : [
+     "ble_core_jtag_full",
+     "jtag_full+ble_core_jtag_full" ],
+    "tool" : "jlinkDownloader",
+    "description": "Erase ble core nvm"
+   },
+   {
+    "args" : "-device nrf51822 -if swd -speed 1000 ${ble_core_flash_script}",
+    "successCondition" : "eval (${jlinkDownloaderCheck}); jlinkCheck(/O.K./i);",
+    "timeout" : 10000,
+    "retry" : 3,
+    "restrict" : [
+     "ble_core_jtag_full",
+     "jtag_full+ble_core_jtag_full" ],
+    "tool" : "jlinkDownloader",
+    "description": "Flash ble core nvm"
+   },
+   {
+    "args" : "-device nrf51822 -if swd -speed 1000 ${ble_core_release_script}",
+    "successCondition" : "eval (${jlinkDownloaderCheck}); jlinkCheck(/Info: Found Cortex-M0 r0p0, Little endian/i);",
+    "timeout" : 5000,
+    "retry" : 3,
+    "restrict" : [
+     "ble_core_jtag_full",
+     "jtag_full+ble_core_jtag_full" ],
+    "tool" : "jlinkDownloader",
+    "description": "Release ble core"
+   }
+ ],
+  "configurations" :   {
+   "ble_core_jtag_full" :    {
+    "brief" : "",
+    "default" : false,
+    "hiddenToEndUser" : true,
+    "description" : "",
+    "documentation" : "http://goto.intel.com/flashing_curie_jtag",
+    "groupsState" :     { },
+    "name" : "ble_core_jtag_full",
+    "parameters" :     {
+    },
+    "startState" : "pos"
+   },
+   "app_usb_bootupdater_apps" :    {
+    "brief" : "",
+    "default" : false,
+    "hiddenToEndUser" : true,
+    "description" : "",
+    "documentation" : "http://goto.intel.com/flashing_curie_usb",
+    "groupsState" :     { },
+    "name" : "app_usb_bootupdater_apps",
+    "parameters" :     {
+    },
+    "startState" : "pos"
+   },
+   "jtag_full" :    {
+    "brief" : "",
+    "default" : false,
+    "hiddenToEndUser" : true,
+    "description" : "",
+    "documentation" : "http://goto.intel.com/flashing_curie_jtag",
+    "groupsState" :     { },
+    "name" : "jtag_full",
+    "parameters" :     {
+    },
+    "startState" : "pos"
+   },
+   "jtag_x86_rom" :    {
+    "brief" : "",
+    "default" : false,
+    "hiddenToEndUser" : true,
+    "description" : "",
+    "documentation" : "http://goto.intel.com/flashing_curie_jtag",
+    "groupsState" :     { },
+    "name" : "jtag_rom",
+    "parameters" :     {
+    },
+    "startState" : "pos"
+   },
+   "jtag_x86_rom+bootloader" :    {
+    "brief" : "",
+    "default" : false,
+    "hiddenToEndUser" : false,
+    "description" : "",
+    "documentation" : "http://goto.intel.com/flashing_curie_jtag",
+    "groupsState" :     { },
+    "name" : "jtag_rom+bootloader",
+    "parameters" :     {
+    },
+    "startState" : "pos"
+   },
+   "jtag_x86_bootloader" :    {
+    "brief" : "",
+    "default" : false,
+    "hiddenToEndUser" : true,
+    "description" : "",
+    "documentation" : "http://goto.intel.com/flashing_curie_jtag",
+    "groupsState" :     { },
+    "name" : "jtag_bootloader",
+    "parameters" :     {
+    },
+    "startState" : "pos"
+   },
+   "jtag_x86_apps" :    {
+    "brief" : "",
+    "default" : false,
+    "hiddenToEndUser" : true,
+    "description" : "",
+    "documentation" : "http://goto.intel.com/flashing_curie_jtag",
+    "groupsState" :     { },
+    "name" : "jtag_x86_apps",
+    "parameters" :     {
+    },
+    "startState" : "pos"
+   },
+   "jtag_arc_apps" :    {
+    "brief" : "",
+    "default" : false,
+    "hiddenToEndUser" : true,
+    "description" : "",
+    "documentation" : "http://goto.intel.com/flashing_curie_jtag",
+    "groupsState" :     { },
+    "name" : "jtag_arc_apps",
+    "parameters" :     {
+    },
+    "startState" : "pos"
+   },
+   "jtag_full+ble_core_jtag_full" :    {
+    "brief" : "",
+    "default" : false,
+    "hiddenToEndUser" : true,
+    "description" : "",
+    "documentation" : "http://goto.intel.com/flashing_curie_jtag",
+    "groupsState" :     { },
+    "name" : "jtag_full+ble_core_jtag_full",
+    "parameters" :     {
+    },
+    "startState" : "pos"
+   },
+   "ble_core_jtag_full" :    {
+    "brief" : "",
+    "default" : false,
+    "hiddenToEndUser" : true,
+    "description" : "",
+    "documentation" : "http://goto.intel.com/flashing_curie_jtag",
+    "groupsState" :     { },
+    "name" : "ble_core_jtag_full",
+    "parameters" :     {
+    },
+    "startState" : "pos"
+   },
+   "usb_blank_persistent" :    {
+    "brief" : "",
+    "default" : false,
+    "hiddenToEndUser" : false,
+    "description" : "",
+    "documentation" : "http://goto.intel.com/flashing_curie_usb",
+    "groupsState" :     { },
+    "name" : "usb_blank_persistent",
+    "parameters" :     {
+    },
+    "startState" : "pos"
+   },
+   "usb_full" :    {
+    "brief" : "",
+    "default" : true,
+    "hiddenToEndUser" : false,
+    "description" : "",
+    "documentation" : "http://goto.intel.com/flashing_curie_usb",
+    "groupsState" :     { },
+    "name" : "usb_full",
+    "parameters" :     {
+    },
+    "startState" : "pos"
+   },
+   "usb_x86_rom" :    {
+    "brief" : "",
+    "default" : false,
+    "hiddenToEndUser" : true,
+    "description" : "",
+    "documentation" : "http://goto.intel.com/flashing_curie_usb",
+    "groupsState" :     { },
+    "name" : "usb_x86_rom",
+    "parameters" :     {
+    },
+    "startState" : "pos"
+   },
+   "usb_x86_bootloader" :    {
+    "brief" : "",
+    "default" : false,
+    "hiddenToEndUser" : true,
+    "description" : "",
+    "documentation" : "http://goto.intel.com/flashing_curie_usb",
+    "groupsState" :     { },
+    "name" : "usb_x86_bootloader",
+    "parameters" :     {
+    },
+    "startState" : "pos"
+   },
+   "usb_x86_rom+bootloader" :    {
+    "brief" : "",
+    "default" : false,
+    "hiddenToEndUser" : true,
+    "description" : "",
+    "documentation" : "http://goto.intel.com/flashing_curie_usb",
+    "groupsState" :     { },
+    "name" : "usb_x86_rom+bootloader",
+    "parameters" :     {
+    },
+    "startState" : "pos"
+   },
+   "usb_x86_apps" :    {
+    "brief" : "",
+    "default" : false,
+    "hiddenToEndUser" : true,
+    "description" : "",
+    "documentation" : "http://goto.intel.com/flashing_curie_usb",
+    "groupsState" :     { },
+    "name" : "usb_x86_apps",
+    "parameters" :     {
+    },
+    "startState" : "pos"
+   },
+   "usb_ble_core_full" :    {
+    "brief" : "",
+    "default" : false,
+    "hiddenToEndUser" : true,
+    "description" : "",
+    "documentation" : "http://goto.intel.com/flashing_curie_usb",
+    "groupsState" :     { },
+    "name" : "usb_ble_core_full",
+    "parameters" :     {
+    },
+    "startState" : "pos"
+   },
+   "usb_arc_apps" :    {
+    "brief" : "",
+    "default" : false,
+    "hiddenToEndUser" : true,
+    "description" : "",
+    "documentation" : "http://goto.intel.com/flashing_curie_usb",
+    "groupsState" :     { },
+    "name" : "usb_arc_apps",
+    "parameters" :     {
+    },
+    "startState" : "pos"
+   },
+   "usb_all_apps" :    {
+    "brief" : "",
+    "default" : false,
+    "hiddenToEndUser" : true,
+    "description" : "",
+    "documentation" : "http://goto.intel.com/flashing_curie_usb",
+    "groupsState" :     { },
+    "name" : "usb_all_apps",
+    "parameters" :     {
+    },
+    "startState" : "pos"
+   }
+  },
+  "groups" :   {
+  },
+  "platforms" : ["generic"],
+  "parameters" :   {
+   "jtag_interface_cfg" :    {
+    "description" : "jtag interface configuration script",
+    "name" : "jtag interface configuration script",
+    "type" : "file",
+    "value" : "interface/ftdi/atpdev.cfg"
+   },
+   "jtag_reset_cfg" :    {
+    "description" : "jtag interface reset script",
+    "name" : "reset script",
+    "type" : "file",
+    "value" : "board/firestarter-reset.cfg"
+   },
+   "jtag_init_cfg" :    {
+    "description" : "jtag interface init script",
+    "name" : "init script",
+    "type" : "file",
+    "value" : "init.cfg"
+   },
+   "jtag_x86_rom_cfg" :    {
+    "description" : "jtag interface flash x86 rom script",
+    "name" : "flash x86 rom script",
+    "type" : "file",
+    "value" : "flash_x86_rom.cfg"
+   },
+   "jtag_x86_bootloader_cfg" :    {
+    "description" : "jtag interface flash x86 bootloader script",
+    "name" : "x86 bootloader script",
+    "type" : "file",
+    "value" : "flash_x86_bootloader.cfg"
+   },
+   "jtag_x86_apps_cfg" :    {
+    "description" : "jtag interface flash x86 apps script",
+    "name" : "x86 apps script",
+    "type" : "file",
+    "value" : "flash_x86_apps.cfg"
+   },
+   "jtag_arc_apps_cfg" :    {
+    "description" : "jtag interface flash arc apps script",
+    "name" : "arc apps script",
+    "type" : "file",
+    "value" : "flash_arc_apps.cfg"
+   },
+   "arc_binary" :    {
+    "description" : "arc apps binary",
+    "name" : "arc apps script",
+    "type" : "file",
+    "value" : "arc.bin"
+   },
+   "jtag_release_cfg" :    {
+    "description" : "jtag interface release script",
+    "name" : "release script",
+    "type" : "file",
+    "value" : "release.cfg"
+   },
+   "x86_rom_binary" :    {
+    "description" : "x86 rom binary",
+    "name" : "x86 rom binary",
+    "type" : "file",
+    "value" : "FSRom.bin"
+   },
+   "x86_bootloader_binary" :    {
+    "description" : "x86 bootloader binary",
+    "name" : "x86 bootloader binary",
+    "type" : "file",
+    "value" : "bootloader_quark.bin"
+   },
+   "x86_apps_binary" :    {
+    "description" : "x86 apps binary",
+    "name" : "x86 apps binary",
+    "type" : "file",
+    "value" : "quark.signed.bin"
+   },
+   "ble_binary" :    {
+    "description" : "ble binary",
+    "name" : "ble binary",
+    "type" : "file",
+    "value" : "ble_core/image.bin"
+   },
+   "bootupdater_binary" :    {
+    "description" : "bootupdater binary",
+    "name" : "bootupdater binary",
+    "type" : "file",
+    "value" : "bootupdater.signed.bin"
+   },
+   "ble_core_init_script" :    {
+    "description" : "Recover script",
+    "name" : "Recover script",
+    "type" : "file",
+    "value" : "ble_core/init.script"
+   },
+   "ble_core_device_check_script" :    {
+    "description" : "Device check script",
+    "name" : "Device check script",
+    "type" : "file",
+    "value" : "ble_core/device_check.script"
+   },
+   "ble_core_eraseall_script" :    {
+    "description" : "Eraseall script",
+    "name" : "Eraseall script",
+    "type" : "file",
+    "value" : "ble_core/eraseall.script"
+   },
+   "ble_core_flash_script" :    {
+    "description" : "Flash script",
+    "name" : "Flash script",
+    "type" : "file",
+    "value" : "ble_core/flash.script"
+   },
+   "ble_core_release_script" :    {
+    "description" : "Flash end script",
+    "name" : "Flash end script",
+    "type" : "file",
+    "value" : "ble_core/release.script"
+   },
+   "panic_erase_file" :    {
+    "description" : "Panic partition",
+    "name" : "panic",
+    "type" : "file",
+    "value" : "erase_panic.bin"
+   },
+   "factory_nonpersistent_erase_file" :    {
+    "description" : "Non persistent factory partition",
+    "name" : "factory1",
+    "type" : "file",
+    "value" : "erase_factory_nonpersistent.bin"
+   },
+   "factory_persistent_erase_file" :    {
+    "description" : "Persistent factory partition",
+    "name" : "factory2",
+    "type" : "file",
+    "value" : "erase_factory_persistent.bin"
+   },
+   "data_erase_file" :    {
+    "description" : "Data partition",
+    "name" : "data",
+    "type" : "file",
+    "value" : "erase_data.bin"
+   },
+   "jlinkDownloaderCheck" :    {
+    "description" : "t",
+    "name" : "t",
+    "type" : "string",
+    "value" : " \
+	function jlinkCheck(pass) {\
+		fail = /Can not connect to J-Link via USB|Could not read memory|Writing target memory failed|Failed to download RAMCode/i ;\
+		if (fail.test($output)) \
+		    return false ;\
+		if (typeof pass == 'undefined') \
+		    return true; \
+		return pass.test($output) ;\
+	};\
+	"
+   }
+  },
+  "version" : "3.0"
+ }
+}
