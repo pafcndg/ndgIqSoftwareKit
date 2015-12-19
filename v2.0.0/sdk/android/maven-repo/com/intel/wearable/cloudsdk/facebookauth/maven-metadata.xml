@@ -3,10 +3,10 @@
   <groupId>com.intel.wearable.cloudsdk</groupId>
   <artifactId>facebookauth</artifactId>
   <versioning>
-    <release>3.1.2</release>
+    <release>3.1.3</release>
     <versions>
-      <version>3.1.2</version>
+      <version>3.1.3</version>
     </versions>
-    <lastUpdated>20151216180447</lastUpdated>
+    <lastUpdated>20151219012725</lastUpdated>
   </versioning>
 </metadata>
