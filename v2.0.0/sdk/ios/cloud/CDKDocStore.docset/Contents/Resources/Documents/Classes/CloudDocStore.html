@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CloudDocStore Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/CloudDocStore" class="dashAnchor"></a>
+    <a title="CloudDocStore Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">CDKDocStore Docs</a> (100% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">CDKDocStore Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        CloudDocStore Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/CloudDocStore.html">CloudDocStore</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>CloudDocStore</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">CloudDocStore</span></code></pre>
+
+                </div>
+              </div>
+            <p>Doc store interaction to cloud</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC11CDKDocStore13CloudDocStore11getInstanceFMS0_FzT_S0_"></a>
+                    <a name="//apple_ref/swift/Method/getInstance()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC11CDKDocStore13CloudDocStore11getInstanceFMS0_FzT_S0_">getInstance()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Gets singleton instance of CloudDocStore, throws on nil</p>
+
+<div class="aside aside-throws">
+          <p class="aside-title">Throws</p>
+          <p>CDKUnexpectedError if the CloudDocStore instance
+is nil.</p>
+
+        </div><div class="aside aside-returns">
+          <p class="aside-title">Returns</p>
+          <p>singleton instance of CloudDocStore.</p>
+
+        </div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kd">func</span> <span class="nf">getInstance</span><span class="p">()</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">CloudDocStore</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>singleton instance of CloudDocStore.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC11CDKDocStore13CloudDocStore8initWithFMS0_FTSS7baseUrlSS_T_"></a>
+                    <a name="//apple_ref/swift/Method/initWith(_:baseUrl:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC11CDKDocStore13CloudDocStore8initWithFMS0_FTSS7baseUrlSS_T_">initWith(_:baseUrl:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Instantiate the singleton using parameters provided by the cloud. Second or further calls to this function do not re-initialize the singleton.</p>
+
+<ul>
+<li>Parameters:
+
+<ul>
+<li>identifier: identifier string to get credentials</li>
+<li>baseUrl: full URL for the document store URL</li>
+</ul></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kd">func</span> <span class="nf">initWith</span><span class="p">(</span><span class="nv">identifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">baseUrl</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>identifier</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>identifier string to get credentials</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>baseUrl</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>full URL for the document store URL</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC11CDKDocStore13CloudDocStore8initWithFMS0_FSST_"></a>
+                    <a name="//apple_ref/swift/Method/initWith(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC11CDKDocStore13CloudDocStore8initWithFMS0_FSST_">initWith(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Instantiate the singleton using parameters provided by the cloud. Second or further calls to this function do not re-initialize the singleton. BaseUrl will be loaded from plist</p>
+
+<ul>
+<li>Parameters:
+
+<ul>
+<li>identifier: identifier string to get credentials</li>
+</ul></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kd">func</span> <span class="nf">initWith</span><span class="p">(</span><span class="nv">identifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>identifier</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>identifier string to get credentials</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC11CDKDocStore13CloudDocStore6reInitFMS0_FTSS7baseUrlSS_T_"></a>
+                    <a name="//apple_ref/swift/Method/reInit(_:baseUrl:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC11CDKDocStore13CloudDocStore6reInitFMS0_FTSS7baseUrlSS_T_">reInit(_:baseUrl:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Re-instantiate the singleton using parameters provided by the cloud.</p>
+
+<ul>
+<li>Parameters:
+
+<ul>
+<li>identifier: identifier string to get credentials</li>
+<li>baseUrl: full URL for the document store URL</li>
+</ul></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kd">func</span> <span class="nf">reInit</span><span class="p">(</span><span class="nv">identifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">baseUrl</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>identifier</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>identifier string to get credentials</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>baseUrl</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>full URL for the document store URL</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC11CDKDocStore13CloudDocStore7destroyFMS0_FT_T_"></a>
+                    <a name="//apple_ref/swift/Method/destroy()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC11CDKDocStore13CloudDocStore7destroyFMS0_FT_T_">destroy()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Destroy the singleton instance so it can be recreated.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kd">func</span> <span class="nf">destroy</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC11CDKDocStore13CloudDocStore3putFS0_FTSS8documentGVSs10DictionarySSPSs9AnyObject__7successFGSQCSo13CloudResponse_T_7failureFGSQS3__T__T_"></a>
+                    <a name="//apple_ref/swift/Method/put(_:document:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC11CDKDocStore13CloudDocStore3putFS0_FTSS8documentGVSs10DictionarySSPSs9AnyObject__7successFGSQCSo13CloudResponse_T_7failureFGSQS3__T__T_">put(_:document:success:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Asynchronous call to upload doc to the cloud.</p>
+
+<ul>
+<li>Parameters:
+
+<ul>
+<li>docId: doc name/ID to upload</li>
+<li>document: doc content to upload as <key,value> pairs</li>
+<li>success: the callback invoked on successful put</li>
+<li>failure: the callback invoked when error occurs</li>
+</ul></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">put</span><span class="p">(</span><span class="nv">docId</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="nv">document</span><span class="p">:</span><span class="kt">Dictionary</span><span class="o">&lt;</span><span class="kt">String</span><span class="p">,</span><span class="kt">AnyObject</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span><span class="kt">ICloudResponseSuccessCb</span><span class="p">,</span>
+        <span class="nv">failure</span><span class="p">:</span><span class="kt">ICloudResponseFailureCb</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>docId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>doc name/ID to upload</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>document</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>doc content to upload as <key,value> pairs</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the callback invoked on successful put</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the callback invoked when error occurs</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC11CDKDocStore13CloudDocStore6deleteFS0_FTSS7successFGSQCSo13CloudResponse_T_7failureFGSQS1__T__T_"></a>
+                    <a name="//apple_ref/swift/Method/delete(_:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC11CDKDocStore13CloudDocStore6deleteFS0_FTSS7successFGSQCSo13CloudResponse_T_7failureFGSQS1__T__T_">delete(_:success:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Asynchronous call to request for delete Document from storage</p>
+
+<ul>
+<li>Parameters:
+
+<ul>
+<li>docId: doc name/ID to delete from cloud</li>
+<li>success: the callback invoked on successful delete</li>
+<li>failure: the callback invoked when error occurs</li>
+</ul></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">delete</span><span class="p">(</span><span class="nv">docId</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span><span class="kt">ICloudResponseSuccessCb</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span><span class="kt">ICloudResponseFailureCb</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>docId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>doc name/ID to delete from cloud</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the callback invoked on successful delete</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the callback invoked when error occurs</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC11CDKDocStore13CloudDocStore6deleteFS0_FTFGSQCSo13CloudResponse_T_7failureFGSQS1__T__T_"></a>
+                    <a name="//apple_ref/swift/Method/delete(_:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC11CDKDocStore13CloudDocStore6deleteFS0_FTFGSQCSo13CloudResponse_T_7failureFGSQS1__T__T_">delete(_:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Asynchronous call to request for delete Documents from storage</p>
+
+<ul>
+<li>Parameters:
+
+<ul>
+<li>success: the callback invoked on successful delete</li>
+<li>failure: the callback invoked when error occurs</li>
+</ul></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">delete</span><span class="p">(</span><span class="nv">success</span><span class="p">:</span><span class="kt">ICloudResponseSuccessCb</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span><span class="kt">ICloudResponseFailureCb</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the callback invoked on successful delete</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the callback invoked when error occurs</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC11CDKDocStore13CloudDocStore3getFS0_FTSS7successFGSQCSo13CloudResponse_T_7failureFGSQS1__T__T_"></a>
+                    <a name="//apple_ref/swift/Method/get(_:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC11CDKDocStore13CloudDocStore3getFS0_FTSS7successFGSQCSo13CloudResponse_T_7failureFGSQS1__T__T_">get(_:success:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Asynchronous call to request for document from storage</p>
+
+<ul>
+<li>Parameters:
+
+<ul>
+<li>docId: doc name/ID to get from cloud</li>
+<li>success: the callback invoked on successful get</li>
+<li>failure: the callback invoked when error occurs</li>
+</ul></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">get</span><span class="p">(</span><span class="nv">docId</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span><span class="kt">ICloudResponseSuccessCb</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span><span class="kt">ICloudResponseFailureCb</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>docId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>doc name/ID to get from cloud</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the callback invoked on successful get</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the callback invoked when error occurs</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC11CDKDocStore13CloudDocStore7getListFS0_FTFGSQCSo13CloudResponse_T_7failureFGSQS1__T__T_"></a>
+                    <a name="//apple_ref/swift/Method/getList(_:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC11CDKDocStore13CloudDocStore7getListFS0_FTFGSQCSo13CloudResponse_T_7failureFGSQS1__T__T_">getList(_:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Asynchronous call to request for document list from storage</p>
+
+<ul>
+<li>Parameters:
+
+<ul>
+<li>success: the callback invoked on successful get</li>
+<li>failure: the callback invoked when error occurs</li>
+</ul></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getList</span><span class="p">(</span><span class="nv">success</span><span class="p">:</span><span class="kt">ICloudResponseSuccessCb</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span><span class="kt">ICloudResponseFailureCb</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the callback invoked on successful get</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the callback invoked when error occurs</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC11CDKDocStore13CloudDocStore21setCredentialProviderFS0_FSST_"></a>
+                    <a name="//apple_ref/swift/Method/setCredentialProvider(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC11CDKDocStore13CloudDocStore21setCredentialProviderFS0_FSST_">setCredentialProvider(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the new credential provider by using identifier</p>
+
+<ul>
+<li>Parameters:</li>
+<li>identifier: identifier string to set credentials</li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setCredentialProvider</span><span class="p">(</span><span class="nv">identifier</span><span class="p">:</span><span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2015 <a class="link" href="com.intel.ndg.cloudsdk" target="_blank" rel="external">CloudSDK</a>. All rights reserved. (Last updated: 2015-12-20)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.4.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

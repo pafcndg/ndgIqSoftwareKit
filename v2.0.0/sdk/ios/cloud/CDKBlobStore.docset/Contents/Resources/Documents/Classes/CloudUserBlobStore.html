@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CloudUserBlobStore Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/CloudUserBlobStore" class="dashAnchor"></a>
+    <a title="CloudUserBlobStore Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">CDKBlobStore Docs</a> (50% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">CDKBlobStore Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        CloudUserBlobStore Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/CloudAnonymousBlobStore.html">CloudAnonymousBlobStore</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CloudBlobStoreResponse.html">CloudBlobStoreResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CloudPublicBlobStore.html">CloudPublicBlobStore</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CloudUserBlobStore.html">CloudUserBlobStore</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/BlobAnonymousUploader.html">BlobAnonymousUploader</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/BlobDownloader.html">BlobDownloader</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/BlobStore.html">BlobStore</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/BlobUploader.html">BlobUploader</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs.html#/s:V12CDKBlobStore28CloudBlobStoreRequestFactory">CloudBlobStoreRequestFactory</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Typealiases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:12CDKBlobStore21IBlobDownloadFailedCb">IBlobDownloadFailedCb</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:12CDKBlobStore23IBlobDownloadFinishedCb">IBlobDownloadFinishedCb</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:12CDKBlobStore23IBlobDownloadProgressCb">IBlobDownloadProgressCb</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:12CDKBlobStore22IBlobDownloadStartedCb">IBlobDownloadStartedCb</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:12CDKBlobStore19IBlobUploadFailedCb">IBlobUploadFailedCb</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:12CDKBlobStore21IBlobUploadFinishedCb">IBlobUploadFinishedCb</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:12CDKBlobStore21IBlobUploadProgressCb">IBlobUploadProgressCb</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:12CDKBlobStore20IBlobUploadStartedCb">IBlobUploadStartedCb</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>CloudUserBlobStore</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">CloudUserBlobStore</span><span class="p">:</span> <span class="kt">BlobUploader</span><span class="p">,</span> <span class="kt">BlobDownloader</span><span class="p">,</span> <span class="kt">BlobStore</span></code></pre>
+
+                </div>
+              </div>
+            <p>Class to store and download user blob to the cloud</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvC12CDKBlobStore18CloudUserBlobStore6logTagSS"></a>
+                    <a name="//apple_ref/swift/Variable/logTag" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvC12CDKBlobStore18CloudUserBlobStore6logTagSS">logTag</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>constant to tag class name while logging</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">logTag</span> <span class="o">=</span> <span class="s">"CloudUserBlobStore"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC12CDKBlobStore18CloudUserBlobStore14requestFactoryGSqVS_28CloudBlobStoreRequestFactory_"></a>
+                    <a name="//apple_ref/swift/Property/requestFactory" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC12CDKBlobStore18CloudUserBlobStore14requestFactoryGSqVS_28CloudBlobStoreRequestFactory_">requestFactory</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>instance of CloudBlobStoreRequestFactory</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">requestFactory</span><span class="p">:</span><span class="kt">CloudBlobStoreRequestFactory</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC12CDKBlobStore18CloudUserBlobStore9productIdSS"></a>
+                    <a name="//apple_ref/swift/Property/productId" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC12CDKBlobStore18CloudUserBlobStore9productIdSS">productId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">CloudUserBlobStore</span><span class="p">:</span> <span class="kt">BlobUploader</span><span class="p">,</span> <span class="kt">BlobDownloader</span><span class="p">,</span> <span class="kt">BlobStore</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC12CDKBlobStore18CloudUserBlobStore21doAllowCellularAccessSb"></a>
+                    <a name="//apple_ref/swift/Property/doAllowCellularAccess" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC12CDKBlobStore18CloudUserBlobStore21doAllowCellularAccessSb">doAllowCellularAccess</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">CloudUserBlobStore</span><span class="p">:</span> <span class="kt">BlobUploader</span><span class="p">,</span> <span class="kt">BlobDownloader</span><span class="p">,</span> <span class="kt">BlobStore</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC12CDKBlobStore18CloudUserBlobStore6userIdGSqSS_"></a>
+                    <a name="//apple_ref/swift/Property/userId" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC12CDKBlobStore18CloudUserBlobStore6userIdGSqSS_">userId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">CloudUserBlobStore</span><span class="p">:</span> <span class="kt">BlobUploader</span><span class="p">,</span> <span class="kt">BlobDownloader</span><span class="p">,</span> <span class="kt">BlobStore</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC12CDKBlobStore18CloudUserBlobStorecFMS0_FT10identifierSS7baseUrlSS9productIdSS21doAllowCellularAccessSb_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(identifier:baseUrl:productId:doAllowCellularAccess:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC12CDKBlobStore18CloudUserBlobStorecFMS0_FT10identifierSS7baseUrlSS9productIdSS21doAllowCellularAccessSb_S0_">init(identifier:baseUrl:productId:doAllowCellularAccess:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Instantiate the CloudUserBlobStore object &amp; call CloudBlobStoreRequestFactory init with parameters provided by the cloud.</p>
+
+<div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          Parameter  baseUrl: full URL to the Cloud Server
+
+        </div><div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          Parameter  identifier: identifier string to get credentials
+
+        </div><div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          Parameter  productId: a product is associated with collection of assets. Usually this defined by the organization that     uploaded the assets to the cloud using an out-of-band mechanism (e.g. curl POST)
+
+        </div><div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          <p>Parameter  doAllowCellularAccess: indicating YES or NO to download/upload on cellular network,default value will be wifi+cellular</p>
+
+        </div><div class="aside aside-returns">
+          <p class="aside-title">Returns</p>
+          <p>instance of CloudUserBlobStore.</p>
+
+        </div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">identifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">baseUrl</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">productId</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="nv">doAllowCellularAccess</span><span class="p">:</span><span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>baseUrl</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>full URL to the Cloud Server</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>identifier</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>identifier string to get credentials</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>productId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>a product is associated with collection of assets. Usually this defined by the organization that     uploaded the assets to the cloud using an out-of-band mechanism (e.g. curl POST)</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>doAllowCellularAccess</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>indicating YES or NO to download/upload on cellular network,default value will be wifi+cellular</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>instance of CloudUserBlobStore.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC12CDKBlobStore18CloudUserBlobStorecFMS0_FT10identifierSS7baseUrlSS9productIdSS_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(identifier:baseUrl:productId:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC12CDKBlobStore18CloudUserBlobStorecFMS0_FT10identifierSS7baseUrlSS9productIdSS_S0_">init(identifier:baseUrl:productId:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Instantiate the CloudUserBlobStore using parameters provided by the cloud.</p>
+
+<div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          Parameter  baseUrl: full URL to the Cloud Server
+
+        </div><div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          Parameter  identifier: identifier string to get credentials
+
+        </div><div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          Parameter  productId: a product is associated with collection of assets. Usually this defined by the organization that
+    uploaded the assets to the cloud using an out-of-band mechanism (e.g. curl POST)
+
+        </div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">identifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">baseUrl</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">productId</span><span class="p">:</span><span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>baseUrl</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>full URL to the Cloud Server</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>identifier</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>identifier string to get credentials</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>productId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>a product is associated with collection of assets. Usually this defined by the organization that uploaded the assets to the cloud using an out-of-band mechanism (e.g. curl POST)</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC12CDKBlobStore18CloudUserBlobStorecFMS0_FT10identifierSS9productIdSS21doAllowCellularAccessSb_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(identifier:productId:doAllowCellularAccess:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC12CDKBlobStore18CloudUserBlobStorecFMS0_FT10identifierSS9productIdSS21doAllowCellularAccessSb_S0_">init(identifier:productId:doAllowCellularAccess:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Instantiate the CloudUserBlobStore using parameters provided by the cloud. BaseUrl will be loaded from plist</p>
+
+<div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          Parameter  identifier: identifier string to get credentials
+
+        </div><div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          Parameter  productId: a product is associated with collection of assets. Usually this defined by the organization that     uploaded the assets to the cloud using an out-of-band mechanism (e.g. curl POST)
+
+        </div><div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          Parameter  doAllowCellularAccess: indicating YES or NO to download/upload on cellular network,default value will be wifi+cellular
+
+        </div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">identifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">productId</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="nv">doAllowCellularAccess</span><span class="p">:</span><span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>identifier</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>identifier string to get credentials</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>productId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>a product is associated with collection of assets. Usually this defined by the organization that     uploaded the assets to the cloud using an out-of-band mechanism (e.g. curl POST)</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>doAllowCellularAccess</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>indicating YES or NO to download/upload on cellular network,default value will be wifi+cellular</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC12CDKBlobStore18CloudUserBlobStore21setCredentialProviderFS0_FSST_"></a>
+                    <a name="//apple_ref/swift/Method/setCredentialProvider(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC12CDKBlobStore18CloudUserBlobStore21setCredentialProviderFS0_FSST_">setCredentialProvider(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the new credential provider by using identifier</p>
+
+<div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          Parameter identifier: identifier string to set credentials
+
+        </div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setCredentialProvider</span><span class="p">(</span><span class="nv">identifier</span><span class="p">:</span><span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>identifier</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>identifier string to set credentials</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2015 <a class="link" href="com.intel.ndg.cloudsdk" target="_blank" rel="external">CloudSDK</a>. All rights reserved. (Last updated: 2015-12-20)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.4.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

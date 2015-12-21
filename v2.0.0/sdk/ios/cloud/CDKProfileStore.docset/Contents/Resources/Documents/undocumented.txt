@@ -1,0 +1,2 @@
+CloudUserProfileRequestFactory.swift
+	public struct CloudUserProfileRequestFactory

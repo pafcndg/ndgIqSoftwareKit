@@ -1,0 +1,265 @@
+AuthCredentials+SetTokens.h
+	@interface AuthCredentials (SetTokens)
+	@property(nonatomic,retain)NSString *identifier
+	@property(nonatomic,retain)NSString *accessToken
+	@property(nonatomic,retain)NSString *refreshToken
+	@property(nonatomic,retain)NSString *userId
+	@property(nonatomic,retain)NSString *userName
+	@property(nonatomic,retain)NSString *clientId
+	@property(nonatomic,retain)NSString *clientSecret
+	@property(nonatomic,retain)NSString *authBaseUrl
+	@property(nonatomic,retain)CDKError* createError
+	- (id)initWithAccessToken:(NSString*)accessToken refreshToken:(NSString*)refreshToken
+                 provider:(CloudAuthProvider*)authProvider;
+	- (AuthCredentials*) initWithJsonPayload: (NSData*) jsonPayload identifier:(NSString*)identifier;
+	- (AuthCredentials*)initWithIdentifier:(NSString*)identifier;
+	- (void)validateToken:(NSString*)token callback:(ICloudResponseCb)callback;
+	- (void)refreshAccessToken:(ICloudResponseCb)callback;
+	- (CDKError*)storeTokens:(NSData*)tokenPayLoad identifier:(NSString*)identifier;
+	+ (NSString*)getIdentifier:(CloudAuthProvider*)authProvider;
+	- (NSData*)createKeychainPayloadWithAccessToken:(NSString*)accessToken refreshToken:(NSString*)refreshToken;
+	- (NSData*)createKeychainPayloadWithRefreshToken:(NSString*)refreshToken;
+CDKCore.h
+	extern double CoreVersionNumber
+	extern const unsigned char CoreVersionString[]
+CDKCredentialDecodeError.h
+	@interface CDKCredentialDecodeError : CDKError
+
+- (id) initWithMessage:(NSString*)msg;
+
+@end
+	- (id) initWithMessage:(NSString*)msg;
+CDKError.h
+	extern const NSInteger CDK_ERROR_CODE_GENERIC
+	extern NSString*const CDK_ERROR_DOMAIN_NET
+	extern NSString*const CDK_ERROR_DOMAIN_HTTP
+	extern NSString*const CDK_ERROR_DOMAIN_UNEXPECTED
+	extern NSString*const CDK_ERROR_DOMAIN_LOGIN
+	extern NSString*const CDK_ERROR_DOMAIN_JSON
+	@interface CDKError : NSError
+
+@property (nonatomic) NSString* message;
+
+- (id) initWithError:(NSError*)err;
+- (id) initWithMessage:(NSString*)msg code:(NSInteger)code domain:(NSString*)domain;
+- (id) initWithMessage:(NSString*)msg domain:(NSString*)domain;
+
+@end
+	@property (nonatomic) NSString* message
+	- (id) initWithError:(NSError*)err;
+	- (id) initWithMessage:(NSString*)msg code:(NSInteger)code domain:(NSString*)domain;
+	- (id) initWithMessage:(NSString*)msg domain:(NSString*)domain;
+CDKHTTPError.h
+	@interface CDKHTTPError : CDKError
+
+- (id) initWithMessage:(NSString*)msg code:(NSInteger)code;
+- (id) initWithError:(NSError*)err statusCode:(NSInteger)statusCode;
+
+@end
+	- (id) initWithMessage:(NSString*)msg code:(NSInteger)code;
+	- (id) initWithError:(NSError*)err statusCode:(NSInteger)statusCode;
+CDKJSONError.h
+	@interface CDKJSONError : CDKError
+
+- (id) initWithMessage:(NSString*)msg;
+
+@end
+	- (id) initWithMessage:(NSString*)msg;
+CDKLogging.h
+	NS_ENUM(NSInteger, LogLevel) {
+    CLDSDK_EMERGENCY,
+    CLDSDK_ALERT,
+    CLDSDK_CRITICAL,
+    CLDSDK_ERROR,
+    CLDSDK_WARNING,
+    CLDSDK_NOTICE,
+    CLDSDK_INFO,
+    CLDSDK_DEBUG,
+}
+	CLDSDK_EMERGENCY
+	CLDSDK_ALERT
+	CLDSDK_CRITICAL
+	CLDSDK_ERROR
+	CLDSDK_WARNING
+	CLDSDK_NOTICE
+	CLDSDK_INFO
+	CLDSDK_DEBUG
+	typedef NS_ENUM(NSInteger, LogLevel
+	void printLog(LogLevel level, NSString * message)
+CDKNetworkError.h
+	@interface CDKNetworkError : CDKError
+
+- (id) initWithMessage:(NSString*)msg;
+- (id) initWithError:(NSError*)err statusCode:(NSInteger)statusCode;
+
+@end
+	- (id) initWithMessage:(NSString*)msg;
+	- (id) initWithError:(NSError*)err statusCode:(NSInteger)statusCode;
+CDKUnexpectedError.h
+	@interface CDKUnexpectedError : CDKError
+
+- (id) initWithMessage:(NSString*)msg;
+- (id) initWithMessage:(NSString*)msg code:(NSInteger)code;
+
+@end
+	- (id) initWithMessage:(NSString*)msg;
+	- (id) initWithMessage:(NSString*)msg code:(NSInteger)code;
+CDKUserNotLoggedInError.h
+	@interface CDKUserNotLoggedInError : CDKError
+
+- (id) initWithMessage:(NSString*)msg;
+
+@end
+	- (id) initWithMessage:(NSString*)msg;
+CloudAuthProvider.h
+	@property(readonly,nonatomic,retain)NSString *baseUrl
+	@property(readonly,nonatomic,retain)NSString *clientId
+	@property(readonly,nonatomic,retain)NSString *clientSecret
+	@property(readonly,nonatomic,retain)UIViewController *callerVc
+	@property (nonatomic) AuthCredentials *authCredentials
+	@property (nonatomic) CloudAuthRequestFactory *authReqFactory
+	@property(copy,nonatomic) void(^onSuccess
+	@property(copy,nonatomic) void(^onFailure
+	@property(readonly) NSString *identifier
+	- (NSString *)getHTTPAuthorizationString;
+CloudAuthRequestFactory.h
+	@interface CloudAuthRequestFactory : NSObject
+
+-(NSString*)getAuthCodeFromUrl:(NSURL*)url;
+-(CloudJsonRequest*)getLoginRequest:(NSString*)serviceBaseUrl authCodeUrl:(NSURL*)authCodeUrl
+                        redirectUrl:(NSString*)redirectUrl clientId:(NSString*)clientId
+                       clientSecret:(NSString*)clientSecret;
+-(CloudJsonRequest*)getLoginRequest:(NSString *)email baseUrl:(NSString*)baseUrl token:(NSString *)token
+                           provider:(NSString *)provider scope:(NSString *)scope clientId:(NSString*)clientId clientSecret:(NSString*)clientSecret;
+-(CloudJsonRequest*)getRefreshTokenRequest:(NSString*)refreshToken baseUrl:(NSString*)baseUrl clientId:(NSString*)clientId clientSecret:(NSString*)clientSecret;
+-(CloudJsonRequest*)getValidateTokenRequest:(NSString*)token baseUrl:(NSString*)baseUrl clientId:(NSString*)clientId clientSecret:(NSString*)clientSecret;
+//-(NSString*) getAuthCodeRedirectUrl;
+- (CloudJsonRequest*)getCreateAccountRequest:(NSString *)userId password:(NSString *)password
+                                firstName:(NSString *)firstName lastName:(NSString *)lastName baseUrl:(NSString*)baseUrl clientId:(NSString*)clientId clientSecret:(NSString*)clientSecret;
+-(CloudJsonRequest*)getDeleteAccountRequest:(NSString *)userId baseUrl:(NSString*)baseUrl clientId:(NSString*)clientId authorization:(NSString *)authorization;
+
+- (CloudJsonRequest*)getChangePasswordRequest:(NSString *)userId password:(NSString *)password
+                                  newPassword:(NSString *)new_password baseUrl:(NSString*)baseUrl
+                                     clientId:(NSString*)clientId authorization:(NSString*)authorization;
+
+-(CloudJsonRequest*)getUserInfoRequest:(NSString*)baseUrl clientId:(NSString*)clientId authorization:(NSString*)authorization;
+@end
+	-(NSString*)getAuthCodeFromUrl:(NSURL*)url;
+	-(CloudJsonRequest*)getLoginRequest:(NSString*)serviceBaseUrl authCodeUrl:(NSURL*)authCodeUrl
+                        redirectUrl:(NSString*)redirectUrl clientId:(NSString*)clientId
+                       clientSecret:(NSString*)clientSecret;
+	-(CloudJsonRequest*)getLoginRequest:(NSString *)email baseUrl:(NSString*)baseUrl token:(NSString *)token
+                           provider:(NSString *)provider scope:(NSString *)scope clientId:(NSString*)clientId clientSecret:(NSString*)clientSecret;
+	-(CloudJsonRequest*)getRefreshTokenRequest:(NSString*)refreshToken baseUrl:(NSString*)baseUrl clientId:(NSString*)clientId clientSecret:(NSString*)clientSecret;
+	-(CloudJsonRequest*)getValidateTokenRequest:(NSString*)token baseUrl:(NSString*)baseUrl clientId:(NSString*)clientId clientSecret:(NSString*)clientSecret;
+	- (CloudJsonRequest*)getCreateAccountRequest:(NSString *)userId password:(NSString *)password
+                                firstName:(NSString *)firstName lastName:(NSString *)lastName baseUrl:(NSString*)baseUrl clientId:(NSString*)clientId clientSecret:(NSString*)clientSecret;
+	-(CloudJsonRequest*)getDeleteAccountRequest:(NSString *)userId baseUrl:(NSString*)baseUrl clientId:(NSString*)clientId authorization:(NSString *)authorization;
+	- (CloudJsonRequest*)getChangePasswordRequest:(NSString *)userId password:(NSString *)password
+                                  newPassword:(NSString *)new_password baseUrl:(NSString*)baseUrl
+                                     clientId:(NSString*)clientId authorization:(NSString*)authorization;
+	-(CloudJsonRequest*)getUserInfoRequest:(NSString*)baseUrl clientId:(NSString*)clientId authorization:(NSString*)authorization;
+CloudAuthWebViewClient.h
+	typedef void (^ICloudAuthWebViewTokenSuccessCb)(NSString* accessToken, NSString* refreshToken)
+	typedef void (^ICloudAuthWebViewTokenFailureCb)(CDKError* error)
+	-(id)init;
+	-(void)setLoginParams:(NSString*)baseURL clientId:(NSString*)clientId clientSecret:(NSString*)clientSecret onSuccess:(ICloudAuthWebViewTokenSuccessCb)success onFailure:(ICloudAuthWebViewTokenFailureCb)failure;
+	- (NSURL*)getAuthCodeUrl;
+CloudConfigurationHelper.h
+	@interface CloudConfigurationHelper : NSObject
+
++(NSString*) configurationForKey:(NSString*)key;
++(void) updateConfigurationAtKey:(NSString*)key withValue:(NSString*)value;
++(NSString*) buildServiceUrl:(NSString*)serviceName;
+
+@end
+	+(NSString*) configurationForKey:(NSString*)key;
+	+(void) updateConfigurationAtKey:(NSString*)key withValue:(NSString*)value;
+	+(NSString*) buildServiceUrl:(NSString*)serviceName;
+CloudDownloadRequest.h
+	-(void)fireDownloadTask:(BOOL)doAllowCellularAccess
+                success:(IDownloadStartOrCompletionCb)successCallback
+                failure:(IDownloadFailedCb)failureCallback
+               progress:(IDownloadProgressCb)progressCallback
+              completed:(IDownloadStartOrCompletionCb)finishedCallback;
+	+(CDKError*)cancelDownloadOn:(NSString*)downloadFileId;
+	+(void)cancelAllDownloads;
+CloudMultipartRequest.h
+	-(id)initUploadRequestWith:(NSString*)baseUrl
+                  endPoint:(NSString*)urlEndPoint
+                      file:(NSURL*)filePath
+               toBeSavedAs:(NSString*)saveAsFile
+            httpMethodType:(HttpMethodType)methodType
+                formParams:(NSDictionary*)bodyParams
+               httpHeaders:(NSDictionary*)headers
+           httpSessionType:(HttpSessionType)sessionType
+               credentials:(AuthCredentials*)creds;
+	-(id)initUploadRequestWith:(NSString*)baseUrl
+                  endPoint:(NSString*)urlEndPoint
+                      file:(NSURL*)filePath
+               toBeSavedAs:(NSString*)saveAsFile
+            httpMethodType:(HttpMethodType)methodType
+                formParams:(NSDictionary*)bodyParams
+           httpSessionType:(HttpSessionType)sessionType
+               credentials:(AuthCredentials*)creds;
+	-(id)initUploadRequestWith:(NSString*)baseUrl
+                  endPoint:(NSString*)urlEndPoint
+                    stream:(NSInputStream*)stream
+                    length:(NSInteger)streamLength
+               toBeSavedAs:(NSString*)saveAsFile
+            httpMethodType:(HttpMethodType)methodType
+                formParams:(NSDictionary*)bodyParams
+               httpHeaders:(NSDictionary*)headers
+           httpSessionType:(HttpSessionType)sessionType
+               credentials:(AuthCredentials*)creds;
+	-(void)fireUploadTask:(BOOL)doAllowCellularAccess
+              success:(IUploadStartOrCompletionCb)successCallback
+              failure:(IUploadFailedCb)failureCallback
+             progress:(IUploadProgressCb)progressCallback
+            completed:(IUploadStartOrCompletionCb)finishedCallback;
+	-(CloudResponse*)fireUploadTaskSync:(BOOL)doAllowCellularAccess
+                           progress:(IUploadProgressCb)progressCallback;
+	-(CloudResponse*)fireUploadTaskSync:(BOOL)doAllowCellularAccess;
+CloudRequest.h
+	GET
+	POST
+	PUT
+	DELETE
+	NONE
+	typedef enum MethodType HttpMethodType
+	GET
+	POST
+	PUT
+	DELETE
+	NONE
+	DEFAULT_SESSION
+	BACKGROUND_DOWNLOAD_SESSION
+	BACKGROUND_UPLOAD_SESSION
+	typedef enum SessionType HttpSessionType
+	DEFAULT_SESSION
+	BACKGROUND_DOWNLOAD_SESSION
+	BACKGROUND_UPLOAD_SESSION
+	@property(assign,nonatomic) int originalRetryCount
+	@property(assign,nonatomic) int retriesRemainingCount
+	-(id)init __attribute__((unavailable("Must Create CloudRequest object using \"initCloudRequestWith\" method")));
+	- (AFHTTPSessionManager*)getSessionManager:(HttpSessionType)sessionType;
+	+ (AFHTTPSessionManager *)defaultManager;
+	-(BOOL)removeFileAtPath:(NSString*)path;
+	-(NSData*)createEmptyResponsePayLoad;
+	+(void)setCompletionHandler:(void(^)())handler onSessionId:(NSString *)identifier;
+CloudResponse.h
+	-(instancetype)init;
+	-(instancetype)initWithResponse:(CloudResponse*) response;
+	-(instancetype)initWithPayLoad:(NSData*)payLoad statusCode:(int)statusCode;
+	-(instancetype)initWithError:(CDKError*)error statusCode:(int)statusCode;
+	-(instancetype)initWithPayload:(NSData*)payLoad error:(CDKError*)error statusCode:(int)statusCode;
+	-(BOOL)hasErrorOccured;
+CloudUAAAuthProvider.h
+	- (void)logout;
+NSFileManager+hashCalculator.h
+	@interface NSFileManager (HashCalculator)
+
+-(NSString*)computeMessageDigestOn:(NSURL*)filePathUrl;
+
+@end
+	-(NSString*)computeMessageDigestOn:(NSURL*)filePathUrl;
