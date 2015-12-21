@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CloudAuthProvider Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/objc/Class/CloudAuthProvider" class="dashAnchor"></a>
+    <a title="CloudAuthProvider Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">CDKCore Docs</a> (40% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">CDKCore Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        CloudAuthProvider Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Categories.html">Categories</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Categories/AuthCredentials(SetTokens).html">AuthCredentials(SetTokens)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Categories/NSFileManager(HashCalculator).html">NSFileManager(HashCalculator)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AuthCredentials.html">AuthCredentials</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CDKCredentialDecodeError.html">CDKCredentialDecodeError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CDKError.html">CDKError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CDKHTTPError.html">CDKHTTPError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CDKJSONError.html">CDKJSONError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CDKNetworkError.html">CDKNetworkError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CDKUnexpectedError.html">CDKUnexpectedError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CDKUserNotLoggedInError.html">CDKUserNotLoggedInError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CloudAppAuthProvider.html">CloudAppAuthProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CloudAuthProvider.html">CloudAuthProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CloudAuthRequestFactory.html">CloudAuthRequestFactory</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CloudAuthWebViewClient.html">CloudAuthWebViewClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CloudConfigurationHelper.html">CloudConfigurationHelper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CloudDownloadRequest.html">CloudDownloadRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CloudFacebookAuthProvider.html">CloudFacebookAuthProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CloudGoogleAuthProvider.html">CloudGoogleAuthProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CloudJsonRequest.html">CloudJsonRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CloudMultipartRequest.html">CloudMultipartRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CloudRequest.html">CloudRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CloudResponse.html">CloudResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CloudUAAAuthProvider.html">CloudUAAAuthProvider</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Constants.html">Constants</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@CDK_ERROR_CODE_GENERIC">CDK_ERROR_CODE_GENERIC</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@CDK_ERROR_DOMAIN_HTTP">CDK_ERROR_DOMAIN_HTTP</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@CDK_ERROR_DOMAIN_JSON">CDK_ERROR_DOMAIN_JSON</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@CDK_ERROR_DOMAIN_LOGIN">CDK_ERROR_DOMAIN_LOGIN</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@CDK_ERROR_DOMAIN_NET">CDK_ERROR_DOMAIN_NET</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@CDK_ERROR_DOMAIN_UNEXPECTED">CDK_ERROR_DOMAIN_UNEXPECTED</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@CoreVersionNumber">CoreVersionNumber</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@CoreVersionString">CoreVersionString</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/LogLevel.html">LogLevel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/MethodType.html">MethodType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SessionType.html">SessionType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Type Definitions.html">Type Definitions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:CloudJsonRequest.h@T@FailureResponse">FailureResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions/HttpMethodType.html">HttpMethodType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions/HttpSessionType.html">HttpSessionType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:CloudAuthWebViewClient.h@T@ICloudAuthWebViewTokenFailureCb">ICloudAuthWebViewTokenFailureCb</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:CloudAuthWebViewClient.h@T@ICloudAuthWebViewTokenSuccessCb">ICloudAuthWebViewTokenSuccessCb</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:CloudRequest.h@T@ICloudResponseCb">ICloudResponseCb</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:CloudResponse.h@T@ICloudResponseFailureCb">ICloudResponseFailureCb</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:CloudResponse.h@T@ICloudResponseSuccessCb">ICloudResponseSuccessCb</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:CloudDownloadRequest.h@T@IDownloadFailedCb">IDownloadFailedCb</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:CloudDownloadRequest.h@T@IDownloadProgressCb">IDownloadProgressCb</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:CloudDownloadRequest.h@T@IDownloadStartOrCompletionCb">IDownloadStartOrCompletionCb</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:CloudMultipartRequest.h@T@IUploadFailedCb">IUploadFailedCb</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:CloudMultipartRequest.h@T@IUploadProgressCb">IUploadProgressCb</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:CloudMultipartRequest.h@T@IUploadStartOrCompletionCb">IUploadStartOrCompletionCb</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:CloudJsonRequest.h@T@SuccessResponse">SuccessResponse</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/c:@F@printLog">printLog</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>CloudAuthProvider</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">CloudAuthProvider</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+
+                </div>
+              </div>
+            <p>Handles the login process. A new web view is launched where
+the user enters their credentials or logs in using a third-party
+account.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)CloudAuthProvider(py)baseUrl"></a>
+                    <a name="//apple_ref/objc/Property/baseUrl" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)CloudAuthProvider(py)baseUrl">baseUrl</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">CloudAuthProvider</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)CloudAuthProvider(py)clientId"></a>
+                    <a name="//apple_ref/objc/Property/clientId" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)CloudAuthProvider(py)clientId">clientId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">CloudAuthProvider</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)CloudAuthProvider(py)clientSecret"></a>
+                    <a name="//apple_ref/objc/Property/clientSecret" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)CloudAuthProvider(py)clientSecret">clientSecret</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">CloudAuthProvider</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)CloudAuthProvider(py)callerVc"></a>
+                    <a name="//apple_ref/objc/Property/callerVc" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)CloudAuthProvider(py)callerVc">callerVc</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">CloudAuthProvider</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)CloudAuthProvider(py)authCredentials"></a>
+                    <a name="//apple_ref/objc/Property/authCredentials" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)CloudAuthProvider(py)authCredentials">authCredentials</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">CloudAuthProvider</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)CloudAuthProvider(py)authReqFactory"></a>
+                    <a name="//apple_ref/objc/Property/authReqFactory" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)CloudAuthProvider(py)authReqFactory">authReqFactory</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">CloudAuthProvider</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)CloudAuthProvider(py)onSuccess"></a>
+                    <a name="//apple_ref/objc/Property/onSuccess" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)CloudAuthProvider(py)onSuccess">onSuccess</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">CloudAuthProvider</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)CloudAuthProvider(py)onFailure"></a>
+                    <a name="//apple_ref/objc/Property/onFailure" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)CloudAuthProvider(py)onFailure">onFailure</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">CloudAuthProvider</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)CloudAuthProvider(py)identifier"></a>
+                    <a name="//apple_ref/objc/Property/identifier" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)CloudAuthProvider(py)identifier">identifier</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">CloudAuthProvider</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)CloudAuthProvider(im)initWithBaseURL:clientId:clientSecret:onViewController:"></a>
+                    <a name="//apple_ref/objc/Method/-initWithBaseURL:clientId:clientSecret:onViewController:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)CloudAuthProvider(im)initWithBaseURL:clientId:clientSecret:onViewController:">-initWithBaseURL:clientId:clientSecret:onViewController:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initialize object with parameters provided by the cloud
+- parameter: baseUrl the URL of the authentication server
+- parameter: clientId application identifier
+- parameter: clientSecret application secret needed to authenticate application to the cloud
+- parameter: vc the view controller for the new web view that will be launched
+       to do the login.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="nf">initWithBaseURL</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">baseUrl</span>
+             <span class="nf">clientId</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">clientId</span>
+         <span class="nf">clientSecret</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">clientSecret</span>
+     <span class="nf">onViewController</span><span class="p">:(</span><span class="n">UIViewController</span> <span class="o">*</span><span class="p">)</span><span class="nv">vc</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>baseUrl</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the URL of the authentication server</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>clientId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>application identifier</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>clientSecret</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>application secret needed to authenticate application to the cloud</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>vc</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the view controller for the new web view that will be launched
+       to do the login.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)CloudAuthProvider(im)initWithViewController:"></a>
+                    <a name="//apple_ref/objc/Method/-initWithViewController:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)CloudAuthProvider(im)initWithViewController:">-initWithViewController:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initialize object with viewController,loads all cloud params from plist
+- parameter: vc the view controller for the new web view that will be launched
+       to do the login.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithViewController</span><span class="p">:(</span><span class="n">UIViewController</span> <span class="o">*</span><span class="p">)</span><span class="nv">vc</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>vc</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the view controller for the new web view that will be launched
+       to do the login.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)CloudAuthProvider(im)deleteSavedTokens:"></a>
+                    <a name="//apple_ref/objc/Method/-deleteSavedTokens:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)CloudAuthProvider(im)deleteSavedTokens:">-deleteSavedTokens:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Remove all the saved tokens from the keychains
+- parameter: identifier deletes the tokens from keychain based on identifer</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">deleteSavedTokens</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">identifier</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>identifier</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>deletes the tokens from keychain based on identifer</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)CloudAuthProvider(im)getAuthCredentials"></a>
+                    <a name="//apple_ref/objc/Method/-getAuthCredentials" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)CloudAuthProvider(im)getAuthCredentials">-getAuthCredentials</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Get the user&rsquo;s authentication credentials. Note
+that credentials may not contain any tokens if the
+user is not logged in.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">AuthCredentials</span> <span class="o">*</span><span class="p">)</span><span class="n">getAuthCredentials</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)CloudAuthProvider(im)validateRefreshToken:"></a>
+                    <a name="//apple_ref/objc/Method/-validateRefreshToken:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)CloudAuthProvider(im)validateRefreshToken:">-validateRefreshToken:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Method which initiates validation of refresh token request
+- parameter: callback that will received the result</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">validateRefreshToken</span><span class="p">:(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="kt">int</span><span class="p">,</span> <span class="n">NSData</span> <span class="o">*</span><span class="p">,</span> <span class="n">CDKError</span> <span class="o">*</span><span class="p">))</span><span class="nv">callback</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>that will received the result</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)CloudAuthProvider(im)getAuthRequestFactory"></a>
+                    <a name="//apple_ref/objc/Method/-getAuthRequestFactory" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)CloudAuthProvider(im)getAuthRequestFactory">-getAuthRequestFactory</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Get the auth request factory for getting request</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">CloudAuthRequestFactory</span> <span class="o">*</span><span class="p">)</span><span class="n">getAuthRequestFactory</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)CloudAuthProvider(im)login:failure:"></a>
+                    <a name="//apple_ref/objc/Method/-login:failure:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)CloudAuthProvider(im)login:failure:">-login:failure:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>login the user. Launches a web view if
+  cached credentials are no longer valid.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">login</span><span class="p">:(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="kt">void</span><span class="p">))</span><span class="nv">onSuccess</span> <span class="nf">failure</span><span class="p">:(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n">CDKError</span> <span class="o">*</span><span class="p">))</span><span class="nv">onFailure</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>onSuccess</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>notifies app if login completed successfully.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>onFailure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>notifies app if login failure occurs.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)CloudAuthProvider(im)logout"></a>
+                    <a name="//apple_ref/objc/Method/-logout" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)CloudAuthProvider(im)logout">-logout</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>logout the user
+Basically remove the cached credentials which force a new login.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">logout</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)CloudAuthProvider(im)onLogout"></a>
+                    <a name="//apple_ref/objc/Method/-onLogout" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)CloudAuthProvider(im)onLogout">-onLogout</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>function that does the actually logout. This should be override by the subclass and call</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">onLogout</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)CloudAuthProvider(im)loginNatively:token:provider:scope:success:failure:"></a>
+                    <a name="//apple_ref/objc/Method/-loginNatively:token:provider:scope:success:failure:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)CloudAuthProvider(im)loginNatively:token:provider:scope:success:failure:">-loginNatively:token:provider:scope:success:failure:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Method which initiates UAA Login process using 3rd party provider such as google, facebook,&hellip;etc.
+- parameter: email the user identifier
+- parameter: token the token of 3rd party provider or password for native UAA
+- parameter: provider identifies the 3rd party auth or native uaa
+- parameter: scope the scope for the user
+- parameter: onSuccess notifies app if login completed successfully.
+- parameter: onFailure notifies app if login failure occurs.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">loginNatively</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">email</span>
+                <span class="nf">token</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">token</span>
+             <span class="nf">provider</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">provider</span>
+                <span class="nf">scope</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">scope</span>
+              <span class="nf">success</span><span class="p">:(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="kt">void</span><span class="p">))</span><span class="nv">onSuccess</span>
+              <span class="nf">failure</span><span class="p">:(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n">CDKError</span> <span class="o">*</span><span class="p">))</span><span class="nv">onFailure</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>email</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the user identifier</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>token</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the token of 3rd party provider or password for native UAA</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>provider</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>identifies the 3rd party auth or native uaa</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>scope</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the scope for the user</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>onSuccess</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>notifies app if login completed successfully.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>onFailure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>notifies app if login failure occurs.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)CloudAuthProvider(im)login:success:failure:"></a>
+                    <a name="//apple_ref/objc/Method/-login:success:failure:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)CloudAuthProvider(im)login:success:failure:">-login:success:failure:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>login the user with a provided web view if
+  cached credentials are no longer valid.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">login</span><span class="p">:(</span><span class="n">CloudAuthWebViewClient</span> <span class="o">*</span><span class="p">)</span><span class="nv">appWVC</span>
+      <span class="nf">success</span><span class="p">:(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="kt">void</span><span class="p">))</span><span class="nv">onSuccess</span>
+      <span class="nf">failure</span><span class="p">:(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n">CDKError</span> <span class="o">*</span><span class="p">))</span><span class="nv">onFailure</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>appWVC</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the view controller</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>onSuccess</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>notifies app if login completed successfully.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>onFailure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>notifies app if login failure occurs.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)CloudAuthProvider(im)getUserInfo:failure:"></a>
+                    <a name="//apple_ref/objc/Method/-getUserInfo:failure:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)CloudAuthProvider(im)getUserInfo:failure:">-getUserInfo:failure:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>getUserInfo
+ Get the user info for the current login user. User info contains user id, user name,
+              given name, family anme, email address and login type. The JSON returned in the payload</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">getUserInfo</span><span class="p">:(</span><span class="n">ICloudResponseSuccessCb</span><span class="p">)</span><span class="nv">successCallback</span>
+            <span class="nf">failure</span><span class="p">:(</span><span class="n">ICloudResponseFailureCb</span><span class="p">)</span><span class="nv">failureCallback</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>successCallback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>notifies app if login completed successfully.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failureCallback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>notifies app if login failure occurs.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)CloudAuthProvider(im)getHTTPAuthorizationString"></a>
+                    <a name="//apple_ref/objc/Method/-getHTTPAuthorizationString" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)CloudAuthProvider(im)getHTTPAuthorizationString">-getHTTPAuthorizationString</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">CloudAuthProvider</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2015 <a class="link" href="com.intel.ndg.cloudsdk" target="_blank" rel="external">CloudSDK</a>. All rights reserved. (Last updated: 2015-12-20)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.4.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

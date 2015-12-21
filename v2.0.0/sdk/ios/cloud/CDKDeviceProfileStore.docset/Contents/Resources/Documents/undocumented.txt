@@ -1,0 +1,4 @@
+CloudDeviceProfileItem.swift
+	case Mobile = "Mobile"
+	case Wearable = "Wearable"
+	case Hybrid = "Hybrid"

@@ -1,0 +1,57 @@
+BlobAnonymousUploader.swift
+	public protocol BlobAnonymousUploader
+	public protocol BlobAnonymousUploader
+	public func upload(filePath:NSURL, assetType:String, success:IBlobUploadStartedCb, failure:IBlobUploadFailedCb, progress:IBlobUploadProgressCb, completed:IBlobUploadFinishedCb)
+	public func upload(filePath:NSURL, assetType:String, fileName:String?, success:IBlobUploadStartedCb, failure:IBlobUploadFailedCb, progress:IBlobUploadProgressCb, completed:IBlobUploadFinishedCb)
+	public func upload(filePath:NSURL, assetType:String, blobDescription:[String:AnyObject]?, success:IBlobUploadStartedCb, failure:IBlobUploadFailedCb, progress:IBlobUploadProgressCb, completed:IBlobUploadFinishedCb)
+	public func upload(filePath:NSURL, assetType:String, fileName:String?, blobDescription:[String:AnyObject]?,
+        success:IBlobUploadStartedCb, failure:IBlobUploadFailedCb, progress:IBlobUploadProgressCb,
+        completed:IBlobUploadFinishedCb)
+BlobUploader.swift
+	public protocol BlobUploader
+	public protocol BlobUploader
+	public func upload(filePath:NSURL, assetType:String, success:IBlobUploadStartedCb, failure:IBlobUploadFailedCb, progress:IBlobUploadProgressCb, completed:IBlobUploadFinishedCb)
+	public func upload(filePath:NSURL, assetType:String, fileName:String?, success:IBlobUploadStartedCb, failure:IBlobUploadFailedCb, progress:IBlobUploadProgressCb, completed:IBlobUploadFinishedCb)
+	public func upload(filePath:NSURL, assetType:String, blobDescription:[String:AnyObject]?, success:IBlobUploadStartedCb, failure:IBlobUploadFailedCb, progress:IBlobUploadProgressCb, completed:IBlobUploadFinishedCb)
+	public func upload(filePath:NSURL, assetType:String, fileName:String?, blobDescription:[String:AnyObject]?,
+        success:IBlobUploadStartedCb, failure:IBlobUploadFailedCb, progress:IBlobUploadProgressCb,
+        completed:IBlobUploadFinishedCb)
+CloudUserBlobStore.swift
+	public private(set) var productId:String
+	public private(set) var doAllowCellularAccess:Bool
+	public let userId: String? = nil
+CloudBlobStoreResponse.swift
+	public class CloudBlobStoreResponse:CloudResponse
+	public typealias IBlobUploadFinishedCb = CloudBlobStoreResponse -> Void
+	public typealias IBlobDownloadFailedCb = CloudBlobStoreResponse -> Void
+	public typealias IBlobUploadFailedCb = CloudBlobStoreResponse -> Void
+	public typealias IBlobDownloadProgressCb = (Int64, Int64, Int64) -> Void
+	public typealias IBlobUploadProgressCb = (Int64, Int64, Int64) -> Void
+	public typealias IBlobUploadStartedCb = CloudBlobStoreResponse -> Void
+	public typealias IBlobDownloadStartedCb = CloudBlobStoreResponse -> Void
+	public typealias IBlobDownloadFinishedCb = CloudBlobStoreResponse -> Void
+CloudAnonymousBlobStore.swift
+	public private(set) var productId:String
+	public private(set) var doAllowCellularAccess:Bool
+	public let userId: String? = nil
+	public private(set) var baseUrl:String
+CloudPublicBlobStore.swift
+	public private(set) var productId:String
+	public private(set) var doAllowCellularAccess:Bool
+	public let userId: String? = CloudPublicBlobStore.SWASSET_PUBLIC_USERID
+	public private(set) var baseUrl:String
+BlobDownloader.swift
+	public protocol BlobDownloader
+	public protocol BlobDownloader
+	public func download(id:String, success:IBlobDownloadStartedCb, failure:IBlobDownloadFailedCb, progress:IBlobDownloadProgressCb, completed:IBlobDownloadFinishedCb)
+	public func download(id:String, saveAsFile:String?, success:IBlobDownloadStartedCb, failure:IBlobDownloadFailedCb, progress:IBlobDownloadProgressCb, completed:IBlobDownloadFinishedCb)
+	public func download(id:String, folderName:String?, saveAsFile:String?, success:IBlobDownloadStartedCb, failure:IBlobDownloadFailedCb, progress:IBlobDownloadProgressCb, completed:IBlobDownloadFinishedCb)
+CloudBlobStoreRequestFactory.swift
+	public struct CloudBlobStoreRequestFactory
+BlobStore.swift
+	public protocol BlobStore
+	static var logTag: String { get }
+	var doAllowCellularAccess: Bool { get }
+	var productId: String { get }
+	var requestFactory: CloudBlobStoreRequestFactory? { get }
+	var userId: String? { get }

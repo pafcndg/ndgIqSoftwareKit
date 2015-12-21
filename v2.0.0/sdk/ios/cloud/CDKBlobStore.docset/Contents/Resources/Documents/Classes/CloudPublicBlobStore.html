@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CloudPublicBlobStore Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/CloudPublicBlobStore" class="dashAnchor"></a>
+    <a title="CloudPublicBlobStore Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">CDKBlobStore Docs</a> (50% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">CDKBlobStore Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        CloudPublicBlobStore Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/CloudAnonymousBlobStore.html">CloudAnonymousBlobStore</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CloudBlobStoreResponse.html">CloudBlobStoreResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CloudPublicBlobStore.html">CloudPublicBlobStore</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CloudUserBlobStore.html">CloudUserBlobStore</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/BlobAnonymousUploader.html">BlobAnonymousUploader</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/BlobDownloader.html">BlobDownloader</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/BlobStore.html">BlobStore</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/BlobUploader.html">BlobUploader</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs.html#/s:V12CDKBlobStore28CloudBlobStoreRequestFactory">CloudBlobStoreRequestFactory</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Typealiases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:12CDKBlobStore21IBlobDownloadFailedCb">IBlobDownloadFailedCb</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:12CDKBlobStore23IBlobDownloadFinishedCb">IBlobDownloadFinishedCb</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:12CDKBlobStore23IBlobDownloadProgressCb">IBlobDownloadProgressCb</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:12CDKBlobStore22IBlobDownloadStartedCb">IBlobDownloadStartedCb</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:12CDKBlobStore19IBlobUploadFailedCb">IBlobUploadFailedCb</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:12CDKBlobStore21IBlobUploadFinishedCb">IBlobUploadFinishedCb</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:12CDKBlobStore21IBlobUploadProgressCb">IBlobUploadProgressCb</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:12CDKBlobStore20IBlobUploadStartedCb">IBlobUploadStartedCb</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>CloudPublicBlobStore</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">CloudPublicBlobStore</span><span class="p">:</span> <span class="kt">BlobStore</span><span class="p">,</span> <span class="kt">BlobDownloader</span></code></pre>
+
+                </div>
+              </div>
+            <p>Class to download public blob to the cloud</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvC12CDKBlobStore20CloudPublicBlobStore6logTagSS"></a>
+                    <a name="//apple_ref/swift/Variable/logTag" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvC12CDKBlobStore20CloudPublicBlobStore6logTagSS">logTag</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>constant to tag class name while logging</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">logTag</span> <span class="o">=</span> <span class="s">"CloudPublicBlobStore"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC12CDKBlobStore20CloudPublicBlobStore14requestFactoryGSqVS_28CloudBlobStoreRequestFactory_"></a>
+                    <a name="//apple_ref/swift/Property/requestFactory" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC12CDKBlobStore20CloudPublicBlobStore14requestFactoryGSqVS_28CloudBlobStoreRequestFactory_">requestFactory</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>instance of CloudBlobStoreRequestFactory</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">requestFactory</span><span class="p">:</span><span class="kt">CloudBlobStoreRequestFactory</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC12CDKBlobStore20CloudPublicBlobStore9productIdSS"></a>
+                    <a name="//apple_ref/swift/Property/productId" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC12CDKBlobStore20CloudPublicBlobStore9productIdSS">productId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">CloudPublicBlobStore</span><span class="p">:</span> <span class="kt">BlobStore</span><span class="p">,</span> <span class="kt">BlobDownloader</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC12CDKBlobStore20CloudPublicBlobStore21doAllowCellularAccessSb"></a>
+                    <a name="//apple_ref/swift/Property/doAllowCellularAccess" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC12CDKBlobStore20CloudPublicBlobStore21doAllowCellularAccessSb">doAllowCellularAccess</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">CloudPublicBlobStore</span><span class="p">:</span> <span class="kt">BlobStore</span><span class="p">,</span> <span class="kt">BlobDownloader</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC12CDKBlobStore20CloudPublicBlobStore6userIdGSqSS_"></a>
+                    <a name="//apple_ref/swift/Property/userId" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC12CDKBlobStore20CloudPublicBlobStore6userIdGSqSS_">userId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">CloudPublicBlobStore</span><span class="p">:</span> <span class="kt">BlobStore</span><span class="p">,</span> <span class="kt">BlobDownloader</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC12CDKBlobStore20CloudPublicBlobStore7baseUrlSS"></a>
+                    <a name="//apple_ref/swift/Property/baseUrl" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC12CDKBlobStore20CloudPublicBlobStore7baseUrlSS">baseUrl</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">CloudPublicBlobStore</span><span class="p">:</span> <span class="kt">BlobStore</span><span class="p">,</span> <span class="kt">BlobDownloader</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC12CDKBlobStore20CloudPublicBlobStorecFMS0_FT7baseUrlSS9productIdSS8providerCSo20CloudAppAuthProvider21doAllowCellularAccessSb_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(baseUrl:productId:provider:doAllowCellularAccess:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC12CDKBlobStore20CloudPublicBlobStorecFMS0_FT7baseUrlSS9productIdSS8providerCSo20CloudAppAuthProvider21doAllowCellularAccessSb_S0_">init(baseUrl:productId:provider:doAllowCellularAccess:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Instantiate a CloudPublicBlobStore using parameters provided by the cloud</p>
+
+<div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          Parameter baseUrl: full URL to the Cloud Server
+
+        </div><div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          Parameter productId: a product is associated with collection of assets. Usually this defined by the organization that
+uploaded the assets to the cloud using an out-of-band mechanism (e.g. curl POST)
+
+        </div><div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          Parameter provider: The authentication provider
+
+        </div><div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          Parameter doAllowCellularAccess: indicating YES or NO to download/upload on cellular network,default value will be wifi+cellular
+
+        </div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">baseUrl</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">productId</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="nv">provider</span><span class="p">:</span> <span class="kt">CloudAppAuthProvider</span><span class="p">,</span> <span class="nv">doAllowCellularAccess</span><span class="p">:</span><span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>baseUrl</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>full URL to the Cloud Server</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>productId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>a product is associated with collection of assets. Usually this defined by the organization that uploaded the assets to the cloud using an out-of-band mechanism (e.g. curl POST)</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>provider</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The authentication provider</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>doAllowCellularAccess</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>indicating YES or NO to download/upload on cellular network,default value will be wifi+cellular</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC12CDKBlobStore20CloudPublicBlobStorecFMS0_FzT7baseUrlSS9productIdSS21doAllowCellularAccessSb_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(baseUrl:productId:doAllowCellularAccess:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC12CDKBlobStore20CloudPublicBlobStorecFMS0_FzT7baseUrlSS9productIdSS21doAllowCellularAccessSb_S0_">init(baseUrl:productId:doAllowCellularAccess:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Instantiate a CloudPublicBlobStore using parameters provided by the cloud.</p>
+
+<div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          Parameter baseUrl: full URL to the Cloud Server
+
+        </div><div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          Parameter productId: a product is associated with collection of assets. Usually this defined by the organization that
+    uploaded the assets to the cloud using an out-of-band mechanism (e.g. curl POST)
+
+        </div><div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          Parameter doAllowCellularAccess: indicating YES or NO to download/upload on cellular network,default value will be wifi+cellular
+
+        </div><div class="aside aside-throws">
+          <p class="aside-title">Throws</p>
+          CDKError on configuration read failure.
+
+        </div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">baseUrl</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">productId</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="nv">doAllowCellularAccess</span><span class="p">:</span><span class="kt">Bool</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>baseUrl</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>full URL to the Cloud Server</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>productId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>a product is associated with collection of assets. Usually this defined by the organization that uploaded the assets to the cloud using an out-of-band mechanism (e.g. curl POST)</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>doAllowCellularAccess</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>indicating YES or NO to download/upload on cellular network,default value will be wifi+cellular</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC12CDKBlobStore20CloudPublicBlobStorecFMS0_FzT9productIdSS21doAllowCellularAccessSb_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(productId:doAllowCellularAccess:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC12CDKBlobStore20CloudPublicBlobStorecFMS0_FzT9productIdSS21doAllowCellularAccessSb_S0_">init(productId:doAllowCellularAccess:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Instantiate a CloudPublicBlobStore using parameters provided by the cloud, loads cloud params from plist</p>
+
+<div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          Parameter  productId: a product is associated with collection of assets. Usually this defined by the organization that uploaded the assets to the cloud using an out-of-band mechanism (e.g. curl POST)
+
+        </div><div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          Parameter doAllowCellularAccess: indicating YES or NO to download/upload on cellular network,default value will be wifi+cellular
+
+        </div><div class="aside aside-throws">
+          <p class="aside-title">Throws</p>
+          CDKError on configuration read failure
+
+        </div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">productId</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="nv">doAllowCellularAccess</span><span class="p">:</span><span class="kt">Bool</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>productId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>a product is associated with collection of assets. Usually this defined by the organization that uploaded the assets to the cloud using an out-of-band mechanism (e.g. curl POST)</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>doAllowCellularAccess</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>indicating YES or NO to download/upload on cellular network,default value will be wifi+cellular</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC12CDKBlobStore20CloudPublicBlobStorecFMS0_FzT7baseUrlSS9productIdSS_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(baseUrl:productId:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC12CDKBlobStore20CloudPublicBlobStorecFMS0_FzT7baseUrlSS9productIdSS_S0_">init(baseUrl:productId:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Instantiate a CloudPublicBlobStore using parameters provided by the cloud.</p>
+
+<div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          Parameter  baseUrl: full URL to the Cloud Server
+
+        </div><div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          <p>Parameter  productId: a product is associated with collection of assets. Usually this defined by the organization that uploaded the assets to the cloud using an out-of-band mechanism (e.g. curl POST)</p>
+
+        </div><div class="aside aside-throws">
+          <p class="aside-title">Throws</p>
+          <p>CDKError on configuration read failure</p>
+
+        </div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">baseUrl</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">productId</span><span class="p">:</span><span class="kt">String</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>baseUrl</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>full URL to the Cloud Server</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>productId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>a product is associated with collection of assets. Usually this defined by the organization that uploaded the assets to the cloud using an out-of-band mechanism (e.g. curl POST)</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC12CDKBlobStore20CloudPublicBlobStore21getLatestDownloadInfoFS0_FTSS7successFGSQCSo13CloudResponse_T_7failureFGSQS1__T__T_"></a>
+                    <a name="//apple_ref/swift/Method/getLatestDownloadInfo(_:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC12CDKBlobStore20CloudPublicBlobStore21getLatestDownloadInfoFS0_FTSS7successFGSQCSo13CloudResponse_T_7failureFGSQS1__T__T_">getLatestDownloadInfo(_:success:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Method to request for meta data info on latest file uploaded/updated to public store</p>
+
+<div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          Parameter  assetType: type of asset whose latest version should be downloaded
+
+        </div><div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          Parameter  successCallback: callback to handover cloud response payload
+
+        </div><div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          Parameter  assetType: callback to handover error response from cloud
+
+        </div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getLatestDownloadInfo</span><span class="p">(</span><span class="k">as</span><span class="nv">setType</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span><span class="kt">ICloudResponseSuccessCb</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span><span class="kt">ICloudResponseFailureCb</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>assetType</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>type of asset whose latest version should be downloaded</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>successCallback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>callback to handover cloud response payload</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>assetType</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>callback to handover error response from cloud</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC12CDKBlobStore20CloudPublicBlobStore14downloadLatestFS0_FTSS7successFCS_22CloudBlobStoreResponseT_7failureFS1_T_8progressFTVSs5Int64S2_S2__T_9completedFS1_T__T_"></a>
+                    <a name="//apple_ref/swift/Method/downloadLatest(_:success:failure:progress:completed:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC12CDKBlobStore20CloudPublicBlobStore14downloadLatestFS0_FTSS7successFCS_22CloudBlobStoreResponseT_7failureFS1_T_8progressFTVSs5Int64S2_S2__T_9completedFS1_T__T_">downloadLatest(_:success:failure:progress:completed:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Download Latest asset from public store</p>
+
+<div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          Parameter  assetType: type of asset whose latest version should be downloaded
+
+        </div><div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          Parameter  success: notification callback to let the application know if the download started
+
+        </div><div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          Parameter  failure: error response for download request
+
+        </div><div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          Parameter  progress: callback to be invoked multiple times to show progress
+
+        </div><div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          Parameter  completed: response callback when download finished
+
+        </div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">downloadLatest</span><span class="p">(</span><span class="k">as</span><span class="nv">setType</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span><span class="kt">IBlobDownloadStartedCb</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span><span class="kt">IBlobDownloadFailedCb</span><span class="p">,</span> <span class="nv">progress</span><span class="p">:</span><span class="kt">IBlobDownloadProgressCb</span><span class="p">,</span> <span class="nv">completed</span><span class="p">:</span><span class="kt">IBlobDownloadFinishedCb</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>assetType</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>type of asset whose latest version should be downloaded</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>notification callback to let the application know if the download started</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>error response for download request</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>progress</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>callback to be invoked multiple times to show progress</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completed</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>response callback when download finished</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC12CDKBlobStore20CloudPublicBlobStore14downloadLatestFS0_FTSS10saveAsFileGSqSS_7successFCS_22CloudBlobStoreResponseT_7failureFS1_T_8progressFTVSs5Int64S2_S2__T_9completedFS1_T__T_"></a>
+                    <a name="//apple_ref/swift/Method/downloadLatest(_:saveAsFile:success:failure:progress:completed:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC12CDKBlobStore20CloudPublicBlobStore14downloadLatestFS0_FTSS10saveAsFileGSqSS_7successFCS_22CloudBlobStoreResponseT_7failureFS1_T_8progressFTVSs5Int64S2_S2__T_9completedFS1_T__T_">downloadLatest(_:saveAsFile:success:failure:progress:completed:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Download Latest asset from public store</p>
+
+<div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          Parameter  assetType: type of asset whose latest version should be downloaded
+
+        </div><div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          Parameter  saveAsFile: save download at Documents/folderName/saveAsFile
+
+        </div><div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          Parameter  success: notification callback to let the application know if the download started
+
+        </div><div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          Parameter  failure: error response for download request
+
+        </div><div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          Parameter  progress: callback to be invoked multiple times to show progress
+
+        </div><div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          Parameter  completed: response callback when download finished
+
+        </div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">downloadLatest</span><span class="p">(</span><span class="k">as</span><span class="nv">setType</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="nv">saveAsFile</span><span class="p">:</span><span class="kt">String</span><span class="p">?,</span> <span class="nv">success</span><span class="p">:</span><span class="kt">IBlobDownloadStartedCb</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span><span class="kt">IBlobDownloadFailedCb</span><span class="p">,</span> <span class="nv">progress</span><span class="p">:</span><span class="kt">IBlobDownloadProgressCb</span><span class="p">,</span> <span class="nv">completed</span><span class="p">:</span><span class="kt">IBlobDownloadFinishedCb</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>assetType</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>type of asset whose latest version should be downloaded</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>saveAsFile</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>save download at Documents/folderName/saveAsFile</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>notification callback to let the application know if the download started</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>error response for download request</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>progress</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>callback to be invoked multiple times to show progress</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completed</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>response callback when download finished</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC12CDKBlobStore20CloudPublicBlobStore14downloadLatestFS0_FTSS10folderNameGSqSS_10saveAsFileGSqSS_7successFCS_22CloudBlobStoreResponseT_7failureFS1_T_8progressFTVSs5Int64S2_S2__T_9completedFS1_T__T_"></a>
+                    <a name="//apple_ref/swift/Method/downloadLatest(_:folderName:saveAsFile:success:failure:progress:completed:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC12CDKBlobStore20CloudPublicBlobStore14downloadLatestFS0_FTSS10folderNameGSqSS_10saveAsFileGSqSS_7successFCS_22CloudBlobStoreResponseT_7failureFS1_T_8progressFTVSs5Int64S2_S2__T_9completedFS1_T__T_">downloadLatest(_:folderName:saveAsFile:success:failure:progress:completed:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Download Latest asset from public store</p>
+
+<div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          Parameter  assetType: type of asset whose latest version should be downloaded
+
+        </div><div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          Parameter  folderName: save download in folder Documents/folderName
+
+        </div><div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          Parameter  saveAsFile: save download at Documents/folderName/saveAsFile
+
+        </div><div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          Parameter  success: notification callback to let the application know if the download started
+
+        </div><div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          Parameter  failure: error response for download request
+
+        </div><div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          Parameter  progress: callback to be invoked multiple times to show progress
+
+        </div><div class="aside aside-parameter">
+          <p class="aside-title">Parameter</p>
+          Parameter  completed: response callback when download finished
+
+        </div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">downloadLatest</span><span class="p">(</span><span class="k">as</span><span class="nv">setType</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="nv">folderName</span><span class="p">:</span><span class="kt">String</span><span class="p">?,</span> <span class="nv">saveAsFile</span><span class="p">:</span><span class="kt">String</span><span class="p">?,</span> <span class="nv">success</span><span class="p">:</span><span class="kt">IBlobDownloadStartedCb</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span><span class="kt">IBlobDownloadFailedCb</span><span class="p">,</span> <span class="nv">progress</span><span class="p">:</span><span class="kt">IBlobDownloadProgressCb</span><span class="p">,</span> <span class="nv">completed</span><span class="p">:</span><span class="kt">IBlobDownloadFinishedCb</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>assetType</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>type of asset whose latest version should be downloaded</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>folderName</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>save download in folder Documents/folderName</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>saveAsFile</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>save download at Documents/folderName/saveAsFile</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>notification callback to let the application know if the download started</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>error response for download request</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>progress</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>callback to be invoked multiple times to show progress</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completed</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>response callback when download finished</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2015 <a class="link" href="com.intel.ndg.cloudsdk" target="_blank" rel="external">CloudSDK</a>. All rights reserved. (Last updated: 2015-12-20)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.4.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

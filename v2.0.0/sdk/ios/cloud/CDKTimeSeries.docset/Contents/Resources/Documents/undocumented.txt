@@ -1,0 +1,18 @@
+CloudSessionPutRequest.swift
+	public class CloudSessionPutRequest
+CloudAttribute.swift
+	case SUM = "sum"
+	case MAX = "max"
+	case MIN = "min"
+	case AVERAGE = "avg"
+	case COUNT = "count"
+CloudFilter.swift
+	case EQUALS = "="
+	case GREATER_THAN = ">"
+	case LESS_THAN = "<"
+	case GREATER_THAN_OR_EQUAL_TO = ">="
+	case LESS_THAN_OR_EQUAL_TO = "<="
+CloudAggregation.swift
+	public static let DAY = "day"
+	public static let WEEK = "week"
+	public static let MONTH = "month"

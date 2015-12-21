@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CloudFilter Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/CloudFilter" class="dashAnchor"></a>
+    <a title="CloudFilter Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">CDKTimeSeries Docs</a> (66% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">CDKTimeSeries Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        CloudFilter Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/CloudAggregation.html">CloudAggregation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CloudAttribute.html">CloudAttribute</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CloudFilter.html">CloudFilter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CloudSessionPutRequest.html">CloudSessionPutRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CloudTimeSeries.html">CloudTimeSeries</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>CloudFilter</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">CloudFilter</span></code></pre>
+
+                </div>
+              </div>
+            <p>Assists in forming filters to query</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:OC13CDKTimeSeries11CloudFilter8Operator"></a>
+                    <a name="//apple_ref/swift/Enum/Operator" class="dashAnchor"></a>
+                    <a class="token" href="#/s:OC13CDKTimeSeries11CloudFilter8Operator">Operator</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Enumeration used in assisting filter formation</p>
+
+                        <a href="../Classes/CloudFilter/Operator.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Operator</span> <span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC13CDKTimeSeries11CloudFiltercFMS0_FT6value1SS14filterOperatorOS0_8Operator6value2SS_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(value1:filterOperator:value2:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC13CDKTimeSeries11CloudFiltercFMS0_FT6value1SS14filterOperatorOS0_8Operator6value2SS_S0_">init(value1:filterOperator:value2:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Instantiate the CloudFilter class</p>
+
+<p><li>Parameters:</li>
+<li>value1: value used to prefix with operator(ex:speed,temperature,distance,steps,calories)</li>
+<li>filterOperator: type of operator{EQUALS, GREATER_THAN, LESS_THAN, GREATER_THAN_OR_EQUAL_TO, LESS_THAN_OR_EQUAL_TO}</li>
+<li><p>value2: numeric value used to suffix with operator</p></li>
+<div class="aside aside-returns">
+          <p class="aside-title">Returns</p>
+          <p>instance of CloudFilter.</p></p>
+<pre class="highlight plaintext"><code>    &lt;/div&gt;
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">value1</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="nv">filterOperator</span><span class="p">:</span><span class="kt">Operator</span><span class="p">,</span> <span class="nv">value2</span><span class="p">:</span><span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>instance of CloudFilter.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC13CDKTimeSeries11CloudFilter12addAttributeFS0_FTSS14filterOperatorOS0_8Operator6value2SS_T_"></a>
+                    <a name="//apple_ref/swift/Method/addAttribute(_:filterOperator:value2:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC13CDKTimeSeries11CloudFilter12addAttributeFS0_FTSS14filterOperatorOS0_8Operator6value2SS_T_">addAttribute(_:filterOperator:value2:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Appends the filter to filter list by concatenating with values</p>
+
+<ul>
+<li>Parameters:</li>
+<li>value1: value used to prefix with operator(ex:speed,temperature,distance,steps,calories)</li>
+<li>filterOperator: type of operator{EQUALS, GREATER_THAN, LESS_THAN, GREATER_THAN_OR_EQUAL_TO, LESS_THAN_OR_EQUAL_TO}</li>
+<li>value2: numeric value used to suffix with operator</li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">addAttribute</span><span class="p">(</span><span class="nv">value1</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="nv">filterOperator</span><span class="p">:</span><span class="kt">Operator</span><span class="p">,</span> <span class="nv">value2</span><span class="p">:</span><span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2015 <a class="link" href="com.intel.ndg.cloudsdk" target="_blank" rel="external">CloudSDK</a>. All rights reserved. (Last updated: 2015-12-20)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.4.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

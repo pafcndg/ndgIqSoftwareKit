@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CloudTimeSeries Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/CloudTimeSeries" class="dashAnchor"></a>
+    <a title="CloudTimeSeries Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">CDKTimeSeries Docs</a> (66% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">CDKTimeSeries Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        CloudTimeSeries Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/CloudAggregation.html">CloudAggregation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CloudAttribute.html">CloudAttribute</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CloudFilter.html">CloudFilter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CloudSessionPutRequest.html">CloudSessionPutRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CloudTimeSeries.html">CloudTimeSeries</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>CloudTimeSeries</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">CloudTimeSeries</span></code></pre>
+
+                </div>
+              </div>
+            <p>Time series interaction to cloud</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC13CDKTimeSeries15CloudTimeSeries11getInstanceFMS0_FzT_S0_"></a>
+                    <a name="//apple_ref/swift/Method/getInstance()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC13CDKTimeSeries15CloudTimeSeries11getInstanceFMS0_FzT_S0_">getInstance()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Gets singleton instance of CloudTimeSeries, throws on nil</p>
+
+<div class="aside aside-throws">
+          <p class="aside-title">Throws</p>
+          <p>CDKUnexpectedError if the CloudTimeSeries instance
+is nil.</p>
+
+        </div><div class="aside aside-returns">
+          <p class="aside-title">Returns</p>
+          <p>singleton instance of CloudTimeSeries.</p>
+
+        </div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kd">func</span> <span class="nf">getInstance</span><span class="p">()</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">CloudTimeSeries</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>singleton instance of CloudTimeSeries.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC13CDKTimeSeries15CloudTimeSeries8initWithFMS0_FTSS7baseUrlSS16baseUrlIngestionSS_T_"></a>
+                    <a name="//apple_ref/swift/Method/initWith(_:baseUrl:baseUrlIngestion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC13CDKTimeSeries15CloudTimeSeries8initWithFMS0_FTSS7baseUrlSS16baseUrlIngestionSS_T_">initWith(_:baseUrl:baseUrlIngestion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Instantiate the singleton using parameters provided by the cloud. Second or further calls to this function do not re-initialize the singleton.</p>
+
+<ul>
+<li>Parameters:
+
+<ul>
+<li>identifier: identifier string to get credentials</li>
+<li>baseUrl: URL for the Cloud Time series service</li>
+<li>baseUrlIngestion: URL for the Cloud Time series ingestion service</li>
+</ul></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kd">func</span> <span class="nf">initWith</span><span class="p">(</span><span class="nv">identifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">baseUrl</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">baseUrlIngestion</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC13CDKTimeSeries15CloudTimeSeries8initWithFMS0_FSST_"></a>
+                    <a name="//apple_ref/swift/Method/initWith(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC13CDKTimeSeries15CloudTimeSeries8initWithFMS0_FSST_">initWith(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Instantiate the singleton using parameters provided by the cloud. Second or further calls to this function do not re-initialize the singleton. BaseUrl will be loaded from plist</p>
+
+<ul>
+<li>Parameters:
+
+<ul>
+<li>identifier: identifier string to get credentials</li>
+</ul></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kd">func</span> <span class="nf">initWith</span><span class="p">(</span><span class="nv">identifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>identifier</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>identifier string to get credentials</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC13CDKTimeSeries15CloudTimeSeries6reInitFMS0_FTSS7baseUrlSS16baseUrlIngestionSS_T_"></a>
+                    <a name="//apple_ref/swift/Method/reInit(_:baseUrl:baseUrlIngestion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC13CDKTimeSeries15CloudTimeSeries6reInitFMS0_FTSS7baseUrlSS16baseUrlIngestionSS_T_">reInit(_:baseUrl:baseUrlIngestion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Re-instantiate the singleton using parameters provided by the cloud.</p>
+
+<ul>
+<li>Parameters:
+
+<ul>
+<li>identifier: identifier string to get credentials</li>
+<li>baseUrl: URL for the Cloud Time series service</li>
+<li>baseUrlIngestion: URL for the Cloud Time series ingestion service</li>
+</ul></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kd">func</span> <span class="nf">reInit</span><span class="p">(</span><span class="nv">identifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">baseUrl</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">baseUrlIngestion</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC13CDKTimeSeries15CloudTimeSeries7destroyFMS0_FT_T_"></a>
+                    <a name="//apple_ref/swift/Method/destroy()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC13CDKTimeSeries15CloudTimeSeries7destroyFMS0_FT_T_">destroy()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Destroy the singleton instance so it can be recreated.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kd">func</span> <span class="nf">destroy</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC13CDKTimeSeries15CloudTimeSeries4postFS0_FTGSQSS_8deviceIdGSQSS_9jsonArrayGSQGSaPSs9AnyObject___7successGSQFGSQCSo13CloudResponse_T__7failureGSQFGSQS2__T___T_"></a>
+                    <a name="//apple_ref/swift/Method/post(_:deviceId:jsonArray:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC13CDKTimeSeries15CloudTimeSeries4postFS0_FTGSQSS_8deviceIdGSQSS_9jsonArrayGSQGSaPSs9AnyObject___7successGSQFGSQCSo13CloudResponse_T__7failureGSQFGSQS2__T___T_">post(_:deviceId:jsonArray:success:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Asynchronous call to post time series data to the cloud.</p>
+
+<ul>
+<li>Parameters:</li>
+<li>companionId: the id of the phone</li>
+<li>companionId: the id of the wearable</li>
+<li>jsonArray: list of time series observations and values</li>
+<li>success: the callback invoked on successful post</li>
+<li>failure: the callback invoked when error occurs</li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">post</span><span class="p">(</span><span class="nv">companionId</span><span class="p">:</span><span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="nv">deviceId</span><span class="p">:</span><span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="nv">jsonArray</span><span class="p">:[</span><span class="kt">AnyObject</span><span class="p">]</span><span class="o">!</span><span class="p">,</span>  <span class="nv">success</span><span class="p">:</span><span class="kt">ICloudResponseSuccessCb</span><span class="o">!</span><span class="p">,</span>
+        <span class="nv">failure</span><span class="p">:</span><span class="kt">ICloudResponseFailureCb</span><span class="o">!</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC13CDKTimeSeries15CloudTimeSeries4postFS0_FTGVSs10DictionarySSPSs9AnyObject__7successGSQFGSQCSo13CloudResponse_T__7failureGSQFGSQS3__T___T_"></a>
+                    <a name="//apple_ref/swift/Method/post(_:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC13CDKTimeSeries15CloudTimeSeries4postFS0_FTGVSs10DictionarySSPSs9AnyObject__7successGSQFGSQCSo13CloudResponse_T__7failureGSQFGSQS3__T___T_">post(_:success:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Asynchronous call to post time series data to the cloud.</p>
+
+<ul>
+<li>Parameters:</li>
+<li>jsonObject: time series object with info and observations and values</li>
+<li>success: the callback invoked on successful post</li>
+<li>failure: the callback invoked when error occurs</li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">post</span><span class="p">(</span><span class="nv">jsonObject</span><span class="p">:[</span><span class="kt">String</span><span class="p">:</span><span class="kt">AnyObject</span><span class="p">],</span>  <span class="nv">success</span><span class="p">:</span><span class="kt">ICloudResponseSuccessCb</span><span class="o">!</span><span class="p">,</span>
+        <span class="nv">failure</span><span class="p">:</span><span class="kt">ICloudResponseFailureCb</span><span class="o">!</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC13CDKTimeSeries15CloudTimeSeries10getDevicesFS0_FTGSQFGSQCSo13CloudResponse_T__7failureGSQFGSQS1__T___T_"></a>
+                    <a name="//apple_ref/swift/Method/getDevices(_:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC13CDKTimeSeries15CloudTimeSeries10getDevicesFS0_FTGSQFGSQCSo13CloudResponse_T__7failureGSQFGSQS1__T___T_">getDevices(_:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Asynchronous call to get devices stored in the cloud.</p>
+
+<ul>
+<li>Parameters:</li>
+<li>success: the callback invoked on successful get</li>
+<li>failure: the callback invoked when error occurs</li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getDevices</span><span class="p">(</span><span class="nv">success</span><span class="p">:</span><span class="kt">ICloudResponseSuccessCb</span><span class="o">!</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span><span class="kt">ICloudResponseFailureCb</span><span class="o">!</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC13CDKTimeSeries15CloudTimeSeries11getSessionsFS0_FTGSqSS_7endDateGSqSS_7successGSQFGSQCSo13CloudResponse_T__7failureGSQFGSQS1__T___T_"></a>
+                    <a name="//apple_ref/swift/Method/getSessions(_:endDate:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC13CDKTimeSeries15CloudTimeSeries11getSessionsFS0_FTGSqSS_7endDateGSqSS_7successGSQFGSQCSo13CloudResponse_T__7failureGSQFGSQS1__T___T_">getSessions(_:endDate:success:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Asynchronous call to get Sessions stored in the cloud.</p>
+
+<ul>
+<li>Parameters:</li>
+<li>startDate: Filter sessions starting after a particular date/time</li>
+<li>endDate: Filter sessions ending before a particular date/time</li>
+<li>success: the callback invoked on successful get</li>
+<li>failure: the callback invoked when error occurs</li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getSessions</span><span class="p">(</span><span class="nv">startDate</span><span class="p">:</span><span class="kt">String</span><span class="p">?,</span> <span class="nv">endDate</span><span class="p">:</span><span class="kt">String</span><span class="p">?,</span> <span class="nv">success</span><span class="p">:</span><span class="kt">ICloudResponseSuccessCb</span><span class="o">!</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span><span class="kt">ICloudResponseFailureCb</span><span class="o">!</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC13CDKTimeSeries15CloudTimeSeries10getSessionFS0_FTGSQSS_7successGSQFGSQCSo13CloudResponse_T__7failureGSQFGSQS1__T___T_"></a>
+                    <a name="//apple_ref/swift/Method/getSession(_:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC13CDKTimeSeries15CloudTimeSeries10getSessionFS0_FTGSQSS_7successGSQFGSQCSo13CloudResponse_T__7failureGSQFGSQS1__T___T_">getSession(_:success:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Asynchronous call to getSession stored in the cloud.</p>
+
+<ul>
+<li>Parameters:</li>
+<li>sessionId: time series session</li>
+<li>success: the callback invoked on successful get</li>
+<li>failure: the callback invoked when error occurs</li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getSession</span><span class="p">(</span><span class="nv">sessionId</span><span class="p">:</span><span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span><span class="kt">ICloudResponseSuccessCb</span><span class="o">!</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span><span class="kt">ICloudResponseFailureCb</span><span class="o">!</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC13CDKTimeSeries15CloudTimeSeries17getSessionRawDataFS0_FTGSQSS_9eventTypeGSqSS_6filterGSqSS_7successGSQFGSQCSo13CloudResponse_T__7failureGSQFGSQS1__T___T_"></a>
+                    <a name="//apple_ref/swift/Method/getSessionRawData(_:eventType:filter:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC13CDKTimeSeries15CloudTimeSeries17getSessionRawDataFS0_FTGSQSS_9eventTypeGSqSS_6filterGSqSS_7successGSQFGSQCSo13CloudResponse_T__7failureGSQFGSQS1__T___T_">getSessionRawData(_:eventType:filter:success:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Asynchronous call to getSessionRawData stored in the cloud.</p>
+
+<ul>
+<li>Parameters:</li>
+<li>sessionId: time series session</li>
+<li>eventType: Filter data points only having eventType</li>
+<li>filter: Filters the returned data to a subset matching the specified criteria of the format: metric|operation|value (operation might be: =, &lt;, &gt;, &lt;=, =&gt;). In the future more operations will be added (i.e. Between, in, etc) Example: speed|&gt;|30, temperature|&lt;=|90</li>
+<li>success: the callback invoked on successful get</li>
+<li>failure: the callback invoked when error occurs</li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getSessionRawData</span><span class="p">(</span><span class="nv">sessionId</span><span class="p">:</span><span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="nv">eventType</span><span class="p">:</span><span class="kt">String</span><span class="p">?,</span> <span class="nv">filter</span><span class="p">:</span><span class="kt">String</span><span class="p">?,</span> <span class="nv">success</span><span class="p">:</span><span class="kt">ICloudResponseSuccessCb</span><span class="o">!</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span><span class="kt">ICloudResponseFailureCb</span><span class="o">!</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC13CDKTimeSeries15CloudTimeSeries17getSessionSummaryFS0_FTGSQSS_9eventTypeGSQSS_10attributesGSQSS_7successGSQFGSQCSo13CloudResponse_T__7failureGSQFGSQS1__T___T_"></a>
+                    <a name="//apple_ref/swift/Method/getSessionSummary(_:eventType:attributes:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC13CDKTimeSeries15CloudTimeSeries17getSessionSummaryFS0_FTGSQSS_9eventTypeGSQSS_10attributesGSQSS_7successGSQFGSQCSo13CloudResponse_T__7failureGSQFGSQS1__T___T_">getSessionSummary(_:eventType:attributes:success:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Asynchronous call to getSessionSummary from the cloud.</p>
+
+<ul>
+<li>Parameters:</li>
+<li>sessionId: time series session</li>
+<li>eventType: Filter data points only having eventType</li>
+<li>attributes: Array of tuples in the form of operation|metric (operation might be: sum, max, min, avg, count) Example: max|speed,min|speed,avg|speed,sum|distance,sum|steps,sum|calories</li>
+<li>success: the callback invoked on successful get</li>
+<li>failure: the callback invoked when error occurs</li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getSessionSummary</span><span class="p">(</span><span class="nv">sessionId</span><span class="p">:</span><span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="nv">eventType</span><span class="p">:</span><span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="nv">attributes</span><span class="p">:</span><span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span><span class="kt">ICloudResponseSuccessCb</span><span class="o">!</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span><span class="kt">ICloudResponseFailureCb</span><span class="o">!</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC13CDKTimeSeries15CloudTimeSeries13updateSessionFS0_FTGSQCS_22CloudSessionPutRequest_7successGSQFGSQCSo13CloudResponse_T__7failureGSQFGSQS2__T___T_"></a>
+                    <a name="//apple_ref/swift/Method/updateSession(_:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC13CDKTimeSeries15CloudTimeSeries13updateSessionFS0_FTGSQCS_22CloudSessionPutRequest_7successGSQFGSQCSo13CloudResponse_T__7failureGSQFGSQS2__T___T_">updateSession(_:success:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Asynchronous call to update a session in the cloud.</p>
+
+<ul>
+<li>Parameters:</li>
+<li>sessionPutRequest: The user session Object that will hold the information to go into the final JSON Object</li>
+<li>success: the callback invoked on successful PUT</li>
+<li>failure: the callback invoked when error occurs</li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">updateSession</span><span class="p">(</span><span class="nv">sessionPutRequest</span><span class="p">:</span><span class="kt">CloudSessionPutRequest</span><span class="o">!</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span><span class="kt">ICloudResponseSuccessCb</span><span class="o">!</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span><span class="kt">ICloudResponseFailureCb</span><span class="o">!</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC13CDKTimeSeries15CloudTimeSeries16getWindowRawDataFS0_FTGSQSS_7endDateGSQSS_9eventTypeGSqSS_8deviceIdGSqSS_6filterGSqSS_7successGSQFGSQCSo13CloudResponse_T__7failureGSQFGSQS1__T___T_"></a>
+                    <a name="//apple_ref/swift/Method/getWindowRawData(_:endDate:eventType:deviceId:filter:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC13CDKTimeSeries15CloudTimeSeries16getWindowRawDataFS0_FTGSQSS_7endDateGSQSS_9eventTypeGSqSS_8deviceIdGSqSS_6filterGSqSS_7successGSQFGSQCSo13CloudResponse_T__7failureGSQFGSQS1__T___T_">getWindowRawData(_:endDate:eventType:deviceId:filter:success:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Asynchronous call to get raw data from window provided from the cloud.</p>
+
+<ul>
+<li>Parameters:</li>
+<li>startDate: Filter sessions starting after a particular date/time</li>
+<li>endDate: Filter sessions ending before a particular date/time</li>
+<li>eventType: Filter data points only having eventType</li>
+<li>deviceId: Filter data points only belonging to a particular deviceId</li>
+<li>filter: Filters the returned data to a subset matching the specified criteria of the format: metric|operation|value (operation might be: =, &lt;, &gt;, &lt;=, =&gt;). In the future more operations will be added (i.e. Between, in, etc) Example: speed|&gt;|30, temperature|&lt;=|90</li>
+<li>success: the callback invoked on successful get</li>
+<li>failure: the callback invoked when error occurs</li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getWindowRawData</span><span class="p">(</span><span class="nv">startDate</span><span class="p">:</span><span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="nv">endDate</span><span class="p">:</span><span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="nv">eventType</span><span class="p">:</span><span class="kt">String</span><span class="p">?,</span> <span class="nv">deviceId</span><span class="p">:</span><span class="kt">String</span><span class="p">?,</span> <span class="nv">filter</span><span class="p">:</span><span class="kt">String</span><span class="p">?,</span> <span class="nv">success</span><span class="p">:</span><span class="kt">ICloudResponseSuccessCb</span><span class="o">!</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span><span class="kt">ICloudResponseFailureCb</span><span class="o">!</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC13CDKTimeSeries15CloudTimeSeries16getWindowSummaryFS0_FTGSQSS_7endDateGSQSS_11aggregationGSQSS_9eventTypeGSQSS_8deviceIdGSqSS_10attributesGSQSS_7successGSQFGSQCSo13CloudResponse_T__7failureGSQFGSQS1__T___T_"></a>
+                    <a name="//apple_ref/swift/Method/getWindowSummary(_:endDate:aggregation:eventType:deviceId:attributes:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC13CDKTimeSeries15CloudTimeSeries16getWindowSummaryFS0_FTGSQSS_7endDateGSQSS_11aggregationGSQSS_9eventTypeGSQSS_8deviceIdGSqSS_10attributesGSQSS_7successGSQFGSQCSo13CloudResponse_T__7failureGSQFGSQS1__T___T_">getWindowSummary(_:endDate:aggregation:eventType:deviceId:attributes:success:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Asynchronous call to get raw data from window provided from the cloud.</p>
+
+<ul>
+<li>Parameters:</li>
+<li>startDate: Filter sessions starting after a particular date/time</li>
+<li>endDate: Filter sessions ending before a particular date/time</li>
+<li>aggregation: Requested aggregation period (hour, day, week, month)</li>
+<li>eventType: Filter data points only having eventType</li>
+<li>deviceId: Filter data points only belonging to a particular deviceId</li>
+<li>attributes: Array of tuples in the form of operation|metric (operation might be: sum, max, min, avg, count) Example: max|speed,min|speed,avg|speed,sum|distance,sum|steps,sum|calories</li>
+<li>success: the callback invoked on successful get</li>
+<li>failure: the callback invoked when error occurs</li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getWindowSummary</span><span class="p">(</span><span class="nv">startDate</span><span class="p">:</span><span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="nv">endDate</span><span class="p">:</span><span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="nv">aggregation</span><span class="p">:</span><span class="kt">String</span><span class="o">!</span><span class="p">,</span><span class="nv">eventType</span><span class="p">:</span><span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="nv">deviceId</span><span class="p">:</span><span class="kt">String</span><span class="p">?,</span> <span class="nv">attributes</span><span class="p">:</span><span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span><span class="kt">ICloudResponseSuccessCb</span><span class="o">!</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span><span class="kt">ICloudResponseFailureCb</span><span class="o">!</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC13CDKTimeSeries15CloudTimeSeries21setCredentialProviderFS0_FSST_"></a>
+                    <a name="//apple_ref/swift/Method/setCredentialProvider(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC13CDKTimeSeries15CloudTimeSeries21setCredentialProviderFS0_FSST_">setCredentialProvider(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the new credential provider by using identifier</p>
+
+<ul>
+<li>Parameters:</li>
+<li>identifier: identifier string to set credentials</li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setCredentialProvider</span><span class="p">(</span><span class="nv">identifier</span><span class="p">:</span><span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2015 <a class="link" href="com.intel.ndg.cloudsdk" target="_blank" rel="external">CloudSDK</a>. All rights reserved. (Last updated: 2015-12-20)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.4.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
