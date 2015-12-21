@@ -111,7 +111,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/GOOGLE_API_KEY"/>
 
-        <meta-data android:name="deployment-type" android:value="tsodev" />
+        <meta-data android:name="deployment-type" android:value="sys" />
         <meta-data android:name="domain-name" android:value="td.wearables.infra-host.com" />
         <meta-data android:name="client-id" android:value="ndgThunderDome" />
         <meta-data android:name="client-secret" android:value="ndgThunderDomeSecRet" />
