@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.intel.wearable.platform</groupId>
   <artifactId>core</artifactId>
-  <version>0.3.2</version>
+  <version>0.3.3</version>
   <packaging>aar</packaging>
   <dependencies>
     <dependency>
@@ -26,13 +26,6 @@
       <scope>compile</scope>
     </dependency>
     <dependency>
-      <groupId>com.intel.wearable.platform.icsf</groupId>
-      <artifactId>icsflib</artifactId>
-      <version>0.1.6</version>
-      <type>aar</type>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-lang3</artifactId>
       <version>3.4</version>
@@ -42,6 +35,13 @@
       <groupId>com.android.support</groupId>
       <artifactId>support-annotations</artifactId>
       <version>22.2+</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.intel.wearable.platform.icsf</groupId>
+      <artifactId>icsflib</artifactId>
+      <version>0.1.7</version>
+      <type>aar</type>
       <scope>compile</scope>
     </dependency>
     <dependency>
