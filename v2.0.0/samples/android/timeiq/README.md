@@ -4,7 +4,21 @@
 
  The TimeIQ sample project provided is a gradle project for development using the Android Studio IDE.
 
- In order to successfully utilize the functionality of the sample project, you will need to register for Google's Android map API and to supply the key in the **gradle.properties** file located in the project's root directory.
+ In order to successfully utilize the functionality of the sample project, you will need to register for Google's Android map API and to supply the key in the **gradle.properties** file located in the project's root directory:
+ 
+ ```gradle
+
+#google_api_key="YOUR API KEY HERE"
+
+ ``` 
+
+Place your API key in the **google_api_key** variable in the **gradle.properties** ., i.e.:
+ ```gradle
+
+google_api_key="1234567890mysamplekey0987654321"
+
+ ``` 
+
 
  You would also need to sign your apk in order to have Google API's working. For more information please refer to the Android Studio documentation at http://developer.android.com/tools/publishing/app-signing.html
 
