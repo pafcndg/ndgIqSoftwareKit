@@ -7,7 +7,6 @@ obj-$(CONFIG_LOG_BACKEND_USB) += log_backend_usb.o
 obj-$(CONFIG_QUARK_SE_QUARK_LOG_BACKEND_UART) += log_backend_uart.o
 obj-$(CONFIG_TCMD) += uart_tcmd_client.o
 obj-$(CONFIG_QUARK_SE_QUARK_SOC_CONFIG) += soc_config.o
-obj-$(CONFIG_IPC_UART) += ble_core_interface.o
 obj-$(CONFIG_IPC) += ipc.o
 obj-$(CONFIG_LOG) += log.o
 obj-$(CONFIG_BSP) += bsp.o

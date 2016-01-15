@@ -29,9 +29,10 @@
 
 
 ifeq ($(CONFIG_QUARK_SE_QUARK),y)
-obj-$(CONFIG_SERVICES_QUARK_SE_CHARGER)         += charging_sm.o \
+obj-$(CONFIG_SERVICES_QUARK_SE_CHARGER)    += charging_sm.o \
                                               em_board_config.o
 obj-$(CONFIG_QUARK_CHARGER)                += quark_se_charger_driver.o
+obj-$(CONFIG_BQ25120)                      += bq25120_driver.o
 obj-$(CONFIG_USB_POWER_SUPPLY)             += usb_power_supply_driver.o
 obj-$(CONFIG_QI_BQ51003)                   += qi_bq51003_driver.o
 obj-$(CONFIG_SERVICES_QUARK_SE_BATTERY_IMPL)    += battery_service.o

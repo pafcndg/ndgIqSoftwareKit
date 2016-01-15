@@ -30,6 +30,7 @@
 
 #include <string.h>
 #include "ble_ispp.h"
+#include "services/ble_service/ble_service_api.h"
 #include "infra/log.h"
 
 #define ISPP_LOG(x) "ISPP: " x

@@ -18,6 +18,7 @@ import util
 import time
 from IntelBodyIQ_pb2 import Activity
 from IntelBodyIQ_pb2 import ActivitySettings
+from IntelCommon_pb2 import DateTime
 
 
 status = ['STARTED', 'ONGOING', 'FINISHED']
@@ -434,6 +435,147 @@ def body_iq_test_clear_activities(device):
     return device
 
 
+def body_iq_test_date_change_during_activity(device):
+    print("------------------------------------------")
+    print("-    DATE CHANGE DURING ACTIVITY TEST    -")
+    print("------------------------------------------")
+
+    print("")
+    print("Start an activity")
+    print("")
+
+    pub = device.itm_poll(expect="publish", timeout=30)
+    assert pub != None
+    DecodedActivity = Activity()
+    DecodedActivity.ParseFromString(pub['data'])
+    step_count = 0
+    if DecodedActivity.HasField('walking_activity'):
+        step_count = DecodedActivity.walking_activity.step_count
+    elif DecodedActivity.HasField('running_activity'):
+        step_count = DecodedActivity.running_activity.step_count
+    print("Activity " + activity[DecodedActivity.type] + "\n" +
+          " begin " + str(DecodedActivity.timestamp_begin) +
+          " end " + str(DecodedActivity.timestamp_end) +
+          " step count " + str(step_count) + "\n" +
+          " status " + status[DecodedActivity.activity_status])
+    # Verify that the activity started report has been received
+    assert status[DecodedActivity.activity_status] == 'STARTED'
+
+    # Instantiate a datetime publish
+    date = DateTime()
+    date.datetime = 1000
+
+    # Publish to intel/core/
+    # Publish Date
+    print("Set new date: 1000")
+    device.itm_publish("\x49\x43\x44\x44\x00", date.SerializeToString())
+
+    time.sleep(10)
+
+    # Send request (NULL data)
+    pub = device.itm_topic_req("\x49\x42\x41\x00", "\x00")
+
+    assert pub != None
+    print("Report request sended")
+
+    print("topic_rsp: req_id %d status %d data %s"
+          %(pub['req_id'], pub['status'], binascii.hexlify(pub['data'])))
+    DecodedActivity = Activity()
+    DecodedActivity.ParseFromString(pub['data'])
+    step_count = 0
+    if DecodedActivity.HasField('walking_activity'):
+        step_count = DecodedActivity.walking_activity.step_count
+    elif DecodedActivity.HasField('running_activity'):
+        step_count = DecodedActivity.running_activity.step_count
+    print("Activity " + activity[DecodedActivity.type] + "\n" +
+          " begin " + str(DecodedActivity.timestamp_begin) +
+          " end " + str(DecodedActivity.timestamp_end) +
+          " step count " + str(step_count) + "\n" +
+          " status " + status[DecodedActivity.activity_status])
+
+    # Verify that the activity is an ongoing one
+    assert status[DecodedActivity.activity_status] == 'ONGOING'
+    # Verify that the dates are consistent
+    assert str(DecodedActivity.timestamp_end) > str(DecodedActivity.timestamp_begin)
+
+    print("")
+    print("Stop your activity")
+    print("")
+
+    time.sleep(15)
+
+    pub = device.itm_poll(expect="publish", timeout=30)
+    assert pub != None
+    DecodedActivity = Activity()
+    DecodedActivity.ParseFromString(pub['data'])
+    step_count = 0
+    if DecodedActivity.HasField('walking_activity'):
+        step_count = DecodedActivity.walking_activity.step_count
+    elif DecodedActivity.HasField('running_activity'):
+        step_count = DecodedActivity.running_activity.step_count
+    print("Activity " + activity[DecodedActivity.type] + "\n" +
+          " begin " + str(DecodedActivity.timestamp_begin) +
+          " end " + str(DecodedActivity.timestamp_end) +
+          " step count " + str(step_count) + "\n" +
+          " status " + status[DecodedActivity.activity_status])
+    # Verify that the activity started report has been received
+    assert status[DecodedActivity.activity_status] == 'FINISHED'
+    # Verify that the dates are consistent
+    assert str(DecodedActivity.timestamp_end) > str(DecodedActivity.timestamp_begin)
+
+    device.disconnect()
+
+    print("")
+    print("Start an activity")
+    print("")
+
+    time.sleep(10)
+
+    device = util.connection(["\x49\x42\x41\x00"])
+
+    # Instantiate a datetime publish
+    date2 = DateTime()
+    date2.datetime = 500
+
+    # Publish to intel/core/
+    # Publish Date
+    print("Set new date: 500")
+    device.itm_publish("\x49\x43\x44\x44\x00", date2.SerializeToString())
+
+    time.sleep(10)
+
+    print("Stop your activity")
+    print("")
+
+    time.sleep(25)
+
+    rl = device.itm_subscribe_req("\x49\x42\x41\x00\x00")
+
+    pub = device.itm_poll(expect="publish", timeout=30)
+    assert pub != None
+    DecodedActivity = Activity()
+    DecodedActivity.ParseFromString(pub['data'])
+    step_count = 0
+    if DecodedActivity.HasField('walking_activity'):
+        step_count = DecodedActivity.walking_activity.step_count
+    elif DecodedActivity.HasField('running_activity'):
+        step_count = DecodedActivity.running_activity.step_count
+    print("Activity " + activity[DecodedActivity.type] + "\n" +
+          " begin " + str(DecodedActivity.timestamp_begin) +
+          " end " + str(DecodedActivity.timestamp_end) +
+          " step count " + str(step_count) + "\n" +
+          " status " + status[DecodedActivity.activity_status])
+
+    # Verify that an activity finished report has been received
+    assert status[DecodedActivity.activity_status] == 'FINISHED'
+    # Verify that the dates are consistent
+    assert str(DecodedActivity.timestamp_end) > str(DecodedActivity.timestamp_begin)
+
+    print("")
+    print("TESTS PASSED")
+    return device
+
+
 def body_iq_test_run_all_tests(device):
     print("----------------------")
     print("-    BODY IQ TEST    -")
@@ -448,7 +590,8 @@ def body_iq_test_run_all_tests(device):
     device_5 = body_iq_test_flash_storage_activity(device_4)
     device_6 = body_iq_test_activity_classification(device_5)
     device_7 = body_iq_test_clear_activities(device_6)
-    return device_7
+    device_8 = body_iq_test_date_change_during_activity(device_7)
+    return device_8
 
 
 if __name__ == "__main__":

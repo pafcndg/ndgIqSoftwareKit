@@ -115,7 +115,7 @@ static uint8_t *serialize_struct(uint8_t *p, const uint8_t *struct_data, uint8_t
 	return p;
 }
 
-static uint8_t encoded_buflen(const uint8_t *buf, uint16_t buflen) {
+static uint16_t encoded_buflen(const uint8_t *buf, uint16_t buflen) {
 	if (NULL == buf)
 		return 1;
 	else {
@@ -262,7 +262,7 @@ void rpc_serialize_s_p(uint8_t fn_index, const void * struct_data, uint8_t struc
 }
 
 void rpc_serialize_s_b_p(uint8_t fn_index, const void * struct_data, uint8_t struct_length,
-		void * vbuf, uint16_t vbuf_length, void * p_priv) {
+		const void * vbuf, uint16_t vbuf_length, void * p_priv) {
 	uint16_t length;
 	uint8_t * buf;
 	uint8_t * p;
@@ -283,7 +283,7 @@ void rpc_serialize_s_b_p(uint8_t fn_index, const void * struct_data, uint8_t str
 }
 
 void rpc_serialize_s_b_b_p(uint8_t fn_index, const void * struct_data, uint8_t struct_length,
-		void * vbuf1, uint16_t vbuf1_length, void * vbuf2, uint16_t vbuf2_length, void * p_priv) {
+		const void * vbuf1, uint16_t vbuf1_length, const void * vbuf2, uint16_t vbuf2_length, void * p_priv) {
 
 	uint16_t length;
 	uint8_t * buf;

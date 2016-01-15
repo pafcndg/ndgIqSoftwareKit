@@ -40,6 +40,9 @@
 #ifdef CONFIG_USB_POWER_SUPPLY
 #include "usb_power_supply_driver.h"
 #endif
+#ifdef CONFIG_BQ25120
+#include "bq25120_driver.h"
+#endif
 
 static struct power_supply_fct source0 =
 {
@@ -117,11 +120,21 @@ static struct charger_fct charger =
 
 #else
 
+#ifdef CONFIG_BQ25120
+
+static struct charger_fct charger =
+{
+	.init = ch_init
+};
+
+#else
+
 static struct charger_fct charger =
 {
 	.init = NULL
 };
 
+#endif
 #endif
 
 /****************************************************************************************

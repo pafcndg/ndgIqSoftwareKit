@@ -54,6 +54,7 @@
 
 /* BLE */
 #include "lib/ble/ble_app.h"
+#include "services/ble_service/ble_service_gap_api.h"
 
 /* BOOT */
 #include "infra/boot.h"

@@ -53,6 +53,9 @@ SECTION_FUNC(TEXT, quark_deep_sleep)
     invd
     movl    %eax, %cr0
 
+
+    movl $0xb080010c, %edx                 /* put magic key in GPS3 so it is */
+    movl $DEEP_SLEEP_MAGIC_NUMBER,(%edx)   /* cleared in case of reset while deep sleep */
     movl $DEEP_SLEEP_SAVE_CTXT, %edx       /* Load dump location address in edx */
     movl $DEEP_SLEEP_MAGIC_NUMBER,-4(%edx) /* Save magic key */
     movl $resume_trap,-8(%edx)             /* Save resume address to jump on in bootstrap */

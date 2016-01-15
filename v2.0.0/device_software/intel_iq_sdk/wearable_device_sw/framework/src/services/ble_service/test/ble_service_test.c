@@ -25,7 +25,6 @@
 #include <unistd.h>
 #include "cfw/cfw_internal.h"
 #include "cfw/cfw_messages.h"
-#include "services/ble_service/ble_service_gatt.h"
 #include "services/ble_service/ble_service_api.h"
 #include "ble_service_bas.h"
 #include "service_queue.h"
@@ -35,7 +34,7 @@
 #include "ble_service_bas.h"
 
 static cfw_service_conn_t *ble_service_conn = NULL;
-extern void test_ble_enable_request(void);
+static void test_ble_enable_request(void);
 
 struct _ble_register_svc {
 	 /**< callback function to execute on MSG_ID_xxx_RSP
@@ -47,7 +46,7 @@ struct _ble_register_svc {
 
 struct _ble_service_test_cb {
 	uint32_t counter;
-	uint16_t conn_h;
+	struct bt_conn *conn;
 	uint8_t battery_level;
 };
 
@@ -56,11 +55,11 @@ const uint8_t ble_dev_name_change[] = "TEST_CHANGE_NAME";
 
 static void handle_msg_id_ble_enable_rsp(struct cfw_message *msg)
 {
-	if (((struct ble_generic_msg *)msg)->status == BLE_STATUS_SUCCESS) {
+	if (((struct ble_rsp *)msg)->status == BLE_STATUS_SUCCESS) {
 		struct _ble_register_svc param;
 
 		ble_init_service_dis(ble_service_conn, &param);
-	} else if (((struct ble_generic_msg *)msg)->status == BLE_STATUS_PENDING) {
+	} else if (((struct ble_rsp *)msg)->status == BLE_STATUS_PENDING) {
 		/* repeat enable request as waiting for open of ble core */
 #ifdef CONFIG_BLE_CORE_TEST
 		sleep(1); /* hack to give some time to ble core to respond */
@@ -69,7 +68,7 @@ static void handle_msg_id_ble_enable_rsp(struct cfw_message *msg)
 #endif
 	} else
 		pr_error(LOG_MODULE_BLE, "ble enable failed with 0x%x",
-				((struct ble_generic_msg *)msg)->status);
+				((struct ble_rsp *)msg)->status);
 }
 
 static void handle_msg_id_ble_init_svc_rsp(struct cfw_message *msg)
@@ -82,7 +81,9 @@ static void handle_msg_id_ble_init_svc_rsp(struct cfw_message *msg)
 			struct _ble_register_svc params;
 			ble_init_service_bas(ble_service_conn, &params);
 		} else {
-			ble_start_advertisement(ble_service_conn, BLE_NO_ADV_OPT, NULL, NULL);
+			struct ble_adv_params adv_params;
+			adv_params.options = BLE_NO_ADV_OPT;
+			ble_start_advertisement(ble_service_conn, &adv_params, NULL);
 		}
 	} else {
 		pr_error(LOG_MODULE_BLE, "FATAL error: 0x%x", rsp->status);
@@ -109,7 +110,7 @@ static void handle_msg_id_ble_set_name_rsp(struct cfw_message *msg)
 
 static void handle_msg_id_ble_disconnect_rsp(struct cfw_message *msg)
 {
-	struct ble_disconnect_rsp *rsp = (struct ble_disconnect_rsp *)msg;
+	struct ble_conn_rsp *rsp = (struct ble_conn_rsp *)msg;
 
 	if (BLE_STATUS_SUCCESS == rsp->status) {
 		pr_debug(LOG_MODULE_BLE, "BLE disc success");
@@ -159,16 +160,14 @@ static void client_ble_service_handle_message(struct cfw_message *msg,
 		handle_msg_id_ble_disconnect_rsp(msg);
 		break;
 	case MSG_ID_BLE_CONNECT_EVT: {
-		struct ble_connect_evt *evt =
-				(struct ble_connect_evt *)msg;
-		_ble_service_test_cb.conn_h = evt->conn_handle;
+		struct ble_connect_evt *evt = container_of(msg, struct ble_connect_evt, header);
+		_ble_service_test_cb.conn = evt->conn;
 		_ble_service_test_cb.counter = 1;
 	}
 		break;
 	case MSG_ID_BLE_DISCONNECT_EVT: {
-		struct ble_disconnect_evt *evt =
-				(struct ble_disconnect_evt *)msg;
-		_ble_service_test_cb.conn_h = 0xffff;
+		struct ble_disconnect_evt *evt = container_of(msg, struct ble_disconnect_evt, header);
+		_ble_service_test_cb.conn = NULL;
 		_ble_service_test_cb.counter = 0;
 	}
 		break;
@@ -185,12 +184,12 @@ void test_ble_service_init(void)
 	cfw_client_t *ble_client =
 	    cfw_client_init(get_service_queue(), client_ble_service_handle_message,
 		     "Client BLE");
-	_ble_service_test_cb.conn_h = BLE_SVC_GAP_HANDLE_INVALID;
+	_ble_service_test_cb.conn = NULL;
 	cfw_open_service_conn(ble_client, BLE_SERVICE_ID, "BLE Test Client");
 }
 
 const uint8_t ble_dev_name[] = "Curie 1.0";
-void test_ble_enable_request(void)
+static void test_ble_enable_request(void)
 {
 	struct ble_enable_config en_config;
 
@@ -198,10 +197,8 @@ void test_ble_enable_request(void)
 	    {MSEC_TO_1_25_MS_UNITS(80), MSEC_TO_1_25_MS_UNITS(150), 0, MSEC_TO_10_MS_UNITS(6000)};
 
 	en_config.options = 0;
-	en_config.p_name = (uint8_t *) ble_dev_name;
 	en_config.p_bda = NULL;
-	en_config.appearance = BLE_GAP_APPEARANCE_TYPE_GENERIC_WATCH;
-	en_config.central_conn_params = en_config.peripheral_conn_params = conn_params;
+	en_config.central_conn_params = conn_params;
 
 	ble_enable(ble_service_conn, 1, &en_config, NULL);
 }
@@ -214,7 +211,7 @@ void test_ble_service_update_battery_level(uint8_t level)
 
 			_ble_service_test_cb.battery_level = level;
 			ret = ble_service_update_bat_level(ble_service_conn,
-					_ble_service_test_cb.conn_h, level,
+					_ble_service_test_cb.conn, level,
 					&_ble_service_test_cb);
 			_ble_service_test_cb.counter = 0; /* restart it in response */
 			if (ret)

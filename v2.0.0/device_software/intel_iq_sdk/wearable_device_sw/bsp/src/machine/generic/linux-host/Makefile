@@ -56,7 +56,8 @@ SERVER_OBJS += $(OUT)/host/srv/framework/src/services/ble_service/ble_service.o
 SERVER_OBJS += $(OUT)/host/srv/framework/src/services/ble_service/ble_service_dis.o
 SERVER_OBJS += $(OUT)/host/srv/framework/src/services/ble_service/ble_service_bas.o
 SERVER_OBJS += $(OUT)/host/srv/framework/src/services/ble_service/ble_service_ispp.o
-SERVER_OBJS += $(OUT)/host/srv/framework/src/services/ble_service/ble_service_core_int.o
+SERVER_OBJS += $(OUT)/host/srv/framework/src/services/ble_service/conn.o
+SERVER_OBJS += $(OUT)/host/srv/framework/src/services/ble_service/hci_core.o
 SERVER_OBJS += $(OUT)/host/srv/framework/src/services/ble_service/test/ble_service_test.o
 SERVER_OBJS += $(OUT)/host/srv/framework/src/services/ble_service/ble_service_utils.o
 SERVER_OBJS += $(OUT)/host/srv/framework/src/services/ble_service/ble_service_test.o
@@ -70,8 +71,9 @@ COMBINED_OBJS += $(OUT)/host/comb/framework/src/services/test_service/test_servi
 COMBINED_OBJS += $(OUT)/host/comb/framework/src/services/test_service/test_service.o
 COMBINED_OBJS += $(OUT)/host/comb/bsp/src/machine/generic/linux-host/src/test_main.o
 
-CFLAGS := -I$(T)/bsp/include/machine/generic/linux-host/
-CFLAGS += -I$(T)/framework/include
+CFLAGS := -I$(T)/external/zephyr/include/
+CFLAGS += -I$(T)/bsp/include/machine/generic/linux-host/
+CFLAGS += -I$(T)/framework/include/
 CFLAGS += -I$(T)/bsp/include/
 CFLAGS += -I$(T)/bsp/include/machine/soc/intel/quark_se/
 CFLAGS += -I$(T)/framework/include/services/
@@ -83,7 +85,7 @@ CFLAGS += -DSVC_MANAGER_DEBUG -DDEBUG -Werror -g3 -O1 -std=c99 -D_C99
 CFLAGS += -DLINUX_HOST_RUNTIME -m32
 CFLAGS += -MD
 
-CFLAGS += -DCONFIG_BLUETOOTH_PERIPHERAL -DCONFIG_SERVICES_BLE_CORE_IMPL
+CFLAGS += -DCONFIG_BLUETOOTH_PERIPHERAL -DCONFIG_BLUETOOTH_CENTRAL -DCONFIG_BLUETOOTH_GATT_CLIENT -DCONFIG_CURIE_BLE
 
 SERVER_FLAGS := $(CFLAGS) -DCONFIG_PORT_IS_MASTER -DCONFIG_PORT_MULTI_CPU_SUPPORT -DCONFIG_BLE_CORE_TEST -DCONFIG_SERVICES_BLE_ISPP -DCONFIG_SERVICES_BLE_IASP -DCONFIG_BT_GATT_BLE_MAX_SERVICES=2
 CLIENT_FLAGS := $(CFLAGS) -DCONFIG_PORT_MULTI_CPU_SUPPORT

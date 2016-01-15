@@ -36,22 +36,16 @@
 
 #include "zephyr/bluetooth/gatt.h"
 
-#include "services/ble_service/ble_service_gatt.h"
-#include "ble_service_int.h"
-
 struct ble_service_ispp_param {
 	uint32_t options; /**< Options for ISPP init. */
 };
 
 /** ISPP control block. */
 struct ble_ispp_cb {
-	uint16_t conn_h;
+	struct bt_conn *conn;
 };
 
 extern struct ble_ispp_cb ispp_cb;
-
-/* Forward declarations */
-struct _ble_register_svc;
 
 /**
  * Register ISPP service.
@@ -59,15 +53,13 @@ struct _ble_register_svc;
  * Starts registering the ISPP service with provide init values.
  *
  * @param p_service_conn client service connection (cfw service connection)
- * @param p_svc_handle client svc handle (cfw handle)
- * @param p_reg pointer to application response
+ * @param priv pointer to application private data
  *
  * @return @ref OS_ERR_TYPE, in failure case msg needs to freed by callee
  *
  * @note
  */
-int ble_init_service_ispp(cfw_service_conn_t *p_service_conn,
-		struct _ble_register_svc *p_reg);
+int ble_init_service_ispp(cfw_service_conn_t *p_service_conn, void *priv);
 
 /**
  * Helper functions to retrieve the corresponding value handle.

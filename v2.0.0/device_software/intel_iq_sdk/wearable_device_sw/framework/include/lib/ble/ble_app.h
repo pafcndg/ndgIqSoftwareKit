@@ -28,11 +28,23 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef __BLE_APP_H__
-#define __BLE_APP_H__
+#ifndef BLE_APP_H_
+#define BLE_APP_H_
 
+#include <stdint.h>
+
+/* For T_QUEUE */
 #include "os/os_types.h"
-#include "services/ble_service/ble_service_api.h"
+
+// Forward declarations
+struct ble_gap_connection_params;
+
+/**
+ * Set the device name
+ *
+ * @param p_device_name Pointer to the NULL terminated string
+ */
+void ble_app_set_device_name(const uint8_t *p_device_name);
 
 /**
  * Start BLE application.
@@ -45,7 +57,7 @@
  */
 void ble_start_app(T_QUEUE queue);
 
-/*
+/**
  * Update BLE application handle parameters.
  *
  * This function should be called before after the BLE app connection is
@@ -82,4 +94,4 @@ void ble_app_stop_advertisement(void);
  */
 void ble_app_clear_bonds(void);
 
-#endif /* __BLE_APP_H__ */
+#endif /* BLE_APP_H_ */

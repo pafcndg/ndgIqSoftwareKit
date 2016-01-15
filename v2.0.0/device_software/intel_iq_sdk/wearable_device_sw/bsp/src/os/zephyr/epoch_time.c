@@ -41,7 +41,7 @@ void set_time(uint32_t epoch_time)
 
 uint32_t uptime_to_epoch(uint32_t uptime_ms)
 {
-	return epoch_time_ref + ((uptime_ms - uptime_ms_ref) / 1000);
+	return epoch_time_ref + ((int32_t)(uptime_ms - uptime_ms_ref) / 1000);
 }
 
 uint32_t time(void)

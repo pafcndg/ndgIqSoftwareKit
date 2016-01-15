@@ -42,7 +42,7 @@ enum {
 	BLE_PROPERTY_ID_SM_CONFIG,
 };
 
-void handle_ble_property_read(struct cfw_message *msg);
+void handle_ble_property_read_rsp(struct cfw_message *msg);
 
 /**
  * Reads BLE property from flash.
@@ -57,7 +57,7 @@ void handle_ble_property_read(struct cfw_message *msg);
  *          otherwise BLE_STATUS_ERROR.
  *
  */
-int ble_properties_get(cfw_service_conn_t *p_service_properties_conn,
+int ble_properties_read(cfw_service_conn_t *p_service_properties_conn,
 		struct ble_app_storage_handler *hdl, uint8_t ble_property_id);
 
 /**
@@ -73,6 +73,6 @@ int ble_properties_get(cfw_service_conn_t *p_service_properties_conn,
  * @return  BLE_STATUS_ERROR, BLE_STATUS_ERROR_PARAMETER or BLE_STATUS_SUCCESS.
  *
  */
-int ble_properties_save(void *ble_property, uint8_t ble_property_size,
+int ble_properties_write(void *ble_property, uint8_t ble_property_size,
 		uint8_t property_id, cfw_service_conn_t *p_service_properties_conn);
 #endif

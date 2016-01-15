@@ -59,7 +59,7 @@ def main():
         previousJson['variants'][variant]={}
     previousJson['variants'][variant]['board'] = board
     previousJson['variants'][variant]['buildvariant'] = buildvariant
-    previousJson['variants'][variant]['package_file'] = variant+'-'+build_tag+'.zip'
+    previousJson['variants'][variant]['package_file'] = '/'+project+'/'+variant+'-'+build_tag+'.zip'
     previousJson['variants'][variant]['targets'] = custom_info
 
     # Append stuff for Phone Flash Tool
@@ -67,7 +67,7 @@ def main():
         previousJson['hardwares']={}
     if board not in previousJson['hardwares']:
         previousJson['hardwares'][board] = {'variants': {}, 'hidden_to_end_user': False}
-    previousJson['hardwares'][board]['variants'][project+'-'+buildvariant] = {'hardware_family': project, 'flashfiles': {'flash': [project+'-'+board+'-'+buildvariant+'-'+build_tag+'.zip:flash.json']}}
+    previousJson['hardwares'][board]['variants'][project+'-'+buildvariant] = {'hardware_family': project, 'flashfiles': {'flash': ['/'+project+'/'+project+'-'+board+'-'+buildvariant+'-'+build_tag+'.zip:flash.json']}}
 
     of.seek(0, 0)
     of.write(json.dumps(previousJson, sort_keys=True, indent=4))

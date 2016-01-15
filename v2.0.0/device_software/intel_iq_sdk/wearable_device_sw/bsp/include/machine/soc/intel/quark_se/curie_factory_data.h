@@ -52,7 +52,7 @@ enum mac_address_type {
  */
 
 struct curie_oem_data {
-    /** Intel mac address type. 0: public, 1: static random*/
+    /** Intel mac address type. 0: public, 1: random*/
     uint8_t bt_mac_address_type;
     uint8_t bt_address[MAC_ADDRESS_SIZE];
     uint8_t reserved0;

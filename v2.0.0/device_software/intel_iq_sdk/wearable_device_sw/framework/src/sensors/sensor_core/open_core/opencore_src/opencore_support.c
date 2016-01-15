@@ -509,12 +509,14 @@ void RefleshSensorCore(void)
 #ifdef SUPPORT_INTERRUPT_MODE
 static void raw_data_fifo_int_cb(phy_sensor_event_t* event, void* priv_data)
 {
-	int msg_length = sizeof(struct ia_cmd) + sizeof(void*);
+	int param_length = sizeof(void*);
+	int msg_length = sizeof(struct ia_cmd) + param_length;
 	struct ia_cmd* cmd = (struct ia_cmd*)balloc(msg_length, NULL);
 	if(cmd == NULL)
 		return;
 
-	memcpy(cmd->param, &priv_data, sizeof(void*));
+	memcpy(cmd->param, &priv_data, param_length);
+	cmd->length = param_length;
 	cmd->cmd_id = CMD_RAWDATA_FIFO_INT_SC;
 	ipc_2core_send(cmd);
 	return;

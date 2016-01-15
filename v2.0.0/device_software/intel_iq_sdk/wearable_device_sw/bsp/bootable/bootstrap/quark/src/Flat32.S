@@ -192,6 +192,10 @@ ProtectedModeEntryPoint:
   movl  -8(%ebx), %edx
   cmp $DEEP_SLEEP_MAGIC_NUMBER, %eax
   jnz ColdReset
+  movl $0xb080010C, %ebx               # get magic in GPS3 to detect reset
+  movl (%ebx), %eax                    # line assertion
+  cmp $DEEP_SLEEP_MAGIC_NUMBER, %eax
+  jnz ColdReset
   jmp *%edx
   ColdReset:
 

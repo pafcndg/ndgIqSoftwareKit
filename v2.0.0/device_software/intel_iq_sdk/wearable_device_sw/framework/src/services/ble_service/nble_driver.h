@@ -28,36 +28,26 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <string.h>
-#include "os/os.h"
-#include "ble_protocol.h"
-#include "services/ble_service/ble_service_gap_api.h"
-#include "ble_service_int.h"
-#include "ble_service_utils.h"
+#ifndef NBLE_DRIVER_H_
+#define NBLE_DRIVER_H_
 
-void uint8_to_ascii(uint8_t in, uint8_t *p)
-{
-	uint8_t hi = (in & 0xF0) >> 4;
-	uint8_t lo = in & 0x0F;
+#include "os/os_types.h"
+#include "infra/message.h"
 
-	if (hi < 0x0A)
-		*p = '0' + hi;
-	else
-		*p = 'A' + (hi - 0x0A);
+struct ble_rpc_callin {
+	struct message msg; /**< Message header, MUST be first element of structure */
+	uint8_t *p_data; /**< RPC buffer, must be freed after deserializing */
+	uint16_t len; /**< length of above buffer */
+};
 
-	p++;
+/**
+ * This resets and initializes the uart/ipc mechanism of nble.
+ *
+ * This this will trigger the call to @ref on_nble_up indicating that rpc
+ * mechanism is up and running.
+ */
+void nble_driver_init(void);
 
-	if (lo < 10)
-		*p = '0' + lo;
-	else
-		*p = 'A' + (lo - 0x0A);
-}
+void nble_driver_configure(T_QUEUE queue, void (*handler)(struct message*, void*));
 
-void uint8buf_to_ascii(uint8_t * dst, const uint8_t * src, int len)
-{
-	int i;
-	for (i = 0; i < len; ++i) {
-		uint8_to_ascii(src[i], dst);
-		dst += 2;
-	}
-}
+#endif /* NBLE_DRIVER_H_ */

@@ -33,14 +33,8 @@
 
 #include "cfw/cfw.h"
 #include "ble_protocol.h"
-#include "services/ble_service/ble_service_gap_api.h"
-#include "services/ble_service/ble_service_gatt.h"
-#include "services/ble_service/ble_service_gatts_api.h"
+#include "services/ble_service/ble_service_api.h"
 #include "ble_service_int.h"
-#include "ble_service_core_int.h"
-
-/* Forward declarations */
-struct _ble_register_svc;
 
 /**
  * Register BAS service.
@@ -48,12 +42,11 @@ struct _ble_register_svc;
  * Starts registering the BAS service with provide init values.
  *
  * @param p_service_conn client service connection (cfw service connection)
- * @param p_reg pointer to application response
+ * @param priv pointer to application private data
  *
  * @return @ref OS_ERR_TYPE, in failure case msg needs to freed by callee
  */
-int ble_init_service_bas(cfw_service_conn_t * p_service_conn,
-		struct _ble_register_svc *p_reg);
+int ble_init_service_bas(cfw_service_conn_t * p_service_conn, void *priv);
 
 /**
  * Updates battery level.
@@ -62,12 +55,12 @@ int ble_init_service_bas(cfw_service_conn_t * p_service_conn,
  * has enable notifications. Otherwise only value is updated.
  *
  * @param p_service_conn CFW application service connection
- * @param conn_handle Connection on which the value shall be updated.
+ * @param conn Connection on which the value shall be updated.
  * @param level New battery level (0-100%)
  * @param p_priv application private data (optional
  */
 int ble_service_update_bat_level(cfw_service_conn_t *p_service_conn,
-		uint16_t conn_handle, uint8_t level, void *p_priv);
+		struct bt_conn *conn, uint8_t level, void *p_priv);
 
 #ifdef CONFIG_SERVICES_BLE_BAS_USE_BAT
 
@@ -78,7 +71,7 @@ int ble_service_update_bat_level(cfw_service_conn_t *p_service_conn,
  *   so that the attribute is correct for the next _read_.
  * - If the notifications are on, a BLE message is sent to notify the new value.
  */
-int handle_ble_update_service_bas(uint16_t conn_handle, uint8_t level);
+int handle_ble_update_service_bas(struct bt_conn *conn, uint8_t level);
 #endif
 
 /**

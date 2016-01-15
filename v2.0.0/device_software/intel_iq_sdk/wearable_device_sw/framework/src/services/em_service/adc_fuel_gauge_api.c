@@ -559,7 +559,7 @@ static bool fg_is_vbatt_monotonous(struct adc_filter_t *adc_filter,uint16_t * ba
 		break;
 	case INIT:
 	case DISCHARGE:
-	case OVERTEMP:
+	case FAULT:
 		if (*batt_voltage <= adc_filter->vbatt_table[FB_FILTER_COUNT_VALUE-1])
 		{
 			if (FB_FILTER_DIFF_MAX_INTER_MEASURE + (fg_measure_cfg.voltage_cfg.interval>>14) >

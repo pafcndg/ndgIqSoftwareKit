@@ -34,6 +34,9 @@
 /* OS include, needed for task handling */
 #include <zephyr.h>
 
+/* BLE Service */
+#include "services/ble_service/ble_service_api.h"
+
 /* Infra */
 #include "infra/log.h"
 #include "infra/ipc.h"
@@ -54,9 +57,6 @@
 
 /* Battery service */
 #include "services/em_service/battery_service_api.h"
-
-/* BLE Service */
-#include "services/ble_service/ble_service_api.h"
 
 /* UI Services configruation and helper */
 #include "ui_config.h"

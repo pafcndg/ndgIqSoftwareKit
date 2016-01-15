@@ -41,11 +41,11 @@ from tests_library import *
 
 def dfu_flash(ttyUSB, ota_package):
 	print "download",ota_package
-	ret =  os.system("dfu-util -a 9 -R -D " + ota_package)
+	ret =  os.system("dfu-util -a 10 -R -D " + ota_package)
 	if ret:
 		reset(ttyUSB, 1)
-		time.sleep(1)
-		ret = os.system("dfu-util -a 9 -R -D " + ota_package)
+		time.sleep(4)
+		ret = os.system("dfu-util -a 10 -R -D " + ota_package)
 	return ret
 
 def testVersion(ttyUSB):
@@ -96,7 +96,7 @@ def verify(firmware_path):
 
 	return ret
 
-# usage ex: python dfu_ota_stress.py ~/atlaspeak/out/current/ota/pub/package.ota.bin
+# usage ex: python dfu_ota_stress.py ~/atlaspeak/out/current/ota/pub/package.ota.signed.bin
 def main():
 	parser = argparse.ArgumentParser(description="Flash ota package throgth dfu, reboot"
 		", decompress and flash ota package on flash."

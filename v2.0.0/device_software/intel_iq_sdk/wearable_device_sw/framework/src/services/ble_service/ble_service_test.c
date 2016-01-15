@@ -34,7 +34,6 @@
 #include "cfw/cfw_service.h"
 #include "ble_service_int.h"
 #include "ble_service_test.h"
-#include "ble_service_core_int.h"
 #ifdef CONFIG_UART_NS16550
 #include "board.h"
 #include "machine.h"
@@ -44,6 +43,8 @@
 #include "infra/log.h"
 #include "infra/ipc_uart.h"
 #include "ble_protocol.h"
+#include "gap_internal.h"
+#include "util/misc.h"
 
 #ifdef CONFIG_UART_NS16550
 static int uart_raw_ble_core_tx_rx(uint8_t * send_data, uint8_t send_no,
@@ -79,11 +80,10 @@ int ble_test_reconfigure_transport()
 #endif
 }
 
-void handle_ble_dtm_init(struct ble_enable_req_msg *req)
+void handle_ble_dtm_init(struct ble_enable_req *req)
 {
-	struct ble_enable_rsp *resp =
-			(struct ble_enable_rsp *)cfw_alloc_rsp_msg(
-					(struct cfw_message *)req,
+	struct ble_enable_rsp *resp = (void *)cfw_alloc_rsp_msg(
+					&req->header,
 					MSG_ID_BLE_ENABLE_RSP, sizeof(*resp));
 
 	ble_gap_dtm_init_req(resp);
@@ -97,17 +97,20 @@ void handle_ble_dtm_cmd(struct cfw_message *msg)
 	int send_no;
 	int rcv_no;
 
-	struct ble_dtm_test_req_msg *req =
-			(struct ble_dtm_test_req_msg *)msg;
-	struct ble_dtm_result_msg *resp =
-			(struct ble_dtm_result_msg *)cfw_alloc_rsp_msg(msg,
-								MSG_ID_BLE_DTM_RSP,
-								sizeof(*resp));
+	struct ble_dtm_test_req *req = container_of(msg, struct ble_dtm_test_req, header);
+	struct ble_dtm_test_rsp *resp =
+			(void *)cfw_alloc_rsp_msg(msg, MSG_ID_BLE_DTM_RSP, sizeof(*resp));
 
 	resp->status = BLE_STATUS_NOT_SUPPORTED;
 	send_data[0] = DTM_HCI_CMD;
 	send_data[1] = req->params.mode;
 	send_data[2] = DTM_HCI_OPCODE2;
+
+	BUILD_BUG_ON(BLE_TEST_START_DTM_RX ^ BLE_CORE_TEST_START_DTM_RX);
+	BUILD_BUG_ON(BLE_TEST_START_DTM_TX ^ BLE_CORE_TEST_START_DTM_TX);
+	BUILD_BUG_ON(BLE_TEST_SET_TXPOWER ^ BLE_CORE_TEST_SET_TXPOWER);
+	BUILD_BUG_ON(BLE_TEST_START_TX_CARRIER ^ BLE_CORE_TEST_START_TX_CARRIER);
+	BUILD_BUG_ON(BLE_TEST_END_DTM ^ BLE_CORE_TEST_END_DTM);
 
 	switch (req->params.mode) {
 	case BLE_TEST_START_DTM_RX:

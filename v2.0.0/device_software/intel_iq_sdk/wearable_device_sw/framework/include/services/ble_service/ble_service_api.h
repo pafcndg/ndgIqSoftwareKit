@@ -31,20 +31,28 @@
 #ifndef __BLE_SERVICE_API_H__
 #define __BLE_SERVICE_API_H__
 
-#include "cfw/cfw.h"
-#include "cfw/cfw_client.h"
+// For MSG_ID_BLE_BASE
+#include "ble_service_msg.h"
 #include "ble_service.h"
 #include "ble_service_gap_api.h"
-#include "ble_service_gatt.h"
-#include "ble_protocol.h"
+
+// For uuid
+#include "zephyr/bluetooth/uuid.h"
+// For attribute
+#include "zephyr/bluetooth/gatt.h"
+
+
+/* for for advertisement parameter type & adv data elements, bt_eir */
+#include "zephyr/bluetooth/bluetooth.h"
 
 #ifdef CONFIG_SERVICES_BLE_ISPP
 #include "ble_ispp.h"
 #endif
 
 // Forward declarations
-struct ble_service_update_data_rsp;
 struct _ble_service_cb;
+struct ble_update_data_rsp;
+struct bt_conn;
 
 /**
  * @defgroup ble_service_api BLE Service API
@@ -71,13 +79,12 @@ enum BLE_MSG_ID {
 	MSG_ID_BLE_STOP_DISCOVER_REQ,             /**< Message ID for <i>stop discover</i> request */
 	MSG_ID_BLE_CONNECT_REQ,                   /**< Message ID for <i>connect</i> request */
 	MSG_ID_BLE_DISCONNECT_REQ,                /**< Message ID for <i>disconnect</i> request */
-	MSG_ID_BLE_CONN_UPDATE_REQ,               /**< Message ID for <i>subscribe</i> request */
-	MSG_ID_BLE_SUBSCRIBE_REQ,                 /**< Message ID for <i>conn update</i> request */
+	MSG_ID_BLE_CONN_UPDATE_REQ,               /**< Message ID for <i>conn update</i> request */
+	MSG_ID_BLE_SUBSCRIBE_REQ,                 /**< Message ID for <i>subscribe</i> request */
 	MSG_ID_BLE_UNSUBSCRIBE_REQ,               /**< Message ID for <i>unsubscribe</i> request */
 	MSG_ID_BLE_INIT_SVC_REQ,                  /**< Message ID for <i>init service</i> request */
 	MSG_ID_BLE_START_ADV_REQ,                 /**< Message ID for <i>start advertisement</i> request */
 	MSG_ID_BLE_STOP_ADV_REQ,                  /**< Message ID for <i>stop advertisement</i> request */
-	MSG_ID_BLE_DISABLE_SVC_REQ,               /**< Message ID for <i>disable service</i> request */
 	MSG_ID_BLE_GET_SECURITY_REQ,              /**< Message ID for <i>get security</i> request */
 	MSG_ID_BLE_SET_SECURITY_REQ,              /**< Message ID for <i>set security</i> request */
 	MSG_ID_BLE_PASSKEY_SEND_REPLY_REQ,        /**< Message ID for <i>passkey send reply</i> request */
@@ -86,70 +93,61 @@ enum BLE_MSG_ID {
 	MSG_ID_BLE_RSSI_REQ,                      /**< Message ID for <i>RSSI</i> request */
 	MSG_ID_BLE_GET_INFO_REQ,                  /**< Message ID for <i>get info</i> request */
 
-	/* client data requests */
-	MSG_ID_BLE_DISCOVER_SVC_REQ, /**< discover characteristics of a service */
-	MSG_ID_BLE_GET_REMOTE_DATA_REQ,
-	MSG_ID_BLE_SET_REMOTE_DATA_REQ,
+	/* GATT Client requests */
+	MSG_ID_BLE_DISCOVER_REQ,                  /**< Message ID for <i>discover attributes</i> request */
+	MSG_ID_BLE_GET_REMOTE_DATA_REQ,           /**< Message ID for <i>get remote data</i> request */
+	MSG_ID_BLE_SET_REMOTE_DATA_REQ,           /**< Message ID for <i>set remote data</i> request */
 
-	/* server data requests */
-	MSG_ID_BLE_UPDATE_DATA_REQ,
-
-	/* Proprietary Protocol */
-	MSG_ID_BLE_PROTOCOL_REQ,
+	/* GATT Server requests */
+	MSG_ID_BLE_UPDATE_DATA_REQ,               /**< Message ID for <i>update attribute</i> request */
 
 	/* BLE direct test mode command */
-	MSG_ID_BLE_DTM_REQ,
-	MSG_ID_BLE_DBG_REQ,
+	MSG_ID_BLE_DTM_REQ,                       /**< Message ID for <i>BLE test command</i> request */
+
+	/* BLE debug command */
+	MSG_ID_BLE_DBG_REQ,                       /**< Message ID for <i>BLE debug command</i> request */
+
 	MSG_ID_BLE_REQ_LAST,
 
-	MSG_ID_BLE_ENABLE_RSP = MSG_ID_BLE_RSP, /**< Message ID for <i>enable</i> response */
-	MSG_ID_BLE_SET_NAME_RSP,                /**< Message ID for <i>set name</i> response */
+	MSG_ID_BLE_ENABLE_RSP = MSG_ID_BLE_RSP, /**< Message ID for <i>enable</i> response, of type @ref ble_enable_rsp */
+	MSG_ID_BLE_SET_NAME_RSP,                /**< Message ID for <i>set name</i> response, of type @ref ble_rsp */
 	MSG_ID_BLE_START_DISCOVER_RSP,          /**< Message ID for <i>start discover</i> response */
 	MSG_ID_BLE_STOP_DISCOVER_RSP,           /**< Message ID for <i>stop discover</i> response */
-	MSG_ID_BLE_CONNECT_RSP,                 /**< Message ID for <i>connect</i> response, of type @ref ble_rsp */
-	MSG_ID_BLE_DISCONNECT_RSP,              /**< Message ID for <i>disconnect</i> response, of type @ref ble_disconnect_rsp */
-	MSG_ID_BLE_SUBSCRIBE_RSP,               /**< Message ID for <i>subscribe</i> response, of type @ref ble_service_rsp */
-	MSG_ID_BLE_CONN_UPDATE_RSP,             /**< Message ID for <i>conn update</i> response, of type @ref ble_conn_update_rsp */
-	MSG_ID_BLE_UNSUBSCRIBE_RSP,             /**< Message ID for <i>unsubscribe</i> response, of type @ref ble_service_rsp */
-	MSG_ID_BLE_INIT_SVC_RSP,                /**< Message ID for <i>init service</i> response, of type @ref ble_init_service_rsp*/
+	MSG_ID_BLE_CONNECT_RSP,                 /**< Message ID for <i>connect</i> response, of type @ref ble_conn_rsp */
+	MSG_ID_BLE_DISCONNECT_RSP,              /**< Message ID for <i>disconnect</i> response, of type @ref ble_conn_rsp */
+	MSG_ID_BLE_CONN_UPDATE_RSP,             /**< Message ID for <i>conn update</i> response, of type @ref ble_conn_rsp */
+	MSG_ID_BLE_SUBSCRIBE_RSP,               /**< Message ID for <i>subscribe</i> response, of type @ref ble_subscribe_rsp */
+	MSG_ID_BLE_UNSUBSCRIBE_RSP,             /**< Message ID for <i>unsubscribe</i> response, of type @ref ble_unsubscribe_rsp */
+	MSG_ID_BLE_INIT_SVC_RSP,                /**< Message ID for <i>init service</i> response, of type @ref ble_init_service_rsp */
 	MSG_ID_BLE_START_ADV_RSP,               /**< Message ID for <i>start advertisement</i> response, of type @ref ble_rsp */
 	MSG_ID_BLE_STOP_ADV_RSP,                /**< Message ID for <i>stop advertisement</i> response, of type @ref ble_rsp */
-	MSG_ID_BLE_DISABLE_SVC_RSP,             /**< Message ID for <i>disable service</i> response, of type @ref ble_disable_service_rsp */
 	MSG_ID_BLE_GET_SECURITY_RSP,            /**< Message ID for <i>get security</i> response, of type @ref ble_get_security_rsp */
 	MSG_ID_BLE_SET_SECURITY_RSP,            /**< Message ID for <i>set security</i> response, of type @ref ble_rsp */
 	MSG_ID_BLE_PASSKEY_SEND_REPLY_RSP,      /**< Message ID for <i>passkey send reply</i> response, of type @ref ble_rsp */
-	MSG_ID_BLE_CLEAR_BONDS_RSP,
+	MSG_ID_BLE_CLEAR_BONDS_RSP,             /**< Message ID for <i>clear bonding info</i> response, of type @ref ble_rsp */
 	MSG_ID_BLE_GET_VERSION_RSP,             /**< Message ID for <i>get version</i> response, of type @ref ble_version_rsp */
-	MSG_ID_BLE_RSSI_RSP,                    /**< Message ID for <i>RSSI</i> response, of type @ref ble_version_rsp */
+	MSG_ID_BLE_RSSI_RSP,                    /**< Message ID for <i>RSSI</i> response, of type @ref ble_conn_rsp */
 	MSG_ID_BLE_GET_INFO_RSP,                /**< Message ID for <i>get info</i> response, of type @ref ble_get_info_rsp */
 
-	/* client data requests */
-	MSG_ID_BLE_DISCOVER_SVC_RSP,            /**< discover characteristics of a service @ref ble_service_rsp */
-	MSG_ID_BLE_GET_REMOTE_DATA_RSP,         /**< @ref ble_service_rsp */
-	MSG_ID_BLE_SET_REMOTE_DATA_RSP,         /**< @ref ble_service_rsp */
+	/* GATT Client responses */
+	MSG_ID_BLE_DISCOVER_RSP,                /**< Message ID for <i>discover attributes</i> response, of type @ref ble_discover_rsp */
+	MSG_ID_BLE_GET_REMOTE_DATA_RSP,         /**< Message ID for <i>get remote data</i> response, of type @ref ble_get_remote_data_rsp */
+	MSG_ID_BLE_SET_REMOTE_DATA_RSP,         /**< Message ID for <i>set remote data</i> response, of type @ref ble_conn_rsp */
 
-	/* server data requests */
-	MSG_ID_BLE_UPDATE_DATA_RSP,             /**< service server data updated */
-
-	/* Proprietary Protocol */
-	MSG_ID_BLE_PROTOCOL_RSP,
+	/* GATT Server requests */
+	MSG_ID_BLE_UPDATE_DATA_RSP,             /**< Message ID for <i>service server data update</i> response, of type @ref ble_update_data_rsp */
 
 	/* BLE direct test mode command */
-	MSG_ID_BLE_DTM_RSP,                     /**< @ref ble_dtm_result_msg */
-	MSG_ID_BLE_DBG_RSP,
+	MSG_ID_BLE_DTM_RSP,                     /**< Message ID for <i>DTM command</i> response, of type @ref ble_dtm_test_rsp */
+	MSG_ID_BLE_DBG_RSP,                     /**< Message ID for <i>DTM command</i> response, of type @ref ble_dbg_req_rsp */
+
 	MSG_ID_BLE_RSP_LAST,
 
 	/* events */
-	MSG_ID_BLE_DISCOVER_EVT = MSG_ID_BLE_EVT,
-	MSG_ID_BLE_NOTIF_EVT,            /**< notification or indication data when subscribe has been called */
-	MSG_ID_BLE_GET_REMOTE_DATA_EVT,  /**< Message ID for struct @ref ble_get_remote_data_evt  */
-	MSG_ID_BLE_SVC_DATA_CHANGED_EVT, /**< service data has changed, incoming data
-	                                      (struct @ref ble_service_data_changed_evt). */
+	MSG_ID_BLE_DISCOVER_EVT = MSG_ID_BLE_EVT, /**< Message ID for struct @ref ble_discover_evt */
+	MSG_ID_BLE_NOTIF_EVT,            /**< Notification or indication data when subscribe has been called */
 	MSG_ID_BLE_CONNECT_EVT,          /**< Message ID for struct @ref ble_connect_evt */
 	MSG_ID_BLE_DISCONNECT_EVT,       /**< Message ID for struct @ref ble_disconnect_evt */
-	MSG_ID_BLE_SUBSCRIBE_EVT,        /**< Message ID for struct @ref ble_subscribe_evt */
-	MSG_ID_BLE_UNSUBSCRIBE_EVT,      /**< Message ID for struct @ref ble_subscribe_evt */
-	MSG_ID_BLE_DISCOVER_SVC_EVT,     /**< Message ID for struct @ref ble_discover_service */
 	MSG_ID_BLE_SECURITY_EVT,         /**< Message ID for struct @ref ble_security_evt */
 	MSG_ID_BLE_ADV_TO_EVT,           /**< Message ID for struct @ref ble_adv_to_evt */
 	MSG_ID_BLE_PROTOCOL_EVT,         /**< Message ID for struct @ref ble_ispp_event_s */
@@ -159,53 +157,132 @@ enum BLE_MSG_ID {
 };
 
 /**
- * BLE Enable options.
+ * GATT Success code and error codes.
  */
+enum BLE_SVC_GATT_STATUS_CODES {
+	BLE_SVC_GATT_STATUS_SUCCESS = BLE_STATUS_SUCCESS, /**< GATT success @ref BLE_STATUS_SUCCESS */
+	BLE_SVC_GATT_STATUS_ENCRYPTED_MITM = BLE_SVC_GATT_STATUS_SUCCESS,
+	BLE_SVC_GATT_STATUS_INVALID_HANDLE = BLE_STATUS_GATT_BASE + 0x01,/**< 0x01 see BT Spec Vol 3: Part F (ATT), chapter 3.4.1.1 */
+	BLE_SVC_GATT_STATUS_READ_NOT_PERMIT,
+	BLE_SVC_GATT_STATUS_WRITE_NOT_PERMIT,
+	BLE_SVC_GATT_STATUS_INVALID_PDU,
+	BLE_SVC_GATT_STATUS_INSUF_AUTHENTICATION,
+	BLE_SVC_GATT_STATUS_REQ_NOT_SUPPORTED,
+	BLE_SVC_GATT_STATUS_INVALID_OFFSET,
+	BLE_SVC_GATT_STATUS_INSUF_AUTHORIZATION,
+	BLE_SVC_GATT_STATUS_PREPARE_Q_FULL,
+	BLE_SVC_GATT_STATUS_NOT_FOUND,
+	BLE_SVC_GATT_STATUS_NOT_LONG,
+	BLE_SVC_GATT_STATUS_INSUF_KEY_SIZE,
+	BLE_SVC_GATT_STATUS_INVALID_ATTR_LEN,
+	BLE_SVC_GATT_STATUS_ERR_UNLIKELY,
+	BLE_SVC_GATT_STATUS_INSUF_ENCRYPTION,
+	BLE_SVC_GATT_STATUS_UNSUPPORT_GRP_TYPE,
+	BLE_SVC_GATT_STATUS_INSUF_RESOURCE,
+
+	/**< TODO: maybe be not needed, to be covered by generic GAP status */
+	BLE_SVC_GATT_STATUS_NO_RESOURCES = BLE_STATUS_GATT_BASE | 0x80,
+	BLE_SVC_GATT_STATUS_INTERNAL_ERROR,
+	BLE_SVC_GATT_STATUS_WRONG_STATE,
+	BLE_SVC_GATT_STATUS_DB_FULL,
+	BLE_SVC_GATT_STATUS_BUSY,
+	BLE_SVC_GATT_STATUS_ERROR,
+	BLE_SVC_GATT_STATUS_CMD_STARTED,
+	BLE_SVC_GATT_STATUS_ILLEGAL_PARAMETER,
+	BLE_SVC_GATT_STATUS_PENDING,
+	BLE_SVC_GATT_STATUS_AUTH_FAIL,
+	BLE_SVC_GATT_STATUS_MORE,
+	BLE_SVC_GATT_STATUS_INVALID_CFG,
+	BLE_SVC_GATT_STATUS_SERVICE_STARTED,
+	BLE_SVC_GATT_STATUS_ENCRYPTED_NO_MITM,
+	BLE_SVC_GATT_STATUS_NOT_ENCRYPTED,
+	BLE_SVC_GATT_STATUS_CONGESTED,
+};
+
+/**
+ * GATT Write operation types
+ *
+ * (BT spec Vol 3, Part G, chapter. 4.9)
+ * @note Characteristics long write, Prepare & Execute request are handled internally
+ */
+enum BLE_GATT_WR_OP_TYPES {
+	BLE_GATT_WR_OP_NOP = 0,	    /**< normally not used except to cancel BLE_GATT_WR_OP_REQ long char write procedure */
+	BLE_GATT_WR_OP_CMD,	    /**< Write Command, (no response) */
+	BLE_GATT_WR_OP_REQ,	    /**< Write Request, Write response is received , if length is longer then ATT MTU, Prepare write procedure */
+	BLE_GATT_WR_OP_SIGNED_CMD,  /**< Signed Write Command */
+};
+
+/**
+ * Attribute handle range definition.
+ */
+struct ble_gatt_handle_range {
+	uint16_t start_handle;
+	uint16_t end_handle;
+};
+
+/**
+ * GATT Discover types.
+ */
+enum BLE_GATT_DISC_TYPES {
+	BLE_GATT_DISC_PRIMARY,
+	BLE_GATT_DISC_SECONDARY,
+	BLE_GATT_DISC_INCLUDE,
+	BLE_GATT_DISC_CHARACTERISTIC,
+	BLE_GATT_DISC_DESCRIPTOR
+};
+
+
+/** Generic BLE status response message. */
+struct ble_rsp {
+	struct cfw_message header;	/**< Component framework message header (@ref cfw), MUST be first element of structure */
+	ble_status_t status;		/**< Response status @ref BLE_STATUS */
+};
+
+/** Generic BLE response with connection reference and status. */
+struct ble_conn_rsp {
+	struct cfw_message header; /**< Component framework message header (@ref cfw), MUST be first element of structure */
+	struct bt_conn *conn;      /**< Connection reference */
+	ble_status_t status;       /**< @ref BLE_STATUS */
+};
+
+/** BLE Enable options. */
 enum BLE_OPTIONS {
 	BLE_OPTION_NONE = 0,
 	BLE_OPTION_TEST_MODE = 0x000000001, /**< Enable BLE Service in Test mode */
 };
 
-/**
- * BLE Enable configuration options.
- */
+/** BLE Enable configuration options. */
 struct ble_enable_config {
-	uint8_t * p_name;    /**< Optional null terminated BLE GAP Service device name. */
-	ble_addr_t * p_bda;  /**< Optional BT device address. If NULL, static random will be used */
+	bt_addr_le_t * p_bda;  /**< Optional BT device address. If NULL, internal unique static random will be used */
 	uint32_t options;    /**< Enable options @ref BLE_OPTIONS */
-	struct ble_gap_connection_params peripheral_conn_params; /**< Peripheral preferred */
 	struct ble_gap_connection_params central_conn_params;    /**< Central supported range */
-	uint16_t appearance; /**< see BLE spec */
 	struct ble_gap_sm_config_params sm_config;
 };
 
-/**
- * Advertisement options.
- */
-enum BLE_ADV_OPTIONS {
-	BLE_NO_ADV_OPT = 0,        /**< Default: Fast advertisement interval, 180sec timeout */
-	BLE_SLOW_ADV = 0X01,       /**< Slow advertisement interval */
-	BLE_ULTRA_FAST_ADV = 0X02, /**< Ultra fast advertisement interval */
-	BLE_SHORT_ADV_TO = 0x04,   /**< Short advertisement timeout */
-	BLE_NO_ADV_TO = 0x08,      /**< NO advertisement timeout*/
-	BLE_NON_DISC_ADV = 0x10,   /**< Non-discoverable advertisement, minimum advertisement data */
-	BLE_ADV_OPTIONS_MASK = 0xFF/**< Mask of the advertisement options */
-};
-
-/**
- * BLE notification configuration (batching).
- * TODO: define notification types
- */
-struct ble_notification_config {
-	uint32_t mode;
+/** Parameters of MSG_ID_BLE_ENABLE_REQ. */
+struct ble_enable_req {
+	struct cfw_message header; /**< Component framework message header (@ref cfw), MUST be first element of structure */
+	uint32_t options;
+	struct ble_gap_connection_params central_conn_params;
+	struct ble_gap_sm_config_params sm_config;
+	uint8_t enable;
+	uint8_t bda_present;
+	bt_addr_le_t bda;
 };
 
 /** Parameters of MSG_ID_BLE_ENABLE_RSP. */
 struct ble_enable_rsp {
 	struct cfw_message header; /**< Component framework message header (@ref cfw), MUST be first element of structure */
 	ble_status_t status;       /**< Response status @ref BLE_STATUS */
-	uint8_t enable;            /**< enable state: 0:Disabled, 1:Enabled */
-	ble_addr_t bd_addr;
+	uint8_t enable;            /**< Enable state: 0:Disabled, 1:Enabled */
+	bt_addr_le_t bd_addr;
+};
+
+/** Parameters of MSG_ID_BLE_SET_NAME_REQ. */
+struct ble_set_name_req {
+	struct cfw_message header; /**< Component framework message header (@ref cfw), MUST be first element of structure */
+	uint8_t name_len;
+	uint8_t data[];
 };
 
 /** Parameters of MSG_ID_BLE_GET_VERSION_RSP. */
@@ -216,39 +293,149 @@ struct ble_version_rsp {
 };
 
 enum BLE_INFO_REQ_TYPES {
-  BLE_INFO_BDA_NAME_REQ = 0, /**< Get BDA and current device name info */
+	BLE_INFO_BDA_NAME_REQ = 0, /**< Get BDA and current device name info */
 };
 
-/**
- * Info response data.
- */
+/** BD and Name response data. */
 struct ble_bda_name_info {
-	ble_addr_t bda; /**< Current BD address */
+	bt_addr_le_t bda; /**< Current BD address */
+	struct ble_bonded_devices bonded_devs; /**< Current bonded devices */
 	uint8_t name_len;
 	uint8_t name[]; /**< Current BLE GAP name */
 };
 
-/**
- * BLE Info response parameters.
- */
+/** Parameters for @ref MSG_ID_BLE_GET_INFO_REQ. */
+struct ble_gap_get_info_req {
+	struct cfw_message header; /**< Component framework message header (@ref cfw), MUST be first element of structure */
+	uint8_t info_type;
+};
+
+/** BLE Info response parameters. */
 union ble_info_rsp_params {
 	struct ble_bda_name_info bda_name_params; /**< BLE address and name */
 };
 
-/** Parameters of MSG_ID_BLE_GET_INFO_RSP. */
+/** Parameters for @ref MSG_ID_BLE_GET_INFO_RSP. */
 struct ble_get_info_rsp {
 	struct cfw_message header; /**< Component framework message header (@ref cfw), MUST be first element of structure */
 	ble_status_t status; /**< Response status @ref BLE_STATUS */
-	uint8_t info_type;
+	uint8_t info_type; /**< Requested information type @ref BLE_INFO_REQ_TYPES */
 	union ble_info_rsp_params info_params;
 };
 
-/**
- * Data structure of MSG_ID_BLE_DISCOVER_EVT.
- */
+/** Discover parameters. */
+struct ble_discover_params {
+	struct bt_uuid uuid;                        /**< Attribute UUID */
+	struct ble_gatt_handle_range handle_range;  /**< Discover range */
+	struct bt_conn *conn;                       /**< Connection reference */
+	uint8_t type;                               /**< Discover type @ref BLE_GATT_DISC_TYPES */
+};
+
+/** Parameters for @ref MSG_ID_BLE_DISCOVER_REQ. */
+struct ble_discover_req {
+	struct cfw_message header; /**< Component framework message header (@ref cfw), MUST be first element of structure */
+	struct ble_discover_params params; /**< Discover parameters */
+};
+
+/** Parameters for @ref MSG_ID_BLE_DISCOVER_RSP. */
+struct ble_discover_rsp {
+	struct cfw_message header;      /**< Component framework message header (@ref cfw), MUST be first element of structure */
+	ble_status_t status;            /**< Status of operation */
+	struct bt_conn *conn;           /**< Connection reference */
+	uint8_t type;                   /**< Discover type @ref BLE_GATT_DISC_TYPES */
+	uint8_t attr_cnt;               /**< Number of attributes in this response */
+	struct bt_gatt_attr attrs[];    /**< Returned attributes */
+};
+
+/** Subscribe options. */
+enum BLE_SUBSCRIBE_TYPES {
+	BLE_UNSUBSCRIBE = 0x00,     /**< Unsubscribe from notifications or indications */
+	BLE_NOTIFICATION = 0x01,   /**< Subscribe to notifications */
+	BLE_INDICATION = 0x02      /**< Subscribe to indications */
+};
+
+/** Subscribe parameters. */
+struct ble_subscribe_params {
+	struct bt_conn *conn;     /**< Connection reference */
+	uint16_t ccc_handle;      /**< CCC handle */
+	uint16_t value;           /**< Subscription type @ref BLE_SUBSCRIBE_TYPES */
+	uint16_t value_handle;    /**< Subscribed value handle */
+};
+
+/** Parameters for @ref MSG_ID_BLE_SUBSCRIBE_REQ. */
+struct ble_subscribe_req {
+	struct cfw_message header; /**< Component framework message header (@ref cfw), MUST be first element of structure */
+	struct ble_subscribe_params params; /**< Subscribe request parameters */
+};
+
+/** Parameters for @ref MSG_ID_BLE_SUBSCRIBE_RSP. */
+struct ble_subscribe_rsp {
+	struct cfw_message header;      /**< Component framework message header (@ref cfw), MUST be first element of structure */
+	ble_status_t status;             /**< Status of operation */
+	void *p_subscription;           /**< Subscription element (for unsubscription) */
+};
+
+/** Unsubscribe parameters. */
+struct ble_unsubscribe_params {
+	struct bt_conn *conn;     /**< Connection reference */
+	void *p_subscription;     /**< Subscription object */
+};
+
+/** Parameters for @ref MSG_ID_BLE_UNSUBSCRIBE_REQ. */
+struct ble_unsubscribe_req {
+	struct cfw_message header; /**< Component framework message header (@ref cfw), MUST be first element of structure */
+	struct ble_unsubscribe_params params; /**< Unsubscribe parameters */
+};
+
+/** Parameters for @ref MSG_ID_BLE_UNSUBSCRIBE_RSP. */
+struct ble_unsubscribe_rsp {
+	struct cfw_message header;      /**< Component framework message header (@ref cfw), MUST be first element of structure */
+	ble_status_t status;             /**< Status of operation */
+};
+
+/** Write parameters. */
+struct ble_set_remote_data_params {
+	struct bt_conn *conn;           /**< Connection reference */
+	uint16_t char_handle;           /**< Characteristic handle */
+	uint16_t offset;                /**< Characteristic data offset */
+	bool with_resp;                 /**< Equal to true is response is needed.
+	                                     Otherwise none response is provided */
+};
+
+/** Parameters for @ref MSG_ID_BLE_SET_REMOTE_DATA_REQ. */
+struct ble_set_remote_data_req {
+	struct cfw_message header;      /**< Component framework message header (@ref cfw), MUST be first element of structure */
+	struct ble_set_remote_data_params params; /**< Keeping API structure in which data pointer shall not be used */
+	uint16_t data_length;           /**< Data Length */
+	uint8_t data[0];                /**< Data */
+};
+
+/** Read parameters. */
+struct ble_get_remote_data_params {
+	struct bt_conn *conn;   /**< Connection reference */
+	uint16_t char_handle;   /**< Attribute handle */
+	uint16_t offset;        /**< Offset at which to read */
+};
+
+/** Parameters for @ref MSG_ID_BLE_GET_REMOTE_DATA_REQ. */
+struct ble_get_remote_data_req {
+	struct cfw_message header;                /**< Component framework message header (@ref cfw), MUST be first element of structure */
+	struct ble_get_remote_data_params params; /**< Get remote data parameters */
+};
+
+/** Parameters for @ref MSG_ID_BLE_GET_REMOTE_DATA_RSP. */
+struct ble_get_remote_data_rsp {
+	struct cfw_message header;      /**< Component framework message header (@ref cfw), MUST be first element of structure */
+	struct bt_conn *conn;           /**< Connection reference */
+	ble_status_t status;            /**< Status of operation */
+	uint16_t data_length;           /**< Data Length */
+	uint8_t data[0];                /**< Data */
+};
+
+/** Parameters for @ref MSG_ID_BLE_DISCOVER_EVT. */
 struct ble_discover_evt {
 	struct cfw_message header; /**< Component framework message header (@ref cfw), MUST be first element of structure */
-	ble_addr_t ble_addr;       /**< Address of the peer device */
+	bt_addr_le_t ble_addr;     /**< Address of the peer device */
 	uint16_t svc_count;
 	struct bt_uuid *service;   /**< List of primary services. If no browse is true, this is null */
 	uint8_t *device_name;      /**< Device name */
@@ -259,135 +446,70 @@ struct ble_discover_evt {
 	/* allocate here space for services discovered */
 };
 
-/**
- * Data structure for @ref MSG_ID_BLE_CONNECT_EVT.
- */
+/** Parameters for @ref MSG_ID_BLE_CONNECT_EVT. */
 struct ble_connect_evt {
 	struct cfw_message header; /**< Component framework message header (@ref cfw), MUST be first element of structure */
+	struct bt_conn *conn;      /**< Connection reference */
 	ble_status_t status;       /**< BLE_SUCCESS, etc. */
-	uint16_t conn_handle;      /**< Connection handle */
-	uint8_t role;              /**< GAP Roles */
-	ble_addr_t ble_addr;       /**< Address of the peer device */
+	uint8_t role;              /**< HCI Role (BT_HCI_ROLE_MASTER/BT_HCI_ROLE_SLAVE) */
+	bt_addr_le_t ble_addr;     /**< Address of the peer device */
 };
 
+/** Parameters for @ref MSG_ID_BLE_RSSI_EVT. */
 struct ble_rssi_evt {
 	struct cfw_message header; /**< Component framework message header (@ref cfw), MUST be first element of structure */
 	ble_status_t status;       /**< BLE_SUCCESS, etc. */
-	int8_t rssi;               /**< rssi */
+	int8_t rssi;               /**< Received Signal Strength Indication */
 };
 
+/** Parameters for @ref MSG_ID_BLE_NAME_EVT. */
 struct ble_device_name_evt {
-	struct cfw_message header;
+	struct cfw_message header; /**< Component framework message header (@ref cfw), MUST be first element of structure */
 	uint8_t device_name[];
 };
 
-/**
- * Generic connection related response or event.
- */
-struct ble_generic_conn_rsp {
+/** Parameters for @ref MSG_ID_BLE_DISCONNECT_REQ. */
+struct ble_disconnect_req {
 	struct cfw_message header; /**< Component framework message header (@ref cfw), MUST be first element of structure */
-	ble_status_t status;       /**< @ref BLE_STATUS */
-	uint16_t conn_handle;      /**< Connection handle */
+	struct bt_conn *conn;      /**< Connection reference */
+	uint8_t reason;            /**< Reason of the disconnect*/
 };
 
-/**
- * Generic service related response or event.
- */
-struct ble_service_rsp {
-	struct cfw_message header; /**< Component framework message header (@ref cfw), MUST be first element of structure */
-	ble_status_t status;       /**< @ref BLE_STATUS */
-	uint16_t conn_handle;      /**< Connection handle */
-	uint16_t svc_handle;       /**< Service Handle */
-};
-
-/**
- * Message Structure for @ref MSG_ID_BLE_DISCONNECT_EVT.
- */
+/** Parameters for @ref MSG_ID_BLE_DISCONNECT_EVT. */
 struct ble_disconnect_evt {
 	struct cfw_message header; /**< Component framework message header (@ref cfw), MUST be first element of structure */
+	struct bt_conn *conn;      /**< Connection reference */
 	ble_status_t status;       /**< BLE_SUCCESS, etc. */
-	uint16_t conn_handle;      /**< Connection handle */
 	uint16_t reason;           /**< Disconnection reason */
 };
 
-/**
- * Message Data Structure for @ref MSG_ID_BLE_DISCONNECT_RSP.
- */
-struct ble_disconnect_rsp {
+/** Parameters for @ref MSG_ID_BLE_CONNECT_REQ. */
+struct ble_connect_req {
 	struct cfw_message header; /**< Component framework message header (@ref cfw), MUST be first element of structure */
-	ble_status_t status;
-	uint16_t conn_handle;      /**< Connection handle */
+	struct bt_le_conn_param conn_params;
+	bt_addr_le_t bd_addr;
 };
 
-/**
- * Message Data Structure for @ref MSG_ID_BLE_CONN_UPDATE_RSP.
- */
-struct ble_conn_update_rsp {
+/** Parameters for @ref MSG_ID_BLE_CONN_UPDATE_REQ. */
+struct ble_conn_update_req {
 	struct cfw_message header; /**< Component framework message header (@ref cfw), MUST be first element of structure */
-	ble_status_t status;
-	uint16_t conn_handle;      /**< Connection handle */
+	struct bt_conn *conn;	/**< Connection reference */
+	struct ble_gap_connection_params conn_params;
 };
 
-/**
- * Data structure of @ref MSG_ID_BLE_SUBSCRIBE_EVT.
- * This is triggered by remote server confirmation
- */
-struct ble_subscribe_evt {
+/** Parameters for @ref MSG_ID_BLE_INIT_SVC_REQ. */
+struct ble_init_svc_req {
 	struct cfw_message header; /**< Component framework message header (@ref cfw), MUST be first element of structure */
-	ble_status_t status;       /**< BLE_SUCCESS, etc. */
-	uint16_t conn_handle;      /**< Connection handle */
-	uint16_t svc_handle;       /**< GAP, etc. */
-	uint32_t svc_uuid;         /**< 16 or 32 UUID of service. */
-	uint8_t uuid_type;         /**< UUID type. */
+	int (*init_svc)(struct ble_init_svc_req *msg, struct _ble_service_cb *p_cb);
+	void (*init_svc_complete)(struct ble_init_svc_req *req);
+	uint8_t status;
 };
 
-/**
- * Message Structure for MSG_ID_BLE_GET_REMOTE_DATA_EVT.
- */
-struct ble_get_remote_data_evt {
-	struct cfw_message header; /**< Component framework message header (@ref cfw), MUST be first element of structure */
-	ble_status_t status;       /**< @ref BLE_STATUS. */
-	uint16_t conn_handle;      /**< Connection handle */
-	uint16_t char_handle;
-	uint16_t len;
-	uint8_t data[];
-};
-
-/**
- * BLE service parameter for initialization.
- */
-struct ble_svc_params {
-	struct bt_uuid svc_uuid; /**< UUID of service */
-	void *p_data;            /**< service specific init data */
-};
-
-/**
- * Event Data Structure for @ref MSG_ID_BLE_DISCOVER_SVC_EVT.
- */
-struct ble_discover_service {
-	struct cfw_message header; /**< Component framework message header (@ref cfw), MUST be first element of structure */
-	uint16_t conn_handle;
-	uint16_t svc_handle;
-	uint16_t count;            /**< number of service characteristics */
-	uint16_t chars[];          /**< handles of the characteristics of the service */
-};
-
-/**
- * Event Data Structure for @ref MSG_ID_BLE_INIT_SVC_RSP.
- */
+/** Parameters for @ref MSG_ID_BLE_INIT_SVC_RSP. */
 struct ble_init_service_rsp {
 	struct cfw_message header; /**< Component framework message header (@ref cfw), MUST be first element of structure */
 	ble_status_t status;
 	struct bt_uuid svc_uuid;   /**< 16 or 128 bit Service UUID */
-};
-
-/**
- * Generic service related response or event.
- */
-struct ble_disable_service_rsp {
-	struct cfw_message header; /**< Component framework message header (@ref cfw), MUST be first element of structure */
-	ble_status_t status;       /**< BLE_SUCCESS, etc. */
-	uint16_t svc_handle;       /**< Service Handle */
 };
 
 /** Security related op codes. */
@@ -414,11 +536,9 @@ enum BLE_SM_STATUS_CODES {
 	BLE_SM_LINK_ENCRYPTED,     /**< Link encrypted */
 };
 
-/**
- * Security relates state and status definitions.
- */
+/** Security relates state and status definitions. */
 enum BLE_SEC_ST_DEVICE_STATUS {
-	BLE_SEC_ST_IDLE = 0x0000,            /**< idle state, pairing requests will fail, @ref BLE_SEC_DEVICE_STATUS */
+	BLE_SEC_ST_IDLE = 0x0000,            /**< Idle state, pairing requests will fail, @ref BLE_SEC_DEVICE_STATUS */
 	BLE_SEC_ST_PAIRABLE = 0x0001,        /**< Pairing allowed application will get pin requests
 	                                          if supported security options of device */
 	BLE_SEC_ST_PAIRING_IN_PROG = 0x0002, /**< Pairing in progress */
@@ -429,26 +549,26 @@ enum BLE_SEC_ST_DEVICE_STATUS {
 	BLE_SEC_ST_NO_BONDED_DEVICES = 0x0100, /**< Bonding database is empty , @ref BLE_SEC_BONDING_DB_STATE */
 };
 
-/**
- * Parameters for ble_get_security_status.
- *
- * @note Not all @ref BLE_SEC_OPCODES takes parameters, in this case pass null
- */
+/** Parameters for ble_get_security_status. */
 union ble_get_security_params {
-	uint16_t conn_handle; /**< @ref BLE_SEC_CONN_STATE */
+	struct bt_conn *conn;
 };
 
-/**
- * Connection related security structure
- */
+/** Parameters for @ref MSG_ID_BLE_GET_SECURITY_REQ. */
+struct ble_get_security_status_req {
+	struct cfw_message header; /**< Component framework message header (@ref cfw), MUST be first element of structure */
+	uint8_t op_code;
+	uint8_t len;
+	uint8_t data[];
+};
+
+/** Connection related security structure */
 struct ble_conn_sec {
-	uint16_t conn_handle;
+	struct bt_conn *conn;
 	uint8_t mode;
 };
 
-/**
- * Get Security Response data structure.
- */
+/** Parameters for @ref MSG_ID_BLE_GET_SECURITY_RSP. */
 struct ble_get_security_rsp {
 	struct cfw_message header;   /**< Component framework message header (@ref cfw), MUST be first element of structure */
 	ble_status_t status;
@@ -459,42 +579,13 @@ struct ble_get_security_rsp {
 	};
 };
 
-/**
- * Set Security State Response data structure.
- */
-struct ble_set_security_rsp {
-	struct cfw_message header;   /**< Component framework message header (@ref cfw), MUST be first element of structure */
-	ble_status_t status;
-	uint8_t op_code;             /**< @ref BLE_SEC_OPCODES */
-	union {
-		uint16_t dev_status; /**< @ref BLE_SEC_DEVICE_STATUS  */
-		struct ble_conn_sec sec_mode; /**< @ref BLE_SEC_CONN_STATE */
-	};
-};
-
-/**
- * Authentication data.
- */
+/** Authentication data. */
 struct ble_auth_data {
 	union {
 		uint8_t passkey[6];   /**< 6 digit key (000000 - 999999), only valid for @ref BLE_SM_AUTH_PASSKEY_REQ */
 		uint8_t obb_data[16]; /**< 16 byte of OBB data */
 	};
 	uint8_t type;                 /**< @ref BLE_GAP_SM_PASSKEY_TYPE */
-};
-
-/**
- * Security event data structure type @ref BLE_SEC_AUTHENTICATION.
- */
-struct ble_security_evt {
-	struct cfw_message header; /**< Component framework message header (@ref cfw), MUST be first element of structure */
-	uint16_t conn_handle;      /**< Connection handle */
-	uint8_t sm_status;         /**< @ref BLE_SM_STATUS_CODES */
-	union {
-		uint8_t passkey[6]; /**< 6 digit key (000000 - 999999), only valid for @ref BLE_SM_AUTH_DISP_PASSKEY */
-		uint8_t type;       /**< key requested @ref BLE_GAP_SM_PASSKEY_TYPE, for @ref BLE_SM_AUTH_PASSKEY_REQ */
-		uint8_t gap_status; /**< gap status, 0 success otherwise failure code. @ref BLE_SM_BONDING_COMPLETE */
-	};
 };
 
 /**
@@ -506,23 +597,57 @@ union ble_set_sec_params {
 	struct ble_auth_data auth; /**< @ref BLE_SEC_AUTHENTICATION */
 };
 
+/** Parameters for @ref MSG_ID_BLE_SET_SECURITY_REQ. */
+struct ble_set_security_status_req {
+	struct cfw_message header; /**< Component framework message header (@ref cfw), MUST be first element of structure */
+	uint8_t op_code;
+	union ble_set_sec_params params;
+};
+
+/** Parameters for @ref MSG_ID_BLE_SET_SECURITY_RSP. */
+struct ble_set_security_rsp {
+	struct cfw_message header;   /**< Component framework message header (@ref cfw), MUST be first element of structure */
+	ble_status_t status;
+	uint8_t op_code;             /**< @ref BLE_SEC_OPCODES */
+	union {
+		uint16_t dev_status; /**< @ref BLE_SEC_DEVICE_STATUS  */
+		struct ble_conn_sec sec_mode; /**< @ref BLE_SEC_CONN_STATE */
+	};
+};
+
+/** Parameters for @ref MSG_ID_BLE_SECURITY_EVT. */
+struct ble_security_evt {
+	struct cfw_message header; /**< Component framework message header (@ref cfw), MUST be first element of structure */
+	struct bt_conn *conn;      /**< Connection reference */
+	uint8_t sm_status;         /**< @ref BLE_SM_STATUS_CODES */
+	union {
+		uint8_t passkey[6]; /**< 6 digit key (000000 - 999999), only valid for @ref BLE_SM_AUTH_DISP_PASSKEY */
+		uint8_t type;       /**< key requested @ref BLE_GAP_SM_PASSKEY_TYPE, for @ref BLE_SM_AUTH_PASSKEY_REQ */
+		uint8_t gap_status; /**< gap status, 0 success otherwise failure code. @ref BLE_SM_BONDING_COMPLETE */
+	};
+};
+
+/** Parameters for @ref MSG_ID_BLE_PASSKEY_SEND_REPLY_REQ. */
+struct ble_gap_sm_key_reply_req {
+	struct cfw_message header; /**< Component framework message header (@ref cfw), MUST be first element of structure */
+	struct bt_conn *conn;      /**< Connection reference */
+	struct ble_gap_sm_passkey params;
+};
+
 /**
  * BLE service specific update data function
  *
- * @param conn_handle Handle of connection
+ * @param conn Reference of connection (can be NULL to indicate that it shall update value globally)
  * @param char_handle Value handle of characteristic to update
  * @param len of payload data in this message
  * @param p_data points to data[]
- * @param p_priv udpate response sent back to callee.
- * @param p_cb ble master control block
+ * @param p_rsp udpate response sent back to callee
  * @return BLE_STATUS_SUCCESS for success, otherwise BLE failure code.
  */
-typedef int (*update_data_t)(uint16_t conn_handle, uint16_t char_handle, uint16_t len, uint8_t *p_data,
-		struct ble_service_update_data_rsp *p_rsp);
+typedef int (*update_data_t)(struct bt_conn *conn, uint16_t char_handle, uint16_t len, uint8_t *p_data,
+		struct ble_update_data_rsp *p_rsp);
 
-/**
- * GATT server characteristic data to update.
- */
+/** GATT server characteristic data to update. */
 struct ble_char_data {
 	update_data_t update; /**< Update data execution function executed in ble_service context */
 	uint16_t char_handle; /**< Handle of characteristic */
@@ -530,35 +655,29 @@ struct ble_char_data {
 	uint8_t *p_data;      /**< data depending on service */
 };
 
-/**
- * Service characteristic data update response.
- */
-struct ble_service_update_data_rsp {
+/** Parameters for @ref MSG_ID_BLE_UPDATE_DATA_REQ. */
+struct ble_update_data_req {
 	struct cfw_message header; /**< Component framework message header (@ref cfw), MUST be first element of structure */
-	ble_status_t status;
-	uint16_t conn_h;           /**< Connection handle, maybe invalid if there is no connection! */
-	uint16_t char_handle;      /**< handle of characteristic value to write */
+	struct bt_conn *conn; /**< Connection reference */
+	update_data_t update; /**< Service specific update handler */
+	uint16_t char_handle; /**< Handle of characteristic to update */
+	uint16_t len; /**< Length of data, maybe 0 */
+	uint8_t data[]; /**< Characteristic value payload */
 };
 
-/**
- * Service service characteristic values has been updated @ref MSG_ID_BLE_SVC_DATA_CHANGED_EVT.
- */
-struct ble_service_data_changed_evt {
+/** Parameters for @ref MSG_ID_BLE_UPDATE_DATA_RSP. */
+struct ble_update_data_rsp {
 	struct cfw_message header; /**< Component framework message header (@ref cfw), MUST be first element of structure */
-	uint16_t svc_handle;       /**< which service affected by the change */
-	uint16_t char_handle;      /**< characteristic value handle that has been updated */
-	uint16_t count;            /**< number of data samples, by default 1 */
-	uint16_t len;              /**< length of data written by remote device */
-	uint8_t data[];
+	struct bt_conn *conn;      /**< Connection reference */
+	ble_status_t status;       /**< Status of the data update operation */
+	uint16_t char_handle;      /**< Handle of characteristic value to write */
 };
 
-/**
- * Service service characteristic values has been updated @ref MSG_ID_BLE_NOTIF_EVT.
- */
+/** Parameters for @ref MSG_ID_BLE_NOTIF_EVT. */
 struct ble_notification_data_evt {
 	struct cfw_message header; /**< Component framework message header (@ref cfw), MUST be first element of structure */
 	ble_status_t status;       /**< @ref ble_status_t */
-	uint16_t conn_handle;      /**< connection handle */
+	struct bt_conn *conn;      /**< Connection reference */
 	uint16_t svc_handle;       /**< which service affected by the change */
 	uint16_t char_handle;      /**< characteristic value handle that has been updated */
 	uint16_t count;            /**< number of data samples, by default 1. */
@@ -566,32 +685,7 @@ struct ble_notification_data_evt {
 	uint8_t data[];
 };
 
-/**
- * BLE Protocol identifier.
- */
-enum BLE_PROTOCOL {
-	BLE_LAST_NO_USED
-};
-
-struct ble_protocol_rsp {
-	struct cfw_message header; /**< Component framework message header (@ref cfw), MUST be first element of structure */
-	ble_status_t status;       /**< @ref ble_status_t */
-	uint16_t conn_handle;      /**< Connection handle */
-	int protocol_status;       /**< Protocol specific status. */
-};
-
-
-/**
- * Open or data event has been received via protocol service @ref MSG_ID_BLE_PROTOCOL_EVT.
- */
-struct ble_protocol_evt {
-	struct cfw_message header; /**< Component framework message header (@ref cfw), MUST be first element of structure */
-	uint8_t protocol;          /**< @ref BLE_PROTOCOL */
-};
-
-/**
- * Advertisement timeout ended @ref MSG_ID_BLE_ADV_TO_EVT.
- */
+/** Parameters for @ref MSG_ID_BLE_ADV_TO_EVT. */
 struct ble_adv_to_evt {
 	struct cfw_message header; /**< Component framework message header (@ref cfw), MUST be first element of structure */
 };
@@ -601,35 +695,51 @@ struct ble_adv_to_evt {
  * The parameters modify the advertisement data content of
  * the generated advertisement array.
  */
-struct ble_adv_data_params {
+struct ble_adv_params {
+	uint8_t options;
 	uint8_t adv_type; /**< see @ref GAP_ADV_TYPES */
-	uint8_t sd_len;
-	uint8_t ad_len;
-	ble_addr_t *p_le_addr;
-	uint8_t *p_sd;
-	uint8_t *p_ad;
+	bt_addr_le_t *p_le_addr;
+	struct bt_eir *p_ad; /**< Advertisement data, null terminated */
+	struct bt_eir *p_sd; /**< Advertisement data, null terminated */
 };
 
 /**
  * BLE debug req and rsp message.
  */
-struct ble_dbg_msg {
+struct ble_dbg_req_rsp {
 	struct cfw_message header;
 	uint32_t u0;
 	uint32_t u1;
 };
 
+/** Parameters for @ref MSG_ID_BLE_DTM_REQ. */
+struct ble_dtm_test_req {
+	struct cfw_message header; /**< Component framework message header (@ref cfw), MUST be first element of structure */
+	struct ble_test_cmd params;
+};
+
+/** Parameters for @ref MSG_ID_BLE_DTM_RSP. */
+struct ble_dtm_test_rsp {
+	struct cfw_message header;              /**< Component framework message header (@ref cfw), MUST be first element of structure */
+	ble_status_t status;                    /**< Status of the operation */
+	struct ble_dtm_test_result result;      /**< Result data of DTM RX test */
+};
+
+/** Parameters for @ref MSG_ID_BLE_RSSI_REQ. */
+struct ble_gap_set_rssi_report_req {
+	struct cfw_message header;        /**< Component framework message header (@ref cfw), MUST be first element of structure */
+	struct bt_conn *conn;             /**< Connection reference */
+	struct rssi_report_params params; /**< RSSI report parameters */
+};
+
 /**
- * Initialize cfw BLE service framework and register with service manager.
+ * Initialize cfw BLE service framework.
  *
- * To be called at boot time if BLE is supported
+ * This initializes the CFW, enables nble and registers CFW ble service.
  *
  * @param queue cfw BLE service message queue
  */
 void ble_cfw_service_init(T_QUEUE queue);
-
-void on_ble_core_up(void);
-
 
 /** Enable/Disable BLE stack. To be called before any BLE service related call.
  *
@@ -697,15 +807,15 @@ int ble_stop_discover(cfw_service_conn_t * p_service_conn,
  *
  * @param p_service_conn client service connection (cfw service connection)
  * @param p_addr address of the peer device
- * @param interval connection time interval Range: 0x0006 to 0x0C80, (unit: 1.25 ms)
+ * @param p_conn_params connection parameters
  * @param p_priv pointer to private structure returned in a response
  *
  * @return @ref OS_ERR_TYPE
  * @note Expected notification:
  *       - Message with ID @ref MSG_ID_BLE_CONNECT_RSP and type @ref ble_rsp.
  */
-int ble_connect(cfw_service_conn_t * p_service_conn, const ble_addr_t * p_addr,
-		uint32_t interval, void *p_priv);
+int ble_connect(cfw_service_conn_t * p_service_conn, const bt_addr_le_t * p_addr,
+		const struct bt_le_conn_param *p_conn_params, void *p_priv);
 
 /**
  * Enable notification from remote sensors.
@@ -714,19 +824,16 @@ int ble_connect(cfw_service_conn_t * p_service_conn, const ble_addr_t * p_addr,
  * characteristic handle is specified, all characteristic are made notify-able.
  *
  * @param p_service_conn client service connection (cfw service connection)
- * @param conn_handle handle of connection
- * @param svc_handle BLE stack service handle returned on service browse or connect events
- * @param p_char_handle pointer to characteristics handle. maybe null
- * @param p_config notification configuration TBD
+ * @param p_params subscription parameters
  * @param p_priv pointer to private structure returned in a response
  *
  * @return @ref OS_ERR_TYPE
  * @note Expected notification:
- *       - Message with ID @ref MSG_ID_BLE_SUBSCRIBE_RSP and type @ref ble_service_rsp.
+ *       - Message with ID @ref MSG_ID_BLE_SUBSCRIBE_RSP and type @ref ble_subscribe_rsp.
  */
-int ble_subscribe(cfw_service_conn_t * p_service_conn, uint16_t conn_handle,
-		  uint16_t svc_handle, const uint16_t * p_char_handle,
-		  const struct ble_notification_config *p_config, void *p_priv);
+int ble_subscribe(cfw_service_conn_t *p_service_conn,
+		const struct ble_subscribe_params *p_params,
+		void *p_priv);
 
 /**
  * Disable notification from remote sensors.
@@ -735,17 +842,15 @@ int ble_subscribe(cfw_service_conn_t * p_service_conn, uint16_t conn_handle,
  * characteristic handle is specified, all characteristic are made non notify-able.
  *
  * @param p_service_conn client service connection (cfw service connection)
- * @param svc_handle BLE service handle returned on service browse or connect events
- * @param p_char_handle pointer to characteristics handle. maybe null
+ * @param p_params unsubscription parameters
  * @param p_priv pointer to private structure returned in a response
  *
  * @return @ref OS_ERR_TYPE
  * @note Expected notification:
  *       - Message with ID @ref MSG_ID_BLE_UNSUBSCRIBE_RSP.
  */
-int ble_unsubscribe(cfw_service_conn_t * p_service_conn,
-		    uint16_t svc_handle, const uint16_t * p_char_handle,
-		    void *p_priv);
+int ble_unsubscribe(cfw_service_conn_t *p_service_conn,
+		struct ble_unsubscribe_params *p_params, void *p_priv);
 
 /**
  * Request to update the connection.
@@ -759,16 +864,16 @@ int ble_unsubscribe(cfw_service_conn_t * p_service_conn,
  *   The interval_min will be used as the forced value.
  *
  * @param p_service_conn client service connection (cfw service connection)
- * @param conn_handle The connection handle
+ * @param conn The connection reference
  * @param p_params The new requested connection parameters
  * @param p_priv pointer to private structure returned in the response
  *
  * @return @ref OS_ERR_TYPE
  * @note Expected notification:
- *       - Message with ID @ref MSG_ID_BLE_UNSUBSCRIBE_RSP.
+ *       - Message with ID @ref MSG_ID_BLE_CONN_UPDATE_RSP.
  */
 int ble_conn_update(cfw_service_conn_t * p_service_conn,
-		    uint16_t conn_handle,
+		    struct bt_conn * conn,
 		    const struct ble_gap_connection_params * p_params,
 		    void *p_priv);
 
@@ -776,15 +881,15 @@ int ble_conn_update(cfw_service_conn_t * p_service_conn,
  * Disconnect remote device/sensor (peripheral & central role).
  *
  * @param p_service_conn client service connection (cfw service connection)
- * @param conn_handle link to disconnect
+ * @param conn reference of the connection to disconnect
  * @param p_priv pointer to private structure returned in a response
  *
  * @return @ref OS_ERR_TYPE
  * @note Expected notification:
- *       - Message with ID MSG_ID_BLE_DISCONNECT_RSP and type @ref ble_service_rsp.
+ *       - Message with ID MSG_ID_BLE_DISCONNECT_RSP and type @ref ble_conn_rsp.
  */
 int ble_disconnect(cfw_service_conn_t * p_service_conn,
-		   uint16_t conn_handle, void *p_priv);
+		struct bt_conn *conn, void *p_priv);
 
 /**
  * Enable/Disable  BLE test mode (e.g. DTM).
@@ -800,30 +905,29 @@ int ble_disconnect(cfw_service_conn_t * p_service_conn,
  *
  * @return @ref OS_ERR_TYPE
  * @note Expected notification:
- *       - Message with ID MSG_ID_BLE_DTM_RSP.
+ *       - Message with ID MSG_ID_BLE_DTM_RSP and type @ref ble_dtm_test_rsp.
  */
 int ble_test(cfw_service_conn_t * p_service_conn,
 	     const struct ble_test_cmd *p_cmd,
 	     void *p_priv);
 
 /**
- * Discover characteristics UUID and its handles for a specified service.
+ * Discover services, characteristics or descriptors on a peer device.
  *
  * @note client role
  *
  * @param p_service_conn client service connection (cfw service connection)
- * @param conn_handle connection handle
- * @param svc_handle handle of service to discover
+ * @param p_params discover parameters
  * @param p_priv pointer to private structure returned in a response
  *
  * @return @ref OS_ERR_TYPE
  * @note Expected notification:
- *       - Message with ID MSG_ID_BLE_DISCOVER_SVC_RSP and type @ref ble_service_rsp.
+ *       - Message with ID MSG_ID_BLE_DISCOVER_RSP and type @ref ble_discover_rsp.
  */
-int ble_discover_service(cfw_service_conn_t * p_service_conn,
-			 uint16_t conn_handle,
-			 uint16_t svc_handle,
+int ble_discover(cfw_service_conn_t * p_service_conn,
+			 const struct ble_discover_params *p_params,
 			 void *p_priv);
+
 
 /**
  * Read remote data.
@@ -831,18 +935,15 @@ int ble_discover_service(cfw_service_conn_t * p_service_conn,
  * @note  Client Role
  *
  * @param p_service_conn client service connection (cfw service connection)
- * @param conn_handle connection handle
- * @param char_handle handle of char value to write
+ * @param p_params get remote data parameters
  * @param p_priv pointer to private structure returned in a response
  *
  * @return @ref OS_ERR_TYPE
  * @note Expected notification:
- *       - Message with ID @ref MSG_ID_BLE_GET_REMOTE_DATA_RSP and type @ref ble_service_rsp.
- *       - Event with ID @ref MSG_ID_BLE_GET_REMOTE_DATA_EVT and type @ref ble_get_remote_data_evt.
+ *       - Message with ID @ref MSG_ID_BLE_GET_REMOTE_DATA_RSP and type @ref ble_get_remote_data_rsp.
  */
 int ble_get_remote_data(cfw_service_conn_t * p_service_conn,
-			uint16_t conn_handle,
-			uint16_t char_handle,
+			const struct ble_get_remote_data_params *p_params,
 			void *p_priv);
 
 /**
@@ -851,20 +952,30 @@ int ble_get_remote_data(cfw_service_conn_t * p_service_conn,
  * @note client role usage
  *
  * @param p_service_conn client service connection (cfw service connection)
- * @param conn_handle connection handle
- * @param val_handle handle of handle of value to write
- * @param p_value data to set
+ * @param p_params set remote data parameters
+ * @param data_length length of data
+ * @param data data
  * @param p_priv pointer to private structure returned in a response
  *
  * @return @ref OS_ERR_TYPE
  * @note Expected notification:
- *       - Message with ID @ref MSG_ID_BLE_SET_REMOTE_DATA_RSP and type @ref ble_service_rsp.
+ *       - Message with ID @ref MSG_ID_BLE_SET_REMOTE_DATA_RSP and type @ref ble_conn_rsp.
  */
 int ble_set_remote_data(cfw_service_conn_t * p_service_conn,
-			uint16_t conn_handle,
-			uint16_t val_handle,
-			const uint8_t * p_value,
+			const struct ble_set_remote_data_params *p_params,
+			uint16_t data_length, uint8_t *data,
 			void *p_priv);
+
+/** Advertisement options. */
+enum BLE_ADV_OPTIONS {
+	BLE_NO_ADV_OPT = 0,        /**< Default: Fast advertisement interval, 180sec timeout */
+	BLE_SLOW_ADV = 0X01,       /**< Slow advertisement interval */
+	BLE_ULTRA_FAST_ADV = 0X02, /**< Ultra fast advertisement interval */
+	BLE_SHORT_ADV_TO = 0x04,   /**< Short advertisement timeout */
+	BLE_NO_ADV_TO = 0x08,      /**< NO advertisement timeout*/
+	BLE_NON_DISC_ADV = 0x10,   /**< Non-discoverable advertisement, minimum advertisement data */
+	BLE_ADV_OPTIONS_MASK = 0xFF/**< Mask of the advertisement options */
+};
 
 /**
  * Set advertisement data and start advertisement.
@@ -875,7 +986,6 @@ int ble_set_remote_data(cfw_service_conn_t * p_service_conn,
  * the application needs to do first a ble_stop_advertisment().
  *
  * @param p_service_conn client service connection (cfw service connection)
- * @param options service specific options
  * @param p_adv_params advertising parameters
  * @param p_priv pointer to private structure returned in a response
  *
@@ -889,8 +999,7 @@ int ble_set_remote_data(cfw_service_conn_t * p_service_conn,
  *       - status BLE_STATUS_SUCCESS
  */
 int ble_start_advertisement(cfw_service_conn_t *p_service_conn,
-		uint32_t options,
-		const struct ble_adv_data_params *p_adv_params,
+		const struct ble_adv_params *p_adv_params,
 		void *p_priv);
 
 /**
@@ -911,36 +1020,13 @@ int ble_stop_advertisement(cfw_service_conn_t * p_service_conn,
 			   void *p_priv);
 
 /**
- * Disable a BLE service.
- *
- * This will update the advertisement data too and may result in stop-start sequence
- * for the advertisement process
- * If services need to be added this maybe required via ble_init_service().
- *
- * @note Currently NOT supported
- *
- * @param p_service_conn client service connection (cfw service connection)
- * @param conn_handle connection handle
- * @param svc_handle handle of service to stop
- * @param p_priv pointer to private structure returned in a response
- *
- * @return @ref OS_ERR_TYPE
- * @note Expected notification:
- *       - Message with ID @ref MSG_ID_BLE_DISABLE_SVC_RSP and type @ref ble_service_rsp.
- */
-int ble_disable_service(cfw_service_conn_t * p_service_conn,
-			uint16_t conn_handle,
-			uint16_t svc_handle,
-			void *p_priv);
-
-/**
  * Get Current security status
  *
  * This will return the security status or state depending on operation requested.
  *
  * @param p_service_conn client service connection (cfw service connection)
- * @param op security operation @ref BLE_SEC_OPCODES
- * @param p_params parameters related to security operation
+ * @param op security operation code @ref BLE_SEC_OPCODES
+ * @param p_params parameters related to security operation (can be NULL if not required)
  * @param p_priv pointer to private structure returned in a response
  *
  * @return @ref OS_ERR_TYPE
@@ -958,13 +1044,13 @@ int ble_get_security_status(cfw_service_conn_t * p_service_conn,
  * This will set the security status or state depending on operation requested.
  *
  * @param p_service_conn client service connection (cfw service connection)
- * @param op security operation
- * @param p_params parameters related to security operation
+ * @param op security operation code @ref BLE_SEC_OPCODES
+ * @param p_params parameters related to security operation code (can be NULL if not required)
  * @param p_priv pointer to private structure returned in a response
  *
  * @return @ref OS_ERR_TYPE
  * @note Expected notification:
- *       - Message with ID @ref MSG_ID_BLE_SET_SECURITY_RSP and type @ref ble_get_security_rsp.
+ *       - Message with ID @ref MSG_ID_BLE_SET_SECURITY_RSP and type @ref ble_set_security_rsp.
  */
 int ble_set_security_status(cfw_service_conn_t * p_service_conn,
 			    uint8_t op,
@@ -975,37 +1061,37 @@ int ble_set_security_status(cfw_service_conn_t * p_service_conn,
  * Send authentification passkey.
  *
  * @param p_service_conn client service connection (cfw service connection)
- * @param conn_handle connection handle
+ * @param conn connection reference
  * @param p_params passkey params
  * @param p_priv pointer to private structure returned in a response
  *
  * @return @ref OS_ERR_TYPE
  * @note Expected notification:
- *       - Message with ID MSG_ID_BLE_PASSKEY_SEND_RSP (status) and type @ref ble_service_rsp.
+ *       - Message with ID MSG_ID_BLE_PASSKEY_SEND_REPLY_RSP (status) and type @ref ble_rsp.
  */
 int ble_send_passkey(cfw_service_conn_t *p_service_conn,
-		     uint16_t conn_handle,
+		     struct bt_conn *conn,
 		     const struct ble_gap_sm_passkey * p_params,
 		     void *p_priv);
 
 /**
- * Update GATT server characteristic value data.
+ * Update GATT Server characteristic value data.
  *
  * This will set the server data characteristic depending on connection handle.
  *
  * @param p_service_conn client service connection (cfw service connection)
- * @param conn_handle connection handle; maybe invalid (0xffff)
+ * @param conn connection reference (can be NULL to update value for all connection)
  * @param p_params characteristic data to write
  * @param p_priv pointer to private structure returned in a response
  *
- * @note In general each BLE service will implement it own function udpate function.
+ * @note In general each BLE service will implement it own function update function.
  *
  * @return @ref OS_ERR_TYPE
  * @note Expected notification:
- *       - Message with ID @ref MSG_ID_BLE_UPDATE_DATA_RSP and type @ref ble_service_update_data_rsp.
+ *       - Message with ID @ref MSG_ID_BLE_UPDATE_DATA_RSP and type @ref ble_update_data_rsp.
  */
 int ble_update_service_data(cfw_service_conn_t *p_service_conn,
-			    uint16_t conn_handle,
+			    struct bt_conn *conn,
 			    const struct ble_char_data *p_params,
 			    void *p_priv);
 
@@ -1013,14 +1099,15 @@ int ble_update_service_data(cfw_service_conn_t *p_service_conn,
  * Request to send RSSI report request
  *
  * @param p_service_conn client service connection (cfw service connection)
+ * @param conn Connection reference
  * @param params RSSI report paramaters
  * @param p_priv pointer to private structure returned in a response
  *
  * @return @ref OS_ERR_TYPE
  * @note Expected notification:
- *       - Message with ID @ref MSG_ID_BLE_RSSI_RSP.
+ *       - Message with ID @ref MSG_ID_BLE_RSSI_RSP, and type @ref ble_conn_rsp.
  */
-int ble_set_rssi_report(cfw_service_conn_t * p_service_conn,
+int ble_set_rssi_report(cfw_service_conn_t * p_service_conn, struct bt_conn *conn,
 		const struct rssi_report_params *params, void *p_priv);
 
 /**

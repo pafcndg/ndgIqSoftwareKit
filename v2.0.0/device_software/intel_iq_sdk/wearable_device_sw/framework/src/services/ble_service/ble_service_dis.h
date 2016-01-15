@@ -35,14 +35,8 @@
 
 #include "zephyr/bluetooth/gatt.h"
 
-#include "services/ble_service/ble_service_gap_api.h"
-#include "services/ble_service/ble_service_gatt.h"
+#include "services/ble_service/ble_service_api.h"
 #include "ble_service_int.h"
-#include "ble_service_core_int.h"
-#include "services/ble_service/ble_service_gatts_api.h"
-
-/* Forward declarations */
-struct _ble_register_svc;
 
 /* Example default values */
 #define MANUFACTURER_ID    0x1122334455
@@ -76,38 +70,111 @@ struct ble_dis_pnp_id {
  * be used.
  *
  * @param p_service_conn client service connection (cfw service connection)
- * @param p_reg pointer to application response
+ * @param priv pointer to application private data
  *
  * @return @ref OS_ERR_TYPE, in failure case msg needs to freed by callee
  */
-int ble_init_service_dis(cfw_service_conn_t * p_service_conn,
-			 struct _ble_register_svc *p_reg);
-
-/** Read/Init callback functions for DIS.
- *
- * Those functions are called on init. if buf is NULL, They must
- * return the value max length.
- */
+int ble_init_service_dis(cfw_service_conn_t * p_service_conn, void *priv);
 
 /**
- * DIS characteristic init (read) functions. They can be overwritten by the
- * application (default implementation will compiled in).
+ * Implements the DIS manufacturer read.
+ *
+ * @param conn Connection
+ * @param attr Attribute
+ * @param buf Buffer to fill for the response (if NULL, the function should only return the length)
+ * @param len Length of the read request (buffer is appropriate)
+ * @param offset Offset of the read request
+ * @return The length of the attribute value if positive otherwise the negative error code
+ *
+ * @note This function has a default implementation which can be overridden by
+ * a local implementation.  Nevertheless it should comply with the GATT function
+ * requirements.
  */
 int on_dis_rd_manufacturer(struct bt_conn *conn, const struct bt_gatt_attr *attr,
 		       void *buf, uint16_t len, uint16_t offset);
 
+/**
+ * Implements the DIS model number read.
+ *
+ * @param conn Connection
+ * @param attr Attribute
+ * @param buf Buffer to fill for the response (if NULL, the function should only return the length)
+ * @param len Length of the read request (buffer is appropriate)
+ * @param offset Offset of the read request
+ * @return The length of the attribute value if positive otherwise the negative error code
+ *
+ * @note This function has a default implementation which can be overridden by
+ * a local implementation.  Nevertheless it should comply with the GATT function
+ * requirements.
+ */
 int on_dis_rd_model(struct bt_conn *conn, const struct bt_gatt_attr *attr,
 		void *buf, uint16_t len, uint16_t offset);
 
+/**
+ * Implements the DIS serial number read.
+ *
+ * @param conn Connection
+ * @param attr Attribute
+ * @param buf Buffer to fill for the response (if NULL, the function should only return the length)
+ * @param len Length of the read request (buffer is appropriate)
+ * @param offset Offset of the read request
+ * @return The length of the attribute value if positive otherwise the negative error code
+ *
+ * @note This function has a default implementation which can be overridden by
+ * a local implementation.  Nevertheless it should comply with the GATT function
+ * requirements.
+ */
 int on_dis_rd_serial(struct bt_conn *conn, const struct bt_gatt_attr *attr,
 		 void *buf, uint16_t len, uint16_t offset);
 
+/**
+ * Implements the DIS hardware revision read.
+ *
+ * @param conn Connection
+ * @param attr Attribute
+ * @param buf Buffer to fill for the response (if NULL, the function should only return the length)
+ * @param len Length of the read request (buffer is appropriate)
+ * @param offset Offset of the read request
+ * @return The length of the attribute value if positive otherwise the negative error code
+ *
+ * @note This function has a default implementation which can be overridden by
+ * a local implementation.  Nevertheless it should comply with the GATT function
+ * requirements.
+ */
 int on_dis_rd_hw_rev(struct bt_conn *conn, const struct bt_gatt_attr *attr,
 		 void *buf, uint16_t len, uint16_t offset);
 
+/**
+ * Implements the DIS firmware revision read.
+ *
+ * @param conn Connection
+ * @param attr Attribute
+ * @param buf Buffer to fill for the response (if NULL, the function should only return the length)
+ * @param len Length of the read request (buffer is appropriate)
+ * @param offset Offset of the read request
+ * @return The length of the attribute value if positive otherwise the negative error code
+ *
+ * @note This function has a default implementation which can be overridden by
+ * a local implementation.  Nevertheless it should comply with the GATT function
+ * requirements.
+ */
 int on_dis_rd_fw_rev(struct bt_conn *conn, const struct bt_gatt_attr *attr,
 		 void *buf, uint16_t len, uint16_t offset);
 
+/**
+ * Implements the DIS software revision read.
+ *
+ * @param conn Connection
+ * @param attr Attribute
+ * @param buf Buffer to fill for the response (if NULL, the function should only return the length)
+ * @param len Length of the read request (buffer is appropriate)
+ * @param offset Offset of the read request
+ * @return The length of the attribute value if positive otherwise the negative error code
+ *
+ * @note This function has a default implementation which can be overridden by
+ * a local implementation.  Nevertheless it should comply with the GATT function
+ * requirements.
+ */
 int on_rd_sw_rev(struct bt_conn *conn, const struct bt_gatt_attr *attr,
 		 void *buf, uint16_t len, uint16_t offset);
 

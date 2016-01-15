@@ -3,19 +3,37 @@ menu "BLE Service"
 config SERVICES_BLE
 	bool "BLE CFW based service APIs"
 	select CFW
+	select BLUETOOTH_PERIPHERAL
 
 config SERVICES_BLE_IMPL
 	bool "BLE CFW base service implementation"
 	select CFW
-	select SERVICES_BLE_CORE
+	select SERVICES_BLE_GAP
+	select SERVICES_BLE_GATTS
 	select BLUETOOTH_PERIPHERAL
+
+config SERVICES_BLE_GAP
+	bool "BLE GAP APIs"
+
+config SERVICES_BLE_GATTS
+	bool "BLE GATT Server APIs"
+
+config SERVICES_BLE_GATTC
+	bool "BLE GATT Client APIs"
+	select BLUETOOTH_GATT_CLIENT
+
+config BLUETOOTH_GATT_CLIENT
+	bool "Zephyr GATT Client implementation"
 
 config BT_GATT_BLE_MAX_SERVICES
 	int "Maximum number BLE GATT services allowed to be registered"
-	default 3
+	default 4
 
 config BLUETOOTH_PERIPHERAL
 	bool "Bluetooth LE Peripheral API impelementation"
+
+config BLUETOOTH_CENTRAL
+	bool "Bluetooth LE Central API impelementation"
 
 config TCMD_BLE
 	bool "BLE test commands"
@@ -56,37 +74,7 @@ config SERVICES_BLE_STORAGE
 config SERVICES_BLE_CENTRAL
 	bool "BLE CFW based central role APIs"
 	depends on SERVICES_BLE
-
-config SERVICES_BLE_CORE
-	bool "BLE core APIs gap & gatt"
-	select SERVICES_BLE_GAP
-	select SERVICES_BLE_GATTS
-	select SERVICES_BLE_GATTC
-
-config SERVICES_BLE_GAP
-	bool "BLE core GAP APIs"
-
-config SERVICES_BLE_GATTS
-	bool "BLE core GATT Server APIs"
-
-config SERVICES_BLE_GATTC
-	bool "BLE core GATT Client APIs"
-
-config SERVICES_BLE_CORE_IMPL
-	bool "BLE core gap & gatt implementation"
-	select SERVICES_BLE_GAP_IMPL
-	select SERVICES_BLE_GATTS_IMPL
-	select SERVICES_BLE_GATTC_IMPL
-	select BLUETOOTH_PERIPHERAL
-
-config SERVICES_BLE_GAP_IMPL
-	bool "BLE core GAP implementation"
-
-config SERVICES_BLE_GATTS_IMPL
-	bool "BLE core GATT Server implementation"
-
-config SERVICES_BLE_GATTC_IMPL
-	bool "BLE core GATT Client implementation"
+	select BLUETOOTH_CENTRAL
 
 menuconfig RPC
 	bool "RPC support"

@@ -157,9 +157,10 @@ Enable BLE:
      "DtmCTB"
 
 ~~~~~~~~
-ble tx_test start|stop <freq> <len> <pattern>
+ble tx_test <operation> <freq> <len> <pattern>
 ~~~~~~~~
 Start BLE dtm tx:
+   - operation: start|stop
    - freq: actual frequency = 2024 + `<freq>` x 2Mhz, `<freq>` < 40
    - len : Payload length
    - pattern: Packet type
@@ -168,9 +169,10 @@ Start BLE dtm tx:
    - Example 2: ble tx_test stop
 
 ~~~~~~~~
-ble rx_test start|stop <freq>
+ble rx_test <operation> <freq>
 ~~~~~~~~
 Start BLE dtm rx:
+   - operation: start|stop
    - freq: 2024 + freq x 2Mhz, freq < 40
    - Example 1: ble rx_test start 20
    - Example 2: ble rx_test stop
@@ -179,39 +181,51 @@ Start BLE dtm rx:
 ble test_set_tx_pwr <dbm>
 ~~~~~~~~
 Set BLE tx power:
-   - dbm: -XYZdBm...+4dBm
+   - dbm: -60dBm...+4dBm
    - Example: BLE test_set_tx_pwr -16
 
 ~~~~~~~~
-ble tx_carrier start|stop <freq>
+ble tx_carrier <operation> <freq>
 ~~~~~~~~
 Start tx carrier test:
+   - operation: start|stop
    - freq: actual frequency = 2024 + `<freq>` x 2Mhz, `<freq>` < 40
    - Example 1: ble tx_carrier start 10
    - Example 2: ble tx_carrier stop
 
 ~~~~~~~~
-ble set_value <s_uuid> <c_uuid> <val> <type>
-~~~~~~~~
-Set battery level:
-   - Example: ble set_val 180f 2a19 64 h
-   - 180f - battery service
-   - 2a19 - uuid characteristic to update
-   - 64   - hexa value of 100% battery level
-   - h    - hexa type for value=64 (use d for decimal)
-
-~~~~~~~~
 ble set_name <name>
 ~~~~~~~~
-Set ble name:
+Set BLE device name:
    - Example: ble set_name TestCTB
    - the name will be used as BLE name for the device
    - the name set with this command is persistent after reboot
 
 ~~~~~~~~
-ble advertise <start|stop> [<advertise_option_bits>]
+ble set_value <conn_ref> <s_uuid> <c_uuid> <val> <base>
 ~~~~~~~~
-Start BLE advertisement:
+Set a characteristic value:
+   - conn_ref - connection reference (can be 0 if disconnected)
+   - s_uuid   - UUID of the service
+   - c_uuid   - UUID of the characteristic
+   - val      - value to set
+   - base     - h|d (h for hexadecimal, d for decimal)
+
+Example: ble set_val 0x40003000 180f 2a19 64 h
+   - 0x40003000 - connection reference (can be 0 if disconnected)
+   - 180f       - UUID of the Battery service
+   - 2a19       - UUID of the Battery level characteristic
+   - 64         - hexa value of 100% battery level
+   - h          - hexa type for value=64 (use d for decimal)
+
+At the present time, the s_uuid and c_uuid are ignored and only the
+battery level characteristic value is set.
+
+~~~~~~~~
+ble advertise <operation> [<advertise_option_bits>] [name]
+~~~~~~~~
+Configure the BLE advertisement:
+   - operation: start|stop
    - Advertise option bits selects the interval and timeout as defined at: @ref BLE_ADV_OPTIONS
    - Bit 0: Slow advertisement interval
    - Bit 1: Ultra fast advertisement interval
@@ -219,6 +233,97 @@ Start BLE advertisement:
    - Bit 3: NO advertisement timeout
    - Bit 4: Non-discoverable advertisement, minimum advertisement data
    - The default option is fast advertisement and default timeout
+   - name: advertised name
+
+~~~~~~~~
+ble key <conn_ref> <pass_key>
+~~~~~~~~
+Return a passkey if required by the bonding:
+   - conn_ref - connection reference
+   - pass_key - six digits key to return
+
+~~~~~~~~
+ble discover <conn_ref> <type> <uuid> [start_handle] [end_handle]
+~~~~~~~~
+Discover the attributes on a connected device:
+   - conn_ref - connection reference
+   - type     - type of the discovery (0 = primary, 1 = secondary, 2 = included, 3 = characteristic, 4 = descriptor)
+   - uuid     - 16-bit UUID to discover
+   - start_handle - optional start attribute handle for the discovery
+   - end_handle - optional end attribute handle for the discovery
+
+Example: ble discover 0xa0004000 0 0x180f
+   - 0xa0004000 is the connection reference displayed in logs when remote device connected
+   - 1 is to retrieve primary service
+   - 0x180f is battery service UUID
+
+~~~~~~~~
+ble write <conn_ref> <handle> <offset> <value>
+~~~~~~~~
+Write an attribute on a connected device:
+   - conn_ref - connection reference
+   - handle   - handle of the attribute to write
+   - offset   - offset at which to write
+   - value    - 32-bit value to write
+
+Example: ble write 0xa0004000 14 0xAA
+   - 0xa0004000 is the connection reference displayed in logs when remote device connected
+   - 14 is characteristic handle
+   - 0xAA is value to write
+
+~~~~~~~~
+ble read <conn_ref> <handle> <offset>
+~~~~~~~~
+Read an attribute on a connected device:
+   - conn_ref - connection reference
+   - handle   - handle of the attribute to read
+   - offset   - offset at which to read
+
+Example: ble read 0xa0004000 14 0
+   - 0xa0004000 is the connection reference displayed in logs when remote device connected
+   - 14 is characteristic handle
+   - 0 is the offset
+
+~~~~~~~~
+ble connect <type> <address>
+~~~~~~~~
+Initiate a connection as central to a remote peripheral:
+   - type    - Address type (0 = public, 1 = random)
+   - address - Address (format = AA BB CC DD EE FF)
+
+Example: ble connect 0 AA BB CC DD EE FF
+
+~~~~~~~~
+ble disconnect <conn_ref>
+~~~~~~~~
+Disconnect from a connected device:
+   - conn_ref - connection reference
+
+~~~~~~~~
+ble clear
+~~~~~~~~
+Clear the BLE bonding information
+
+~~~~~~~~
+ble subscribe <conn_ref> <ccc_handle> <value> <value_handle>
+~~~~~~~~
+Subscribe to a characteristic on a connected device:
+   - conn_ref     - connection reference
+   - ccc_handle   - handle of the Client Characteritic Configuration attribute
+   - value        - value to write
+   - value_handle - handle of the Characteritic Value attribute
+
+Example: ble subscribe 0xa0004000 3 1 2
+
+~~~~~~~~
+ble unsubscribe <conn_ref> <subscribe_ref>
+~~~~~~~~
+Unsubscribe from a characteristic on a connected device:
+   - conn_ref      - connection reference
+   - subscribe_ref - subscription reference returned at subscribe
+
+Example: ble unsubscribe 0xa0004000 0xa0001209
+
 
 **CFW Message Injection:**
 
@@ -275,14 +380,14 @@ Get battery charge cycle
 ~~~~~~~~
 ble info
 ~~~~~~~~
-Get ble related information.
+Get BLE related information.
 Currently supported infos:
    - BDA and current name
 
 ~~~~~~~~
 ble version
 ~~~~~~~~
-Get ble version
+Get BLE controller version.
 
 **SPI:**
 

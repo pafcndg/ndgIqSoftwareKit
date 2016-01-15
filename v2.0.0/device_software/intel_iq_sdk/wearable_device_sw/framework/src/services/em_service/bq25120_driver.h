@@ -28,9 +28,30 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef BLE_CORE_INTERFACE_H
-#define BLE_CORE_INTERFACE_H
+#ifndef CHARGER_DRIVER_H_
+#define CHARGER_DRIVER_H_
+#include "os/os_types.h"
 
-void ble_core_reset(void);
+/* Define bit mask */
+#define CH_BIT_MASK_32		(uint32_t)(0x1)
 
-#endif // BLE_CORE_INTERFACE_H
+/* Define input of SS GPIO on ARC */
+/* GPIO_SS[7] LOW = battery in charge, high impedance when charge is finished */
+#define SS_GPIO_INT		(uint8_t)(7)
+
+/* Define output of GPIO on AON */
+/* GPIO[1] LOW = charger enable / HIGH = charger disable*/
+#define GPIO_SOC_CD		(uint8_t)(1)
+
+/**@brief Function to initialize charger driver.
+ * @param[in]  cb callback called when init done
+ * @return   true if function success, false if function failed.
+ */
+bool ch_init(T_QUEUE parent_queue,void* call_back);
+
+/**@brief Function to write CD GPIO state.
+ * @param[in] enable charger: 0, disable charger: 1
+ */
+void ch_enable(uint8_t state);
+
+#endif /* CHARGER_DRIVER_H_ */

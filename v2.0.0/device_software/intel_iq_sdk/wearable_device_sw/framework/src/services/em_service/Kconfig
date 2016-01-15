@@ -28,6 +28,26 @@ config SERVICES_QUARK_SE_CHARGER
 	bool "Charging Service"
 	select SERVICES_QUARK_SE_GPIO
 
+choice
+	prompt "Charger"
+	default BQ25101H
+	depends on SERVICES_QUARK_SE_CHARGER
+	help
+	Pick the Charger driver according to your hardware/battery specification.
+
+config QUARK_CHARGER
+	bool "Internal charger driver for BQ25101H"
+	help
+	Enable SoC charger driver.
+
+config BQ25120
+	bool "External charger driver for BQ25120"
+	select INTEL_QRK_I2C
+	help
+	Enable external charger driver.
+
+endchoice
+
 config HAS_CHARGER
 	bool
 
@@ -36,12 +56,6 @@ config CHARGER
 	default y if HAS_CHARGER
 	help
 	Enable the Charger
-
-config QUARK_CHARGER
-	bool "Quark SE SOC Charger driver"
-	depends on SERVICES_QUARK_SE_CHARGER
-	help
-	Enable SoC charger driver.
 
 config HAS_WC_CHARGER
 	bool

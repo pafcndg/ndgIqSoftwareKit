@@ -124,10 +124,10 @@ static void _on_itm_subscribed(uint8_t con_id, uint8_t topic_ix)
 	device_connected = true;
 	/* We publish all stored activities */
 	ll_storage_service_peek(ll_storage_service_conn,
-							sizeof(intel_Activity),
-							0,
-							storage,
-							NULL);
+				sizeof(intel_Activity),
+				0,
+				storage,
+				NULL);
 }
 
 static void _on_itm_disconnect(uint8_t con_id)
@@ -135,7 +135,7 @@ static void _on_itm_disconnect(uint8_t con_id)
 	device_connected = false;
 }
 
-void _on_itm_unsubscribe_req(uint8_t con_id, uint8_t topic_ix)
+static void _on_itm_unsubscribe_req(uint8_t con_id, uint8_t topic_ix)
 {
 	device_connected = false;
 }
@@ -152,6 +152,8 @@ static void _on_itm_request(uint8_t con_id, uint8_t req_id, uint8_t topic_ix, co
 			uint8_t proto_buffer[intel_Activity_size];
 			intel_Activity proto = (intel_Activity)intel_Activity_init_default;
 			proto = cur_activity;
+			proto.timestamp_begin.datetime = uptime_to_epoch(proto.timestamp_begin.datetime);
+			proto.timestamp_end.datetime = uptime_to_epoch(proto.timestamp_end.datetime);
 			pb_ostream_t proto_ostream = pb_ostream_from_buffer(proto_buffer, sizeof(proto_buffer));
 			bool proto_status = pb_encode(&proto_ostream, intel_Activity_fields, &proto);
 			size_t proto_length = proto_ostream.bytes_written;
@@ -251,20 +253,29 @@ static int publish_activity(intel_Activity *activity)
 	return err;
 }
 
-static void publish_or_store_current_activity()
+static void update_date_and_publish_or_store_current_activity()
 {
+	uint32_t timestamp_begin;
+	uint32_t timestamp_end;
 	int err = -1;
+
+	timestamp_begin = cur_activity.timestamp_begin.datetime;
+	timestamp_end = cur_activity.timestamp_end.datetime;
+	/* Set timestamp to epoch date */
+	cur_activity.timestamp_begin.datetime = uptime_to_epoch(cur_activity.timestamp_begin.datetime);
+	cur_activity.timestamp_end.datetime = uptime_to_epoch(cur_activity.timestamp_end.datetime);
+
 	/* If a device is connected, we publish the report */
-	if(device_connected) {
+	if (device_connected) {
 		err = publish_activity(&cur_activity);
 	}
-	/* If there is no device connected or an error on the publish, we store the report */
-	if (err <= 0) {
+	if ((cur_activity.activity_status != intel_Activity_activityStatus_STARTED) &&
+	    (err <= 0)) {
 		ll_storage_service_push(ll_storage_service_conn,
-		                        (uint8_t *)&cur_activity,
-		                        sizeof(intel_Activity),
-		                        storage,
-		                        NULL);
+					(uint8_t *)&cur_activity,
+					sizeof(intel_Activity),
+					storage,
+					NULL);
 		if (device_connected) {
 			/* We also trigger a peek to retry */
 			ll_storage_service_peek(ll_storage_service_conn,
@@ -274,6 +285,9 @@ static void publish_or_store_current_activity()
 			                        NULL);
 		}
 	}
+
+	cur_activity.timestamp_begin.datetime = timestamp_begin;
+	cur_activity.timestamp_end.datetime = timestamp_end;
 }
 
 static void body_iq_stepcounter_cb(uint32_t steps, uint32_t activity_type, uint32_t timestamp)
@@ -286,7 +300,7 @@ static void body_iq_stepcounter_cb(uint32_t steps, uint32_t activity_type, uint3
 		cur_activity.activity_status = intel_Activity_activityStatus_FINISHED;
 		step_count = steps;
 		/* Dispose of that activity */
-		publish_or_store_current_activity();
+		update_date_and_publish_or_store_current_activity();
 		cur_activity = (intel_Activity)intel_Activity_init_default;
 		registered = true;
 	}
@@ -297,7 +311,7 @@ static void body_iq_stepcounter_cb(uint32_t steps, uint32_t activity_type, uint3
 			  (activity_type == BODY_IQ_ACTIVITY_RUNNING) ||
 			  (activity_type == BODY_IQ_ACTIVITY_BIKING))) {
 		cur_activity.timestamp_begin.has_datetime = true;
-		cur_activity.timestamp_begin.datetime = uptime_to_epoch(timestamp);
+		cur_activity.timestamp_begin.datetime = timestamp;
 		cur_activity.timestamp_end.has_datetime = true;
 		cur_activity.timestamp_end.datetime =
 			cur_activity.timestamp_begin.datetime;
@@ -305,9 +319,8 @@ static void body_iq_stepcounter_cb(uint32_t steps, uint32_t activity_type, uint3
 		cur_activity.activity_status =
 			intel_Activity_activityStatus_STARTED;
 		cur_activity.type = svc_to_bodyIQ_type_proto[activity_type];
-		if(device_connected) { /* If a device is connected, we publish the report */
-			publish_activity(&cur_activity);
-		}
+		/* Dispose of that activity */
+		update_date_and_publish_or_store_current_activity();
 		cur_activity.activity_status = intel_Activity_activityStatus_ONGOING;
 		registered = false;
 	}
@@ -319,19 +332,19 @@ static void body_iq_stepcounter_cb(uint32_t steps, uint32_t activity_type, uint3
 			cur_activity.walking_activity.has_step_count = true;
 			cur_activity.walking_activity.step_count = steps - step_count;
 			cur_activity.timestamp_end.has_datetime = true;
-			cur_activity.timestamp_end.datetime = uptime_to_epoch(timestamp);
+			cur_activity.timestamp_end.datetime = timestamp;
 		break;
 		case BODY_IQ_ACTIVITY_RUNNING:
 			cur_activity.has_running_activity = true;
 			cur_activity.running_activity.has_step_count = true;
 			cur_activity.running_activity.step_count = steps - step_count;
 			cur_activity.timestamp_end.has_datetime = true;
-			cur_activity.timestamp_end.datetime = uptime_to_epoch(timestamp);
+			cur_activity.timestamp_end.datetime = timestamp;
 		break;
 		case BODY_IQ_ACTIVITY_BIKING:
 			cur_activity.has_biking_activity = true;
 			cur_activity.timestamp_end.has_datetime = true;
-			cur_activity.timestamp_end.datetime = uptime_to_epoch(timestamp);
+			cur_activity.timestamp_end.datetime = timestamp;
 		break;
 		case BODY_IQ_NO_ACTIVITY:
 		case BODY_IQ_ACTIVITY_SLEEPING:
@@ -345,7 +358,7 @@ static void body_iq_timer_callback(void *data) {
 
 	if (cur_activity.activity_status == intel_Activity_activityStatus_ONGOING) {
 		/* Dispose of that activity */
-		publish_or_store_current_activity();
+		update_date_and_publish_or_store_current_activity();
 
 		cur_activity.timestamp_begin.datetime = cur_activity.timestamp_end.datetime;
 		if (cur_activity.has_walking_activity) {

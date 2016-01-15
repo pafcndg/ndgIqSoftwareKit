@@ -3,6 +3,9 @@
 
 #include "rpc.h"
 
+// panic
+#include "infra/panic.h"
+
 /* Include the functions offered */
 #if defined(CONFIG_QUARK_SE_BLE_CORE)
 #include "rpc_functions_to_ble_core.h"

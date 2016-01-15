@@ -29,7 +29,7 @@
  */
 
 #include "ble_service_ispp.h"
-#include "gatt_int.h"
+#include "gatt_internal.h"
 
 #include <string.h>
 
@@ -38,6 +38,10 @@
 #include "ble_service_utils.h"
 #include "infra/log.h"
 #include "util/misc.h"
+
+// for bt_conn
+#include "zephyr/bluetooth/bluetooth.h"
+#include "conn_internal.h"
 
 /* Dummy descriptor */
 #define CONFIG_BLE_ADD_TEST_DESCRIPTOR 1
@@ -73,10 +77,6 @@ static const struct bt_uuid ispp_data_uuid = {
 
 #define ctrl_ccc_cfg_changed NULL
 
-static const struct bt_gatt_cud ctrl_cud = {
-		.string = "control",
-};
-
 static int on_ctrl_read(struct bt_conn *conn, const struct bt_gatt_attr *attr,
 			void *buf, uint16_t len, uint16_t offset)
 {
@@ -95,14 +95,10 @@ static int on_ctrl_write(struct bt_conn *conn, const struct bt_gatt_attr *attr,
 #define data_ccc_cfg NULL
 #define data_ccc_cfg_changed NULL
 
-static const struct bt_gatt_cud data_cud = {
-	.string = "data",
-};
-
 static int on_data_read(struct bt_conn *conn, const struct bt_gatt_attr *attr,
 			void *buf, uint16_t len, uint16_t offset)
 {
-	/* Char is only writtable, indicate the maximum length */
+	/* Char is only writable, indicate the maximum length */
 	return BLE_ISPP_MAX_CHAR_LEN;
 }
 
@@ -114,11 +110,6 @@ static int on_data_write(struct bt_conn *conn, const struct bt_gatt_attr *attr,
 }
 
 #ifdef CONFIG_BLE_ADD_TEST_DESCRIPTOR
-static const struct bt_uuid16 val_range_uuid = {
-	.type = BT_UUID_16,
-	.u16 = 0x2906, /* valid range */
-};
-
 static const struct val_range {
 	uint8_t min;
 	uint8_t max;
@@ -148,15 +139,15 @@ static const uint8_t dummy_data[BLE_ISPP_MAX_CHAR_LEN];
 
 /* ISPP Service Declaration */
 static const struct bt_gatt_attr ispp_attrs[] = {
-	BT_GATT_PRIMARY_SERVICE(&ispp_svc_uuid),
+	BT_GATT_PRIMARY_SERVICE((void*)&ispp_svc_uuid),
 	BT_GATT_CHARACTERISTIC(&ispp_ctrl_uuid, BT_GATT_CHRC_WRITE | BT_GATT_CHRC_WRITE_WITHOUT_RESP
 			| BT_GATT_CHRC_NOTIFY),
 	BT_GATT_DESCRIPTOR(&ispp_ctrl_uuid, BT_GATT_PERM_WRITE | BT_GATT_PERM_WRITE_ENCRYPT,
 			on_ctrl_read, on_ctrl_write, (void*)dummy_data),
 	BT_GATT_CCC(ctrl_ccc_cfg, ctrl_ccc_cfg_changed),
-	BT_GATT_CUD(&ctrl_cud, BT_GATT_PERM_READ),
+	BT_GATT_CUD("control", BT_GATT_PERM_READ),
 #ifdef CONFIG_BLE_ADD_TEST_DESCRIPTOR
-	BT_GATT_DESCRIPTOR(&val_range_uuid, BT_GATT_PERM_READ, on_range_read,
+	BT_GATT_DESCRIPTOR(BT_UUID_DECLARE_16(0x2906), BT_GATT_PERM_READ, on_range_read,
 			   NULL, (void *)&range),
 #endif
 	BT_GATT_CHARACTERISTIC(&ispp_data_uuid, BT_GATT_CHRC_WRITE_WITHOUT_RESP
@@ -164,72 +155,55 @@ static const struct bt_gatt_attr ispp_attrs[] = {
 	BT_GATT_DESCRIPTOR(&ispp_data_uuid, BT_GATT_PERM_WRITE | BT_GATT_PERM_WRITE_ENCRYPT,
 			on_data_read, on_data_write, NULL),
 	BT_GATT_CCC(data_ccc_cfg, data_ccc_cfg_changed),
-	BT_GATT_CUD(&data_cud, BT_GATT_PERM_READ),
+	BT_GATT_CUD("data", BT_GATT_PERM_READ),
 };
 
-static void ble_ispp_add_service_complete(struct ble_init_svc_req_msg *req);
+static void on_connected(struct bt_conn *conn, uint8_t err)
+{
+	ispp_cb.conn = conn;
+}
+
+static void on_disconnected(struct bt_conn *conn, uint8_t reason)
+{
+	ispp_cb.conn = NULL;
+	ble_ispp_on_disconnect();
+}
+
+static struct bt_conn_cb conn_callbacks = {
+	.connected = on_connected,
+	.disconnected = on_disconnected,
+};
 
 /**
  * Initializes BLE ISPP and adds the service.
  */
-static int handle_ble_init_service_ispp(struct ble_init_svc_req_msg * msg,
+static int handle_ble_init_service_ispp(struct ble_init_svc_req * msg,
 				struct _ble_service_cb * p_cb)
 {
-	if (_ble_cb.svc_init_msg)
-		return E_OS_ERR_BUSY;
-	_ble_cb.svc_init_msg = msg;
+	struct ble_init_service_rsp *resp;
+	int status;
 
-	return bt_gatt_register((struct bt_gatt_attr *)ispp_attrs,
+	status = bt_gatt_register((struct bt_gatt_attr *)ispp_attrs,
 				ARRAY_SIZE(ispp_attrs));
+
+	resp = ble_alloc_init_service_rsp(msg);
+	if (status) {
+		resp->status = BLE_STATUS_ERROR;
+	} else {
+		bt_conn_cb_register(&conn_callbacks);
+	}
+
+	return cfw_send_message(resp);
 }
 
-int ble_init_service_ispp(cfw_service_conn_t *p_service_conn,
-		struct _ble_register_svc *p_reg)
+int ble_init_service_ispp(cfw_service_conn_t *p_service_conn, void *priv)
 {
-	CFW_ALLOC_FOR_SVC(struct ble_init_svc_req_msg, msg, p_service_conn,
-			  MSG_ID_BLE_INIT_SVC_REQ, 0, p_reg);
+	CFW_ALLOC_FOR_SVC(struct ble_init_svc_req, msg, p_service_conn,
+			  MSG_ID_BLE_INIT_SVC_REQ, 0, priv);
 
 	msg->init_svc = handle_ble_init_service_ispp;
-	msg->init_svc_complete = ble_ispp_add_service_complete;
 
 	return cfw_send_message(msg);
-}
-
-static void connect_state_changed(uint8_t status_evt, uint16_t conn_handle)
-{
-	switch (status_evt) {
-	case BT_GAP_CONNECT_EVT:
-		ispp_cb.conn_h = conn_handle;
-		break;
-	case BT_GAP_DISCONNECT_EVT:
-		ispp_cb.conn_h = BLE_SVC_GAP_HANDLE_INVALID;
-		ble_ispp_on_disconnect();
-		break;
-	default:
-		break;
-	}
-}
-
-/**
- * Invoked when adding data characteristic completes.
- *
- * Registers ISPP next characteristics, updates characteristic count and
- * updates uuid (16bit) of control characteristic in ble_init_service_rsp.
- * This is the last one.
- *
- * @param req
- *
- */
-static void ble_ispp_add_service_complete(struct ble_init_svc_req_msg *req)
-{
-	struct ble_init_service_rsp * resp = ble_alloc_init_service_rsp(req);
-
-	/* free initial request msg */
-	cfw_msg_free(&req->header);
-
-	ble_service_register_for_conn_st(connect_state_changed);
-
-	cfw_send_message(resp);
 }
 
 uint16_t ble_ispp_ctrl_handle(void)

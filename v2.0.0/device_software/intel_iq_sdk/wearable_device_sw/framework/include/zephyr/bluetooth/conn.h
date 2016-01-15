@@ -23,10 +23,46 @@
 #if defined(CONFIG_BLUETOOTH_CENTRAL) || defined(CONFIG_BLUETOOTH_PERIPHERAL)
 #include <stdbool.h>
 
+/* LCARON */
 #include "zephyr/bluetooth/hci.h"
 
 /** Opaque type representing a connection to a remote device */
 struct bt_conn;
+
+/** Forward declaration for directed advertisement (slave connection) */
+struct bt_le_adv_param;
+
+/** Connection parameters for LE connections */
+struct bt_le_conn_param {
+	uint16_t interval_min;
+	uint16_t interval_max;
+	uint16_t latency;
+	uint16_t timeout;
+};
+
+/** Helper to declare connection parameters inline
+  *
+  * @param int_min  Minimum Connection Interval (N * 1.25 ms)
+  * @param int_max  Maximum Connection Interval (N * 1.25 ms)
+  * @param lat      Connection Latency
+  * @param timeout  Supervision Timeout (N * 10 ms)
+  */
+#define BT_LE_CONN_PARAM(int_min, int_max, lat, to) \
+	(&(struct bt_le_conn_param) { \
+		.interval_min = (int_min), \
+		.interval_max = (int_max), \
+		.latency = (lat), \
+		.timeout = (to), \
+	 })
+
+/** Default LE connection parameters:
+  *   Connection Interval: 30-50 ms
+  *   Latency: 0
+  *   Timeout: 4 s
+  */
+#define BT_LE_CONN_PARAM_DEFAULT BT_LE_CONN_PARAM(BT_GAP_INIT_CONN_INT_MIN, \
+						  BT_GAP_INIT_CONN_INT_MAX, \
+						  0, 400)
 
 /** @brief Increment a connection's reference count.
  *
@@ -66,6 +102,49 @@ struct bt_conn *bt_conn_lookup_addr_le(const bt_addr_le_t *peer);
  */
 const bt_addr_le_t *bt_conn_get_dst(const struct bt_conn *conn);
 
+/** Connection Type */
+enum {
+	BT_CONN_TYPE_LE, /** LE Connection Type */
+#if defined(CONFIG_BLUETOOTH_BREDR)
+	BT_CONN_TYPE_BR, /** BR/EDR Connection Type */
+#endif
+};
+
+/** LE Connection Info Structure */
+struct bt_conn_le_info {
+	const bt_addr_le_t *src; /** Source Address */
+	const bt_addr_le_t *dst; /** Destination Address */
+};
+
+#if defined(CONFIG_BLUETOOTH_BREDR)
+/** BR/EDR Connection Info Structure */
+struct bt_conn_br_info {
+	const bt_addr_t *dst; /** Destination BR/EDR address */
+};
+#endif
+
+/** Connection Info Structure */
+struct bt_conn_info {
+	/** Connection Type */
+	uint8_t type;
+	union {
+		/** LE Connection specific Info */
+		struct bt_conn_le_info le;
+#if defined(CONFIG_BLUETOOTH_BREDR)
+		struct bt_conn_br_info br;
+#endif
+	};
+};
+
+/** @brief Get connection info
+ *
+ *  @param conn Connection object.
+ *  @param info Connection info object.
+ *
+ *  @return Zero on success or (negative) error code on failure.
+ */
+int bt_conn_get_info(const struct bt_conn *conn, struct bt_conn_info *info);
+
 /** @brief Disconnect from a remote device or cancel pending connection.
  *
  *  Disconnect an active connection with the specified reason code or cancel
@@ -78,17 +157,39 @@ const bt_addr_le_t *bt_conn_get_dst(const struct bt_conn *conn);
  */
 int bt_conn_disconnect(struct bt_conn *conn, uint8_t reason);
 
+/** @brief Initiate a directed advertisement (remote initiated link).
+ *
+ *  Allows to an initiate new LE link from the remote peer using its address.
+ *  type must be either BT_LE_ADV_DIRECT_IND or BT_LE_ADV_DIRECT_IND_LOW_DUTY!
+ *
+ *  This start a directed advertisement. In case of high duty this will result
+ *  in a callback with connected() with a new connection or with an error.
+ *
+ *  The advertisement maybe cancelled with bt_conn_disconnect().
+ *
+ *  Returns a new reference that the the caller is responsible for managing.
+ *
+ *  @param peer  Remote address.
+ *  @param param Direct advertisement parameters.
+ *
+ *  @return Valid connection object on success or NULL otherwise.
+ */
+struct bt_conn *bt_conn_create_slave_le(const bt_addr_le_t *peer,
+					const struct bt_le_adv_param *param);
+
 #if defined(CONFIG_BLUETOOTH_CENTRAL)
 /** @brief Initiate an LE connection to a remote device.
  *
  *  Allows initiate new LE link to remote peer using its address.
  *  Returns a new reference that the the caller is responsible for managing.
  *
- *  @param peer Remote address.
+ *  @param peer  Remote address.
+ *  @param param Initial connection parameters.
  *
  *  @return Valid connection object on success or NULL otherwise.
  */
-struct bt_conn *bt_conn_create_le(const bt_addr_le_t *peer);
+struct bt_conn *bt_conn_create_le(const bt_addr_le_t *peer,
+				  const struct bt_le_conn_param *param);
 #endif
 
 /** Security level. */
@@ -123,12 +224,23 @@ typedef enum {
  *  @return 0 on success or negative error
  */
 int bt_conn_security(struct bt_conn *conn, bt_security_t sec);
-#endif
+
+/** @brief Get encryption key size.
+ *
+ *  This function gets encryption key size.
+ *  If there is no security (encryption) enabled 0 will be returned.
+ *
+ *  @param conn Existing connection object.
+ *
+ *  @return Encryption key size.
+ */
+uint8_t bt_conn_enc_key_size(struct bt_conn *conn);
+#endif /* CONFIG_BLUETOOTH_SMP */
 
 /** Connection callback structure */
 struct bt_conn_cb {
-	void (*connected)(struct bt_conn *conn);
-	void (*disconnected)(struct bt_conn *conn);
+	void (*connected)(struct bt_conn *conn, uint8_t err);
+	void (*disconnected)(struct bt_conn *conn, uint8_t reason);
 #if defined(CONFIG_BLUETOOTH_SMP)
 	void (*identity_resolved)(struct bt_conn *conn,
 				  const bt_addr_le_t *rpa,
@@ -146,21 +258,5 @@ struct bt_conn_cb {
  */
 void bt_conn_cb_register(struct bt_conn_cb *cb);
 
-#if defined(CONFIG_BLUETOOTH_CENTRAL)
-/** @brief Automatically connect to remote device if it's in range.
- *
- *  This function enables/disables automatic connection initiation.
- *  Everytime the device looses the connection with peer, this connection
- *  will be re-established if connectable advertisement from peer is received.
- *
- *  @param conn Existing connection object.
- *  @param auto_conn boolean value. If true, auto connect is enabled,
- *  if false, auto connect is disabled.
- *
- *  @return none
- */
-void bt_conn_set_auto_conn(struct bt_conn *conn, bool auto_conn);
-
-#endif /* CONFIG_BLUETOOTH_CENTRAL */
 #endif /* CONFIG_BLUETOOTH_CENTRAL || CONFIG_BLUETOOTH_PERIPHERAL */
 #endif /* __BT_CONN_H */

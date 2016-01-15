@@ -42,6 +42,9 @@
  */
 #define BLE_MAX_DEVICE_NAME 19 /**< Max BLE device name length 19 + NULL, spec size: 248 */
 #define BLE_MAX_ADV_SIZE     31
+
+#define BLE_GATT_MTU_SIZE 23 /**< Default MTU size */
+
 /** Manufacturer IDs */
 #define INTEL_MANUFACTURER 0x0002
 
@@ -162,8 +165,6 @@
 #define BLE_CP_CONTROL_POINT                    0x2A66
 
 /* HCI status (error) codes as per BT spec */
-#define HCI_REMOTE_USER_TERMINATED_CONNECTION           0x13
-#define HCI_REMOTE_DEV_TERMINATION_DUE_TO_LOW_RESOURCES 0x14
 #define HCI_REMOTE_DEV_TERMINATION_DUE_TO_POWER_OFF     0x15
 #define HCI_LOCAL_HOST_TERMINATED_CONNECTION            0x16
 

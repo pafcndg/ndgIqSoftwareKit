@@ -45,5 +45,6 @@ struct signature_header {
 };
 
 int secure_boot(uint32_t address);
+int secure_update(struct signature_header *sig, uint8_t *c_hash);
 
 #endif

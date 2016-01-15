@@ -23,119 +23,131 @@
 /** @def BBT_UUID_GAP
  *  @brief Generic Access
  */
-#define BT_UUID_GAP				0x1800
+#define BT_UUID_GAP				BT_UUID_DECLARE_16(0x1800)
 /** @def BBT_UUID_GATT
  *  @brief Generic Attribute
  */
-#define BT_UUID_GATT				0x1801
+#define BT_UUID_GATT				BT_UUID_DECLARE_16(0x1801)
 /** @def BBT_UUID_CTS
  *  @brief Current Time Service
  */
-#define BT_UUID_CTS				0x1805
+#define BT_UUID_CTS				BT_UUID_DECLARE_16(0x1805)
 /** @def BBT_UUID_DIS
  *  @brief Device Information Service
  */
-#define BT_UUID_DIS				0x180a
+#define BT_UUID_DIS				BT_UUID_DECLARE_16(0x180a)
 /** @def BBT_UUID_HRS
  *  @brief Heart Rate Service
  */
-#define BT_UUID_HRS				0x180d
+#define BT_UUID_HRS				BT_UUID_DECLARE_16(0x180d)
 /** @def BBT_UUID_BAS
  *  @brief Battery Service
  */
-#define BT_UUID_BAS				0x180f
+#define BT_UUID_BAS				BT_UUID_DECLARE_16(0x180f)
+/** @def BT_UUID_IPSP
+ *  @brief IP Support Service
+ */
+#define BT_UUID_IPSS				BT_UUID_DECLARE_16(0x1820)
 /** @def BT_UUID_GATT_PRIMARY
  *  @brief GATT Primary Service
  */
-#define BT_UUID_GATT_PRIMARY			0x2800
+#define BT_UUID_GATT_PRIMARY			BT_UUID_DECLARE_16(0x2800)
 /** @def BT_UUID_GATT_SECONDARY
  *  @brief GATT Secondary Service
  */
-#define BT_UUID_GATT_SECONDARY			0x2801
+#define BT_UUID_GATT_SECONDARY			BT_UUID_DECLARE_16(0x2801)
 /** @def BT_UUID_GATT_INCLUDE
  *  @brief GATT Include Service
  */
-#define BT_UUID_GATT_INCLUDE			0x2802
+#define BT_UUID_GATT_INCLUDE			BT_UUID_DECLARE_16(0x2802)
 /** @def BT_UUID_GATT_CHRC
  *  @brief GATT Characteristic
  */
-#define BT_UUID_GATT_CHRC			0x2803
+#define BT_UUID_GATT_CHRC			BT_UUID_DECLARE_16(0x2803)
 /** @def BT_UUID_GATT_CEP
  *  @brief GATT Characteristic Extended Properties
  */
-#define BT_UUID_GATT_CEP			0x2900
+#define BT_UUID_GATT_CEP			BT_UUID_DECLARE_16(0x2900)
 /** @def BT_UUID_GATT_CUD
  *  @brief GATT Characteristic User Description
  */
-#define BT_UUID_GATT_CUD			0x2901
+#define BT_UUID_GATT_CUD			BT_UUID_DECLARE_16(0x2901)
 /** @def BT_UUID_GATT_CCC
  *  @brief GATT Client Characteristic Configuration
  */
-#define BT_UUID_GATT_CCC			0x2902
-/** @def BT_UUID_GATT_PF
- *  @brief GATT Presentation Format descriptor
+#define BT_UUID_GATT_CCC			BT_UUID_DECLARE_16(0x2902)
+/** @def BT_UUID_GATT_SCC
+ *  @brief GATT Server Characteristic Configuration
  */
-#define BT_UUID_GATT_PF				0x2903
+#define BT_UUID_GATT_SCC			BT_UUID_DECLARE_16(0x2903)
+/** @def BT_UUID_GATT_CPF
+ *  @brief GATT Characteristic Presentation Format
+ */
+#define BT_UUID_GATT_CPF			BT_UUID_DECLARE_16(0x2904)
 /** @def BT_UUID_GAP_DEVICE_NAME
  *  @brief GAP Characteristic Device Name
  */
-#define BT_UUID_GAP_DEVICE_NAME			0x2a00
+#define BT_UUID_GAP_DEVICE_NAME			BT_UUID_DECLARE_16(0x2a00)
 /** @def BT_UUID_GAP_APPEARANCE
  *  @brief GAP Characteristic Appearance
  */
-#define BT_UUID_GAP_APPEARANCE			0x2a01
+#define BT_UUID_GAP_APPEARANCE			BT_UUID_DECLARE_16(0x2a01)
+/** @def BT_UUID_GAP_PPCP
+ *  @brief GAP Characteristic Peripheral Preferred Connection Parameters
+ */
+#define BT_UUID_GAP_PPCP			BT_UUID_DECLARE_16(0x2a04)
 /** @def BT_UUID_BAS_BATTERY_LEVEL
  *  @brief BAS Characteristic Battery Level
  */
-#define BT_UUID_BAS_BATTERY_LEVEL		0x2a19
+#define BT_UUID_BAS_BATTERY_LEVEL		BT_UUID_DECLARE_16(0x2a19)
 /** @def BT_UUID_DIS_SYSTEM_ID
  *  @brief DIS Characteristic System ID
  */
-#define BT_UUID_DIS_SYSTEM_ID			0x2a23
-/** @def BT_UUID_DIS_MODEL_NUMBER_STRING
+#define BT_UUID_DIS_SYSTEM_ID			BT_UUID_DECLARE_16(0x2a23)
+/** @def BT_UUID_DIS_MODEL_NUMBER
  *  @brief DIS Characteristic Model Number String
  */
-#define BT_UUID_DIS_MODEL_NUMBER_STRING		0x2a24
-/** @def BT_UUID_DIS_SERIAL_NUMBER_STRING
+#define BT_UUID_DIS_MODEL_NUMBER		BT_UUID_DECLARE_16(0x2a24)
+/** @def BT_UUID_DIS_SERIAL_NUMBER
  *  @brief DIS Characteristic Serial Number String
  */
-#define BT_UUID_DIS_SERIAL_NUMBER_STRING	0x2a25
-/** @def BT_UUID_DIS_FIRMWARE_REVISION_STRING
+#define BT_UUID_DIS_SERIAL_NUMBER		BT_UUID_DECLARE_16(0x2a25)
+/** @def BT_UUID_DIS_FIRMWARE_REVISION
  *  @brief DIS Characteristic Firmware Revision String
  */
-#define BT_UUID_DIS_FIRMWARE_REVISION_STRING	0x2a26
-/** @def BT_UUID_DIS_HARDWARE_REVISION_STRING
+#define BT_UUID_DIS_FIRMWARE_REVISION		BT_UUID_DECLARE_16(0x2a26)
+/** @def BT_UUID_DIS_HARDWARE_REVISION
  *  @brief DIS Characteristic Hardware Revision String
  */
-#define BT_UUID_DIS_HARDWARE_REVISION_STRING	0x2a27
-/** @def BT_UUID_DIS_SOFTWARE_REVISION_STRING
+#define BT_UUID_DIS_HARDWARE_REVISION		BT_UUID_DECLARE_16(0x2a27)
+/** @def BT_UUID_DIS_SOFTWARE_REVISION
  *  @brief DIS Characteristic Software Revision String
  */
-#define BT_UUID_DIS_SOFTWARE_REVISION_STRING	0x2a28
-/** @def BT_UUID_DIS_MANUFACTURER_NAME_STRING
+#define BT_UUID_DIS_SOFTWARE_REVISION		BT_UUID_DECLARE_16(0x2a28)
+/** @def BT_UUID_DIS_MANUFACTURER_NAME
  *  @brief DIS Characteristic Manufacturer Name String
  */
-#define BT_UUID_DIS_MANUFACTURER_NAME_STRING	0x2a29
+#define BT_UUID_DIS_MANUFACTURER_NAME		BT_UUID_DECLARE_16(0x2a29)
 /** @def BT_UUID_DIS_PNP_ID
  *  @brief DIS Characteristic PnP ID
  */
-#define BT_UUID_DIS_PNP_ID			0x2a50
+#define BT_UUID_DIS_PNP_ID			BT_UUID_DECLARE_16(0x2a50)
 /** @def BT_UUID_CTS_CURRENT_TIME
  *  @brief CTS Characteristic Current Time
  */
-#define BT_UUID_CTS_CURRENT_TIME		0x2a2b
+#define BT_UUID_CTS_CURRENT_TIME		BT_UUID_DECLARE_16(0x2a2b)
 /** @def BT_UUID_HR_MEASUREMENT
  *  @brief HRS Characteristic Measurement Interval
  */
-#define BT_UUID_HRS_MEASUREMENT			0x2a37
+#define BT_UUID_HRS_MEASUREMENT			BT_UUID_DECLARE_16(0x2a37)
 /** @def BT_UUID_HRS_BODY_SENSOR
  *  @brief HRS Characteristic Body Sensor Location
  */
-#define BT_UUID_HRS_BODY_SENSOR			0x2a38
+#define BT_UUID_HRS_BODY_SENSOR			BT_UUID_DECLARE_16(0x2a38)
 /** @def BT_UUID_HR_CONTROL_POINT
  *  @brief HRS Characteristic Control Point
  */
-#define BT_UUID_HRS_CONTROL_POINT		0x2a39
+#define BT_UUID_HRS_CONTROL_POINT		BT_UUID_DECLARE_16(0x2a39)
 
 /** @brief Bluetooth UUID types */
 enum bt_uuid_type {
@@ -143,7 +155,24 @@ enum bt_uuid_type {
 	BT_UUID_128,
 };
 
-/** @brief Bluetooth UUID structure (18 bytes mem use) */
+#define BT_UUID_DECLARE_16(value)					\
+	((struct bt_uuid *) (&(struct __bt_uuid_16) { .type = BT_UUID_16, \
+						   .u16 = value }))
+#define BT_UUID_DECLARE_128(value)					\
+	((struct bt_uuid *) (&(struct __bt_uuid_128) { .type = BT_UUID_128, \
+						    .u128 = value }))
+
+struct __bt_uuid_16 {
+	uint8_t type;
+	uint16_t u16;
+};
+
+struct __bt_uuid_128 {
+	uint8_t type;
+	uint8_t u128[16];
+};
+
+/** @brief Bluetooth UUID structure */
 struct bt_uuid {
 	/** UUID type */
 	uint8_t  type;
@@ -153,14 +182,6 @@ struct bt_uuid {
 		/** UUID 128 bits value */
 		uint8_t  u128[16];
 	};
-};
-
-/** @brief Bluetooth UUID 16bit structure (4 bytes mem use)*/
-struct bt_uuid16 {
-	/** UUID type */
-	uint8_t  type;
-	/** UUID 16 bits value */
-	uint16_t u16;
 };
 
 /** @brief Compare Bluetooth UUIDs.
@@ -175,6 +196,17 @@ struct bt_uuid16 {
  */
 int bt_uuid_cmp(const struct bt_uuid *u1, const struct bt_uuid *u2);
 
+/** @brief Copy Bluetooth UUIDs.
+ *
+ *  Copy Bluetooth UUID from source to destination.
+ *
+ *  @param dst destination Bluetooth UUID
+ *  @param src src Bluetooth UUID
+ *
+ *  @return N/A
+ */
+void bt_uuid_copy(struct bt_uuid *dst, const struct bt_uuid *src);
+
 #if defined(CONFIG_BLUETOOTH_DEBUG)
 /** @brief Convert Bluetooth UUID to string.
  *
@@ -185,7 +217,7 @@ int bt_uuid_cmp(const struct bt_uuid *u1, const struct bt_uuid *u2);
  *  @param str pointer where to put converted string
  *  @param len length of str
  *
- *  @return none
+ *  @return N/A
  */
 void bt_uuid_to_str(const struct bt_uuid *uuid, char *str, size_t len);
 

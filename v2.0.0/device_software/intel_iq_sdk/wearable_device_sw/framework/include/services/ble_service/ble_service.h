@@ -32,10 +32,6 @@
 #define __BLE_SERVICE_H__
 
 #include <stdint.h>
-#include "cfw/cfw_service.h"
-
-extern struct _ble_service_cb _ble_cb;
-extern service_t ble_service;
 
 /**
  * @defgroup ble_service BLE Service
@@ -72,5 +68,6 @@ enum BLE_STATUS {
 };
 
 typedef uint16_t ble_status_t; /**< Response and event BLE service status type @ref BLE_STATUS */
+
 /** @}*/
 #endif

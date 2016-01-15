@@ -28,7 +28,7 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-struct ble_enable_req_msg;
+struct ble_enable_req;
 
 /** Reset UART configuration.
  *
@@ -42,7 +42,7 @@ int ble_test_reconfigure_transport(void);
  * enter in DTM scheduler. In QRK, on RSP message IPC UART is disabled. From
  * now on, DTM commands can be sent to BLE Core;
  */
-void handle_ble_dtm_init(struct ble_enable_req_msg *req);
+void handle_ble_dtm_init(struct ble_enable_req *req);
 
 /** Construct HCI DTM commands.
  *

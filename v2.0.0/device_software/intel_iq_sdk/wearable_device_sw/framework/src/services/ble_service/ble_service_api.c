@@ -30,51 +30,32 @@
 
 #include "services/ble_service/ble_service_api.h"
 
+#include <errno.h>
 #include <string.h>
 
-#include "ble_service_core_int.h"
 #include "ble_service_int.h"
-#include "ble_service_dis.h"
-#include "ble_service_bas.h"
-#include "ble_service_utils.h"
-#include "infra/log.h"
+#include "cfw/cfw_service.h"
 
-int ble_enable(cfw_service_conn_t * p_service_conn, uint8_t enable,
-		const struct ble_enable_config * p_config, void *p_priv)
+#include "zephyr/bluetooth/bluetooth.h"
+
+static T_TIMER adv_timer = NULL;
+
+int ble_enable(cfw_service_conn_t *p_service_conn, uint8_t enable,
+		const struct ble_enable_config *p_config, void *p_priv)
 {
-	struct ble_enable_req_msg * msg;
-	int total_len = sizeof(*msg);
-	int str_len = 0;
-
-	if (p_config->p_bda)
-		total_len += sizeof(*(p_config->p_bda));
-	if (p_config->p_name) {
-		str_len = strlen((char *)p_config->p_name);
-		if (str_len > BLE_MAX_DEVICE_NAME)
-			return E_OS_ERR_NO_MEMORY;
-		/* Add 1 for the terminating NULL */
-		total_len += str_len + 1;
-	}
-	msg = (struct ble_enable_req_msg *)
-		    cfw_alloc_message_for_service(p_service_conn,
+	struct ble_enable_req * msg =
+			(void *) cfw_alloc_message_for_service(p_service_conn,
 				    MSG_ID_BLE_ENABLE_REQ,
-				    total_len, p_priv);
+				    sizeof(*msg), p_priv);
 	msg->options = p_config->options;
-	msg->peripheral_conn_params = p_config->peripheral_conn_params;
 	msg->central_conn_params = p_config->central_conn_params;
 	msg->enable = enable;
-	msg->name_len = str_len;
-	msg->appearance = p_config->appearance;
 	msg->sm_config = p_config->sm_config;
 
 	if (p_config->p_bda) {
-		msg->bda_len = sizeof(ble_addr_t);
-		memcpy(msg->data, p_config->p_bda, msg->bda_len);
-	} else
-		msg->bda_len = 0;
-
-	if (str_len)
-		strcpy((char *)&msg->data[msg->bda_len], (char *)p_config->p_name);
+		msg->bda_present = 1;
+		msg->bda = *p_config->p_bda;
+	}
 
 	return cfw_send_message(msg);
 }
@@ -82,7 +63,7 @@ int ble_enable(cfw_service_conn_t * p_service_conn, uint8_t enable,
 int ble_set_name(cfw_service_conn_t * p_service_conn, const uint8_t * p_name,
 		 void *p_priv)
 {
-	struct ble_set_name_req_msg *msg;
+	struct ble_set_name_req *msg;
 	int str_len = 0;
 
 	if (p_name) {
@@ -90,9 +71,8 @@ int ble_set_name(cfw_service_conn_t * p_service_conn, const uint8_t * p_name,
 		if (str_len > BLE_MAX_DEVICE_NAME)
 			str_len = BLE_MAX_DEVICE_NAME;
 	}
-	msg = (struct ble_set_name_req_msg *)
-		    cfw_alloc_message_for_service(p_service_conn,
-                        MSG_ID_BLE_SET_NAME_REQ,
+	msg = (void *)cfw_alloc_message_for_service(p_service_conn,
+				    MSG_ID_BLE_SET_NAME_REQ,
 				    sizeof(*msg) + str_len + 1, p_priv);
 	msg->name_len = str_len;
 	if (str_len)
@@ -101,7 +81,6 @@ int ble_set_name(cfw_service_conn_t * p_service_conn, const uint8_t * p_name,
 	return cfw_send_message(msg);
 }
 
-#ifdef CONFIG_BLE_CENTRAL
 int ble_start_discover(cfw_service_conn_t * p_service_conn, size_t cnt,
 		       const uint16_t * p_services, void *p_priv)
 {
@@ -120,67 +99,70 @@ int ble_stop_discover(cfw_service_conn_t * p_service_conn, void *p_priv)
 								p_priv);
 	return cfw_send_message(msg);
 }
-#endif
 
-int ble_connect(cfw_service_conn_t * p_service_conn, const ble_addr_t * p_addr,
-		uint32_t interval, void *p_priv)
+int ble_connect(cfw_service_conn_t *p_service_conn, const bt_addr_le_t *p_addr,
+		const struct bt_le_conn_param *p_conn_params, void *p_priv)
 {
-	struct cfw_message *msg =
-	    cfw_alloc_message_for_service(p_service_conn, MSG_ID_BLE_CONNECT_REQ,
-					  sizeof(*msg), p_priv);
+	struct ble_connect_req *msg =
+			(void *)cfw_alloc_message_for_service(p_service_conn,
+				MSG_ID_BLE_CONNECT_REQ, sizeof(*msg), p_priv);
+
+	msg->bd_addr = *p_addr;
+	msg->conn_params = *p_conn_params;
+
 	return cfw_send_message(msg);
 }
 
-#ifdef CONFIG_BLE_CENTRAL
-int ble_subscribe(cfw_service_conn_t * p_service_conn,
-		  uint16_t conn_handle, uint16_t svc_handle,
-		  const uint16_t * p_char_handle,
-		  const struct ble_notification_config *p_config, void *p_priv)
+int ble_subscribe(cfw_service_conn_t *p_service_conn,
+		const struct ble_subscribe_params *p_params,
+		void *p_priv)
 {
-	struct cfw_message *msg = cfw_alloc_message_for_service(p_service_conn,
-								MSG_ID_BLE_SUBSCRIBE_REQ,
-								sizeof(*msg),
-								p_priv);
+	struct ble_subscribe_req *msg =
+			(void *)cfw_alloc_message_for_service(p_service_conn,
+						MSG_ID_BLE_SUBSCRIBE_REQ,
+						sizeof(*msg), p_priv);
+	msg->params = *p_params;
+
 	return cfw_send_message(msg);
 }
 
-int ble_unsubscribe(cfw_service_conn_t * p_service_conn,
-		    uint16_t svc_handle, const uint16_t * p_char_handle,
-		    void *p_priv)
+int ble_unsubscribe(cfw_service_conn_t *p_service_conn,
+		struct ble_unsubscribe_params *p_params, void *p_priv)
 {
-	struct cfw_message *msg = cfw_alloc_message_for_service(p_service_conn,
-								MSG_ID_BLE_UNSUBSCRIBE_REQ,
-								sizeof(*msg),
-								p_priv);
+	struct ble_unsubscribe_req *msg =
+			(void *)cfw_alloc_message_for_service(p_service_conn,
+						MSG_ID_BLE_UNSUBSCRIBE_REQ,
+						sizeof(*msg), p_priv);
+	msg->params = *p_params;
+
 	return cfw_send_message(msg);
 }
-#endif
 
 int ble_conn_update(cfw_service_conn_t * p_service_conn,
-		    uint16_t conn_handle,
-		    const struct ble_gap_connection_params * p_params,
+		    struct bt_conn *conn,
+		    const struct ble_gap_connection_params *p_params,
 		    void *p_priv)
 {
-	struct ble_conn_update_req_msg *msg = (struct ble_conn_update_req_msg *)cfw_alloc_message_for_service(p_service_conn,
+	struct ble_conn_update_req *msg =
+			(void *)cfw_alloc_message_for_service(p_service_conn,
 						MSG_ID_BLE_CONN_UPDATE_REQ,
 						sizeof(*msg),
 						p_priv);
-	msg->conn_handle = conn_handle;
+	msg->conn = conn;
 	msg->conn_params = *p_params;
 
 	return cfw_send_message(msg);
 }
 
 int ble_disconnect(cfw_service_conn_t * p_service_conn,
-		   uint16_t conn_handle, void *p_priv)
+		struct bt_conn *conn, void *p_priv)
 {
-	struct ble_disconnect_req_msg *msg;
-
-	msg = (struct ble_disconnect_req_msg *)cfw_alloc_message_for_service(p_service_conn,
+	struct ble_disconnect_req *msg =
+			(void *)cfw_alloc_message_for_service(p_service_conn,
 						MSG_ID_BLE_DISCONNECT_REQ,
 						sizeof(*msg),
 						p_priv);
-	msg->conn_handle = conn_handle;
+	msg->conn = conn;
 
 	return cfw_send_message(msg);
 }
@@ -188,92 +170,168 @@ int ble_disconnect(cfw_service_conn_t * p_service_conn,
 int ble_test(cfw_service_conn_t * p_service_conn,
 	     const struct ble_test_cmd *p_cmd, void *p_priv)
 {
-	struct ble_dtm_test_req_msg *msg = (struct ble_dtm_test_req_msg *)
+	struct ble_dtm_test_req *msg = (void *)
 	    cfw_alloc_message_for_service(p_service_conn, MSG_ID_BLE_DTM_REQ,
 					  sizeof(*msg), p_priv);
 	msg->params = *p_cmd;
 	return cfw_send_message(msg);
 }
 
-#ifdef CONFIG_BLE_CENTRAL
-int ble_discover_service(cfw_service_conn_t * p_service_conn,
-			 uint16_t conn_handle, uint16_t svc_handle,
+int ble_discover(cfw_service_conn_t * p_service_conn,
+			 const struct ble_discover_params * p_params,
 			 void *p_priv)
 {
-	struct cfw_message *msg = cfw_alloc_message_for_service(p_service_conn,
-								MSG_ID_BLE_DISCOVER_SVC_REQ,
-								sizeof(*msg),
-								p_priv);
+	struct ble_discover_req *msg =
+			(void *)cfw_alloc_message_for_service(p_service_conn,
+				MSG_ID_BLE_DISCOVER_REQ,
+				sizeof(*msg),
+				p_priv);
+	msg->params = *p_params;
 	return cfw_send_message(msg);
 }
 
 int ble_get_remote_data(cfw_service_conn_t * p_service_conn,
-			uint16_t conn_handle, uint16_t char_handle,
+			const struct ble_get_remote_data_params *p_params,
 			void *p_priv)
 {
-	struct cfw_message *msg = cfw_alloc_message_for_service(p_service_conn,
-								MSG_ID_BLE_GET_REMOTE_DATA_REQ,
-								sizeof(*msg),
-								p_priv);
+	struct ble_get_remote_data_req *msg =
+			(void *)cfw_alloc_message_for_service(p_service_conn,
+				MSG_ID_BLE_GET_REMOTE_DATA_REQ,
+				sizeof(*msg),
+				p_priv);
+	msg->params = *p_params;
 	return cfw_send_message(msg);
 }
 
 int ble_set_remote_data(cfw_service_conn_t * p_service_conn,
-			uint16_t conn_handle, uint16_t val_handle,
-			const uint8_t * p_value, void *p_priv)
+			const struct ble_set_remote_data_params *p_params,
+			uint16_t data_length, uint8_t *data,
+			void *p_priv)
 {
-	struct cfw_message *msg = cfw_alloc_message_for_service(p_service_conn,
-								MSG_ID_BLE_SET_REMOTE_DATA_REQ,
-								sizeof(*msg),
-								p_priv);
+	struct ble_set_remote_data_req *msg =
+			(void *)cfw_alloc_message_for_service(p_service_conn,
+				MSG_ID_BLE_SET_REMOTE_DATA_REQ,
+				sizeof(*msg) + data_length,
+				p_priv);
+
+	msg->params = *p_params;
+	msg->data_length = data_length;
+	memcpy(&msg->data, data, data_length);
+
 	return cfw_send_message(msg);
 }
-#endif
+
+/** Advertising timeing parameters.
+ *
+ *  options see @ref BLE_ADV_OPTIONS */
+/* options: BLE_NO_ADV_OPT */
+#define APP_DEFAULT_ADV_INTERVAL           160
+#define APP_DEFAULT_ADV_TIMEOUT_IN_SECONDS 180
+/* options: BLE_NON_DISC_ADV */
+#define APP_NON_DISC_ADV_FAST_TIMEOUT_IN_SECONDS    30
+/* options: BLE_SLOW_ADV or BLE_SLOW_ADV | BLE_NON_DISC_ADV */
+#define APP_ADV_SLOW_INTERVAL              2056
+#define APP_ADV_SLOW_TIMEOUT_IN_SECONDS    0
+/* options: BLE_ULTRA_FAST_ADV */
+#define APP_ULTRA_FAST_ADV_INTERVAL             32
+
+void ble_delete_adv_timer(void)
+{
+	OS_ERR_TYPE os_err;
+
+	/* Destroy the timer */
+	timer_delete(adv_timer, &os_err);
+
+	/* Make sure that the reference to the timer is lost */
+	adv_timer = NULL;
+}
+
+static void adv_timer_handler(void * privData)
+{
+	/* stop & clean up timer */
+	ble_delete_adv_timer();
+
+	bt_le_adv_stop();
+
+	/* send timeout event to application */
+	ble_gap_advertisement_timeout();
+}
 
 int ble_start_advertisement(cfw_service_conn_t *p_service_conn,
-		uint32_t options,
-		const struct ble_adv_data_params *p_adv_params,
+		const struct ble_adv_params *p_adv_params,
 		void *p_priv)
 {
-	struct ble_start_advertisement_req_msg *msg;
-	uint8_t *p;
-	int total_len = sizeof(*msg);
+	struct cfw_message *msg;
+	struct ble_rsp *resp;
+	struct bt_le_adv_param param;
+	int status = 0;
+	int timeout;
+	OS_ERR_TYPE os_err;
+	uint8_t timeout_flag, interval_flag;
 
-	if (p_adv_params->p_le_addr)
-		total_len += sizeof(ble_addr_t);
-
-	total_len += p_adv_params->sd_len;
-	total_len += p_adv_params->ad_len;
-
-	msg = (struct ble_start_advertisement_req_msg *)
-	    cfw_alloc_message_for_service(p_service_conn,
+	/* To avoid complicated marshalling only send a response message. */
+	msg = (void *) cfw_alloc_message_for_service(p_service_conn,
 					  MSG_ID_BLE_START_ADV_REQ,
-					  total_len,
+					  sizeof(*msg),
 					  p_priv);
+	/* return immediately a status. internal callback will show failure */
+	resp = (void *)cfw_alloc_rsp_msg(msg, MSG_ID_BLE_START_ADV_RSP,
+			sizeof(*resp));
+	cfw_msg_free(msg);
 
-	msg->options = options;
-	msg->type = p_adv_params->adv_type;
-	if (p_adv_params->p_le_addr)
-		msg->bd_len = sizeof(ble_addr_t);
-	else
-		msg->bd_len = 0;
-	msg->sd_len = p_adv_params->sd_len;
-	msg->ad_len = p_adv_params->ad_len;
-	p = msg->data;
+	timeout_flag = p_adv_params->options & (BLE_SHORT_ADV_TO | BLE_NO_ADV_TO);
+	interval_flag = p_adv_params->options & (BLE_SLOW_ADV | BLE_ULTRA_FAST_ADV);
 
-	if (msg->bd_len) {
-		memcpy(p, p_adv_params->p_le_addr, msg->bd_len);
-		p += msg->bd_len;
-	}
-	if (msg->sd_len) {
-		memcpy(p, p_adv_params->p_sd, p_adv_params->sd_len);
-		p += msg->sd_len;
-	}
-	if (msg->ad_len) {
-		memcpy(p, p_adv_params->p_ad, p_adv_params->ad_len);
+	switch (timeout_flag) {
+		case BLE_SHORT_ADV_TO:
+			timeout = APP_NON_DISC_ADV_FAST_TIMEOUT_IN_SECONDS * 1000;
+			break;
+		case BLE_NO_ADV_TO:
+			timeout = APP_ADV_SLOW_TIMEOUT_IN_SECONDS * 1000;
+			break;
+		default:
+			timeout = APP_DEFAULT_ADV_TIMEOUT_IN_SECONDS * 1000;
+			break;
 	}
 
-	return cfw_send_message(msg);
+	if (timeout != 0) {
+		/* Start a timer to configure the parameters */
+		adv_timer = timer_create(adv_timer_handler, NULL, timeout,
+				false, true, &os_err);
+	}
+	switch (interval_flag) {
+		case BLE_SLOW_ADV:
+			param.interval_max = APP_ADV_SLOW_INTERVAL;
+			param.interval_min = APP_ADV_SLOW_INTERVAL;
+			break;
+		case BLE_ULTRA_FAST_ADV:
+			param.interval_max = APP_ULTRA_FAST_ADV_INTERVAL;
+			param.interval_min = APP_ULTRA_FAST_ADV_INTERVAL;
+			break;
+		default:
+			param.interval_max = APP_DEFAULT_ADV_INTERVAL;
+			param.interval_min = APP_DEFAULT_ADV_INTERVAL;
+			break;
+	}
+
+	param.type = p_adv_params->adv_type;
+
+	if (!(p_adv_params->p_le_addr)) {
+
+		status = bt_le_adv_start(&param, p_adv_params->p_ad,
+				p_adv_params->p_sd);
+	} else {
+		struct bt_conn *p_conn;
+		p_conn = bt_conn_create_slave_le(p_adv_params->p_le_addr,
+				&param);
+		if (!p_conn)
+			status = -ENOMEM;
+	}
+
+	if (status)
+		resp->status = BLE_STATUS_ERROR_PARAMETER;
+
+	return cfw_send_message(resp);
 }
 
 int ble_stop_advertisement(cfw_service_conn_t * p_service_conn, void *p_priv)
@@ -282,17 +340,9 @@ int ble_stop_advertisement(cfw_service_conn_t * p_service_conn, void *p_priv)
 								MSG_ID_BLE_STOP_ADV_REQ,
 								sizeof(*msg),
 								p_priv);
-	return cfw_send_message(msg);
-}
+	/* stop timer beforehand to avoid potential race condition */
+	ble_delete_adv_timer();
 
-int ble_disable_service(cfw_service_conn_t * p_service_conn,
-			uint16_t conn_handle, uint16_t svc_handle,
-			void *p_priv)
-{
-	struct cfw_message *msg = cfw_alloc_message_for_service(p_service_conn,
-								MSG_ID_BLE_DISABLE_SVC_REQ,
-								sizeof(*msg),
-								p_priv);
 	return cfw_send_message(msg);
 }
 
@@ -301,10 +351,10 @@ int ble_get_security_status(cfw_service_conn_t * p_service_conn,
 			    const union ble_get_security_params *p_params,
 			    void *p_priv)
 {
-	struct ble_get_security_status_req_msg *msg;
+	struct ble_get_security_status_req *msg;
 	int param_len = 0;
-	msg = (struct ble_get_security_status_req_msg *)
-			cfw_alloc_message_for_service(p_service_conn,
+
+	msg = (void *)cfw_alloc_message_for_service(p_service_conn,
 					MSG_ID_BLE_GET_SECURITY_REQ,
 					sizeof(*msg) + param_len,
 					p_priv);
@@ -318,8 +368,7 @@ int ble_set_security_status(cfw_service_conn_t * p_service_conn,
 			    const union ble_set_sec_params *p_params,
 			    void *p_priv)
 {
-	struct ble_set_security_status_req_msg * msg;
-	msg = (struct ble_set_security_status_req_msg *)
+	struct ble_set_security_status_req * msg = (void *)
 			cfw_alloc_message_for_service(p_service_conn,
 						MSG_ID_BLE_SET_SECURITY_REQ,
 						sizeof(*msg),
@@ -336,30 +385,30 @@ int ble_set_security_status(cfw_service_conn_t * p_service_conn,
 }
 
 int ble_send_passkey(cfw_service_conn_t *p_service_conn,
-		     uint16_t conn_handle,
+		     struct bt_conn *conn,
 		     const struct ble_gap_sm_passkey *p_params,
 		     void *p_priv)
 {
-	CFW_ALLOC_FOR_SVC(struct ble_gap_sm_key_reply_req_msg, msg,
+	CFW_ALLOC_FOR_SVC(struct ble_gap_sm_key_reply_req, msg,
 			p_service_conn, MSG_ID_BLE_PASSKEY_SEND_REPLY_REQ, 0, p_priv);
 
 	msg->params = *p_params;
-	msg->conn_handle = conn_handle;
+	msg->conn = conn;
 
 	return cfw_send_message(msg);
 }
 
-int ble_update_service_data(cfw_service_conn_t * p_service_conn,
-			    uint16_t conn_handle,
+int ble_update_service_data(cfw_service_conn_t *p_service_conn,
+			    struct bt_conn *conn,
 			    const struct ble_char_data *p_params, void *p_priv)
 {
-	CFW_ALLOC_FOR_SVC(struct ble_update_service_data_msg, msg, p_service_conn,
+	CFW_ALLOC_FOR_SVC(struct ble_update_data_req, msg, p_service_conn,
 					MSG_ID_BLE_UPDATE_DATA_REQ,
 					p_params->len,
 					p_priv);
 
 	msg->update = p_params->update;
-	msg->conn_handle = conn_handle;
+	msg->conn = conn;
 	msg->char_handle = p_params->char_handle;
 	msg->len = p_params->len;
 	memcpy(msg->data, p_params->p_data, msg->len);
@@ -376,10 +425,11 @@ int ble_service_get_version(cfw_service_conn_t *p_service_conn, void *p_priv)
 }
 
 int ble_set_rssi_report(cfw_service_conn_t * p_service_conn,
-		const struct rssi_report_params *params, void *p_priv)
+		struct bt_conn *conn, const struct rssi_report_params *params, void *p_priv)
 {
-	CFW_ALLOC_FOR_SVC(struct ble_gap_set_rssi_report_req_msg, msg, p_service_conn, MSG_ID_BLE_RSSI_REQ, 0, p_priv);
+	CFW_ALLOC_FOR_SVC(struct ble_gap_set_rssi_report_req, msg, p_service_conn, MSG_ID_BLE_RSSI_REQ, 0, p_priv);
 
+	msg->conn = conn;
 	msg->params = *params;
 	return cfw_send_message(msg);
 }
@@ -387,7 +437,7 @@ int ble_set_rssi_report(cfw_service_conn_t * p_service_conn,
 int ble_service_get_info(cfw_service_conn_t *p_service_conn,
 		uint8_t info_type, void *p_priv)
 {
-	CFW_ALLOC_FOR_SVC(struct ble_gap_get_info_req_msg, msg, p_service_conn,
+	CFW_ALLOC_FOR_SVC(struct ble_gap_get_info_req, msg, p_service_conn,
 			MSG_ID_BLE_GET_INFO_REQ, sizeof(*msg), p_priv);
 
 	msg->info_type = info_type;

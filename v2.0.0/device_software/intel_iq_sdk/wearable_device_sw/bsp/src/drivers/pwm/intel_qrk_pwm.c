@@ -279,10 +279,10 @@ void soc_pwm_stop(struct device *dev, uint8_t channel)
     /* Protect QRK_PWM_N_CONTROL using lock and unlock of interruptions */
     uint32_t saved = interrupt_lock();
 
-    soc_pwm_disable(dev, channel);
     val = soc_pwm_ioread(channel, QRK_PWM_N_CONTROL);
     val &= ~QRK_PWM_CONTROL_ENABLE;
     soc_pwm_iowrite(channel, QRK_PWM_N_CONTROL, val);
+    soc_pwm_disable(dev, channel);
     interrupt_unlock(saved);
 }
 

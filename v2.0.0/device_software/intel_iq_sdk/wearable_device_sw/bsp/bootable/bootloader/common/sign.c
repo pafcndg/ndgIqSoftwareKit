@@ -56,27 +56,30 @@ static const uint8_t pk[][uECC_BYTES * 2] = {
 };
 
 static int verify_binary(const uint8_t *key, const uint32_t key_size,
-		   const uint8_t *data, const struct signature_header *sig)
+		   const struct signature_header *sig, uint8_t *c_hash)
 {
-	uint8_t *c_hash;
-
 	if (memcmp(sig->magic, "$SIG", sizeof(sig->magic)) != 0)
 		return 0;
 
-	c_hash = sha256(data, sig->size, NULL);
 	return (uECC_verify(key, c_hash, sig->signature) == 1);
 }
 
 int secure_boot(uint32_t address)
 {
 	struct signature_header *sig = (struct signature_header *)address;
-
-	return verify_binary(pk[0], uECC_BYTES * 2, (const uint8_t *)sig +
-				     CONFIG_SIGNATURE_HEADER_SIZE, sig);
+	const uint8_t *data = (const uint8_t *)sig + CONFIG_SIGNATURE_HEADER_SIZE;
+	uint8_t* c_hash = sha256(data, sig->size, NULL);
+	return verify_binary(pk[0], uECC_BYTES * 2, sig, c_hash);
 }
 
-#else
+#if defined(CONFIG_SECURE_UPDATE)
+int secure_update(struct signature_header *sig, uint8_t *c_hash)
+{
+	return verify_binary(pk[1], uECC_BYTES * 2, sig, c_hash);
+}
+#endif
 
+#else
 int secure_boot(uint32_t address)
 {
 	return true;

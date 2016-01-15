@@ -28,23 +28,16 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "os/os.h"
-#include "cfw/cfw.h"
-#include "cfw/cfw_messages.h"
-#include "infra/log.h"
-#include <assert.h>
-#include "machine.h"
-#include "ble_service_int.h"
-#include "services/properties_service/properties_service_api.h"
 #include "ble_app_storage.h"
-#include "ble_service_int.h"
-#include "ble_service_utils.h"
-#include "drivers/data_type.h"
-#include "ble_service_core_int.h"
 
-void handle_ble_property_read(struct cfw_message *msg)
+#include <assert.h>
+#include "services/properties_service/properties_service_api.h"
+#include "util/misc.h"
+#include "infra/log.h"
+
+void handle_ble_property_read_rsp(struct cfw_message *msg)
 {
-	read_property_rsp_msg_t *rsp = (__typeof__(rsp))msg;
+	read_property_rsp_msg_t *rsp = container_of(msg, read_property_rsp_msg_t, rsp_header);
 	struct ble_app_storage_handler *p_hdl = CFW_MESSAGE_PRIV(msg);
 	int status = rsp->rsp_header.status;
 
@@ -58,7 +51,7 @@ void handle_ble_property_read(struct cfw_message *msg)
 		bfree(p_hdl);
 }
 
-int ble_properties_get(cfw_service_conn_t *p_service_properties_conn,
+int ble_properties_read(cfw_service_conn_t *p_service_properties_conn,
 		struct ble_app_storage_handler *hdl, uint8_t ble_property_id)
 {
 	ble_status_t ble_status = BLE_STATUS_ERROR;
@@ -70,7 +63,7 @@ int ble_properties_get(cfw_service_conn_t *p_service_properties_conn,
 	return ble_status;
 }
 
-int ble_properties_save(void *ble_property, uint8_t ble_property_size,
+int ble_properties_write(void *ble_property, uint8_t ble_property_size,
 		    uint8_t property_id, cfw_service_conn_t *p_service_properties_conn)
 {
 	ble_status_t ble_status = BLE_STATUS_ERROR;

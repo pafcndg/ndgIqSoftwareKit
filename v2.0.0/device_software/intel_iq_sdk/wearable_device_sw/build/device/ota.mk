@@ -28,7 +28,7 @@
 
 otapackage: package ota_binaries | pub
 	$(AT)cd $(OUT)/ota/pub/ ; \
-	zip -r $(PUB)/$(PROJECT)/$(PROJECT)-$(BOARD)-$(BUILDVARIANT)-ota-$(BUILD_TAG).zip package.ota.bin
+	zip -r $(PUB)/$(PROJECT)/$(PROJECT)-$(BOARD)-$(BUILDVARIANT)-ota-$(BUILD_TAG).zip package.ota.signed.bin
 
 ota_binaries: image \
 	$(OUT)/ota/pub/arc.bin \
@@ -37,6 +37,7 @@ ota_binaries: image \
 	$(OTA_PACKAGE_TOOL) -o $(OUT)/ota/pub/package.ota.bin \
 	-p package -m 0 -a 0 \
 	-i $(addprefix $(OUT)/ota/intermediates/, $(addsuffix .lzg, $(notdir $(filter %.bin %.part, $^))))
+	$(AT) $(TOOL_SIGN) -f 1 -i $(OUT)/ota/pub/package.ota.bin -o $(OUT)/ota/pub/package.ota.signed.bin -s $(OTA_SIGNING_KEY)
 	echo 'Ota binaries generated in $(OUT)/ota/pub'
 
 $(OUT)/ota/pub/%: $(LZG) | $(OUT)/ota $(OUT)/ota/pub $(OUT)/ota/intermediates

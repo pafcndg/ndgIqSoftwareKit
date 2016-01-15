@@ -84,10 +84,10 @@ static void state_complete(void)
 		current_source->maintenance_enable();
 }
 
-static void state_overtemp(void)
+static void state_fault(void)
 {
-	pr_info(LOG_MODULE_CH,"CHARGER state: OVERTEMP\n");
-	state=OVERTEMP;
+	pr_info(LOG_MODULE_CH,"CHARGER state: FAULT\n");
+	state=FAULT;
 }
 
 /****************************************************************************************
@@ -158,14 +158,14 @@ static void handler_charger_event(enum charging_sm_event event)
 		}
 		break;
 
-	case CHARGING_OVERTEMP:
+	case CHARGING_FAULT:
 		switch(state)
 		{
 		case INIT:
 			sm_call_back_event(BS_CH_EVENT_INIT_DONE);
-			state_overtemp(); break;
+			state_fault(); break;
 
-		case CHARGE: state_overtemp(); break;
+		case CHARGE: state_fault(); break;
 
 		default: break;
 		}

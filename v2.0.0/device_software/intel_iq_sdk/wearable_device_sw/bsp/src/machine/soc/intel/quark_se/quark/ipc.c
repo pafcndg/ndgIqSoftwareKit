@@ -32,7 +32,6 @@
 #include "infra/ipc.h"
 #include "infra/port.h"
 #include "machine.h"
-#include "ble_core_interface.h"
 
 T_QUEUE ipc_setup(void)
 {

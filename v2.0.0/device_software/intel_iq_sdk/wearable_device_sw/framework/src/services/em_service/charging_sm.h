@@ -41,10 +41,10 @@
  */
 enum charging_sm_event
 {
-	CHARGING_START,
 	CHARGING_STOP,
+	CHARGING_START,
 	CHARGING_COMPLETE,
-	CHARGING_OVERTEMP,
+	CHARGING_FAULT,
 	CHARGING_PLUGGED_IN,
 	CHARGING_PLUGGED_OUT
 };
@@ -67,7 +67,7 @@ enum e_state
 	DISCHARGE,
 	CHARGE,
 	COMPLETE,
-	OVERTEMP
+	FAULT
 };
 
 /**@brief Function to initialize charging state machine.

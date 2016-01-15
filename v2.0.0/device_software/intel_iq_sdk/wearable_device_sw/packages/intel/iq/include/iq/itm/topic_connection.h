@@ -55,7 +55,7 @@ struct topic_application;
  * @code
  * struct ispp_topic_connection {
  *     struct topic_connection base;
- *     uint16_t conn_handle;
+ *     struct bt_conn *conn;
  * } my_ispp_conn;
  *
  * my_ispp_conn.base.list_req = ispp_list_req;

@@ -28,8 +28,10 @@
 #define _BLE_SERVICE_ISPP_H_
 
 #include <stdint.h>
-#include "services/ble_service/ble_service_gatts_api.h"
+// for weak
 #include "util/compiler.h"
+// for list_t
+#include "util/list.h"
 
 /* Forward declaration */
 struct _ble_service_cb;

@@ -28,36 +28,71 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <string.h>
-#include "os/os.h"
-#include "ble_protocol.h"
-#include "services/ble_service/ble_service_gap_api.h"
-#include "ble_service_int.h"
-#include "ble_service_utils.h"
-
-void uint8_to_ascii(uint8_t in, uint8_t *p)
+static inline int bt_addr_cmp(const bt_addr_t *a, const bt_addr_t *b)
 {
-	uint8_t hi = (in & 0xF0) >> 4;
-	uint8_t lo = in & 0x0F;
-
-	if (hi < 0x0A)
-		*p = '0' + hi;
-	else
-		*p = 'A' + (hi - 0x0A);
-
-	p++;
-
-	if (lo < 10)
-		*p = '0' + lo;
-	else
-		*p = 'A' + (lo - 0x0A);
+	return memcmp(a, b, sizeof(*a));
 }
 
-void uint8buf_to_ascii(uint8_t * dst, const uint8_t * src, int len)
+static inline int bt_addr_le_cmp(const bt_addr_le_t *a, const bt_addr_le_t *b)
 {
-	int i;
-	for (i = 0; i < len; ++i) {
-		uint8_to_ascii(src[i], dst);
-		dst += 2;
+	return memcmp(a, b, sizeof(*a));
+}
+
+static inline void bt_addr_copy(bt_addr_t *dst, const bt_addr_t *src)
+{
+	memcpy(dst, src, sizeof(*dst));
+}
+
+static inline void bt_addr_le_copy(bt_addr_le_t *dst, const bt_addr_le_t *src)
+{
+	memcpy(dst, src, sizeof(*dst));
+}
+
+static inline bool bt_addr_le_is_rpa(const bt_addr_le_t *addr)
+{
+	if (addr->type != BT_ADDR_LE_RANDOM)
+		return false;
+
+	if ((addr->val[5] & 0xc0) == 0x40)
+	       return true;
+
+	return false;
+}
+
+static inline bool bt_addr_le_is_identity(const bt_addr_le_t *addr)
+{
+	if (addr->type == BT_ADDR_LE_PUBLIC)
+		return true;
+
+	/* Check for Random Static address type */
+	if ((addr->val[5] & 0xc0) == 0xc0)
+		return true;
+
+	return false;
+}
+
+static inline bool bt_le_conn_params_valid(uint16_t min, uint16_t max,
+					uint16_t latency, uint16_t timeout)
+{
+	uint16_t max_latency;
+
+	if (min > max || min < 6 || max > 3200) {
+		return false;
 	}
+
+	if (timeout < 10 || timeout > 3200) {
+		return false;
+	}
+
+	/* calculation based on BT spec 4.2 [Vol3, PartA, 4.20]
+	 * max_latency = ((timeout * 10)/(max * 1.25 * 2)) - 1;
+	 */
+	max_latency = (timeout * 4 / max) - 1;
+	if (latency > 499 || latency > max_latency) {
+		return false;
+	}
+
+	return true;
 }
+
+

@@ -33,17 +33,14 @@
 
 #include <string.h>
 #include <assert.h>
-#include "ble_service/ble_service_gap_api.h"
 #include "services/ble_service/ble_service_api.h"
 #include "ble_app_storage.h"
 #include "ble_service_utils.h"
 #include "infra/log.h"
 #include "ble_protocol.h"
-#include "ble_core_interface.h"
+#include "ble_service_gap.h"
 #include "ble_service_dis.h"
-#if defined(CONFIG_SERVICES_BLE_BAS_USE_BAT)
 #include "ble_service_bas.h"
-#endif
 #if defined(CONFIG_SERVICES_BLE_ISPP)
 #include "ble_service_ispp.h"
 #endif
@@ -76,26 +73,6 @@
 
 #define BLE_APP_APPEARANCE BLE_GAP_APPEARANCE_TYPE_GENERIC_WATCH
 
-enum BLE_APP_SVC_REG {
-	DIS_SVC = 0,
-#if defined(CONFIG_SERVICES_BLE_BAS_USE_BAT)
-	BAS_SVC,
-#endif
-	ISPP_SVC,
-	SVC_LAST, /* Keep last, triggers advertisement */
-};
-
-struct cback_param {
-	int cb_index; /**< register parameter @ref BLE_APP_SVC_REG */
-};
-
-struct _ble_register_svc {
-	 /**< callback function to execute on MSG_ID_xxx_RSP
-	  * @param reg this buffer */
-	void (*func_cback)(struct _ble_register_svc *reg);
-	struct cback_param cb_param;
-};
-
 #define MANUFACTURER_NAME "IntelCorp"
 #define MODEL_NUM         "Curie"
 #define HARDWARE_REV       "1.0"
@@ -105,11 +82,11 @@ static bool _ble_connection_enabled = false;
 /* CFW Client handle */
 static cfw_client_t * _client;
 
-int ble_app_conn_update(const struct ble_gap_connection_params * p_params)
+int ble_app_conn_update(const struct ble_gap_connection_params *p_params)
 {
 	if (_ble_connection_enabled)
 		return ble_conn_update(_ble_app_cb.p_service_conn,
-				_ble_app_cb.conn_handle, p_params, NULL);
+				_ble_app_cb.conn, p_params, NULL);
 	else
 		return -1;
 }
@@ -127,10 +104,42 @@ static int read_string(struct bt_conn *conn,
 			str_len);
 }
 
-/**
+/*
  * The following functions overwrite the default functions defined in
- * ble_service_dis.c
+ * GAP and DIS services
  */
+
+int on_gap_rd_device_name(struct bt_conn *conn,
+			  const struct bt_gatt_attr *attr,
+			  void *buf, uint16_t len,
+			  uint16_t offset)
+{
+	return read_string(conn, attr, buf, len, offset, _ble_app_cb.device_name);
+}
+
+int on_gap_rd_appearance(struct bt_conn *conn,
+			 const struct bt_gatt_attr *attr,
+			 void *buf, uint16_t len,
+			 uint16_t offset)
+{
+	uint16_t appearance = BLE_APP_APPEARANCE;
+
+	return bt_gatt_attr_read(conn, attr, buf, len, offset, &appearance,
+				 sizeof(appearance));
+}
+
+int on_gap_rd_ppcp(struct bt_conn *conn,
+		   const struct bt_gatt_attr *attr,
+		   void *buf, uint16_t len,
+		   uint16_t offset)
+{
+	const struct ble_gap_connection_params params =
+			{MIN_CONN_INTERVAL, MAX_CONN_INTERVAL, SLAVE_LATENCY, CONN_SUP_TIMEOUT};
+
+	return bt_gatt_attr_read(conn, attr, buf, len, offset, &params,
+				 sizeof(params));
+}
+
 int on_dis_rd_manufacturer(struct bt_conn *conn, const struct bt_gatt_attr *attr,
 		       void *buf, uint16_t len, uint16_t offset)
 {
@@ -156,8 +165,8 @@ int on_dis_rd_serial(struct bt_conn *conn, const struct bt_gatt_attr *attr,
 		sn_len = sizeof(sn);
 	}
 	else {
-		uint8buf_to_ascii(sn, _ble_app_cb.my_bd_addr.addr, BLE_ADDR_LEN);
-		sn_len = BLE_ADDR_LEN * 2;
+		uint8buf_to_ascii(sn, _ble_app_cb.my_bd_addr.val, 6);
+		sn_len = 12;
 	}
 
 	return bt_gatt_attr_read(conn, attr, buf, len, offset, sn, sn_len);
@@ -201,7 +210,7 @@ int ble_app_store_sm_cfg(struct ble_gap_sm_config_params *sm_params)
 	pr_info(LOG_MODULE_BLE, "sm cfg cap:%d opt:%d size:%d",
 			sm_params->io_caps, sm_params->options,
 			sm_params->key_size);
-	if (E_OS_OK != ble_properties_save(sm_params,
+	if (E_OS_OK != ble_properties_write(sm_params,
 			sizeof(struct ble_gap_sm_config_params),
 			BLE_PROPERTY_ID_SM_CONFIG, _ble_app_cb.p_service_properties_conn))
 		status = E_OS_ERR;
@@ -215,29 +224,24 @@ static void ble_app_enable(struct ble_app_storage_handler *p_hdl, const void *p_
 	struct ble_enable_config en_config = { 0, };
 	const struct ble_gap_connection_params conn_params =
 			{MIN_CONN_INTERVAL, MAX_CONN_INTERVAL, SLAVE_LATENCY, CONN_SUP_TIMEOUT};
-	ble_addr_t bda;
-	uint8_t dev_name[BLE_MAX_DEVICE_NAME + 1];
+	bt_addr_le_t bda;
 
-	en_config.appearance = BLE_APP_APPEARANCE;
-	en_config.central_conn_params = en_config.peripheral_conn_params = conn_params;
+	en_config.central_conn_params = conn_params;
 
 	if (!memcmp(global_factory_data->oem_data.magic, FACTORY_DATA_MAGIC, 4)) {
 		struct curie_oem_data *p_oem =
 				(struct curie_oem_data *) &global_factory_data->oem_data.project_data;
 		if (p_oem->bt_mac_address_type < 2) {
 			bda.type = p_oem->bt_mac_address_type;
-			memcpy(bda.addr, &p_oem->bt_address[0], sizeof(bda.addr));
+			memcpy(bda.val, &p_oem->bt_address[0], sizeof(bda.val));
 			en_config.p_bda = &bda;
 		}
-		memcpy(dev_name, p_oem->ble_name, BLE_MAX_DEVICE_NAME);
+		/* Override the name from the properties */
+		p_name = p_oem->ble_name;
 	}
-	else {
-		memcpy(dev_name, p_name, BLE_MAX_DEVICE_NAME);
-	}
-	/* Add a terminating 0 to the name */
-	dev_name[BLE_MAX_DEVICE_NAME] = 0;
 
-	en_config.p_name = dev_name;
+	ble_app_set_device_name(p_name);
+
 	en_config.sm_config = p_hdl->sm_config;
 #ifdef CONFIG_BLE_SM_IO_CAP_TEST
 	pr_info(LOG_MODULE_BLE, "sm config io_caps:%d opt:%d size:%d", en_config.sm_config.io_caps,
@@ -246,7 +250,7 @@ static void ble_app_enable(struct ble_app_storage_handler *p_hdl, const void *p_
 
 	if (E_OS_OK != ble_enable(_ble_app_cb.p_service_conn, 1, &en_config,
 			&_ble_app_cb)) {
-		pr_error(LOG_MODULE_MAIN, "BLE device name too long! BLE ENABLE FAILED");
+		pr_error(LOG_MODULE_MAIN, "BLE ENABLE FAILED");
 		return;
 	}
 	_ble_connection_enabled = true;
@@ -263,7 +267,7 @@ void ble_app_get_sm_params(struct ble_app_storage_handler *p_hdl,
 	p_enable_ble->sm_config = *p_params;
 
 	/* read device name, will be used at ble enable */
-	ble_properties_get(_ble_app_cb.p_service_properties_conn, p_enable_ble, BLE_PROPERTY_ID_DEVICE_NAME);
+	ble_properties_read(_ble_app_cb.p_service_properties_conn, p_enable_ble, BLE_PROPERTY_ID_DEVICE_NAME);
 }
 
 void ble_start_app_handler(cfw_service_conn_t * p_service_conn, void * param)
@@ -277,9 +281,10 @@ void ble_start_app_handler(cfw_service_conn_t * p_service_conn, void * param)
 		return;
 	}
 	_ble_app_cb.p_service_conn = p_service_conn;
-	_ble_app_cb.conn_handle = BLE_SVC_GAP_HANDLE_INVALID;
+	_ble_app_cb.conn = NULL;
 
 	sm_config.io_caps = DEFAULT_SM_CFG_IO_CAPABILITY;
+	BUILD_BUG_ON(BLE_GAP_BONDING ^ BLE_CORE_GAP_BONDING);
 	sm_config.options = DEFAULT_SM_CFG_OPTIONS;
 	sm_config.key_size = DEFAULT_SM_CFG_KEY_SIZE;
 
@@ -289,7 +294,7 @@ void ble_start_app_handler(cfw_service_conn_t * p_service_conn, void * param)
 	p_sm_config = balloc(sizeof(*p_sm_config), NULL);
 	p_sm_config->cback = ble_app_get_sm_params;
 	/* read security manager configuration, will be used at ble enable */
-	ble_properties_get(_ble_app_cb.p_service_properties_conn, p_sm_config, BLE_PROPERTY_ID_SM_CONFIG);
+	ble_properties_read(_ble_app_cb.p_service_properties_conn, p_sm_config, BLE_PROPERTY_ID_SM_CONFIG);
 #endif
 
 	/* List of events to receive */
@@ -353,132 +358,109 @@ static void _ble_start_advertisement(struct ble_app_storage_handler *p_adv,
 {
 	pr_info(LOG_MODULE_MAIN, "_ble_start_advertisement: adv_type:0x%x",
 			p_adv->param);
-	struct ble_adv_data_params params = { 0 };
-	uint8_t ad[BLE_MAX_ADV_SIZE];
-	uint8_t *p = ad;
+	struct ble_adv_params params = { 0 };
+	uint8_t flags = BT_LE_AD_NO_BREDR | BT_LE_AD_GENERAL;
+	/* BLE_GAP_APPEARANCE_TYPE_GENERIC_WATCH 192 */
+	uint8_t appearance[2] = { 0xc0, 0x00 };
+	uint8_t manuf_data[2] = { 0x02, 0x00 };
+	struct bt_eir ad[] = {
+			{
+				.len = 2,
+				.type = BT_EIR_FLAGS,
+				.data = &flags,
+			},
+			{
+				.len = 3,
+				.type = BT_EIR_GAP_APPEARANCE,
+				.data = appearance,
+			},
+			{
+				.len = 3,
+				.type = BT_EIR_MANUFACTURER_DATA,
+				.data = manuf_data,
+			},
+			{
+				.len = 0,
+				.type = BLE_ADV_TYPE_COMP_LOCAL_NAME,
+				.data = p_name,
+			},
+			{}
+	};
 
 	/* Sanity check : application options do not overlap with advertisement */
 	BUILD_BUG_ON(BLE_APP_NON_DISC_ADV & BLE_ADV_OPTIONS_MASK);
 
-	params.adv_type = BLE_GAP_ADV_TYPE_ADV_IND;
-	params.p_ad = ad;
+	params.adv_type = BT_LE_ADV_IND;
 
-	uint8_t flag = (p_adv->param & BLE_APP_NON_DISC_ADV) ?
-			BLE_SVC_GAP_ADV_FLAG_BR_EDR_NOT_SUPPORTED :
-			BLE_SVC_GAP_ADV_FLAGS_LE_ONLY_GENERAL_DISC_MODE;
-	p += ble_enc_adv_flags(p, flag);
-
-	p += ble_enc_adv_appearance(p, BLE_APP_APPEARANCE);
-
-	p += ble_enc_adv_manuf(p, INTEL_MANUFACTURER, NULL, 0);
-
-	params.ad_len = p - params.p_ad;
+	params.options = p_adv->param & BLE_ADV_OPTIONS_MASK;
 
 	if (p_name) {
-		p += ble_enc_adv_name(p, params.ad_len, p_name,
-			strlen((char *)p_name));
+		ad[3].len = strlen((char *)p_name) + 1; /* add one for type */
 	}
 
-	params.ad_len = p - params.p_ad;
+	params.p_ad = ad;
 
-	ble_start_advertisement(_ble_app_cb.p_service_conn,
-			p_adv->param & BLE_ADV_OPTIONS_MASK, &params, NULL);
+	ble_start_advertisement(_ble_app_cb.p_service_conn, &params, NULL);
 }
 
-static void _ble_register_services(struct _ble_register_svc *p_reg)
+static void _ble_register_services(void)
 {
-	uint8_t reg_param;
+	/* GAP_SVC */
+	ble_service_gap_init(_ble_app_cb.p_service_conn, NULL);
+	pr_info(LOG_MODULE_MAIN, "ble registering GAP");
 
-	reg_param = p_reg->cb_param.cb_index++;
+	/* DIS_SVC */
+	ble_init_service_dis(_ble_app_cb.p_service_conn, NULL);
+	pr_info(LOG_MODULE_MAIN, "ble registering DIS");
 
-	switch (reg_param) {
-	case DIS_SVC:
-		ble_init_service_dis(_ble_app_cb.p_service_conn, p_reg);
-		pr_info(LOG_MODULE_MAIN, "ble registering DIS");
-		break;
-#if defined(CONFIG_SERVICES_BLE_BAS_USE_BAT)
-	case BAS_SVC:
-		ble_init_service_bas(_ble_app_cb.p_service_conn, p_reg);
-		pr_info(LOG_MODULE_MAIN, "ble registering BAS");
-		break;
-#endif
+	/* BAS_SVC */
+	ble_init_service_bas(_ble_app_cb.p_service_conn, NULL);
+	pr_info(LOG_MODULE_MAIN, "ble registering BAS");
+
 #if defined(CONFIG_SERVICES_BLE_ISPP)
-	case ISPP_SVC:
-		ble_init_service_ispp(_ble_app_cb.p_service_conn, p_reg);
-		pr_info(LOG_MODULE_MAIN, "ble registering ISPP");
-		break;
+	/* ISPP_SVC */
+	ble_init_service_ispp(_ble_app_cb.p_service_conn, NULL);
+	pr_info(LOG_MODULE_MAIN, "ble registering ISPP");
 #endif
-	case SVC_LAST:{
-		enum boot_targets boot_event = get_boot_target();
-		struct ble_app_storage_handler *p_adv;
-
-		bfree(p_reg);
-		p_adv = balloc(sizeof(*p_adv), NULL);
-
-		p_adv->cback = _ble_start_advertisement;
-		/* at boot always use ultra fast advertisement to speed up
-		 * connection */
-		p_adv->param = BLE_ULTRA_FAST_ADV;
-
-		/* in case of reboot in firmware update, no timeout, otherwise
-		 * default timeout */
-		if (TARGET_RECOVERY == boot_event)
-			p_adv->param |= BLE_NO_ADV_TO;
-
-		ble_get_security_status(_ble_app_cb.p_service_conn,
-				BLE_SEC_BONDING_DB_STATE, NULL, p_adv);
-		break;
-		}
-	default:
-		/* to allow undefined compile time services in the case switch.
-		 */
-		_ble_register_services(p_reg);
-		break;
-	}
 }
 
 /** Handles BLE enable message */
 static void handle_msg_id_ble_enable_rsp(struct cfw_message *msg)
 {
-	struct ble_enable_rsp *rsp = (struct ble_enable_rsp *)msg;
+	struct ble_enable_rsp *rsp = container_of(msg, struct ble_enable_rsp, header);
 
 	if (BLE_STATUS_SUCCESS == rsp->status) {
-		struct _ble_register_svc *p_reg = balloc(sizeof(*p_reg), NULL);
+		enum boot_targets boot_event = get_boot_target();
+		/* at boot/enable always use ultra fast advertisement to speed up
+		 * connection */
+		uint32_t param = BLE_ULTRA_FAST_ADV;
 
-		p_reg->func_cback = _ble_register_services;
-		p_reg->cb_param.cb_index = DIS_SVC;
 		_ble_app_cb.my_bd_addr = rsp->bd_addr;
 
-		/* start registering of the first BLE service (DIS) */
-		_ble_register_services(p_reg);
+		/* registers all services */
+		_ble_register_services();
 
 		pr_info(LOG_MODULE_MAIN, "ble_enable_rsp: addr type: %d, "
 				"BLE addr: %.2x:%.2x:%.2x:%.2x:%.2x:%.2x",
 				rsp->bd_addr.type,
-				rsp->bd_addr.addr[5], rsp->bd_addr.addr[4],
-				rsp->bd_addr.addr[3], rsp->bd_addr.addr[2],
-				rsp->bd_addr.addr[1], rsp->bd_addr.addr[0]);
+				rsp->bd_addr.val[5], rsp->bd_addr.val[4],
+				rsp->bd_addr.val[3], rsp->bd_addr.val[2],
+				rsp->bd_addr.val[1], rsp->bd_addr.val[0]);
+
+		/* Start advertisement: in case of reboot in firmware update, no
+		 * timeout, otherwise default timeout */
+		if (TARGET_RECOVERY == boot_event)
+			param |= BLE_NO_ADV_TO;
+		ble_app_start_advertisement(param);
 	} else {
 		pr_error(LOG_MODULE_MAIN, "enable_rsp err %d", rsp->status);
 	}
 }
 
-/** Handles BLE init service message */
-static void handle_msg_id_ble_init_svc_rsp(struct cfw_message *msg)
-{
-	struct _ble_register_svc *p_reg = CFW_MESSAGE_PRIV(msg);
-	struct ble_init_service_rsp * rsp = (struct ble_init_service_rsp *)msg;
-	if (BLE_STATUS_SUCCESS == rsp->status)
-		p_reg->func_cback(p_reg);
-	else
-		pr_error(LOG_MODULE_MAIN, "init_svc err %d",
-				rsp->status);
-}
-
 /** Handles BLE start advertisement message */
 static void handle_msg_id_ble_start_adv_rsp(struct cfw_message *msg)
 {
-	struct ble_rsp * rsp = (struct ble_rsp *)msg;
+	struct ble_rsp *rsp = container_of(msg, struct ble_rsp, header);
 	if (BLE_STATUS_SUCCESS != rsp->status)
 		pr_error(LOG_MODULE_MAIN, "start_adv err %d",
 				rsp->status);
@@ -488,31 +470,32 @@ static void handle_msg_id_ble_start_adv_rsp(struct cfw_message *msg)
 static void handle_msg_id_ble_connect_evt(struct cfw_message *msg)
 {
 	/* nothing to do. Store BD Addr */
-	struct ble_connect_evt *evt = (struct ble_connect_evt *)msg;
+	struct ble_connect_evt *evt = container_of(msg, struct ble_connect_evt, header);
 	union ble_set_sec_params params;
 
-	params.dev_status = 0; /* disable pairing state in case it was on */
-	ble_set_security_status(_ble_app_cb.p_service_conn, BLE_SEC_DEVICE_STATUS,
-			&params, NULL);
-	_ble_app_cb.conn_handle = evt->conn_handle;
-	pr_info(LOG_MODULE_MAIN, "BLE connected(conn_h: %d, role: %d)",
-			evt->conn_handle, evt->role);
+	if (evt->status == BLE_STATUS_SUCCESS) {
+		params.dev_status = 0; /* disable pairing state in case it was on */
+		ble_set_security_status(_ble_app_cb.p_service_conn, BLE_SEC_DEVICE_STATUS,
+				&params, NULL);
+		_ble_app_cb.conn = evt->conn;
+		pr_info(LOG_MODULE_MAIN, "BLE connected(conn: %p, role: %d)",
+				evt->conn, evt->role);
+	} else {
+		pr_info(LOG_MODULE_MAIN, "BLE connection KO(conn: %p)", evt->conn);
+	}
 }
 
 void ble_app_start_advertisement(uint32_t param)
 {
 	struct ble_app_storage_handler *p_adv;
 
-	/* only start advertisement if disconnected */
-	if (_ble_app_cb.conn_handle == BLE_SVC_GAP_HANDLE_INVALID) {
-		p_adv = balloc(sizeof(*p_adv), NULL);
-		p_adv->cback = _ble_start_advertisement;
-		p_adv->param = param;
+	p_adv = balloc(sizeof(*p_adv), NULL);
+	p_adv->cback = _ble_start_advertisement;
+	p_adv->param = param;
 
-		/* check if discoverable advertisement or not (== bonded) */
-		ble_get_security_status(_ble_app_cb.p_service_conn,
-				BLE_SEC_BONDING_DB_STATE, NULL, p_adv);
-	}
+	/* check if discoverable advertisement or not (== bonded) */
+	ble_get_security_status(_ble_app_cb.p_service_conn,
+			BLE_SEC_BONDING_DB_STATE, NULL, p_adv);
 }
 
 void ble_app_stop_advertisement(void)
@@ -523,17 +506,17 @@ void ble_app_stop_advertisement(void)
 /** Handles BLE disconnect message */
 static void handle_msg_id_ble_disconnect_evt(struct cfw_message *msg)
 {
-	_ble_app_cb.conn_handle = BLE_SVC_GAP_HANDLE_INVALID;
+	_ble_app_cb.conn = NULL;
 	ble_app_start_advertisement(BLE_NO_ADV_OPT);
-	pr_info(LOG_MODULE_MAIN, "BLE disconnected(conn_h: %d, hci_reason: 0x%x)",
-			((struct ble_disconnect_evt *)msg)->conn_handle,
+	pr_info(LOG_MODULE_MAIN, "BLE disconnected(conn: %p, hci_reason: 0x%x)",
+			((struct ble_disconnect_evt *)msg)->conn,
 			((struct ble_disconnect_evt *)msg)->reason);
 }
 
 /** Handles BLE get security message */
 static void handle_msg_id_ble_get_security_rsp(struct cfw_message *msg)
 {
-	struct ble_get_security_rsp *rsp = (__typeof__(rsp))msg;
+	struct ble_get_security_rsp *rsp = container_of(msg, struct ble_get_security_rsp, header);
 	struct ble_app_storage_handler *p_adv = CFW_MESSAGE_PRIV(msg);
 
 	if (BLE_SEC_BONDING_DB_STATE == rsp->op_code) {
@@ -541,7 +524,7 @@ static void handle_msg_id_ble_get_security_rsp(struct cfw_message *msg)
 				BLE_SEC_ST_BONDED_DEVICES_AVAIL)) {
 			/* already bonded */
 			p_adv->param |= BLE_APP_NON_DISC_ADV;
-			ble_properties_get(_ble_app_cb.p_service_properties_conn, p_adv,
+			ble_properties_read(_ble_app_cb.p_service_properties_conn, p_adv,
 						BLE_PROPERTY_ID_DEVICE_NAME);
 			pr_info(LOG_MODULE_MAIN, "Device bonded");
 		} else if (BLE_SEC_ST_NO_BONDED_DEVICES == (rsp->dev_status &
@@ -570,7 +553,7 @@ static void handle_msg_id_ble_set_security_rsp(struct cfw_message *msg)
 		if (BLE_SEC_ST_PAIRABLE ==
 				(rsp->dev_status & BLE_SEC_ST_PAIRABLE)) {
 			/* advertise will be started after dev_name prop is read */
-			ble_properties_get(_ble_app_cb.p_service_properties_conn, p_adv,
+			ble_properties_read(_ble_app_cb.p_service_properties_conn, p_adv,
 					BLE_PROPERTY_ID_DEVICE_NAME);
 			/* TODO: call UI function */
 		} else {
@@ -590,27 +573,27 @@ static void handle_msg_id_ble_security_evt(struct cfw_message *msg)
 
 	switch (evt_msg->sm_status) {
 	case BLE_SM_AUTH_DISP_PASSKEY:
-		pr_info(LOG_MODULE_MAIN, "VERIFY PIN (conn_h:%d) >> %.6s",
-				evt_msg->conn_handle, evt_msg->passkey);
+		pr_info(LOG_MODULE_MAIN, "VERIFY PIN (conn:%p) >> %.6s",
+				evt_msg->conn, evt_msg->passkey);
 		break;
 	case BLE_SM_AUTH_PASSKEY_REQ:
-		pr_info(LOG_MODULE_MAIN, "ENTER PIN (conn_h:%d) >>",
-				evt_msg->conn_handle);
+		pr_info(LOG_MODULE_MAIN, "ENTER PIN (conn:%p) >>",
+				evt_msg->conn);
 		break;
 	case BLE_SM_PAIRING_START:
-		pr_debug(LOG_MODULE_MAIN, ">> PAIRING START (conn_h:%d)",
-				evt_msg->conn_handle);
+		pr_debug(LOG_MODULE_MAIN, ">> PAIRING START (conn:%p)",
+				evt_msg->conn);
 		break;
 	case BLE_SM_BONDING_COMPLETE:
-		pr_debug(LOG_MODULE_MAIN, "BONDING COMPLETE (conn_h:%d): gap_status: 0x%x",
-				evt_msg->conn_handle, evt_msg->gap_status);
+		pr_debug(LOG_MODULE_MAIN, "BONDING COMPLETE (conn:%p): gap_status: 0x%x",
+				evt_msg->conn, evt_msg->gap_status);
 		if (evt_msg->gap_status != BLE_SVC_GAP_STATUS_SUCCESS)
-			pr_error(LOG_MODULE_BLE, "BONDING FAILED (conn_h:%d): gap_status: 0x%x",
-				evt_msg->conn_handle, evt_msg->gap_status);
+			pr_error(LOG_MODULE_BLE, "BONDING FAILED (conn:%p): gap_status: 0x%x",
+				evt_msg->conn, evt_msg->gap_status);
 		break;
 	case BLE_SM_LINK_ENCRYPTED:
-		pr_debug(LOG_MODULE_MAIN, "ENCRYPTION ON (conn_h:%d)",
-				evt_msg->conn_handle);
+		pr_debug(LOG_MODULE_MAIN, "ENCRYPTION ON (conn:%p)",
+				evt_msg->conn);
 		break;
 	}
 }
@@ -628,7 +611,7 @@ static void handle_msg_id_ble_device_name_evt(struct cfw_message *msg)
 {
 	struct ble_device_name_evt *evt = (struct ble_device_name_evt *)msg;
 	pr_info(LOG_MODULE_BLE,"event change device name to %s", evt->device_name);
-	ble_properties_save(evt->device_name, strlen(evt->device_name) + 1,
+	ble_properties_write(evt->device_name, strlen(evt->device_name) + 1,
 			BLE_PROPERTY_ID_DEVICE_NAME, _ble_app_cb.p_service_properties_conn);
 }
 
@@ -639,7 +622,7 @@ static void handle_ble_messages(struct cfw_message * msg, void * param)
 		handle_msg_id_ble_enable_rsp(msg);
 		break;
 	case MSG_ID_BLE_INIT_SVC_RSP:
-		handle_msg_id_ble_init_svc_rsp(msg);
+		/* nothing to do */
 		break;
 	case MSG_ID_BLE_START_ADV_RSP:
 		handle_msg_id_ble_start_adv_rsp(msg);
@@ -668,7 +651,7 @@ static void handle_ble_messages(struct cfw_message * msg, void * param)
 	case MSG_ID_PROP_SERVICE_ADD_PROP_RSP:
 		break;
 	case MSG_ID_PROP_SERVICE_READ_PROP_RSP:
-		handle_ble_property_read(msg);
+		handle_ble_property_read_rsp(msg);
 		break;
 	case MSG_ID_PROP_SERVICE_WRITE_PROP_RSP:
 		break;
@@ -696,12 +679,17 @@ void ble_start_app(T_QUEUE queue)
 	/* Open service */
 	cfw_open_service_helper(_client, PROPERTIES_SERVICE_ID,
 			ble_app_properties_handler, _client);
-
-	/* Reset the nordic to force sync - Warning: JTAG debugger may prevent reset! */
-	ble_core_reset();
 }
 
 void ble_app_clear_bonds(void)
 {
 	ble_clear_bonds(_ble_app_cb.p_service_conn, NULL);
+}
+
+void ble_app_set_device_name(const uint8_t *p_device_name)
+{
+	if (!p_device_name)
+		return;
+	memcpy(_ble_app_cb.device_name, p_device_name, BLE_MAX_DEVICE_NAME);
+	_ble_app_cb.device_name[BLE_MAX_DEVICE_NAME] = 0;
 }

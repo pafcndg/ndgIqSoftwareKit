@@ -28,19 +28,27 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef __BLE_APP_INTERNAL_H__
-#define __BLE_APP_INTERNAL_H__
+#ifndef BLE_APP_INTERNAL_H_
+#define BLE_APP_INTERNAL_H_
 
+#include <stdint.h>
+
+/* For BLE_MAX_DEVICE_NAME */
+#include "ble_protocol.h"
+/* For bt_addr_le_t, ble_gap_sm_config_params */
+#include "services/ble_service/ble_service_api.h"
 /* For cfw_service_conn_t */
 #include "cfw/cfw.h"
 /* Forward declarations */
 struct cfw_message;
 
-struct  ble_app_cb {
+struct ble_app_cb {
 	cfw_service_conn_t *p_service_conn;
 	cfw_service_conn_t *p_service_properties_conn;
-	uint16_t conn_handle;
-	ble_addr_t my_bd_addr;
+	struct bt_conn *conn; /* Current connection reference */
+	bt_addr_le_t my_bd_addr;
+	/* the name must be stored in FULL because the property interface is asynchronous */
+	uint8_t device_name[BLE_MAX_DEVICE_NAME + 1];
 };
 
 
@@ -60,4 +68,4 @@ struct ble_app_storage_handler {
 int ble_app_store_sm_cfg(struct ble_gap_sm_config_params *sm_params);
 #endif
 
-#endif /* __BLE_APP_INTERNAL_H__ */
+#endif /* BLE_APP_INTERNAL_H_ */

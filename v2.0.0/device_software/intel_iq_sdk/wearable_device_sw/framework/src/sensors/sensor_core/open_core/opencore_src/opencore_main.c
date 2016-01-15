@@ -43,7 +43,6 @@ static uint8_t calibration_flag;
 extern uint8_t raw_data_calibration_flag;
 extern uint8_t calibration_process_error;
 extern uint8_t global_suspend_flag;
-
 static uint32_t last_suspend_timestamp;
 
 void OpencoreCommitSensData(uint8_t type, uint8_t id, void* data_ptr, int data_length)
@@ -117,7 +116,11 @@ static void FeedSensData2Algo(void)
 			uint8_t match_times = 0;
 			uint16_t cm_time_consume = 1;
 
-			for(int i = 0 ; i < feed->demand_length && demand[i].freq != 0 ; i++){
+			for(int i = 0 ; i < feed->demand_length ; i++){
+
+				if(demand[i].freq == 0)
+					continue;
+
 				sensor_handle_t* phy_sensor = GetActivePollSensStruct(demand[i].type, demand[i].id);
 				if(phy_sensor != NULL){
 					if(phy_sensor->buffer != NULL && phy_sensor->raw_sensor_data_count != 0){
@@ -1097,7 +1100,8 @@ static struct ia_cmd* ParseCmd(struct ia_cmd* inbound)
 		case CMD_RAWDATA_FIFO_INT_SC:
 			{
 				sensor_handle_t* phy_sensor;
-				memcpy(&phy_sensor, inbound->param, sizeof(void*));
+				memcpy(&phy_sensor, inbound->param, inbound->length);
+
 				if(phy_sensor != NULL && (phy_sensor->stat_flag & IDLE) == 0){
 					list_t* share_list_head = &phy_sensor->fifo_share_link;
 					do{

@@ -102,20 +102,6 @@ struct _ble_service_cb;
  * BLE helper functions.
  */
 
-/** Advertisement encoding helper functions
- *
- * Encodes different advertisement data into format: len type data[]
- *
- * @param current_ptr pointer to encoding buffer start position
- * @param advertisement data to encode
- *
- * @return length of encoded data including length field
- */
-uint8_t ble_enc_adv_flags(uint8_t *current_ptr, uint8_t flag);
-uint8_t ble_enc_adv_appearance(uint8_t *current_ptr, uint16_t appearance);
-uint8_t ble_enc_adv_manuf(uint8_t *current_ptr, uint16_t manuf_id, uint8_t *p_data, uint8_t len);
-uint8_t ble_enc_adv_name(uint8_t *current_ptr, uint8_t adv_data_len, const uint8_t *name, uint8_t len);
-
 /**@brief Represent an unsigned 8 bit value in ASCII hexadecimal
  *
  * @param[in] in The value to represent

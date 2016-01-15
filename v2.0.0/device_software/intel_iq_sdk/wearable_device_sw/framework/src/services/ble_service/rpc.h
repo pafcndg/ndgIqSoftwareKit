@@ -138,7 +138,7 @@ void rpc_serialize_b_b_p(uint8_t fn_index, const void * vbuf1, uint16_t vbuf1_le
  * @param p_priv Pointer to serialize
  */
 void rpc_serialize_s_b_p(uint8_t fn_index, const void * struct_data, uint8_t struct_length,
-		void * vbuf, uint16_t vbuf_length, void * p_priv);
+		const void * vbuf, uint16_t vbuf_length, void * p_priv);
 
 /**
  * RPC serialization function to serialize a function that expects a structure
@@ -154,7 +154,7 @@ void rpc_serialize_s_b_p(uint8_t fn_index, const void * struct_data, uint8_t str
  * @param p_priv Pointer to serialize
  */
 void rpc_serialize_s_b_b_p(uint8_t fn_index, const void * struct_data, uint8_t struct_length,
-		void * vbuf1, uint16_t vbuf1_length, void * vbuf2, uint16_t vbuf2_length, void * p_priv);
+		const void * vbuf1, uint16_t vbuf1_length, const void * vbuf2, uint16_t vbuf2_length, void * p_priv);
 
 /** RPC deserialization function, shall be invoked when a buffer is received over the transport interface.
  *

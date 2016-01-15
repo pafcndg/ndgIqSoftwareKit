@@ -35,12 +35,20 @@
 #include "quark_se/board_intel.h"
 #include <dfu_spi_flash.h>
 #include "crc.h"
+#include <sign.h>
+#include <sha256.h>
 /*
  * liblzg header for _LZG_CalcChecksum definition
  */
 #include "internal.h"
 
 #define memset __builtin_memset
+
+#if defined(CONFIG_SECURE_UPDATE)
+	#define OTA_HEADER_OFFSET CONFIG_SIGNATURE_HEADER_SIZE
+#else
+	#define OTA_HEADER_OFFSET 0
+#endif
 
 struct ota_ops ota_ops = {
 	.erase = NULL,
@@ -102,12 +110,20 @@ static uint32_t ota_get_header(struct ota *ota)
 	uint32_t err_code;
 
 	ota->progress = OTA_HEADER_CHECK_STARTED;
-
-	err_code = ota_read_bytes(ota_get_cache_offset(ota),
+#if defined(CONFIG_SECURE_UPDATE)
+	err_code = ota_read_bytes(ota_get_cache_offset(ota) * ERASE_PAGE_SIZE,
+				  (uint8_t *) & (ota->sig),
+				  sizeof(ota->sig));
+	if (err_code)
+		return err_code;
+#endif
+	err_code = ota_read_bytes(ota_get_cache_offset(ota) * ERASE_PAGE_SIZE
+				  + OTA_HEADER_OFFSET,
 				  (uint8_t *) & (ota->header),
 				  sizeof(ota->header));
 	if (err_code)
 		return err_code;
+
 	if (memcmp(ota->header.magic, "OTA", sizeof(ota->header.magic)) != 0) {
 
 		return OTA_HEADER_ERROR;
@@ -117,6 +133,42 @@ static uint32_t ota_get_header(struct ota *ota)
 	return OTA_SUCCESS;
 }
 
+#if defined(CONFIG_SECURE_UPDATE)
+static uint32_t ota_package_verify(struct ota *ota)
+{
+	uint32_t err_code;
+	uint32_t offset;
+	uint8_t buffer[32];
+
+	sha256_context_t c __attribute__((aligned(4)));
+	unsigned char md[SHA256_DIGEST_LENGTH] __attribute__((aligned(4)));
+	size_t len;
+
+	sha256_init(&c);
+	len = sizeof(buffer);
+
+	for (offset = 0; offset < ota->sig.size; offset += sizeof(buffer)) {
+		if (offset + len >= ota->sig.size)
+		{
+			len = ota->sig.size - offset;
+		}
+		err_code = ota_read_bytes(ota_get_cache_offset(ota) * ERASE_PAGE_SIZE
+					+ OTA_HEADER_OFFSET + offset,
+					buffer, len);
+		if (err_code)
+			return err_code;
+		sha256_update(&c, buffer, len);
+	}
+	sha256_final(md, &c);
+
+	uint8_t *buf;
+
+	buf = (uint8_t *) (ota_get_cache_offset(ota) * ERASE_PAGE_SIZE + OTA_HEADER_OFFSET);
+	ota->payload = buf + ota->header.hdr_length;
+
+	return !secure_update(& (ota->sig), md);
+}
+#else
 static uint32_t ota_package_verify(struct ota *ota)
 {
 	uint32_t err_code = OTA_HASH_ERROR;
@@ -142,6 +194,7 @@ static uint32_t ota_package_verify(struct ota *ota)
 	ota->progress = OTA_PAYLOAD_CHECK_DONE;
 	return err_code;
 }
+#endif
 
 __weak uint32_t ota_get_cache_offset(struct ota * ota)
 {

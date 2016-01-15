@@ -39,7 +39,6 @@
 #include "infra/ipc.h"
 #include "infra/time.h"
 #include "infra/pm.h"
-#include "util/misc.h"
 #include "util/workqueue.h"
 
 /* Service setup and general headers for this app */
@@ -63,6 +62,8 @@
 
 /* BLE services helper */
 #include "lib/ble/ble_app.h"
+
+#include "util/misc.h"
 
 /* Sensing demo helper */
 #ifdef CONFIG_SENSING_HELPER
