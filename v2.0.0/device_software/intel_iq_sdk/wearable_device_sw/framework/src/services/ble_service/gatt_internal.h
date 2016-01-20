@@ -153,9 +153,10 @@ struct ble_gattc_rsp {
 	uint16_t conn_handle; /**< GAP connection handle */
 };
 
-struct ble_gattc_evt {
-	uint16_t conn_handle;
+struct ble_gattc_disc_rsp {
 	int status;
+	uint16_t conn_handle;
+	uint8_t type;		/**< @ref BLE_GATT_DISC_TYPES */
 };
 
 /**
@@ -180,17 +181,7 @@ struct ble_gattc_characteristic {
  */
 struct ble_gattc_descriptor {
 	uint16_t handle;	/**< descriptor handle */
-	struct bt_uuid uuid;	/**< uuid of the descriptor */
-};
-
-struct ble_gattc_attr {
-	uint8_t type;		/**< @ref BLE_GATT_DISC_TYPES */
-	union {
-		struct ble_gattc_prim_svc prim;
-		struct ble_gattc_incl_svc incls;
-		struct ble_gattc_characteristic chars;
-		struct ble_gattc_descriptor desc;
-	};
+	struct bt_uuid uuid;	/**< UUID of the descriptor */
 };
 
 struct ble_gatts_set_attribute_params {
@@ -382,8 +373,8 @@ void ble_gattc_discover_req(const struct ble_core_discover_params *req, void *p_
  * @param data      Pointer to the data
  * @param data_len  Length of the data
  */
-void on_ble_gattc_discover_rsp(const struct ble_gattc_evt *p_evt,
-		const struct ble_gattc_attr *data, uint8_t data_len);
+void on_ble_gattc_discover_rsp(const struct ble_gattc_disc_rsp *p_evt,
+		const uint8_t *data, uint8_t data_len);
 
 /** GATT Attribute stream structure.
  *

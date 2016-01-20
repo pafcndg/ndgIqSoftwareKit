@@ -80,7 +80,7 @@ static void state_complete(void)
 	pr_info(LOG_MODULE_CH,"CHARGER state: COMPLETE");
 	state=COMPLETE;
 	sm_call_back_event(BS_CH_EVENT_CHARGE_COMPLETE);
-	if (current_source->maintenance_enable != NULL)
+	if ((current_source != NULL) && (current_source->maintenance_enable != NULL))
 		current_source->maintenance_enable();
 }
 

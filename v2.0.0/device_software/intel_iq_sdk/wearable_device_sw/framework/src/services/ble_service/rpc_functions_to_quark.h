@@ -88,7 +88,7 @@
         FN_SIG_S_B(on_ble_gatts_get_attribute_value_rsp, const struct ble_gatts_attribute_response *,\
                    uint8_t *, uint8_t)                                                               \
         FN_SIG_S_B(on_ble_gatt_register_rsp, const struct ble_gatt_register *, const struct ble_gatt_attr_idx_entry *, uint8_t)   \
-        FN_SIG_S_B(on_ble_gattc_discover_rsp, const struct ble_gattc_evt *, const struct ble_gattc_attr *, uint8_t)  \
+        FN_SIG_S_B(on_ble_gattc_discover_rsp, const struct ble_gattc_disc_rsp *, const uint8_t *, uint8_t)  \
 
 #define LIST_FN_SIG_B_B_P
 

@@ -662,86 +662,94 @@ int bt_gatt_exchange_mtu(struct bt_conn *conn, bt_gatt_rsp_func_t func)
 }
 
 // RPC function function call from NORDIC
-void on_ble_gattc_discover_rsp(const struct ble_gattc_evt *p_evt,
-		const struct ble_gattc_attr *data, uint8_t data_len)
+void on_ble_gattc_discover_rsp(const struct ble_gattc_disc_rsp *rsp,
+		const uint8_t *data, uint8_t data_len)
 {
 
 	uint16_t last_handle;
 	int status = BT_GATT_ITER_STOP;
 	struct bt_gatt_discover_params *params;
-	struct bt_conn *conn = bt_conn_lookup_handle(p_evt->conn_handle);
+	struct bt_conn *conn = bt_conn_lookup_handle(rsp->conn_handle);
 
 	assert(conn);
 
-	/* because ref count incremented in lookup_handle */
-	bt_conn_unref(conn);
-
 	params = conn->gattc.disc_param;
 
-	if (BLE_STATUS_SUCCESS == p_evt->status) {
+#ifdef BT_GATT_DEBUG
+	pr_info(LOG_MODULE_BLE, "disc_rsp: s=%d", rsp->status);
+#endif
+
+	if (!rsp->status) {
 		size_t i;
 		uint8_t attr_count;
 
-		if (data->type == BT_GATT_DISCOVER_PRIMARY) {
+		if (rsp->type == BT_GATT_DISCOVER_PRIMARY) {
 			attr_count = (data_len / sizeof(struct ble_gattc_prim_svc));
-		} else if (data->type == BT_GATT_DISCOVER_INCLUDE) {
+		} else if (rsp->type == BT_GATT_DISCOVER_INCLUDE) {
 			attr_count = (data_len / sizeof(struct ble_gattc_incl_svc));
-		} else if (data->type == BT_GATT_DISCOVER_CHARACTERISTIC) {
+		} else if (rsp->type == BT_GATT_DISCOVER_CHARACTERISTIC) {
 			attr_count = (data_len / sizeof(struct ble_gattc_characteristic));
-		} else if (data->type == BT_GATT_DISCOVER_DESCRIPTOR) {
+		} else if (rsp->type == BT_GATT_DISCOVER_DESCRIPTOR) {
 			attr_count = (data_len / sizeof(struct ble_gattc_descriptor));
 		}
 		else
 			goto done;
 
+#ifdef BT_GATT_DEBUG
+		pr_info(LOG_MODULE_BLE, "disc_rsp: c=%d", attr_count);
+#endif
+
 		last_handle = params->end_handle;
 
 		for (i = 0; i < attr_count; i++) {
-			const struct ble_gattc_attr *gattr = &data[i];
 			struct bt_gatt_attr *attr = NULL;
 
-			if (BT_GATT_DISCOVER_PRIMARY == params->type) {
-				if ((gattr->prim.handle_range.start_handle < params->start_handle) &&
-				    (gattr->prim.handle_range.end_handle > params->end_handle)) {
+			if (BT_GATT_DISCOVER_PRIMARY == rsp->type) {
+				const struct ble_gattc_prim_svc *gattr = (void *)&data[i * sizeof(*gattr)];
+
+				if ((gattr->handle_range.start_handle < params->start_handle) &&
+				    (gattr->handle_range.end_handle > params->end_handle)) {
 					/* Only the attributes with attribute handles between and including the Starting
 					 Handle and the Ending Handle is returned*/
 					goto done;
 				}
 				struct bt_gatt_service value;
 
-				value.end_handle = gattr->prim.handle_range.end_handle;
+				value.end_handle = gattr->handle_range.end_handle;
 				value.uuid = params->uuid;
 
 				attr = (&(struct bt_gatt_attr)BT_GATT_PRIMARY_SERVICE(&value));
-				attr->handle = gattr->prim.handle;
+				attr->handle = gattr->handle;
 				last_handle = value.end_handle;
 
 
-			} else if (BT_GATT_DISCOVER_INCLUDE == params->type) {
-
+			} else if (BT_GATT_DISCOVER_INCLUDE == rsp->type) {
+				const struct ble_gattc_incl_svc *gattr = (void *)&data[i * sizeof(*gattr)];
 				struct bt_gatt_include value;
 
-				value.start_handle = gattr->incls.svc.handle_range.start_handle;
-				value.end_handle = gattr->incls.svc.handle_range.end_handle;
+				value.start_handle = gattr->svc.handle_range.start_handle;
+				value.end_handle = gattr->svc.handle_range.end_handle;
 
 				attr = (&(struct bt_gatt_attr)
 						BT_GATT_INCLUDE_SERVICE(&value));
-				attr->handle = gattr->incls.incl_handle;
+				attr->handle = gattr->incl_handle;
 				last_handle = value.end_handle;
 
-			} else if (BT_GATT_DISCOVER_CHARACTERISTIC == params->type) {
+			} else if (BT_GATT_DISCOVER_CHARACTERISTIC == rsp->type) {
+				const struct ble_gattc_characteristic *gattr = (void*)&data[i * sizeof(*gattr)];
 
-				attr = (&(struct bt_gatt_attr)BT_GATT_CHARACTERISTIC(&gattr->chars.uuid,
-						gattr->chars.prop));
-				attr->handle = gattr->chars.decl_handle;
-				last_handle = gattr->chars.decl_handle;
+				attr = (&(struct bt_gatt_attr)BT_GATT_CHARACTERISTIC(&gattr->uuid,
+						gattr->prop));
+				attr->handle = gattr->decl_handle;
+				last_handle = gattr->decl_handle;
 
-			} else if (BT_GATT_DISCOVER_DESCRIPTOR == params->type) {
+			} else if (BT_GATT_DISCOVER_DESCRIPTOR == rsp->type) {
+				const struct ble_gattc_descriptor *gattr = (void *)&data[i * sizeof(*gattr)];
 
 				attr = (&(struct bt_gatt_attr)
-					BT_GATT_DESCRIPTOR(&gattr->desc.uuid, 0, NULL, NULL, NULL));
-				attr->handle = gattr->desc.handle;
-				last_handle = gattr->desc.handle;
+					BT_GATT_DESCRIPTOR(&gattr->uuid, 0, NULL, NULL, NULL));
+				attr->handle = gattr->handle;
+				last_handle = gattr->handle;
 
 			}
 			else
@@ -754,20 +762,30 @@ void on_ble_gattc_discover_rsp(const struct ble_gattc_evt *p_evt,
 			last_handle++;
 		}
 
+#ifdef BT_GATT_DEBUG
+		pr_info(LOG_MODULE_BLE, "disc_rsp: l=%d", last_handle);
+#endif
 		params->start_handle = last_handle;
 
 		if (params->start_handle < params->end_handle) {
 			conn->gattc.disc_param = NULL;
 			if (!bt_gatt_discover(conn, params))
-				return;
+				goto not_done;
+
 		}
 	}
 done:
+#ifdef BT_GATT_DEBUG
+	pr_info(LOG_MODULE_BLE, "disc_rsp: done");
+#endif
 	/* discover process done */
 	if (params->destroy)
 		params->destroy(params);
 
 	conn->gattc.disc_param = NULL;
+
+not_done:
+	bt_conn_unref(conn);
 }
 
 int bt_gatt_discover(struct bt_conn *conn,
@@ -783,6 +801,10 @@ int bt_gatt_discover(struct bt_conn *conn,
 	BUILD_BUG_ON(sizeof(conn->gattc) != sizeof(conn->gattc.opaque));
 	if (conn->gattc.opaque)
 		return -EBUSY;
+
+#ifdef BT_GATT_DEBUG
+	pr_info(LOG_MODULE_BLE, "disc: %d", params->start_handle);
+#endif
 
 	switch (params->type) {
 	case BT_GATT_DISCOVER_PRIMARY:
@@ -817,9 +839,6 @@ void on_ble_gattc_read_rsp(const struct ble_gattc_read_rsp *p_evt,
 
 	assert(conn);
 
-	/* because ref count incremented in lookup_handle */
-	bt_conn_unref(conn);
-
 	params = conn->gattc.rd_params;
 
 	if (BLE_STATUS_SUCCESS == p_evt->status) {
@@ -846,7 +865,7 @@ void on_ble_gattc_read_rsp(const struct ble_gattc_read_rsp *p_evt,
 			params->func(conn, BT_ATT_ERR_UNLIKELY, params, NULL, 0);
 			goto done;
 		}
-		return;
+		goto not_done;
 	}
 
 done:
@@ -854,6 +873,9 @@ done:
 		params->destroy(params);
 	}
 	conn->gattc.rd_params = NULL;
+
+not_done:
+	bt_conn_unref(conn);
 }
 
 int bt_gatt_read(struct bt_conn *conn, struct bt_gatt_read_params *params)
@@ -888,15 +910,14 @@ void on_ble_gattc_write_rsp(const struct ble_gattc_write_rsp *p_evt, void *p_pri
 
 	assert(conn);
 
-	/* because ref count incremented in lookup_handle */
-	bt_conn_unref(conn);
-
 	if (conn->gattc.wr_params && conn->gattc.wr_params->func) {
 		conn->gattc.wr_params->func(conn, p_evt->status, conn->gattc.wr_params);
 		bfree(conn->gattc.wr_params);
 	}
 
 	conn->gattc.wr_params = NULL;
+
+	bt_conn_unref(conn);
 }
 
 static void bt_gatt_write_without_response_complete(struct bt_conn *conn, uint8_t err, const void *data)
@@ -1226,8 +1247,8 @@ void bt_gatt_disconnected(struct bt_conn *conn)
 
 #else
 
-void on_ble_gattc_discover_rsp(const struct ble_gattc_evt *p_evt,
-		const struct ble_gattc_attr *data, uint8_t data_len)
+void on_ble_gattc_discover_rsp(const struct ble_gattc_disc_rsp *p_evt,
+		const uint8_t *data, uint8_t data_len)
 {
 
 }

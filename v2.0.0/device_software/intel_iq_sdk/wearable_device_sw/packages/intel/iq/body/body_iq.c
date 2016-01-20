@@ -255,27 +255,25 @@ static int publish_activity(intel_Activity *activity)
 
 static void update_date_and_publish_or_store_current_activity()
 {
-	uint32_t timestamp_begin;
-	uint32_t timestamp_end;
 	int err = -1;
+	intel_Activity *push_activity = balloc(intel_Activity_size,NULL);
+	memcpy(push_activity, &cur_activity, intel_Activity_size);
 
-	timestamp_begin = cur_activity.timestamp_begin.datetime;
-	timestamp_end = cur_activity.timestamp_end.datetime;
 	/* Set timestamp to epoch date */
-	cur_activity.timestamp_begin.datetime = uptime_to_epoch(cur_activity.timestamp_begin.datetime);
-	cur_activity.timestamp_end.datetime = uptime_to_epoch(cur_activity.timestamp_end.datetime);
+	push_activity->timestamp_begin.datetime = uptime_to_epoch(push_activity->timestamp_begin.datetime);
+	push_activity->timestamp_end.datetime = uptime_to_epoch(push_activity->timestamp_end.datetime);
 
 	/* If a device is connected, we publish the report */
 	if (device_connected) {
-		err = publish_activity(&cur_activity);
+		err = publish_activity(push_activity);
 	}
-	if ((cur_activity.activity_status != intel_Activity_activityStatus_STARTED) &&
+	if ((push_activity->activity_status != intel_Activity_activityStatus_STARTED) &&
 	    (err <= 0)) {
 		ll_storage_service_push(ll_storage_service_conn,
-					(uint8_t *)&cur_activity,
+					(uint8_t *)push_activity,
 					sizeof(intel_Activity),
 					storage,
-					NULL);
+					push_activity);
 		if (device_connected) {
 			/* We also trigger a peek to retry */
 			ll_storage_service_peek(ll_storage_service_conn,
@@ -284,10 +282,10 @@ static void update_date_and_publish_or_store_current_activity()
 			                        storage,
 			                        NULL);
 		}
+	} else {
+		bfree(push_activity);
 	}
 
-	cur_activity.timestamp_begin.datetime = timestamp_begin;
-	cur_activity.timestamp_end.datetime = timestamp_end;
 }
 
 static void body_iq_stepcounter_cb(uint32_t steps, uint32_t activity_type, uint32_t timestamp)
@@ -382,6 +380,7 @@ static void body_iq_handle_msg(struct cfw_message *msg, void *data)
 {
 	switch(CFW_MESSAGE_ID(msg)) {
 	case MSG_ID_LL_PUSH_RSP:
+		bfree(CFW_MESSAGE_PRIV(msg));
 		break;
 	case MSG_ID_LL_POP_RSP: ;
 		/* Not used */

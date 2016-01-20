@@ -1006,6 +1006,45 @@ print_help:
 DECLARE_TEST_COMMAND(ble, info, tcmd_ble_info);
 
 #ifdef CONFIG_SERVICES_BLE_GATTC
+static uint8_t char_to_byte(char c) {
+	if (c >= 'a')
+		return 10 + (c - 'a');
+	else if (c >= 'A')
+		return 10 + (c - 'A');
+	else if (c >= '0')
+		return (c - '0');
+	return 0;
+}
+static uint8_t str_to_byte(const char *s) {
+	return (char_to_byte(s[0]) << 4) + char_to_byte(s[1]);
+}
+
+static void str_to_uuid(struct bt_uuid *uuid, const char *s)
+{
+	if (strlen(s) == 36) {
+		uuid->type = BT_UUID_128;
+		uuid->u128[ 0] = str_to_byte(&s[34]);
+		uuid->u128[ 1] = str_to_byte(&s[32]);
+		uuid->u128[ 2] = str_to_byte(&s[30]);
+		uuid->u128[ 3] = str_to_byte(&s[28]);
+		uuid->u128[ 4] = str_to_byte(&s[26]);
+		uuid->u128[ 5] = str_to_byte(&s[24]);
+		uuid->u128[ 6] = str_to_byte(&s[21]);
+		uuid->u128[ 7] = str_to_byte(&s[19]);
+		uuid->u128[ 8] = str_to_byte(&s[16]);
+		uuid->u128[ 9] = str_to_byte(&s[14]);
+		uuid->u128[10] = str_to_byte(&s[11]);
+		uuid->u128[11] = str_to_byte(&s[9]);
+		uuid->u128[12] = str_to_byte(&s[6]);
+		uuid->u128[13] = str_to_byte(&s[4]);
+		uuid->u128[14] = str_to_byte(&s[2]);
+		uuid->u128[15] = str_to_byte(&s[0]);
+
+	} else {
+		uuid->type = BT_UUID_16;
+		uuid->u16 = strtoul(s, NULL, 0);
+	}
+}
 /*
  * documentation should be maintained in: wearable_device_sw/doc/test_command_syntax.md
  */
@@ -1013,6 +1052,7 @@ void tcmd_ble_discover(int argc, char *argv[], struct tcmd_handler_ctx *ctx)
 {
 	uint32_t ret;
 	struct _info_for_rsp *info_for_rsp;
+	struct ble_discover_params params;
 
 	if (argc != 5 && argc != 7)
 		goto print_help;
@@ -1025,9 +1065,8 @@ void tcmd_ble_discover(int argc, char *argv[], struct tcmd_handler_ctx *ctx)
 	}
 	info_for_rsp->ctx = ctx;
 
-	struct ble_discover_params params;
-	params.uuid.type = BT_UUID_16;
-	params.uuid.u16 = strtoul(argv[4], NULL, 0);
+	str_to_uuid(&params.uuid, argv[4]);
+
 	if (argc == 7) {
 		params.handle_range.start_handle = strtoul(argv[5], NULL, 0);
 		params.handle_range.end_handle = strtoul(argv[6], NULL, 0);

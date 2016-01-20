@@ -26,6 +26,8 @@
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
+.NOTPARALLEL:
+
 all: dirs $(OUT)/host/cfw_console $(OUT)/host/cfw_server $(OUT)/host/cfw_test
 
 OBJS := bsp/src/machine/generic/linux-host/src/ipc_uart.o

@@ -83,7 +83,8 @@ static T_TIMER conn_params_timer = NULL;
 #ifdef CONFIG_SERVICES_BLE_GATTC
 struct ble_discover_int_params {
 	struct bt_gatt_discover_params params; /**< Discover parameters */
-	struct ble_discover_rsp *rsp;      /**< Discover response */
+	struct ble_discover_rsp *rsp;          /**< Discover response */
+	struct bt_uuid uuid;                   /**< Discover UUID request */
 };
 
 struct ble_subscribe_int_params {
@@ -520,7 +521,8 @@ static void handle_msg_id_ble_discover(struct cfw_message *msg)
 	struct ble_discover_req *req = container_of(msg, struct ble_discover_req, header);
 	struct ble_discover_rsp *resp;
 
-	disc_params->params.uuid = &req->params.uuid;
+	disc_params->uuid = req->params.uuid;
+	disc_params->params.uuid = &disc_params->uuid;
 	disc_params->params.func = ble_discover_cb;
 	disc_params->params.destroy = ble_discover_destroy;
 	disc_params->params.start_handle = req->params.handle_range.start_handle;
