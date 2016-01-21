@@ -43,7 +43,7 @@ public class Application extends android.app.Application {
     }
 
     public static final void init(ICoreInitListener initListener){
-        if (mIsInitialized == false){
+        if (!mIsInitialized) {
             mIsInitialized = true;
             byte[] key = new byte[64];
             Core.init(getContext(), initListener, key);
