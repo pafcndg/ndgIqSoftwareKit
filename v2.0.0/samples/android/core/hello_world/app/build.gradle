@@ -32,5 +32,5 @@ dependencies {
     compile "com.google.protobuf:protobuf-java:$GOOGLE_PROTOBUF_VERSION"
     compile "io.realm:realm-android:$REALM_VERSION"
     compile "com.intel.wearable.platform.icsf:icsflib:$ICSF_LIB_VERSION@aar"
-    compile(group: 'com.intel.wearable.platform', name: 'core', version: WEARABLE_CORE_SDK_VERSION_NAME, ext: 'aar')
+    compile "com.intel.wearable.platform:core:$WEARABLE_CORE_SDK_VERSION_NAME@aar"
 }
