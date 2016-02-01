@@ -36,13 +36,8 @@
 #include "drivers/sensor/bmi160_gpio.h"
 
 #ifdef CONFIG_BMI160_PM
-static uint8_t gyro_powermode;
-#if BMI160_ENABLE_MAG
-static uint8_t mag_powermode;
-#endif
-#endif
-
 static uint8_t fifo_full_en;
+#endif
 
 #if BMI160_ENABLE_DOUBLE_TAPPING
 uint32_t bmi160_any_motion_timestamp = 0;
@@ -184,10 +179,6 @@ static void handle_motion_detection(struct bmi160_rt_t *bmi160_rt, uint8_t statu
     if(_Rarely(need_init)){
         need_init = 0;
         fifo_full_en = bmi160_rt->int_en[BMI160_OFFSET_FIFO_FULL];
-        gyro_powermode = bmi160_rt->power_status[BMI160_SENSOR_GYRO];
-#if BMI160_ENABLE_MAG
-        mag_powermode = bmi160_rt->power_status[BMI160_SENSOR_MAG];
-#endif
     }
 
 #if BMI160_ENABLE_DOUBLE_TAPPING
@@ -233,10 +224,12 @@ static void handle_motion_detection(struct bmi160_rt_t *bmi160_rt, uint8_t statu
             bmi160_int_enable(BMI160_INT_SET_2, BMI160_OFFSET_NOMOTION, (1<<BMI160_SENSOR_MOTION));
 
             /* restore gyro power mode */
-            bmi160_change_sensor_powermode(BMI160_SENSOR_GYRO, gyro_powermode);
+            if(bmi160_rt->sensor_odr[BMI160_SENSOR_GYRO])
+                bmi160_change_sensor_powermode(BMI160_SENSOR_GYRO, BMI160_POWER_NORMAL);
+
 #if BMI160_ENABLE_MAG
-            if(bmi160_rt->change_mag_powermode)
-                bmi160_rt->change_mag_powermode(mag_powermode);
+            if(bmi160_rt->change_mag_powermode && bmi160_rt->sensor_odr[BMI160_SENSOR_MAG])
+                bmi160_rt->change_mag_powermode(BMI160_POWER_NORMAL);
 #endif
             event = PHY_SENSOR_EVENT_ANY_MOTION;
             bmi160_rt->motion_callback(&event, 1, bmi160_rt->motion_cb_data);
@@ -265,11 +258,9 @@ static void handle_motion_detection(struct bmi160_rt_t *bmi160_rt, uint8_t statu
             bmi16_set_user_sensor_config(BMI160_SENSOR_ACCEL, BMI160_POWER_LOWPOWER, 1, accel_config_nomotion);
 
             /* suspend gyro */
-            gyro_powermode = bmi160_rt->power_status[BMI160_SENSOR_GYRO];
             bmi160_change_sensor_powermode(BMI160_SENSOR_GYRO, BMI160_POWER_SUSPEND);
 #if BMI160_ENABLE_MAG
             /* suspend gyro */
-            mag_powermode = bmi160_rt->power_status[BMI160_SENSOR_MAG];
             if(bmi160_rt->change_mag_powermode)
                 bmi160_rt->change_mag_powermode(BMI160_POWER_SUSPEND);
 #endif

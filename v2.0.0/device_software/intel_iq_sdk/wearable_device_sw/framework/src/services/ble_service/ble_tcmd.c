@@ -44,7 +44,7 @@
 #include "../../src/lib/ble/ble_app_internal.h"
 #endif
 
-#define ANS_LENGTH 80
+#define ANS_LENGTH 120
 
 struct _enable {
 	uint8_t enable_flag;
@@ -241,7 +241,42 @@ static void get_info_print(struct cfw_message *msg,
 	}
 
 }
+#ifdef CONFIG_SERVICES_BLE_GATTC
+static void discover_print(struct cfw_message *msg,
+		struct tcmd_handler_ctx *ctx)
+{
+	char answer[ANS_LENGTH];
+	size_t i;
+	char *p_answer = answer;
 
+	// by default, indicate empty
+	sprintf(p_answer, "None");
+	for (i = 0; i < ((struct ble_discover_rsp *)msg)->attr_cnt && p_answer < &answer[ANS_LENGTH-1]; i++) {
+		p_answer += snprintf(p_answer, (&answer[ANS_LENGTH-1] - p_answer),
+				"uuid:0x%02X handle:%d",
+				((struct ble_discover_rsp *)msg)->attrs[i].uuid.u16,
+				((struct ble_discover_rsp *)msg)->attrs[i].handle);
+		if (BT_GATT_DISCOVER_PRIMARY == ((struct ble_discover_rsp *)msg)->type) {
+			p_answer += snprintf(p_answer, (&answer[ANS_LENGTH-1] - p_answer),
+					" end:%d - ",
+					((struct ble_discover_rsp *)msg)->attrs[i].end_handle);
+		} else if (BT_GATT_DISCOVER_INCLUDE == ((struct ble_discover_rsp *)msg)->type) {
+			p_answer += snprintf(p_answer, (&answer[ANS_LENGTH-1] - p_answer),
+					" uuid16:0x%02X start:%d end:%d - ",
+					((struct ble_discover_rsp *)msg)->attrs[i].uuid.u16, /* only 16-bits UUID is returned */
+					((struct ble_discover_rsp *)msg)->attrs[i].start_handle,
+					((struct ble_discover_rsp *)msg)->attrs[i].end_handle);
+		} else if (BT_GATT_DISCOVER_CHARACTERISTIC == ((struct ble_discover_rsp *)msg)->type) {
+			p_answer += snprintf(p_answer, (&answer[ANS_LENGTH-1] - p_answer),
+					" prop:%d - ",
+					((struct ble_discover_rsp *)msg)->attrs[i].properties);
+		} else if (BT_GATT_DISCOVER_DESCRIPTOR == ((struct ble_discover_rsp *)msg)->type) {
+			p_answer += snprintf(p_answer, (&answer[ANS_LENGTH-1] - p_answer), " - ");
+		}
+	}
+	TCMD_RSP_FINAL(ctx, answer);
+}
+#endif
 static void _ble_tcmd_handle_msg(struct cfw_message *msg, void *data)
 {
 	char answer[ANS_LENGTH];
@@ -275,15 +310,7 @@ static void _ble_tcmd_handle_msg(struct cfw_message *msg, void *data)
 #ifdef CONFIG_SERVICES_BLE_GATTC
 	case MSG_ID_BLE_DISCOVER_RSP:
 		if (!_check_status(((struct ble_discover_rsp *)msg)->status, info_for_rsp->ctx)) {
-			size_t i;
-			char *p_answer = answer;
-			// by default, indicate empty
-			sprintf(p_answer, "None");
-			for (i = 0; i < ((struct ble_discover_rsp *)msg)->attr_cnt && p_answer < &answer[ANS_LENGTH-1]; i++) {
-				sprintf(p_answer, "%d-", ((struct ble_discover_rsp *)msg)->attrs[i].handle);
-				p_answer += strlen(p_answer);
-			}
-			TCMD_RSP_FINAL(info_for_rsp->ctx, answer);
+			discover_print(msg, info_for_rsp->ctx);
 		}
 		break;
 	case MSG_ID_BLE_GET_REMOTE_DATA_RSP:
@@ -291,8 +318,10 @@ static void _ble_tcmd_handle_msg(struct cfw_message *msg, void *data)
 			size_t i;
 			char *p_answer = NULL;
 			p_answer = answer;
+			sprintf(p_answer, "conn:%p data:", ((struct ble_get_remote_data_rsp *)msg)->conn);
+			p_answer += strlen(p_answer);
 			for (i = 0; i < ((struct ble_get_remote_data_rsp *)msg)->data_length && p_answer < &answer[ANS_LENGTH-1]; i++) {
-				sprintf(p_answer, "0x%02X-", ((struct ble_get_remote_data_rsp *)msg)->data[i]);
+				sprintf(p_answer, "%02x", ((struct ble_get_remote_data_rsp *)msg)->data[i]);
 				p_answer += strlen(p_answer);
 			}
 			TCMD_RSP_FINAL(info_for_rsp->ctx, answer);
@@ -1095,8 +1124,9 @@ void tcmd_ble_write(int argc, char *argv[], struct tcmd_handler_ctx *ctx)
 {
 	uint32_t ret;
 	struct _info_for_rsp *info_for_rsp;
-	uint8_t data[4];
-	unsigned long int value;
+	uint16_t data_idx;
+	const uint16_t len = strlen(argv[5])/2;
+	uint8_t data[len];
 
 	if (argc != 6)
 		goto print_help;
@@ -1115,14 +1145,13 @@ void tcmd_ble_write(int argc, char *argv[], struct tcmd_handler_ctx *ctx)
 	params.char_handle = strtoul(argv[3], NULL, 0);  /**< Characteristic handle */
 	params.offset = strtoul(argv[4], NULL, 0);
 
-	value = strtoul(argv[5], NULL, 0);  /**< Data to write */
-	data[0] = value;
-	data[1] = value >> 8;
-	data[2] = value >> 16;
-	data[3] = value >> 24;
-
+	/** Convert ascii hex string into binary data */
+	for (data_idx = 0; data_idx < len && argv[5][2 * data_idx];
+			data_idx++) {
+		data[data_idx] = str_to_byte(&argv[5][2 * data_idx]);
+	}
 	ret = ble_set_remote_data(info_for_rsp->ble_service_conn,
-			&params, sizeof(data), data, info_for_rsp);
+			&params, data_idx, data, info_for_rsp);
 	_api_check_status(ret, info_for_rsp);
 
 	return;

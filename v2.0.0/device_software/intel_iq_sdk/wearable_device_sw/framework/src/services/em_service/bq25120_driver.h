@@ -49,9 +49,4 @@
  */
 bool ch_init(T_QUEUE parent_queue,void* call_back);
 
-/**@brief Function to write CD GPIO state.
- * @param[in] enable charger: 0, disable charger: 1
- */
-void ch_enable(uint8_t state);
-
 #endif /* CHARGER_DRIVER_H_ */

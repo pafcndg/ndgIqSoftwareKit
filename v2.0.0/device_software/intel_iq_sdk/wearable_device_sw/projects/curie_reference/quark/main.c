@@ -115,6 +115,7 @@ static T_QUEUE queue;
  * reference the queue processing. */
 static cfw_client_t * client;
 
+static bool must_shutdown = 0;
 /** Client message handler for main application */
 static void client_message_handler(struct cfw_message * msg, void * param)
 {
@@ -130,8 +131,12 @@ static void client_message_handler(struct cfw_message * msg, void * param)
 	case MSG_ID_UI_BTN_SINGLE_EVT: {
 		union ui_drv_evt *broadcast_evt = (union ui_drv_evt *)msg;
 		/* param is 0 if press is short, positive if press is long */
-		if (broadcast_evt->btn_evt.param)
-			shutdown();
+		if (broadcast_evt->btn_evt.param == 1) {
+			led_blink(255, 255, 255);
+			must_shutdown = 1;
+		}
+		else if (broadcast_evt->btn_evt.param == 2)
+			ble_app_clear_bonds();
 		break;
 	}
 	case MSG_ID_UI_BTN_DOUBLE_EVT:
@@ -139,8 +144,11 @@ static void client_message_handler(struct cfw_message * msg, void * param)
 		ble_app_stop_advertisement();
 		ble_app_start_advertisement(BLE_NO_ADV_OPT);
 		break;
-	case MSG_ID_UI_BTN_MAX_EVT:
-		ble_app_clear_bonds();
+	case MSG_ID_UI_LED_RSP:
+		/* LED has blinked, properly shutdown now */
+		if (must_shutdown) {
+			shutdown();
+		}
 		break;
 #endif
 	}

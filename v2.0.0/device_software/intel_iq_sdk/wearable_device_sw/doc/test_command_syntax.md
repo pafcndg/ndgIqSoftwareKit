@@ -248,14 +248,19 @@ ble discover <conn_ref> <type> <uuid> [start_handle] [end_handle]
 Discover the attributes on a connected device:
    - conn_ref - connection reference
    - type     - type of the discovery (0 = primary, 1 = secondary, 2 = included, 3 = characteristic, 4 = descriptor)
-   - uuid     - 16-bit UUID to discover
+   - uuid     - 16-bit or 128-bit UUID to discover
    - start_handle - optional start attribute handle for the discovery
    - end_handle - optional end attribute handle for the discovery
 
 Example: ble discover 0xa0004000 0 0x180f
    - 0xa0004000 is the connection reference displayed in logs when remote device connected
-   - 1 is to retrieve primary service
+   - 0 is to retrieve primary service
    - 0x180f is battery service UUID
+
+Example: ble discover 0xa0004002 0 1000c00f-fed9-4766-b18f-dead0d24beef
+   - 0xa0004002 is the connection reference displayed in logs when remote device connected
+   - 0 is to retrieve primary service
+   - 1000c00f-fed9-4766-b18f-dead0d24beef is vendor 128-bit UUID of primary remote service
 
 ~~~~~~~~
 ble write <conn_ref> <handle> <offset> <value>
@@ -264,12 +269,12 @@ Write an attribute on a connected device:
    - conn_ref - connection reference
    - handle   - handle of the attribute to write
    - offset   - offset at which to write
-   - value    - 32-bit value to write
+   - value    - ascii hex encoded string
 
-Example: ble write 0xa0004000 14 0xAA
+Example: ble write 0xa0004000 14 43757269652054657374207772206e72202330
    - 0xa0004000 is the connection reference displayed in logs when remote device connected
    - 14 is characteristic handle
-   - 0xAA is value to write
+   - 43757269652054657374207772206e72202330 is value to write
 
 ~~~~~~~~
 ble read <conn_ref> <handle> <offset>

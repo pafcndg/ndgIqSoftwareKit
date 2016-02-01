@@ -56,7 +56,8 @@ struct ota_ops ota_ops = {
 	.read = NULL ,
 };
 
-uint32_t ota_read_bytes(uint32_t where, uint8_t * data, uint32_t size)
+
+static uint32_t ota_read_bytes(uint32_t where, uint8_t * data, uint32_t size)
 {
 	unsigned int retlen;
 	DRIVER_API_RC ret;
@@ -169,6 +170,12 @@ static uint32_t ota_package_verify(struct ota *ota)
 	return !secure_update(& (ota->sig), md);
 }
 #else
+
+static uint32_t ota_read_byte(uint32_t addr, uint8_t * data)
+{
+	return ota_read_bytes(addr, data, 1);
+}
+
 static uint32_t ota_package_verify(struct ota *ota)
 {
 	uint32_t err_code = OTA_HASH_ERROR;
@@ -181,11 +188,13 @@ static uint32_t ota_package_verify(struct ota *ota)
 	ota->payload = buf + ota->header.hdr_length;
 
 	/* CRC is computed with initial 0 value in header */
-	crc = calc_crc32(crc, buf, offsetof(struct ota_header, crc));
-	crc = calc_crc32(crc, &dummy_data, sizeof(dummy_data));
+	crc = calc_crc32(crc, buf, offsetof(struct ota_header, crc),
+			ota_read_byte);
+	crc = calc_crc32(crc, &dummy_data, sizeof(dummy_data), NULL);
 	crc = calc_crc32(crc, buf + offsetof(struct ota_header, pl_length),
 			 ota->header.hdr_length + ota->header.pl_length -
-			 offsetof(struct ota_header, pl_length));
+			 offsetof(struct ota_header, pl_length),
+			 ota_read_byte);
 
 	if (crc == ota->header.crc) {
 		err_code = OTA_SUCCESS;

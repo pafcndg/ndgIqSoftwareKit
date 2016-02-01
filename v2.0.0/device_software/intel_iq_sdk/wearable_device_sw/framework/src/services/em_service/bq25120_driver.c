@@ -34,11 +34,14 @@
 #include "services/gpio_service/gpio_service.h"
 #include "fuel_gauge_api.h"
 #include "infra/log.h"
+#include "infra/time.h"
 #include "cfw/cfw.h"
 #include "cfw/cfw_messages.h"
 #include "os/os.h"
 #include "infra/wakelock_ids.h"
 #include "drivers/serial_bus_access.h"
+#include "drivers/soc_gpio.h"
+#include "machine.h"
 
 #define CHARGER_I2C_ADD		0x6A	/* Charger I2C address */
 
@@ -53,6 +56,7 @@
 #define REG_ICHRG_VALUE		0x58;	/* Set Fast charge control register to 22mA */
 #define REG_IPRETERM_VALUE	0x26;	/* Around 20% of ISET = 4.5mA */
 #define REG_VB_VALUE		0x96;	/* Set Battery voltage control register to 4.35V */
+#define REG_SHIPMODE_EN		0x20;	/* Enable ship mode */
 
 /* Define temperature threshold */
 #define OVERTEMP_THRESHOLD 60
@@ -60,7 +64,7 @@
 /* Define timers */
 #define CH_TM_DELAY_200ms (200)
 #define CH_TM_DELAY_20s (20000)	/* < charger_watchdog_timer(50s) / 2 */
-
+#define CH_HIZ_ACTIVEBAT (1) /* 1ms to pass from hi Z to active battery */
 /* Define call back function for charging_sm_event */
 typedef void (*ch_event_fct)(enum charging_sm_event);
 
@@ -76,7 +80,6 @@ static uint8_t tx_buff[10];
 static uint8_t rx_buff[10];
 
 static cfw_service_conn_t *em_gpio_service_conn_ss;
-static cfw_service_conn_t *em_gpio_service_conn_soc;
 
 /****************************************************************************************
  *********************** LOCAL FUNCTON IMPLEMENTATION ***********************************
@@ -84,6 +87,11 @@ static cfw_service_conn_t *em_gpio_service_conn_soc;
 
 static void ch_timer_handler(void *timer_event);
 static void ch_i2c_config(void);
+
+/** @brief Functions to write CD GPIO state
+ */
+static void ch_cd_high(void);
+static void ch_cd_low(void);
 
 /* I2C */
 
@@ -218,7 +226,7 @@ static void ch_i2c_config_callback(struct sba_request *req)
 	ch_release_i2c();
 	if (req->status == DRV_RC_OK)
 	{
-		ch_enable(0);
+		ch_cd_low();
 		charger_ready = true;
 	}
 		/* Ask the state of the GPIO to use debounce timer
@@ -236,13 +244,13 @@ static void ch_i2c_config(void)
 {
 	if (!sba_busy)
 	{
+		ch_cd_high();
 		sba_busy = true;
 		tx_buff[0] = REG_TEMP_ADD;
 		tx_buff[1] = REG_TEMP_VALUE;
 		tx_buff[2] = REG_ICHRG_VALUE;
 		tx_buff[3] = REG_IPRETERM_VALUE;
 		tx_buff[4] = REG_VB_VALUE;
-		ch_enable(1);
 		req.bus_id = SBA_I2C_MASTER_1;
 		req.addr.slave_addr = CHARGER_I2C_ADD;
 		req.tx_buff = tx_buff;
@@ -297,13 +305,6 @@ static void ch_gpio_connect_cb(cfw_service_conn_t * handle, void * param)
 		 * initializations before use I2C */
 		gpio_get_state(em_gpio_service_conn_ss, NULL);
 	}
-	if ((void*)SOC_GPIO_SERVICE_ID == param)
-	{
-		pr_info(LOG_MODULE_CH,"GPIO OPEN SERVICE: SOC_GPIO_SERVICE_ID");
-		em_gpio_service_conn_soc = handle;
-		/* Pin configuration */
-		gpio_configure(em_gpio_service_conn_soc, GPIO_SOC_CD, 1, NULL);
-	}
 }
 
 /**@brief Callback function for gpio service
@@ -324,6 +325,16 @@ static void ch_gpio_handle_msg(struct cfw_message *msg, void *data)
 	cfw_msg_free(msg);
 }
 
+static void ch_gpio_cd_conf(void)
+{
+	gpio_cfg_data_t pin_cfg = {
+		.gpio_type = GPIO_OUTPUT,
+		.gpio_cb = NULL
+	};
+	soc_gpio_set_config(&pf_device_soc_gpio_32, GPIO_SOC_CD, &pin_cfg);
+
+}
+
 /**@brief Function to subscribe GPIO service and send gpio status
  * @param[in]  parent_queue number
  * @return   false if function success, true if function failed.
@@ -338,8 +349,7 @@ static bool ch_gpio_init(T_QUEUE parent_queue)
 	}
 	cfw_open_service_helper(gpio_client, SS_GPIO_SERVICE_ID,
 				ch_gpio_connect_cb, (void*)SS_GPIO_SERVICE_ID);
-	cfw_open_service_helper(gpio_client, SOC_GPIO_SERVICE_ID,
-				ch_gpio_connect_cb, (void*)SOC_GPIO_SERVICE_ID);
+	ch_gpio_cd_conf();
 	return true;
 }
 
@@ -366,7 +376,17 @@ bool ch_init(T_QUEUE parent_queue, void* call_back)
 	return ch_gpio_init(parent_queue);
 }
 
-void ch_enable(uint8_t state)
+static void ch_cd_low(void)
 {
-	gpio_set_state(em_gpio_service_conn_soc, GPIO_SOC_CD,state,NULL);
+	soc_gpio_write(&pf_device_soc_gpio_32, GPIO_SOC_CD, 0);
+}
+
+static void ch_cd_high(void)
+{
+	uint32_t start_time;
+
+	soc_gpio_write(&pf_device_soc_gpio_32, GPIO_SOC_CD, 1);
+	start_time = get_uptime_ms();
+	/* spin 1 ms to wait until the charger is connected */
+	while ((get_uptime_ms() - start_time) < CH_HIZ_ACTIVEBAT);
 }

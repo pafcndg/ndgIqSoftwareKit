@@ -90,7 +90,7 @@ include $(T)/build/wearable_device_sw_version.mk
 # modified here
 VERSION_MAJOR  ?= 0
 VERSION_MINOR  ?= 0
-VERSION_PATCH  ?= 0
+VERSION_PATCH ?= 13
 
 # Get build number from environment or generate from YYWW
 ifeq ($(BUILD_NUMBER),)
@@ -110,8 +110,8 @@ BUILD_TYPE = custom
 endif
 
 # By default use the following:
-# Year: %g, Workweek: %V, Type: C (=Custom build), BuildNumber: %M%S
-VERSION_STRING_SUFFIX ?= $(shell date +"%g%V")$(BUILD_LETTER)$(BUILD_NUMBER_TRUNCATED)
+# Year: %g, Workweek: %V (+1 to be aligned with the Intel WW calendar), Type: C (=Custom build), BuildNumber: %M%S
+VERSION_STRING_SUFFIX ?= $(shell date +"%g")$(shell printf "%.*d" 2 $(shell echo `date +"%V"`+1 | bc))$(BUILD_LETTER)$(BUILD_NUMBER_TRUNCATED)
 
 ifeq ($(ARTIFACTORY_BUILD_URL),)
 DOWNLOAD_DIR_URL := file://$(T)/../pub

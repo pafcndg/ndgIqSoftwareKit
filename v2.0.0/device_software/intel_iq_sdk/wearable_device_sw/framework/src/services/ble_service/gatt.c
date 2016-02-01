@@ -669,7 +669,10 @@ void on_ble_gattc_discover_rsp(const struct ble_gattc_disc_rsp *rsp,
 	uint16_t last_handle;
 	int status = BT_GATT_ITER_STOP;
 	struct bt_gatt_discover_params *params;
+	struct bt_gatt_service svc_value;
+	struct bt_gatt_include inc_value;
 	struct bt_conn *conn = bt_conn_lookup_handle(rsp->conn_handle);
+
 
 	assert(conn);
 
@@ -713,27 +716,39 @@ void on_ble_gattc_discover_rsp(const struct ble_gattc_disc_rsp *rsp,
 					 Handle and the Ending Handle is returned*/
 					goto done;
 				}
-				struct bt_gatt_service value;
 
-				value.end_handle = gattr->handle_range.end_handle;
-				value.uuid = params->uuid;
+				svc_value.end_handle = gattr->handle_range.end_handle;
+				svc_value.uuid = params->uuid;
 
-				attr = (&(struct bt_gatt_attr)BT_GATT_PRIMARY_SERVICE(&value));
+				attr = (&(struct bt_gatt_attr)BT_GATT_PRIMARY_SERVICE(&svc_value));
 				attr->handle = gattr->handle;
-				last_handle = value.end_handle;
+				last_handle = svc_value.end_handle;
 
 
 			} else if (BT_GATT_DISCOVER_INCLUDE == rsp->type) {
 				const struct ble_gattc_incl_svc *gattr = (void *)&data[i * sizeof(*gattr)];
-				struct bt_gatt_include value;
 
-				value.start_handle = gattr->svc.handle_range.start_handle;
-				value.end_handle = gattr->svc.handle_range.end_handle;
+				inc_value.start_handle = gattr->svc.handle_range.start_handle;
+				inc_value.end_handle = gattr->svc.handle_range.end_handle;
+
+				/*
+				 * 4.5.1 If the service UUID is a 16-bit Bluetooth UUID
+				 *  it is also returned in the response.
+				 */
+				switch(gattr->svc.uuid.type) {
+				case BT_UUID_16:
+					inc_value.uuid = &gattr->svc.uuid;
+					break;
+				case BT_UUID_128:
+					/* Data is not available at this point */
+					break;
+				}
 
 				attr = (&(struct bt_gatt_attr)
-						BT_GATT_INCLUDE_SERVICE(&value));
+						BT_GATT_INCLUDE_SERVICE(&inc_value));
 				attr->handle = gattr->incl_handle;
-				last_handle = value.end_handle;
+				last_handle = gattr->incl_handle;
+
 
 			} else if (BT_GATT_DISCOVER_CHARACTERISTIC == rsp->type) {
 				const struct ble_gattc_characteristic *gattr = (void*)&data[i * sizeof(*gattr)];
@@ -793,8 +808,8 @@ int bt_gatt_discover(struct bt_conn *conn,
 {
 	struct ble_core_discover_params discover_params;
 
-	if (!conn || !params || !params->func || !params->start_handle ||
-	    !params->end_handle || params->start_handle > params->end_handle) {
+	if (!conn || conn->state != BT_CONN_CONNECTED || !params || !params->func ||
+	    !params->start_handle || !params->end_handle || params->start_handle > params->end_handle) {
 		return -EINVAL;
 	}
 	/* Sanity check */
@@ -883,8 +898,8 @@ int bt_gatt_read(struct bt_conn *conn, struct bt_gatt_read_params *params)
 
 	struct ble_gattc_read_params req;
 
-	if (!conn || !params || !params->handle || !params->func ||
-	    !params->destroy) {
+	if (!conn || conn->state != BT_CONN_CONNECTED || !params ||
+	    !params->handle || !params->func || !params->destroy) {
 		return -EINVAL;
 	}
 	/* Sanity check */
@@ -969,7 +984,7 @@ int bt_gatt_write(struct bt_conn *conn, uint16_t handle, uint16_t offset,
 {
 	struct bt_gatt_write_params *wr_params;
 
-	if (!conn || !handle || !func) {
+	if (!conn || conn->state != BT_CONN_CONNECTED  || !handle || !func) {
 		return -EINVAL;
 	}
 
@@ -1032,7 +1047,7 @@ int bt_gatt_subscribe(struct bt_conn *conn,
 	bool has_subscription = false;
 	struct bt_gatt_ccc_write_params *wr_params;
 
-	if (!conn) {
+	if (!conn || conn->state != BT_CONN_CONNECTED) {
 		return -ENOTCONN;
 	}
 
@@ -1081,7 +1096,7 @@ int bt_gatt_unsubscribe(struct bt_conn *conn,
 	bool has_subscription = false, found = false;
 	struct bt_gatt_ccc_write_params *wr_params;
 
-	if (!conn) {
+	if (!conn || conn->state != BT_CONN_CONNECTED) {
 		return -ENOTCONN;
 	}
 

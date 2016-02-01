@@ -487,13 +487,29 @@ static uint8_t ble_discover_cb(struct bt_conn *conn,
 			container_of(params, struct ble_discover_int_params, params);
 	struct ble_discover_rsp *old_resp = disc_params->rsp;
 	struct ble_discover_rsp *new_resp;
+	struct bt_gatt_service *svc_value;
+	struct bt_gatt_include *inc_value;
 
 	/* Allocate an new response with an extra attribute in the array */
-	new_resp = (void *)cfw_alloc_message(sizeof(*new_resp) + ((old_resp->attr_cnt + 1) * sizeof(struct bt_gatt_attr)), NULL);
+	new_resp = (void *)cfw_alloc_message(sizeof(*new_resp) + ((old_resp->attr_cnt + 1) * sizeof(struct ble_discover_attr)), NULL);
 
 	/* Copy the previous response response (including the attributes) */
-	memcpy(new_resp, old_resp, sizeof(*new_resp) + (old_resp->attr_cnt * sizeof(struct bt_gatt_attr)));
-	new_resp->attrs[old_resp->attr_cnt] = *attr;
+	memcpy(new_resp, old_resp, sizeof(*new_resp) + (old_resp->attr_cnt * sizeof(struct ble_discover_attr)));
+
+	new_resp->attrs[old_resp->attr_cnt].uuid = *attr->uuid;
+	new_resp->attrs[old_resp->attr_cnt].handle = attr->handle;
+	if (BT_GATT_DISCOVER_PRIMARY == params->type) {
+		svc_value = attr->user_data;
+		new_resp->attrs[old_resp->attr_cnt].end_handle = svc_value->end_handle;
+	} else if (BT_GATT_DISCOVER_INCLUDE == params->type) {
+		inc_value = attr->user_data;
+		if (inc_value->uuid)
+			new_resp->attrs[old_resp->attr_cnt].uuid = *inc_value->uuid;
+		new_resp->attrs[old_resp->attr_cnt].start_handle = inc_value->start_handle;
+		new_resp->attrs[old_resp->attr_cnt].end_handle = inc_value->end_handle;
+	} else if (BT_GATT_DISCOVER_CHARACTERISTIC == params->type)
+		new_resp->attrs[old_resp->attr_cnt].properties = *((uint8_t*)attr->user_data);
+
 	new_resp->attr_cnt = old_resp->attr_cnt + 1;
 
 	/* Change the new response */
@@ -538,6 +554,7 @@ static void handle_msg_id_ble_discover(struct cfw_message *msg)
 			    &req->header,
 			    MSG_ID_BLE_DISCOVER_RSP,
 			    sizeof(*resp));
+	resp->type = req->params.type;
 	disc_params->rsp = resp;
 
 	ret = bt_gatt_discover(req->params.conn, &disc_params->params);

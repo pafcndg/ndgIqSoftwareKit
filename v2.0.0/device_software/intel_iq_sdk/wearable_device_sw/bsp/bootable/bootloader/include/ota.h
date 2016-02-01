@@ -122,4 +122,3 @@ uint32_t flash_part(struct ota *ota, uint32_t to, uint32_t size,
 
 uint32_t ota_flash_all(struct ota *ota);
 uint32_t ota_get_cache_offset(struct ota *ota);
-uint32_t ota_read_bytes(uint32_t where, uint8_t * data, uint32_t size);

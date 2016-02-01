@@ -40,15 +40,16 @@ void handle_ble_property_read_rsp(struct cfw_message *msg)
 	read_property_rsp_msg_t *rsp = container_of(msg, read_property_rsp_msg_t, rsp_header);
 	struct ble_app_storage_handler *p_hdl = CFW_MESSAGE_PRIV(msg);
 	int status = rsp->rsp_header.status;
+	uint8_t *data;
 
-	if (DRV_RC_OK == status && p_hdl) {
-		uint8_t *data = &rsp->start_of_values;
-		p_hdl->cback(p_hdl, data);
-	} else if (DRV_RC_INVALID_OPERATION == status)
-		pr_warning(LOG_MODULE_MAIN, "handle_ble_property_read(status: %d): failed/no cback",
-				status);
-	if (p_hdl)
-		bfree(p_hdl);
+	assert(p_hdl);
+
+	if (DRV_RC_OK == status)
+		data = &rsp->start_of_values;
+	else
+		data = NULL;
+	p_hdl->cback(p_hdl, data);
+	bfree(p_hdl);
 }
 
 int ble_properties_read(cfw_service_conn_t *p_service_properties_conn,

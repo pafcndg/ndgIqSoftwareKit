@@ -337,14 +337,22 @@ struct ble_discover_req {
 	struct ble_discover_params params; /**< Discover parameters */
 };
 
+struct ble_discover_attr {
+	struct bt_uuid uuid;
+	uint16_t handle;
+	uint16_t start_handle; /* only for included services */
+	uint16_t end_handle;   /* only for services and included services */
+	uint8_t properties;    /* only for characteristics */
+};
+
 /** Parameters for @ref MSG_ID_BLE_DISCOVER_RSP. */
 struct ble_discover_rsp {
-	struct cfw_message header;      /**< Component framework message header (@ref cfw), MUST be first element of structure */
-	ble_status_t status;            /**< Status of operation */
-	struct bt_conn *conn;           /**< Connection reference */
-	uint8_t type;                   /**< Discover type @ref BLE_GATT_DISC_TYPES */
-	uint8_t attr_cnt;               /**< Number of attributes in this response */
-	struct bt_gatt_attr attrs[];    /**< Returned attributes */
+	struct cfw_message header;           /**< Component framework message header (@ref cfw), MUST be first element of structure */
+	ble_status_t status;                 /**< Status of operation */
+	struct bt_conn *conn;                /**< Connection reference */
+	uint8_t type;                        /**< Discover type @ref BLE_GATT_DISC_TYPES */
+	uint8_t attr_cnt;                    /**< Number of attributes in this response */
+	struct ble_discover_attr attrs[];    /**< Returned discovered attributes */
 };
 
 /** Subscribe options. */

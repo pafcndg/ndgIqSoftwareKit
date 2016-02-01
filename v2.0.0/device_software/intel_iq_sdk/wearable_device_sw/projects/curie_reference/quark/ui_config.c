@@ -51,23 +51,25 @@ struct ui_config ui_config_ref_app = {
 			},
 			.timing = {
 				.double_press_time = 250,
-				.max_time = 6000,
+				.max_time = 10000,
 			},
 			.press_mask = SINGLE_PRESS | DOUBLE_PRESS | MAX_PRESS,
-			.BUTTON_ACTION(1000),
+			.BUTTON_ACTION(1000, 6000),
 		}
 	},
 	.btn_count = UI_BUTTON_COUNT,
 #endif
-#ifdef CONFIG_LED
 	.led_count = 1,
 	.leds = NULL,
-#endif
 };
 
+static cfw_service_conn_t * ui_conn = NULL;
 /* We don't do anything in the callback... */
 static inline void ui_connect_cb(cfw_service_conn_t * conn, void * param)
-{}
+{
+	ui_conn = conn;
+	led_blink(0, 255, 0);
+}
 
 void ui_service_start_helper(cfw_client_t * client)
 {
@@ -79,4 +81,29 @@ void ui_service_start_helper(cfw_client_t * client)
 	cfw_open_service_helper_evt(client, UI_SVC_SERVICE_ID, client_events,
 			ARRAY_SIZE(client_events),
 			ui_connect_cb, NULL);
+}
+
+static led_s led_pattern = {
+    .id = 0,
+    .repetition_count = 0,
+    .intensity = 255,
+    .duration = {
+        {1000,1000},
+        {0,0},
+        {0,0}
+    },
+    .rgb = {
+            {0, 255, 0},
+            {0, 0, 0},
+            {0, 0, 0},
+    }
+};
+
+void led_blink(uint8_t r, uint8_t g, uint8_t b) {
+	if(ui_conn) {
+		led_pattern.rgb[0].r = r;
+		led_pattern.rgb[0].g = g;
+		led_pattern.rgb[0].b = b;
+		ui_play_led_pattern(ui_conn, 0, LED_BLINK_X1, &led_pattern, NULL);
+	}
 }

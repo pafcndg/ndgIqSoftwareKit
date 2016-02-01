@@ -46,4 +46,5 @@ extern struct ui_config ui_config_ref_app;
  */
 void ui_service_start_helper(cfw_client_t * client);
 
+void led_blink(uint8_t r, uint8_t g, uint8_t b);
 #endif

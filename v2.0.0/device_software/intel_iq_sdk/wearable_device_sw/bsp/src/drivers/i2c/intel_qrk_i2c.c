@@ -575,6 +575,7 @@ DRIVER_API_RC soc_i2c_transfer(SOC_I2C_CONTROLLER controller_id, uint8_t *data_w
     /* Enable necesary interrupts */
     if (I2C_MASTER == dev->mode)
     {
+       soc_xmit_data(dev);
        MMIO_REG_VAL_FROM_BASE(dev->BASE, IC_INTR_MASK) = SOC_ENABLE_RX_TX_INT_I2C;
     }
     else

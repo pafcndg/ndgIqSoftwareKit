@@ -34,7 +34,8 @@
 #include <stdint.h>
 
 unsigned short calc_crc16_ccitt(unsigned char *data, unsigned short len);
-uint32_t calc_crc32(uint32_t crcinit, const void *buf, size_t size);
+uint32_t calc_crc32(uint32_t crcinit, const void *buf, size_t size,
+		    uint32_t (*read_byte)(uint32_t, uint8_t *));
 int check_crc(uint8_t * data, int len);
 
 #endif /* __CRC_H__ */

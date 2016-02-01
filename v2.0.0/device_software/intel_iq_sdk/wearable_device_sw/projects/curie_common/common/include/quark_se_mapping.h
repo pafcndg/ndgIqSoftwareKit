@@ -39,7 +39,7 @@
 #define EMBEDDED_FLASH_BLOCK_SIZE                       2048
 
 #define SERIAL_FLASH_ID                                 1
-#define SERIAL_FLASH_NB_BLOCKS                          4096
+#define SERIAL_FLASH_NB_BLOCKS                          512
 #define SERIAL_FLASH_BLOCK_SIZE                         4096
 
 #define NUMBER_OF_PARTITIONS                            8
@@ -74,11 +74,11 @@
 #define FACTORY_SETTINGS_START_BLOCK                    (APPLICATION_DATA_END_BLOCK+1)
 #define FACTORY_SETTINGS_END_BLOCK                      (FACTORY_SETTINGS_START_BLOCK+1)
 
-/* Partition used for FOTA - 512 blocks = 2 MB */
+/* Partition used for FOTA - 253 blocks = 1012 kB */
 #define SPI_FOTA_PARTITION_ID                           5
 #define SPI_FOTA_FLASH_ID                               SERIAL_FLASH_ID
 #define SPI_FOTA_START_BLOCK                            0
-#define SPI_FOTA_END_BLOCK                              511
+#define SPI_FOTA_END_BLOCK                              253
 #define SPI_FOTA_NB_BLOCKS                              (SPI_FOTA_END_BLOCK - SPI_FOTA_START_BLOCK+1)
 
 /* Partition used for Activity data storage - 256 blocks = 1 MB */
