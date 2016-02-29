@@ -379,12 +379,12 @@ class TimeIQBGService : NSObject, IMessageListener, MFMessageComposeViewControll
         switch (messageType.ordinal())
         {
         case MessageType.ON_REMINDERS_TRIGGERED().ordinal():
-            DeviceConnectionManager().sendNotification()
+            DeviceConnectionManager.sharedInstance.sendNotification()
             let reminderResult = message.getData() as! RemindersResult;
             self.onRemindersTriggered(self.remindersHashToArray(reminderResult.getResult()));
             break;
         case MessageType.ON_EVENT_TRIGGERED().ordinal():
-            DeviceConnectionManager().sendNotification()
+            DeviceConnectionManager.sharedInstance.sendNotification()
             self.onEventTriggered(message.getData() as! TSOEventTriggeredMsg);
             break;
         case MessageType.ON_EVENT_START().ordinal():

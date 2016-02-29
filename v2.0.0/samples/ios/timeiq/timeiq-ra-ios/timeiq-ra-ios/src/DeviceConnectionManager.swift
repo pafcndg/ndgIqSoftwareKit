@@ -11,19 +11,21 @@ import IQCore
 
 class DeviceConnectionManager: NSObject {
     
-    private static var controller: WearableControllerType?
-    private static var notificationController: NotificationControllerType?
-    private static var bleScanner: WearableScannerType!
-    private static var selectedToken: WearableToken!
-    private static var registrationTokenType: RegistrationTokenType!
-    private static var updatesArray: [(connected: Bool)->()] = []
-    private static var userEventsArray: [(event: WearableUserEvent) -> ()] = []
-    private static var userEventController: UserEventsControllerType?
-    private static var subscribedToUserEvents = false
+    static let sharedInstance = DeviceConnectionManager()
+    
+    private var controller: WearableControllerType?
+    private var notificationController: NotificationControllerType?
+    private var bleScanner: WearableScannerType!
+    private var selectedToken: WearableToken!
+    private var registrationTokenType: RegistrationTokenType!
+    private var updatesArray: [(connected: Bool)->()] = []
+    private var userEventsArray: [(event: WearableUserEvent) -> ()] = []
+    private var userEventController: UserEventsControllerType?
+    private var subscribedToUserEvents = false
     
     override init() {
-        if (DeviceConnectionManager.bleScanner == nil) {
-            DeviceConnectionManager.bleScanner = WearableScanner.scannerForProtocol(.BLE)
+        if (bleScanner == nil) {
+            bleScanner = WearableScanner.scannerForProtocol(.BLE)
         }
     }
     /********** SCAN **********/
@@ -33,7 +35,7 @@ class DeviceConnectionManager: NSObject {
         }
         var foundTokens = [WearableToken]()//[WearableToken]()
         
-        DeviceConnectionManager.bleScanner.startScan({ (tokenRes: WearableScannerTokenResult) -> () in
+        bleScanner.startScan({ (tokenRes: WearableScannerTokenResult) -> () in
             dispatch_async(dispatch_get_main_queue()) { () -> Void in
                 foundTokens.append(tokenRes.token)
                 addToken(newToken: tokenRes.token)
@@ -50,34 +52,34 @@ class DeviceConnectionManager: NSObject {
         return foundTokens
     }
     func stopScan() {
-        DeviceConnectionManager.bleScanner.stopScan()
+        bleScanner.stopScan()
     }
     func isScanning() -> Bool {
-        return DeviceConnectionManager.bleScanner.isScanning
+        return bleScanner.isScanning
     }
     /******** PAIRING ********/
     func pair(token: WearableToken) {
-        DeviceConnectionManager.selectedToken = token
+        selectedToken = token
         
-        DeviceConnectionManager.controller = WearableController.controllerForToken(DeviceConnectionManager.selectedToken)
+        controller = WearableController.controllerForToken(selectedToken)
         
         //Adding connection listener
-        DeviceConnectionManager.registrationTokenType = DeviceConnectionManager.controller?.addConnectionStatusObserver({ (wearableConnectStatus: WearableConnectStatus) -> () in
+        registrationTokenType = controller?.addConnectionStatusObserver({ (wearableConnectStatus: WearableConnectStatus) -> () in
             var connected = false
-            if DeviceConnectionManager.controller?.connectionStatus == IQCore.WearableConnectStatus.Connected {
+            if self.controller?.connectionStatus == IQCore.WearableConnectStatus.Connected {
                 connected = true
             }
-            for curr_rec in DeviceConnectionManager.updatesArray {
+            for curr_rec in self.updatesArray {
                 curr_rec(connected: connected)
             }
         })
     }
     func registerForConnectionUpdates(codeToRun: (connected: Bool) -> ()) {
-        DeviceConnectionManager.updatesArray.append(codeToRun)
+        updatesArray.append(codeToRun)
     }
     /******* CONNECTION *******/
     func connectToController(err: (e: NSError) -> ()?, success: () -> ()?) {
-        DeviceConnectionManager.controller?.connect({ (wearableToken, error) -> () in
+        controller?.connect({ (wearableToken, error) -> () in
             if error == nil {
                 self.subscribeForUserEvents()
                 success()
@@ -87,14 +89,14 @@ class DeviceConnectionManager: NSObject {
         })
     }
     func disconnect() {
-        DeviceConnectionManager.controller?.disconnect()
-        DeviceConnectionManager.registrationTokenType.unsubscribe()
+        controller?.disconnect()
+        registrationTokenType.unsubscribe()
         unSubscribeFromUserEvents()
     }
     /******* NOTIFICATIONS *******/
     func sendNotification() {
         
-        if (DeviceConnectionManager.controller != nil && isConnected()) {
+        if (controller != nil && isConnected()) {
             //Vibration pattern
             let vibra = NotificationVibrationPattern(type: .Square)
             vibra.amplitude = 127
@@ -118,10 +120,10 @@ class DeviceConnectionManager: NSObject {
             
             if notification.isValid {
                 // TODO: add some loopback / completion functionality
-                if (DeviceConnectionManager.notificationController == nil) {
-                    DeviceConnectionManager.notificationController = NotificationController.controllerForWearable(DeviceConnectionManager.controller!)
+                if (notificationController == nil) {
+                    notificationController = NotificationController.controllerForWearable(controller!)
                 }
-                DeviceConnectionManager.notificationController!.sendNotification(notification, success: { () -> Void in
+                notificationController!.sendNotification(notification, success: { () -> Void in
                     Log.verbose?.message("Sent Notification: \(notification)")
                     }, failure: { (error) -> Void in
                         print(error)
@@ -130,34 +132,34 @@ class DeviceConnectionManager: NSObject {
         }
     }
     func isConnected() -> Bool {
-        if DeviceConnectionManager.controller?.connectionStatus == IQCore.WearableConnectStatus.Connected {
+        if controller?.connectionStatus == IQCore.WearableConnectStatus.Connected {
             return true
         }
         return false
     }
     func getToken() -> WearableToken {
-        return DeviceConnectionManager.selectedToken
+        return selectedToken
     }
     private func subscribeForUserEvents() {
-        DeviceConnectionManager.userEventController = UserEventsController.controllerForWearable(DeviceConnectionManager.controller!)
+        userEventController = UserEventsController.controllerForWearable(controller!)
         
-        DeviceConnectionManager.userEventController?.subscribe({ [weak self] () -> Void in
-            DeviceConnectionManager.subscribedToUserEvents = true
+        userEventController?.subscribe({ [weak self] () -> Void in
+            self!.subscribedToUserEvents = true
             }, failure: { [weak self] (error) -> Void in
-                DeviceConnectionManager.subscribedToUserEvents = false
+                self!.subscribedToUserEvents = false
             }) { [weak self] (event) -> () in
                 self?.pushNewUserEvent(event)
         }
     }
     private func unSubscribeFromUserEvents() {
-        DeviceConnectionManager.subscribedToUserEvents = false
-        DeviceConnectionManager.userEventController?.unsubscribe()
+        subscribedToUserEvents = false
+        userEventController?.unsubscribe()
     }
     func registerForUserEvents(pushEvent: (event: WearableUserEvent) -> ()) {
-        DeviceConnectionManager.userEventsArray.append(pushEvent)
+        userEventsArray.append(pushEvent)
     }
     private func pushNewUserEvent(event: WearableUserEvent) {
-        for curr_rec in DeviceConnectionManager.userEventsArray {
+        for curr_rec in userEventsArray {
             curr_rec(event: event)
         }
     }

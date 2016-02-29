@@ -14,7 +14,7 @@ class ConnectToDeviceVC: UITableViewController {
     var foundTokens = [WearableToken]()
     var spinner:UIActivityIndicatorView!
     
-    private var deviceConnectionManager = DeviceConnectionManager()
+    private var deviceConnectionManager = DeviceConnectionManager.sharedInstance
     private static var updateTable = false
     private static var runOnce = true
     
