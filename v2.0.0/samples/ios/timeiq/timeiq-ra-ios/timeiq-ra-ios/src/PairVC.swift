@@ -12,7 +12,7 @@ import IQCore
 class PairVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var token: WearableToken!
-    private var deviceConnectionManager = DeviceConnectionManager()
+    private var deviceConnectionManager = DeviceConnectionManager.sharedInstance
     var spinner:UIActivityIndicatorView!
 
     @IBOutlet weak var connectBtn: UIButton!
