@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>WearableControllerType Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Protocol/WearableControllerType" class="dashAnchor"></a>
+    <a title="WearableControllerType Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">IQCore Docs</a> (100% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">IQCore Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        WearableControllerType Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/BodyController.html">BodyController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/FirmwareController.html">FirmwareController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LocalDataStore.html">LocalDataStore</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Log.html">Log</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LogLevelChannel.html">LogLevelChannel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NotificationController.html">NotificationController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NotificationDurationPattern.html">NotificationDurationPattern</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NotificationLedPattern.html">NotificationLedPattern</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NotificationVibrationPattern.html">NotificationVibrationPattern</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SystemEventsController.html">SystemEventsController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UserEventsController.html">UserEventsController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UserIdentity.html">UserIdentity</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WearableBodyActivity.html">WearableBodyActivity</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WearableController.html">WearableController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WearableIdentity.html">WearableIdentity</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WearableNotification.html">WearableNotification</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WearableScanner.html">WearableScanner</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WearableScannerTokenResult.html">WearableScannerTokenResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WearableSystemBootEvent.html">WearableSystemBootEvent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WearableSystemCrashEvent.html">WearableSystemCrashEvent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WearableSystemEvent.html">WearableSystemEvent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WearableSystemLowBatteryEvent.html">WearableSystemLowBatteryEvent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WearableSystemShutdownEvent.html">WearableSystemShutdownEvent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WearableToken.html">WearableToken</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WearableUserEvent.html">WearableUserEvent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WearableUserEventButton.html">WearableUserEventButton</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WearableUserEventGesture.html">WearableUserEventGesture</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Global Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v6IQCore19WearableErrorDomainSS">WearableErrorDomain</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/LocalDataStoreType.html">LocalDataStoreType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/LogLevel.html">LogLevel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/NotificationLEDPatternType.html">NotificationLEDPatternType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/NotificationVibrationType.html">NotificationVibrationType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/WearableBodyActivityStatus.html">WearableBodyActivityStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/WearableBodyActivityType.html">WearableBodyActivityType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/WearableCommunicationProtocol.html">WearableCommunicationProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/WearableConnectStatus.html">WearableConnectStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/WearableSystemEventBootType.html">WearableSystemEventBootType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/WearableSystemEventShutdownType.html">WearableSystemEventShutdownType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/WearableUserEventButtonType.html">WearableUserEventButtonType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/WearableUserEventGestureType.html">WearableUserEventGestureType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF6IQCoreoi2eeFTCS_13WearableTokenS0__Sb">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF6IQCoreoi2eeFTCS_27NotificationDurationPatternS0__Sb">==(_:_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/BodyControllerType.html">BodyControllerType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/FirmwareControllerType.html">FirmwareControllerType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/NotificationControllerType.html">NotificationControllerType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RegistrationTokenType.html">RegistrationTokenType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SystemEventsControllerType.html">SystemEventsControllerType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/UserEventsControllerType.html">UserEventsControllerType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/WearableControllerType.html">WearableControllerType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/WearableScannerType.html">WearableScannerType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/WearableTokenType.html">WearableTokenType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Typealiases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:6IQCore20BodyActivityReceived">BodyActivityReceived</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:6IQCore24FirmwareInstallCompleted">FirmwareInstallCompleted</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:6IQCore21FirmwareInstallFailed">FirmwareInstallFailed</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:6IQCore22FirmwareInstallStarted">FirmwareInstallStarted</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:6IQCore24FirmwareInstalllProgress">FirmwareInstalllProgress</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:6IQCore17UserEventReceived">UserEventReceived</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:6IQCore26WearableBatteryLevelUpdate">WearableBatteryLevelUpdate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:6IQCore25WearableConnectCompletion">WearableConnectCompletion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:6IQCore32WearableIdentityUpdateCompletion">WearableIdentityUpdateCompletion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:6IQCore20WearableScannerError">WearableScannerError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:6IQCore21WearableScannerFinish">WearableScannerFinish</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:6IQCore25WearableScannerTokenFound">WearableScannerTokenFound</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>WearableControllerType</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">WearableControllerType</span></code></pre>
+
+                </div>
+              </div>
+            <p>The WearableControllerType protocol is adopted by an object that provides the communication layer between the wearable device and the
+companion device.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vP6IQCore22WearableControllerType5tokenCS_13WearableToken"></a>
+                    <a name="//apple_ref/swift/Property/token" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vP6IQCore22WearableControllerType5tokenCS_13WearableToken">token</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the token for the associated wearable device.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">token</span><span class="p">:</span> <span class="kt">WearableToken</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP6IQCore22WearableControllerTypecuRq_S0__FMq_FT5tokenCS_13WearableToken_q_"></a>
+                    <a name="//apple_ref/swift/Method/init(token:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP6IQCore22WearableControllerTypecuRq_S0__FMq_FT5tokenCS_13WearableToken_q_">init(token:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initialization for WearableControllerType.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="nf">init</span><span class="p">(</span><span class="nv">token</span><span class="p">:</span> <span class="kt">WearableToken</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>token</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A WearableToken returned by the WearableScanner.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vP6IQCore22WearableControllerType16wearableIdentityGSqCS_16WearableIdentity_"></a>
+                    <a name="//apple_ref/swift/Property/wearableIdentity" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vP6IQCore22WearableControllerType16wearableIdentityGSqCS_16WearableIdentity_">wearableIdentity</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the WearableIdentity information for the associated wearable device. This property will only be populated after a successful connection is performed.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">wearableIdentity</span><span class="p">:</span> <span class="kt">WearableIdentity</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vP6IQCore22WearableControllerType16connectionStatusOS_21WearableConnectStatus"></a>
+                    <a name="//apple_ref/swift/Property/connectionStatus" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vP6IQCore22WearableControllerType16connectionStatusOS_21WearableConnectStatus">connectionStatus</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the connection status for the associated wearable device.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">connectionStatus</span><span class="p">:</span> <span class="kt">WearableConnectStatus</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP6IQCore22WearableControllerType27addConnectionStatusObserveruRq_S0__Fq_FFOS_21WearableConnectStatusT_PS_21RegistrationTokenType_"></a>
+                    <a name="//apple_ref/swift/Method/addConnectionStatusObserver(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP6IQCore22WearableControllerType27addConnectionStatusObserveruRq_S0__Fq_FFOS_21WearableConnectStatusT_PS_21RegistrationTokenType_">addConnectionStatusObserver(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Adds a connection status observer. When the connection status changes the closure will be performed.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">addConnectionStatusObserver</span><span class="p">(</span><span class="nv">observer</span><span class="p">:</span> <span class="p">(</span><span class="kt">WearableConnectStatus</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="o">-&gt;</span> <span class="kt">RegistrationTokenType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>observer</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A closure that will be called whenever a connection status update occurs for the controller&rsquo;s associated wearable until the developer stops referencing the RegistrationToken or explicitly unsubscribes from it.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A RegistrationTokenType that is used to determine if the associated observer still desires to be called on connection change events.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP6IQCore22WearableControllerType7connectuRq_S0__Fq_FFT13wearableTokenGSqCS_13WearableToken_5errorGSqCSo7NSError__T_T_"></a>
+                    <a name="//apple_ref/swift/Method/connect(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP6IQCore22WearableControllerType7connectuRq_S0__Fq_FFT13wearableTokenGSqCS_13WearableToken_5errorGSqCSo7NSError__T_T_">connect(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Establishes a connection with the wearable. When the connection succeeds or fails the callback will be performed.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">connect</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kt">WearableConnectCompletion</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A closure to handle the result of a connection attempt.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP6IQCore22WearableControllerType10disconnectuRq_S0__Fq_FT_T_"></a>
+                    <a name="//apple_ref/swift/Method/disconnect()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP6IQCore22WearableControllerType10disconnectuRq_S0__Fq_FT_T_">disconnect()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Disconnects or cancels a pending connection with the controllers associated wearable.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">disconnect</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP6IQCore22WearableControllerType15getBatteryLeveluRq_S0__Fq_FFT12batteryLevelSi5errorGSqCSo7NSError__T_T_"></a>
+                    <a name="//apple_ref/swift/Method/getBatteryLevel(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP6IQCore22WearableControllerType15getBatteryLeveluRq_S0__Fq_FFT12batteryLevelSi5errorGSqCSo7NSError__T_T_">getBatteryLevel(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Requests the current battery status</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">getBatteryLevel</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kt">WearableBatteryLevelUpdate</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A closure to handle the result of the battery level request.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP6IQCore22WearableControllerType12getWallClockuRq_S0__Fq_FFT9wallClockVSs5Int646errorsGVSs3SetSS__T_T_"></a>
+                    <a name="//apple_ref/swift/Method/getWallClock(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP6IQCore22WearableControllerType12getWallClockuRq_S0__Fq_FFT9wallClockVSs5Int646errorsGVSs3SetSS__T_T_">getWallClock(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Requests the current clock</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">getWallClock</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="p">(</span><span class="nv">wallClock</span><span class="p">:</span> <span class="kt">Int64</span><span class="p">,</span> <span class="nv">errors</span><span class="p">:</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A closure to handle the result of the get clock request.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP6IQCore22WearableControllerType30subscribeToBatteryLevelUpdatesuRq_S0__Fq_FFT12batteryLevelSi5errorGSqCSo7NSError__T_T_"></a>
+                    <a name="//apple_ref/swift/Method/subscribeToBatteryLevelUpdates(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP6IQCore22WearableControllerType30subscribeToBatteryLevelUpdatesuRq_S0__Fq_FFT12batteryLevelSi5errorGSqCSo7NSError__T_T_">subscribeToBatteryLevelUpdates(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <ul>
+<li><p>Subscribes to receive battery status update events.</p></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">subscribeToBatteryLevelUpdates</span><span class="p">(</span><span class="nv">update</span><span class="p">:</span> <span class="kt">WearableBatteryLevelUpdate</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP6IQCore22WearableControllerType32unsubscribeToBatteryLevelUpdatesuRq_S0__Fq_FT_T_"></a>
+                    <a name="//apple_ref/swift/Method/unsubscribeToBatteryLevelUpdates()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP6IQCore22WearableControllerType32unsubscribeToBatteryLevelUpdatesuRq_S0__Fq_FT_T_">unsubscribeToBatteryLevelUpdates()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Unsubscribes to battery status update events.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">unsubscribeToBatteryLevelUpdates</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP6IQCore22WearableControllerType22updateWearableIdentityuRq_S0__Fq_FFT17deviceDescriptionGSqCS_16WearableIdentity_5errorGSqCSo7NSError__T_T_"></a>
+                    <a name="//apple_ref/swift/Method/updateWearableIdentity(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP6IQCore22WearableControllerType22updateWearableIdentityuRq_S0__Fq_FFT17deviceDescriptionGSqCS_16WearableIdentity_5errorGSqCSo7NSError__T_T_">updateWearableIdentity(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Requests an update to the WearableIdentity object with information about the wearable device or null if this controller has not connected to the wearable device or fails to read the values.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">updateWearableIdentity</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kt">WearableIdentityUpdateCompletion</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A closure to handle the result of the wearable identity request.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP6IQCore22WearableControllerType12factoryResetuRq_S0__Fq_FT_T_"></a>
+                    <a name="//apple_ref/swift/Method/factoryReset()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP6IQCore22WearableControllerType12factoryResetuRq_S0__Fq_FT_T_">factoryReset()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sends a factory reset command to the connected wearable device. Device will disconnect and restart after this method is called.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">factoryReset</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP6IQCore22WearableControllerType15setWearableNameuRq_S0__Fq_FSST_"></a>
+                    <a name="//apple_ref/swift/Method/setWearableName(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP6IQCore22WearableControllerType15setWearableNameuRq_S0__Fq_FSST_">setWearableName(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets name of connected wearable device.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">setWearableName</span><span class="p">(</span><span class="nv">wearableName</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>wearableName</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A string representing a desired name for connected wearable.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external">Intel</a>. All rights reserved. (Last updated: 2016-03-03)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
