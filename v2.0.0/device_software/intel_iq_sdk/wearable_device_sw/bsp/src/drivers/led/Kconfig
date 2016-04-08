@@ -47,6 +47,8 @@ choice
        bool "C115"
        config LP_5562_LED_LX404
        bool "LX404"
+       config LP_5562_LED_SMLP34
+       bool "SMLP34"
 endchoice
 
 endmenu

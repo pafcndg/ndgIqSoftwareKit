@@ -90,7 +90,7 @@ include $(T)/build/wearable_device_sw_version.mk
 # modified here
 VERSION_MAJOR  ?= 0
 VERSION_MINOR  ?= 0
-VERSION_PATCH ?= 13
+VERSION_PATCH ?= 15
 
 # Get build number from environment or generate from YYWW
 ifeq ($(BUILD_NUMBER),)

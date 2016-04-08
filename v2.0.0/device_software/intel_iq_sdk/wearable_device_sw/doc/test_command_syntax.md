@@ -263,17 +263,20 @@ Example: ble discover 0xa0004002 0 1000c00f-fed9-4766-b18f-dead0d24beef
    - 1000c00f-fed9-4766-b18f-dead0d24beef is vendor 128-bit UUID of primary remote service
 
 ~~~~~~~~
-ble write <conn_ref> <handle> <offset> <value>
+ble write <conn_ref> <withResponse> <handle> <offset> <value>
 ~~~~~~~~
 Write an attribute on a connected device:
-   - conn_ref - connection reference
-   - handle   - handle of the attribute to write
-   - offset   - offset at which to write
-   - value    - ascii hex encoded string
+   - conn_ref       - connection reference
+   - withResponse   - 1 if response needed, otherwise 0
+   - handle         - handle of the attribute to write
+   - offset         - offset at which to write
+   - value          - ascii hex encoded string
 
-Example: ble write 0xa0004000 14 43757269652054657374207772206e72202330
+Example: ble write 0xa0004000 1 14 0 43757269652054657374207772206e72202330
    - 0xa0004000 is the connection reference displayed in logs when remote device connected
+   - 1 for response needed
    - 14 is characteristic handle
+   - 0 is offset at which to write
    - 43757269652054657374207772206e72202330 is value to write
 
 ~~~~~~~~

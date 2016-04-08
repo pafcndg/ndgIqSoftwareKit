@@ -121,8 +121,11 @@ struct oem_data {
     uint8_t project_data[84];
 
     /** public keys and other infos used for secure boot and manufacturing
-     * size: 64*4+128 bytes */
-    uint8_t security[320];
+     * size: 64*4+48 bytes */
+    uint8_t security[304];
+
+    /* SoC specific data */
+    uint8_t soc_data[16];
 } __packed;
 
 /**

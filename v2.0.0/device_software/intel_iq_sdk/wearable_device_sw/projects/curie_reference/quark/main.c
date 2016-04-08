@@ -84,6 +84,8 @@
 #include "iq/init_iq.h"
 #endif
 
+/* Charging handler */
+#include "charging_handler.h"
 
 /* List of services ids that are available in the application */
 static uint16_t ref_app_services[] = {
@@ -126,6 +128,9 @@ static void client_message_handler(struct cfw_message * msg, void * param)
 		service_counter_handler(
 				((cfw_svc_available_evt_msg_t*) msg)->service_id,
 				 ref_app_services, ARRAY_SIZE(ref_app_services));
+		if (((cfw_svc_available_evt_msg_t*) msg)->service_id == BATTERY_SERVICE_ID) {
+			charging_handler_init(queue);
+		}
 		break;
 #ifdef CONFIG_UI_SERVICE_IMPL
 	case MSG_ID_UI_BTN_SINGLE_EVT: {

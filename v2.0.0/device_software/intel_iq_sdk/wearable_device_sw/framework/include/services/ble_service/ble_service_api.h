@@ -677,19 +677,16 @@ struct ble_update_data_req {
 struct ble_update_data_rsp {
 	struct cfw_message header; /**< Component framework message header (@ref cfw), MUST be first element of structure */
 	struct bt_conn *conn;      /**< Connection reference */
-	ble_status_t status;       /**< Status of the data update operation */
 	uint16_t char_handle;      /**< Handle of characteristic value to write */
+	ble_status_t status;       /**< Status of the data update operation */
 };
 
 /** Parameters for @ref MSG_ID_BLE_NOTIF_EVT. */
-struct ble_notification_data_evt {
+struct ble_notification_evt {
 	struct cfw_message header; /**< Component framework message header (@ref cfw), MUST be first element of structure */
-	ble_status_t status;       /**< @ref ble_status_t */
 	struct bt_conn *conn;      /**< Connection reference */
-	uint16_t svc_handle;       /**< which service affected by the change */
-	uint16_t char_handle;      /**< characteristic value handle that has been updated */
-	uint16_t count;            /**< number of data samples, by default 1. */
-	uint16_t len;              /**< length of data written by remote device */
+	uint16_t handle;           /**< Characteristic value handle that has been updated */
+	uint8_t len;               /**< Length of data in the notification */
 	uint8_t data[];
 };
 

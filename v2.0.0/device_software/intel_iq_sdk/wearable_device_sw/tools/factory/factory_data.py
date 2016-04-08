@@ -54,7 +54,8 @@ class OEMData(ctypes.Structure):
         ("factory_sn", ctypes.c_ubyte * 32),
         ("hardware_id", ctypes.c_ubyte * 32),
         ("project_data", ctypes.c_ubyte * 84),
-        ("security", ctypes.c_ubyte * 320)
+        ("security", ctypes.c_ubyte * 304),
+        ("soc_data", ctypes.c_ubyte * 16),
     ]
 
 class CustomerData(ctypes.Structure):
@@ -75,10 +76,13 @@ class FactoryData(ctypes.Structure):
     ]
 
 def init_oem_base_fields(oem_fdata):
-    oem_fdata.header[0] = 0xFF
-    oem_fdata.header[1] = 0xFF
-    oem_fdata.header[2] = 0xFF
-    oem_fdata.header[3] = 0xFF
+
+    for i in range(0, len(oem_fdata.header)):
+        oem_fdata.header[i] = 0xFF
+
+    for i in range(0, len(oem_fdata.soc_data)):
+        oem_fdata.soc_data[i] = 0xFF
+
     oem_fdata.magic = (ctypes.c_ubyte * 4).from_buffer_copy(MAGIC)
     oem_fdata.version = VERSION
     oem_fdata.production_mode_oem = 0xFF

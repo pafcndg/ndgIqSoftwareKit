@@ -351,11 +351,14 @@ void ble_gatt_send_ind_req(const struct ble_gatt_send_notif_ind_params *p_params
 void on_ble_gatts_send_notif_ind_rsp(const struct ble_gatt_notif_ind_rsp *p_params);
 
 /** Discover parameters. */
+#define DISCOVER_FLAGS_UUID_PRESENT 1
+
 struct ble_core_discover_params {
 	struct bt_uuid uuid;                        /**< Attribute UUID */
 	struct ble_core_gatt_handle_range handle_range; /**< Discover range */
 	uint16_t conn_handle;                       /**< Connection handle */
 	uint8_t type;                               /**< Discover type @ref BLE_GATT_DISC_TYPES */
+	uint8_t flags;
 };
 
 /**
