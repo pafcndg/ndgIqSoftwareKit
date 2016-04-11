@@ -234,7 +234,10 @@ static void on_storage_ble_name_read(struct ble_app_storage_handler *p_hdl, cons
 				(struct curie_oem_data *) &global_factory_data->oem_data.project_data;
 		if (p_oem->bt_mac_address_type < 2) {
 			bda.type = p_oem->bt_mac_address_type;
-			memcpy(bda.val, &p_oem->bt_address[0], sizeof(bda.val));
+			// copy address in LSB order
+			for (int i = 0; i < sizeof(bda.val) ; i++) {
+				bda.val[i] = p_oem->bt_address[sizeof(bda.val) - 1 - i];
+			}
 			en_config.p_bda = &bda;
 		}
 

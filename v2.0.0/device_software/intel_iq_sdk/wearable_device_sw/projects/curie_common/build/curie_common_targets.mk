@@ -259,6 +259,7 @@ _project_flash_files: __flash_openocd_tree $(OUT)/firmware/partition.conf
 	@echo "Copying flash scripts"
 	$(AT)cp $(T)/projects/curie_common/factory/custom_factory_data_oem.py $(OUT_FLASH)/custom_factory_data_oem.py
 	$(AT)cp $(T)/projects/curie_common/factory/curie_factory_data.py $(OUT_FLASH)/curie_factory_data.py
+	$(AT)cp $(T)/projects/curie_common/factory/quark_se_factory_data.py $(OUT_FLASH)/quark_se_factory_data.py
 	@echo "Creating erase images"
 	$(AT)dd if=/dev/zero of=$(OUT)/firmware/erase_panic.bin bs=2048 count=2			$(SILENT_DD)
 	$(AT)$(T)/projects/curie_common/factory/create_ff_file.py 2048 3 $(OUT)/firmware/erase_factory_nonpersistent.bin

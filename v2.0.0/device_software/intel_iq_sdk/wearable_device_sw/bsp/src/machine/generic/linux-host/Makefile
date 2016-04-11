@@ -64,6 +64,7 @@ SERVER_OBJS += $(OUT)/host/srv/framework/src/services/ble_service/test/ble_servi
 SERVER_OBJS += $(OUT)/host/srv/framework/src/services/ble_service/ble_service_utils.o
 SERVER_OBJS += $(OUT)/host/srv/framework/src/services/ble_service/ble_service_test.o
 SERVER_OBJS += $(OUT)/host/srv/framework/src/services/ble_service/gatt.o
+SERVER_OBJS += $(OUT)/host/srv/framework/src/services/ble_service/uuid.o
 SERVER_OBJS += $(OUT)/host/srv/packages/intel/connectivity/ispp/src/ble_ispp.o
 SERVER_OBJS += $(OUT)/host/srv/packages/intel/connectivity/iasp/src/iasp.o
 

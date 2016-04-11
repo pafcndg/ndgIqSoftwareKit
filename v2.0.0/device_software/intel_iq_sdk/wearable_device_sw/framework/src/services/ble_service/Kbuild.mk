@@ -4,6 +4,7 @@ obj-$(CONFIG_SERVICES_BLE_IMPL) += gatt.o
 obj-$(CONFIG_SERVICES_BLE) += conn.o
 obj-$(CONFIG_SERVICES_BLE) += hci_core.o
 obj-$(CONFIG_SERVICES_BLE) += nble_driver.o
+obj-$(CONFIG_SERVICES_BLE) += uuid.o
 obj-$(CONFIG_TCMD_BLE) += ble_tcmd.o
 obj-$(CONFIG_SERVICES_BLE_IMPL) += ble_service_utils.o
 obj-$(CONFIG_SERVICES_BLE_IMPL) += ble_service_gap.o

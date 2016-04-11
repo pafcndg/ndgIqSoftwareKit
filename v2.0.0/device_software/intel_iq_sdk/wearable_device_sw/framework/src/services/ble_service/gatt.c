@@ -758,6 +758,11 @@ void on_ble_gattc_discover_rsp(const struct ble_gattc_disc_rsp *rsp,
 				attr->handle = gattr->decl_handle;
 				last_handle = gattr->decl_handle;
 
+				/* Skip if UUID is set but doesn't match */
+				if (params->uuid && bt_uuid_cmp(&gattr->uuid, params->uuid)) {
+					continue;
+				}
+
 			} else if (BT_GATT_DISCOVER_DESCRIPTOR == rsp->type) {
 				const struct ble_gattc_descriptor *gattr = (void *)&data[i * sizeof(*gattr)];
 
@@ -821,27 +826,34 @@ int bt_gatt_discover(struct bt_conn *conn,
 	pr_info(LOG_MODULE_BLE, "disc: %d", params->start_handle);
 #endif
 
+	memset(&discover_params, 0, sizeof(discover_params));
+
 	switch (params->type) {
 	case BT_GATT_DISCOVER_PRIMARY:
-	case BT_GATT_DISCOVER_INCLUDE:
 	case BT_GATT_DISCOVER_CHARACTERISTIC:
+		if (params->uuid) {
+			discover_params.uuid = *params->uuid;
+			discover_params.flags = DISCOVER_FLAGS_UUID_PRESENT;
+		}
+		break;
+
+	case BT_GATT_DISCOVER_INCLUDE:
 	case BT_GATT_DISCOVER_DESCRIPTOR:
-
-		conn->gattc.disc_param = params;
-
-		discover_params.conn_handle = conn->handle;
-		discover_params.type = params->type;
-		discover_params.uuid = *params->uuid;
-		discover_params.handle_range.start_handle = params->start_handle;
-		discover_params.handle_range.end_handle = params->end_handle;
-
-		ble_gattc_discover_req(&discover_params, NULL);
 		break;
 	default:
 		conn->gattc.disc_param = NULL;
 		return -EINVAL;
 		break;
 	}
+
+	discover_params.conn_handle = conn->handle;
+	discover_params.type = params->type;
+	discover_params.handle_range.start_handle = params->start_handle;
+	discover_params.handle_range.end_handle = params->end_handle;
+
+	conn->gattc.disc_param = params;
+
+	ble_gattc_discover_req(&discover_params, NULL);
 
 	return 0;
 }

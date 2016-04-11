@@ -31,6 +31,7 @@ import ctypes
 import sys
 
 import curie_factory_data
+import quark_se_factory_data
 
 base_addr = "0xffffe000"
 
@@ -40,6 +41,14 @@ def add_custom_arguments(parser):
     parser.add_argument('--ble_name', help="enter BLE name string", required=True)
 
 def fill_factory_bin(fdata, args):
+
+    # SoC data
+    quark_se_fdata = quark_se_factory_data.QuarkSESocData()
+    quark_se_fdata.magic = (ctypes.c_ubyte * 4).from_buffer_copy("$SP!")
+    quark_se_fdata.version = 0x01
+    fdata.soc_data = type(fdata.soc_data).from_buffer_copy(quark_se_fdata)
+
+    # Curie module data
     # We explicitely set all fields to zero since this is for the Curie module
     # This will be set per-project
     fdata.hardware_info.hardware_name = 0x00
@@ -81,7 +90,20 @@ def fill_factory_bin(fdata, args):
     curie_fdata_padded = bytearray(curie_fdata).ljust(len(fdata.project_data), binascii.unhexlify("FF"))
     fdata.project_data = type(fdata.project_data).from_buffer_copy(curie_fdata_padded)
 
+
 def post_factory_data_hook(fdata, args):
+
+    # Overwrite factory_data.bin without soc_data
+    arr = bytearray(fdata)
+    assert len(arr) == 512, "ERROR: oem data struct size error"
+    out_file = open("factory_data.bin", "wb")
+    out_file.write(arr[0:496])
+    out_file.close()
+
+    out_file = open("factory_data_with_soc_data.bin", "wb")
+    out_file.write(arr)
+    out_file.close()
+
     # Creates the OpenOCD flash script
     flash_script = """### Generated script, please do not edit
 ### Flash provisining data in OTP

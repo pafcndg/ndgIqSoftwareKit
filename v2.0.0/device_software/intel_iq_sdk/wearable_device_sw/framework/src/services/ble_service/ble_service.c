@@ -240,11 +240,12 @@ void on_ble_gap_conn_update_rsp(const struct ble_core_response *p_params) {
 static void send_gatt_notification_evt(struct bt_conn *conn, uint16_t val_hdl,
 		const uint8_t *data, uint8_t data_len)
 {
-	struct ble_notification_data_evt *evt = (void *)
+	struct ble_notification_evt *evt = (void *)
 			cfw_alloc_evt_msg(&ble_service, MSG_ID_BLE_NOTIF_EVT,
 					sizeof(*evt) + data_len);
 
 	evt->conn = conn;
+	evt->handle = val_hdl;
 	evt->len = data_len;
 	memcpy(evt->data, data, data_len);
 
@@ -272,6 +273,7 @@ static uint8_t ble_subscribe_cb(struct bt_conn *conn, int err, void *user_data,
 		send_gatt_notification_evt(conn,
 				p_params->params.value_handle,
 				data, length);
+		return BT_GATT_ITER_CONTINUE;
 	}
 	return 0;
 }
@@ -488,6 +490,7 @@ static uint8_t ble_discover_cb(struct bt_conn *conn,
 	struct ble_discover_rsp *old_resp = disc_params->rsp;
 	struct ble_discover_rsp *new_resp;
 	struct bt_gatt_service *svc_value;
+	struct bt_gatt_chrc *chr_value;
 	struct bt_gatt_include *inc_value;
 
 	/* Allocate an new response with an extra attribute in the array */
@@ -496,10 +499,10 @@ static uint8_t ble_discover_cb(struct bt_conn *conn,
 	/* Copy the previous response response (including the attributes) */
 	memcpy(new_resp, old_resp, sizeof(*new_resp) + (old_resp->attr_cnt * sizeof(struct ble_discover_attr)));
 
-	new_resp->attrs[old_resp->attr_cnt].uuid = *attr->uuid;
 	new_resp->attrs[old_resp->attr_cnt].handle = attr->handle;
 	if (BT_GATT_DISCOVER_PRIMARY == params->type) {
 		svc_value = attr->user_data;
+		new_resp->attrs[old_resp->attr_cnt].uuid = *svc_value->uuid;
 		new_resp->attrs[old_resp->attr_cnt].end_handle = svc_value->end_handle;
 	} else if (BT_GATT_DISCOVER_INCLUDE == params->type) {
 		inc_value = attr->user_data;
@@ -507,9 +510,13 @@ static uint8_t ble_discover_cb(struct bt_conn *conn,
 			new_resp->attrs[old_resp->attr_cnt].uuid = *inc_value->uuid;
 		new_resp->attrs[old_resp->attr_cnt].start_handle = inc_value->start_handle;
 		new_resp->attrs[old_resp->attr_cnt].end_handle = inc_value->end_handle;
-	} else if (BT_GATT_DISCOVER_CHARACTERISTIC == params->type)
-		new_resp->attrs[old_resp->attr_cnt].properties = *((uint8_t*)attr->user_data);
-
+	} else if (BT_GATT_DISCOVER_CHARACTERISTIC == params->type) {
+		chr_value = attr->user_data;
+		new_resp->attrs[old_resp->attr_cnt].uuid = *chr_value->uuid;
+		new_resp->attrs[old_resp->attr_cnt].properties = chr_value->properties;
+	} else if (BT_GATT_DISCOVER_DESCRIPTOR == params->type) {
+		new_resp->attrs[old_resp->attr_cnt].uuid = *attr->uuid;
+	}
 	new_resp->attr_cnt = old_resp->attr_cnt + 1;
 
 	/* Change the new response */
@@ -538,7 +545,11 @@ static void handle_msg_id_ble_discover(struct cfw_message *msg)
 	struct ble_discover_rsp *resp;
 
 	disc_params->uuid = req->params.uuid;
-	disc_params->params.uuid = &disc_params->uuid;
+	if (disc_params->uuid.type == BT_UUID_16 &&
+	    disc_params->uuid.u16 == 0)
+		disc_params->params.uuid = NULL;
+	else
+		disc_params->params.uuid = &disc_params->uuid;
 	disc_params->params.func = ble_discover_cb;
 	disc_params->params.destroy = ble_discover_destroy;
 	disc_params->params.start_handle = req->params.handle_range.start_handle;

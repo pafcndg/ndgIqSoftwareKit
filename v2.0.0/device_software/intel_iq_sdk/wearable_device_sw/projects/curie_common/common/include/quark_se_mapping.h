@@ -78,7 +78,7 @@
 #define SPI_FOTA_PARTITION_ID                           5
 #define SPI_FOTA_FLASH_ID                               SERIAL_FLASH_ID
 #define SPI_FOTA_START_BLOCK                            0
-#define SPI_FOTA_END_BLOCK                              253
+#define SPI_FOTA_END_BLOCK                              252
 #define SPI_FOTA_NB_BLOCKS                              (SPI_FOTA_END_BLOCK - SPI_FOTA_START_BLOCK+1)
 
 /* Partition used for Activity data storage - 256 blocks = 1 MB */

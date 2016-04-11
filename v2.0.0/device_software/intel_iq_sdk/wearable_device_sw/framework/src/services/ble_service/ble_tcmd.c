@@ -241,37 +241,60 @@ static void get_info_print(struct cfw_message *msg,
 	}
 
 }
+
 #ifdef CONFIG_SERVICES_BLE_GATTC
 static void discover_print(struct cfw_message *msg,
 		struct tcmd_handler_ctx *ctx)
 {
 	char answer[ANS_LENGTH];
 	size_t i;
+	int8_t j;
 	char *p_answer = answer;
 
 	// by default, indicate empty
 	sprintf(p_answer, "None");
 	for (i = 0; i < ((struct ble_discover_rsp *)msg)->attr_cnt && p_answer < &answer[ANS_LENGTH-1]; i++) {
-		p_answer += snprintf(p_answer, (&answer[ANS_LENGTH-1] - p_answer),
-				"uuid:0x%02X handle:%d",
-				((struct ble_discover_rsp *)msg)->attrs[i].uuid.u16,
-				((struct ble_discover_rsp *)msg)->attrs[i].handle);
-		if (BT_GATT_DISCOVER_PRIMARY == ((struct ble_discover_rsp *)msg)->type) {
+		switch (((struct ble_discover_rsp *)msg)->type) {
+		case BT_GATT_DISCOVER_PRIMARY:
+			if (BT_UUID_16 == ((struct ble_discover_rsp *)msg)->attrs[i].uuid.type)
+				p_answer += snprintf(p_answer, (&answer[ANS_LENGTH-1] - p_answer),
+						"uuid:0x%02X handle:%d end:%d - ",
+						((struct ble_discover_rsp *)msg)->attrs[i].uuid.u16,
+						((struct ble_discover_rsp *)msg)->attrs[i].handle,
+						((struct ble_discover_rsp *)msg)->attrs[i].end_handle);
+			else if (BT_UUID_128 == ((struct ble_discover_rsp *)msg)->attrs[i].uuid.type) {
+				p_answer += snprintf(p_answer, (&answer[ANS_LENGTH-1] - p_answer), "uuid:");
+				for (j = sizeof(((struct ble_discover_rsp *)msg)->attrs[i].uuid.u128) - 1; j >= 0; j--) {
+					p_answer += snprintf(p_answer, (&answer[ANS_LENGTH-1] - p_answer),
+							"%02X", ((struct ble_discover_rsp *)msg)->attrs[i].uuid.u128[j]);
+				}
+				p_answer += snprintf(p_answer, (&answer[ANS_LENGTH-1] - p_answer),
+						" handle:%d end:%d - ",
+						((struct ble_discover_rsp *)msg)->attrs[i].handle,
+						((struct ble_discover_rsp *)msg)->attrs[i].end_handle);
+			}
+			break;
+		case BT_GATT_DISCOVER_INCLUDE:
 			p_answer += snprintf(p_answer, (&answer[ANS_LENGTH-1] - p_answer),
-					" end:%d - ",
-					((struct ble_discover_rsp *)msg)->attrs[i].end_handle);
-		} else if (BT_GATT_DISCOVER_INCLUDE == ((struct ble_discover_rsp *)msg)->type) {
-			p_answer += snprintf(p_answer, (&answer[ANS_LENGTH-1] - p_answer),
-					" uuid16:0x%02X start:%d end:%d - ",
+					"uuid:0x%02X handle:%d start:%d end:%d - ",
 					((struct ble_discover_rsp *)msg)->attrs[i].uuid.u16, /* only 16-bits UUID is returned */
+					((struct ble_discover_rsp *)msg)->attrs[i].handle,
 					((struct ble_discover_rsp *)msg)->attrs[i].start_handle,
 					((struct ble_discover_rsp *)msg)->attrs[i].end_handle);
-		} else if (BT_GATT_DISCOVER_CHARACTERISTIC == ((struct ble_discover_rsp *)msg)->type) {
+			break;
+		case BT_GATT_DISCOVER_CHARACTERISTIC:
 			p_answer += snprintf(p_answer, (&answer[ANS_LENGTH-1] - p_answer),
-					" prop:%d - ",
+					"uuid:0x%02X handle:%d prop:%d - ",
+					((struct ble_discover_rsp *)msg)->attrs[i].uuid.u16,
+					((struct ble_discover_rsp *)msg)->attrs[i].handle,
 					((struct ble_discover_rsp *)msg)->attrs[i].properties);
-		} else if (BT_GATT_DISCOVER_DESCRIPTOR == ((struct ble_discover_rsp *)msg)->type) {
-			p_answer += snprintf(p_answer, (&answer[ANS_LENGTH-1] - p_answer), " - ");
+			break;
+		case BT_GATT_DISCOVER_DESCRIPTOR:
+			p_answer += snprintf(p_answer, (&answer[ANS_LENGTH-1] - p_answer),
+					"uuid:0x%02X handle:%d - ",
+					((struct ble_discover_rsp *)msg)->attrs[i].uuid.u16,
+					((struct ble_discover_rsp *)msg)->attrs[i].handle);
+			break;
 		}
 	}
 	TCMD_RSP_FINAL(ctx, answer);
@@ -279,7 +302,7 @@ static void discover_print(struct cfw_message *msg,
 #endif
 static void _ble_tcmd_handle_msg(struct cfw_message *msg, void *data)
 {
-	char answer[ANS_LENGTH];
+	char answer[ANS_LENGTH] = {0};
 	struct _info_for_rsp *info_for_rsp = msg->priv;
 
 	switch (CFW_MESSAGE_ID(msg)) {
@@ -328,24 +351,33 @@ static void _ble_tcmd_handle_msg(struct cfw_message *msg, void *data)
 		}
 		break;
 	case MSG_ID_BLE_SUBSCRIBE_RSP:
-		snprintf(answer, ANS_LENGTH, "sub_rsp %d %p",
+		snprintf(answer, ANS_LENGTH, "status:%d sub:%p",
 				((struct ble_subscribe_rsp *)msg)->status,
 				((struct ble_subscribe_rsp *)msg)->p_subscription);
 		TCMD_RSP_FINAL(info_for_rsp->ctx, answer);
 		break;
 	case MSG_ID_BLE_UNSUBSCRIBE_RSP:
-		snprintf(answer, ANS_LENGTH, "unsub_rsp %d",
+		snprintf(answer, ANS_LENGTH, "status:%d",
 				((struct ble_unsubscribe_rsp *)msg)->status);
 		TCMD_RSP_FINAL(info_for_rsp->ctx, answer);
 		break;
 	case MSG_ID_BLE_NOTIF_EVT:
-		pr_info(LOG_MODULE_BLE,"Notif stat=%d conn=%p val_hdl=%d size %d",
-				((struct ble_notification_data_evt *)msg)->status,
-				((struct ble_notification_data_evt *)msg)->conn,
-				((struct ble_notification_data_evt *)msg)->char_handle,
-				((struct ble_notification_data_evt *)msg)->len);
-		goto _free_msg;
-		break;
+	{
+		char *p_answer = NULL;
+		size_t i;
+		p_answer = answer;
+
+		p_answer += sprintf(p_answer, "TCMD notif conn:%p handle:%d data:",
+				((struct ble_notification_evt *)msg)->conn,
+				((struct ble_notification_evt *)msg)->handle);
+
+		for (i = 0; i < ((struct ble_notification_evt *)msg)->len && p_answer < &answer[ANS_LENGTH-1]; i++)
+			p_answer += snprintf(p_answer, &answer[ANS_LENGTH-1] - p_answer, "%02x",
+					((struct ble_notification_evt *)msg)->data[i]);
+
+		pr_info(LOG_MODULE_MAIN, "%s", &answer);
+	}
+	break;
 #endif
 	case MSG_ID_BLE_CONNECT_RSP:
 	case MSG_ID_BLE_DISCONNECT_RSP:
@@ -384,10 +416,16 @@ static void _ble_tcmd_handle_msg(struct cfw_message *msg, void *data)
 	case MSG_ID_BLE_CONNECT_EVT:
 		if (((struct ble_connect_evt *)msg)->status == BLE_STATUS_SUCCESS)
 			_ble_service_tcmd_cb->conn = ((struct ble_connect_evt *)msg)->conn;
+			pr_info(LOG_MODULE_BLE, "TCMD connected(conn: %p, role: %d)",
+					((struct ble_connect_evt *)msg)->conn,
+					((struct ble_connect_evt *)msg)->role);
 		goto _free_msg;
 		break;
 	case MSG_ID_BLE_DISCONNECT_EVT:
 		_ble_service_tcmd_cb->conn = NULL;
+		pr_info(LOG_MODULE_BLE, "TCMD disconnected(conn: %p, hci_reason: 0x%x)",
+				((struct ble_disconnect_evt *)msg)->conn,
+				((struct ble_disconnect_evt *)msg)->reason);
 		goto _free_msg;
 		break;
 	case MSG_ID_BLE_ADV_TO_EVT:
@@ -443,6 +481,14 @@ static cfw_service_conn_t *_get_service_conn(struct tcmd_handler_ctx *ctx)
 	memset(_ble_service_tcmd_cb, 0, sizeof(struct _ble_service_tcmd_cb));
 	_ble_service_tcmd_cb->ble_service_conn = ble_service_conn;
 	_ble_service_tcmd_cb->conn = NULL;
+
+	int client_events[] = {
+			MSG_ID_BLE_CONNECT_EVT,
+			MSG_ID_BLE_DISCONNECT_EVT,
+			MSG_ID_BLE_NOTIF_EVT
+	};
+	cfw_register_events(ble_service_conn, client_events,
+			sizeof(client_events) / sizeof(int), NULL);
 
 	return ble_service_conn;
 }
@@ -1125,10 +1171,10 @@ void tcmd_ble_write(int argc, char *argv[], struct tcmd_handler_ctx *ctx)
 	uint32_t ret;
 	struct _info_for_rsp *info_for_rsp;
 	uint16_t data_idx;
-	const uint16_t len = strlen(argv[5])/2;
+	const uint16_t len = strlen(argv[6])/2;
 	uint8_t data[len];
 
-	if (argc != 6)
+	if (argc != 7)
 		goto print_help;
 
 	info_for_rsp = balloc(sizeof(struct _info_for_rsp), NULL);
@@ -1140,15 +1186,15 @@ void tcmd_ble_write(int argc, char *argv[], struct tcmd_handler_ctx *ctx)
 	info_for_rsp->ctx = ctx;
 
 	struct ble_set_remote_data_params params;
-	params.with_resp = true;                         /**< write with response*/
-	params.conn = (void *)strtoul(argv[2], NULL, 0);  /**< Connection handle */
-	params.char_handle = strtoul(argv[3], NULL, 0);  /**< Characteristic handle */
-	params.offset = strtoul(argv[4], NULL, 0);
+	params.conn = (void *)strtoul(argv[2], NULL, 0);                    /**< Connection handle */
+	params.with_resp = (1 == strtoul(argv[3], NULL, 0)) ? true: false;  /**< write with response*/
+	params.char_handle = strtoul(argv[4], NULL, 0);                     /**< Characteristic handle */
+	params.offset = strtoul(argv[5], NULL, 0);
 
 	/** Convert ascii hex string into binary data */
-	for (data_idx = 0; data_idx < len && argv[5][2 * data_idx];
+	for (data_idx = 0; data_idx < len && argv[6][2 * data_idx];
 			data_idx++) {
-		data[data_idx] = str_to_byte(&argv[5][2 * data_idx]);
+		data[data_idx] = str_to_byte(&argv[6][2 * data_idx]);
 	}
 	ret = ble_set_remote_data(info_for_rsp->ble_service_conn,
 			&params, data_idx, data, info_for_rsp);
@@ -1157,7 +1203,7 @@ void tcmd_ble_write(int argc, char *argv[], struct tcmd_handler_ctx *ctx)
 	return;
 
 print_help:
-	TCMD_RSP_ERROR(ctx, "Usage: ble write <conn_ref> <handle> <offset> <value>");
+	TCMD_RSP_ERROR(ctx, "Usage: ble write <conn_ref> <withResponse> <handle> <offset> <value>");
 }
 DECLARE_TEST_COMMAND(ble, write, tcmd_ble_write);
 

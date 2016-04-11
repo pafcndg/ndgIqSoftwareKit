@@ -64,6 +64,10 @@
 #define C113_GREEN_DEFAULT 127
 #define C113_BLUE_DEFAULT  5
 
+#define SMLP34_RED_DEFAULT   15
+#define SMLP34_GREEN_DEFAULT 37
+#define SMLP34_BLUE_DEFAULT  10
+
 #define C115_RED_DEFAULT   112
 #define C115_GREEN_DEFAULT 32
 #define C115_BLUE_DEFAULT  80
@@ -121,17 +125,13 @@ static int led_lp5562_init(struct device *device)
 		return ret;
 	}
 
-	if (led_dev->led_en_dev) {
-		return soc_gpio_write(led_dev->led_en_dev, led_dev->led_en_pin, 0);
-	}
-
 	/* Configure device */
 	led_lp5562_enable(device, true);
-	led_lp5562_config(device, led_dev->config, led_dev->led_map);
-	led_lp5562_enable(device, false);
 
 	/* Configure current */
 	led_lp5562_limit_current(device);
+
+	led_lp5562_enable(device, false);
 
 	return 0;
 }
@@ -206,6 +206,11 @@ void led_lp5562_set_current(struct device *dev, uint8_t led, uint8_t current)
 
 void led_lp5562_limit_current(struct device *dev)
 {
+#ifdef CONFIG_LP_5562_LED_SMLP34
+	led_lp5562_set_current(dev, 0, SMLP34_BLUE_DEFAULT);
+	led_lp5562_set_current(dev, 1, SMLP34_GREEN_DEFAULT);
+	led_lp5562_set_current(dev, 2, SMLP34_RED_DEFAULT);
+#endif
 #ifdef CONFIG_LP_5562_LED_C113
 	led_lp5562_set_current(dev, 0, C113_BLUE_DEFAULT);
 	led_lp5562_set_current(dev, 1, C113_GREEN_DEFAULT);
@@ -357,9 +362,7 @@ void led_lp5562_enable(struct device *dev, bool enable)
 		/* Wait for device to start */
 		local_task_sleep_ms(1);
 
-		if (led_dev->led_en_dev) {
-			/* Configure the device */
-			led_lp5562_config(dev, led_dev->config, led_dev->led_map);
-		}
+		/* Configure the device */
+		led_lp5562_config(dev, led_dev->config, led_dev->led_map);
 	}
 }

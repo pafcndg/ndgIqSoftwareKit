@@ -4,3 +4,4 @@ obj-$(CONFIG_UI_SERVICE_IMPL) += ui_config.o
 obj-y += service_counter.o
 obj-y += wdt_helper.o
 obj-y += system_setup.o
+obj-y += charging_handler.o
